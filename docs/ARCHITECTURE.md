@@ -20,7 +20,10 @@ freeness have separate interfaces.
 The initial K-group uses CategoryTheory.GrothendieckGroup on Mathlib's FGModuleCat. The
 canonical Milnor group is Stacks' MilnorKTheory. The earlier pair-symbol relation occurs
 only at its comparison boundary. The affine cycle coefficient uses Mathlib's module length
-and prime localizations.
+and prime localizations. Its actual statement is about fields, rings and modules, so its
+source owner is `Colib.RingTheory.Length.FiniteAlgebra`. The cycle chapter consumes that
+result in its mathematical reading route. The initial cycle import provides a compatibility
+reexport to the canonical ring-theoretic implementation.
 
 The Library is the mathematical organization centre described in [LIBRARY.md](LIBRARY.md).
 Chapters contain sections and typed permanent items. Defining modules and code imports come from Lean; the chapter and section sequence supplies

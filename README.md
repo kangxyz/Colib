@@ -36,7 +36,7 @@ import Colib
 Focused imports are available at
 `Colib.KTheory.GrothendieckGroup.Field`,
 `Colib.KTheory.MilnorK.DegreeTwo`, and
-`Colib.AlgebraicGeometry.Cycles.FiniteAlgebra`.
+`Colib.RingTheory.Length.FiniteAlgebra`.
 
 ```sh
 bash scripts/cache.sh

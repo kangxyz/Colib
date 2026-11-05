@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0047"
+title = "Isomorphisms and admissible maps"
+kind = "lemma"
+section = "exact-categories"
+order = 120
+statement = "Every original isomorphism is an admissible monomorphism and an admissible epimorphism. An admissible epimorphism that is also monic is invertible."
+scope = "A chosen exact structure on a preadditive category with finite biproducts and independent object and hom universes. The last assertion is derived from the cokernel universal property, not attributed to Remark 2.3. No ambient abelian or balanced-category assumption is imposed, and no assertion that every arbitrary monic epic map is invertible is made. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0049"
+title = "Equivalence of an exact category's core with its Q-core"
+kind = "theorem"
+section = "exact-categories"
+order = 140
+statement = "The functor sending each original object to its Q-object and each original isomorphism to its specified Q-isomorphism gives an equivalence between the cores. Its map on arrows is exactly the specified Q-isomorphism map."
+scope = "A chosen exact structure on a preadditive category with finite biproducts and independent object and hom universes. Every representative of an invertible Q-arrow has invertible legs. The specified map is bijective on isomorphisms and the core functor is full, faithful and essentially surjective. This proves Core C equivalent to Core Q(C), not C equivalent to Q(C), and makes no comparison between the classifying space of Core C and that of Q(C). No balancedness or arbitrary pullback hypothesis is added. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

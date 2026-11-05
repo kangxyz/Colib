@@ -12,7 +12,7 @@ lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest
   ColibTest.MilnorProduct ColibTest.ExactFunctor ColibTest.SerreSubgroup ColibTest.SerreLocalization \
   ColibTest.MilnorExt ColibTest.KoszulCoefficients ColibTest.ExactPullbacks ColibTest.QConstruction \
   ColibTest.QFunctor ColibTest.QConnected ColibTest.PrincipalExt ColibTest.MilnorDescent \
-  ColibTest.QuillenHomotopy
+  ColibTest.QuillenHomotopy ColibTest.QCore
 lake exe mathlib/mk_all --lib Colib --check
 
 # Aglib's pinned production auditor. This tool is separate from mathematical dependencies.

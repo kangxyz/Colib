@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0046"
+title = "Isomorphisms in restricted-span categories"
+kind = "definition"
+section = "restricted-spans"
+order = 40
+statement = "An original isomorphism whose forward and inverse maps satisfy the right-leg property induces an isomorphism in the restricted-span category. This construction respects identities and composition."
+scope = "The seven restricted-span calculus hypotheses hold. Admissibility of both directions is supplied explicitly; arbitrary morphism properties need not contain all isomorphisms. This is only the forward construction, not a classification of all restricted-span isomorphisms. The representative has identity left leg and the original isomorphism as right leg. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0050"
+title = "Exact-functor compatibility of Q-isomorphisms"
+kind = "lemma"
+section = "exact-categories"
+order = 150
+statement = "The Q-functor induced by an exact functor sends the specified Q-isomorphism of an original isomorphism to the specified Q-isomorphism of its image."
+scope = "Chosen exact structures on preadditive source and target categories with finite biproducts and independent object and hom universes. The equation uses the actual mapIso and Q-isomorphism constructions, not merely their isomorphism classes. This is a derived compatibility of the cited constructions, not a separately numbered literature theorem. No classifying-space or K-group map is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

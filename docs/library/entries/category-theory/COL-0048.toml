@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0048"
+title = "Isomorphisms induced in an exact Q-category"
+kind = "definition"
+section = "exact-categories"
+order = 130
+statement = "Original isomorphisms induce Q-isomorphisms through identity-left-leg spans, preserving identity and composition."
+scope = "A chosen exact structure on a preadditive category with finite biproducts and independent object and hom universes. The selected exact structure proves admissibility of the original isomorphism and its inverse. This item records the specified forward map; bijectivity and the core equivalence are separate results. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

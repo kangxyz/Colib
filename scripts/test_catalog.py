@@ -187,6 +187,16 @@ class LibraryTests(unittest.TestCase):
         for index in range(94, 98):
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
 
+    def test_simplex_boundary_and_collar_ids_keep_their_owners(self):
+        for index in range(98, 100):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"],
+                "geometric-realization",
+            )
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in range(98, 100):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
     def test_initial_ids_keep_their_owners(self):
         self.assertTrue(
             {f"COL-{index:04d}" for index in range(1, 13)}

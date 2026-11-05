@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0099"
+title = "Boundary-fixed deformation of an open simplex collar"
+kind = "comparison"
+section = "geometric-realization"
+order = 190
+statement = "The barycentric region where the maximal radial defect is greater than one half is an open neighborhood of the entire simplex boundary. Its actual radial retraction and relative homotopy give a homotopy equivalence from the boundary to the collar whose forward map is the boundary inclusion."
+scope = "The homotopy runs from the collar identity to inclusion composed with retraction, stays in the collar at every time, and fixes every boundary point throughout. Openness is relative to the native finite real simplex, not ambient Euclidean openness. All natural dimensions are allowed; in dimension zero both boundary and collar are empty. The source radial construction is background for this explicit defect-threshold collar, not a claim that the book states its formula. No homeomorphism with a boundary-times-interval product, mapping-cylinder neighborhood comparison, general cofibration, realization transport or cell-attachment result is established. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

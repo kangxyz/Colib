@@ -78,7 +78,7 @@ kind = "book"
 title = "Algebraic Topology"
 authors = ["Allen Hatcher"]
 year = 2002
-version = "Author's online Chapters 1, 2 and 4, Sections 1.1, 1.2, 2.1, 2.3 and 4.1 inspected 2026-11-05"
+version = "Author's online Chapters 0, 1, 2 and 4, Proposition 0.16 and Sections 1.1, 1.2, 2.1, 2.3 and 4.1 inspected 2026-11-05"
 url = "https://pi.math.cornell.edu/~hatcher/AT/ATpage.html"
 
 [[sources.HatcherAT.documents]]
@@ -98,6 +98,12 @@ label = "Chapter 1, The Fundamental Group"
 locator_prefix = "Section 1."
 url = "https://pi.math.cornell.edu/~hatcher/AT/ATch1.pdf"
 sha256 = "50b1632a200c66eeef2efba61fec49bb6d80442269f766df38817f23a01bde7c"
+
+[[sources.HatcherAT.documents]]
+label = "Chapter 0, Some Underlying Geometric Notions"
+locator_prefix = "Chapter 0,"
+url = "https://pi.math.cornell.edu/~hatcher/AT/ATch0.pdf"
+sha256 = "3c390bac0b166d5e084bc723c8593dcc7fc6b9bef54dbcae0784a3d348c3c73e"
 
 [sources.MunkresTopology]
 kind = "book"

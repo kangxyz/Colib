@@ -1,0 +1,157 @@
+[[entries]]
+id = "COL-0001"
+title = "Grothendieck group of an abelian category"
+topic = "Grothendieck groups"
+statement = "Objects generate an abelian group with one additivity relation for each short exact sequence."
+declarations = ["CategoryTheory.GrothendieckGroup"]
+reference = "stacks"
+locator = "Tag 02MU, Definition 12.11.1"
+url = "https://stacks.math.columbia.edu/tag/02MU"
+relation = "generalization"
+scope = "The implementation is defined for categories with zero morphisms. The source's abelian case is included."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0002"
+title = "Additivity on short exact sequences"
+topic = "Grothendieck groups"
+statement = "For a short exact sequence A to B to C, the class of B equals the sum of the classes of A and C."
+declarations = ["CategoryTheory.GrothendieckGroup.additivity"]
+reference = "stacks"
+locator = "Tag 02MU, defining relation"
+url = "https://stacks.math.columbia.edu/tag/02MU"
+relation = "clause"
+scope = "The relation clause of the definition."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0003"
+title = "Functoriality of the Grothendieck group"
+topic = "Grothendieck groups"
+statement = "A zero-preserving functor carrying short exact sequences to short exact sequences induces the map on object classes."
+declarations = ["CategoryTheory.GrothendieckGroup.map", "CategoryTheory.GrothendieckGroup.map_of"]
+reference = "stacks"
+locator = "Tag 02MV, Lemma 12.11.2"
+url = "https://stacks.math.columbia.edu/tag/02MV"
+relation = "generalization"
+scope = "The source's exact functor between abelian categories supplies the implementation's short-exact-sequence hypothesis."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0004"
+title = "K₀ of finite-dimensional vector spaces"
+topic = "Grothendieck groups"
+statement = "Dimension identifies the Grothendieck group of FGModuleCat k with the integers, preserving every object class."
+declarations = ["CategoryTheory.GrothendieckGroup.fgModuleRank", "CategoryTheory.GrothendieckGroup.fgModuleRank_of", "CategoryTheory.GrothendieckGroup.fgModuleRankEquiv", "CategoryTheory.GrothendieckGroup.fgModuleRankEquiv_of"]
+reference = "stacks"
+locator = "Tag 00JE, Example 10.55.2"
+url = "https://stacks.math.columbia.edu/tag/00JE"
+relation = "adaptation"
+scope = "A field k in Type u and finite modules with carriers in Type u. The group is the categorical presentation of Tag 02MU. The equivalence is normalized by dimension."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0005"
+title = "Milnor K-theory as a graded Steinberg quotient"
+topic = "Milnor K-theory"
+statement = "The degree-n group is the degree-n component of the tensor algebra on the additive group of field units modulo the Steinberg ideal."
+declarations = ["MilnorKRing", "MilnorKTheory"]
+reference = "stacks"
+locator = "Tag 0EAY, Remark 42.6.4, opening definition"
+url = "https://stacks.math.columbia.edu/tag/0EAY"
+relation = "clause"
+scope = "Only the graded quotient definition. The remark's residue maps and cycle-complex discussion have separate mathematical obligations."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0006"
+title = "The internal grading of the Milnor ring"
+topic = "Milnor K-theory"
+statement = "The quotient ring inherits an internal grading from the tensor algebra."
+declarations = ["milnorKGrading_isInternal"]
+reference = "stacks"
+locator = "Tag 0EAY, graded quotient in the opening definition"
+url = "https://stacks.math.columbia.edu/tag/0EAY"
+relation = "ingredient"
+scope = "A construction supporting the definition's grading."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0007"
+title = "The tensor-square presentation of Milnor K₂"
+topic = "Milnor K-theory"
+statement = "The degree-two group is linearly equivalent over the integers to the tensor square of the additive group of units modulo Steinberg tensors."
+declarations = ["milnorKTwoEquivTensorProductQuotient"]
+reference = "stacks"
+locator = "Tag 0EAY, degree-two tensor quotient displayed in Remark 42.6.4"
+url = "https://stacks.math.columbia.edu/tag/0EAY"
+relation = "clause"
+scope = "The explicit degree-two quotient comparison."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0008"
+title = "Two spellings of the Steinberg relation"
+topic = "Milnor K-theory"
+statement = "Tensors of units a and b satisfying a + b = 1 generate the same relation submodule as tensors x and 1 - x."
+declarations = ["MilnorK.K2.pairSteinbergSpan", "MilnorK.K2.pairSteinbergSpan_eq"]
+reference = "stacks"
+locator = "Tag 0EAY, Steinberg relations"
+url = "https://stacks.math.columbia.edu/tag/0EAY"
+relation = "comparison"
+scope = "The pair relation is the spelling from Aglib.KTheory.MilnorK.K2.Basic at Aglib commit 2c34f185. Only that presentation is compared."
+review = "author_checked"
+provenance = "aglib"
+
+[[entries]]
+id = "COL-0009"
+title = "The ordered-pair comparison retains each tensor class"
+topic = "Milnor K-theory"
+statement = "The equivalence from Stacks Milnor K₂ to the pair-symbol quotient sends every tensor class to its original quotient class."
+declarations = ["MilnorK.K2.pairPresentationEquiv", "MilnorK.K2.pairPresentationEquiv_toKGroup"]
+reference = "stacks"
+locator = "Tag 0EAY, degree-two quotient"
+url = "https://stacks.math.columbia.edu/tag/0EAY"
+relation = "comparison"
+scope = "A normalization of the actual forward map. All-degree tuple-symbol, norm and residue comparisons belong to subsequent migration."
+review = "author_checked"
+provenance = "aglib"
+
+[[entries]]
+id = "COL-0010"
+title = "Length under a local homomorphism"
+topic = "Finite-scheme coefficients"
+statement = "Restriction of scalars multiplies local module length by the residue-field degree."
+declarations = ["IsLocalRing.length_restrictScalars"]
+reference = "stacks"
+locator = "Tag 02M0, Lemma 10.52.12, single-local-ring case"
+url = "https://stacks.math.columbia.edu/tag/02M0"
+relation = "generalization"
+scope = "The source single-local-ring case assumes finite length and finite residue degree. Mathlib states the formula with extended natural lengths."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0011"
+title = "Dimension of a finite local algebra"
+topic = "Finite-scheme coefficients"
+statement = "The dimension over the base field equals local length times the degree of the residue field."
+declarations = ["IsLocalRing.finrank_eq_length_mul_residueFinrank"]
+reference = "stacks"
+locator = "Tag 02M0, field-base and regular-module specialization"
+url = "https://stacks.math.columbia.edu/tag/02M0"
+relation = "specialization"
+scope = "A finite-dimensional commutative local algebra over a field. The result is stated in natural numbers."
+review = "author_checked"
+
+[[entries]]
+id = "COL-0012"
+title = "The length-degree sum for a finite scheme over a field"
+topic = "Finite-scheme coefficients"
+statement = "The dimension of a finite algebra equals the sum of its local-ring lengths multiplied by the corresponding residue-field degrees."
+declarations = ["IsArtinianRing.finrank_eq_finsum_length_mul_residueFinrank"]
+reference = "stacks"
+locator = "Tag 02RH, Lemma 42.15.2, affine fibre coefficient calculation"
+url = "https://stacks.math.columbia.edu/tag/02RH"
+relation = "ingredient"
+scope = "The affine coefficient formula over a field, expressed through prime localizations. The full finite-flat correspondence category is a subsequent migration target."
+review = "author_checked"

@@ -1,0 +1,30 @@
+name = "Colib"
+version = "0.1.0"
+description = "Cohomology and homotopy theory in algebraic geometry."
+license = "Apache-2.0"
+defaultTargets = ["Colib"]
+testDriver = "ColibTest"
+lintDriver = "batteries/runLinter"
+lintDriverArgs = ["--no-build", "Colib"]
+builtinLint = true
+enableArtifactCache = true
+restoreAllArtifacts = true
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "16edf57de7933555826307a3d81b4391a3657a09"
+
+[[require]]
+name = "Stacks"
+git = "https://github.com/AxiomMath/Stacks"
+rev = "f8e70c5dd04bfabcb423d5e325461f527c85a5d6"
+
+[[lean_lib]]
+name = "Colib"
+leanOptions = {autoImplicit = false, weak.linter.mathlibStandardSet = true, warningAsError = true}
+
+[[lean_lib]]
+name = "ColibTest"
+globs = ["ColibTest.+"]
+leanOptions = {autoImplicit = false, warningAsError = true}

@@ -1,0 +1,23 @@
+name: Colib CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: Colib CI-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  lean:
+    permissions:
+      contents: write
+    uses: ./.github/workflows/lean-ci.yml
+    with:
+      package-directory: .
+      build-targets: Colib

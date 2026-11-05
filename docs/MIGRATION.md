@@ -1,0 +1,29 @@
+# Quillen and Motivic migration
+
+The initial pilot selects three boundaries from the proposed integration.
+
+| Boundary | Current Colib surface | Subsequent work |
+| --- | --- | --- |
+| Finite-module K₀ | Categorical dimension equivalence over a field | Compare the original Quillen degree-zero map and its exact-category presentation |
+| Milnor K₂ | Equality of the two Steinberg relation spans and the symbol-preserving tensor comparison | All-degree tuple symbols, norms, residue maps and Quillen field comparisons |
+| Finite-flat coefficients | Affine finite-algebra length-degree sum | Construct the original finite-flat spans and prove their faithful cycle and composition equations |
+
+The initial release is a source-indexed private pilot. The Quillen and Motivic libraries
+remain migration sources at the recorded commits below.
+
+- Quillen c561118b7795eb9780be9ed391c3251d6a4d0afd.
+- Motivic a6805c4a87cdfd7717dd7a94039246a167f15380.
+- Their Aglib dependency 2c34f185fa859e862661f939cd216b07bcccfb26.
+
+Extend the closed pilot one mathematical chain at a time. Exact categories and shared module
+foundations precede scheme K/G-theory and perfect-complex localization. Finite correspondence
+geometry precedes transfers, ordinary Nisnevich hypercohomology and strict invariance.
+Record cohomological degrees, coefficient universes, signs, canonical maps and actual
+conditions at each endpoint.
+
+Each candidate is classified as direct upstream reuse, a proved model/interface comparison,
+or a minimal Colib-owned prerequisite. Its actual consumers determine the incremental
+validation scope. Source correspondence and mathematical review retain their own status.
+
+The first encyclopedia release demonstrates this process on twelve entries. The amount of
+further migration is measured by the actual proof and interface repairs for subsequent slices.

@@ -1,0 +1,22 @@
+[sources.stacks]
+kind = "reference_work"
+title = "The Stacks Project"
+authors = ["The Stacks Project Authors"]
+version = "Git commit a5811b23a9bfc23256ca49035d7e121533dd6f29"
+url = "https://stacks.math.columbia.edu"
+repository = "https://github.com/stacks/stacks-project"
+revision = "a5811b23a9bfc23256ca49035d7e121533dd6f29"
+
+[sources.aglib]
+kind = "software"
+title = "Aglib"
+authors = ["kangxyz and Aglib contributors"]
+version = "Git commit 2c34f185fa859e862661f939cd216b07bcccfb26"
+url = "https://github.com/kangxyz/aglib/tree/2c34f185fa859e862661f939cd216b07bcccfb26"
+
+[sources.axiom_stacks]
+kind = "software"
+title = "The Stacks Project in Lean"
+authors = ["AxiomMath/Stacks contributors"]
+version = "Git commit f8e70c5dd04bfabcb423d5e325461f527c85a5d6"
+url = "https://github.com/AxiomMath/Stacks/tree/f8e70c5dd04bfabcb423d5e325461f527c85a5d6"

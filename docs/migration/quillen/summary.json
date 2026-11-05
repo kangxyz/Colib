@@ -1,0 +1,194 @@
+{
+  "closed_migration_rows": 0,
+  "compiled_declaration_census": "blocked: source environment has not been built and enumerated",
+  "cyclic_components": [],
+  "external_aglib_reachable_modules": 606,
+  "external_import_edges": 2010,
+  "generated_import_aggregators_with_marker": 11,
+  "inventory_kind": "lexical module/import census; not a complete declaration or result ledger",
+  "local_aglib_candidates_including_aggregator": 837,
+  "local_aglib_directory_candidates": 836,
+  "maximum_dependency_tier": 254,
+  "module_ledger_rows": 6439,
+  "production_including_generated_root": 5833,
+  "quillen_family_including_family_aggregator": {
+    "Aglib": 837,
+    "Algebra": 60,
+    "AlgebraicGeometry": 2160,
+    "CategoryTheory": 244,
+    "Devissage": 11,
+    "GTheory": 21,
+    "KTheory": 451,
+    "Localization": 38,
+    "Resolution": 12,
+    "Topology": 1310,
+    "Waldhausen": 688
+  },
+  "quillen_files_by_category": {
+    "documentation": 724,
+    "downstream_fixture": 205,
+    "generated_root": 1,
+    "in_package_test": 1281,
+    "other": 6,
+    "production": 5832,
+    "tool": 4
+  },
+  "quillen_lean_by_category": {
+    "downstream_fixture": 202,
+    "generated_root": 1,
+    "in_package_test": 1281,
+    "production": 5832
+  },
+  "schema_version": 1,
+  "source_import_edges": 28153,
+  "source_package_resolution_evidence": {
+    "batteries": {
+      "commit": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "method": "git ls-tree at source manifest pin"
+    },
+    "mathlib": {
+      "commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "method": "git ls-tree at source manifest pin"
+    }
+  },
+  "source_packages": [
+    {
+      "configFile": "lakefile.toml",
+      "inherited": false,
+      "inputRev": "2c34f185fa859e862661f939cd216b07bcccfb26",
+      "manifestFile": "lake-manifest.json",
+      "name": "Aglib",
+      "rev": "2c34f185fa859e862661f939cd216b07bcccfb26",
+      "scope": "",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/kangxyz/aglib.git"
+    },
+    {
+      "configFile": "lakefile.lean",
+      "inherited": false,
+      "inputRev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "manifestFile": "lake-manifest.json",
+      "name": "mathlib",
+      "rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "scope": "",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover-community/mathlib4.git"
+    },
+    {
+      "configFile": "lakefile.toml",
+      "inherited": true,
+      "inputRev": "main",
+      "manifestFile": "lake-manifest.json",
+      "name": "plausible",
+      "rev": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "scope": "leanprover-community",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover-community/plausible"
+    },
+    {
+      "configFile": "lakefile.toml",
+      "inherited": true,
+      "inputRev": "main",
+      "manifestFile": "lake-manifest.json",
+      "name": "LeanSearchClient",
+      "rev": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "scope": "leanprover-community",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover-community/LeanSearchClient"
+    },
+    {
+      "configFile": "lakefile.toml",
+      "inherited": true,
+      "inputRev": "main",
+      "manifestFile": "lake-manifest.json",
+      "name": "importGraph",
+      "rev": "e928b72544873815af278d38681b31c0293588e3",
+      "scope": "leanprover-community",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover-community/import-graph"
+    },
+    {
+      "configFile": "lakefile.lean",
+      "inherited": true,
+      "inputRev": "main",
+      "manifestFile": "lake-manifest.json",
+      "name": "proofwidgets",
+      "rev": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "scope": "leanprover-community",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover-community/ProofWidgets4"
+    },
+    {
+      "configFile": "lakefile.toml",
+      "inherited": true,
+      "inputRev": "master",
+      "manifestFile": "lake-manifest.json",
+      "name": "aesop",
+      "rev": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "scope": "leanprover-community",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover-community/aesop"
+    },
+    {
+      "configFile": "lakefile.toml",
+      "inherited": true,
+      "inputRev": "master",
+      "manifestFile": "lake-manifest.json",
+      "name": "Qq",
+      "rev": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "scope": "leanprover-community",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover-community/quote4"
+    },
+    {
+      "configFile": "lakefile.toml",
+      "inherited": true,
+      "inputRev": "main",
+      "manifestFile": "lake-manifest.json",
+      "name": "batteries",
+      "rev": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "scope": "leanprover-community",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover-community/batteries"
+    },
+    {
+      "configFile": "lakefile.toml",
+      "inherited": true,
+      "inputRev": "v4.34.0",
+      "manifestFile": "lake-manifest.json",
+      "name": "Cli",
+      "rev": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "scope": "leanprover",
+      "subDir": null,
+      "type": "git",
+      "url": "https://github.com/leanprover/lean4-cli"
+    }
+  ],
+  "sources": {
+    "aglib": {
+      "commit": "2c34f185fa859e862661f939cd216b07bcccfb26",
+      "lean_toolchain": "leanprover/lean4:v4.34.1",
+      "license_sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "repository": "https://github.com/kangxyz/aglib"
+    },
+    "quillen": {
+      "commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "lean_toolchain": "leanprover/lean4:v4.34.1",
+      "license_sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "repository": "https://github.com/kangxyz/quillen-k-theory"
+    }
+  },
+  "strongly_connected_components": 6439,
+  "unresolved_source_import_edges": 0,
+  "unverified_external_import_edges": 0,
+  "upstream_import_resolution": "file existence only; not Lean import elaboration"
+}

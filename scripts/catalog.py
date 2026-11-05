@@ -414,7 +414,12 @@ def main():
             built = json.loads(export.read_text())
             if built.get("source_hashes") == source_hashes():
                 data["declarations"] = built["entries"][args.identifier]["declarations"]
-                data["modules"] = built["sections"][entry["section"]]["modules"]
+                data["modules"] = sorted(
+                    {
+                        built["declarations"][name]["module"]
+                        for name in data["declarations"]
+                    }
+                )
         print(json.dumps(data, ensure_ascii=False, indent=2))
     else:
         library = load_library()

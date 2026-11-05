@@ -2,6 +2,9 @@
 
 from pathlib import Path
 import shutil
+import json
+import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -29,6 +32,11 @@ class LibraryTests(unittest.TestCase):
                 {"name": "Colib.KTheory.GrothendieckGroup.Field", "imports": []}
             ],
         }
+        module_names = {
+            "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
+            "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
+            "finite-algebra-coefficients": "Colib.AlgebraicGeometry.Cycles.FiniteAlgebra",
+        }
         for identifier in self.library["entries"]:
             name = "CategoryTheory.example_" + identifier.removeprefix("COL-")
             native["bindings"].append({"name": name, "id": identifier})
@@ -36,7 +44,9 @@ class LibraryTests(unittest.TestCase):
                 {
                     "name": name,
                     "type": "Prop",
-                    "module": "Colib.KTheory.GrothendieckGroup.Field",
+                    "module": module_names[
+                        self.library["entries"][identifier]["section"]
+                    ],
                     "dependencies": [],
                 }
             )
@@ -148,6 +158,39 @@ class LibraryTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "belong in Lean attributes"):
             catalog.load_library(self.root)
+
+    def test_editorial_move_retains_the_lean_defining_module(self):
+        shutil.copytree(catalog.ROOT / "Colib", self.root / "Colib")
+        for name in (
+            "Colib.lean",
+            "lakefile.toml",
+            "lake-manifest.json",
+            "lean-toolchain",
+        ):
+            shutil.copyfile(catalog.ROOT / name, self.root / name)
+        built = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        built["source_hashes"] = catalog.source_hashes(self.root)
+        directory = self.root / "build/library"
+        directory.mkdir(parents=True)
+        (directory / "library.json").write_text(json.dumps(built))
+        entry = self.root / "docs/library/entries/k-theory/COL-0004.toml"
+        entry.write_text(
+            entry.read_text().replace(
+                'section = "grothendieck-groups"', 'section = "milnor-k-theory"'
+            )
+        )
+        scripts = self.root / "scripts"
+        scripts.mkdir()
+        shutil.copyfile(catalog.ROOT / "scripts/catalog.py", scripts / "catalog.py")
+        result = subprocess.run(
+            [sys.executable, str(scripts / "catalog.py"), "show", "COL-0004"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        item = json.loads(result.stdout)
+        self.assertEqual(item["section"], "milnor-k-theory")
+        self.assertEqual(item["modules"], ["Colib.KTheory.GrothendieckGroup.Field"])
 
     def test_unsafe_bibliographic_path_is_rejected(self):
         path = self.root / "docs/references.toml"

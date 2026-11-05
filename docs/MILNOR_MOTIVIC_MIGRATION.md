@@ -462,3 +462,11 @@ independent module universes. The old exact-lifting API is a short corollary of
 this single proof. Equivalent private higher-level Stacks helpers are recorded
 in `migration/motivic-short-complex-criterion.json`; no new mathematics or
 additional source-model comparison is claimed.
+
+### Explicit coefficient-field retractions
+
+COL-0135 gives the coefficient-field specialization square in every degree.
+Split injectivity additionally requires actual residue-field retraction data
+with its composition equation. This is a native consequence, not a new norm
+model or a claim that arbitrary DVRs admit coefficient fields or sections.
+See `migration/milnor-coefficient-retraction.json`.

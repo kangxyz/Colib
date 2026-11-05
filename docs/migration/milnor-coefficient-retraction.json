@@ -1,0 +1,153 @@
+{
+  "target_baseline": "fb1ce5afad839b77e43d75b33ca90727cd604f9e",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0135",
+  "scope": "Actual coefficient-field classes under native DVR specialization, and split injectivity when supplied an actual residue-field retraction. Generic low-level consequence supporting the constant-field mechanism in MilnorNorm, not a reimplementation of rational-function norm/constantRetraction.",
+  "hypotheses": "R:Type u DVR, F:Type v fraction field, k:Type w field; c:k\u2192+*R; every n:Nat. Specialization formulas use Irreducible pi. Retraction conclusions additionally require g:ResidueField R\u2192+*k and g.comp(residue.comp c)=RingHom.id k. No claim that every DVR admits these maps.",
+  "declarations": [
+    {
+      "target": "Stacks.Chow.dvrMilnorSpecialization_baseField",
+      "source": "Native dvrMilnorSpecialization_ringUnits and homogeneous symbol extensionality",
+      "relation": "consequence",
+      "scope": "Every coefficient-field homogeneous class, independent universes; no retraction hypothesis."
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorSpecialization_baseField_retraction",
+      "source": "Existing milnorKTheoryMap composition/identity laws plus preceding square",
+      "relation": "consequence",
+      "scope": "Explicit actual residue-field retraction gives a left inverse in every homogeneous degree."
+    },
+    {
+      "target": "Stacks.Chow.milnorKTheoryMap_injective_of_dvr_coefficient_retraction",
+      "source": "Function.LeftInverse.injective and preceding equation",
+      "relation": "consequence",
+      "scope": "Arbitrary coefficient-field class maps injectively into fraction-field Milnor group under explicit split residue embedding."
+    }
+  ],
+  "source_correspondence": "The existing pinned MilnorNorm.ConstantRetraction contains the concrete rational-field result, with a retraction defined using residue after multiplication by X. It is not duplicated. This new generic theorem uses native specialization and packages a lower coefficient-field mechanism with its exact hypotheses. No named Aglib theorem is claimed to match this generalized statement.",
+  "upstream_audit": "Searched pinned MilnorNorm.ConstantRetraction and low DVR files; no generic coefficient-field specialization square or this arbitrary-DVR retraction endpoint found. Concrete constants injectivity remains native.",
+  "proof": "Existing tuple extensionality reduces the specialization square to actual ring units, evaluated by dvrMilnorSpecialization_ringUnits. Composition and identity of existing field maps provide the retraction. Function.LeftInverse.injective gives injectivity. No quotient, field, grading, or norm model is added.",
+  "literature_suggestion": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, DVR tame-symbol background",
+    "relation": "consequence",
+    "scope": "Background only. The coefficient-field main-component formula and conditional split injection are consequences of the pinned native implementation; the web tag does not explicitly state this retraction theorem."
+  },
+  "validation": {
+    "status": "Exact guarded production/test build passed; 2145 jobs.",
+    "source_comparison": "author_checked as generic native consequence",
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematical, source/upstream correspondence, hypotheses/universes, copyright and existing artifact/receipt hash review. No reviewer compilation or kernel replay; the added direct retraction test is validated by the separate integrated check."
+    },
+    "kernel_replay": "not requested; not run",
+    "tests": "Three independent universes, all n/arbitrary homogeneous classes, supplied split residue embedding and explicit degree zero.",
+    "lint": "Separate production/test declaration lint and style passed.",
+    "receipts": [
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-coefficient-retraction-test-pass-2.json",
+        "sha256": "3a2f008fe131d90723ff6bd33fe263db614d8a40a40e2aecb0eb0d3cb1485f84",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2393518080,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-coefficient-retraction-lint.json",
+        "sha256": "c76a0177417c06bc67b590b0ec94bba006158228df735d600274b85f09f0b14b",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3937484800,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-coefficient-retraction-test-lint.json",
+        "sha256": "cf34673f101f4858fb6d6a6993b9863c6bfad6ea70de45eb04676194f09506f9",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3931103232,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-coefficient-retraction-style.json",
+        "sha256": "475ea61205222df0c3c4fa86c98111093fe3c076879d535fce117d75e388995e",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1679486976,
+        "owned_group_gone": true
+      }
+    ],
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-retraction-fb1ce5a-20261105-1313",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 7172521984,
+      "duration_seconds": 61.17526296694996,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-retraction-check-receipt.json",
+      "receipt_sha256": "8161bfdb1f2e066c84b995f72d014629cb90eb01d4e6db2a60184e58a196425c",
+      "log": "/tmp/colib-retraction-check.log",
+      "log_sha256": "a9a04290f9fc5b0eb4f015c49fab4944ade8063344a8e42f0aa8df9c9cef681e",
+      "kernel_replay": false,
+      "artifacts": [
+        {
+          "path": "Colib/KTheory/MilnorK/Residue/CoefficientRetraction.lean",
+          "sha256": "b172bb76d36f3337ebacd7b5d70c177c282edc443ca66c092845f82d9131799f"
+        },
+        {
+          "path": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/CoefficientRetraction.olean",
+          "sha256": "56c00456e116d9ae3a7c501bd5362d7988ec85c96d56907e10226459653886a9"
+        },
+        {
+          "path": "ColibTest/MilnorCoefficientRetraction.lean",
+          "sha256": "ea1100bb59b4532a78e62b69d4bc7560cc39d4662feb5c2e7eddb88993181082"
+        },
+        {
+          "path": ".lake/build/lib/lean/ColibTest/MilnorCoefficientRetraction.olean",
+          "sha256": "15afe9504d44e4a10692b6024bdee25a9369d05e569afe2cb3f76495bf8f25d1"
+        }
+      ],
+      "tests": "Original independent-universe specialization/injectivity/degree-zero clients plus direct arbitrary-class left-inverse equation."
+    }
+  },
+  "artifacts": [
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/CoefficientRetraction.lean",
+      "source_sha256": "525aec2b6ce46ad59890f2690d9f3189ddd75825653c42f0eafefed19fb0f6de",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/CoefficientRetraction.olean",
+      "olean_sha256": "fb611bdd76f47e7565dc4b556af7c8fefcc822a2541a72d774aaeaa1cb895566"
+    },
+    {
+      "source": "ColibTest/MilnorCoefficientRetraction.lean",
+      "source_sha256": "979abd500b47cfc5a51d017a6bda98f40c3faabd0b4b05195156ddd3c5dab10a",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorCoefficientRetraction.olean",
+      "olean_sha256": "15afe9504d44e4a10692b6024bdee25a9369d05e569afe2cb3f76495bf8f25d1"
+    }
+  ],
+  "historical_target_baseline": "95c2b6837180e8a3d8d3664433348fed0d73f102"
+}

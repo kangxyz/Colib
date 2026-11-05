@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0135"
+title = "Coefficient-field splitting of Milnor transport"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 240
+statement = "Specialization of a coefficient-field class is literal residue-field transport. A supplied retraction of that residue-field embedding gives a left inverse, hence injectivity, for its Milnor map into the fraction field."
+scope = "An actual DVR R, fraction field F, field k in three independent universes, and c : k to R. All degrees including zero. The specialization formulas specify a uniformizer; splitting additionally requires a ring map g from the residue field to k with g composed with residue composed with c equal to the identity. No assertion that an arbitrary DVR admits such maps, no norm construction, and no uniformizer-independence claim. Tag 0EAY is DVR tame-symbol background, not this splitting theorem verbatim."
+review = "author_checked"
+proof = "Native homogeneous symbol extensionality and the ring-unit specialization formula give the square; field transport composition and identity then give a left inverse."

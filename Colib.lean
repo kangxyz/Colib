@@ -55,6 +55,7 @@ public import Colib.KTheory.GrothendieckGroup.SerreQuotient
 public import Colib.KTheory.GrothendieckGroup.SerreSubgroup
 public import Colib.KTheory.MilnorK.DegreeTwo
 public import Colib.KTheory.MilnorK.Residue.BaseFieldProduct
+public import Colib.KTheory.MilnorK.Residue.CoefficientRetraction
 public import Colib.KTheory.MilnorK.Residue.Naturality
 public import Colib.KTheory.MilnorK.Residue.PrincipalUnits
 public import Colib.KTheory.MilnorK.Residue.RepeatedUniformizer

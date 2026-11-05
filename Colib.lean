@@ -172,6 +172,8 @@ public import Colib.RingTheory.Koszul.TopExtGeneratorChange
 public import Colib.RingTheory.Koszul.TopExtLocalization
 public import Colib.RingTheory.Koszul.TopExtRingQuotient
 public import Colib.RingTheory.Length.FiniteAlgebra
+public import Colib.RingTheory.Length.FiniteAlgebraFiber
+public import Colib.RingTheory.Length.FiniteAlgebraLocal
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Additivity
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Basic

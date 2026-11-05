@@ -7,7 +7,7 @@ python3 scripts/catalog.py check
 lake build Colib
 lake test
 lake lint
-lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest.FiniteAlgebraImport \
+lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest.FiniteAlgebraImport ColibTest.FiniteAlgebraLocal \
   ColibTest.MilnorSymbols ColibTest.ExactGrothendieckGroup ColibTest.KoszulExt \
   ColibTest.MilnorProduct ColibTest.ExactFunctor ColibTest.SerreSubgroup ColibTest.SerreLocalization \
   ColibTest.MilnorExt ColibTest.KoszulCoefficients ColibTest.ExactPullbacks ColibTest.QConstruction \

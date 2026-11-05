@@ -154,7 +154,7 @@ url = "https://github.com/leanprover-community/mathlib4/tree/16edf57de7933555826
 
 [sources.aglib_principal_euler_pin]
 kind = "software"
-title = "Aglib Principal Euler source"
+title = "Aglib migration source"
 authors = ["kangxyz and Aglib contributors"]
 version = "Git commit 101dbb8564fb0e29f28cfcb79168d878b5ab489f"
 url = "https://github.com/kangxyz/aglib/tree/101dbb8564fb0e29f28cfcb79168d878b5ab489f"

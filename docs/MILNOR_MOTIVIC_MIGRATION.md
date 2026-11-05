@@ -599,3 +599,14 @@ contribution is zero, and specializes to cokernel length for a regular scalar.
 No second scalar-homology or prime-filtration model is introduced.
 See migration/principal-euler.md and migration/motivic-principal-euler.json
 for exact hypotheses, source correspondence and validation boundaries.
+
+### Local-base finite-algebra length formula
+
+COL-0180--COL-0181 complete the closed-fibre and local-base length chain.
+For a module-finite algebra over a local ring, finite algebra-length implies
+finite base-length, computed as localized lengths times residue degrees.
+The proof uses the native semilocal decomposition and actual LocalizedModule
+objects; the tensor presentation is transported through their existing equivalence.
+No Noetherian or local-algebra hypothesis is added. This is the finite-algebra
+specialization of Stacks 02M0, not the whole general semilocal statement.
+See migration/motivic-finite-algebra-length.json for source and validation evidence.

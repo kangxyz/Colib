@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0180"
+title = "Closed fibres and residue degrees of a finite algebra"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 40
+statement = "A finite algebra over a local ring has an Artinian closed fibre, finitely many maximal ideals, and finite residue-field degrees with their actual quotient presentation."
+scope = "Independent ring universes. No Noetherian, reduced, flat or local-algebra assumption; the algebra itself need not be Artinian."
+review = "author_checked"

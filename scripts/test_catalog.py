@@ -56,6 +56,20 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("principalEuler_quotient_closedPoint_eq_zero", source)
         self.assertIn("principalCokernel_associativity", source)
 
+    def test_finite_algebra_local_length_registration(self):
+        root = catalog.ROOT
+        for identifier, leaf in (("COL-0180", "FiniteAlgebraFiber"),
+                                 ("COL-0181", "FiniteAlgebraLocal")):
+            self.assertEqual(self.library["entries"][identifier]["section"],
+                             "finite-algebra-coefficients")
+            module = f"Colib.RingTheory.Length.{leaf}"
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            self.assertIn("ColibTest.FiniteAlgebraLocal", (root / path).read_text())
+        self.assertIn("specialization", self.library["entries"]["COL-0181"]["scope"])
+
     def native_fixture(self):
         native = {
             "bindings": [],

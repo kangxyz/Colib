@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0181"
+title = "Local-base length formula for a finite algebra"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 50
+statement = "The length over a local base of a finite-length module over its finite algebra is the sum of localized module lengths weighted by residue degrees; the base length is finite."
+scope = "The finite-algebra specialization of Stacks 02M0, not the full general semilocal theorem. Independent ring and module universes; native and tensor localizations, finite sums and finsums in extended naturals."
+review = "author_checked"

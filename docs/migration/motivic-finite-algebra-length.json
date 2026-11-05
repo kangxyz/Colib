@@ -1,0 +1,799 @@
+{
+  "title": "Finite-algebra local length formula and residue-degree comparison",
+  "component_status": "Two production leaves, 26 regression examples, declaration lint, style and standard-three-axiom audit passed. Library/root registration and registered-tree aggregate check belong to final integration.",
+  "target_baseline": "955b9bb3cb2bcee551b1089d1afb579431479839",
+  "component_worktree": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+  "evidence_directory": "/workspace/scratch/ab4c8cd79b02/finite-algebra-length-validation-20261105-1919",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "pinned_mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "pinned_stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "lean_toolchain": "leanprover/lean4:v4.34.0-rc2",
+  "source_scope_status": "Two manifest-confirmed leaves in the original 301-module motivic inventory. Selected closed-fibre and local-length endpoints are migrated; the custom prime-filtration proof-helper API is replaced by native semilocal decomposition, not copied.",
+  "source_correspondence": [
+    {
+      "source_file": "Aglib/RingTheory/FiniteLength/FiniteAlgebraFiber.lean",
+      "source_sha256": "bd8b10a57abedbbd23c988cbf017f65c9b72ffcfd8c092fc9783b5946bad33b6",
+      "target_file": "Colib/RingTheory/Length/FiniteAlgebraFiber.lean",
+      "preserved_endpoints": [
+        "finiteAlgebra_maximal_under",
+        "finiteAlgebra_specialFiber_artinian",
+        "finiteAlgebra_maximalSpectrum_finite",
+        "finiteAlgebraResidueQuotientEquiv",
+        "finiteAlgebra_residue_finite",
+        "finiteAlgebraResidueDegree",
+        "finiteAlgebra_residue_length"
+      ],
+      "new_bridge": "finiteAlgebra_residueDegree_eq_localized"
+    },
+    {
+      "source_file": "Aglib/RingTheory/FiniteLength/FiniteAlgebraLength.lean",
+      "source_sha256": "f0b180d641ffe8500c461ab435479748e3b4e9aa5007960101ebafc1d8bc363d",
+      "target_file": "Colib/RingTheory/Length/FiniteAlgebraLocal.lean",
+      "correspondence": {
+        "finiteAlgebra_length_eq_sum": "finiteAlgebra_length_eq_sum_tensor; main native-localization version also supplied",
+        "finiteAlgebra_length_eq_fiberSum": "finiteAlgebra_length_eq_finsum_tensor; intrinsic finsum replaces auxiliary chosen-sum wrapper",
+        "finiteAlgebra_length_ne_top": "same named endpoint; proposition-valued finiteAlgebra_isFiniteLength also supplied"
+      },
+      "not_copied": [
+        "length_restrictScalars_add_of_submodule_le",
+        "PrimeFiltrationFrom.length_restrictScalars_eq_add_sum",
+        "PrimeFiltrationFrom.primes_isMaximal_of_length_ne_top",
+        "PrimeFiltrationFrom.localized_length_eq_count_of_finiteLength",
+        "sum_maximalQuotient_lengths",
+        "finiteAlgebraFiberLengthSum"
+      ]
+    }
+  ],
+  "exact_scope": {
+    "hypotheses": [
+      "CommRing R",
+      "IsLocalRing R",
+      "CommRing S",
+      "Algebra R S",
+      "Module.Finite R S",
+      "AddCommGroup M",
+      "Module S M",
+      "Module R M",
+      "IsScalarTower R S M",
+      "Module.length S M != infinity"
+    ],
+    "universes": "R : Type u, S : Type v, M : Type w, independent.",
+    "conclusion": "In ENat, length_R M equals the sum over all maximal q of length_{S_q}(M_q) times finrank over ResidueField R of S/q. Native LocalizedModule and tensor presentations, Fintype sum and intrinsic finsum, and finite R-length are supplied.",
+    "not_required": [
+      "Noetherian R or S",
+      "S local",
+      "domain",
+      "reduced",
+      "flat",
+      "separable"
+    ],
+    "literature_relation": "Finite-algebra specialization of Stacks 02M0. The original Stacks theorem is more general: semilocal S with all maximal ideals above the closed base point and finite residue degrees need not be module-finite.",
+    "strengthening": "The source Noetherian-base hypothesis is removed by native Artinian-module decomposition, projection surjectivity and restriction-of-scalars length monotonicity; the actual strengthened declarations compile."
+  },
+  "native_reuse": {
+    "StacksFrontier.RingTheory.Length.SemilocalDecomposition": [
+      "nonempty_linearEquiv_pi_localizedModule",
+      "comap_asIdeal_eq_maximalIdeal",
+      "finite_maximalSpectrum",
+      "isLocalHom_algebraMap_localization",
+      "finite_residueField",
+      "length_eq_sum_finrank_mul_length_localizedModule"
+    ],
+    "Mathlib": [
+      "Module.length_le_of_surjective",
+      "Submodule.length_le_length_restrictScalars",
+      "Submodule.topEquiv",
+      "Module.length_eq_of_surjective",
+      "Module.length_eq_finrank",
+      "LocalizedModule.equivTensorProduct",
+      "Ideal.bijective_algebraMap_quotient_residueField"
+    ]
+  },
+  "public_declarations": {
+    "Colib/RingTheory/Length/FiniteAlgebraFiber.lean": [
+      "Module.finiteAlgebra_maximal_under",
+      "Module.finiteAlgebra_specialFiber_artinian",
+      "Module.finiteAlgebra_maximalSpectrum_finite",
+      "Module.finiteAlgebraResidueQuotientEquiv",
+      "Module.finiteAlgebra_residue_finite",
+      "Module.finiteAlgebraResidueDegree",
+      "Module.finiteAlgebra_residue_length",
+      "Module.finiteAlgebra_residueDegree_eq_localized"
+    ],
+    "Colib/RingTheory/Length/FiniteAlgebraLocal.lean": [
+      "Module.finiteAlgebra_localized_length_ne_top",
+      "Module.finiteAlgebra_length_eq_sum",
+      "Module.finiteAlgebra_length_eq_finsum",
+      "Module.finiteAlgebra_length_eq_finsum_tensor",
+      "Module.finiteAlgebra_length_eq_sum_tensor",
+      "Module.finiteAlgebra_length_ne_top",
+      "Module.finiteAlgebra_isFiniteLength"
+    ]
+  },
+  "public_declaration_count": 15,
+  "test_example_count": 26,
+  "lean_line_count": 495,
+  "tests": "Independent u/v/w, actual quotient and localized residue degree, all maximal points, enumerated and intrinsic native/tensor formulas, finite R-length, zero modules, genuinely nonlocal k x k with arbitrary module, and equality with existing field ring-coefficient pilot.",
+  "compiled_repairs": [
+    "Specified R := S in LinearMap.proj_surjective to resolve scalar inference.",
+    "Used Submodule.topEquiv.restrictScalars S to identify the restricted top-submodule length explicitly.",
+    "Clarified finite-algebra specialization wording; removed obsolete uncompiled status after first successful tests and rebuilt all three files."
+  ],
+  "component_source_snapshot": {
+    "Colib/RingTheory/Length/FiniteAlgebraFiber.lean": {
+      "sha256": "9d3b693c0f9a657dc784abb4b293740a1185c0a119aec0cbb97d48d956dc0418",
+      "lines": 105,
+      "olean_sha256": "2b08c54d87b53f4014dca1f1de6f5afcb569a63e15b87beb5755d258fc621ac5",
+      "trace": "finite-algebra-length-validation-20261105-1919/build-traces/Colib/RingTheory/Length/FiniteAlgebraFiber.trace",
+      "source_mtime_ns": 1793906525340061140,
+      "olean_mtime_ns": 1793906528700308324,
+      "trace_dep_hash": "0ee8f8e9ba5d2335"
+    },
+    "Colib/RingTheory/Length/FiniteAlgebraLocal.lean": {
+      "sha256": "ba5a49409cbdd88f97c00a728394e66caafa528b10cc646bce0c50e27e1c7d13",
+      "lines": 173,
+      "olean_sha256": "68ac432f9792552d0f05240a19960d7db42a63202609393979ef090cbda42fef",
+      "trace": "finite-algebra-length-validation-20261105-1919/build-traces/Colib/RingTheory/Length/FiniteAlgebraLocal.trace",
+      "source_mtime_ns": 1793906525340212308,
+      "olean_mtime_ns": 1793906531315216407,
+      "trace_dep_hash": "73d1b090fea487d4"
+    },
+    "ColibTest/FiniteAlgebraLocal.lean": {
+      "sha256": "8498c86c262ae64967571d7867f2a4a4dd947bf719987560969f2c038c86709a",
+      "lines": 217,
+      "olean_sha256": "29e93dec5fc54128c1cfde55f3848b4e27877b9e71d092bd8a26bffc2a0ae6e5",
+      "trace": "finite-algebra-length-validation-20261105-1919/build-traces/ColibTest/FiniteAlgebraLocal.trace",
+      "source_mtime_ns": 1793906525340302884,
+      "olean_mtime_ns": 1793906534293982847,
+      "trace_dep_hash": "8652ffd130e97cf9"
+    }
+  },
+  "snapshot_method": "Exact final source copies captured after final build and before handing the tree to the integrator. No concurrent source writer existed. Sources, olean SHA256, native build traces and source/output modification timestamps were captured together; not reconstructed by stripping registration annotations.",
+  "validation": {
+    "final_pass_receipts": [
+      "08-final-build.json",
+      "09-fiber-lint.json",
+      "10-local-lint.json",
+      "11-test-lint.json",
+      "12-style.json",
+      "14-axiom-audit-scope.json"
+    ],
+    "axiom_audit_declarations": 24,
+    "axiom_allowlist": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "failed_attempts": {
+      "03-local-r1.json": "Scalar inference for projection surjectivity; repaired.",
+      "04-local-r2.json": "Restricted top-submodule length normal form; repaired.",
+      "05-test-r1.json": "Dependent build repeated the same unresolved Local error; no independent test failure.",
+      "13-axiom-audit.json": "Incorrect module-name prefix selected zero declarations; corrected to Colib.RingTheory.Length in receipt14."
+    },
+    "warnings": [
+      "Pinned upstream SemilocalDecomposition line67 has a pre-existing long-line warning. No upstream source was edited.",
+      "lint-style reported absent optional scripts/nolints-style.txt and treated it as empty; exit0."
+    ],
+    "new_upstream_builds": [
+      "StacksFrontier.RingTheory.Length.SemilocalDecomposition"
+    ],
+    "not_run": [
+      "registered-tree full scripts/check.sh",
+      "kernel replay",
+      "separate downstream/client checks"
+    ],
+    "receipt_count": 14,
+    "all_owned_groups_gone": true,
+    "guard_failures": 0,
+    "max_peak_rss_bytes": 4028960768,
+    "guard_limits": {
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "sample_seconds": 0.1,
+      "physical_memory_bytes": 10451427328,
+      "lean_threads": 1,
+      "max_active_lean": 1
+    },
+    "disk_reserve": "Prestart5GiB, cancel below4GiB",
+    "receipts": [
+      {
+        "receipt": "01-semilocal.json",
+        "log": "01-semilocal.log",
+        "sha256": "95962edf36e17c57239db59565a944e7e55ada493385cb4bafe29c653291b5ea",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.RingTheory.Length.SemilocalDecomposition:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 16,
+        "pgid": 16,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2485182464,
+        "duration_seconds": 9.48654691601405,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 16,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "02-fiber-r1.json",
+        "log": "02-fiber-r1.log",
+        "sha256": "156a79e8d79fb550516cd7259be37acbe1557789cf923be8b5b9257858082c99",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Length.FiniteAlgebraFiber:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2426757120,
+        "duration_seconds": 3.9718929760274477,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "03-local-r1.json",
+        "log": "03-local-r1.log",
+        "sha256": "35423297888fbf60060bf230303e1083ac8a02dbd750a2cab3cdc473b20822f0",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Length.FiniteAlgebraLocal:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2420850688,
+        "duration_seconds": 3.85890151897911,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "04-local-r2.json",
+        "log": "04-local-r2.log",
+        "sha256": "708e0462b57db2714c4c71548e63138bff0bb26704398bcbbe1ac5640c11f7e5",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Length.FiniteAlgebraLocal:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2425454592,
+        "duration_seconds": 4.083216583007015,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "05-test-r1.json",
+        "log": "05-test-r1.log",
+        "sha256": "b9397a04dc029fdec33393edb94c32012a8387dc53034ad49947f3e01555801e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.FiniteAlgebraLocal:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2420625408,
+        "duration_seconds": 3.749885811994318,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "06-local-r3.json",
+        "log": "06-local-r3.log",
+        "sha256": "4641be6cac50e46802ef7c05a110b5edbd62351782bf364c6523fa48cc825b58",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Length.FiniteAlgebraLocal:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2438524928,
+        "duration_seconds": 4.164852595014963,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "07-test-r2.json",
+        "log": "07-test-r2.log",
+        "sha256": "033bab7d5b01c26db435ee05075da559ffd08726b79ba19e8d19fc1b7e0733d8",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.FiniteAlgebraLocal:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2419253248,
+        "duration_seconds": 4.384765719005372,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "08-final-build.json",
+        "log": "08-final-build.log",
+        "sha256": "fd6ac8abf810028c93a303b61b0d799db8f7a00b4d9f6e844247398117fc999d",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.FiniteAlgebraLocal:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2423767040,
+        "duration_seconds": 9.254100229998585,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "09-fiber-lint.json",
+        "log": "09-fiber-lint.log",
+        "sha256": "2dad4ee79d3d922f795ba49d8da2911b7557070c98be5ad83dbe8270eb0d18c4",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Length.FiniteAlgebraFiber"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 196,
+        "pgid": 196,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3845038080,
+        "duration_seconds": 9.497517252981197,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 196,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "10-local-lint.json",
+        "log": "10-local-lint.log",
+        "sha256": "4ab4294c6841145fc47e7b0cef5e7b3542478d8fad7ea0b23c4bc1af572e42d0",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Length.FiniteAlgebraLocal"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 373,
+        "pgid": 373,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4028960768,
+        "duration_seconds": 3.5369274179684,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 373,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "11-test-lint.json",
+        "log": "11-test-lint.log",
+        "sha256": "146e49ed0715ab0493edcc3c3aaeda5d7e22a0ee7c8779e462b70d0e0d3912e6",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "ColibTest.FiniteAlgebraLocal"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 493,
+        "pgid": 493,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4024709120,
+        "duration_seconds": 3.3362813740386628,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 493,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "12-style.json",
+        "log": "12-style.log",
+        "sha256": "7ba83d61dfe16ad414014b29d7a1788ccd5fa181413f6c9df7920361577507cd",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.RingTheory.Length.FiniteAlgebraFiber",
+          "Colib.RingTheory.Length.FiniteAlgebraLocal",
+          "ColibTest.FiniteAlgebraLocal"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 611,
+        "pgid": 611,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1709649920,
+        "duration_seconds": 1.4696603349875659,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 611,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "13-axiom-audit.json",
+        "log": "13-axiom-audit.log",
+        "sha256": "d667bf78e817e8006c6e9d8add72ed855a31d15b3d20f9ade6d8506d8441d7f9",
+        "state": "completed",
+        "command": [
+          "lake",
+          "env",
+          ".lake/tools/axiom-audit/.lake/build/bin/axiom-audit",
+          "--root",
+          "Colib.RingTheory.Length.FiniteAlgebra",
+          "--modules",
+          "Colib.RingTheory.Length.FiniteAlgebraLocal"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 781,
+        "pgid": 781,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3545800704,
+        "duration_seconds": 2.6045236630016007,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 781,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "14-axiom-audit-scope.json",
+        "log": "14-axiom-audit-scope.log",
+        "sha256": "a94bc252d0da2555ac9ec6f7c78d2c847d764104534e65f621279287a3048506",
+        "state": "completed",
+        "command": [
+          "lake",
+          "env",
+          ".lake/tools/axiom-audit/.lake/build/bin/axiom-audit",
+          "--root",
+          "Colib.RingTheory.Length",
+          "--modules",
+          "Colib.RingTheory.Length.FiniteAlgebraLocal"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3569537024,
+        "duration_seconds": 3.2344134409795515,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      }
+    ]
+  },
+  "handoff": {
+    "source_frozen": true,
+    "no_lean_after_release": true,
+    "root_and_catalog_registration": "Final integrator owns IDs, precise source bibliography, root import, test/check registration, catalog, generated export and complete registered-tree check.",
+    "no_branch_commit_push": true,
+    "shared_dependencies_unchanged": true,
+    "shared_cache_update": "Only the admitted missing native SemilocalDecomposition leaf was built; pinned sources unchanged."
+  },
+  "mathematical_review": {
+    "reviewer": "verify_semilocal_strengthening; read-only final reviewer who earlier participated in proof/API design",
+    "literature": "https://stacks.math.columbia.edu/tag/02M0",
+    "finding": "No missing hypothesis or mathematical discrepancy. Finite-algebra specialization and Noetherian-base removal are valid; actual canonical residue-field and localization equivalences preserve the selected source endpoints.",
+    "initial_review_sha256": {
+      "Fiber": "ac623aff635858db5acccaf94c3ffee5c5623407b0e90cb018da36116c3e4061",
+      "Local": "567b6e3e9b2eba1a4efc6b7e459f375a14d45f286a5dd0a0dc80406cbee03678"
+    },
+    "repaired_local_review_sha256": "1ac265ab3c7607d122df625ddacdc6457606ca34d18f98f0425227ccb17e3ef5",
+    "post_review_change": "Only removal of the obsolete uncompiled-draft sentence in production headers. Reconstructing that sentence in final Local exactly reproduces the reviewed SHA256. The final build ran after this removal.",
+    "review_limit": "Collaborative mathematical/source review, not fully independent review: the reviewer earlier supplied proof sketches and API repair suggestions, but did not write source or run Lean. Distinct from compilation and kernel replay.",
+    "final_review_sha256": {
+      "Colib/RingTheory/Length/FiniteAlgebraFiber.lean": "9d3b693c0f9a657dc784abb4b293740a1185c0a119aec0cbb97d48d956dc0418",
+      "Colib/RingTheory/Length/FiniteAlgebraLocal.lean": "ba5a49409cbdd88f97c00a728394e66caafa528b10cc646bce0c50e27e1c7d13",
+      "ColibTest/FiniteAlgebraLocal.lean": "8498c86c262ae64967571d7867f2a4a4dd947bf719987560969f2c038c86709a"
+    },
+    "final_review": "Final two production leaves and all 26 test examples reviewed at the frozen SHA256 hashes; no mathematical scope or source-boundary blocker found."
+  },
+  "library_items": [
+    "COL-0180",
+    "COL-0181"
+  ],
+  "registered_tree_baseline": "df8fa1a24028f17435f6cb10cfe9326b0cec3393",
+  "integrator_source_review": "Separate from component proof design: inspected both production leaves, finite-length hypothesis direction, native projection/restriction inequalities, quotient-to-localized residue degree equality, finite-sum/finsum and tensor transport. No mathematical obstruction found; only a finite-algebra specialization of 02M0 is claimed.",
+  "registered_tree_validation": {
+    "status": "passed",
+    "baseline": "df8fa1a24028f17435f6cb10cfe9326b0cec3393",
+    "command": "bash scripts/check.sh",
+    "receipt_sha256": "899bac406a55f47ac82bf55d2b9f18eca750cdea507d004971b9dbbf1d2f32b7",
+    "log_sha256": "8b11bdd5ecb8b607ee2f97b909f4c2805584035cd31923b830381239f523ebff",
+    "guard": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-length-955b9bb-20261105-1919",
+      "pid": 8,
+      "pgid": 8,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 5853708288,
+      "duration_seconds": 882.7575726780342,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 8,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ]
+    },
+    "kernel_replay": false,
+    "source_sha256": {
+      "Colib/RingTheory/Length/FiniteAlgebraFiber.lean": "2f5e0f630c549a15663405a8853d87e124a3be61b3bd4c26b400490f807e45a6",
+      "Colib/RingTheory/Length/FiniteAlgebraLocal.lean": "828a361e196610d7ea570faef8be350bafd558867fd625de0428fbafa15d708f",
+      "ColibTest/FiniteAlgebraLocal.lean": "8498c86c262ae64967571d7867f2a4a4dd947bf719987560969f2c038c86709a"
+    },
+    "dependency_sha256": {
+      "lakefile.toml": "b681aa44d657deeaed64537578c53698eb8546fa15fd44c74d949c928d94a6e1",
+      "lake-manifest.json": "305047fed14ab46f9a0d8e23e5cefa5ef5c6ea89ebf0b34f52ec172f0b9d9652",
+      "lean-toolchain": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+    },
+    "results": [
+      "57 Python regression tests",
+      "production build",
+      "in-package tests",
+      "declaration and Mathlib text lint",
+      "generated root imports",
+      "2639 declarations passed allowlisted axiom audit",
+      "178 Library items and 597 declarations exported"
+    ],
+    "notes": "Final code and registration checked together on the latest main baseline; subsequent edit only records this validation evidence."
+  }
+}

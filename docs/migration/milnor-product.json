@@ -1,0 +1,296 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Product",
+  "source_sha256": "104cd452dba0fb72c64abd46ab500bb6f91f9c02f15d23b38c83b4e3412edcee",
+  "target_baseline": "bb11e3ad22069f6cf78b1ff37919cb239dcb4e94",
+  "target_module": "Colib.KTheory.MilnorK.Symbols.Product",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "canonical_objects": [
+    "MilnorKTheory",
+    "GradedMonoid.GMul.mul",
+    "milnorKTupleSymbol",
+    "milnorKTheoryZeroAddEquiv",
+    "cast"
+  ],
+  "scope": "Three product formulas directly rewritten using native graded multiplication and canonical K0 identification. Not a complete Product module migration and no alternate product operation or general old-model comparison.",
+  "declarations": [
+    {
+      "source": "Fin.append_update_left",
+      "source_line": 32,
+      "original_declaration": "theorem append_update_left (a : Fin m → α) (b : Fin n → α) (i : Fin m) (x : α) :\n    append (Function.update a i x) b = Function.update (append a b) (castAdd n i) x",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Generic finite-index update identities, independent of Milnor K-theory. Not reconciled by this product-formula chain; retained as unresolved."
+    },
+    {
+      "source": "Fin.append_update_right",
+      "source_line": 51,
+      "original_declaration": "theorem append_update_right (a : Fin m → α) (b : Fin n → α) (i : Fin n) (x : α) :\n    append a (Function.update b i x) = Function.update (append a b) (natAdd m i) x",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Generic finite-index update identities, independent of Milnor K-theory. Not reconciled by this product-formula chain; retained as unresolved."
+    },
+    {
+      "source": "MilnorK.degreeCongr",
+      "source_line": 82,
+      "original_declaration": "def degreeCongr (h : m = n) : K F m ≃ₗ[ℤ] K F n",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.degreeCongr_refl",
+      "source_line": 86,
+      "original_declaration": "@[simp] theorem degreeCongr_refl (x : K F m) : degreeCongr rfl x = x",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.degreeCongr_symbol",
+      "source_line": 89,
+      "original_declaration": "@[simp] theorem degreeCongr_symbol (h : m = n) (a : SymbolTuple F m) :\n    degreeCongr h (symbol a) = symbol (a ∘ Fin.cast h.symm)",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.degreeCongr_trans",
+      "source_line": 95,
+      "original_declaration": "theorem degreeCongr_trans (h : m = n) (h' : n = p) (x : K F m) :\n    degreeCongr h' (degreeCongr h x) = degreeCongr (h.trans h') x",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.productSymbolLeft",
+      "source_line": 102,
+      "original_declaration": "def productSymbolLeft (a : SymbolTuple F m) : K F n →ₗ[ℤ] K F (m + n)",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.productSymbolLeft_symbol",
+      "source_line": 115,
+      "original_declaration": "@[simp] theorem productSymbolLeft_symbol (a : SymbolTuple F m) (b : SymbolTuple F n) :\n    productSymbolLeft a (symbol b) = symbol (Fin.append a b)",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.product",
+      "source_line": 119,
+      "original_declaration": "def product (m n : ℕ) : K F m →ₗ[ℤ] K F n →ₗ[ℤ] K F (m + n)",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.product_symbol",
+      "source_line": 136,
+      "original_declaration": "@[simp] theorem product_symbol (a : SymbolTuple F m) (b : SymbolTuple F n) :\n    product m n (symbol a) (symbol b) = symbol (Fin.append a b)",
+      "target": "milnorKTupleSymbol_gmul",
+      "disposition": "direct proof rewrite",
+      "hypotheses": "F : Type u, Field F; arbitrary natural degrees; no characteristic restriction.",
+      "correspondence_scope": "Native GMul replaces the old quotient product; ordinary cast replaces degreeCongr; native K0 additive equivalence replaces zeroEquiv. Ordered tuples, degree transports and integer scalar values retained.",
+      "validation": "passed"
+    },
+    {
+      "source": "MilnorK.product_add_left",
+      "source_line": 141,
+      "original_declaration": "theorem product_add_left (x x' : K F m) (y : K F n) :\n    product m n (x + x') y = product m n x y + product m n x' y",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.product_add_right",
+      "source_line": 146,
+      "original_declaration": "theorem product_add_right (x : K F m) (y y' : K F n) :\n    product m n x (y + y') = product m n x y + product m n x y'",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.map_product",
+      "source_line": 152,
+      "original_declaration": "theorem map_product (f : F →+* E) (x : K F m) (y : K F n) :\n    map (m + n) f (product m n x y) = product m n (map m f x) (map n f y)",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.product_empty_left",
+      "source_line": 167,
+      "original_declaration": "theorem product_empty_left (x : K F n) :\n    degreeCongr (Nat.zero_add n) (product 0 n (symbol Fin.elim0) x) = x",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.product_empty_right",
+      "source_line": 179,
+      "original_declaration": "theorem product_empty_right (x : K F m) :\n    degreeCongr (Nat.add_zero m) (product m 0 x (symbol Fin.elim0)) = x",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    },
+    {
+      "source": "MilnorK.product_zero_left",
+      "source_line": 191,
+      "original_declaration": "theorem product_zero_left (z : K F 0) (x : K F n) :\n    degreeCongr (Nat.zero_add n) (product 0 n z x) = zeroEquiv F z • x",
+      "target": "milnorKTheory_gmul_zero_left",
+      "disposition": "direct proof rewrite",
+      "hypotheses": "F : Type u, Field F; arbitrary natural degrees; no characteristic restriction.",
+      "correspondence_scope": "Native GMul replaces the old quotient product; ordinary cast replaces degreeCongr; native K0 additive equivalence replaces zeroEquiv. Ordered tuples, degree transports and integer scalar values retained.",
+      "validation": "passed"
+    },
+    {
+      "source": "MilnorK.product_zero_right",
+      "source_line": 199,
+      "original_declaration": "theorem product_zero_right (x : K F m) (z : K F 0) :\n    degreeCongr (Nat.add_zero m) (product m 0 x z) = zeroEquiv F z • x",
+      "target": "milnorKTheory_gmul_zero_right",
+      "disposition": "direct proof rewrite",
+      "hypotheses": "F : Type u, Field F; arbitrary natural degrees; no characteristic restriction.",
+      "correspondence_scope": "Native GMul replaces the old quotient product; ordinary cast replaces degreeCongr; native K0 additive equivalence replaces zeroEquiv. Ordered tuples, degree transports and integer scalar values retained.",
+      "validation": "passed"
+    },
+    {
+      "source": "MilnorK.product_assoc",
+      "source_line": 207,
+      "original_declaration": "theorem product_assoc (x : K F m) (y : K F n) (z : K F p) :\n    degreeCongr (Nat.add_assoc m n p) (product (m + n) p (product m n x y) z) =\n      product m (n + p) x (product n p y z)",
+      "disposition": "unresolved obligation",
+      "correspondence_scope": "Not claimed migrated in this three-formula chain; upstream graded product/additivity/associativity are candidates for statement-preserving reconciliation, not completed evidence for this old-model declaration."
+    }
+  ],
+  "upstream_reuse": [
+    {
+      "module": "Mathlib.Algebra.GradedMonoid",
+      "declarations": [
+        "GradedMonoid.GMul.mul",
+        "SetLike.gMul",
+        "SetLike.coe_gMul"
+      ],
+      "scope": "The product is existing native multiplication on homogeneous subgroups, not a Colib definition."
+    },
+    {
+      "module": "StacksFrontier.AlgebraicGeometry.Chow.KeyLemma.MilnorKSymbolProd",
+      "declarations": [
+        "milnorKSymbolProd_append"
+      ],
+      "scope": "Tuple concatenation is proved by the existing list concatenation formula."
+    },
+    {
+      "module": "StacksFrontier.AlgebraicGeometry.Chow.KeyLemma.MilnorKDegreeZero",
+      "declarations": [
+        "milnorKTheoryZeroAddEquiv",
+        "milnorKZeroMap_surjective",
+        "milnorKTheoryZeroAddEquiv_milnorKZeroMap"
+      ],
+      "scope": "No reconstruction of degree zero."
+    }
+  ],
+  "literature": [
+    {
+      "source": "Stacks Project",
+      "locator": "Tag 0EAY, first paragraph",
+      "relation": "consequence",
+      "scope": "Official first paragraph defines the tensor-algebra Steinberg quotient and states K_0^M(k)=Z. Concatenation and degree-zero scalar formulas are consequences, not verbatim formulas in the remark.",
+      "url": "https://stacks.math.columbia.edu/tag/0EAY",
+      "inspected": "2026-11-05",
+      "retrieved_html_sha256": "3fb1e7be94522221ff9945a910ca8b6f67b5f80ffe74253efe22a8bc4c1d7df4"
+    }
+  ],
+  "deferred_audit": [
+    {
+      "topic": "Generation and homogeneous-map extensionality",
+      "existing_upstream": "Stacks.Chow.milnorKGrading_le_of_forall_length in StacksFrontier.AlgebraicGeometry.Chow.MilnorNorm.SingleResidue",
+      "decision": "Do not duplicate. Candidate for extraction/upstream relocation to the low-level symbol owner before Colib symbol foundations consume it. Direct import currently drags norm/residue higher closure."
+    },
+    {
+      "topic": "Naturality",
+      "existing_upstream": "milnorKTransport and milnorKRingMap_milnorKSymbolProd",
+      "decision": "Source Map supports separate universes u/v/w; pinned Stacks transport has one universe u. Same-universe specializations alone do not close the source declaration. No new parallel transport is introduced."
+    }
+  ],
+  "validation": {
+    "source_comparison": "author_checked for three tuple/product formulas, degrees and scalar convention; no full old-model equivalence",
+    "independent_review": "Read-only independent comparison passed 2026-11-05: source hypotheses, universes, ordered concatenation, both degree casts, canonical integer normalization including negative scalars, native graded multiplication, credit/license and hashes. No compilation by the reviewer and no general old-model comparison claimed.",
+    "kernel_replay": "not requested; not run",
+    "lean_version": "leanprover/lean4:v4.34.0-rc2",
+    "commands": [
+      {
+        "command": "lake build Colib.KTheory.MilnorK.Symbols.Product",
+        "result": "Passed, 1335 jobs",
+        "resource_receipt": "colib-environment-20261105/milnor-product-build-r3.json"
+      },
+      {
+        "command": "lake exe batteries/runLinter --no-build Colib.KTheory.MilnorK.Symbols.Product",
+        "result": "Passed",
+        "resource_receipt": "colib-environment-20261105/milnor-product-lint.json"
+      },
+      {
+        "command": "lake exe mathlib/lint-style Colib.KTheory.MilnorK.Symbols.Product",
+        "result": "Passed; absent nolints file treated as empty",
+        "resource_receipt": "colib-environment-20261105/milnor-product-style.json"
+      }
+    ],
+    "source_sha256": "12bbd50013a0636b332109857c71e57d36da1311fd936dde748ece826b721098",
+    "olean_sha256": "67ade1d1ebda6bc2bc4a21be00ab32354cd0fae005b9ec8cad18d51c2e912e41",
+    "previous_worker_source_sha256": "d6647217773a46e601b86fc19ef31430f4bb1041f82aed7a830a797d8fa5da24",
+    "previous_worker_olean_sha256": "364d7350597d30e1f037a8ff2d7cca4141f521b44c2a0832e286ea7939f2c340",
+    "integration": {
+      "baseline": "bb11e3ad22069f6cf78b1ff37919cb239dcb4e94",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6420426752,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "scope": "Independent worktree on the current remote baseline plus only the product milestone; no concurrent drafts included. Original worktrees untouched.",
+      "results": {
+        "python_tests": "18 passed",
+        "catalog_metadata": "22 items, 4 chapters, 5 sections",
+        "production_build": "Passed",
+        "in_package_tests": "All seven modules passed, including MilnorProduct",
+        "declaration_lint": "Passed",
+        "text_style": "Passed",
+        "generated_entry": "Passed pinned mk_all check",
+        "production_axiom_audit": "222 declarations; only propext, Classical.choice, Quot.sound",
+        "library_export": "22 items, 43 indexed declarations",
+        "site_generation": "22 item pages, 6 reference pages"
+      },
+      "auditor_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+      "root_sha256": "b0ecb0ebf0d962ae1497504c4e06509b5692c1648a05abb19d84a7eb2991a252",
+      "log_sha256": "c86fe30f8a1f32555c505013ccdf1cc051a93e564b71af5f1021b9471018b6d6",
+      "guard_receipt_sha256": "6860c218f9643593451466eee87712db5cbec6e0f27ce44b9a2f101bdd2af874",
+      "notes": "The Stacks annotation command was split into one declaration per command before the complete successful check. Existing upstream style warnings replayed; missing optional nolints-style file treated as empty. No kernel replay or separate client checks; guard limits unchanged."
+    }
+  },
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "library_item": "COL-0022",
+  "target_only_supporting_declarations": [
+    {
+      "name": "coe_milnorKTheory_cast",
+      "visibility": "private",
+      "scope": "Equality elimination proves degree transport preserves the underlying ring element."
+    },
+    {
+      "name": "coe_milnorKTheory_zero",
+      "visibility": "private",
+      "scope": "A degree-zero class is its native canonical integer value times the ring unit."
+    }
+  ],
+  "tests": {
+    "module": "ColibTest.MilnorProduct",
+    "scope": [
+      "Nonempty ordered tuple concatenation",
+      "Empty tuple as left and right unit with explicit degree casts",
+      "Negative integer -1 on both sides with explicit degree casts"
+    ],
+    "status": "Passed in the complete guarded scripts/check.sh"
+  }
+}

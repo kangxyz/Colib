@@ -338,3 +338,22 @@ unpublished Koszul item was allocated `COL-0021`, preserving remote IDs 0015-002
 The full guarded check passed with all six test modules, the 217-declaration axiom
 audit, and the 21-item Library/site. Dependency pins and resource limits were
 unchanged; kernel replay and separate downstream client checks were not run.
+
+## Native graded-product milestone (2026-11-05)
+
+Library item `COL-0022` records three formulas: ordered tuple concatenation under
+native graded multiplication, and left/right action of a degree-zero class by its
+canonical integer value. Both degree-zero formulas explicitly transport from
+`0+n` or `n+0` to `n`. The product and degree-zero equivalence are existing native
+objects, not reconstructed operations. Stacks 0EAY is cited only for the underlying
+tensor-algebra quotient and canonical degree-zero identification, whose consequences
+are proved here. The [product ledger](migration/milnor-product.json) retains the
+remaining source declarations as unresolved; this is not a complete Product-module
+migration or an old-model equivalence. Tests cover empty/nonempty tuples and
+negative integer scalar action with the actual degree transports.
+
+On baseline `bb11e3ad22069f6cf78b1ff37919cb239dcb4e94`, the independent product
+worktree passed the complete guarded `scripts/check.sh`, including all seven
+in-package test modules, the 222-declaration axiom audit, and the 22-item Library/site.
+Resource limits and dependency pins were unchanged; no kernel replay or separate
+client checks were run.

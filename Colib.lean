@@ -12,6 +12,7 @@ public import Colib.KTheory.GrothendieckGroup.Field
 public import Colib.KTheory.GrothendieckGroup.FieldExact
 public import Colib.KTheory.MilnorK.DegreeTwo
 public import Colib.KTheory.MilnorK.Symbols.Basic
+public import Colib.KTheory.MilnorK.Symbols.Product
 public import Colib.KTheory.MilnorK.Symbols.Relations
 public import Colib.Library.Upstream
 public import Colib.RingTheory.Koszul.Ext

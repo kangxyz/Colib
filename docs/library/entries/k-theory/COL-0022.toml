@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0022"
+title = "Native graded products and degree-zero scalars"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 120
+statement = "Native graded multiplication concatenates ordered tuple symbols. Multiplication on either side by a degree-zero class is scalar multiplication by its canonical integer value."
+scope = "Fields of arbitrary characteristic and natural degrees. Left and right degree-zero products explicitly transport from 0+n and n+0 to n. Stacks 0EAY supplies the tensor-algebra quotient and degree-zero identification; these formulas are derived consequences."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use the existing native graded subgroup multiplication and the list-concatenation formula. Identify every degree-zero class using the native map from integers and retain the actual equality transport in degree."

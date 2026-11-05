@@ -496,3 +496,12 @@ including zero. Quotient scalars use source multiplication and ring representati
 also use coefficient scalar postcomposition. Existing native positive-length
 naturality and quotient actions are reused; no old named Aglib class comparison
 is claimed. See `migration/motivic-top-ext-all-naturality.json`.
+
+### Degree-one residue and ramification
+
+COL-0139 identifies native degree-one residue with integer order and its kernel
+with actual DVR units. COL-0140 proves order scaling from j(pi)=u*rho^e and its
+degree-one residue consequence in four independent universes. Exponent zero
+is permitted in the conditional nonlocal statement; locality forces positivity.
+This does not close all-degree ramification or canonical arbitrary-uniformizer
+comparison. See the two degree-one migration ledgers.

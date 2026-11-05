@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0139"
+title = "Degree-one residue as DVR order"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 250
+statement = "The native first Milnor group residue, under the native K1 and K0 identifications, is integer DVR order. Its kernel consists exactly of actual DVR units."
+scope = "Actual DVR and fraction field in independent universes, arbitrary characteristic and every K1 class. Specified order/kernel formulas and the existing canonical-choice kernel. Only an actual-DVR specialization of the source order endpoint is migrated; kernel statements are native consequences. No higher-degree exactness, abstract residue model or new independence proof. Stacks 0EAY is DVR tame-symbol background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use native K1 and K0 equivalences, shift-symbol order evaluation, and order-zero unit lifting."

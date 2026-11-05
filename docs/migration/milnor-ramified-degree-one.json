@@ -1,0 +1,186 @@
+{
+  "target_baseline": "b3d269101a858cc1dbe82d0b621ee6e90f0792ac",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.K2.DVR.RamifiedRestriction",
+  "source_sha256": "1b9de0a49380ddb36292fee53fdb8bac6d2d2edc3b6fb504e3de19a36bb1b99c",
+  "library_item": "COL-0140",
+  "scope": "Actual ramified integer-order scaling and its native degree-one residue consequence. Four independent universes. Not all-degree ramified residue naturality or arbitrary-uniformizer canonical comparison.",
+  "hypotheses": "DVRs R:Type u,S:Type v with fraction fields F:Type w,E:Type z; j:R\u2192+*S, f:F\u2192+*E and commuting algebraMap square hf; pi:R and rho:S irreducible; u:S\u02e3,e:Nat with exact equality j pi=(u:S)*rho^e. No IsLocalHom or positivity assumption is required, matching source ramified_value_map. For a local j the supplied equation forces 0<e, checked explicitly in tests.",
+  "declarations": [
+    {
+      "target": "Stacks.Chow.dvrFracOrd_map_ramified",
+      "source": "MilnorK.K2.DVR.ramified_value_map",
+      "source_lines": "149\u2013155",
+      "relation": "native model migration",
+      "scope": "Arbitrary fraction-field units, native integer order, exact uniformizer exponent and all four universes."
+    },
+    {
+      "target": "Stacks.Chow.milnorKTheoryOneAddEquiv_map",
+      "source": "Pinned milnorKTheoryOneAddEquiv_milnorKTransport",
+      "relation": "cross-universe extension",
+      "scope": "Native K1 equivalence natural under the existing cross-universe field map, no new unit/K1 model."
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol_one_map_ramified",
+      "source": "Previous order scaling plus migrated MilnorK.zeroEquiv_residue actual DVR formula",
+      "relation": "consequence",
+      "scope": "Arbitrary native K1 class; target K0 identification multiplies source residue integer by e. Specified uniformizers only."
+    }
+  ],
+  "upstream_audit": "No ramified fraction-unit order scaling or typed ramified K1 residue field-map endpoint found in pinned DvrTameSymbol. Existing native fraction decomposition, dvrFracOrd_eq_of_eq, uniformizer units and K0/K1 equivalences are directly reused. Existing degree-one transport naturality is same-universe only; new result is compatible through established RingTransport comparisons.",
+  "proof": "Take the native source unit-times-uniformizer decomposition. Map ring units using hf and map the actual uniformizer equation; integral powers give target decomposition with exponent e times source order. Native uniqueness computes target order. Native degree-one transport and K0 residue identification yield the typed residue formula.",
+  "literature_suggestion": {
+    "source": "Stacks Project",
+    "locator": "0EAY",
+    "relation": "background",
+    "scope": "DVR tame-symbol background only; the pinned native implementation supplies the degree-one and order consequences, not a claim that the web remark states the ramified formula."
+  },
+  "provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "artifacts": [
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/RamifiedOrder.lean",
+      "source_sha256": "79d345e0056b512f4217991dffb4fb5883e23d0ba6c033e04058e62acfa84c8d",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedOrder.olean",
+      "olean_sha256": "b88a40a3f57fde191b5d4f2dcee28849d363233b8aa2ee2e38491d5894ddb634"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Symbols/DegreeOneTransport.lean",
+      "source_sha256": "7bcf2901622df98a4d0ba31ebb5aab4995dfe6baf413d1510d0c6ac70a64cdde",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/DegreeOneTransport.olean",
+      "olean_sha256": "004f8e34fc90f608b359b440286f055b3b3ca862c742a748a88f768cf87d5ae5"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/RamifiedDegreeOne.lean",
+      "source_sha256": "07b7c744f1a3de89e921b325a8eb4452441f6a96b972f76a5539439d7b843060",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedDegreeOne.olean",
+      "olean_sha256": "86c9b374766b98217397cae87f1d40dedc3512585552b3907071458039f39cfb"
+    },
+    {
+      "source": "ColibTest/MilnorRamifiedDegreeOne.lean",
+      "source_sha256": "ad2090f3daab4f0ed7a5fa2668f1263ed50567b4be563e340ea11d6c1c62ea7f",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorRamifiedDegreeOne.olean",
+      "olean_sha256": "b36e4ff1c2754a209115f96a27dd36884cfaaf9ad40a9d771e126087f53ebf55"
+    }
+  ],
+  "validation": {
+    "build": "Guarded three-leaf and test build passed; 2150 jobs, no additional upstream closure.",
+    "tests": "Four independent universes, arbitrary K1 class, exponent-zero equality without locality, and explicit proof that locality forces positive exponent.",
+    "source_comparison": "author_checked source order assumptions and exact exponent equation; degree-one-only consequence",
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematics, source/upstream correspondence, universes/hypotheses, copyright and historical artifacts/receipts. No reviewer compilation or kernel replay."
+    },
+    "kernel_replay": "not requested; not run",
+    "lint": "Four separate declaration lints and style passed.",
+    "receipts": [
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-one-test-pass-2.json",
+        "sha256": "fe6b753eaf7427b44d50b6d518e74e8fa1be50701a21b913870618a6160377d0",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2408763392,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-order-lint.json",
+        "sha256": "c6a94a5239f4a83ead738a1bce11a9b107e167d65a7bff6740bf16e2315215e9",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3943227392,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-degree-one-transport-lint.json",
+        "sha256": "6d8e483a87c53a30c578222144a1beaad59fcf53e25c3e3bd2e1bbd10d211918",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3430928384,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-one-lint.json",
+        "sha256": "055e3c705fd31584f6a061fb10391b3078f41eb7c447460db72e6018b54fac16",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3973844992,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-one-test-lint.json",
+        "sha256": "9653dba07a6e132621c08b101db60ddd47cd927ae6fbe62204c9fffdcbed358c",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3968204800,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-one-style.json",
+        "sha256": "0d4696ad6380a51317085ebdee3dc0f7911da1c3a4c1fd0a30bf75546f2ebabc",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1731923968,
+        "owned_group_gone": true
+      }
+    ],
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-degree-one-b3d2691-20261105-1347",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6446043136,
+      "duration_seconds": 75.84054089698475,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-degree-one-check-receipt.json",
+      "receipt_sha256": "eae3f15233b9bff6ed0f595cfe3b28fc4944531f044590f2f0b7e6a9499ec830",
+      "log": "/tmp/colib-degree-one-check.log",
+      "log_sha256": "bc89aab27107d27254fe0f813350378c1ef0f8c25aa707e016f0542f66c8fe53",
+      "kernel_replay": false,
+      "hashes": {
+        "Colib/KTheory/MilnorK/Residue/DegreeOne.lean": "74e6ff6882001fef12866d017d49cdf2975aa3da3906da855621a0a1cca45fb7",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/DegreeOne.olean": "db477cdd184074e010b29b3a13f682ee3323fb17e29300bed1faa01e667bf8fa",
+        "Colib/KTheory/MilnorK/Residue/RamifiedOrder.lean": "928afd2ec8e267447f2307b4e5020c7fd505aa5ec54549318a9dac21b9fe4620",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedOrder.olean": "dfaef427a712ceff62a3ecb6a2103a0fe93d090f4e70339ecc407d85e35628d7",
+        "Colib/KTheory/MilnorK/Residue/RamifiedDegreeOne.lean": "4546a8f78132b451bbb3f2da190fd92c2264eb250dca1b68cdc51d40b88c4934",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedDegreeOne.olean": "80154cf6b477de119dcd6cf48cbf734b54ed0558da035c37c2784187c2f78ba5",
+        "Colib/KTheory/MilnorK/Symbols/DegreeOneTransport.lean": "7bcf2901622df98a4d0ba31ebb5aab4995dfe6baf413d1510d0c6ac70a64cdde",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/DegreeOneTransport.olean": "004f8e34fc90f608b359b440286f055b3b3ca862c742a748a88f768cf87d5ae5",
+        "ColibTest/MilnorResidueDegreeOne.lean": "bec9b6bd1b3372296d89f9d02a0f5ac3add08ae8e0b568418835a2b8d8c5a63f",
+        ".lake/build/lib/lean/ColibTest/MilnorResidueDegreeOne.olean": "fcdb10fa3810caeded05a616b703f4b5bc464a2997077103a0f7fe0f2be6fd9a",
+        "ColibTest/MilnorRamifiedDegreeOne.lean": "884042387fe777c5cdbc72ca1c11bb2a2945f71aeaf2b992045436235448ed1e",
+        ".lake/build/lib/lean/ColibTest/MilnorRamifiedDegreeOne.olean": "b36e4ff1c2754a209115f96a27dd36884cfaaf9ad40a9d771e126087f53ebf55"
+      }
+    }
+  },
+  "historical_target_baseline": "95c2b6837180e8a3d8d3664433348fed0d73f102"
+}

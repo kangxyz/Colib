@@ -1,0 +1,158 @@
+{
+  "target_baseline": "b3d269101a858cc1dbe82d0b621ee6e90f0792ac",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Basic",
+  "source_sha256": "e95f7b23ce0a17d80e05de4c8994b3762874d44f9d0363b342c715d37cf1fa94",
+  "library_item": "COL-0139",
+  "scope": "Degree-one native residue identified with integer DVR order; its specified/canonical kernel consists exactly of actual DVR units under the native K1 identification. Actual DVR specialization, not arbitrary abstract residue data.",
+  "hypotheses": "R:Type u is DVR, F:Type v is its fraction field; independent universes, arbitrary characteristic, arbitrary x:MilnorKTheory F 1. Order formula and specified residue kernel use Irreducible pi; canonical kernel uses existing choice.",
+  "declarations": [
+    {
+      "target": "Stacks.Chow.milnorKTheoryZeroAddEquiv_dvrMilnorTameSymbol",
+      "source": "MilnorK.zeroEquiv_residue",
+      "source_lines": "188\u2013197",
+      "relation": "actual-DVR specialization",
+      "scope": "Every native K1 class, actual native K1/K0 equivalences and dvrFracOrd."
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol_one_eq_zero_iff",
+      "source": "Native exists_val_eq_algebraMap_of_dvrFracOrd_eq_zero and dvrFracOrd_unitsMap",
+      "relation": "consequence",
+      "scope": "Specified residue vanishes iff the unit corresponding under the native K1 equivalence lies in the image of R\u02e3."
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol'_one_eq_zero_iff",
+      "source": "Previous result and canonical residue definition",
+      "relation": "consequence",
+      "scope": "Canonical residue kernel characterized by actual DVR units; no independence proof repeated."
+    }
+  ],
+  "upstream_audit": "Pinned MilnorKDegreeOne and MilnorKDegreeZero already supply the group identifications. Native dvrMilnorThetaHom supplies the order as shift coefficient. No matching typed K1-to-K0 order or kernel endpoint found in pinned DvrTameSymbol. All underlying models and equivalences are reused.",
+  "proof": "Represent an arbitrary K1 class using the native inverse equivalence and its public coe formula. Native shift-symbol evaluation gives order times one, identified with milnorKZeroMap. The native K0 equivalence returns that integer. Its injectivity plus native order-zero unit lifting gives the kernel characterization.",
+  "literature_suggestion": {
+    "source": "Stacks Project",
+    "locator": "0EAY",
+    "relation": "background",
+    "scope": "DVR tame-symbol background only; the pinned native implementation supplies the degree-one and order consequences, not a claim that the web remark states the ramified formula."
+  },
+  "provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "artifacts": [
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/DegreeOne.lean",
+      "source_sha256": "1dce5712bc04b329913e6ba5b5db1c4b9632e3454f1a1a8120b95236efff4b77",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/DegreeOne.olean",
+      "olean_sha256": "d001ad8bfd2582eecddd7fadeda9e287b5621bbe3c0d4996a5515c1b244555e1"
+    },
+    {
+      "source": "ColibTest/MilnorResidueDegreeOne.lean",
+      "source_sha256": "0ec8c703b98f51afad8c27057e546adc2a58e68ba78d8f199fa2521dd7745dd7",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorResidueDegreeOne.olean",
+      "olean_sha256": "fcdb10fa3810caeded05a616b703f4b5bc464a2997077103a0f7fe0f2be6fd9a"
+    }
+  ],
+  "validation": {
+    "build": "Guarded exact production/test build passed, 2130 jobs. Only known missing native MilnorKDegreeOne was compiled.",
+    "tests": "Independent ring/fraction universes, arbitrary K1 classes and canonical kernel implication.",
+    "source_comparison": "author_checked actual-DVR source specialization and kernel consequence",
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematics, source/upstream correspondence, universes/hypotheses, copyright and historical artifacts/receipts. No reviewer compilation or kernel replay."
+    },
+    "kernel_replay": "not requested; not run",
+    "lint": "Separate production/test declaration lint and style passed.",
+    "receipts": [
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-degree-one-test-pass-2.json",
+        "sha256": "54bf35511ddbce39fe5fd2a48b7b233a200c661861c106085b675374ccce14ed",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2435997696,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-degree-one-lint.json",
+        "sha256": "ae98d88e8d6dd363e68a282fb6a003168310d4ff6268ab156a88bbbfd2504cb3",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3996348416,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-degree-one-test-lint.json",
+        "sha256": "7dafae1ebde892fa528f916c23b55c6019c229985d676457e8bef5ce8041e6e0",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4003336192,
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-degree-one-style.json",
+        "sha256": "4a45f1131c100712ce0797a9234fa0ae499a7faefe19e6b1a589f42ad9071097",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1725943808,
+        "owned_group_gone": true
+      }
+    ],
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-degree-one-b3d2691-20261105-1347",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6446043136,
+      "duration_seconds": 75.84054089698475,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-degree-one-check-receipt.json",
+      "receipt_sha256": "eae3f15233b9bff6ed0f595cfe3b28fc4944531f044590f2f0b7e6a9499ec830",
+      "log": "/tmp/colib-degree-one-check.log",
+      "log_sha256": "bc89aab27107d27254fe0f813350378c1ef0f8c25aa707e016f0542f66c8fe53",
+      "kernel_replay": false,
+      "hashes": {
+        "Colib/KTheory/MilnorK/Residue/DegreeOne.lean": "74e6ff6882001fef12866d017d49cdf2975aa3da3906da855621a0a1cca45fb7",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/DegreeOne.olean": "db477cdd184074e010b29b3a13f682ee3323fb17e29300bed1faa01e667bf8fa",
+        "Colib/KTheory/MilnorK/Residue/RamifiedOrder.lean": "928afd2ec8e267447f2307b4e5020c7fd505aa5ec54549318a9dac21b9fe4620",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedOrder.olean": "dfaef427a712ceff62a3ecb6a2103a0fe93d090f4e70339ecc407d85e35628d7",
+        "Colib/KTheory/MilnorK/Residue/RamifiedDegreeOne.lean": "4546a8f78132b451bbb3f2da190fd92c2264eb250dca1b68cdc51d40b88c4934",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedDegreeOne.olean": "80154cf6b477de119dcd6cf48cbf734b54ed0558da035c37c2784187c2f78ba5",
+        "Colib/KTheory/MilnorK/Symbols/DegreeOneTransport.lean": "7bcf2901622df98a4d0ba31ebb5aab4995dfe6baf413d1510d0c6ac70a64cdde",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/DegreeOneTransport.olean": "004f8e34fc90f608b359b440286f055b3b3ca862c742a748a88f768cf87d5ae5",
+        "ColibTest/MilnorResidueDegreeOne.lean": "bec9b6bd1b3372296d89f9d02a0f5ac3add08ae8e0b568418835a2b8d8c5a63f",
+        ".lake/build/lib/lean/ColibTest/MilnorResidueDegreeOne.olean": "fcdb10fa3810caeded05a616b703f4b5bc464a2997077103a0f7fe0f2be6fd9a",
+        "ColibTest/MilnorRamifiedDegreeOne.lean": "884042387fe777c5cdbc72ca1c11bb2a2945f71aeaf2b992045436235448ed1e",
+        ".lake/build/lib/lean/ColibTest/MilnorRamifiedDegreeOne.olean": "b36e4ff1c2754a209115f96a27dd36884cfaaf9ad40a9d771e126087f53ebf55"
+      }
+    }
+  },
+  "historical_target_baseline": "95c2b6837180e8a3d8d3664433348fed0d73f102"
+}

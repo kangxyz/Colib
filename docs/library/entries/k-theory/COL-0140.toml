@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0140"
+title = "Ramified degree-one residue scaling"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 260
+statement = "A compatible ring and fraction-field square with j(pi)=u*rho^e multiplies integer order, hence the integer-valued native degree-one residue, by e."
+scope = "Four independent universes and specified uniformizers. No local-map or positivity hypothesis is needed for the conditional equality, including e=0; a local map forces e>0. Only the source integer-order endpoint is migrated; the K1 residue formula is a native consequence. No all-degree ramification or canonical arbitrary-uniformizer comparison. Stacks 0EAY is DVR tame-symbol background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Map the actual unit-times-uniformizer decomposition and use order uniqueness, then native cross-universe K1 transport and the degree-one residue formula."

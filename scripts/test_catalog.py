@@ -132,6 +132,15 @@ class LibraryTests(unittest.TestCase):
         for identifier in ("COL-0071", "COL-0072"):
             self.assertTrue(result["entries"][identifier]["references"])
 
+    def test_split_kernel_and_q_object_class_ids_keep_their_owners(self):
+        for index in range(73, 76):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"], "exact-categories"
+            )
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in range(73, 76):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
     def test_initial_ids_keep_their_owners(self):
         self.assertTrue(
             {f"COL-{index:04d}" for index in range(1, 13)}

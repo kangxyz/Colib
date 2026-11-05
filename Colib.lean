@@ -8,6 +8,7 @@ public import Colib.CategoryTheory.Bicategory.IsoQuotient
 public import Colib.CategoryTheory.ExactCategory.Abelian
 public import Colib.CategoryTheory.ExactCategory.AdditiveInvariant
 public import Colib.CategoryTheory.ExactCategory.Basic
+public import Colib.CategoryTheory.ExactCategory.Biproducts
 public import Colib.CategoryTheory.ExactCategory.Functor.Basic
 public import Colib.CategoryTheory.ExactCategory.Functor.NormalizedQ
 public import Colib.CategoryTheory.ExactCategory.Functor.Pullbacks
@@ -15,6 +16,7 @@ public import Colib.CategoryTheory.ExactCategory.Functor.QConstruction
 public import Colib.CategoryTheory.ExactCategory.Functor.QIsomorphisms
 public import Colib.CategoryTheory.ExactCategory.Functor.SerreLocalization
 public import Colib.CategoryTheory.ExactCategory.Isomorphisms
+public import Colib.CategoryTheory.ExactCategory.KernelPullback
 public import Colib.CategoryTheory.ExactCategory.MatrixDeflation
 public import Colib.CategoryTheory.ExactCategory.QCategory
 public import Colib.CategoryTheory.ExactCategory.QIsomorphisms
@@ -26,6 +28,7 @@ public import Colib.CategoryTheory.QConstruction.Core
 public import Colib.CategoryTheory.QConstruction.Functor
 public import Colib.CategoryTheory.QConstruction.HomotopyGroup
 public import Colib.CategoryTheory.QConstruction.Isomorphisms
+public import Colib.CategoryTheory.QConstruction.ObjectClass
 public import Colib.CategoryTheory.QConstruction.ZeroEndomorphisms
 public import Colib.KTheory.GrothendieckGroup.Abelian
 public import Colib.KTheory.GrothendieckGroup.AbelianNaturality

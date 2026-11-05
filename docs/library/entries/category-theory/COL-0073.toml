@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0073"
+title = "Split biproduct conflations"
+kind = "proposition"
+section = "exact-categories"
+order = 15
+statement = "In every selected exact structure, both canonical binary biproduct inclusions are admissible. The short complexes formed by inl followed by snd and by inr followed by fst are conflations."
+scope = "The category is preadditive with finite biproducts and independent object and hom universe parameters. The actual canonical maps and both summand orders are retained. The source is Lemma 2.7 and its proof, not Proposition 2.9 on sums of arbitrary conflations. No ambient abelian category, weak idempotent completeness, or assertion that every split monomorphism is admissible is required or established. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

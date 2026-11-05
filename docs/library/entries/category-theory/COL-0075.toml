@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0075"
+title = "Object classes in groupoid-valued Q-functors"
+kind = "proposition"
+section = "exact-categories"
+order = 170
+statement = "The whole-object-apex arrow from the distinguished zero vertex, followed by the inverse of the zero-apex arrow after applying any groupoid-valued Q-functor, defines an endomorphism at the image of zero. A conflation imposes the product relation for its three object classes, and these canonical object classes pairwise commute."
+scope = "The source has a selected exact structure, a preadditive category and finite biproducts. The target is any groupoid, not an assumed commutative endomorphism group. Mathlib End multiplication satisfies a * b = b followed by a; the conflation equation is class(B) = class(A) * class(C) in exactly that convention. Commutativity is proved only for the canonical object classes using the two biproduct conflations. The citation adapts the Q-arrow conflation square and gives background for the groupoid-valued formulation. There is no identification with topological loops or printed loop-concatenation conventions, no generation theorem, no assertion that all target endomorphisms commute, and no fundamental-group or K0 comparison. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

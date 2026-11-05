@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0074"
+title = "Kernels and pullbacks of conflations"
+kind = "proposition"
+section = "exact-categories"
+order = 18
+statement = "Any specified kernel of an admissible quotient forms its conflation. Pulling back a conflation along its quotient map retains the original kernel object with the canonical pullback lift, and a conflation kernel gives an actual pullback square against zero."
+scope = "The selected exact structure is on a preadditive category with finite biproducts and independent object and hom universes. The given pullback square and lift of zero and the original kernel map are retained. The same-kernel assertion adapts the dual of Proposition 2.12 (i) implies (iv); the remaining statements implement kernel universal properties and isomorphism closure. This is not Proposition 2.15 on mixed admissible pullbacks, nor a claim that arbitrary kernels or cokernels exist. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

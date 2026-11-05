@@ -19,7 +19,7 @@ lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest
   ColibTest.QGroupoid ColibTest.ObjectLoopsRegression \
   ColibTest.OpenCover ColibTest.SequentialCompactRegression \
   ColibTest.ConstantRealization ColibTest.CompletionNaturality ColibTest.PushoutOpenCover \
-  ColibTest.SimplexBoundaryCollarRegression
+  ColibTest.SimplexBoundaryCollarRegression ColibTest.SimplexChartsAnnulusRegression
 lake exe mathlib/mk_all --lib Colib --check
 
 # Aglib's pinned production auditor. This tool is separate from mathematical dependencies.

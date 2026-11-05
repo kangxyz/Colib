@@ -93,8 +93,10 @@ public import Colib.Topology.Realization.Prism
 public import Colib.Topology.Realization.PrismCoordinates
 public import Colib.Topology.Realization.PrismGluing
 public import Colib.Topology.Realization.Simplex
+public import Colib.Topology.Realization.SimplexAnnulus
 public import Colib.Topology.Realization.SimplexBoundary
 public import Colib.Topology.Realization.SimplexBoundaryCollar
+public import Colib.Topology.Realization.SimplexCharts
 public import Colib.Topology.Realization.SimplexHomotopy
 public import Colib.Topology.Realization.SimplicialColimits
 public import Colib.Topology.Realization.Triangle

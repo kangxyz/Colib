@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0101"
+title = "Path-connected simplex collar and interior overlap"
+kind = "proposition"
+section = "geometric-realization"
+order = 210
+statement = "The explicit affine map x to one quarter of the barycenter plus three quarters of x sends the simplex into its interior and scales every coordinate defect and the maximal defect by three quarters. It sends the boundary into the open overlap of collar and interior. Every overlap point joins this shrunken boundary by a radial segment in the overlap, which is path-connected in dimensions at least two."
+scope = "The collar uses the strict maximal-defect threshold one half; boundary points have defect one and their shrunken images have defect three quarters. The segment to the shrunken radial projection uses a coordinate attaining maximal defect; no convexity of the annulus is claimed. Only the final path-connectedness theorem requires 2 <= n; the coordinate identities and pointwise joining construction are dimension-unrestricted. The annulus is empty in dimension zero, and no path-connectedness conclusion is asserted in dimension one. The cited radial construction is background, not a source for these exact one-quarter/three-quarter constants or threshold. No simple connectedness, deformation retraction, sphere or product homeomorphism, realization transport or edge-path generation is established. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

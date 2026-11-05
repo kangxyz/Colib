@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0100"
+title = "Connected boundary and simply connected simplex interior"
+kind = "proposition"
+section = "geometric-realization"
+order = 200
+statement = "The boundary of a finite real standard simplex is path-connected in dimensions at least two. Its strictly positive-coordinate interior is open, path-connected and simply connected in every natural dimension, using actual barycentric segments and endpoint-fixed linear homotopies."
+scope = "Boundary path-connectedness requires 2 <= n and is proved by paths within zero-coordinate faces and edges joined through vertices. Interior simple connectedness has no dimension lower bound; the actual barycenter supplies nonemptiness, including n = 0. Openness is relative to the simplex. No general theorem about arbitrary convex subsets, ambient Euclidean openness, or simple connectedness of the boundary is asserted. The cited linear-homotopy construction is an ingredient for boundary paths and an adaptation for the positive-coordinate interior. Shrunken boundary and annular overlap statements belong to the following item. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

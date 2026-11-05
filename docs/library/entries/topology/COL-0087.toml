@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0087"
+title = "Open-cover subdivision and path-groupoid generation"
+kind = "proposition"
+section = "homotopy-groups"
+order = 30
+statement = "Paths and continuous squares admit finite monotone subdivisions subordinate to an open cover of their images. A wide subgroupoid containing all paths lying in each member of an open cover is the whole fundamental groupoid. For simply connected cover members, it suffices to supply a local path in the subgroupoid between each pair of points."
+scope = "The cover index and ambient-space universes are independent. Subdivision needs only image coverage; subgroupoid generation assumes coverage of the whole space. Grid parameters are monotone, not necessarily strictly increasing. The groupoid statements do not impose the common-basepoint and intersection-connectedness assumptions of the cited based-group argument, which is background only. The simply connected criterion retains its explicit local-path hypothesis. Endpoint casts are preserved. No edge-path generation, van Kampen pushout or presentation, or surjectivity of the Grothendieck comparison is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0088"
+title = "Compact-source factorization through sequential stages"
+kind = "proposition"
+section = "homotopy-groups"
+order = 40
+statement = "In an actual sequential topological colimit of T1 spaces with injective stage maps, every compact subset is contained in one stage. Successor closed embeddings give closed-embedding stage maps. With both T1 stages and successor closed embeddings, maps from compact spaces factor continuously through a stage, including beyond any prescribed stage, and paths lift with the transported endpoints."
+scope = "The index is the natural numbers and the cocone is supplied with its IsColimit witness. Compact containment assumes T1 stages and injective cocone maps, not closed embeddings. The stage closed-embedding theorem assumes successor closed embeddings but no T1 hypothesis. Continuous factorization and the colimit T1 conclusion combine these separate assumptions. The compact source may have an independent universe and need not be Hausdorff or locally compact. Lemma A.3 is cited in its T1 closed-inclusion specialization; its more general relatively T1 hypothesis is not formalized here. The weaker injective-stage containment and auxiliary stage-embedding results use that discussion as background only. No arbitrary filtered-colimit or realization-specific claim is made. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

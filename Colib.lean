@@ -62,6 +62,8 @@ public import Colib.RingTheory.Koszul.Coefficients
 public import Colib.RingTheory.Koszul.Ext
 public import Colib.RingTheory.Koszul.PrincipalExt
 public import Colib.RingTheory.Length.FiniteAlgebra
+public import Colib.Topology.Category.TopCat.SequentialColimit.Compact
+public import Colib.Topology.Category.TopCat.SequentialColimit.FundamentalGroupoid
 public import Colib.Topology.ClassifyingSpace.ArrowPaths
 public import Colib.Topology.ClassifyingSpace.Basic
 public import Colib.Topology.ClassifyingSpace.Map
@@ -70,6 +72,7 @@ public import Colib.Topology.ClassifyingSpace.Path
 public import Colib.Topology.ClassifyingSpace.PointedFunctor
 public import Colib.Topology.Homotopy.HomotopyGroup.BasedHomotopy
 public import Colib.Topology.Homotopy.HomotopyGroup.Map
+public import Colib.Topology.Homotopy.OpenCover
 public import Colib.Topology.Realization.Basic
 public import Colib.Topology.Realization.Constant
 public import Colib.Topology.Realization.Cylinder

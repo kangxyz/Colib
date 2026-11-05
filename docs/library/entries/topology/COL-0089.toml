@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0089"
+title = "Fundamental-groupoid fullness at sequential colimits"
+kind = "proposition"
+section = "homotopy-groups"
+order = 50
+statement = "For an actual sequential colimit of T1 spaces with successor closed embeddings, if every transition after stage k induces a full fundamental-groupoid functor, then the inclusion of stage k into the colimit induces a full functor. Every path between points of that stage is homotopic relative to its endpoints to the image of a path in the stage."
+scope = "All stages lie in one TopCat universe. Fullness of finite transition composites is propagated separately without separation or embedding assumptions; the colimit conclusion additionally requires T1 at every stage and closed embeddings at every successor. The cited compact-factorization lemma is an ingredient, not a claim that the paper states this exact groupoid-fullness theorem. No faithfulness, essential surjectivity, equivalence, edge-path generation, or homotopy-group isomorphism is established. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

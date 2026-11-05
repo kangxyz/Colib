@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0024"
+title = "Exact-functor maps on algebraic K₀"
+kind = "theorem"
+section = "grothendieck-groups"
+order = 80
+statement = "An exact additive functor induces an algebraic K₀ homomorphism sending each object class to the class of its image. These maps preserve identity and composition."
+scope = "The general conflation presentation, not only canonical abelian exact structures. Identity and composition are consequences of the generator formula. No comparison with homotopy groups of the Q-construction is claimed. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -6,10 +6,14 @@ public import Colib.CategoryTheory.Abelian.Projective.Ext
 public import Colib.CategoryTheory.ExactCategory.Abelian
 public import Colib.CategoryTheory.ExactCategory.AdditiveInvariant
 public import Colib.CategoryTheory.ExactCategory.Basic
+public import Colib.CategoryTheory.ExactCategory.Functor.Basic
 public import Colib.KTheory.GrothendieckGroup.Abelian
+public import Colib.KTheory.GrothendieckGroup.AbelianNaturality
 public import Colib.KTheory.GrothendieckGroup.Basic
 public import Colib.KTheory.GrothendieckGroup.Field
 public import Colib.KTheory.GrothendieckGroup.FieldExact
+public import Colib.KTheory.GrothendieckGroup.Map
+public import Colib.KTheory.GrothendieckGroup.SerreSubgroup
 public import Colib.KTheory.MilnorK.DegreeTwo
 public import Colib.KTheory.MilnorK.Symbols.Basic
 public import Colib.KTheory.MilnorK.Symbols.Product

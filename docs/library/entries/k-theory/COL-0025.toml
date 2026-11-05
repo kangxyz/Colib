@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0025"
+title = "Naturality of the abelian K₀ comparison"
+kind = "comparison"
+section = "grothendieck-groups"
+order = 90
+statement = "The generator-preserving equivalence between the canonical abelian exact K₀ and the pinned Stacks group intertwines exact-functor maps in both directions."
+scope = "Abelian source and target categories with their canonical exact structures. This is a comparison of Lean presentations using the object-class formula of Tag 02MV, not an additional naturality statement quoted verbatim from that tag. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

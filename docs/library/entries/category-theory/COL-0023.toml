@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0023"
+title = "Exact additive functors"
+kind = "definition"
+section = "exact-categories"
+order = 40
+statement = "An additive functor preserving the selected conflations is exact. Identity and composition retain exactness."
+scope = "Chosen exact structures at the stated universes; this interface does not require preservation of arbitrary finite limits or colimits. Preservation of admissible pushout and pullback squares is not asserted here. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

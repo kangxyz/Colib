@@ -22,6 +22,7 @@ public import Colib.CategoryTheory.ExactCategory.QCategory
 public import Colib.CategoryTheory.ExactCategory.QIsomorphisms
 public import Colib.CategoryTheory.Functor.Rebase
 public import Colib.CategoryTheory.Functor.Rebase.Composition
+public import Colib.CategoryTheory.Groupoid.TransportedImage
 public import Colib.CategoryTheory.QConstruction.Basic
 public import Colib.CategoryTheory.QConstruction.Connected
 public import Colib.CategoryTheory.QConstruction.Core
@@ -62,6 +63,8 @@ public import Colib.RingTheory.Koszul.Coefficients
 public import Colib.RingTheory.Koszul.Ext
 public import Colib.RingTheory.Koszul.PrincipalExt
 public import Colib.RingTheory.Length.FiniteAlgebra
+public import Colib.Topology.Category.TopCat.PushoutInteriors
+public import Colib.Topology.Category.TopCat.Pushouts
 public import Colib.Topology.Category.TopCat.SequentialColimit.Compact
 public import Colib.Topology.Category.TopCat.SequentialColimit.FundamentalGroupoid
 public import Colib.Topology.ClassifyingSpace.ArrowPaths
@@ -75,6 +78,7 @@ public import Colib.Topology.ClassifyingSpace.PointedFunctor
 public import Colib.Topology.Homotopy.HomotopyGroup.BasedHomotopy
 public import Colib.Topology.Homotopy.HomotopyGroup.Map
 public import Colib.Topology.Homotopy.OpenCover
+public import Colib.Topology.Homotopy.OpenCoverFull
 public import Colib.Topology.Realization.Basic
 public import Colib.Topology.Realization.Constant
 public import Colib.Topology.Realization.ConstantIso

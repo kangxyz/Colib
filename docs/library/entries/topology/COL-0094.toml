@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0094"
+title = "Closed embeddings under topological cobase change"
+kind = "proposition"
+section = "homotopy-groups"
+order = 60
+statement = "In an actual pushout square of topological spaces, the cobase change of a closed embedding is a closed embedding."
+scope = "All four spaces share one universe. Only the specified attaching leg is assumed a closed embedding; the other attaching map is arbitrary continuous. No T1, Hausdorff, compactness, local connectedness or cofibration hypothesis is used. The conclusion concerns the opposite pushout leg, not both legs. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

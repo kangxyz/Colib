@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0096"
+title = "Images transported by chosen groupoid isomorphisms"
+kind = "definition"
+section = "functor-constructions"
+order = 30
+statement = "A functor between groupoids, a chosen source object for each target object, and specified isomorphisms from their images define a wide subgroupoid of the target. An arrow belongs precisely when its transport along those endpoint isomorphisms is the image of an arrow between the chosen source objects."
+scope = "Membership retains the actual equation F.map q = (e x).hom followed by p followed by (e y).inv. The source and target object universes are independent, with the existing Groupoid instances retained. The functor need not be injective on objects, full or faithful. Chosen representatives and isomorphisms for every target object are explicit data, not omitted existence assumptions. This is a transported wide image, not the ordinary set of image objects. Hatcher provides only the change-of-basepoint conjugation background, not this general categorical definition. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -114,3 +114,17 @@ authors = ["Daniel Dugger", "Daniel C. Isaksen"]
 year = 2001
 version = "arXiv:math/0111287v1, 27 November 2001; Appendix A, Lemma A.3 inspected 2026-11-05"
 url = "https://arxiv.org/pdf/math/0111287v1"
+
+[sources.BoardmanPushouts]
+kind = "article"
+title = "Pushouts and Adjunction Spaces"
+authors = ["J. Michael Boardman"]
+year = 2007
+version = "Revision D, 7 September 2007; Propositions 9 and 11 inspected 2026-11-05"
+url = "https://math.jhu.edu/~jmb/note/pushout.pdf"
+
+[[sources.BoardmanPushouts.documents]]
+label = "Pushouts and Adjunction Spaces, Revision D"
+locator_prefix = "Proposition"
+url = "https://math.jhu.edu/~jmb/note/pushout.pdf"
+sha256 = "e53e2280fc34f080208788061904e9c9235332149e1848845049f0e8aadffdc0"

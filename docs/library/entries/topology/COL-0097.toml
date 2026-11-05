@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0097"
+title = "Fullness of an open inclusion from disjoint charts"
+kind = "proposition"
+section = "homotopy-groups"
+order = 80
+statement = "Let an open subset U and a pairwise disjoint family of simply connected open subsets cover a space. If every chart intersects U in a path-connected subset, the actual inclusion of U induces a full functor on fundamental groupoids."
+scope = "Path-connected overlaps are nonempty. U itself need not be path-connected, and the ambient-space and chart-index universes are independent. The proof treats arbitrary actual paths using subdivision, compatible anchor paths and their transported image subgroupoid. Anchor existence only needs coverage, chart disjointness and the stated path-connectedness assumptions, not openness or simple connectedness. The cited based-group subdivision argument is background; uniqueness of path classes in a simply connected chart is an ingredient. No faithfulness, equivalence, edge-path generation, cellular decomposition or van Kampen presentation is established. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

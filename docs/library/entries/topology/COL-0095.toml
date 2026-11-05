@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0095"
+title = "Open complements in topological pushouts"
+kind = "proposition"
+section = "homotopy-groups"
+order = 70
+statement = "The complement of a closed embedded attaching locus maps openly and injectively into the actual pushout, with image the complement of the opposite summand. If the two summands are T1, the pushout is T1."
+scope = "The five supporting statements have distinct hypotheses: uniqueness of cell points outside the attaching locus requires no injectivity assumption; the open-image and complement-range formulas assume only injectivity of the attaching map; the open-embedding and T1 statements require a closed embedding. Only the T1 conclusion assumes T1 of the two summands. No additional T1 assumption on the attaching space or Hausdorff assumption is imposed. Boardman Proposition 11(b) is background for the weaker injective-map variants. No collar, deformation or cellular decomposition is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

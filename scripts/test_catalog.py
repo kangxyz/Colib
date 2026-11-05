@@ -141,6 +141,25 @@ class LibraryTests(unittest.TestCase):
                 self.assertIn("ColibTest." + test, (root / path).read_text())
         self.assertIn("ordinary norm-order", self.library["entries"]["COL-0199"]["scope"])
 
+    def test_native_dvr_norm_order_registration(self):
+        root = catalog.ROOT
+        modules = {
+            "COL-0200": "Colib.RingTheory.DiscreteValuationRing.FractionOrder",
+            "COL-0201": "Colib.RingTheory.Norm.DVROrder",
+        }
+        for identifier, module in modules.items():
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            for test in ("DVRFractionOrder", "DVRNormOrder"):
+                self.assertIn("ColibTest." + test, (root / path).read_text())
+        source = (root / "Colib/RingTheory/Norm/DVROrder.lean").read_text()
+        self.assertIn("theorem neg_log_valuation_norm", source)
+        self.assertIn("theorem dvrFracOrd_norm_mk0", source)
+        self.assertNotIn("[PerfectField", source)
+        self.assertNotIn("[HenselianLocalRing", source)
+
     def native_fixture(self):
         native = {
             "bindings": [],

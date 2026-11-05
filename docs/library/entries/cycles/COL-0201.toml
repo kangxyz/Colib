@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0201"
+title = "Ordinary field norms and native DVR orders"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 140
+statement = "The ordinary field norm multiplies the native DVR order by the actual residue-field degree for every fraction-field unit, including negative orders. The nonzero-element version supplies the native nonzero norm proof, and the literal negative-logarithm formula needs no chosen uniformizer."
+scope = "Finite torsion-free extension of DVRs with specified compatible fraction fields, both scalar towers and explicit finite-dimensionality of the field extension. Locality and integral closure are derived. No perfectness, separability, henselianity, prime-degree or invertible ramification-exponent assumption. The old relative ideal-norm helper and Milnor transfer are not claimed."
+review = "author_checked"

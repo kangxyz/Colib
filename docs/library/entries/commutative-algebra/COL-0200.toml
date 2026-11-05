@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0200"
+title = "Native DVR fraction orders and valuation normalization"
+kind = "comparison"
+section = "henselian-ramification"
+order = 30
+statement = "The existing integer order on fraction-field units respects integer powers and inversion and is exactly the negative logarithm of the actual maximal-ideal valuation. Changing the irreducible uniformizer does not change that order."
+scope = "One DVR and its specified fraction field, in independent universes. All integer orders, including poles, are retained. No new order, valuation, uniformizer-unit or additive-homomorphism model is introduced."
+review = "author_checked"

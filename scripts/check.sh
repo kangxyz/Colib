@@ -7,7 +7,7 @@ python3 scripts/catalog.py check
 lake build Colib
 lake test
 lake lint
-lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest.FiniteAlgebraImport ColibTest.FiniteAlgebraLocal ColibTest.FiniteAlgebraNorm ColibTest.CompletionBranches ColibTest.FractionBranches ColibTest.DVRResidueNorm ColibTest.HenselianPrincipalRoots ColibTest.HenselianUniformizerNormalization ColibTest.DVRRamificationDegree ColibTest.DVRUniformizerBinomial ColibTest.DVRUniformizerNorm ColibTest.DVRPrimeUniformizerNorm \
+lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest.FiniteAlgebraImport ColibTest.FiniteAlgebraLocal ColibTest.FiniteAlgebraNorm ColibTest.CompletionBranches ColibTest.FractionBranches ColibTest.DVRResidueNorm ColibTest.HenselianPrincipalRoots ColibTest.HenselianUniformizerNormalization ColibTest.DVRRamificationDegree ColibTest.DVRUniformizerBinomial ColibTest.DVRUniformizerNorm ColibTest.DVRPrimeUniformizerNorm ColibTest.DVRFractionOrder ColibTest.DVRNormOrder \
   ColibTest.MilnorSymbols ColibTest.ExactGrothendieckGroup ColibTest.KoszulExt \
   ColibTest.MilnorProduct ColibTest.ExactFunctor ColibTest.SerreSubgroup ColibTest.SerreLocalization \
   ColibTest.MilnorExt ColibTest.KoszulCoefficients ColibTest.ExactPullbacks ColibTest.QConstruction \

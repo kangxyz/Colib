@@ -663,3 +663,18 @@ exponent, actual integral-closure and compatible finite-dimensional field data.
 The exponent-one case needs neither henselianity nor primality. No ordinary
 norm-order, Milnor transfer or norm-residue-symbol theorem is claimed.
 See migration/motivic-uniformizer-norm.json for precise scope and provenance.
+
+### Native ordinary DVR norm orders
+
+COL-0200--COL-0201 close the ordinary field-norm order endpoint omitted by the
+preceding exact-coefficient milestone. The existing native fraction order is
+identified with the literal negative logarithm of the maximal-ideal valuation.
+Ordinary norms multiply it by the actual residue degree, for arbitrary field
+units and explicit nonzero elements, including all negative orders. The proof
+uses actual integral unit norms, the acyclic native e*f formula and cancellation
+of a nonzero integer exponent. It needs no perfectness, separability, Hensel
+lifting, prime degree or invertibility of the exponent. The finite torsion-free
+DVR extension, actual compatible fraction fields and finite-dimensional field
+data remain explicit. No second order model is introduced; the old relative
+ideal-norm helper and Milnor transfer are not claimed.
+See migration/motivic-dvr-norm-order.json for exact scope and source comparison.

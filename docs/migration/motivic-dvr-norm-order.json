@@ -1,0 +1,139 @@
+{
+  "milestone": "Native ordinary DVR norm orders",
+  "baseline": "21fccae5386792d1987a76b8326df49e82abc135",
+  "aglib_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "library_items": [
+    "COL-0200",
+    "COL-0201"
+  ],
+  "source_correspondence": {
+    "state": "author_checked",
+    "independent_literature_review": false,
+    "original_repository": {
+      "repository": "https://github.com/kangxyz/motivic",
+      "revision": "b368f6965228e63643380033ec224335bcd24a2c"
+    },
+    "source_module": {
+      "source_module": "Motivic.Aglib.RingTheory.DVRNormValuation",
+      "source_sha256": "7e08e6503d336988192dfe1bf904f8a2f523f9479c316a8bdb66d2ddb28a87e7",
+      "module": "Aglib.RingTheory.DVRNormValuation",
+      "sha256": "af15a6a5c883bdbc7a94075e5380ddd41467e9926ebd24d858c56368fdc35da7"
+    },
+    "source_endpoint_mapping": {
+      "order:36": "dvrFracOrd_eq_neg_log_valuation",
+      "order_zpow:52": "dvrFracOrd_zpow",
+      "order_inv:55": "dvrFracOrd_inv",
+      "order_uniformizer:71": "dvrFracOrd_uniformizer",
+      "norm_ringUnit:105": "Algebra.norm_unitsMap_eq_intNorm",
+      "order_norm_ringUnit:111": "Stacks.Chow.dvrFracOrd_norm_unitsMap",
+      "order_norm_uniformizer:118": "Stacks.Chow.dvrFracOrd_norm_uniformizer",
+      "order_norm:147": "Stacks.Chow.dvrFracOrd_norm; Stacks.Chow.neg_log_valuation_norm"
+    },
+    "explicitly_not_migrated": [
+      "Old order/orderHom/uniformizerUnit definitions, replaced by native objects",
+      "span_intNorm_uniformizer:83, not needed by this replacement proof",
+      "Old Aglib K2 order adapter, replaced by selected native order interfaces"
+    ],
+    "native_order": "Stacks.Chow.dvrFracOrd",
+    "native_degree_supplier": "IsDiscreteValuationRing.finrank_eq_ramification_mul_residue_finrank",
+    "proof_change": "The original perfect-field-dependent relative-ideal-norm route is replaced by native e*f and cancellation by a nonzero integer. Locality and the actual integral-closure interface are derived. The literal source normalization is compared without reproducing the old order definitions.",
+    "source_mathematical_review": {
+      "state": "completed",
+      "scope": [
+        "The actual valuation sends a uniformizer to exp(-1), so negative logarithm agrees with native integer order",
+        "Both original scalar towers identify the same base-to-extension map in the norm equation",
+        "The native degree formula uses the actual exponent and residue finrank",
+        "A nonzero integer exponent is cancelled, with no residue-field power cancellation",
+        "Arbitrary negative orders and the explicit nonzero-element norm remain covered"
+      ],
+      "result": "No source-normalization, scalar-tower, degree-factor or hypothesis mismatch found.",
+      "boundary": "Component-author source correspondence review, separate from compilation; not external independent peer review.",
+      "evidence_file": "dvr-norm-order-validation-20261105-2215/AUTHOR-CORRESPONDENCE.md",
+      "evidence_sha256": "d6adef01db13ce375c6529296869bfdb01093d3eb77429fb017da60666711a44"
+    }
+  },
+  "scope": [
+    {
+      "id": "COL-0200",
+      "statement": "The existing integer order on fraction-field units respects integer powers and inversion and is exactly the negative logarithm of the actual maximal-ideal valuation. Changing the irreducible uniformizer does not change that order.",
+      "conditions": "One DVR and its specified fraction field, in independent universes. All integer orders, including poles, are retained. No new order, valuation, uniformizer-unit or additive-homomorphism model is introduced."
+    },
+    {
+      "id": "COL-0201",
+      "statement": "The ordinary field norm multiplies the native DVR order by the actual residue-field degree for every fraction-field unit, including negative orders. The nonzero-element version supplies the native nonzero norm proof, and the literal negative-logarithm formula needs no chosen uniformizer.",
+      "conditions": "Finite torsion-free extension of DVRs with specified compatible fraction fields, both scalar towers and explicit finite-dimensionality of the field extension. Locality and integral closure are derived. No perfectness, separability, henselianity, prime-degree or invertible ramification-exponent assumption. The old relative ideal-norm helper and Milnor transfer are not claimed."
+    }
+  ],
+  "component_validation": {
+    "production_leaves": 2,
+    "test_leaves": 2,
+    "production_theorems": 14,
+    "named_test_theorems": 19,
+    "declaration_lint_modules": 4,
+    "style": "passed",
+    "production_and_test_axiom_audits": "passed",
+    "kernel_replay": false,
+    "registered_tree": false
+  },
+  "registered_tree_validation": {
+    "state": "passed",
+    "command": "bash scripts/check.sh",
+    "production_build": "passed",
+    "in_package_tests": "passed",
+    "python_tests": 65,
+    "declaration_lint": "passed",
+    "text_style": "passed",
+    "generated_entry": "passed",
+    "production_axiom_audit": {
+      "declarations": 2927,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "library_export": {
+      "items": 198,
+      "indexed_declarations": 666,
+      "chapters": 7,
+      "sections": 22,
+      "reference_pages": 14
+    },
+    "website_build": "passed",
+    "resource_limits": {
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "sample_seconds": 0.1,
+      "physical_memory_bytes": 10451427328,
+      "lean_threads": 1,
+      "max_active_lean": 1
+    },
+    "peak_owned_rss_bytes": 6505746432,
+    "owned_group_gone": true,
+    "guard_failure": null,
+    "kernel_replay": false,
+    "pins_changed": false,
+    "component_evidence_directory": "dvr-norm-order-validation-20261105-2215",
+    "registered_tree_evidence_directory": "dvr-norm-order-integration-20261105-2220",
+    "receipt": "03-full-check.json",
+    "log": "03-full-check.log"
+  },
+  "registered_sources": {
+    "Colib/RingTheory/DiscreteValuationRing/FractionOrder.lean": {
+      "sha256": "b3ca3a459689e3088e5c16abab24967fb3189a9da230614456371d34e0c63965",
+      "validated_component_sha256": "2922e8687f3474919a8aea49802575ccf9aae9262fb83cb5c5981b55c74c6f95"
+    },
+    "Colib/RingTheory/Norm/DVROrder.lean": {
+      "sha256": "97571afc30256fefee9f8e618fb1c0b1b31ac864ba85c1e5eee36024dbf4fc26",
+      "validated_component_sha256": "65af998750fdc142b466a3010afb8fd25f47bedb864b61e9417692145ec1e599"
+    },
+    "ColibTest/DVRFractionOrder.lean": {
+      "sha256": "77542b2239a389d6c016d17deda6a43966cab803e4298a4163169abdf21b22cc",
+      "validated_component_sha256": "77542b2239a389d6c016d17deda6a43966cab803e4298a4163169abdf21b22cc"
+    },
+    "ColibTest/DVRNormOrder.lean": {
+      "sha256": "57fef2d7b881546364864374a5c87678a1ac094b5166cef9e91d2b10b97a4e67",
+      "validated_component_sha256": "57fef2d7b881546364864374a5c87678a1ac094b5166cef9e91d2b10b97a4e67"
+    }
+  }
+}

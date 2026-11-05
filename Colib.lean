@@ -159,6 +159,7 @@ public import Colib.RingTheory.AdicCompletion.FiniteDedekindBranches
 public import Colib.RingTheory.AdicCompletion.FractionBranches
 public import Colib.RingTheory.AdicCompletion.OriginalBranch
 public import Colib.RingTheory.AdicCompletion.SemilocalBranches
+public import Colib.RingTheory.DiscreteValuationRing.FractionOrder
 public import Colib.RingTheory.DiscreteValuationRing.RamificationDegree
 public import Colib.RingTheory.Henselian.PrincipalRoots
 public import Colib.RingTheory.Henselian.UniformizerNormalization
@@ -194,6 +195,7 @@ public import Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Basic
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Support
+public import Colib.RingTheory.Norm.DVROrder
 public import Colib.RingTheory.Norm.DVRPrimeUniformizer
 public import Colib.RingTheory.Norm.DVRResidue
 public import Colib.RingTheory.Norm.DVRUniformizer

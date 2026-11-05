@@ -1,5 +1,6 @@
 module  -- shake: keep-all --deprecated_module: ignore
 
+public import Colib.Algebra.Homology.DerivedCategory.Ext.Regular
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
 public import Colib.CategoryTheory.Abelian.Projective.Ext
@@ -28,11 +29,16 @@ public import Colib.KTheory.GrothendieckGroup.SerreQuotient
 public import Colib.KTheory.GrothendieckGroup.SerreSubgroup
 public import Colib.KTheory.MilnorK.DegreeTwo
 public import Colib.KTheory.MilnorK.Symbols.Basic
+public import Colib.KTheory.MilnorK.Symbols.Descent
 public import Colib.KTheory.MilnorK.Symbols.Ext
 public import Colib.KTheory.MilnorK.Symbols.Product
 public import Colib.KTheory.MilnorK.Symbols.Relations
+public import Colib.KTheory.MilnorK.Symbols.SymbolMap
 public import Colib.Library.Upstream
+public import Colib.LinearAlgebra.TensorAlgebra.HomogeneousLift
+public import Colib.LinearAlgebra.TensorAlgebra.IdealVanishing
 public import Colib.RingTheory.Koszul.Coefficients
 public import Colib.RingTheory.Koszul.Ext
+public import Colib.RingTheory.Koszul.PrincipalExt
 public import Colib.RingTheory.Length.FiniteAlgebra
 public import Colib.Util.References

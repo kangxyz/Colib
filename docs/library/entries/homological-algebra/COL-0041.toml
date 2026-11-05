@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0041"
+title = "Principal regular quotient Ext concentration"
+kind = "theorem"
+section = "projective-dimension"
+order = 30
+statement = "The quotient by a ring-regular scalar has projective dimension at most one and vanishing Ext above degree one. Coefficient regularity alone kills degree-zero Ext; both regularities give vanishing outside degree one."
+scope = "An arbitrary commutative ring and actual principal ideal quotient, with coefficients in the ring universe and any supported Ext universe. The dimension bound needs no HasExt instance. No Noetherianity, finiteness, nonunit or proper-ideal assumption; units are allowed. No degree-one identification or nonvanishing assertion. Stacks 062F/0CXC are resolution/dimension ingredients, not verbatim concentration statements."
+review = "author_checked"
+provenance = "aglib"
+proof = "Specialize the existing weakly regular sequence bound to a singleton. Identify degree-zero Ext with Hom and reuse the generic annihilator/regularity Hom-vanishing criterion. Split the remaining degrees."

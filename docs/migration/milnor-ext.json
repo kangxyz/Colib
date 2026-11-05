@@ -117,7 +117,7 @@
   "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
   "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
   "library_item": "COL-0030",
-  "reconciles": "docs/migration/milnor-symbols.json: MilnorK.addHom_ext and MilnorK.linearMap_ext only; lift, lift_symbol and existsUnique_lift remain unresolved.",
+  "reconciles": "The earlier two extensionality endpoints remain migrated here. The formerly unresolved lift, lift_symbol and existsUnique_lift are now closed separately by docs/migration/milnor-descent.json; this extensionality proof itself does not construct descent.",
   "tests": {
     "module": "ColibTest.MilnorExt",
     "scope": "Explicit independent universes u/v for both additive and integer-linear maps; arbitrary degree and degree zero determined by the empty tuple.",

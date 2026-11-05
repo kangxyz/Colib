@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0042"
+title = "Universal descent of homogeneous Milnor symbols"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 140
+statement = "Every tuple function additive in each multiplicative unit coordinate and vanishing on adjacent Steinberg pairs extends uniquely to an integer-linear map from the native homogeneous Milnor K-group."
+scope = "An arbitrary field and additive target group in independent universes, every natural degree including zero. Uses the native Stacks tensor-algebra Steinberg quotient. Stacks 0EAY supplies construction background only, not the verbatim universal property. No second Milnor model or general old-to-new comparison is introduced."
+review = "author_checked"
+provenance = "aglib"
+proof = "Extend the multilinear function by the native degree projection, annihilate the entire two-sided Steinberg ideal using arbitrary pure tensor factors on both sides, descend through the additive congruence and restrict to the homogeneous group. Exact tuple evaluation and established homogeneous extensionality give uniqueness."

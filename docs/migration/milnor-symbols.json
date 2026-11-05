@@ -136,29 +136,45 @@
           "source": "MilnorK.IsSymbolMap",
           "source_line": 113,
           "original_declaration": "structure IsSymbolMap (s : SymbolTuple F n \u2192 A) : Prop",
-          "disposition": "unresolved obligation",
-          "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
+          "disposition": "direct proof rewrite",
+          "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
+          "target": "IsMilnorKSymbolMap",
+          "target_module": "Colib.KTheory.MilnorK.Symbols.SymbolMap",
+          "ledger": "docs/migration/milnor-descent.json",
+          "validation": "See the dedicated descent ledger for current integration evidence."
         },
         {
           "source": "MilnorK.symbol_isSymbolMap",
           "source_line": 121,
           "original_declaration": "theorem symbol_isSymbolMap : IsSymbolMap (symbol (F := F) (n := n))",
-          "disposition": "unresolved obligation",
-          "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
+          "disposition": "direct proof rewrite",
+          "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
+          "target": "milnorKTupleSymbol_isSymbolMap",
+          "target_module": "Colib.KTheory.MilnorK.Symbols.SymbolMap",
+          "ledger": "docs/migration/milnor-descent.json",
+          "validation": "See the dedicated descent ledger for current integration evidence."
         },
         {
           "source": "MilnorK.lift",
           "source_line": 125,
           "original_declaration": "def lift (s : SymbolTuple F n \u2192 A) (hs : IsSymbolMap s) : K F n \u2192\u2097[\u2124] A",
-          "disposition": "unresolved obligation",
-          "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
+          "disposition": "direct proof rewrite",
+          "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
+          "target": "IsMilnorKSymbolMap.lift",
+          "target_module": "Colib.KTheory.MilnorK.Symbols.Descent",
+          "ledger": "docs/migration/milnor-descent.json",
+          "validation": "See the dedicated descent ledger for current integration evidence."
         },
         {
           "source": "MilnorK.lift_symbol",
           "source_line": 136,
           "original_declaration": "@[simp] theorem lift_symbol (s : SymbolTuple F n \u2192 A) (hs : IsSymbolMap s)\n    (a : SymbolTuple F n) : lift s hs (symbol a) = s a",
-          "disposition": "unresolved obligation",
-          "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
+          "disposition": "direct proof rewrite",
+          "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
+          "target": "IsMilnorKSymbolMap.lift_symbol",
+          "target_module": "Colib.KTheory.MilnorK.Symbols.Descent",
+          "ledger": "docs/migration/milnor-descent.json",
+          "validation": "See the dedicated descent ledger for current integration evidence."
         },
         {
           "source": "MilnorK.linearMap_ext",
@@ -186,8 +202,12 @@
           "source": "MilnorK.existsUnique_lift",
           "source_line": 157,
           "original_declaration": "theorem existsUnique_lift (s : SymbolTuple F n \u2192 A) (hs : IsSymbolMap s) :\n    \u2203! f : K F n \u2192\u2097[\u2124] A, \u2200 a : SymbolTuple F n, f (symbol a) = s a",
-          "disposition": "unresolved obligation",
-          "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
+          "disposition": "direct proof rewrite",
+          "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
+          "target": "IsMilnorKSymbolMap.existsUnique_lift",
+          "target_module": "Colib.KTheory.MilnorK.Symbols.Descent",
+          "ledger": "docs/migration/milnor-descent.json",
+          "validation": "See the dedicated descent ledger for current integration evidence."
         }
       ]
     },
@@ -367,5 +387,5 @@
     "COL-0013",
     "COL-0014"
   ],
-  "generated_source_declarations": "The generated constructor, recursor and field projections of the unresolved IsSymbolMap structure remain unresolved with that owner; they are not independently migrated."
+  "generated_source_declarations": "IsSymbolMap is migrated to IsMilnorKSymbolMap with the same coordinate-additivity and adjacent Steinberg fields, as recorded in milnor-descent.json. Constructor, recursor and field projections are generated with that new owner, not independent source-name aliases or a formal old-to-new model comparison."
 }

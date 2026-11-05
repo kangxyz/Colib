@@ -1,0 +1,153 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Basic",
+  "source_sha256": "4297c2658506883d5ec2f6c64643ab739ba268b4be86127e785c9b7c201bd7ff",
+  "target_baseline": "36f7d6169afeec2f0537896dd8f56b68bda27ba9",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Full arbitrary nonnegative degree universal symbol lift on the canonical Stacks homogeneous Milnor group; no alternate model or general old-to-new model comparison.",
+  "hypotheses": "k : Type u, Field k, n : Nat; A : Type v, AddCommGroup A, independent universes; coordinate multiplication is addition and adjacent unit entries with field sum one map to zero.",
+  "declarations": [
+    {
+      "source": "MilnorK.IsSymbolMap",
+      "target": "IsMilnorKSymbolMap",
+      "disposition": "direct proof rewrite on native Stacks model",
+      "validation": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.symbol_isSymbolMap",
+      "target": "milnorKTupleSymbol_isSymbolMap",
+      "disposition": "direct proof rewrite on native Stacks model",
+      "validation": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.lift",
+      "target": "IsMilnorKSymbolMap.lift",
+      "disposition": "direct proof rewrite on native Stacks model",
+      "validation": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.lift_symbol",
+      "target": "IsMilnorKSymbolMap.lift_symbol",
+      "disposition": "direct proof rewrite on native Stacks model",
+      "validation": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.existsUnique_lift",
+      "target": "IsMilnorKSymbolMap.existsUnique_lift",
+      "disposition": "direct proof rewrite on native Stacks model",
+      "validation": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    }
+  ],
+  "proof": "Convert coordinate additive maps to an integer-multilinear map. Extend through PiTensorProduct.lift and the canonical direct-sum degree projection. Show every Steinberg generator multiplied by arbitrary pure tensors vanishes: in the selected degree use the adjacent Steinberg condition, otherwise the degree projection is zero. Tensor extensionality extends the vanishing to arbitrary left and right factors. Native TwoSidedIdeal span-as-additive-closure gives annihilation of the entire ideal. Descend via the native additive congruence and restrict to the native homogeneous subgroup. Symbol evaluation is exact and prior native extensionality supplies uniqueness.",
+  "upstream_reuse": [
+    "Mathlib TensorAlgebra.toDirectSum/ofDirectSum and their tprod evaluation",
+    "Mathlib PiTensorProduct.lift and extensionality",
+    "Mathlib DirectSum.component and linearMap_ext",
+    "Mathlib TwoSidedIdeal.mem_span_iff_mem_addSubgroup_closure",
+    "Mathlib AddCon.lift",
+    "Stacks milnorKSteinbergRelations, milnorKSteinbergIdeal, MilnorKRing, milnorKGrading, MilnorKTheory",
+    "Colib milnorKTheory_linearMap_ext and native typed symbol relations"
+  ],
+  "upstream_gap_audit": "Pinned MilnorKTheory/Transport/DegreeZero/DegreeTwo interfaces supply native quotient, ring lifts, degree zero augmentation and degree two infrastructure. No matching arbitrary-degree lift to an arbitrary additive target was found; no higher norm/residue dependency was introduced.",
+  "upstream_candidates": [
+    "TensorAlgebra.tprod_append",
+    "TensorAlgebra.liftHomogeneous and pure-tensor evaluation/uniqueness",
+    "TensorAlgebra.linearMap_ext_tprod",
+    "TensorAlgebra.map_eq_zero_of_mem_span_of_tprod"
+  ],
+  "validation": {
+    "source_comparison": "author_checked against source lines 113\u2013163; exact hypotheses, independent universes, all n, prescribed tuple evaluation and uniqueness retained on selected canonical model",
+    "independent_review": "Read-only independent review passed: same Field, all natural degrees, independent u/v and AddCommGroup target; two symbol-map fields match Aglib. Pure-tensor extension has exact selected-degree evaluation and vanishes at every other degree. Two successive tensor extensionality arguments extend both sandwich factors, then additive closure annihilates the entire native two-sided ideal without assuming multiplicativity. Quotient descent and homogeneous restriction preserve evaluation; existing extensionality proves uniqueness. Degree zero and one are covered. Source hashes, dependency pins, native object ownership and attribution were checked. No compilation or kernel audit was performed by this reviewer; no old-to-new model equivalence is claimed.",
+    "kernel_replay": "not requested; not run",
+    "integration_status": "Passed complete guarded scripts/check.sh on the combined isolated baseline.",
+    "integration": {
+      "baseline": "36f7d6169afeec2f0537896dd8f56b68bda27ba9",
+      "date": "2026-11-05",
+      "command": "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 7019905024,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "results": {
+        "python_tests": "31 passed",
+        "production_build": "Passed with all remote Q-category contributions retained",
+        "in_package_tests": "All eighteen modules passed, including PrincipalExt and MilnorDescent",
+        "declaration_lint": "Passed full lake lint",
+        "text_style": "Passed",
+        "generated_entry": "Passed pinned mk_all check",
+        "production_axiom_audit": "510 declarations; only propext, Classical.choice, Quot.sound",
+        "library_export": "42 items, 106 indexed declarations",
+        "site_generation": "4 chapters, 8 sections, 42 item pages, 6 reference pages"
+      },
+      "auditor_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+      "root_sha256": "d043e6506fb7b4d14197875ba13325ad2734616cc902f2e86df150dd4b27a938",
+      "log_sha256": "ea14f38f95280c911cded21a5664fc9ed79fa57ff1680161371444c9063e774e",
+      "guard_receipt_sha256": "53c97a98819590edaea6f9a86fff14376137187fac0d189e80776d0bfa77e38f",
+      "notes": "Isolated current-main worktree plus only these two reviewed chains; all remote files, fixture mappings and references retained. Reallocated previously unpublished PrincipalExt ID to COL-0041, descent to COL-0042. Pins and original resource limits unchanged. No kernel replay or separate downstream client checks."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/LinearAlgebra/TensorAlgebra/HomogeneousLift.lean",
+        "source_sha256": "dcd523b537044c99f2cebf4392d81a636f30d2823395a760dea072ef3f9331b2",
+        "olean": ".lake/build/lib/lean/Colib/LinearAlgebra/TensorAlgebra/HomogeneousLift.olean",
+        "olean_sha256": "05ba3a0e69cb99abdbfa62d85a93bc9ace9eca89d0d0d34557fa59d1546f37d0"
+      },
+      {
+        "source": "Colib/LinearAlgebra/TensorAlgebra/IdealVanishing.lean",
+        "source_sha256": "e3ce31848451650de76c9b3ec16f02153b5b98d3f212f819b0fd682fbcfd7eb7",
+        "olean": ".lake/build/lib/lean/Colib/LinearAlgebra/TensorAlgebra/IdealVanishing.olean",
+        "olean_sha256": "686846ead0b321f9f994479d690e8ced056a6875763178d4b8bafa9001709b9f"
+      },
+      {
+        "source": "Colib/KTheory/MilnorK/Symbols/SymbolMap.lean",
+        "source_sha256": "f164f4bcf18243f2a1017817aa21a68f3801f4db471df84b6ddcd87c3c1f443a",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/SymbolMap.olean",
+        "olean_sha256": "6989db1a9db69420bdd1a7b80c78ac1b1540b2d3c1efd82af21a7a51d6f4c502"
+      },
+      {
+        "source": "Colib/KTheory/MilnorK/Symbols/Descent.lean",
+        "source_sha256": "bcb62c20e96ffd3360e6a52c2a669eac6cd4b748fc3dd5aebd1f334edca1fdae",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Descent.olean",
+        "olean_sha256": "3316abb2a5a53b8d25255cbd23af7648d73e42dc5ef068fa8dafc48d04b47f04"
+      },
+      {
+        "source": "ColibTest/MilnorDescent.lean",
+        "source_sha256": "5d7e3f056129e5f708aac7c823abefb5ee2248cf1ab9a272789ce50d57b15dd9",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorDescent.olean",
+        "olean_sha256": "7b4ca9be68a5a2ab4e882bb4434b8b9a76b906622147cdfd116a0472fd36f0bb"
+      }
+    ]
+  },
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "library_item": "COL-0042",
+  "reconciles": "The IsSymbolMap, symbol_isSymbolMap, lift, lift_symbol and existsUnique_lift entries in milnor-symbols; does not claim all Basic declarations migrated.",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, first paragraph",
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "relation": "consequence of defining generators and Steinberg relation, not an exact theorem stated there",
+    "verification": "Official Tag 0EAY first paragraph inspected; graded tensor-algebra quotient is construction background only. It does not state this arbitrary-degree arbitrary-additive-target universal property verbatim.",
+    "retrieved_html_sha256": "3fb1e7be94522221ff9945a910ca8b6f67b5f80ffe74253efe22a8bc4c1d7df4"
+  },
+  "tests": {
+    "module": "ColibTest.MilnorDescent",
+    "scope": "All natural degrees, independent target universe, exact tuple evaluation, degree zero, native symbol lift is the identity.",
+    "status": "Passed complete guarded check."
+  }
+}

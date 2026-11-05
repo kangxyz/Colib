@@ -1,0 +1,193 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext.lean",
+      "sha256": "061e56a857f77e8240ce12376e4c63c8bf730246da84fb752b9de2f24c36cb5e"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext/Ideal.lean",
+      "sha256": "6a7a578a2ada139397a290a2b4adf8e1e3256dbfa70fe86f60874cd287929c47"
+    }
+  ],
+  "provenance": {
+    "copyright": "2026 algebraic-geometry contributors",
+    "authors": "kangxyz",
+    "license": "Apache-2.0",
+    "origin_scope": "Native Aglib consequences of its Motivic-derived Koszul family; not claimed to be verbatim declarations from the original Motivic archive."
+  },
+  "canonical_objects": [
+    "CategoryTheory.Abelian.Ext",
+    "ModuleCat",
+    "Ideal.span",
+    "CategoryTheory.HasProjectiveDimensionLE"
+  ],
+  "declarations": [
+    {
+      "source": "ChainComplex.Koszul.singleIdealExtZero_eq_zero_of_regular",
+      "target": "Koszul.principalExtZero_eq_zero_of_regular",
+      "target_module": "Colib.RingTheory.Koszul.PrincipalExt",
+      "disposition": "direct proof rewrite on unchanged native quotient/Ext objects",
+      "hypotheses": "CommRing R; arbitrary HasExt universe, coefficient N; IsSMulRegular N a only.",
+      "status": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "ChainComplex.Koszul.singleIdealQuotient_hasProjectiveDimensionLE",
+      "target": "Koszul.principalQuotient_hasProjectiveDimensionLE",
+      "target_module": "Colib.RingTheory.Koszul.PrincipalExt",
+      "disposition": "direct proof rewrite on unchanged native quotient/Ext objects",
+      "hypotheses": "CommRing R; IsSMulRegular R a; no coefficient/Ext-universe hypothesis.",
+      "status": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "ChainComplex.Koszul.singleIdealExt_eq_zero_above_one",
+      "target": "Koszul.principalExt_eq_zero_above_one",
+      "target_module": "Colib.RingTheory.Koszul.PrincipalExt",
+      "disposition": "direct proof rewrite on unchanged native quotient/Ext objects",
+      "hypotheses": "CommRing R; IsSMulRegular R a; arbitrary N and HasExt universe; 1 < n.",
+      "status": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "ChainComplex.Koszul.singleIdealExt_eq_zero_of_ne_one",
+      "target": "Koszul.principalExt_eq_zero_of_ne_one",
+      "target_module": "Colib.RingTheory.Koszul.PrincipalExt",
+      "disposition": "direct proof rewrite on unchanged native quotient/Ext objects",
+      "hypotheses": "CommRing R; IsSMulRegular R a and IsSMulRegular N a; arbitrary supported HasExt universe; n != 1.",
+      "status": "Passed full guarded integration; source correspondence and independent read-only review recorded separately."
+    }
+  ],
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "reused": [
+      {
+        "module": "Mathlib.RingTheory.Regular.LinearMap",
+        "declaration": "IsSMulRegular.linearMap_subsingleton_of_mem_annihilator",
+        "scope": "Exact generic Hom vanishing with arbitrary modules; unlike subsingleton_linearMap_iff, this direction needs neither Noetherianity nor finite modules."
+      },
+      {
+        "module": "Mathlib.Algebra.Homology.DerivedCategory.Ext.Basic",
+        "declaration": "CategoryTheory.Abelian.Ext.homEquiv\u2080",
+        "scope": "Native degree-zero Ext identifies with categorical Hom without imposing a new Ext model."
+      },
+      {
+        "module": "Mathlib.RingTheory.Ideal.Colon",
+        "declaration": "Ideal.annihilator_quotient",
+        "scope": "The principal generator annihilates the actual ideal quotient."
+      },
+      {
+        "module": "Colib.RingTheory.Koszul.Ext",
+        "declaration": "Koszul.quotient_hasProjectiveDimensionLE_of_weaklyRegular",
+        "scope": "Already-migrated Stacks resolution bound applied to [a]; no reconstruction of a one-element resolution."
+      }
+    ],
+    "nearby_stacks": {
+      "module": "StacksFrontier.RingTheory.Depth.Ext",
+      "declaration": "ext_zero_subsingleton_of_depth_pos",
+      "scope": "Noetherian local ring, finite coefficients and positive depth; these stronger hypotheses do not replace the source-valid generic regular-scalar criterion."
+    },
+    "search_scope": "Pinned Stacks regularity/depth/Koszul Ext sources and pinned Mathlib Regular.LinearMap / derived Ext sources. No public direct principal-quotient concentration result with exactly these hypotheses was located."
+  },
+  "correspondence_scope": "The four principal-ideal source endpoints retain the identical actual quotient R / Ideal.span {a}, native Ext, coefficients, degree, and hypotheses. No source SingleQuotient implementation, degree-one equivalence, cocycle normalization, or comparison of old complex models is claimed to be migrated here.",
+  "supporting_targets": [
+    {
+      "target": "CategoryTheory.Abelian.Ext.eq_zero_of_mem_annihilator_of_isSMulRegular",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.Regular",
+      "source_argument": "ChainComplex.Koszul.singleExtZero_eq_zero_of_regular",
+      "scope": "Generalize the source degree-zero argument to an arbitrary annihilated source and independent module universe, by direct reuse of Mathlib Hom-vanishing and Ext equivalence.",
+      "status": "Native focused build and declaration lint passed; valid generalization of source argument, not claimed as an identical source theorem."
+    }
+  ],
+  "validation": {
+    "independent_review": "Read-only independent source/mathematical/provenance/hash review found no blocking issue: four identical principal-ideal endpoint statements; degree zero needs coefficient regularity only, higher vanishing and projective dimension need ring regularity only; arbitrary supported Ext universe and same-universe principal coefficients; supporting criterion retains independent u/v/w. No nonunit, proper-ideal, Noetherian, finite or nontrivial-ring assumption, nor degree-one nonvanishing or computation. Source and target hashes and dependency pins checked; this review did not compile or run kernel replay.",
+    "kernel_replay": "not requested; not run",
+    "integration_status": "Passed complete guarded scripts/check.sh on the combined isolated baseline.",
+    "integration": {
+      "baseline": "36f7d6169afeec2f0537896dd8f56b68bda27ba9",
+      "date": "2026-11-05",
+      "command": "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 7019905024,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "results": {
+        "python_tests": "31 passed",
+        "production_build": "Passed with all remote Q-category contributions retained",
+        "in_package_tests": "All eighteen modules passed, including PrincipalExt and MilnorDescent",
+        "declaration_lint": "Passed full lake lint",
+        "text_style": "Passed",
+        "generated_entry": "Passed pinned mk_all check",
+        "production_axiom_audit": "510 declarations; only propext, Classical.choice, Quot.sound",
+        "library_export": "42 items, 106 indexed declarations",
+        "site_generation": "4 chapters, 8 sections, 42 item pages, 6 reference pages"
+      },
+      "auditor_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+      "root_sha256": "d043e6506fb7b4d14197875ba13325ad2734616cc902f2e86df150dd4b27a938",
+      "log_sha256": "ea14f38f95280c911cded21a5664fc9ed79fa57ff1680161371444c9063e774e",
+      "guard_receipt_sha256": "53c97a98819590edaea6f9a86fff14376137187fac0d189e80776d0bfa77e38f",
+      "notes": "Isolated current-main worktree plus only these two reviewed chains; all remote files, fixture mappings and references retained. Reallocated previously unpublished PrincipalExt ID to COL-0041, descent to COL-0042. Pins and original resource limits unchanged. No kernel replay or separate downstream client checks."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/Algebra/Homology/DerivedCategory/Ext/Regular.lean",
+        "source_sha256": "e316ef6fc2f7eb7d46da8ecf2ca4a6e82b2084ad008cdb3d3a746e8c503be3b4",
+        "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/DerivedCategory/Ext/Regular.olean",
+        "olean_sha256": "ba80a061aedfc6951fe979eb967d9ae9115e556106aa899a088ac71e7bde7468"
+      },
+      {
+        "source": "Colib/RingTheory/Koszul/PrincipalExt.lean",
+        "source_sha256": "0d941fbd56c0a2b42db5692b0e5fa10a04af32dfbe307e4ddbdc2242c94147e6",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalExt.olean",
+        "olean_sha256": "3bc8af77872de518f52e1de7b130c11c7b78eec0b3f301140a3a00c4e7b8dbaf"
+      },
+      {
+        "source": "ColibTest/PrincipalExt.lean",
+        "source_sha256": "b91dfd04a0828987b84c525498534428ba7c3de912ddf341a0a8dc21391d92b3",
+        "olean": ".lake/build/lib/lean/ColibTest/PrincipalExt.olean",
+        "olean_sha256": "7328f3597490ebb274f6ca1cda29b30ff328e5941ad5bbe3d4e78b4271e2c075"
+      }
+    ]
+  },
+  "tests": {
+    "module": "ColibTest.PrincipalExt",
+    "status": "Passed full guarded scripts/check.sh; includes projective dimension without HasExt and unit-scalar boundary tests.",
+    "scope": [
+      "Independent module and Ext universes for generic degree-zero criterion",
+      "Degree-zero endpoint without source regularity",
+      "Degree-two endpoint without coefficient regularity",
+      "Full concentration with both regularities",
+      "Projective-dimension bound without HasExt",
+      "Unit scalar boundary for dimension and concentration"
+    ]
+  },
+  "library_item": "COL-0041",
+  "target_baseline": "36f7d6169afeec2f0537896dd8f56b68bda27ba9",
+  "literature": {
+    "062F": "Regular singleton Koszul resolution ingredient only",
+    "0CXC": "Finite projective resolution/projective dimension ingredient only",
+    "scope": "Neither tag is a verbatim principal-quotient Ext concentration statement; no degree-one nonvanishing is claimed.",
+    "documents": [
+      {
+        "tag": "062F",
+        "url": "https://stacks.math.columbia.edu/tag/062F",
+        "retrieved_html_sha256": "86e50074e47ab88c6da8d69bdbaf10cf2553be41e61cc5634aa270bc78e6d36f",
+        "inspected": "2026-11-05"
+      },
+      {
+        "tag": "0CXC",
+        "url": "https://stacks.math.columbia.edu/tag/0CXC",
+        "retrieved_html_sha256": "8f8fac7a2d6ecb2fdb72b79cb62ed539d5b057c955c600ea63a19f6e3ed3c9b3",
+        "inspected": "2026-11-05"
+      }
+    ]
+  }
+}

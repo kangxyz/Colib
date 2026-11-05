@@ -389,3 +389,37 @@ The complete guarded check passed for both milestones: 27 Python tests, all twel
 Lean test modules, declaration/text lint, the generated-entry check, the 335-declaration
 production axiom audit, and the 31-item Library/site. The guard recorded no failure
 and confirmed that the owned process group exited.
+
+## Principal regular quotient Ext milestone (2026-11-05)
+
+Library item `COL-0041` specializes the existing native Koszul dimension bound to
+one ring-regular scalar, and combines it with coefficient-regular degree-zero
+vanishing. The quotient is exactly `R / Ideal.span {a}`. The generic degree-zero
+criterion is kept at its Ext owner and permits independent module and Ext universes.
+The principal endpoints retain same-universe coefficients and arbitrary supported
+Ext universe; the dimension bound needs no HasExt. Tests include the unit scalar.
+
+The [ledger](migration/motivic-principal-ext.json) distinguishes four original
+principal-ideal endpoints from the generalized supporting criterion. No degree-one
+equivalence, nonvanishing, source scalar-quotient model or cocycle normalization is
+claimed. Stacks 062F and 0CXC are ingredients only. No kernel replay is run.
+
+## Universal homogeneous symbol descent (2026-11-05)
+
+Library item `COL-0042` closes five source symbol-map and universal-lift endpoints
+on the native homogeneous Milnor groups, in every nonnegative degree and independent
+source/target universes. Generic homogeneous tensor extension and two-sided ideal
+annihilation helpers stay at their linear-algebra owner. The proof kills arbitrary
+left/right tensor multiples of Steinberg generators and then their additive closure,
+not merely the listed generators. Tests include degree zero and recovery of the
+identity from native symbols. Stacks 0EAY is construction background only.
+
+The [descent ledger](migration/milnor-descent.json) updates the earlier symbol and
+extensionality ledgers. Other source obligations remain scoped separately; this is
+not a blanket completion of the entire Basic module or an old-model equivalence.
+
+The combined isolated integration on `36f7d6169afeec2f0537896dd8f56b68bda27ba9`
+passed complete guarded `scripts/check.sh`: 31 Python tests, eighteen Lean test
+modules, declaration/text lint, generated-entry check, 510-declaration production
+axiom audit and the 42-item Library/site. Remote Q-category contributions were
+preserved. Pins and resource limits were unchanged; no kernel replay was run.

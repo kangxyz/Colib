@@ -23,3 +23,4 @@ cp lean-toolchain "$auditor/lean-toolchain"
 lake env "$auditor/.lake/build/bin/axiom-audit" --root Colib
 
 python3 scripts/catalog.py build
+python3 scripts/site.py

@@ -16,6 +16,10 @@ class CatalogTests(unittest.TestCase):
                         {entry["id"] for entry in self.entries})
         self.assertEqual(len({entry["id"] for entry in self.entries}), len(self.entries))
 
+    def test_unknown_source_provider_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "Unsupported catalog source"):
+            catalog.source_link("OtherLibrary.Result", {}, "main")
+
     def test_unknown_reference_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

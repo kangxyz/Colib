@@ -30,20 +30,30 @@ jobs:
     outputs:
       outcome: ${{ steps.build.outcome }}
       cache-key: ${{ steps.restore.outputs.cache-primary-key }}
+      stacks-cache-key: ${{ steps.restore-stacks.outputs.cache-primary-key }}
       staged: ${{ steps.stage.outputs.staged }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
       - run: echo "LAKE_CACHE_DIR=$RUNNER_TEMP/lake-native-cache" >> "$GITHUB_ENV"
+      - name: Select independent cache paths
+        id: cache-layout
+        working-directory: ${{ inputs.package-directory }}
+        run: python3 scripts/stacks_cache.py layout --github-output "$GITHUB_OUTPUT"
       - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         id: restore
         with:
-          path: |
-            ${{ inputs.package-directory }}/.lake
-            ${{ runner.temp }}/lake-native-cache
-          key: lean-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles(format('{0}/lean-toolchain', inputs.package-directory), format('{0}/lake-manifest.json', inputs.package-directory)) }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: lean-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles(format('{0}/lean-toolchain', inputs.package-directory), format('{0}/lake-manifest.json', inputs.package-directory)) }}-
+          path: ${{ steps.cache-layout.outputs.environment-paths }}
+          key: colib-v2-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles(format('{0}/lean-toolchain', inputs.package-directory), format('{0}/lake-manifest.json', inputs.package-directory)) }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: colib-v2-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles(format('{0}/lean-toolchain', inputs.package-directory), format('{0}/lake-manifest.json', inputs.package-directory)) }}-
+      - name: Restore the pinned Stacks dependency
+        id: restore-stacks
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ steps.cache-layout.outputs.stacks-path }}
+          key: stacks-${{ steps.cache-layout.outputs.stacks-context }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: stacks-${{ steps.cache-layout.outputs.stacks-context }}-
       - name: Configure Lean
         id: lean-setup
         working-directory: ${{ inputs.package-directory }}
@@ -94,10 +104,24 @@ jobs:
         if: ${{ always() }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: |
-            ${{ inputs.package-directory }}/.lake
-            ${{ runner.temp }}/lake-native-cache
+          path: ${{ steps.cache-layout.outputs.environment-paths }}
           key: ${{ steps.restore.outputs.cache-primary-key }}
+      - name: Save Stacks independently of Colib compilation
+        if: ${{ always() }}
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ steps.cache-layout.outputs.stacks-path }}
+          key: ${{ steps.restore-stacks.outputs.cache-primary-key }}
+      - name: Pack the selected Stacks artifacts
+        if: ${{ steps.build.outcome == 'success' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: python3 scripts/stacks_cache.py pack "$RUNNER_TEMP/stacks-native-cache.tar.gz"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: ${{ steps.build.outcome == 'success' }}
+        with:
+          name: stacks-cache-staging
+          path: ${{ runner.temp }}/stacks-native-cache.tar.gz
+          compression-level: 0
       - name: Stage completed native outputs
         id: stage
         if: ${{ always() && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') }}
@@ -133,17 +157,24 @@ jobs:
         with:
           persist-credentials: false
       - run: echo "LAKE_CACHE_DIR=$RUNNER_TEMP/lake-native-cache" >> "$GITHUB_ENV"
+      - name: Select independent cache paths
+        id: cache-layout
+        working-directory: ${{ inputs.package-directory }}
+        run: python3 scripts/stacks_cache.py layout --github-output "$GITHUB_OUTPUT"
       - name: Warm dependency and native compilation outputs
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         id: restore-cache
         with:
-          path: |
-            ${{ inputs.package-directory }}/.lake
-            ${{ runner.temp }}/lake-native-cache
+          path: ${{ steps.cache-layout.outputs.environment-paths }}
           key: ${{ needs.build.outputs.cache-key }}-tests-${{ github.run_attempt }}
           restore-keys: |
             ${{ needs.build.outputs.cache-key }}-tests-
             ${{ needs.build.outputs.cache-key }}
+      - name: Restore this run's Stacks dependency
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ steps.cache-layout.outputs.stacks-path }}
+          key: ${{ needs.build.outputs.stacks-cache-key }}
       - name: Configure Lean
         id: lean-setup
         working-directory: ${{ inputs.package-directory }}
@@ -272,7 +303,8 @@ jobs:
             exit 1
           fi
           # Reuse the pinned source and incremental outputs across Test runs.
-          tool="$LAKE_CACHE_DIR/axiom-audit"
+          tool=".lake/tools/axiom-audit"
+          mkdir -p .lake/tools
           if ! test -d "$tool/.git"; then
             git clone --depth 1 --branch v0.1.2 https://github.com/leanprover-community/axiom-audit.git "$tool"
           fi
@@ -290,19 +322,24 @@ jobs:
         if: ${{ !cancelled() && steps.compiled.outcome == 'success' }}
         continue-on-error: true
         working-directory: ${{ inputs.package-directory }}
-        run: python3 scripts/catalog.py build
+        run: |
+          python3 scripts/catalog.py build
+          python3 scripts/site.py
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: ${{ steps.catalog.outcome == 'success' }}
         with:
           name: colib-encyclopedia
           path: ${{ inputs.package-directory }}/build/catalog/
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: ${{ steps.catalog.outcome == 'success' }}
+        with:
+          name: colib-site
+          path: ${{ inputs.package-directory }}/build/site/
       - name: Save completed Test compilation
         if: ${{ always() }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: |
-            ${{ inputs.package-directory }}/.lake
-            ${{ runner.temp }}/lake-native-cache
+          path: ${{ steps.cache-layout.outputs.environment-paths }}
           key: ${{ needs.build.outputs.cache-key }}-tests-${{ github.run_attempt }}
       - name: Report Test, lint and axiom results
         if: ${{ always() }}
@@ -333,6 +370,9 @@ jobs:
       - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: cache-staging
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        with:
+          name: stacks-cache-staging
       - name: Publish staged compilation
         env:
           GH_TOKEN: ${{ github.token }}
@@ -346,4 +386,28 @@ jobs:
             gh release upload "$tag" "$ASSET" --repo "$REPOSITORY"
           else
             gh release create "$tag" "$ASSET" --repo "$REPOSITORY" --target "$REVISION" --latest=false --title "Lean compilation $REVISION" --notes 'Compiled artifacts from successful Build, generated-entry, Test, lint, text-style and production-axiom checks.'
+          fi
+
+      - name: Publish the independent Stacks artifact cache
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          REVISION: ${{ github.sha }}
+          ASSET: stacks-native-cache-${{ github.run_id }}-${{ github.run_attempt }}.tar.gz
+        run: |
+          python3 - <<'PYMETA' > stacks-cache-tag
+          import hashlib, json, tarfile
+          with tarfile.open("stacks-native-cache.tar.gz", "r:gz") as archive:
+              metadata = json.load(archive.extractfile("metadata.json"))
+          identity = {key: value for key, value in metadata.items() if key != "files"}
+          context = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()[:12]
+          print("stacks-native-" + metadata["stacks_revision"] + "-" + metadata["platform"] + "-" +
+                metadata["toolchain"].rsplit(":", 1)[-1] + "-" + context)
+          PYMETA
+          tag=$(cat stacks-cache-tag)
+          mv stacks-native-cache.tar.gz "$ASSET"
+          if gh release view "$tag" --repo "$REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$tag" "$ASSET" --repo "$REPOSITORY"
+          else
+            gh release create "$tag" "$ASSET" --repo "$REPOSITORY" --target "$REVISION"               --latest=false --title "Stacks dependency artifacts"               --notes 'Separate selected Stacks build artifacts with pinned dependency, toolchain and platform metadata. Published after successful Colib native checks.'
           fi

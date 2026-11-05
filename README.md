@@ -4,6 +4,9 @@ Colib formalizes cohomology and homotopy theory in algebraic geometry, including
 motivic and algebraic K-theoretic interfaces. Its mathematical dependencies are Mathlib and
 [AxiomMath/Stacks](https://github.com/AxiomMath/Stacks), pinned to exact commits.
 
+The [online encyclopedia](https://kangxyz.github.io/colib/) provides permanent result links,
+reference search, scope notes and the actual Lean signatures.
+
 ## Initial pilot
 
 The first release develops three closed mathematical slices.
@@ -17,12 +20,12 @@ The first release develops three closed mathematical slices.
 
 The [encyclopedia](docs/ENCYCLOPEDIA.md) describes the twelve permanent entries and their
 reference and review conventions. CI exports the actual Lean signatures and defining modules
-as the private artifact `colib-encyclopedia`. Release catalog assets are versioned with the code.
+as the artifact `colib-encyclopedia`. Release catalog assets are versioned with the code.
 
 ## Use and build
 
-The pinned toolchain is Lean 4.34.0-rc2. Add the private repository as a Lake dependency
-using an authenticated Git checkout and an exact release commit.
+The pinned toolchain is Lean 4.34.0-rc2. Add the repository as a Lake dependency
+using a Git checkout and an exact release commit.
 
 ```lean
 import Colib

@@ -8,7 +8,7 @@ The initial pilot selects three boundaries from the proposed integration.
 | Milnor K₂ | Equality of the two Steinberg relation spans and the symbol-preserving tensor comparison | All-degree tuple symbols, norms, residue maps and Quillen field comparisons |
 | Finite-flat coefficients | Affine finite-algebra length-degree sum | Construct the original finite-flat spans and prove their faithful cycle and composition equations |
 
-The initial release is a source-indexed private pilot. The Quillen and Motivic libraries
+The initial release is a source-indexed reference-indexed pilot. The Quillen and Motivic libraries
 remain migration sources at the recorded commits below.
 
 - Quillen c561118b7795eb9780be9ed391c3251d6a4d0afd.

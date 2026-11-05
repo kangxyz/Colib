@@ -80,7 +80,9 @@ def source_link(module, pins, revision):
     relative = module.replace(".", "/") + ".lean"
     provider = module.split(".")[0]
     if provider == "Colib":
-        return f"https://github.com/kangxyz/Colib/blob/{revision}/{relative}"
+        return f"https://github.com/kangxyz/colib/blob/{revision}/{relative}"
+    if provider not in {"Mathlib", "StacksCore", "StacksFrontier"}:
+        raise ValueError(f"Unsupported catalog source provider {provider}")
     package = "mathlib" if provider == "Mathlib" else "Stacks"
     pin = pins[package]
     return f"{pin['url'].removesuffix('.git')}/blob/{pin['rev']}/{relative}"

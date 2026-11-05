@@ -1,0 +1,62 @@
+name: Publish encyclopedia
+
+on:
+  workflow_run:
+    workflows: [Colib CI]
+    branches: [main]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: colib-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Select the successful native CI run
+        id: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          EVENT_RUN_ID: ${{ github.event.workflow_run.id }}
+        run: |
+          if test -n "$EVENT_RUN_ID"; then
+            run_id="$EVENT_RUN_ID"
+          else
+            run_id=$(gh run list --repo "$REPOSITORY" --workflow ci.yml --branch main \
+              --status success --limit 1 --json databaseId --jq '.[0].databaseId')
+          fi
+          test -n "$run_id" && test "$run_id" != null
+          echo "run-id=$run_id" >> "$GITHUB_OUTPUT"
+      - name: Download the checked encyclopedia
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_ID: ${{ steps.source.outputs.run-id }}
+        run: |
+          gh run download "$RUN_ID" --repo "$REPOSITORY" --name colib-site \
+            --dir "$RUNNER_TEMP/colib-site"
+          test -s "$RUNNER_TEMP/colib-site/index.html"
+          test -s "$RUNNER_TEMP/colib-site/catalog.json"
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: ${{ runner.temp }}/colib-site
+      - name: Deploy encyclopedia
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e

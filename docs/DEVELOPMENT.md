@@ -17,7 +17,7 @@ CI adapts Aglib's portable Build, Test and Publish-cache workflow from commit
 of later checks. Test consumes the matching build artifacts and runs native checks.
 Publish cache runs after successful default-branch checks and creates a release asset in
 this repository. GitHub repository visibility governs these cache releases and catalog
-artifacts. The hosted runner uses the standard private-repository Actions environment.
+artifacts. The hosted runner uses the standard repository Actions environment.
 
 The first pilot uses a small selected Stacks import closure. scripts/cache.sh retrieves the
 corresponding Mathlib roots. Stacks artifacts are produced by the native build and retained
@@ -31,3 +31,12 @@ Its toolchain is selected to match the library. It is outside the production dep
 Maintained text and names use English. Preserve exact source references and contributor
 notices. New public mathematical endpoints enter the owning source family and catalog
 together, with precise hypotheses and map normalizations.
+
+## Encyclopedia publication
+
+The native Test job generates both the Markdown catalog and the static site from the same
+declaration export. The Pages workflow consumes the successful main-branch native run's
+`colib-site` artifact. A manual dispatch selects the latest successful main-branch run.
+The deployed address is https://kangxyz.github.io/colib/.
+
+[Independent Stacks caching](CACHING.md) owns the separate dependency-artifact boundary.

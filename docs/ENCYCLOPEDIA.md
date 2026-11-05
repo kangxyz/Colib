@@ -1,5 +1,8 @@
 # Colib encyclopedia
 
+The [published encyclopedia](https://kangxyz.github.io/colib/) is generated from successful
+native CI runs and deployed through GitHub Pages.
+
 The hand-maintained [pilot catalog](catalog/pilot.toml) contains twelve entries in three
 subjects. [Bibliographic records](references.toml) pin the textual and software sources.
 
@@ -18,7 +21,7 @@ python3 scripts/catalog.py build
 The generated `build/catalog/index.md` gives mathematical statements, complete scope notes,
 exact references, checked declaration signatures, defining modules and versioned source links.
 `build/catalog/declarations.json` retains the machine-readable export. CI supplies both in
-the private `colib-encyclopedia` artifact.
+the `colib-encyclopedia` artifact.
 
 ## Reference contract
 

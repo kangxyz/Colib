@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reference-indexed Lean library for cohomology and homotopy theory in algebraic geometry.">
+  <title>Colib — Mathematical Encyclopedia</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#results">Skip to results</a>
+  <header class="site-header">
+    <a class="wordmark" href="./" aria-label="Colib home">Co<span>lib</span><i></i></a>
+    <nav aria-label="Primary">
+      <a href="#results">Encyclopedia</a>
+      <a href="#bibliography">References</a>
+      <a href="https://github.com/kangxyz/colib">Source <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <section class="intro">
+    <p class="eyebrow">COHOMOLOGY · HOMOTOPY · ALGEBRAIC GEOMETRY</p>
+    <h1>Cohomology and homotopy<br><em>in algebraic geometry.</em></h1>
+    <p class="lede">Definitions, theorems and comparisons in Lean, indexed by permanent identifiers
+      and exact references. Each entry states its hypotheses and correspondence scope.</p>
+    <div class="facts" id="facts" aria-live="polite">
+      <span>Loading the checked catalog…</span>
+    </div>
+  </section>
+  <main class="layout">
+    <aside aria-label="Encyclopedia subjects">
+      <p class="sidebar-label">SUBJECTS</p>
+      <div id="topics" class="topics"></div>
+      <div class="edition">
+        <p class="sidebar-label">ABOUT THIS EDITION</p>
+        <p>Initial pilot. Source correspondence is <strong>author-checked</strong>.</p>
+        <p>Lean signatures and defining modules are read from the built library.</p>
+        <a id="revision" href="https://github.com/kangxyz/colib">View the source revision ↗</a>
+      </div>
+    </aside>
+    <div class="content">
+      <section id="results" aria-label="Mathematical entries">
+        <div class="search-row">
+          <label for="search">Find a result</label>
+          <div class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Search an ID, theorem, tag or Lean name…" autocomplete="off">
+            <kbd aria-hidden="true">/</kbd>
+          </div>
+        </div>
+        <div class="results-heading">
+          <h2 id="subject-heading">All results</h2>
+          <p id="result-count" role="status"></p>
+        </div>
+        <div id="entries"></div>
+        <p id="empty" class="empty" hidden>No entries match this search. Try a Stacks tag, COL identifier or shorter phrase.</p>
+      </section>
+      <section id="bibliography" class="bibliography" aria-label="Bibliography">
+        <p class="eyebrow">SOURCES &amp; VERSIONS</p>
+        <h2>The bibliography</h2>
+        <p class="bibliography-intro">The mathematical source and the formal implementation have separate version identities.</p>
+        <div id="source-list"></div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <a class="wordmark" href="./">Co<span>lib</span></a>
+    <p>Colib · Lean 4.34.0-rc2</p>
+    <a href="https://github.com/kangxyz/colib/blob/main/docs/ENCYCLOPEDIA.md">Editorial conventions ↗</a>
+  </footer>
+  <noscript><p class="empty">Enable JavaScript to search the encyclopedia, or read the
+    <a href="https://github.com/kangxyz/colib/tree/main/docs/catalog">catalog source</a>.</p></noscript>
+</body>
+</html>

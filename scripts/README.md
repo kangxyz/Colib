@@ -6,3 +6,7 @@
 - `catalog.py build` exports the actual declaration signatures and renders the encyclopedia.
 - `export_catalog.lean` reads declaration names, types and defining modules from built Colib.
 - `test_catalog.py` checks permanent pilot IDs and rejection of duplicate IDs and missing sources.
+
+- `site.py` renders the static, searchable encyclopedia from compatible native declarations.
+- `stacks_cache.py` selects independent cache paths and exports/imports pinned Stacks artifacts.
+- `test_stacks_cache.py` checks the cache identity, path boundary and round-trip behavior.

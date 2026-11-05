@@ -444,3 +444,12 @@ The complete unified guarded check passed: 52 Python tests,
 The exact receipt hashes, source revisions, compiled declaration inventory and source/olean
 hashes are recorded in the consolidation manifest and individual ledgers.
 No kernel replay or publication was performed by the integration worker.
+
+### Arbitrary-coefficient native top Ext
+
+COL-0134 identifies N/IN with positive-length top Ext, linearly over R/I and
+naturally in every coefficient module N, using the existing native top cocycle.
+The quotient-source action belongs to Colib and uses Mathlib's annihilated-module
+construction. No coefficient regularity or finiteness is required. The empty
+sequence and comparison with old named Aglib classes remain pending. See
+`migration/motivic-top-ext-coefficients.json` for the precise evidence.

@@ -2967,5 +2967,10 @@
       ],
       "already_in_main": []
     }
-  ]
+  ],
+  "subsequent_coefficient_extension": {
+    "ledger": "motivic-top-ext-coefficients.json",
+    "item": "COL-0134",
+    "scope": "The positive-length arbitrary-coefficient quotient equivalence is now proved by the native free-presentation argument. Historical validation and item scopes above remain those of the earlier batch. Empty sequences and old named Aglib class comparison remain pending."
+  }
 }

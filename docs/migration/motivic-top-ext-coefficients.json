@@ -1,0 +1,175 @@
+{
+  "topic": "Native positive-length top Ext with arbitrary coefficients",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_file": "Aglib/Algebra/Homology/Koszul/Ext/Coefficients.lean",
+  "source_sha256": "83fe79562bf679c076e20e6e8800ef13aa00fcb5451c34c5b17d6c3d2930c7a6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "scope": "Positive length n+1; native Koszul-regular f over a commutative ring; arbitrary N and HasExt universe. The exact kernel of seqTopExtClass is I \u2022 N, and its induced actual coefficient quotient equivalence to Ext^(n+1)(R/I,N) is R/I-linear and natural in N.",
+  "source_relation": "Adapts the actual free-presentation proof of ChainComplex.Koszul.topExtClass_ker and the subsequent equivalence/naturality definitions, replacing only the source class and ideal with the already proved canonical native counterparts.",
+  "upstream_audit": "Stacks DualExactness.mem_span_iff_exists_dual_d_eq is ring-valued and already used in the previous native ring-kernel leaf. It does not provide the arbitrary-coefficient quotient equivalence. Mathlib provides actual free Finsupp presentation, ShortComplex.kernelSequence, Ext.covariant_sequence_exact\u2082, and Submodule quotient tools. These are reused directly. Colib.Algebra.Homology.DerivedCategory.Ext.Quotient provides Ext.quotientSourceIsTorsionBySet and Ext.quotientSourceModule; Mathlib provides the underlying IsTorsionBySet.module construction.",
+  "declarations": [
+    "Koszul.seqTopExtClass_ker",
+    "Koszul.seqTopExtLinearEquiv",
+    "Koszul.seqTopExtLinearEquiv_apply_mk",
+    "Koszul.seqTopExtQuotientLinearEquiv",
+    "Koszul.seqTopExtQuotientLinearEquiv_apply_mk",
+    "Koszul.seqTopExtQuotientLinearEquiv_toAddEquiv",
+    "Koszul.seqTopExtQuotientLinearEquiv_naturality"
+  ],
+  "proof_structure": "Project onto all coordinates to establish the free-module kernel from the ring kernel. Lift arbitrary coefficients to their actual free presentation, use native covariant Ext exactness and top-class surjectivity on the kernel module, then descend ideal membership.",
+  "limits": [
+    "Positive length only; empty sequence remains a separate degree-zero normalization task.",
+    "No flatness, regularity, finiteness, Noetherianity, or nontriviality required for coefficients.",
+    "No old named Aglib class comparison asserted.",
+    "No old environment/cache recovery, kernel replay, or shared-file modifications."
+  ],
+  "validation": {
+    "status": "Production/test build and native declaration/style lint passed.",
+    "guard_script": "colib-environment-20261105/run_guarded_extonequotient_worktree.py",
+    "guard": "Native Lean 4.34.0-rc2, one process via flock; -j1 -M4983; RSS cap 7475 MiB.",
+    "upstream_rebuilds": "None; exact new imports had existing cache.",
+    "runs": [
+      {
+        "receipt": "colib-environment-20261105/top-ext-coeff-build-r1.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtCoefficients",
+          "ColibTest.TopExtCoefficients"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2581897216,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-coeff-build-r2.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtCoefficients",
+          "ColibTest.TopExtCoefficients"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4265754624,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-coeff-lint.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Koszul.TopExtCoefficients"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4243877888,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-coeff-style.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.RingTheory.Koszul.TopExtCoefficients",
+          "ColibTest.TopExtCoefficients"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1787650048,
+        "owned_group_gone": true
+      }
+    ],
+    "hashes": {
+      "Colib/RingTheory/Koszul/TopExtCoefficients.lean": "400ea3c71f1c719afec32abab568b19993836959709f3cc518afca4796adcabc",
+      "ColibTest/TopExtCoefficients.lean": "8a42902150bfd266fa902662d6d3e883064f441baa2a9fa5da5958c383103ae5",
+      ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtCoefficients.olean": "bcac75a0fe2c8a49b3fe4caddda4c4a5f3d3ea02099551509581456f18d68a4c",
+      ".lake/build/lib/lean/ColibTest/TopExtCoefficients.olean": "86d179a54a9ca9acdcb9dccb97b90217137ce3fca33b7b86357b9c3ee08dfc8c"
+    },
+    "repair": "One local erw at the native kernelSequence semireducible object boundary, instead of the source-wide transparency options. No options or resource limits raised.",
+    "tests": [
+      "Rank-two arbitrary-coefficient quotient representative preserves the top cocycle.",
+      "Rank-two arbitrary-coefficient exact kernel criterion."
+    ],
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-top-coeff-d7778ec-20261105-1303",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6290202624,
+      "duration_seconds": 60.88501918700058,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-top-coeff-check-receipt.json",
+      "receipt_sha256": "032b92800957a5deb6244caa29742c8b008a2847dd6cbbb096acdef77a2f4729",
+      "log": "/tmp/colib-top-coeff-check.log",
+      "log_sha256": "a434f64760b27ef2822dc06eecced2077271fab77291e44da3a1490b1eb3559a",
+      "kernel_replay": false,
+      "results": {
+        "python_tests": 52,
+        "axiom_audit_declarations": 1629,
+        "library_items": 134,
+        "indexed_declarations": 402,
+        "build_lint_style_tests": "passed"
+      },
+      "hashes": {
+        "Colib/RingTheory/Koszul/TopExtCoefficients.lean": "c6998b4fb2403ce03800e5599ef03e16a398b67555556510872baf5843eedbef",
+        "ColibTest/TopExtCoefficients.lean": "9fefb5ad8129f248d4514a916bfb68f6271674af14f11de4f0ea27f1ed3868b7",
+        ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtCoefficients.olean": "6daf2cfe38bfade5057058c44d44ab3b13220fbb0805ef22de643f308a9d3642",
+        ".lake/build/lib/lean/ColibTest/TopExtCoefficients.olean": "ae24e591a398d4c57314f081d1b1ab9e8d7fb7fd935f4e8c34b147ceaa4e5660"
+      },
+      "tests": [
+        "Arbitrary positive-length coefficient-map naturality on quotient classes",
+        "Arbitrary quotient-ring scalar compatibility",
+        "Length-one arbitrary coefficient representative",
+        "Rank-two kernel and representative regressions"
+      ]
+    }
+  },
+  "library_item": "COL-0134",
+  "target_baseline": "d7778ec74a09f895364fe976e6c38697ce419834",
+  "independent_review": {
+    "status": "passed as reported by parent",
+    "scope": "Original leaf independently reviewed before integration; final added regression tests compiled in the separate integrated check. No independent kernel replay."
+  },
+  "literature": {
+    "tag": "06XP",
+    "relation": "ingredient",
+    "scope": "Covariant long exact Ext sequence; not a verbatim coefficient quotient computation."
+  }
+}

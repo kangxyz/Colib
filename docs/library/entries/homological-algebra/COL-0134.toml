@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0134"
+title = "Top Koszul Ext with arbitrary coefficients"
+kind = "comparison"
+section = "projective-dimension"
+order = 130
+statement = "The actual coefficient quotient N/IN identifies with top Ext of R/I against N, linearly over R/I, preserving the standard top cocycle and coefficient-map Yoneda naturality."
+scope = "Any commutative ring, Koszul-regular sequence of positive length n+1, arbitrary same-universe coefficient module N and independent Ext universe. No coefficient regularity, flatness, finite generation, Noetherianity or nontriviality. Empty sequences and the old named Aglib class comparison remain outside this item. Stacks 06XP supplies covariant exactness only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use a native free Finsupp presentation, covariant Ext exactness and the established ring-valued kernel to identify the coefficient kernel, then native quotient equivalences and the Colib quotient-source action."

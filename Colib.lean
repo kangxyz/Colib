@@ -91,6 +91,7 @@ public import Colib.RingTheory.Koszul.PrincipalGeneratorTransport
 public import Colib.RingTheory.Koszul.PrincipalSeqGenerator
 public import Colib.RingTheory.Koszul.PrincipalSeqGeneratorChange
 public import Colib.RingTheory.Koszul.TopExtClass
+public import Colib.RingTheory.Koszul.TopExtCoefficients
 public import Colib.RingTheory.Koszul.TopExtGeneratorChange
 public import Colib.RingTheory.Koszul.TopExtRingQuotient
 public import Colib.RingTheory.Length.FiniteAlgebra

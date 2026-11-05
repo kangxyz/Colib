@@ -29,6 +29,8 @@ lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest
   ColibTest.MilnorCanonicalRamifiedMap ColibTest.MilnorDvrNormalization ColibTest.MilnorCompletion ColibTest.PrincipalEuler ColibTest.KoszulCoefficientAugmentation ColibTest.TopExtBaseChange ColibTest.TopExtBaseChangeQuotient ColibTest.TopExtBaseChangeNormalization \
   ColibTest.NerveZeroSkeleton ColibTest.RealizationBoundary ColibTest.SkeletalAttachment \
   ColibTest.GraphAttachmentGeneration ColibTest.NerveGraphData ColibTest.KZeroSurjectivity
+lake exe mathlib/lint-style ColibTest.PerfectLocalComparison ColibTest.PerfectLocalEquivalence \
+  ColibTest.PerfectWaldhausen ColibTest.PerfectKEquivalence
 lake exe mathlib/mk_all --lib Colib --check
 
 # Aglib's pinned production auditor. This tool is separate from mathematical dependencies.

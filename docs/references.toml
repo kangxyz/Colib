@@ -158,3 +158,10 @@ title = "Aglib Principal Euler source"
 authors = ["kangxyz and Aglib contributors"]
 version = "Git commit 101dbb8564fb0e29f28cfcb79168d878b5ab489f"
 url = "https://github.com/kangxyz/aglib/tree/101dbb8564fb0e29f28cfcb79168d878b5ab489f"
+
+[sources.quillen]
+kind = "software"
+title = "Quillen K-theory"
+authors = ["kangxyz and Quillen K-theory contributors"]
+version = "Git commit c561118b7795eb9780be9ed391c3251d6a4d0afd"
+url = "https://github.com/kangxyz/quillen-k-theory/tree/c561118b7795eb9780be9ed391c3251d6a4d0afd"

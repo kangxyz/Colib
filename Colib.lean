@@ -5,6 +5,7 @@ public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Localization
 public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Quotient
 public import Colib.Algebra.Category.ModuleCat.CoproductHomology
 public import Colib.Algebra.Category.ModuleCat.FilteredColimits
+public import Colib.Algebra.Homology.CochainComplex.QuasiIsoGluing
 public import Colib.Algebra.Homology.DerivedCategory.Ext.Quotient
 public import Colib.Algebra.Homology.DerivedCategory.Ext.Regular
 public import Colib.Algebra.Homology.DerivedCategory.SingleCocycle
@@ -14,6 +15,9 @@ public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIsoCriterion
 public import Colib.Algebra.Module.LocalizedModule.IdealQuotient
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
+public import Colib.AlgebraicGeometry.Modules.LocalRepresentativeComparison
+public import Colib.AlgebraicGeometry.Modules.LocalRepresentativeEquivalence
+public import Colib.AlgebraicGeometry.Modules.PerfectWaldhausen
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.AffineBaseChange
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Compactness
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Functor
@@ -56,6 +60,7 @@ public import Colib.CategoryTheory.QConstruction.ObjectClassFunctoriality
 public import Colib.CategoryTheory.QConstruction.ZeroEndomorphisms
 public import Colib.CategoryTheory.Waldhausen.Basic
 public import Colib.CategoryTheory.Waldhausen.CofibrationClosedSubcategory
+public import Colib.CategoryTheory.Waldhausen.Complexes
 public import Colib.CategoryTheory.Waldhausen.EquivalenceStructure
 public import Colib.CategoryTheory.Waldhausen.ExactFunctor
 public import Colib.CategoryTheory.Waldhausen.ExactFunctorIso
@@ -131,6 +136,7 @@ public import Colib.KTheory.Quillen.Map.Functoriality
 public import Colib.KTheory.Waldhausen.Basic
 public import Colib.KTheory.Waldhausen.BisimplicialZero
 public import Colib.KTheory.Waldhausen.CanonicalMap
+public import Colib.KTheory.Waldhausen.ExactEquivalence
 public import Colib.KTheory.Waldhausen.Functoriality
 public import Colib.KTheory.Waldhausen.HomotopyMap
 public import Colib.KTheory.Waldhausen.KFunctor

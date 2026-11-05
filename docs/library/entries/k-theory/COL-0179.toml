@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0179"
+title = "Canonical K-maps of exact equivalences"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 170
+statement = "A categorical equivalence exact in both directions induces mutually inverse canonical KMap homomorphisms and a multiplicative equivalence in every nonnegative K-degree."
+scope = "Both categories share the same object and morphism universe parameters, which may differ from one another. The maps are exactly the existing canonical KMap of the original functor and inverse; strict chosen-zero preservation is not required. These are the connective groups of the unnormalized IsZero-diagonal S-construction. Package tests apply this to the two reconstructed geometric structures, including their actual based realization homotopies and standard local derived models. No equality with archived named PerfectK, global strict-perfect comparison, Q/S comparison or nonconnective spectrum is asserted. Author source comparison was checked on 2026-11-05; independent review and compilation are separate evidence."
+review = "author_checked"

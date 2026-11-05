@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0177"
+title = "Waldhausen structure on cochain complexes"
+kind = "definition"
+section = "waldhausen-categories"
+order = 1490
+statement = "Cochain complexes over an abelian category carry a Waldhausen structure with the actual zero complex, all monomorphisms as cofibrations, and genuine quasi-isomorphisms as weak equivalences."
+scope = "Arbitrary object and morphism universes. Gluing uses the displayed pushout maps, its actual short exact sequence, and the homology five lemma. Source correspondence is with Quillen c561118b, Waldhausen/Complexes.lean:45-64. This is an ambient structure, not a perfect-complex or K-theory comparison. Author source comparison was checked on 2026-11-05; independent review and compilation are separate evidence."
+review = "author_checked"

@@ -69,6 +69,7 @@ class LibraryTests(unittest.TestCase):
             "waldhausen-k-theory": "Colib.KTheory.Waldhausen.Basic",
             "homology-colimits": "Colib.Algebra.Category.ModuleCat.FilteredColimits",
             "affine-open-pairs": "Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Functor",
+            "perfect-complexes": "Colib.AlgebraicGeometry.Modules.LocalRepresentativeEquivalence",
             "ext-scalars": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
             "projective-dimension": "Colib.RingTheory.Koszul.Ext",
             "koszul-coefficients": "Colib.RingTheory.Koszul.Coefficients",
@@ -111,6 +112,37 @@ class LibraryTests(unittest.TestCase):
                 }
             )
         return native
+
+    def test_exact_equivalence_keeps_canonical_maps(self):
+        item = self.library["entries"]["COL-0179"]
+        self.assertEqual(item["section"], "waldhausen-k-theory")
+        self.assertIn("canonical KMap", item["statement"])
+        self.assertIn("strict chosen-zero preservation is not required", item["scope"])
+        self.assertIn("No equality with archived named PerfectK", item["scope"])
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        self.assertTrue(result["entries"]["COL-0179"]["references"])
+
+    def test_perfect_waldhausen_chain_keeps_owners(self):
+        self.assertEqual(self.library["entries"]["COL-0177"]["section"], "waldhausen-categories")
+        self.assertEqual(self.library["entries"]["COL-0178"]["section"], "perfect-complexes")
+        self.assertIn("every relevant pushout apex", self.library["entries"]["COL-0178"]["statement"])
+        self.assertIn("not identified literally", self.library["entries"]["COL-0178"]["scope"])
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for identifier in ("COL-0177", "COL-0178"):
+            self.assertTrue(result["entries"][identifier]["references"])
+
+    def test_perfect_local_comparison_keeps_exact_scope(self):
+        item = self.library["entries"]["COL-0176"]
+        self.assertEqual(item["section"], "perfect-complexes")
+        self.assertEqual(item["kind"], "comparison")
+        self.assertIn("arbitrary supplied universe d", item["scope"])
+        self.assertIn("No global strict representative", item["scope"])
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        self.assertTrue(result["entries"]["COL-0176"]["references"])
+        self.assertEqual(
+            result["sections"]["perfect-complexes"]["modules"],
+            ["Colib.AlgebraicGeometry.Modules.LocalRepresentativeEquivalence"],
+        )
 
     def test_waldhausen_homotopy_chain_keeps_model_and_owners(self):
         self.assertEqual(self.library["entries"]["COL-0154"]["section"], "waldhausen-categories")

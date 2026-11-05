@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0176"
+title = "Comparison of local perfect representatives"
+kind = "comparison"
+section = "perfect-complexes"
+order = 10
+statement = "For a scheme, native perfectness of a fixed cochain complex is equivalent to the exposed Aglib local witness: near every point, its actual scheme restriction is isomorphic in the given local derived category to a bounded complex of finite locally free modules."
+scope = "The term bounds, original restriction, and isomorphism direction Q(restrict K) to Q(P) are retained. The local derived models have arbitrary supplied universe d; the archived standard models at u + 1 are included. Source correspondence is with Aglib 2c34f185, Local.lean:48-54, and Stacks 0BCJ (1) iff (2), using 08CN (2) and 0BCI. No global strict representative, equality of named cross-library predicates, Waldhausen equivalence, or K-theory comparison is asserted. Author source comparison was checked on 2026-11-05; independent review and compilation are recorded separately."
+review = "author_checked"

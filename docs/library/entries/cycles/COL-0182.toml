@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0182"
+title = "Finite-length and ordinary determinants over a field"
+kind = "comparison"
+section = "finite-algebra-coefficients"
+order = 60
+statement = "The native finite-length determinant over a field is the residue of the ordinary determinant via the canonical residue map and scalar extension."
+scope = "Independent base and module universes; the original vector space scalar action is unchanged."
+review = "author_checked"

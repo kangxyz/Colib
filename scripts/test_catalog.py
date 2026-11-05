@@ -70,6 +70,20 @@ class LibraryTests(unittest.TestCase):
             self.assertIn("ColibTest.FiniteAlgebraLocal", (root / path).read_text())
         self.assertIn("specialization", self.library["entries"]["COL-0181"]["scope"])
 
+    def test_finite_algebra_norm_chain_registration(self):
+        root = catalog.ROOT
+        modules = {"COL-0182": "Colib.LinearAlgebra.Determinant.FiniteLength",
+                   "COL-0183": "Colib.RingTheory.Norm.FiniteAlgebra",
+                   "COL-0184": "Colib.RingTheory.Norm.PolynomialFiber"}
+        for identifier, module in modules.items():
+            self.assertEqual(self.library["entries"][identifier]["section"],
+                             "finite-algebra-coefficients")
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            self.assertIn("ColibTest.FiniteAlgebraNorm", (root / path).read_text())
+
     def native_fixture(self):
         native = {
             "bindings": [],

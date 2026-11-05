@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0183"
+title = "Finite-algebra norms and localized lengths"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 70
+statement = "Multiplication determinants on finite-dimensional modules are products of quotient residue norms weighted by actual localized module lengths. Taking the module to be the algebra gives its norm decomposition."
+scope = "Finite algebras over a field, with independent ring and module universes. Nonreduced algebras and inseparable residue fields are allowed. Localized lengths are proved finite before toNat."
+review = "author_checked"

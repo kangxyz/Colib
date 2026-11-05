@@ -610,3 +610,15 @@ objects; the tensor presentation is transported through their existing equivalen
 No Noetherian or local-algebra hypothesis is added. This is the finite-algebra
 specialization of Stacks 02M0, not the whole general semilocal statement.
 See migration/motivic-finite-algebra-length.json for source and validation evidence.
+
+### Finite-algebra and polynomial-fibre norms
+
+COL-0182--COL-0184 complete the native determinant comparison, length-weighted
+finite-algebra norm decomposition and polynomial evaluation-fibre unit norm
+compatibility. Localized module lengths and actual quotient residue fields
+are retained, including nonreduced and inseparable cases. Equality between
+two fibres requires a global unit and finite freeness, or finite torsion-freeness
+over the polynomial PID. The single-fibre product only requires finiteness.
+No new fibre, norm or prime-filtration model is introduced. This remains an
+algebraic norm statement, not a Milnor transfer or geometric cycle comparison.
+See migration/motivic-finite-algebra-norm.json for source and validation evidence.

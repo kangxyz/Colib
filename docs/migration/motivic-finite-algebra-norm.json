@@ -1,0 +1,904 @@
+{
+  "target_baseline": "1a98de6dc3783a9ff821e3511ad3535fd18de97d",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "lean_toolchain": "leanprover/lean4:v4.34.0-rc2",
+  "source_modules": {
+    "Aglib/RingTheory/FiniteAlgebraNormLength.lean": "f7f2ad2d3b448b8702d855fb1cd40d744aeecafdb311603f23dde9a484d22899",
+    "Aglib/RingTheory/PolynomialFiberNorm.lean": "bb00fca90033628db4475e0030ec0d6e2a43cde6a4c074318f1b0ea37decfa13"
+  },
+  "source_scope": "Both source leaves are manifest-confirmed members of the original 301-module motivic inventory. All selected mathematical endpoints are represented; custom prime-filtration proof helpers and named fibre wrappers are not copied.",
+  "source_compatibility_note": "The source tensor-localization determinant statement uses the _tensor target suffix; unsuffixed target uses native LocalizedModule. Mathematical endpoint preservation does not imply literal theorem-name/type compatibility.",
+  "mathematical_scope": {
+    "base": "Field k : Type u; commutative B : Type v with Algebra k B and Module.Finite k B.",
+    "module": "M : Type w, additive group with compatible B and k module structures, Module.Finite k M. Universes independent.",
+    "norm_formula": "Ordinary determinant of scalar multiplication by arbitrary b equals the all-maximal-point product of literal quotient-field norms raised to finite actual localized-module lengths. Native/tensor, Fintype/finprod, regular-module and local-ring versions.",
+    "fiber_formula": "For B finite free over k[X], a global unit has equal norms and equal length-weighted residue-norm products in any two literal evaluation tensors. Finite torsion-free variant included; single-fibre factorization only assumes finiteness.",
+    "excluded_assumptions": [
+      "reducedness",
+      "separability",
+      "etaleness",
+      "B nonzero",
+      "B local for the general product"
+    ],
+    "not_claimed": [
+      "correspondence-theoretic fibre pullback",
+      "motivic sheaf or Nisnevich comparison",
+      "Milnor K-norm compatibility",
+      "source custom PrimeFiltrationFrom helper API"
+    ]
+  },
+  "public_declarations": {
+    "Colib/LinearAlgebra/Determinant/FiniteLength.lean": [
+      "FiniteLengthEndomorphism.det_eq_residue_det"
+    ],
+    "Colib/RingTheory/Norm/FiniteAlgebra.lean": [
+      "Algebra.residue_norm_quotient_eq_norm_residue",
+      "Module.localized_length_ne_top_of_finiteDimensional",
+      "Module.det_lsmul_eq_prod_norm_pow_localized_length",
+      "Module.det_lsmul_eq_finprod_norm_pow_localized_length",
+      "Module.det_lsmul_eq_finprod_norm_pow_localized_length_tensor",
+      "Module.det_lsmul_eq_prod_norm_pow_localized_length_tensor",
+      "Algebra.local_length_ne_top_of_finite",
+      "Algebra.norm_eq_prod_quotient_norm_pow_local_length",
+      "Algebra.norm_eq_finprod_quotient_norm_pow_local_length",
+      "IsLocalRing.length_localization_maximalIdeal",
+      "Algebra.norm_eq_quotient_norm_pow_length"
+    ],
+    "Colib/RingTheory/Norm/PolynomialFiber.lean": [
+      "Algebra.PolynomialFiber.norm_one_tmul",
+      "Algebra.PolynomialFiber.norm_unit_eq_C",
+      "Algebra.PolynomialFiber.norm_one_tmul_eq",
+      "Algebra.PolynomialFiber.norm_one_tmul_eq_of_torsionFree",
+      "Algebra.PolynomialFiber.normUnits_one_tmul_eq",
+      "Algebra.PolynomialFiber.norm_one_tmul_eq_finprod",
+      "Algebra.PolynomialFiber.finprod_residue_norm_eq",
+      "Algebra.PolynomialFiber.finprod_residue_norm_eq_of_torsionFree"
+    ]
+  },
+  "public_declaration_count": 20,
+  "test_examples": 31,
+  "lean_lines": 859,
+  "tests": "Independent universes, arbitrary modules, local and zero algebra/module, actual nonlocal nonreduced DualNumber k x k, two-branch product value, native/tensor local lengths, all eight polynomial fibre APIs.",
+  "native_reuse": [
+    "Stacks.Length.nonempty_linearEquiv_pi_localizedModule",
+    "FiniteLengthEndomorphism.det_eq_of_linearEquiv",
+    "FiniteLengthEndomorphism.det_piMap",
+    "FiniteLengthEndomorphism.det_residue",
+    "FiniteLengthEndomorphism.multiplication_det_eq_norm_pow_length",
+    "Stacks.Norm.norm_tmul_one",
+    "Module.finiteAlgebra_localized_length_ne_top",
+    "Module.finiteAlgebraResidueQuotientEquiv",
+    "Algebra.norm_eq_of_algEquiv",
+    "Algebra.norm_eq_of_ringEquiv",
+    "LinearMap.det_baseChange",
+    "LocalizedModule.equivTensorProduct"
+  ],
+  "independent_static_review": {
+    "role": "Independent read-only mathematical/API reviewer not involved in source authorship or proof design.",
+    "finding": "No mathematical obstruction or definite remaining static blocker. Arbitrary-module endpoint, independent universes, canonical quotient coefficients and actual local-length exponents preserved. Final repaired source and test hashes reviewed.",
+    "reviewed_sha256": {
+      "Colib/LinearAlgebra/Determinant/FiniteLength.lean": "bf7d51b3714e85f749e7f9b90d4bd0cd374b25b1b836c54bf3ccc7b2aa5dc063",
+      "Colib/RingTheory/Norm/FiniteAlgebra.lean": "3c9046993d63a0297736e309f174b37b2668ff44f40a4dae0c95c52364710625",
+      "Colib/RingTheory/Norm/PolynomialFiber.lean": "11a0ac4642e49cb893945fcc3a76ad3b9bdbec5ec4fadbe452d8e34eb001ab14",
+      "ColibTest/FiniteAlgebraNorm.lean": "28610d96a76ced537c645ade0ffb4fc54ca5234170134bf0dc79233311002909"
+    },
+    "repairs_reviewed": [
+      "Dropping unused Module.Finite k B only generalizes the residue-norm transport helper; both native equivalence lemmas use the total norm convention and need no finiteness.",
+      "Unfolding the local L abbreviation in the final product simp changes no mathematical data.",
+      "Four proof-local letI-to-let changes and explicit test LinearMap.ext only repair elaboration/style; obsolete draft status comments removed."
+    ],
+    "limit": "Independent source-level mathematical/API review; no second compilation, kernel replay or mutation by reviewer. Component build evidence is separately recorded."
+  },
+  "author_static_repairs": [
+    "Explicit argument f supplied to LinearMap.det_baseChange.",
+    "Canonical residue quotient comparison uses calc rather than potentially closing rw followed by rfl.",
+    "Intertwining proofs avoid unconditional trailing tactics after a closing rewrite."
+  ],
+  "title": "Finite-algebra local-length norm products and polynomial-fibre norm invariance",
+  "component_status": "Three production leaves, 31 regression examples, declaration lint, style and scoped standard-three-axiom audits passed. Registration and full registered-tree checks remain final-integrator work.",
+  "component_worktree": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+  "evidence_directory": "/workspace/scratch/ab4c8cd79b02/finite-algebra-norm-validation-20261105-1958",
+  "draft_manifest_sha256": "74769f607bb53a3eb5d65144d73ee72737145d68b9adb9b3b6ba13c5f86e8104",
+  "component_source_snapshot": {
+    "Colib/LinearAlgebra/Determinant/FiniteLength.lean": {
+      "sha256": "bf7d51b3714e85f749e7f9b90d4bd0cd374b25b1b836c54bf3ccc7b2aa5dc063",
+      "lines": 61,
+      "olean_sha256": "e4d2aac636453ae0dbdd0b5e7945ced93f68c1d54520c6e0120fa78d259ed068",
+      "trace": "finite-algebra-norm-validation-20261105-1958/build-traces/Colib/LinearAlgebra/Determinant/FiniteLength.trace",
+      "source_mtime_ns": 1793908942479879241,
+      "olean_mtime_ns": 1793908945822527151,
+      "trace_dep_hash": "37dc6ad8487277a7"
+    },
+    "Colib/RingTheory/Norm/FiniteAlgebra.lean": {
+      "sha256": "3c9046993d63a0297736e309f174b37b2668ff44f40a4dae0c95c52364710625",
+      "lines": 300,
+      "olean_sha256": "d9fcd62d7f02e6072e2847ef52346f9a8d978980fa03732a744af9eabd87eff2",
+      "trace": "finite-algebra-norm-validation-20261105-1958/build-traces/Colib/RingTheory/Norm/FiniteAlgebra.trace",
+      "source_mtime_ns": 1793908942480119011,
+      "olean_mtime_ns": 1793908950165608485,
+      "trace_dep_hash": "ffab2e5576c49729"
+    },
+    "Colib/RingTheory/Norm/PolynomialFiber.lean": {
+      "sha256": "11a0ac4642e49cb893945fcc3a76ad3b9bdbec5ec4fadbe452d8e34eb001ab14",
+      "lines": 150,
+      "olean_sha256": "5b3fa6911260aefffbf7aefde154bd43f6114f6e84547b2aae9347acd0c27f75",
+      "trace": "finite-algebra-norm-validation-20261105-1958/build-traces/Colib/RingTheory/Norm/PolynomialFiber.trace",
+      "source_mtime_ns": 1793908942480335066,
+      "olean_mtime_ns": 1793908953424615147,
+      "trace_dep_hash": "61fbc13b5c6022f7"
+    },
+    "ColibTest/FiniteAlgebraNorm.lean": {
+      "sha256": "28610d96a76ced537c645ade0ffb4fc54ca5234170134bf0dc79233311002909",
+      "lines": 348,
+      "olean_sha256": "66548dd341ba0c61dbc90817cb0c774d841dfec0f13bd0aa7e2718513eb71e0e",
+      "trace": "finite-algebra-norm-validation-20261105-1958/build-traces/ColibTest/FiniteAlgebraNorm.trace",
+      "source_mtime_ns": 1793908942479636045,
+      "olean_mtime_ns": 1793908957784108290,
+      "trace_dep_hash": "76204e902e69ce0c"
+    }
+  },
+  "snapshot_method": "Exact source copies captured after final successful build/lint/audit and before integrator handoff. Native build traces, olean SHA256 and source/output timestamps captured together; not reconstructed by stripping later registration annotations.",
+  "compiled_repairs": [
+    "Omitted unused Module.Finite k B in Algebra.residue_norm_quotient_eq_norm_residue. Main module/algebra formula hypotheses unchanged.",
+    "Explicitly unfolded local abbreviation L in the finite-product residue-norm simplification.",
+    "Changed four proof-local letI commands to let to satisfy pinned style lint without changing evaluation-fibre statements.",
+    "Replaced ext x by explicit LinearMap.ext in the concrete two-branch value regression.",
+    "Removed obsolete draft-status sentences, then rebuilt all three production leaves and the test in final receipt 10."
+  ],
+  "validation": {
+    "final_pass_receipts": [
+      "10-final-build.json",
+      "11-field-lint.json",
+      "12-algebra-lint.json",
+      "13-polynomial-lint.json",
+      "14-test-lint.json",
+      "15-style.json",
+      "16-field-axiom.json",
+      "17-norm-axiom.json"
+    ],
+    "axiom_audits": [
+      {
+        "root": "Colib.LinearAlgebra.Determinant",
+        "declarations": 1,
+        "receipt": "16-field-axiom.json"
+      },
+      {
+        "root": "Colib.RingTheory.Norm",
+        "declarations": 19,
+        "receipt": "17-norm-axiom.json"
+      }
+    ],
+    "axiom_allowlist": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "failed_attempts": {
+      "05-finite-algebra-r1.json": "Unused helper finite-algebra hypothesis plus unreduced local type abbreviation; repaired.",
+      "07-polynomial-r1.json": "Four proof-local letI style lint failures; repaired.",
+      "09-test-r1.json": "Aggressive ext tactic selected product-generator extensionality instead of pointwise LinearMap.ext; repaired."
+    },
+    "upstream_builds": [
+      "StacksFrontier.Algebra.Module.FiniteLength.Determinant",
+      "StacksFrontier.Algebra.Module.FiniteLength.DeterminantProduct",
+      "StacksFrontier.RingTheory.Norm.BaseChangeProduct"
+    ],
+    "warnings": [
+      "Pinned upstream Determinant has existing unscoped synthInstance.maxHeartbeats style warnings.",
+      "Pinned upstream DeterminantProduct has existing show/change style warnings.",
+      "Pinned upstream SemilocalDecomposition has an existing line-length warning.",
+      "Style tool treated absent optional scripts/nolints-style.txt as empty and exited 0."
+    ],
+    "receipt_count": 17,
+    "all_owned_groups_gone": true,
+    "guard_failures": 0,
+    "max_peak_rss_bytes": 4194394112,
+    "guard_limits": {
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "sample_seconds": 0.1,
+      "physical_memory_bytes": 10451427328,
+      "lean_threads": 1,
+      "max_active_lean": 1
+    },
+    "disk_guard": "Prestart reserve 5 GiB; cancel below 4 GiB.",
+    "not_run": [
+      "registered-tree full scripts/check.sh",
+      "kernel replay",
+      "separate downstream/client checks"
+    ],
+    "receipts": [
+      {
+        "receipt": "01-native-determinant.json",
+        "log": "01-native-determinant.log",
+        "receipt_sha256": "79bb4e66791706135d887036d82dabaee21a960e152c6ffc20d5f620dd31caeb",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.Algebra.Module.FiniteLength.Determinant:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 17,
+        "pgid": 17,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2521632768,
+        "duration_seconds": 35.93698368204059,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 17,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "02-native-determinant-product.json",
+        "log": "02-native-determinant-product.log",
+        "receipt_sha256": "6ae7c48b167c248a6a5969aac5643b46e9408c9f0f7ff1706c65a70aaf92f678",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.Algebra.Module.FiniteLength.DeterminantProduct:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 450,
+        "pgid": 450,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2408108032,
+        "duration_seconds": 5.023665130021982,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 450,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "03-native-norm-base-change.json",
+        "log": "03-native-norm-base-change.log",
+        "receipt_sha256": "78163c2213665a4e4c16d07612c64fe1d14402e6ece679ae09db5890a390ff04",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.RingTheory.Norm.BaseChangeProduct:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 586,
+        "pgid": 586,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2525929472,
+        "duration_seconds": 4.692663819994777,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 586,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "04-field-bridge-r1.json",
+        "log": "04-field-bridge-r1.log",
+        "receipt_sha256": "02aa1ad46764671ca7e07803d31414775b96ab8423f601ba836066547c9c2d67",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.LinearAlgebra.Determinant.FiniteLength:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2392866816,
+        "duration_seconds": 3.5433311709784903,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "05-finite-algebra-r1.json",
+        "log": "05-finite-algebra-r1.log",
+        "receipt_sha256": "15e81c825b4c73eed9af30e476655be97cfb2b839bf33fea37025bb9091b885f",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Norm.FiniteAlgebra:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2435272704,
+        "duration_seconds": 5.731617010955233,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "06-finite-algebra-r2.json",
+        "log": "06-finite-algebra-r2.log",
+        "receipt_sha256": "5b9d2cda09c477fe97b2079942f3a601706a1297f40fcf4c29463ada978a249f",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Norm.FiniteAlgebra:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2436591616,
+        "duration_seconds": 6.250725645979401,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "07-polynomial-r1.json",
+        "log": "07-polynomial-r1.log",
+        "receipt_sha256": "d58a52791ed10584deba9d7ddea7a02174b125beb7cfeb50d86e56c762329633",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Norm.PolynomialFiber:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2555146240,
+        "duration_seconds": 4.6904452799935825,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "08-polynomial-r2.json",
+        "log": "08-polynomial-r2.log",
+        "receipt_sha256": "c308cfe1c0453ab4254ed73c31f4bbeff82fb858aa2fc4b599c0e07f1a28ab8d",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Norm.PolynomialFiber:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2548547584,
+        "duration_seconds": 5.014796708012,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "09-test-r1.json",
+        "log": "09-test-r1.log",
+        "receipt_sha256": "a5d2117792864237f960c7208b671b4ca1fa9e18828391e073ebb4adcdf65f2e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.FiniteAlgebraNorm:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2536046592,
+        "duration_seconds": 6.349417978024576,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "10-final-build.json",
+        "log": "10-final-build.log",
+        "receipt_sha256": "c9e0c267a31176b9a9e396c9c10e2d20a556a4889bc3ddb50a904b488453e682",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.FiniteAlgebraNorm:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2551705600,
+        "duration_seconds": 15.618718578014523,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "11-field-lint.json",
+        "log": "11-field-lint.log",
+        "receipt_sha256": "2d0e59da7245f63aa2e486ddcaf642ea6ef5b7ea782493a5cd173bb8dd3e8f3e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.LinearAlgebra.Determinant.FiniteLength"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3818487808,
+        "duration_seconds": 7.963109094009269,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "12-algebra-lint.json",
+        "log": "12-algebra-lint.log",
+        "receipt_sha256": "7fa5681d47b94754f3eb4895261ec2b8c4a16fb9c49b6dec3e5b09656cdb9ddd",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Norm.FiniteAlgebra"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 169,
+        "pgid": 169,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3954696192,
+        "duration_seconds": 4.076934935990721,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 169,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "13-polynomial-lint.json",
+        "log": "13-polynomial-lint.log",
+        "receipt_sha256": "ff3378612e5343459b41ee56d1736814821e078ea7d7a082f482f9a1cf19b163",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Norm.PolynomialFiber"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 294,
+        "pgid": 294,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4193947648,
+        "duration_seconds": 4.276422327966429,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 294,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "14-test-lint.json",
+        "log": "14-test-lint.log",
+        "receipt_sha256": "5de74056483e5681d14e2e13a40117c9a04011ac9ca637821c7ebe413af700b2",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "ColibTest.FiniteAlgebraNorm"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 421,
+        "pgid": 421,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4194394112,
+        "duration_seconds": 3.4296866139629856,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 421,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "15-style.json",
+        "log": "15-style.log",
+        "receipt_sha256": "e4af8839e8032b15882699adc231e8c70c6a9557e5d8fae5eecfa396be30bfd8",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.LinearAlgebra.Determinant.FiniteLength",
+          "Colib.RingTheory.Norm.FiniteAlgebra",
+          "Colib.RingTheory.Norm.PolynomialFiber",
+          "ColibTest.FiniteAlgebraNorm"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 540,
+        "pgid": 540,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1690537984,
+        "duration_seconds": 1.565730574016925,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 540,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "16-field-axiom.json",
+        "log": "16-field-axiom.log",
+        "receipt_sha256": "6c0bca666cfd129d1743ec67da7df97ec01d78b2c0be9abf402d4a7445eb1b5c",
+        "state": "completed",
+        "command": [
+          "lake",
+          "env",
+          ".lake/tools/axiom-audit/.lake/build/bin/axiom-audit",
+          "--root",
+          "Colib.LinearAlgebra.Determinant",
+          "--modules",
+          "Colib.LinearAlgebra.Determinant.FiniteLength"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 711,
+        "pgid": 711,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3444264960,
+        "duration_seconds": 3.233638464997057,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 711,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "17-norm-axiom.json",
+        "log": "17-norm-axiom.log",
+        "receipt_sha256": "40980dd6ed13993db4f27049575a4e7c774c0c44ba4a285400c450b29bfb3f7e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "env",
+          ".lake/tools/axiom-audit/.lake/build/bin/axiom-audit",
+          "--root",
+          "Colib.RingTheory.Norm",
+          "--modules",
+          "Colib.RingTheory.Norm.PolynomialFiber"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+        "pid": 824,
+        "pgid": 824,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3758886912,
+        "duration_seconds": 3.5434831930324435,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 824,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      }
+    ]
+  },
+  "handoff": {
+    "component_source_frozen": true,
+    "no_lean_after_release": true,
+    "no_main_or_dependency_source_edits": true,
+    "no_branch_commit_push": true,
+    "shared_cache_changes": "Only the three admitted missing native Stacks artifacts were built; pinned dependency sources/revisions unchanged.",
+    "remaining": "Final integrator owns Library IDs, precise source bibliography, compiled tags, root imports, test/check registration, catalog/export and complete registered-tree acceptance."
+  },
+  "library_items": [
+    "COL-0182",
+    "COL-0183",
+    "COL-0184"
+  ],
+  "integrator_source_review": "Read final determinant/residue transport, native semilocal decomposition, length-finiteness before toNat, quotient-residue norm identity, algebra-as-module specialization, and literal polynomial evaluation tensor formulas. The comparison of two fibres is restricted to global units under finite freeness or finite torsion-freeness; single-fibre factorization only needs finiteness. No new mathematical model or scope strengthening was introduced during registration.",
+  "registered_tree_validation": {
+    "status": "passed",
+    "baseline": "1a98de6dc3783a9ff821e3511ad3535fd18de97d",
+    "command": "bash scripts/check.sh",
+    "receipt_sha256": "9dd4b8f29491132f1ec0af28982edf636ab76a2b1c9e34c682fcd6170674df5c",
+    "log_sha256": "a7b9384e6592f1fd7db9de26e024bd385ba8e82b335a72246e1cc267df50c4b9",
+    "guard": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-finite-algebra-norm-1a98de6-20261105-1958",
+      "pid": 8,
+      "pgid": 8,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6431633408,
+      "duration_seconds": 140.25992218201282,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 8,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ]
+    },
+    "kernel_replay": false,
+    "source_sha256": {
+      "Colib/LinearAlgebra/Determinant/FiniteLength.lean": "a3cd141e8eb2abcdb817819956228ead6afffc964c72cc2bc8b9d529594ee503",
+      "Colib/RingTheory/Norm/FiniteAlgebra.lean": "96fa40368e66a19ce5679f686b814b27fa44efeeb4f741ec8181456c088ed3c6",
+      "Colib/RingTheory/Norm/PolynomialFiber.lean": "94dd76b6ffb59837124e9c8b2662d91cad5c8caffe2c6f238e166355ead9f4bb",
+      "ColibTest/FiniteAlgebraNorm.lean": "28610d96a76ced537c645ade0ffb4fc54ca5234170134bf0dc79233311002909"
+    },
+    "dependency_sha256": {
+      "lakefile.toml": "b681aa44d657deeaed64537578c53698eb8546fa15fd44c74d949c928d94a6e1",
+      "lake-manifest.json": "305047fed14ab46f9a0d8e23e5cefa5ef5c6ea89ebf0b34f52ec172f0b9d9652",
+      "lean-toolchain": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+    },
+    "results": [
+      "58 Python regression tests",
+      "production build",
+      "in-package tests",
+      "declaration and Mathlib text lint",
+      "generated root imports",
+      "2659 declarations passed allowlisted axiom audit",
+      "181 Library items and 611 declarations exported"
+    ],
+    "notes": "Final code and registration checked together; subsequent edit only records this validation evidence."
+  }
+}

@@ -146,6 +146,7 @@ public import Colib.KTheory.Waldhausen.WeakNaturalTransformationBased
 public import Colib.KTheory.Waldhausen.WeakRowHomotopy
 public import Colib.KTheory.Waldhausen.ZeroFunctor
 public import Colib.Library.Upstream
+public import Colib.LinearAlgebra.Determinant.FiniteLength
 public import Colib.LinearAlgebra.TensorAlgebra.HomogeneousLift
 public import Colib.LinearAlgebra.TensorAlgebra.IdealVanishing
 public import Colib.RingTheory.Koszul.CoefficientAugmentation
@@ -179,6 +180,8 @@ public import Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Basic
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Support
+public import Colib.RingTheory.Norm.FiniteAlgebra
+public import Colib.RingTheory.Norm.PolynomialFiber
 public import Colib.Topology.Category.TopCat.PushoutInteriors
 public import Colib.Topology.Category.TopCat.Pushouts
 public import Colib.Topology.Category.TopCat.SequentialColimit.Compact

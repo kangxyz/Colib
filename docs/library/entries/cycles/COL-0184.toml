@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0184"
+title = "Unit norms in polynomial evaluation fibres"
+kind = "comparison"
+section = "finite-algebra-coefficients"
+order = 80
+statement = "A global unit of a finite free algebra over a polynomial ring over a field has equal norms and equal length-weighted residue-norm products in any two actual evaluation fibres."
+scope = "Finite torsion-free algebras satisfy the same comparison by freeness over the polynomial PID. A single-fibre product formula only needs finiteness. No reducedness, separability or geometric cycle comparison is claimed."
+review = "author_checked"

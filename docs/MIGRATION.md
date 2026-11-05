@@ -25,5 +25,5 @@ Each candidate is classified as direct upstream reuse, a proved model/interface 
 or a minimal Colib-owned prerequisite. Its actual consumers determine the incremental
 validation scope. Source correspondence and mathematical review retain their own status.
 
-The first encyclopedia release demonstrates this process on twelve entries. The amount of
+The first Library release demonstrates this process on twelve entries. The amount of
 further migration is measured by the actual proof and interface repairs for subsequent slices.

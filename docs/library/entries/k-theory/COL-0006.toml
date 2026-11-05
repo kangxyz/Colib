@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0006"
+title = "The internal grading of the Milnor ring"
+statement = "The quotient ring inherits an internal grading from the tensor algebra."
+scope = "A construction supporting the definition's grading."
+review = "author_checked"
+kind = "lemma"
+section = "milnor-k-theory"
+order = 60

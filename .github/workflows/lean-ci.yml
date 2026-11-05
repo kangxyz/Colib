@@ -84,7 +84,7 @@ jobs:
       - name: Get Mathlib cache
         working-directory: ${{ inputs.package-directory }}
         run: bash scripts/cache.sh
-      - name: Check catalog metadata
+      - name: Check Library metadata
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 -m unittest discover -s scripts -p 'test_*.py'
@@ -261,7 +261,7 @@ jobs:
             echo '::error::build-targets must name at least one production root.'
             exit 1
           fi
-          lake --no-build exe mathlib/lint-style "${roots[@]}" ColibTest.Pilot
+          lake --no-build exe mathlib/lint-style "${roots[@]}" ColibTest.Pilot ColibTest.References
       - name: Test
         id: test
         if: ${{ needs.build.result == 'success' && steps.compiled.outcome == 'success' && steps.tools.outcome == 'success' }}
@@ -317,8 +317,8 @@ jobs:
             lake env "$tool/.lake/build/bin/axiom-audit" --root "$root" || result=1
           done
           exit "$result"
-      - name: Export the encyclopedia from built declarations
-        id: catalog
+      - name: Export the structured Library from built declarations
+        id: library
         if: ${{ !cancelled() && steps.compiled.outcome == 'success' }}
         continue-on-error: true
         working-directory: ${{ inputs.package-directory }}
@@ -326,12 +326,12 @@ jobs:
           python3 scripts/catalog.py build
           python3 scripts/site.py
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
-        if: ${{ steps.catalog.outcome == 'success' }}
+        if: ${{ steps.library.outcome == 'success' }}
         with:
-          name: colib-encyclopedia
-          path: ${{ inputs.package-directory }}/build/catalog/
+          name: colib-library
+          path: ${{ inputs.package-directory }}/build/library/
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
-        if: ${{ steps.catalog.outcome == 'success' }}
+        if: ${{ steps.library.outcome == 'success' }}
         with:
           name: colib-site
           path: ${{ inputs.package-directory }}/build/site/
@@ -351,7 +351,7 @@ jobs:
           TEST: ${{ steps.test.outcome }}
           LINT: ${{ steps.lint.outcome }}
           AXIOMS: ${{ steps.axioms.outcome }}
-          CATALOG: ${{ steps.catalog.outcome }}
+          CATALOG: ${{ steps.library.outcome }}
         run: |
           printf 'Build outputs: %s\nCheck tools: %s\nGenerated entries: %s\nText style: %s\nTest: %s\nLint: %s\nAxioms: %s\n' "$COMPILED" "$TOOLS" "$IMPORTS" "$STYLE" "$TEST" "$LINT" "$AXIOMS" >> "$GITHUB_STEP_SUMMARY"
           test "$COMPILED" = success && test "$TOOLS" = success && test "$IMPORTS" = success && test "$STYLE" = success && test "$TEST" = success && test "$LINT" = success && test "$AXIOMS" = success && test "$CATALOG" = success

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0001"
+title = "Grothendieck group of an abelian category"
+statement = "Objects generate an abelian group with one additivity relation for each short exact sequence."
+scope = "The implementation is defined for categories with zero morphisms. The source's abelian case is included."
+review = "author_checked"
+kind = "definition"
+section = "grothendieck-groups"
+order = 10

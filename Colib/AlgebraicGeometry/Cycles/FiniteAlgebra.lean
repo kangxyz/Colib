@@ -5,6 +5,7 @@ Authors: kangxyz
 -/
 module
 
+public import Colib.Util.References
 public import Mathlib.RingTheory.Spectrum.Prime.Noetherian
 public import Mathlib.RingTheory.Length
 import Mathlib.RingTheory.LocalRing.Length
@@ -23,6 +24,7 @@ namespace IsLocalRing
 
 /-- Over a field the dimension of a finite local algebra is its local length multiplied by
 the degree of its residue field. -/
+@[colib_tag "COL-0011", stacks 02M0 "field-base local-algebra specialization"]
 theorem finrank_eq_length_mul_residueFinrank (k A : Type*) [Field k] [CommRing A]
     [Algebra k A] [IsLocalRing A] [Module.Finite k A] :
     Module.finrank k A = (Module.length A A).toNat * Module.finrank k (ResidueField A) := by
@@ -40,6 +42,8 @@ namespace IsArtinianRing
 
 /-- The dimension of a finite algebra is the sum of its local lengths weighted by residue
 degrees. This gives the affine fibre coefficient in the finite-flat cycle formula. -/
+@[colib_tag "COL-0012", stacks 02M0 "finite-algebra length-degree sum over a field",
+  stacks 02RH "affine fibre coefficient calculation"]
 theorem finrank_eq_finsum_length_mul_residueFinrank (k A : Type*) [Field k] [CommRing A]
     [Algebra k A] [Module.Finite k A] :
     Module.finrank k A = ∑ᶠ x : PrimeSpectrum A,

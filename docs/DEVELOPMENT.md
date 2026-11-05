@@ -32,7 +32,7 @@ Maintained text and names use English. Preserve exact source references and cont
 notices. New public mathematical endpoints enter the owning source family and catalog
 together, with precise hypotheses and map normalizations.
 
-## Encyclopedia publication
+## Library publication
 
 The native Test job generates both the Markdown catalog and the static site from the same
 declaration export. The Pages workflow consumes the successful main-branch native run's
@@ -40,3 +40,17 @@ declaration export. The Pages workflow consumes the successful main-branch nativ
 The deployed address is https://kangxyz.github.io/colib/.
 
 [Independent Stacks caching](CACHING.md) owns the separate dependency-artifact boundary.
+
+## Library checks
+
+`python3 scripts/catalog.py check` validates chapters, sections and permanent mathematical items. Defining modules and their
+imports come from the native Lean export. The native exporter reads compiled `@[colib_tag]`, `@[stacks]`
+and `@[colib_ref]` metadata and rejects unresolved bindings or unknown bibliographic keys.
+`python3 scripts/catalog.py build` produces build/library/library.json, declarations.json
+and a chapter-ordered Markdown rendering. Original build/catalog output paths remain available
+for consumers of the first release.
+
+The website generator consumes that exact native export and checks its source hashes. It
+writes independent contents, chapter, section, permanent-item, bibliography and search pages.
+Search loads its compact index on the search page. Ordinary reading pages contain their text
+and links in static HTML.

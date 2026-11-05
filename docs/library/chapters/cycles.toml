@@ -1,0 +1,11 @@
+[chapter]
+id = "cycles"
+title = "Cycles and correspondences"
+order = 20
+introduction = "Cycle constructions depend on precise local multiplicities and pushforward degrees. The first section establishes the affine length-degree calculation that will supply finite-flat correspondence coefficients. Geometric correspondence and composition constructions have their subsequent source owners."
+
+[[sections]]
+id = "finite-algebra-coefficients"
+title = "Finite-algebra coefficients"
+order = 10
+introduction = "For a finite algebra over a field, its dimension is the sum of the lengths of its prime localizations weighted by residue-field degrees. The local restriction-of-scalars formula precedes the local-algebra specialization and the global finite sum."

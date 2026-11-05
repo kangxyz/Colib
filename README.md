@@ -4,8 +4,9 @@ Colib formalizes cohomology and homotopy theory in algebraic geometry, including
 motivic and algebraic K-theoretic interfaces. Its mathematical dependencies are Mathlib and
 [AxiomMath/Stacks](https://github.com/AxiomMath/Stacks), pinned to exact commits.
 
-The [online encyclopedia](https://kangxyz.github.io/colib/) provides permanent result links,
-reference search, scope notes and the actual Lean signatures.
+The [Library](https://kangxyz.github.io/colib/) organizes Colib into chapters, sections and
+permanent mathematical items, with a reading sequence, precise literature references and
+compiled Lean declarations.
 
 ## Initial pilot
 
@@ -18,9 +19,10 @@ The first release develops three closed mathematical slices.
 - The dimension formula for a finite algebra over a field as the sum of local lengths
   weighted by residue-field degrees.
 
-The [encyclopedia](docs/ENCYCLOPEDIA.md) describes the twelve permanent entries and their
-reference and review conventions. CI exports the actual Lean signatures and defining modules
-as the artifact `colib-encyclopedia`. Release catalog assets are versioned with the code.
+The [Library organization guide](docs/LIBRARY.md) and [contribution guide](CONTRIBUTING.md)
+define chapter ownership, mathematical items, Lean annotations and literature references.
+CI exports the actual Lean signatures and defining modules
+as the artifact `colib-library`. Release catalog assets are versioned with the code.
 
 ## Use and build
 

@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0012"
+title = "The length-degree sum for a finite scheme over a field"
+statement = "The dimension of a finite algebra equals the sum of its local-ring lengths multiplied by the corresponding residue-field degrees."
+scope = "The affine coefficient formula over a field, expressed through prime localizations. The full finite-flat correspondence category is a subsequent migration target."
+review = "author_checked"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 120
+proof = "Decompose the Artinian finite algebra into its prime localizations, sum their dimensions, and apply the local length-degree formula to each summand."

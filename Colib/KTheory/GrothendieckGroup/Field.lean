@@ -6,6 +6,7 @@ Authors: kangxyz
 module
 
 public import Mathlib.Algebra.Category.FGModuleCat.Abelian
+public import Colib.Util.References
 public import StacksCore.CategoryTheory.GrothendieckGroup.Basic
 import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
@@ -45,11 +46,16 @@ def fgModuleRank : GrothendieckGroup (FGModuleCat.{u} k) →+ ℤ :=
     exact_mod_cast h.symm)
 
 /-- The dimension homomorphism sends the class of a vector space to its dimension. -/
-@[simp] theorem fgModuleRank_of (V : FGModuleCat.{u} k) :
+@[simp, colib_ref "WeibelKBook" "II, section 2, field computation (online chapter p. 5)"
+  "ingredient" "The dimension homomorphism evaluated on an object class"]
+theorem fgModuleRank_of (V : FGModuleCat.{u} k) :
     fgModuleRank k (of V) = Module.finrank k V := rfl
 
 /-- Dimension is an additive equivalence from the Grothendieck group of finite modules
 over a field to the integers. -/
+@[colib_tag "COL-0004", stacks 00JE "finite-module dimension equivalence",
+  colib_ref "WeibelKBook" "II, section 2, field computation (online chapter p. 5)"
+    "adaptation" "The categorical Grothendieck group of finite-dimensional vector spaces"]
 def fgModuleRankEquiv : GrothendieckGroup (FGModuleCat.{u} k) ≃+ ℤ :=
   AddEquiv.ofBijective (fgModuleRank k) (by
     constructor

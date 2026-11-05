@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0008"
+title = "Two spellings of the Steinberg relation"
+statement = "Tensors of units a and b satisfying a + b = 1 generate the same relation submodule as tensors x and 1 - x."
+scope = "The pair relation is the spelling from Aglib.KTheory.MilnorK.K2.Basic at Aglib commit 2c34f185. Only that presentation is compared."
+review = "author_checked"
+kind = "lemma"
+section = "milnor-k-theory"
+order = 80
+provenance = "aglib"
+proof = "Compare the relation generators. A pair of units summing to one is x and 1 - x, and every allowed x gives such a pair. Taking integer spans gives the equality of relation submodules."

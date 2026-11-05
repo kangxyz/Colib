@@ -1,0 +1,17 @@
+[chapter]
+id = "k-theory"
+title = "K-theory"
+order = 10
+introduction = "We develop additive invariants and the comparison maps used by algebraic K-theory. The current sections construct Grothendieck groups and Milnor K-theory using the selected Mathlib and Stacks objects. Quillen and Waldhausen constructions enter through their own exact and homotopical prerequisites."
+
+[[sections]]
+id = "grothendieck-groups"
+title = "Grothendieck groups"
+order = 10
+introduction = "Begin with the presentation by objects and short exact sequences. Its additivity and functoriality lead to the dimension computation for finite-dimensional vector spaces. The object classes and their normalization are retained throughout."
+
+[[sections]]
+id = "milnor-k-theory"
+title = "Milnor K-theory"
+order = 20
+introduction = "The canonical graded object is the Steinberg quotient of the tensor algebra on the multiplicative group of a field. We first construct its homogeneous groups, then compare the degree-two component with the ordered-pair presentation. The literature references identify the defining relations and the scope of each comparison."

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0003"
+title = "Functoriality of the Grothendieck group"
+statement = "A zero-preserving functor carrying short exact sequences to short exact sequences induces the map on object classes."
+scope = "The source's exact functor between abelian categories supplies the implementation's short-exact-sequence hypothesis."
+review = "author_checked"
+kind = "proposition"
+section = "grothendieck-groups"
+order = 30

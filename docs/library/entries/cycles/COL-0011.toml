@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0011"
+title = "Dimension of a finite local algebra"
+statement = "The dimension over the base field equals local length times the degree of the residue field."
+scope = "A finite-dimensional commutative local algebra over a field. The result is stated in natural numbers."
+review = "author_checked"
+kind = "corollary"
+section = "finite-algebra-coefficients"
+order = 110
+proof = "Apply restriction of scalars for module length. Over a field, length is dimension. The finite hypotheses permit taking natural-number values."

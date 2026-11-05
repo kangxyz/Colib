@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0007"
+title = "The tensor-square presentation of Milnor K₂"
+statement = "The degree-two group is linearly equivalent over the integers to the tensor square of the additive group of units modulo Steinberg tensors."
+scope = "The explicit degree-two quotient comparison."
+review = "author_checked"
+kind = "comparison"
+section = "milnor-k-theory"
+order = 70

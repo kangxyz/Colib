@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0005"
+title = "Milnor K-theory as a graded Steinberg quotient"
+statement = "The degree-n group is the degree-n component of the tensor algebra on the additive group of field units modulo the Steinberg ideal."
+scope = "Only the graded quotient definition. The remark's residue maps and cycle-complex discussion have separate mathematical obligations."
+review = "author_checked"
+kind = "definition"
+section = "milnor-k-theory"
+order = 50

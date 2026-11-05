@@ -22,9 +22,12 @@ canonical Milnor group is Stacks' MilnorKTheory. The earlier pair-symbol relatio
 only at its comparison boundary. The affine cycle coefficient uses Mathlib's module length
 and prime localizations.
 
-Permanent encyclopedia IDs identify mathematical entries independently of Lean names and
-source paths. Bibliographic records and correspondence notes have one maintained owner.
-Signatures, source links and defining modules are generated from built artifacts.
+The Library is the mathematical organization centre described in [LIBRARY.md](LIBRARY.md).
+Chapters contain sections and typed permanent items. Defining modules and code imports come from Lean; the chapter and section sequence supplies
+the reading organization. Lean annotations bind declarations and precise references to those items.
+Bibliographic identity and editorial statements each have one maintained owner. Signatures,
+defining modules and implementation references are generated from the compiled environment.
+[CONTRIBUTING.md](../CONTRIBUTING.md) owns Mathlib/Stacks-aligned code style and agent assignments.
 
 ## Source provenance
 

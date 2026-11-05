@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0002"
+title = "Additivity on short exact sequences"
+statement = "For a short exact sequence A to B to C, the class of B equals the sum of the classes of A and C."
+scope = "The relation clause of the definition."
+review = "author_checked"
+kind = "lemma"
+section = "grothendieck-groups"
+order = 20

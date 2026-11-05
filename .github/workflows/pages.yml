@@ -1,4 +1,4 @@
-name: Publish encyclopedia
+name: Publish Library
 
 on:
   workflow_run:
@@ -44,7 +44,7 @@ jobs:
           fi
           test -n "$run_id" && test "$run_id" != null
           echo "run-id=$run_id" >> "$GITHUB_OUTPUT"
-      - name: Download the checked encyclopedia
+      - name: Download the checked Library
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
@@ -53,10 +53,10 @@ jobs:
           gh run download "$RUN_ID" --repo "$REPOSITORY" --name colib-site \
             --dir "$RUNNER_TEMP/colib-site"
           test -s "$RUNNER_TEMP/colib-site/index.html"
-          test -s "$RUNNER_TEMP/colib-site/catalog.json"
+          test -s "$RUNNER_TEMP/colib-site/library.json"
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         with:
           path: ${{ runner.temp }}/colib-site
-      - name: Deploy encyclopedia
+      - name: Deploy Library
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e

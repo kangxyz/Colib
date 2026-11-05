@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0010"
+title = "Length under a local homomorphism"
+statement = "Restriction of scalars multiplies local module length by the residue-field degree."
+scope = "The source single-local-ring case assumes finite length and finite residue degree. Mathlib states the formula with extended natural lengths."
+review = "author_checked"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 100

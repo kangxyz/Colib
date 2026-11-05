@@ -20,3 +20,41 @@ title = "The Stacks Project in Lean"
 authors = ["AxiomMath/Stacks contributors"]
 version = "Git commit f8e70c5dd04bfabcb423d5e325461f527c85a5d6"
 url = "https://github.com/AxiomMath/Stacks/tree/f8e70c5dd04bfabcb423d5e325461f527c85a5d6"
+
+[sources.WeibelKBook]
+kind = "book"
+title = "The K-book: An Introduction to Algebraic K-theory"
+authors = ["Charles A. Weibel"]
+year = 2013
+version = "Author's online chapters II and III, inspected 2026-11-05"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook.html"
+
+[[sources.WeibelKBook.documents]]
+label = "Chapter II, The Grothendieck group K0"
+locator_prefix = "II,"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.II.pdf"
+sha256 = "529ea8a5853e9fa55279e7ad79047155409b10847bd924b56f708f0950ebc607"
+
+[[sources.WeibelKBook.documents]]
+label = "Chapter III, K1 and K2 of a ring"
+locator_prefix = "III,"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf"
+sha256 = "ba1bc2d25680ab25c4baadc5ab28e39d1077dc66bb12ca4e2174b6cb55f81307"
+
+[sources.Milnor1970]
+kind = "article"
+title = "Algebraic K-theory and quadratic forms"
+authors = ["John Milnor"]
+year = 1970
+journal = "Inventiones mathematicae"
+volume = "9"
+pages = "318-344"
+doi = "10.1007/BF01425486"
+version = "Published article (1970), section 1 inspected 2026-11-05"
+url = "https://doi.org/10.1007/BF01425486"
+
+[[sources.Milnor1970.documents]]
+label = "Published article, scanned copy"
+locator_prefix = "Section 1"
+url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnorktheoryforms.pdf"
+sha256 = "a588baab393966542c0a1cfed96a4bc09561f96838ed317fc25b7f9a39df84ff"

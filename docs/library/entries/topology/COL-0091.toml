@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0091"
+title = "Constant simplicial sets realize to discrete spaces"
+kind = "comparison"
+section = "geometric-realization"
+order = 170
+statement = "The realization of the constant simplicial set on a type A is canonically isomorphic to A with its discrete topology. The comparison is natural for every map between indexing types and sends the actual realized vertex indexed by a to a."
+scope = "Both indexing types in the naturality statement share one universe, and empty types are allowed. The construction uses the explicit coproduct of standard zero-simplices and retains the actual forward map, summand equations and vertex formula. The literature provides the point and coproduct background, not these precise API identities. This is a constant simplicial set, not a statement about arbitrary constant simplicial topological spaces. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

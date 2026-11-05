@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0093"
+title = "Naturality of the classifying-space completion map"
+kind = "comparison"
+section = "classifying-spaces"
+order = 80
+statement = "The nerve of the genuine localization functor induces a map from a category classifying space to the classifying space of its groupoid completion. This map preserves actual object vertices and arrow paths with the stated endpoint casts. The resulting fundamental-groupoid naturality isomorphism extends over the categorical localization."
+scope = "Object and morphism universes remain independent. The original-arrow naturality components are eqToIso of the actual vertex equalities; the completion-level natural isomorphism is extended using Localization.liftNatIso. The underlying path identity is strict after the displayed endpoint casts. The literature is background for nerve and realization functoriality, not a claim that it states these exact localization comparisons. No additional naturality between arbitrary category functors, retraction, injectivity, inverse on fundamental groups, or fundamental-group equivalence is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

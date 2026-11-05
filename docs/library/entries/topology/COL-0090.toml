@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0090"
+title = "Realization of explicit simplicial coproducts"
+kind = "comparison"
+section = "geometric-realization"
+order = 160
+statement = "The degreewise disjoint union of a family of simplicial sets is its categorical coproduct. Its realization is canonically isomorphic to the actual topological disjoint union of the realizations, and the comparison identifies every realized summand inclusion with the topological summand inclusion."
+scope = "The indexing type and simplicial sets share one universe. Stacks 0038(1) supplies the left-adjoint preservation ingredient. Weibel states coproduct preservation for classifying spaces of categories, so that citation is background rather than the full arbitrary-simplicial-set theorem. The actual cocone maps and their equality are retained. No homotopy assembly or product comparison is included. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

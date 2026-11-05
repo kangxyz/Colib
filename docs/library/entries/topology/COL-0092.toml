@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0092"
+title = "Realized arrows on categorical groupoid completion"
+kind = "definition"
+section = "classifying-spaces"
+order = 70
+statement = "The actual arrow-path functor from a category to the fundamental groupoid of its classifying space extends to the categorical localization at all morphisms. Precomposing the extension with the localization functor recovers the original arrow-path functor by an exact equality."
+scope = "Object and morphism universes remain independent. The construction uses Mathlib localization and its explicit lift and factorization identity. The cited presentation of a connected category is background for arrow and composition relations only; connectedness and a maximal tree are not assumptions here. No Ore condition is assumed, and no calculus-of-fractions theorem is invoked. No fullness, faithfulness, essential surjectivity, equivalence, retraction, or fundamental-group comparison is established. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -66,6 +66,8 @@ public import Colib.Topology.Category.TopCat.SequentialColimit.Compact
 public import Colib.Topology.Category.TopCat.SequentialColimit.FundamentalGroupoid
 public import Colib.Topology.ClassifyingSpace.ArrowPaths
 public import Colib.Topology.ClassifyingSpace.Basic
+public import Colib.Topology.ClassifyingSpace.CompletionNaturality
+public import Colib.Topology.ClassifyingSpace.GroupoidCompletion
 public import Colib.Topology.ClassifyingSpace.Map
 public import Colib.Topology.ClassifyingSpace.NerveHomotopy
 public import Colib.Topology.ClassifyingSpace.Path
@@ -75,6 +77,8 @@ public import Colib.Topology.Homotopy.HomotopyGroup.Map
 public import Colib.Topology.Homotopy.OpenCover
 public import Colib.Topology.Realization.Basic
 public import Colib.Topology.Realization.Constant
+public import Colib.Topology.Realization.ConstantIso
+public import Colib.Topology.Realization.Coproduct
 public import Colib.Topology.Realization.Cylinder
 public import Colib.Topology.Realization.CylinderEndpoints
 public import Colib.Topology.Realization.CylinderIso

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0104"
+title = "Actual open charts of simplex attachments"
+kind = "proposition"
+section = "geometric-realization"
+order = 240
+statement = "In an actual attachment of a discrete family of finite real simplices, individual interiors are open embedded simply connected charts. These charts are pairwise disjoint and, together with the old-space collar, cover the pushout. Each collar-chart intersection is exactly the image of the geometric annulus and is path-connected in dimensions at least two."
+scope = "The current open-embedding, open-range and simple-connectedness declarations retain discrete parameter space X; interior simple connectedness has no dimension lower bound. Pairwise disjointness, the exact overlap formula and the cover equality do not assume X discrete. Overlap path-connectedness also omits discreteness but requires 2 <= n and includes nonemptiness. The old space need not be discrete, path-connected or separated. All spaces share one universe. The references provide complement-chart and attachment-cover background, not the exact defect formula or a fundamental-group presentation. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0105"
+title = "Generation by old-space and geometric-simplex paths"
+kind = "proposition"
+section = "geometric-realization"
+order = 250
+statement = "For an actual discrete simplex attachment in any natural dimension, a wide subgroupoid of the fundamental groupoid that contains all old-space path classes and all path classes from each full geometric simplex is the whole fundamental groupoid. Collar paths are handled using the actual retraction and genuine endpoint tracks."
+scope = "The final generation theorem assumes a discrete parameter space but no dimension lower bound. The radial-track and collar-path membership lemmas omit discreteness. All spaces share one universe and no connectedness or separation assumption is imposed on the old space. The cell generators are arbitrary paths in each full geometric simplex, not only edges. The conclusion concerns path-homotopy classes, not pointwise cellular or piecewise-linear decompositions. Hatcher supplies open-cover subdivision and endpoint-transport background; the latter is generalized here to two endpoints in a groupoid. No edge-path generation, relations presentation, or fullness of the old-space inclusion alone is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

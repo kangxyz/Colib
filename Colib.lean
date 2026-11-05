@@ -95,7 +95,10 @@ public import Colib.Topology.Realization.PrismGluing
 public import Colib.Topology.Realization.Simplex
 public import Colib.Topology.Realization.SimplexAnnulus
 public import Colib.Topology.Realization.SimplexAttachmentCollar
+public import Colib.Topology.Realization.SimplexAttachmentCover
 public import Colib.Topology.Realization.SimplexAttachmentDeformation
+public import Colib.Topology.Realization.SimplexAttachmentFullness
+public import Colib.Topology.Realization.SimplexAttachmentPathGeneration
 public import Colib.Topology.Realization.SimplexBoundary
 public import Colib.Topology.Realization.SimplexBoundaryCollar
 public import Colib.Topology.Realization.SimplexCharts

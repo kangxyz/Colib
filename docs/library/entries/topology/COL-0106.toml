@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0106"
+title = "Fullness of higher-dimensional simplex attachments"
+kind = "proposition"
+section = "geometric-realization"
+order = 260
+statement = "For an actual attachment of a discrete family of n-simplices with n at least two, the old-space inclusion induces a full functor on fundamental groupoids. Every actual path between images of old-space points is homotopic with fixed endpoints to the image of an old-space path."
+scope = "The parameter space is discrete, the old space need not be path-connected, and all spaces share one universe. The dimension assumption is 2 <= n. The proof uses the actual collar homotopy equivalence and interior open cover, not an assumed cellular approximation. The cited based-group statements are background for absence of new path generators, not their complete kernel or isomorphism conclusions. No faithfulness, equivalence, fundamental-group isomorphism, kernel presentation or edge-path generation is established; two-dimensional attachments can kill old relations. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

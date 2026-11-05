@@ -357,3 +357,35 @@ worktree passed the complete guarded `scripts/check.sh`, including all seven
 in-package test modules, the 222-declaration axiom audit, and the 22-item Library/site.
 Resource limits and dependency pins were unchanged; no kernel replay or separate
 client checks were run.
+
+## Homogeneous symbol extensionality milestone (2026-11-05)
+
+Library item `COL-0030` closes the two source extensionality declarations for
+additive and integer-linear maps on the native homogeneous Milnor groups. Source
+and target universes remain independent, and degree zero is included. The proof
+uses the native graded projection and existing all-list generation; it does not
+import the higher residue-family fixed-length generation theorem or build a new
+presentation. The [extensionality ledger](migration/milnor-ext.json) reconciles
+the two earlier unresolved entries in the symbol ledger. Universal descent and
+existence of lifts remain unresolved. Stacks 0EAY supplies the underlying tensor
+quotient construction; extensionality is a derived consequence.
+
+## Koszul coefficient milestone (2026-11-05)
+
+Library item `COL-0031` records finite terms, Noetherian homology and the term/homology
+coefficient-annihilator inclusions for the native Stacks coefficient complex. The
+[ledger](migration/motivic-koszul-coefficients.json) records four direct canonical-object
+rewrites and one upstream exterior-power instance reuse, without an old-model comparison.
+Tests cover both stronger Noetherianity and term annihilation, including the empty sequence.
+Stacks 0622/0623 are definition ingredients; 00IK is the Noetherian submodule ingredient.
+They are not presented as verbatim coefficient theorems.
+
+Both milestones are isolated on baseline `9dbeca3fac888032a93ed3580cb078c1021e1ddd`,
+preserving all remote Serre localization files, tests and catalog fixtures. The unpublished
+conflicting Ext allocation is replaced by `COL-0030`. Dependency pins and guard limits
+remain unchanged. Kernel replay and separate downstream client checks are not run.
+
+The complete guarded check passed for both milestones: 27 Python tests, all twelve
+Lean test modules, declaration/text lint, the generated-entry check, the 335-declaration
+production axiom audit, and the 31-item Library/site. The guard recorded no failure
+and confirmed that the owned process group exited.

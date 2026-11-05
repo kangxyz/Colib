@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0030"
+title = "Homogeneous maps are determined by symbols"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 130
+statement = "Two additive or integer-linear maps from a homogeneous Milnor K-group agree if they agree on every ordered tuple symbol of that degree."
+scope = "An arbitrary field in universe u and additive target group in an independent universe v, including degree zero. This gives uniqueness on symbols, not the existence or universal descent of an arbitrary symbol function. Stacks 0EAY is the underlying construction, not the verbatim extensionality statement."
+review = "author_checked"
+provenance = "aglib"
+proof = "Compose both maps with the native degree projection. All list symbols belong to their equality locus: other lengths project to zero, and matching lengths are the specified tuple symbols. Native all-list generation and restriction back to the homogeneous component give equality."

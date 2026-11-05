@@ -32,6 +32,7 @@ class LibraryTests(unittest.TestCase):
         }
         module_names = {
             "projective-dimension": "Colib.RingTheory.Koszul.Ext",
+            "koszul-coefficients": "Colib.RingTheory.Koszul.Coefficients",
             "exact-categories": "Colib.CategoryTheory.ExactCategory.Basic",
             "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",

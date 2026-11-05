@@ -9,3 +9,9 @@ id = "projective-dimension"
 title = "Projective resolutions and dimension"
 order = 10
 introduction = "The finite exterior-power Koszul resolution of a weakly regular sequence gives projective dimension and Ext vanishing bounds for its actual ideal quotient. The underlying resolution and Ext groups are those of Stacks and Mathlib."
+
+[[sections]]
+id = "koszul-coefficients"
+title = "Koszul complexes with coefficients"
+order = 5
+introduction = "Native exterior-power Koszul complexes retain coefficient finiteness and annihilators. No regularity is assumed; Noetherianity is used only for finiteness of homology."

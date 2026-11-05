@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0031"
+title = "Finiteness and coefficient annihilators for Koszul complexes"
+kind = "theorem"
+section = "koszul-coefficients"
+order = 10
+statement = "Finite coefficients give finite Koszul terms; over a Noetherian ring their homology is Noetherian. The coefficient annihilator annihilates every term and homology group."
+scope = "A commutative ring and coefficient module in the same universe, any finite sequence and any natural degree. Term finiteness needs finite coefficients; homology Noetherianity additionally needs a Noetherian ring. Annihilator inclusions require neither finiteness, Noetherianity nor regularity. Stacks 0622/0623 are definition ingredients and 00IK is the Noetherian submodule ingredient, not verbatim statements of these coefficient results."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use finite exterior powers and tensor products, the cycles-submodule and homology-quotient maps, and existing tensor/homology annihilator implications. No recursive tensor model or model-comparison is reconstructed."

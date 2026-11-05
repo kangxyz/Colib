@@ -164,15 +164,23 @@
           "source": "MilnorK.linearMap_ext",
           "source_line": 141,
           "original_declaration": "@[ext] theorem linearMap_ext (f g : K F n \u2192\u2097[\u2124] A)\n    (h : \u2200 a : SymbolTuple F n, f (symbol a) = g (symbol a)) : f = g",
-          "disposition": "unresolved obligation",
-          "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
+          "disposition": "direct proof rewrite",
+          "correspondence_scope": "Agreement on every tuple determines the native homogeneous-group map, preserving independent source and codomain universes. Does not establish symbol descent or a general comparison model.",
+          "target": "milnorKTheory_linearMap_ext",
+          "target_module": "Colib.KTheory.MilnorK.Symbols.Ext",
+          "ledger": "docs/migration/milnor-ext.json",
+          "validation": "See the dedicated extensionality ledger for current integration evidence."
         },
         {
           "source": "MilnorK.addHom_ext",
           "source_line": 151,
           "original_declaration": "@[ext] theorem addHom_ext (f g : K F n \u2192+ A)\n    (h : \u2200 a : SymbolTuple F n, f (symbol a) = g (symbol a)) : f = g",
-          "disposition": "unresolved obligation",
-          "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
+          "disposition": "direct proof rewrite",
+          "correspondence_scope": "Agreement on every tuple determines the native homogeneous-group map, preserving independent source and codomain universes. Does not establish symbol descent or a general comparison model.",
+          "target": "milnorKTheory_addHom_ext",
+          "target_module": "Colib.KTheory.MilnorK.Symbols.Ext",
+          "ledger": "docs/migration/milnor-ext.json",
+          "validation": "See the dedicated extensionality ledger for current integration evidence."
         },
         {
           "source": "MilnorK.existsUnique_lift",

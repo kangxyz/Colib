@@ -19,9 +19,11 @@ public import Colib.KTheory.GrothendieckGroup.SerreQuotient
 public import Colib.KTheory.GrothendieckGroup.SerreSubgroup
 public import Colib.KTheory.MilnorK.DegreeTwo
 public import Colib.KTheory.MilnorK.Symbols.Basic
+public import Colib.KTheory.MilnorK.Symbols.Ext
 public import Colib.KTheory.MilnorK.Symbols.Product
 public import Colib.KTheory.MilnorK.Symbols.Relations
 public import Colib.Library.Upstream
+public import Colib.RingTheory.Koszul.Coefficients
 public import Colib.RingTheory.Koszul.Ext
 public import Colib.RingTheory.Length.FiniteAlgebra
 public import Colib.Util.References

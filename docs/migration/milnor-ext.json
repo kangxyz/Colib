@@ -1,0 +1,126 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Basic",
+  "source_sha256": "4297c2658506883d5ec2f6c64643ab739ba268b4be86127e785c9b7c201bd7ff",
+  "target_baseline": "9dbeca3fac888032a93ed3580cb078c1021e1ddd",
+  "target_module": "Colib.KTheory.MilnorK.Symbols.Ext",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Additive and integer-linear extensionality on the canonical homogeneous Milnor groups. Does not close universal quotient descent or the whole Basic module.",
+  "hypotheses": "k : Type u, Field k, n : Nat; A : Type v, AddCommGroup A; u and v independent; agreement on every Fin n → kˣ tuple symbol.",
+  "declarations": [
+    {
+      "source": "MilnorK.addHom_ext",
+      "target": "milnorKTheory_addHom_ext",
+      "disposition": "direct proof rewrite",
+      "validation": "passed",
+      "correspondence_scope": "Same agreement-on-all-tuples hypothesis and map equality conclusion; replaces the source presentation with native MilnorKTheory without a general comparison model."
+    },
+    {
+      "source": "MilnorK.linearMap_ext",
+      "target": "milnorKTheory_linearMap_ext",
+      "disposition": "direct proof rewrite",
+      "validation": "passed",
+      "correspondence_scope": "Same agreement-on-all-tuples hypothesis and map equality conclusion; replaces the source presentation with native MilnorKTheory without a general comparison model."
+    }
+  ],
+  "proof": "Compose the maps with the existing nth graded projection. Their equality locus is an additive subgroup of MilnorKRing. Apply the native all-list-symbol generation theorem: a symbol of length not n projects to zero; a symbol of length n is the specified tuple symbol. Restriction to the nth homogeneous subgroup recovers the original maps.",
+  "upstream_reuse": [
+    {
+      "module": "StacksFrontier.AlgebraicGeometry.Chow.KeyLemma.MilnorKSymbolProd",
+      "declaration": "milnorKGrading_le_of_forall_milnorKSymbolProd_mem",
+      "scope": "Uses existing generation for all lists without copying the fixed-length proof from higher MilnorNorm.SingleResidue."
+    },
+    {
+      "module": "Mathlib.Algebra.DirectSum.Decomposition",
+      "declarations": [
+        "DirectSum.decomposeAddEquiv",
+        "DirectSum.decompose_of_mem_same",
+        "DirectSum.decompose_of_mem_ne"
+      ],
+      "scope": "Native canonical graded projection and its homogeneous evaluation."
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Subgroup.Ker",
+      "declaration": "AddMonoidHom.eqLocus",
+      "scope": "Existing equality-locus subgroup."
+    }
+  ],
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, first paragraph",
+    "relation": "consequence",
+    "scope": "Maps out of a homogeneous component are determined by the ordered products generating that component. Not an assertion that the tag states these exact Lean extensionality lemmas.",
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "inspected": "2026-11-05",
+    "retrieved_html_sha256": "3fb1e7be94522221ff9945a910ca8b6f67b5f80ffe74253efe22a8bc4c1d7df4"
+  },
+  "validation": {
+    "source_comparison": "author_checked for exact tuple assumptions, independent universes, and additive/integer-linear conclusions on the selected canonical model",
+    "independent_review": "Read-only independent review passed 2026-11-05: source and target universes remain independent; canonical nth projection is identity on degree n and zero on other symbol lengths; all-list generation is reused without a new presentation or higher residue dependency; source hypotheses, conclusion, copyright and hashes checked. No compilation by the reviewer.",
+    "kernel_replay": "not requested; not run",
+    "integration_status": "Passed complete guarded scripts/check.sh on the isolated current-main baseline plus these two milestones.",
+    "integration": {
+      "baseline": "9dbeca3fac888032a93ed3580cb078c1021e1ddd",
+      "date": "2026-11-05",
+      "command": "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6790426624,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "results": {
+        "python_tests": "27 passed",
+        "production_build": "Passed, including retained remote SerreLocalization additions",
+        "in_package_tests": "All twelve test modules passed, including MilnorExt, KoszulCoefficients and SerreLocalization",
+        "declaration_lint": "Passed",
+        "text_style": "Passed",
+        "generated_entry": "Passed pinned mk_all check; all remote imports retained",
+        "production_axiom_audit": "335 declarations; only propext, Classical.choice, Quot.sound",
+        "library_export": "31 items, 75 indexed declarations",
+        "site_generation": "4 chapters, 6 sections, 31 item pages, 6 reference pages"
+      },
+      "auditor_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+      "root_sha256": "34395752f3a6e30b6ed5a00d3e28fedb3561ebf580a87250be422057df3dd03a",
+      "log_sha256": "5e23f5ca5b4c4abc6a28b778ce7123a45ebf453a6c98819c389fafb9f867ae55",
+      "guard_receipt_sha256": "53f73a8606add941a25b681228d49db9d0960bda37d4e47bfb0a5ddab67dcaa6",
+      "notes": "Isolated joint Ext/Coefficients integration; remote Serre localization files, tests and fixtures retained. Unpublished Ext allocation replaced by COL-0030; coefficients allocated COL-0031. Dependency pins and original resource limits unchanged. No kernel replay or separate downstream client checks."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Symbols/Ext.lean",
+        "source_sha256": "1473461c9689b4245c349ccf3fa7deaee3655b3a2914660e31ce20c375603e00",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Ext.olean",
+        "olean_sha256": "210242b120e1c20824a87c95db2760363b2d5139e908653c41f82465bd76cc1b"
+      },
+      {
+        "source": "ColibTest/MilnorExt.lean",
+        "source_sha256": "75d6c8f87f23dee76b0ffbba25d14274f08e0a3dc7253ca92629e9dd312281f8",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorExt.olean",
+        "olean_sha256": "acda924544accfefd36ff67c8e23adf731e877696ca4c13b0b7940bf1d637592"
+      }
+    ]
+  },
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "library_item": "COL-0030",
+  "reconciles": "docs/migration/milnor-symbols.json: MilnorK.addHom_ext and MilnorK.linearMap_ext only; lift, lift_symbol and existsUnique_lift remain unresolved.",
+  "tests": {
+    "module": "ColibTest.MilnorExt",
+    "scope": "Explicit independent universes u/v for both additive and integer-linear maps; arbitrary degree and degree zero determined by the empty tuple.",
+    "status": "Passed complete guarded scripts/check.sh with all twelve test modules."
+  }
+}

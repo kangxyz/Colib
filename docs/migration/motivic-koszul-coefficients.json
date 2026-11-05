@@ -1,0 +1,194 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.Algebra.Homology.Koszul.Coefficient.Finite",
+  "source_sha256": "faf971383aa89f47a702f9a42fbe677366abe2dce79c4de29a4ecef272478beb",
+  "provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": "Motivic Cohomology contributors",
+    "license": "Apache-2.0",
+    "original_source": "Motivic/Algebra/Homology/KoszulCoefficientFiniteness.lean",
+    "original_source_sha256": "ed319791b9eeb09b5b3643fa557df84ac49a8144ef55257900e86261796e7a46",
+    "manifest": "aglib/docs/migration/motivic-koszul.json"
+  },
+  "canonical_objects": [
+    "Koszul.seqComplexTensor",
+    "Koszul.seqComplex",
+    "Module.annihilator",
+    "HomologicalComplex.homology"
+  ],
+  "correspondence_scope": "The source statements about finite Koszul coefficients are proved directly for the pinned Stacks exterior-power complex. Finite list s is indexed as f = s.get : Fin s.length -> R. This does not assert a comparison isomorphism to Aglib recursive tensor complexes or migrate their component projection maps. No such alternate model is introduced.",
+  "declarations": [
+    {
+      "source": "ChainComplex.Koszul.coefficient_finite_X",
+      "target": "Koszul.seqComplexTensor_finite_X",
+      "target_module": "Colib.RingTheory.Koszul.Coefficients",
+      "disposition": "direct proof rewrite on canonical Stacks object",
+      "hypotheses": "CommRing R, M : ModuleCat.{u} R, Module.Finite R M; arbitrary sequence and degree.",
+      "status": "Complete guarded build, tests, declaration/text lint, production axiom audit and Library validation passed. Source correspondence author_checked only for the stated canonical-object rewrite or upstream reuse."
+    },
+    {
+      "source": "ChainComplex.Koszul.coefficient_noetherian_homology",
+      "target": "Koszul.seqComplexTensor_noetherian_homology",
+      "target_module": "Colib.RingTheory.Koszul.Coefficients",
+      "disposition": "direct proof rewrite on canonical Stacks object",
+      "hypotheses": "CommRing R, IsNoetherianRing R, M : ModuleCat.{u} R, Module.Finite R M; arbitrary sequence and degree.",
+      "status": "Complete guarded build, tests, declaration/text lint, production axiom audit and Library validation passed. Source correspondence author_checked only for the stated canonical-object rewrite or upstream reuse."
+    },
+    {
+      "source": "ChainComplex.Koszul.coefficient_annihilator_le_annihilator_X",
+      "target": "Koszul.annihilator_le_annihilator_seqComplexTensor_X",
+      "target_module": "Colib.RingTheory.Koszul.Coefficients",
+      "disposition": "direct proof rewrite on canonical Stacks object",
+      "hypotheses": "CommRing R, arbitrary M : ModuleCat.{u} R, sequence and degree; no finiteness or regularity.",
+      "status": "Complete guarded build, tests, declaration/text lint, production axiom audit and Library validation passed. Source correspondence author_checked only for the stated canonical-object rewrite or upstream reuse."
+    },
+    {
+      "source": "ChainComplex.Koszul.coefficient_annihilator_le_annihilator_homology",
+      "target": "Koszul.annihilator_le_annihilator_seqComplexTensor_homology",
+      "target_module": "Colib.RingTheory.Koszul.Coefficients",
+      "disposition": "direct proof rewrite on canonical Stacks object",
+      "hypotheses": "CommRing R, arbitrary M : ModuleCat.{u} R, sequence and degree; no finiteness or regularity.",
+      "status": "Complete guarded build, tests, declaration/text lint, production axiom audit and Library validation passed. Source correspondence author_checked only for the stated canonical-object rewrite or upstream reuse."
+    },
+    {
+      "source": "ChainComplex.Koszul.chainComplex_finite_X",
+      "disposition": "upstream reuse",
+      "target": "exteriorPower.instFinite",
+      "target_module": "Mathlib.LinearAlgebra.ExteriorPower.Basis",
+      "scope": "Specialize the existing finite exterior-power instance to Fin r -> R, the definition of each native seqComplex term; no local alias or repeated proof. Specialization checked in the focused test.",
+      "status": "Complete guarded build, tests, declaration/text lint, production axiom audit and Library validation passed. Source correspondence author_checked only for the stated canonical-object rewrite or upstream reuse."
+    }
+  ],
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "reused": [
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.Defs",
+        "declarations": [
+          "Koszul.seqComplexTensor"
+        ],
+        "scope": "Canonical coefficient complex used directly."
+      },
+      {
+        "module": "StacksFrontier.RingTheory.Tor.AlmostFlatResolution",
+        "declarations": [
+          "mem_annihilator_tensor_of_mem_annihilator",
+          "mem_annihilator_homology_of_mem_annihilator"
+        ],
+        "scope": "Exact public generic same-universe commutative-ring annihilator implications. Applied directly; not re-proved."
+      },
+      {
+        "module": "Mathlib.RingTheory.TensorProduct.Finite",
+        "declarations": [
+          "Module.Finite.tensorProduct"
+        ],
+        "scope": "Finite tensor products; combined with existing exterior-power finiteness."
+      }
+    ],
+    "nearby_private_result": {
+      "module": "StacksFrontier.AlgebraicGeometry.Intersection.AlgebraicMultiplicities.KoszulEuler",
+      "declaration": "Ideal.koszulTensor_homology_finite",
+      "scope": "Private proof that finite coefficients over a Noetherian ring give finite homology. It is not a public low-owner API. New Noetherian instance extracts the source proof at the ring-theoretic owner."
+    },
+    "search_scope": "Pinned trees searched for seqComplexTensor finiteness/Noetherianity, Koszul annihilators, and generic tensor/homology annihilator facts; inspected exact Defs, TorComparison.Resolution, AlmostFlatResolution and KoszulEuler statements.",
+    "inspected_available_comparison": {
+      "declaration": "Koszul.seqComplexTensorSelfIso",
+      "scope": "Available ring-coefficient comparison, inspected but not used in these proofs."
+    }
+  },
+  "validation": {
+    "independent_review": "Read-only independent review checked all five source dispositions, hypotheses, universes, annihilator directions, pinned APIs and attribution; no blocking mathematical issue. Original Motivic archive not directly inspected; original hash checked against Aglib manifest.",
+    "kernel_replay": "not requested; not run",
+    "integration_status": "Passed complete guarded scripts/check.sh on the isolated current-main baseline plus these two milestones.",
+    "integration": {
+      "baseline": "9dbeca3fac888032a93ed3580cb078c1021e1ddd",
+      "date": "2026-11-05",
+      "command": "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6790426624,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "results": {
+        "python_tests": "27 passed",
+        "production_build": "Passed, including retained remote SerreLocalization additions",
+        "in_package_tests": "All twelve test modules passed, including MilnorExt, KoszulCoefficients and SerreLocalization",
+        "declaration_lint": "Passed",
+        "text_style": "Passed",
+        "generated_entry": "Passed pinned mk_all check; all remote imports retained",
+        "production_axiom_audit": "335 declarations; only propext, Classical.choice, Quot.sound",
+        "library_export": "31 items, 75 indexed declarations",
+        "site_generation": "4 chapters, 6 sections, 31 item pages, 6 reference pages"
+      },
+      "auditor_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+      "root_sha256": "34395752f3a6e30b6ed5a00d3e28fedb3561ebf580a87250be422057df3dd03a",
+      "log_sha256": "5e23f5ca5b4c4abc6a28b778ce7123a45ebf453a6c98819c389fafb9f867ae55",
+      "guard_receipt_sha256": "53f73a8606add941a25b681228d49db9d0960bda37d4e47bfb0a5ddab67dcaa6",
+      "notes": "Isolated joint Ext/Coefficients integration; remote Serre localization files, tests and fixtures retained. Unpublished Ext allocation replaced by COL-0030; coefficients allocated COL-0031. Dependency pins and original resource limits unchanged. No kernel replay or separate downstream client checks."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/Coefficients.lean",
+        "source_sha256": "02de54adfcdeb27019f12134da69f950d39b4052d6a7a7cef3e64f31b42fb96c",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/Coefficients.olean",
+        "olean_sha256": "43d374cfe23b78534c7333ab869a922706ab448a0e9607e033cebf7ffd6aa1b0"
+      },
+      {
+        "source": "ColibTest/KoszulCoefficients.lean",
+        "source_sha256": "27c32b0ff9d48eb91e63b2198f976d98f19bf500f3896614b113c0a321034a7d",
+        "olean": ".lake/build/lib/lean/ColibTest/KoszulCoefficients.olean",
+        "olean_sha256": "50aac036d8002fbc211143af7cc9c0e5d659bbe6a2f69f10eeda87aa0f7a702b"
+      }
+    ]
+  },
+  "tests": {
+    "module": "ColibTest.KoszulCoefficients",
+    "scope": [
+      "Finite coefficient terms",
+      "Finite homology over a Noetherian ring",
+      "Coefficient annihilator without regularity or finiteness",
+      "Ring Koszul term finiteness directly from exteriorPower.instFinite, without a local alias.",
+      "Explicit Noetherian homology instance",
+      "Term-annihilator inclusion without finiteness assumptions",
+      "Empty sequence homology-annihilator inclusion"
+    ],
+    "status": "Passed complete guarded scripts/check.sh with all twelve test modules."
+  },
+  "library_item": "COL-0031",
+  "literature": {
+    "0622": "Exterior Koszul definition ingredient only",
+    "0623": "Finite-sequence Koszul definition ingredient only",
+    "00IK": "Noetherian submodule ingredient only",
+    "checked": "Official Stacks pages inspected by independent reviewer on 2026-11-05; none states the coefficient-annihilator inclusion verbatim.",
+    "documents": [
+      {
+        "tag": "0622",
+        "url": "https://stacks.math.columbia.edu/tag/0622",
+        "retrieved_html_sha256": "45c6548f649ad2600d9354e501a297843bcb31e4578f3db2ca3016073fd4c00d",
+        "inspected": "2026-11-05"
+      },
+      {
+        "tag": "0623",
+        "url": "https://stacks.math.columbia.edu/tag/0623",
+        "retrieved_html_sha256": "0b8fb308504101d3abdd16c44c7f6c91b91dc62c1be0620f6684fa407b6747ea",
+        "inspected": "2026-11-05"
+      },
+      {
+        "tag": "00IK",
+        "url": "https://stacks.math.columbia.edu/tag/00IK",
+        "retrieved_html_sha256": "30c9f11c78dccc350c9f84413d0153527646b2d8041822731ec9149286494d8b",
+        "inspected": "2026-11-05"
+      }
+    ]
+  },
+  "target_baseline": "9dbeca3fac888032a93ed3580cb078c1021e1ddd"
+}

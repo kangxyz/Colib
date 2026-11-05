@@ -1,0 +1,210 @@
+{
+  "title": "Higher-degree ramified native DVR residue, specified uniformizers",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "lean": "4.34.0-rc2",
+  "scope": {
+    "universes": "R, S, F, E independently quantified",
+    "hypotheses": [
+      "R and S are DVR domains; F and E are their fraction fields",
+      "j:R\u2192+*S is local; f:F\u2192+*E commutes with the algebra maps",
+      "\u03c0 and \u03c1 are irreducible",
+      "u:S\u02e3, e:\u2115, and j \u03c0 = (u:S) * \u03c1^e"
+    ],
+    "result": "For every n and every native homogeneous class x of degree n+1, residue_\u03c1(map f x) = (e:\u2124) \u2022 map(residueField.map j)(residue_\u03c0 x).",
+    "retained_correction": "On all list symbols, main(target) = map(main(source)) + map(shift(source)) * symbol(residue(u)).",
+    "exclusions": [
+      "Canonical chosen-uniformizer formulation is not asserted. It still needs the native independence interface.",
+      "No new residue, valuation, involution, tensor quotient, or shift model.",
+      "No norm or high-level Stacks dependency closure."
+    ],
+    "e_zero": "No e>0 assumption inserted. For local j and irreducible uniformizers, the stated ramification equation implies positivity. The natural-number algebra includes e=0 without division."
+  },
+  "declarations": [
+    {
+      "name": "Stacks.Chow.dvrFracUnitPart_map_ramified",
+      "source": "Aglib.KTheory.MilnorK.K2.DVR.RamifiedRestriction",
+      "source_declaration": "MilnorK.K2.DVR.ramified_unitResidue_map",
+      "locator": "lines 175\u2013184",
+      "relation": "Actual native angular-component adaptation, four universes."
+    },
+    {
+      "name": "Stacks.Chow.milnorK_ramified_main_recursion",
+      "relation": "Native two-symbol skew/self consequence supporting source specialization correction."
+    },
+    {
+      "name": "Stacks.Chow.milnorK_ramified_shift_recursion",
+      "source": "Aglib.KTheory.MilnorK.Residue.RamifiedRestriction",
+      "source_declaration": "private MilnorK.residue_scaling_algebra",
+      "locator": "lines 83\u201399",
+      "relation": "Native full-ring shift recursion; quadratic e term removed via native {-1} two-torsion."
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorShiftMap_symbolProd_map_ramified",
+      "relation": "Simultaneous native main/shift comparison by List.reverseRecOn, not an assumed compatibility interface."
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol_map_ramified",
+      "source": "Aglib.KTheory.MilnorK.Residue.RamifiedRestriction",
+      "source_declaration": "MilnorK.DVR.residue_ramified_restrict",
+      "locator": "lines 161\u2013172",
+      "relation": "All-degree actual-DVR theorem with specified uniformizers; source canonical identification is deferred."
+    }
+  ],
+  "upstream_audit": {
+    "reused": [
+      "native dvrFracUnitsEquiv and exists_eq_unit_mul_zpow",
+      "native dvrFracUnitPart_eq_of_eq",
+      "native MilnorKShift.main_mul/shift_mul",
+      "native milnorKSymbol_mul_add_mul_comm and milnorKSymbol_mul_self_add_mul_negOne",
+      "native mul_milnorKNegOne_add_self",
+      "Colib universal map and previously proved native-equality bridge"
+    ],
+    "not_duplicated": "No general-e ramified residue theorem found in pinned native low modules. High Invariance offers only uniformizer change and e=1 base change; neither it nor its large imports is copied.",
+    "proof_strategy": "Right append recursion needs only two-symbol skew, avoiding duplication of high arbitrary-element involution skew/twist."
+  },
+  "checks": {
+    "author_source_correspondence": "author_checked",
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematics, simultaneous main/shift correction, four universes, native two-torsion algebra, source/pins/provenance and historical hash/receipt verification. No reviewer compilation or kernel replay."
+    },
+    "build_test": "passed, 2148 jobs; exact receipt added below",
+    "kernel_replay": "not requested or run",
+    "pins_changed": false,
+    "shared_files_changed": false,
+    "pushed": false,
+    "declaration_lint": "passed separately for all three production leaves and test",
+    "style": "passed",
+    "maximum_peak_rss_bytes": 4028846080,
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-ramified-475e483-20261105-1414",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6266929152,
+      "duration_seconds": 62.719634891022,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-ramified-check-receipt.json",
+      "receipt_sha256": "5a32d84f7c523b0b9965b3276fb6ac8c3b90af10c84231e2a19055911235af47",
+      "log": "/tmp/colib-ramified-check.log",
+      "log_sha256": "bac4810202a024b85c5b304e1971ec3d217609177ec4b64204f6bf4953977b55",
+      "kernel_replay": false,
+      "hashes": {
+        "Colib/KTheory/MilnorK/Residue/RamifiedUnitPart.lean": "25c1ba7f56b74ff5b9d925fb465c087601af5df4b4f2291b8b206c4e17cfd0b5",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedUnitPart.olean": "7795f6d7216fc1b3c9b0b9307b9e61c20a4c205a84a85cf5d588cf4cda2211c3",
+        "Colib/KTheory/MilnorK/Residue/RamifiedShiftAlgebra.lean": "f006c470c2f293bfdf2b1c44b80c3cf1cc3c0999479823963d48d04ef3def99e",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedShiftAlgebra.olean": "40f51a5d90f3dfc48a84ac68b65690df1bd2b8dbd7c0e8d63efad4c521b6210e",
+        "Colib/KTheory/MilnorK/Residue/RamifiedMap.lean": "7f07c968079d86f76193b18cb720fa2da548d5d2ad673995e14b97391950caf1",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedMap.olean": "b8d4b048287d6c95bc5fce081b40bdfa6affa331462b8999950cc3c404e4be06",
+        "ColibTest/MilnorRamifiedMap.lean": "8649adaaa53cd5e604a9b8bfe0680ce0bc1b145b427f0b0047792e3bc1ab2ea4",
+        ".lake/build/lib/lean/ColibTest/MilnorRamifiedMap.olean": "46efe29bbdf282798d9cedc51ab2a94607b3f4f8de487a10552e57cbeed1949b"
+      },
+      "additional_tests": "Negative source order -1 retains inverse ramification-unit residue; arbitrary list main-component correction is tested directly. This is a conditional negative-order client, not a constructed nontrivial DVR example."
+    }
+  },
+  "files": [
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/RamifiedUnitPart.lean",
+      "source_sha256": "25c1ba7f56b74ff5b9d925fb465c087601af5df4b4f2291b8b206c4e17cfd0b5",
+      "olean_sha256": "7795f6d7216fc1b3c9b0b9307b9e61c20a4c205a84a85cf5d588cf4cda2211c3"
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/RamifiedShiftAlgebra.lean",
+      "source_sha256": "f006c470c2f293bfdf2b1c44b80c3cf1cc3c0999479823963d48d04ef3def99e",
+      "olean_sha256": "40f51a5d90f3dfc48a84ac68b65690df1bd2b8dbd7c0e8d63efad4c521b6210e"
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/RamifiedMap.lean",
+      "source_sha256": "cf451dfaf5979a268444ec7fc51daead64a6e55520c8255c20fe6fe10fadc8de",
+      "olean_sha256": "703b1c6da2687f1dda657af10101739410cdc5cc50f9bcf60e10427bf577eabe"
+    },
+    {
+      "path": "ColibTest/MilnorRamifiedMap.lean",
+      "source_sha256": "c760e3f7d347502e8694ec6a79b819fe32c3d38a7ebb32373a37222a4b7092d1",
+      "olean_sha256": "46efe29bbdf282798d9cedc51ab2a94607b3f4f8de487a10552e57cbeed1949b"
+    }
+  ],
+  "receipts": [
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-map-test-2.json",
+      "sha256": "39bd4cafc17ae11bba59c59af0c855c6736da0312009d500341215ffecc688b4",
+      "exit_code": 0,
+      "peak_rss_bytes": 2468151296,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-unitpart-lint.json",
+      "sha256": "6a86a1b6edf691eb08d1f89d22ba5e81a600110b84cf94dc1ada58500b48488f",
+      "exit_code": 0,
+      "peak_rss_bytes": 3992911872,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-shift-lint.json",
+      "sha256": "d6ada37bd0eac93bba0dc4c58282e583c860908cc7882b731c6c05fe01a08a3f",
+      "exit_code": 0,
+      "peak_rss_bytes": 3465736192,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-map-lint.json",
+      "sha256": "844399870a2032be1c01f441a29f223fc6d3de0b657da34daef76f18e55c2d30",
+      "exit_code": 0,
+      "peak_rss_bytes": 4028846080,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-test-lint.json",
+      "sha256": "f55d2e48c6d208c623b8cb9b1d4dc13247d59faed130822ee3786f177e33b7a1",
+      "exit_code": 0,
+      "peak_rss_bytes": 4024164352,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-ramified-map-style.json",
+      "sha256": "6b22bfba3a78532613a1f0da315668b182441f7747d4e21283e3c157091450e2",
+      "exit_code": 0,
+      "peak_rss_bytes": 1731461120,
+      "guard_failure": null,
+      "owned_group_gone": true
+    }
+  ],
+  "historical_worktree": "/workspace/scratch/ab4c8cd79b02/colib-descent-principal-36f7d61-20261105-0937",
+  "target_baseline": "475e483a83f04f495985d689a38ff24d56b02e7f",
+  "library_item": "COL-0143",
+  "literature": {
+    "tag": "0EAY",
+    "relation": "background",
+    "scope": "DVR tame-symbol background only; not a verbatim general-e comparison or webpage shift construction."
+  }
+}

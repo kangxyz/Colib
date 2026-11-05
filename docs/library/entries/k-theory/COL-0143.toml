@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0143"
+title = "Specified ramified residue in all degrees"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 270
+statement = "For a compatible actual local DVR map with j(pi)=u*rho^e, specified-uniformizer residue after field transport is e times residue-field transport of residue, on every homogeneous degree. The simultaneous main-component formula retains its ramification-unit correction."
+scope = "Four independent ring/fraction-field universes, actual local j and compatible f, irreducible specified pi and rho, unit u, natural e and its literal ramification equation. No division by e or invertibility of two; negative source orders and native sign two-torsion are retained. Locality forces positive e although no redundant positivity hypothesis is imposed. This does not assert a canonical chosen-uniformizer comparison or equality with an old Milnor model. Stacks 0EAY is tame-symbol background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Transform native angular components, retaining the unit raised to integer order. Simultaneously recurse on main and shift using native skew, self-product and two-torsion identities, then extend from symbols to all homogeneous classes."

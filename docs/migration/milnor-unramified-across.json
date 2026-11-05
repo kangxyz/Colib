@@ -152,5 +152,10 @@
       "ColibTest.MilnorUnramifiedMapAcross"
     ],
     "status": "Passed as part of the complete unified test suite."
+  },
+  "subsequent_all_degree_ramification": {
+    "ledger": "milnor-ramified-map.json",
+    "item": "COL-0143",
+    "scope": "General-e specified-uniformizer all-degree actual local DVR comparison now proved, with explicit main correction. Earlier item/validation scopes remain historical; canonical comparison stays pending."
   }
 }

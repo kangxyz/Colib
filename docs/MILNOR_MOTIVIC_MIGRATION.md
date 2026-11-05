@@ -522,3 +522,11 @@ actual localized-module map on native top Ext, in all finite lengths. The ring
 and quotient source remain fixed; this is not base-ring localization or an old
 named-class comparison. A lower ideal-quotient helper retains independent
 module universes. See `migration/motivic-top-ext-localization.json`.
+
+### All-degree ramification with specified uniformizers
+
+COL-0143 closes the general-e specified-uniformizer actual local DVR residue
+comparison in four universes. Its main component keeps the unit correction,
+including negative integer orders, and its shift algebra uses native two-torsion
+without inverting two. Canonical chosen-uniformizer comparison remains pending.
+See `migration/milnor-ramified-map.json`.

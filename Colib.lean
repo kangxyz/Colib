@@ -62,7 +62,10 @@ public import Colib.KTheory.MilnorK.Residue.DegreeOne
 public import Colib.KTheory.MilnorK.Residue.Naturality
 public import Colib.KTheory.MilnorK.Residue.PrincipalUnits
 public import Colib.KTheory.MilnorK.Residue.RamifiedDegreeOne
+public import Colib.KTheory.MilnorK.Residue.RamifiedMap
 public import Colib.KTheory.MilnorK.Residue.RamifiedOrder
+public import Colib.KTheory.MilnorK.Residue.RamifiedShiftAlgebra
+public import Colib.KTheory.MilnorK.Residue.RamifiedUnitPart
 public import Colib.KTheory.MilnorK.Residue.RepeatedUniformizer
 public import Colib.KTheory.MilnorK.Residue.RightBaseFieldProduct
 public import Colib.KTheory.MilnorK.Residue.RightUnitProduct

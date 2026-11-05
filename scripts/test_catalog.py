@@ -98,6 +98,26 @@ class LibraryTests(unittest.TestCase):
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
             self.assertIn("ColibTest.CompletionBranches", (root / path).read_text())
 
+    def test_fraction_residue_chain_registration(self):
+        root = catalog.ROOT
+        modules = {
+            "COL-0190": "Colib.RingTheory.Localization.FiniteProductBaseChange",
+            "COL-0191": "Colib.RingTheory.AdicCompletion.BranchFraction",
+            "COL-0192": "Colib.RingTheory.AdicCompletion.FractionBranches",
+            "COL-0193": "Colib.RingTheory.Norm.DVRResidue",
+            "COL-0194": "Colib.RingTheory.Norm.DVRResidue",
+        }
+        for identifier, module in modules.items():
+            section = ("adic-completion" if identifier < "COL-0193"
+                       else "finite-algebra-coefficients")
+            self.assertEqual(self.library["entries"][identifier]["section"], section)
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            for module in ("ColibTest.FractionBranches", "ColibTest.DVRResidueNorm"):
+                self.assertIn(module, (root / path).read_text())
+
     def native_fixture(self):
         native = {
             "bindings": [],

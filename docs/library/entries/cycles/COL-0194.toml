@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0194"
+title = "DVR integral norms and the proved ramification exponent"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 100
+statement = "An explicit unit-times-uniformizer-power equation proves the extended maximal-ideal formula and closed-fibre length. For a finite torsion-free local DVR extension, the actual integral norm and its native unit map reduce to the residue norm raised to that exponent."
+scope = "The standalone ideal and length lemmas do not require finiteness, torsion-freeness or a local map and allow exponent zero. The norm formula needs a finite torsion-free local DVR extension. No existence or choice-independence theorem for the exponent, completeness, characteristic or Milnor-transfer assertion."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0193"
+title = "Closed-fibre and residue norms of a finite free local algebra"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 90
+statement = "The determinant norm specializes to the literal closed fibre. For a local algebra map, reduction of the norm is the residue-field norm raised to the self-length of that fibre."
+scope = "Finite free algebra over a local ring. The second formula requires a local target and local map. No DVR, Noetherianity, reducedness or separability hypothesis; the first formula also allows rank zero."
+review = "author_checked"

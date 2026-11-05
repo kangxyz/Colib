@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0190"
+title = "Fraction fields of a finite-product base change"
+kind = "comparison"
+section = "adic-completion"
+order = 60
+statement = "An actual integral finite-product tensor decomposition induces a decomposition of the specified fraction-field tensor product, with integral and fraction coordinates and map uniqueness."
+scope = "Algebraic faithful domain algebras and a finite index type, with specified compatible scalar towers. Module finiteness and uniformizers are not required; all universes are independent."
+review = "author_checked"

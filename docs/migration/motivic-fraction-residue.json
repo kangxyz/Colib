@@ -1,0 +1,471 @@
+{
+  "milestone": "Completed fraction branches and DVR residue norms",
+  "baseline": "7e6bc4bf98bf0e255b683eba898ab6205663284c",
+  "aglib_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "library_items": [
+    "COL-0190",
+    "COL-0191",
+    "COL-0192",
+    "COL-0193",
+    "COL-0194"
+  ],
+  "source_correspondence": {
+    "state": "author_checked",
+    "independent_literature_review": false,
+    "fraction_sources": [
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/BranchBaseLocal.lean",
+        "sha256": "c1ec7fa866859836bda0c0a4bd6e8e48d1f09c1626dc5584679769fa7e5eb174",
+        "lines": 89,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.BranchBaseLocal",
+          "path": "Aglib/RingTheory/AdicCompletion/BranchBaseLocal.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.BranchBaseLocal",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "c1ec7fa866859836bda0c0a4bd6e8e48d1f09c1626dc5584679769fa7e5eb174",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 89,
+          "sha256": "c1ec7fa866859836bda0c0a4bd6e8e48d1f09c1626dc5584679769fa7e5eb174"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/BranchFractionAlgebra.lean",
+        "sha256": "7fd4f17676a5a4c5ce5ec720ec24554b7198f16ce1d20c91350ea66a0dba7338",
+        "lines": 71,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.BranchFractionAlgebra",
+          "path": "Aglib/RingTheory/AdicCompletion/BranchFractionAlgebra.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.BranchFractionAlgebra",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "7fd4f17676a5a4c5ce5ec720ec24554b7198f16ce1d20c91350ea66a0dba7338",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 71,
+          "sha256": "7fd4f17676a5a4c5ce5ec720ec24554b7198f16ce1d20c91350ea66a0dba7338"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/BranchFractionFinite.lean",
+        "sha256": "6e81c94c7be2dc72bfe0a4654e6c3bebd144ff2e018ecbe62c576e73eaf3c905",
+        "lines": 67,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.BranchFractionFinite",
+          "path": "Aglib/RingTheory/AdicCompletion/BranchFractionFinite.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.BranchFractionFinite",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "6e81c94c7be2dc72bfe0a4654e6c3bebd144ff2e018ecbe62c576e73eaf3c905",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 67,
+          "sha256": "6e81c94c7be2dc72bfe0a4654e6c3bebd144ff2e018ecbe62c576e73eaf3c905"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/BranchUniformizer.lean",
+        "sha256": "384bd3872d19d756ff69c18e347e3f80f6e54cd1c138873a09f0ba4d68c9202d",
+        "lines": 83,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.BranchUniformizer",
+          "path": "Aglib/RingTheory/AdicCompletion/BranchUniformizer.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.BranchUniformizer",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "384bd3872d19d756ff69c18e347e3f80f6e54cd1c138873a09f0ba4d68c9202d",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 83,
+          "sha256": "384bd3872d19d756ff69c18e347e3f80f6e54cd1c138873a09f0ba4d68c9202d"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/FractionBaseChange.lean",
+        "sha256": "35fb90c10e92d11a34f719e1ab9645b9787c17a9ee19641fd7b34ca5ce8cef15",
+        "lines": 57,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.FractionBaseChange",
+          "path": "Aglib/RingTheory/AdicCompletion/FractionBaseChange.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.FractionBaseChange",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "35fb90c10e92d11a34f719e1ab9645b9787c17a9ee19641fd7b34ca5ce8cef15",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 57,
+          "sha256": "35fb90c10e92d11a34f719e1ab9645b9787c17a9ee19641fd7b34ca5ce8cef15"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/FractionBranches.lean",
+        "sha256": "4f343111392a985f767968790c315d9b6fcfc4dd8820249d3310ef58e27393c6",
+        "lines": 92,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.FractionBranches",
+          "path": "Aglib/RingTheory/AdicCompletion/FractionBranches.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.FractionBranches",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "4f343111392a985f767968790c315d9b6fcfc4dd8820249d3310ef58e27393c6",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 92,
+          "sha256": "4f343111392a985f767968790c315d9b6fcfc4dd8820249d3310ef58e27393c6"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/FractionTensorBranches.lean",
+        "sha256": "8c7d0c35e5d08705514bf562a827427eb731232fbb062ee116a4678e5a577e73",
+        "lines": 85,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.FractionTensorBranches",
+          "path": "Aglib/RingTheory/AdicCompletion/FractionTensorBranches.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.FractionTensorBranches",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "8c7d0c35e5d08705514bf562a827427eb731232fbb062ee116a4678e5a577e73",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 85,
+          "sha256": "8c7d0c35e5d08705514bf562a827427eb731232fbb062ee116a4678e5a577e73"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/OriginalBranchFractions.lean",
+        "sha256": "7eb0778618a978f323f821f0430904c47001f38d492e7e3114dac1c92cc96ed8",
+        "lines": 55,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.OriginalBranchFractions",
+          "path": "Aglib/RingTheory/AdicCompletion/OriginalBranchFractions.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.OriginalBranchFractions",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "7eb0778618a978f323f821f0430904c47001f38d492e7e3114dac1c92cc96ed8",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 55,
+          "sha256": "7eb0778618a978f323f821f0430904c47001f38d492e7e3114dac1c92cc96ed8"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/AdicCompletion/OriginalBranchResidues.lean",
+        "sha256": "92cee765f5c6eedf00eec61888f2db27338eb55ecc9e78ee277ebbcc6e7d5880",
+        "lines": 64,
+        "role": "endpoint_adaptation",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.AdicCompletion.OriginalBranchResidues",
+          "path": "Aglib/RingTheory/AdicCompletion/OriginalBranchResidues.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.AdicCompletion.OriginalBranchResidues",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "92cee765f5c6eedf00eec61888f2db27338eb55ecc9e78ee277ebbcc6e7d5880",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 64,
+          "sha256": "92cee765f5c6eedf00eec61888f2db27338eb55ecc9e78ee277ebbcc6e7d5880"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/DiscreteValuationRing/FractionAway.lean",
+        "sha256": "df1ffba5e084ee9ef59714453f2eb6ffa1fb8fb3493c5b06de2a69b246db574a",
+        "lines": 52,
+        "role": "native_route_replacement",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.DiscreteValuationRing.FractionAway",
+          "path": "Aglib/RingTheory/DiscreteValuationRing/FractionAway.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.DiscreteValuationRing.FractionAway",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "df1ffba5e084ee9ef59714453f2eb6ffa1fb8fb3493c5b06de2a69b246db574a",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 52,
+          "sha256": "df1ffba5e084ee9ef59714453f2eb6ffa1fb8fb3493c5b06de2a69b246db574a"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/DiscreteValuationRing/FractionBaseChange.lean",
+        "sha256": "ff38de8cb0da3776487b87fe2be62736c57fa2332d3cf43e307a755be62f6f61",
+        "lines": 62,
+        "role": "native_route_replacement",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.DiscreteValuationRing.FractionBaseChange",
+          "path": "Aglib/RingTheory/DiscreteValuationRing/FractionBaseChange.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.DiscreteValuationRing.FractionBaseChange",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "ff38de8cb0da3776487b87fe2be62736c57fa2332d3cf43e307a755be62f6f61",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 62,
+          "sha256": "ff38de8cb0da3776487b87fe2be62736c57fa2332d3cf43e307a755be62f6f61"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/DiscreteValuationRing/FractionPi.lean",
+        "sha256": "f0d2448043524452a0a3ae408f56edd09ae6aff5c2327173a3ca70edda43cd52",
+        "lines": 52,
+        "role": "native_route_replacement",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.DiscreteValuationRing.FractionPi",
+          "path": "Aglib/RingTheory/DiscreteValuationRing/FractionPi.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.DiscreteValuationRing.FractionPi",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "f0d2448043524452a0a3ae408f56edd09ae6aff5c2327173a3ca70edda43cd52",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 52,
+          "sha256": "f0d2448043524452a0a3ae408f56edd09ae6aff5c2327173a3ca70edda43cd52"
+        }
+      },
+      {
+        "path": "Aglib/RingTheory/DiscreteValuationRing/IntegralFractionAway.lean",
+        "sha256": "62d2a996b1c7ddda39b69c96a20676efd64b1a090c5b04e0e05955dfd8abc50e",
+        "lines": 71,
+        "role": "native_route_replacement",
+        "inventory_record": {
+          "module": "Aglib.RingTheory.DiscreteValuationRing.IntegralFractionAway",
+          "path": "Aglib/RingTheory/DiscreteValuationRing/IntegralFractionAway.lean",
+          "provenance": [
+            {
+              "source": "Motivic.Aglib.RingTheory.DiscreteValuationRing.IntegralFractionAway",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "62d2a996b1c7ddda39b69c96a20676efd64b1a090c5b04e0e05955dfd8abc50e",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 71,
+          "sha256": "62d2a996b1c7ddda39b69c96a20676efd64b1a090c5b04e0e05955dfd8abc50e"
+        }
+      },
+      {
+        "path": "Aglib/KTheory/MilnorK/Norm/FiniteExtension/DVR.lean",
+        "sha256": "a046050036096d06327b5477fceebcc8265e587896ec17e639fe43e4aded392d",
+        "selected_lines": [
+          80,
+          97
+        ],
+        "role": "fraction_map_uniqueness_only",
+        "inventory_record": {
+          "module": "Aglib.KTheory.MilnorK.Norm.FiniteExtension.DVR",
+          "path": "Aglib/KTheory/MilnorK/Norm/FiniteExtension/DVR.lean",
+          "provenance": [
+            {
+              "source": "Motivic.KTheory.MilnorK.FiniteExtensionNormDVR",
+              "kind": "relocated_module",
+              "manifest": "docs/migration/motivic-milnor-k.json",
+              "recorded_sha256": "a046050036096d06327b5477fceebcc8265e587896ec17e639fe43e4aded392d",
+              "matches_recorded_hash": true
+            }
+          ],
+          "status": "current_tree",
+          "lines": 100,
+          "sha256": "a046050036096d06327b5477fceebcc8265e587896ec17e639fe43e4aded392d"
+        }
+      }
+    ],
+    "dvr_norm_source": {
+      "path": "Aglib/RingTheory/DVRNormResidueUnit.lean",
+      "sha256": "9f06fc047a51a8d312fb8e48aa26babbb023c8db4b8b0e964f2cd2776c1bdab5",
+      "original_module": "Motivic.Aglib.RingTheory.DVRNormResidueUnit",
+      "original_sha256": "642b092482d3dbba6fad1c43554de5885caff56a037f26c76c5ede3a6817822f"
+    },
+    "source_mathematical_review": {
+      "state": "completed",
+      "scope": [
+        "Specified fraction-field scalar triangles and actual original-field coordinate maps",
+        "Finite-product rationalization hypotheses and native route replacements",
+        "Literal closed fibre, native residue-field maps, norm direction and self-length exponent",
+        "Standalone exponent-zero case and finite torsion-free local DVR integral/unit norm formulas"
+      ],
+      "result": "No mathematical endpoint or scalar mismatch found. Original copyright notices restored.",
+      "review_boundary": "Source-level mathematical correspondence review, separate from compilation. The reviewer participated in prior elaboration/style repairs; not external independent peer review or a fresh external literature-page audit.",
+      "not_claimed": [
+        "All original FractionAway/helper names migrated",
+        "The old arbitrary commutative F-algebra base-change API",
+        "The entire original DVR henselian/residue-marking API",
+        "Compiled simultaneous comparison with the old Aglib library",
+        "Milnor transfer or norm-residue compatibility"
+      ]
+    }
+  },
+  "scope": [
+    {
+      "id": "COL-0190",
+      "statement": "An actual integral finite-product tensor decomposition induces a decomposition of the specified fraction-field tensor product, with integral and fraction coordinates and map uniqueness.",
+      "conditions": "Algebraic faithful domain algebras and a finite index type, with specified compatible scalar towers. Module finiteness and uniformizers are not required; all universes are independent."
+    },
+    {
+      "id": "COL-0191",
+      "statement": "Original Dedekind localizations and their completions carry the native DVR and fraction-field structures. The canonical completed-base maps are local and, under torsion-freeness, injective; finite algebras give finite branch fraction fields and original residue extensions.",
+      "conditions": "The original localized ring is not asserted finite over the base. Locality needs neither finiteness nor torsion-freeness, and injectivity needs no finiteness. Fraction actions retain the actual completion maps."
+    },
+    {
+      "id": "COL-0192",
+      "statement": "The completed base fraction field tensor the specified original extension field is the product of the actual completed original branch fraction fields. Integral elements, arbitrary fractions and original-field coordinate maps identify the equivalence uniquely.",
+      "conditions": "Finite torsion-free Dedekind algebra over a DVR, with independently specified original fraction fields. The nonzero extended ideal is derived; no uniformizer or replacement field is supplied. No Milnor norm or transfer statement."
+    },
+    {
+      "id": "COL-0193",
+      "statement": "The determinant norm specializes to the literal closed fibre. For a local algebra map, reduction of the norm is the residue-field norm raised to the self-length of that fibre.",
+      "conditions": "Finite free algebra over a local ring. The second formula requires a local target and local map. No DVR, Noetherianity, reducedness or separability hypothesis; the first formula also allows rank zero."
+    },
+    {
+      "id": "COL-0194",
+      "statement": "An explicit unit-times-uniformizer-power equation proves the extended maximal-ideal formula and closed-fibre length. For a finite torsion-free local DVR extension, the actual integral norm and its native unit map reduce to the residue norm raised to that exponent.",
+      "conditions": "The standalone ideal and length lemmas do not require finiteness, torsion-freeness or a local map and allow exponent zero. The norm formula needs a finite torsion-free local DVR extension. No existence or choice-independence theorem for the exponent, completeness, characteristic or Milnor-transfer assertion."
+    }
+  ],
+  "component_validation": {
+    "production_leaves": 7,
+    "test_leaves": 2,
+    "examples": 47,
+    "declaration_lint_modules": 9,
+    "style": "passed",
+    "production_axiom_audits": "passed",
+    "kernel_replay": false,
+    "registered_tree": false
+  },
+  "registered_tree_validation": {
+    "state": "passed",
+    "command": "bash scripts/check.sh",
+    "production_build": "passed",
+    "in_package_tests": "passed",
+    "python_tests": 63,
+    "declaration_lint": "passed",
+    "text_style": "passed",
+    "generated_entry": "passed",
+    "production_axiom_audit": {
+      "declarations": 2886,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "library_export": {
+      "items": 191,
+      "indexed_declarations": 645,
+      "chapters": 7,
+      "sections": 21,
+      "reference_pages": 14
+    },
+    "website_build": "passed",
+    "resource_limits": {
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "sample_seconds": 0.1,
+      "physical_memory_bytes": 10451427328,
+      "lean_threads": 1,
+      "max_active_lean": 1
+    },
+    "peak_owned_rss_bytes": 7236222976,
+    "owned_group_gone": true,
+    "guard_failure": null,
+    "kernel_replay": false,
+    "pins_changed": false,
+    "component_evidence_directory": "fraction-residue-validation-20261105-2117",
+    "registered_tree_evidence_directory": "fraction-residue-integration-20261105-2127",
+    "receipt": "05-full-check.json",
+    "log": "05-full-check.log"
+  },
+  "registered_sources": {
+    "Colib/RingTheory/Localization/FiniteProductBaseChange.lean": {
+      "sha256": "0a81dad72915023f6f2fbda4cd8fee1dffc4ef2685e959e1fa16b3801a2b81f5",
+      "validated_component_sha256": "ee378b73f2f4e8ed6eaa90859d2f21c35fdad67f44e147def3a6ca891bc0150e"
+    },
+    "Colib/RingTheory/AdicCompletion/DiscreteValuationRing.lean": {
+      "sha256": "fa05a01e837386bbc4bb261f7a0ca4ff6f787a880a16c24006d96a5686d151fd",
+      "validated_component_sha256": "dd00fc3c911f1a43de2510fdcd4fac6b31488d9d0f2bfd9bccc50947f3c934c7"
+    },
+    "Colib/RingTheory/AdicCompletion/OriginalBranch.lean": {
+      "sha256": "6c3e08c7283ff65d24618613c3fdd5e8f65052b99798d113e931c69d9b992fc2",
+      "validated_component_sha256": "c166fb9a13ac33a1e7b2ddfa64718d6c9990222ff845602559fad277627c1f1b"
+    },
+    "Colib/RingTheory/AdicCompletion/BranchLocal.lean": {
+      "sha256": "fee78c2033477f999be639dd78bf6c1f3eca24a39c0c8a2e6de5a1674289607c",
+      "validated_component_sha256": "5145742232bbc4fb08cefbd71a6b2bbdacaa9b042e1d48b32f214c2ac68e111f"
+    },
+    "Colib/RingTheory/AdicCompletion/BranchFraction.lean": {
+      "sha256": "fbd06f88e297778cab12cb9633c0d564b049ea0da9560f6b15725858629cd890",
+      "validated_component_sha256": "1b549595790b0d4521527d34913409a109d890f4e11798d891f18000512b890e"
+    },
+    "Colib/RingTheory/AdicCompletion/FractionBranches.lean": {
+      "sha256": "05bcdc87553d7e6a43d8cc6c41a6e44d9aa359a466c1f59d5dfaaec826ac57f0",
+      "validated_component_sha256": "7191af08fca06ce7ad25f17d51c6189f315643866b11072f8f744295cd4e43db"
+    },
+    "Colib/RingTheory/Norm/DVRResidue.lean": {
+      "sha256": "b0e7ff2f8fab90383da2bdf7ca85e033785edf3632fbaa35c0bacb0b73f05e66",
+      "validated_component_sha256": "28988b6af44795a9bf718205be2d497ca1aff8e6aba600676d8a4b4dadcc0e97"
+    },
+    "ColibTest/FractionBranches.lean": {
+      "sha256": "7af0243f5ada82fb22eb4b7750652db58867809fb70a125a1e74ab1bc8184247",
+      "validated_component_sha256": "7af0243f5ada82fb22eb4b7750652db58867809fb70a125a1e74ab1bc8184247"
+    },
+    "ColibTest/DVRResidueNorm.lean": {
+      "sha256": "a7c11455128d3ab235d2209bdb8eb6bd86cd463bf485d32a83e98b506adfe86d",
+      "validated_component_sha256": "a7c11455128d3ab235d2209bdb8eb6bd86cd463bf485d32a83e98b506adfe86d"
+    }
+  }
+}

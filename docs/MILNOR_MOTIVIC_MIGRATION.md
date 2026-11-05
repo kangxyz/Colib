@@ -634,3 +634,18 @@ model is introduced. Arbitrary-module scalar extension, general monotone
 reindexing, fraction-field decomposition and Milnor norms are not claimed.
 See migration/motivic-completion-branches.json for hypotheses, provenance and
 component versus registered-tree validation.
+
+### Completed fraction branches and DVR residue norms
+
+COL-0190--COL-0194 complete the native fraction-product and local residue-norm
+chains. The completed fraction tensor product is identified with all actual
+completed original branches, including integral, fraction and original-field
+coordinate maps. Original residue fields and completed branch fraction fields
+are finite where stated; the original localizations are not claimed finite.
+The literal closed-fibre norm formula retains its full length, and an explicit
+uniformizer equation proves that length equals the DVR exponent before the
+actual integral and residue-unit norm formulas are deduced. There is no
+separability, completeness or characteristic-zero restriction. This milestone
+does not claim a Milnor norm, transfer or norm-residue-symbol comparison.
+See migration/motivic-fraction-residue.json for provenance, precise scope and
+component versus registered-tree validation.

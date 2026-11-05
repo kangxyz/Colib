@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0192"
+title = "Completed fraction tensor decomposition over all original branches"
+kind = "comparison"
+section = "adic-completion"
+order = 80
+statement = "The completed base fraction field tensor the specified original extension field is the product of the actual completed original branch fraction fields. Integral elements, arbitrary fractions and original-field coordinate maps identify the equivalence uniquely."
+scope = "Finite torsion-free Dedekind algebra over a DVR, with independently specified original fraction fields. The nonzero extended ideal is derived; no uniformizer or replacement field is supplied. No Milnor norm or transfer statement."
+review = "author_checked"

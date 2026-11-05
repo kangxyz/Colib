@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0191"
+title = "Actual DVR branches and native fraction actions"
+kind = "comparison"
+section = "adic-completion"
+order = 70
+statement = "Original Dedekind localizations and their completions carry the native DVR and fraction-field structures. The canonical completed-base maps are local and, under torsion-freeness, injective; finite algebras give finite branch fraction fields and original residue extensions."
+scope = "The original localized ring is not asserted finite over the base. Locality needs neither finiteness nor torsion-freeness, and injectivity needs no finiteness. Fraction actions retain the actual completion maps."
+review = "author_checked"

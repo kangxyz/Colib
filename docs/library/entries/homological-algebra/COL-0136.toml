@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0136"
+title = "Coefficient regularity on Koszul terms"
+kind = "theorem"
+section = "koszul-coefficients"
+order = 20
+statement = "Scalar regularity and weak regular sequences on coefficients persist on every native Koszul term. A coefficient-regular scalar gives the actual scalar-multiplication short exact sequence on each term."
+scope = "Any commutative ring R and independently sized coefficient module M, arbitrary finite Koszul sequence f and degree, including empty sequences and degrees above length. No flatness, finiteness or Noetherianity of M, and no regularity of f. This is term-level weak regularity, not regularity on homology or properness of generated submodules. Only the scalar endpoint rewrites an Aglib declaration; the other two are native consequences. No recursive-model comparison. Stacks 0622/0623 are definition ingredients only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Exterior powers of the finite free sequence module are free and flat. Apply Mathlib's existing flat-tensor preservation of regularity and its actual scalar short exact sequence."

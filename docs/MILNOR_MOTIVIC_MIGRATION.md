@@ -470,3 +470,12 @@ Split injectivity additionally requires actual residue-field retraction data
 with its composition equation. This is a native consequence, not a new norm
 model or a claim that arbitrary DVRs admit coefficient fields or sections.
 See `migration/milnor-coefficient-retraction.json`.
+
+### Coefficient regularity on native Koszul terms
+
+COL-0136 reuses flat-tensor preservation to retain scalar and weak-sequence
+regularity on every term, with independently sized coefficients. Only the scalar
+endpoint rewrites a source declaration; weak-sequence and scalar short-exact
+statements are native consequences. This does not assert homology regularity,
+properness, or equivalence with the old recursive model. See
+`migration/motivic-koszul-coefficient-regularity.json`.

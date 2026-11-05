@@ -1,0 +1,211 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.Algebra.Homology.Koszul.Coefficient",
+  "source_sha256": "818fd38dfd14af03e4d5fda940653c7a6929f2e8249fb38ac1c6ffec9289e839",
+  "provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "license": "Apache-2.0",
+    "original_source": "Motivic/Algebra/Homology/KoszulCoefficientComplex.lean",
+    "original_source_sha256": "133eadd8193364628cad326f5cfbe4eaf8ea8a8b6f0f52c132f71aaf27fac10b",
+    "manifest": "aglib/docs/migration/motivic-koszul.json",
+    "verification": "Aglib source SHA256 exactly matches destination_sha256 in manifest. Original Motivic archive not directly reinspected."
+  },
+  "correspondence_scope": "Direct rewrite on the canonical exterior-power tensor complex; lists s correspond to f = s.get : Fin s.length -> R. No equivalence with the former recursive complex is claimed.",
+  "declarations": [
+    {
+      "source": "ChainComplex.Koszul.coefficientComplex_isSMulRegular",
+      "target": "Koszul.seqComplexTensor_isSMulRegular_X",
+      "disposition": "Direct canonical-object rewrite using Mathlib IsSMulRegular.lTensor and exteriorPower.instFree; strengthens coefficient universe independence.",
+      "hypotheses": "CommRing R : Type u; M : Type v, AddCommGroup M, Module R M; arbitrary f : Fin r -> R, scalar a regular on M, degree n. No coefficient flatness, finiteness, Noetherianity or regularity of f."
+    },
+    {
+      "source": null,
+      "target": "Koszul.seqComplexTensor_isWeaklyRegular_X",
+      "disposition": "Thin consequence of Mathlib IsWeaklyRegular.isWeaklyRegular_lTensor; not an additional migrated source declaration.",
+      "hypotheses": "Same ambient hypotheses; an arbitrary weakly regular list on M, independent of the Koszul sequence f."
+    },
+    {
+      "source": null,
+      "target": "Koszul.seqComplexTensor_smulShortComplex_shortExact",
+      "disposition": "Thin consequence using Mathlib actual ModuleCat.smulShortComplex and IsSMulRegular.smulShortComplex_shortExact; no new quotient object.",
+      "hypotheses": "Same scalar-regularity hypotheses as first endpoint."
+    }
+  ],
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "interfaces": [
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.Defs",
+        "declaration": "Koszul.seqComplexTensor",
+        "scope": "Actual native term is exterior power of Fin r -> R tensored with M; its existing independent coefficient universe is retained."
+      },
+      {
+        "module": "Mathlib.LinearAlgebra.ExteriorPower.Basis",
+        "declaration": "exteriorPower.instFree",
+        "scope": "Exterior powers of the sequence module are free, hence flat."
+      },
+      {
+        "module": "Mathlib.RingTheory.Regular.IsSMulRegular",
+        "declaration": "IsSMulRegular.lTensor",
+        "scope": "Directly used, not reproved."
+      },
+      {
+        "module": "Mathlib.RingTheory.Regular.RegularSequence",
+        "declaration": "RingTheory.Sequence.IsWeaklyRegular.isWeaklyRegular_lTensor",
+        "scope": "Directly used, including native scalar quotient recursion; no new recursive quotient convention."
+      },
+      {
+        "module": "Mathlib.RingTheory.Regular.Category",
+        "declaration": "IsSMulRegular.smulShortComplex_shortExact",
+        "scope": "Directly used with the actual scalar multiplication and scalar quotient maps."
+      }
+    ],
+    "search_scope": "Searched pinned Stacks Koszul tree and whole StacksFrontier for seqComplexTensor regularity statements; inspected Defs, Regular, Augmentation and Mathlib regularity tensor interfaces. No local proof of an available generic fact is introduced."
+  },
+  "literature": {
+    "0622": "Exterior-power Koszul definition ingredient only; not a verbatim coefficient regularity theorem.",
+    "0623": "Finite-sequence Koszul definition ingredient only.",
+    "scope": "Definition ingredients only; the regularity proof directly applies native upstream flat-tensor preservation. No claim of a verbatim coefficient-regularity theorem in these tags."
+  },
+  "validation": {
+    "source_correspondence": "author_checked",
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematics, canonical term/flatness interfaces, independent universes, source provenance, source/olean and historical receipt hashes; no reviewer compilation/kernel replay or direct original Motivic archive inspection."
+    },
+    "kernel_replay": "not requested; not run",
+    "full_repository_check": "Complete scripts/check.sh passed in the isolated integration tree; source leaf receipts are historical.",
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/CoefficientRegularity.lean",
+        "source_sha256": "c7bed02dcd87380a9503e11cec77411fb26d7d2220d8d5bea0541736472ff1c3",
+        "olean_sha256": "896c37a4da565d6ab645e8a393232b77a7c752cb310935afed3953ffd3819963"
+      },
+      {
+        "source": "ColibTest/KoszulCoefficientRegularity.lean",
+        "source_sha256": "2738ab5683dcddd787a0a5abcf10cb40d5491d6276abf53395fc495c56f2059c",
+        "olean_sha256": "431a9cbe5b05de8f0478108aef278b2f2e3f3838da970ece3ff526cb9afc22eb"
+      }
+    ],
+    "tests": [
+      "Independent ring/coefficient universes and arbitrary coefficients",
+      "Scalar and entire weak regular sequences",
+      "Native scalar short exact sequence",
+      "Empty Koszul sequence, degree zero",
+      "Degree strictly above the length; weak regularity does not assert properness"
+    ],
+    "commands": [
+      {
+        "command": "lake build Colib.RingTheory.Koszul.CoefficientRegularity ColibTest.KoszulCoefficientRegularity",
+        "result": "passed; existing Stacks Defs show-tactic style warning replayed"
+      },
+      {
+        "command": "lake exe batteries/runLinter --no-build Colib.RingTheory.Koszul.CoefficientRegularity ColibTest.KoszulCoefficientRegularity",
+        "result": "passed"
+      },
+      {
+        "command": "lake exe mathlib/lint-style Colib.RingTheory.Koszul.CoefficientRegularity ColibTest.KoszulCoefficientRegularity",
+        "result": "passed; absent nolints-style file treated as empty"
+      }
+    ],
+    "receipts": [
+      {
+        "file": "coeffregular-build-1.json",
+        "sha256": "fd1fe338d92eedddd98e4e48b6c21b9a576c8f3a681f0b65a91f389808c451f3"
+      },
+      {
+        "file": "coeffregular-lint.json",
+        "sha256": "b0d8350ebc32cc626da4e30a7aa7acf82158952b61cd6a63dc569336235876ae"
+      },
+      {
+        "file": "coeffregular-style.json",
+        "sha256": "0747a2cd0d7d22e136a421c8608693ef6111ef8162d211da6433ca784af07a81"
+      }
+    ],
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-coeff-regular-16a2184-20261105-1320",
+      "pid": 8,
+      "pgid": 8,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6442397696,
+      "duration_seconds": 50.43750309699681,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 8,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-coeff-regular-check2-receipt.json",
+      "receipt_sha256": "a22eb46cfdc942794da6d6690668d0827eb6db390033f3867224178a3c19ea3d",
+      "log": "/tmp/colib-coeff-regular-check2.log",
+      "log_sha256": "79d745088cc3e0e2e27c8c2250bac01d9d65de0c27ce5312334a6fa06e2cf024",
+      "kernel_replay": false,
+      "repair": "Initial annotation used an unavailable add_to_stacks command in this minimal import closure. Replaced only the annotation with the existing native stacks attribute; no proof or import expansion.",
+      "initial_attempt": {
+        "state": "completed",
+        "command": [
+          "bash",
+          "-c",
+          "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-coeff-regular-16a2184-20261105-1320",
+        "pid": 11,
+        "pgid": 11,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2323017728,
+        "duration_seconds": 8.339720252959523,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 11,
+            "rss_bytes": 0,
+            "executable": "bash",
+            "command_path": "bash"
+          }
+        ]
+      },
+      "hashes": {
+        "Colib/RingTheory/Koszul/CoefficientRegularity.lean": "deee7a681d4cf4863b8d88789f3d2ced0581394d0b9c2e7277fc6f044df4b8ce",
+        ".lake/build/lib/lean/Colib/RingTheory/Koszul/CoefficientRegularity.olean": "30987d83c84e375922311366b914e5dc636835bd6aaca4515d94b01ced317643",
+        "ColibTest/KoszulCoefficientRegularity.lean": "834a16ad4f1561e53e6844c0642eba2f69c059c050e36b0beeaaa138eae3c4a4",
+        ".lake/build/lib/lean/ColibTest/KoszulCoefficientRegularity.olean": "431a9cbe5b05de8f0478108aef278b2f2e3f3838da970ece3ff526cb9afc22eb"
+      }
+    }
+  },
+  "boundaries": [
+    "Only the named scalar-regularity endpoint is counted as migrated.",
+    "The source singleTensor coordinate helper is unnecessary for this canonical rewrite and is not migrated.",
+    "No claim that scalar regularity descends to homology, nor that weak regular sequences on zero terms are proper.",
+    "No dependency pins or mathematical models changed. Root/test registration and COL-0136 are added by integration; no commit or push is performed by the integrator."
+  ],
+  "target_baseline": "16a2184e272258f3f1af7e4fa420ee77e3baf0c0",
+  "library_item": "COL-0136"
+}

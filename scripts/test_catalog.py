@@ -104,6 +104,19 @@ class LibraryTests(unittest.TestCase):
         for index in range(23, 27):
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
 
+    def test_serre_localization_ids_keep_their_owners(self):
+        self.assertEqual(
+            self.library["entries"]["COL-0027"]["section"], "exact-categories"
+        )
+        for index in (28, 29):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"],
+                "grothendieck-groups",
+            )
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in range(27, 30):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
     def test_unknown_reference_is_rejected(self):
         native = self.native_fixture()
         native["citations"][0]["source"] = "missing"

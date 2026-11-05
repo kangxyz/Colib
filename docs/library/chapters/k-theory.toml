@@ -8,7 +8,7 @@ introduction = "We develop additive invariants and the comparison maps used by a
 id = "grothendieck-groups"
 title = "Grothendieck groups"
 order = 10
-introduction = "Begin with the presentation by objects and short exact sequences. Its additivity and functoriality lead to the dimension computation for finite-dimensional vector spaces. The object classes and their normalization are retained throughout."
+introduction = "Begin with the presentation by objects and short exact sequences. Its additivity and functoriality lead to the dimension computation for finite-dimensional vector spaces. The object classes and their normalization are retained throughout. Exact-functor maps and the inclusion-image comparison lead to algebraic localization by a Serre class, including the actual canonical quotient."
 
 [[sections]]
 id = "milnor-k-theory"

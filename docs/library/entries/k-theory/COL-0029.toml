@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0029"
+title = "Algebraic K₀ of the canonical Serre quotient"
+kind = "theorem"
+section = "grothendieck-groups"
+order = 120
+statement = "For the canonical Serre quotient, the induced algebraic K₀ map is surjective with kernel the Serre-object subgroup, and its quotient equivalence preserves each actual object class."
+scope = "An abelian category C : Type u with Category.{u} C and a Serre class P. The source object and hom universes coincide. The actual functor is P.isoModSerre.Q; the upstream quotient abelian structure is used locally. This specializes Tag 02MX(1), not its second clause or a Q-construction homotopy group. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

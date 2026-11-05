@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0027"
+title = "Exact functors of Serre localizations"
+kind = "definition"
+section = "exact-categories"
+order = 50
+statement = "An additive localization at isomorphisms modulo a Serre class is an exact functor between the canonical abelian exact structures."
+scope = "An actual functor L between abelian source and target categories with independent object and hom universes, an additive structure on L, and its localization instance. This packages the exact-functor clause of Tag 02MS and does not independently construct the full categorical quotient universal property. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

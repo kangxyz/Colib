@@ -15,3 +15,9 @@ id = "homotopy-groups"
 title = "Homotopy groups"
 order = 20
 introduction = "Pointed continuous maps act on actual generalized-loop homotopy quotients. Their group homomorphisms retain the existing multiplication and degree conventions."
+
+[[sections]]
+id = "geometric-realization"
+title = "Geometric realization"
+order = 30
+introduction = "Coordinate comparisons retain the chosen realization, finite vertex sets, actual maps and interval orientation."

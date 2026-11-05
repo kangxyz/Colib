@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0058"
+title = "Natural transformations and based nerve cylinders"
+kind = "proposition"
+section = "classifying-spaces"
+order = 40
+statement = "A natural transformation gives an explicit simplicial cylinder and a simplicial homotopy between the induced nerve maps. At a chosen object, the cylinder is constant when the component is exactly eqToHom of the specified equality of its two image objects."
+scope = "Source and target categories share object and hom universe parameters. The ordinary nerve homotopy adapts the simplicial stage of the cited categorical interval construction; the reference is background only for the explicit based strengthening. Object equality or a natural isomorphism alone does not supply the required component equality. No topological realization homotopy, based topological homotopy, or KMap composition theorem is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -54,6 +54,8 @@ public import Colib.RingTheory.Koszul.PrincipalExt
 public import Colib.RingTheory.Length.FiniteAlgebra
 public import Colib.Topology.ClassifyingSpace.Basic
 public import Colib.Topology.ClassifyingSpace.Map
+public import Colib.Topology.ClassifyingSpace.NerveHomotopy
 public import Colib.Topology.ClassifyingSpace.PointedFunctor
 public import Colib.Topology.Homotopy.HomotopyGroup.Map
+public import Colib.Topology.Realization.FiniteSimplexAdapter
 public import Colib.Util.References

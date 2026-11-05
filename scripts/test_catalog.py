@@ -38,6 +38,7 @@ class LibraryTests(unittest.TestCase):
             "restricted-spans": "Colib.CategoryTheory.QConstruction.Basic",
             "classifying-spaces": "Colib.Topology.ClassifyingSpace.Basic",
             "functor-constructions": "Colib.CategoryTheory.Functor.Rebase",
+            "geometric-realization": "Colib.Topology.Realization.FiniteSimplexAdapter",
             "homotopy-groups": "Colib.Topology.Homotopy.HomotopyGroup.Map",
             "quillen-k-theory": "Colib.KTheory.Quillen.Basic",
             "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
@@ -70,6 +71,20 @@ class LibraryTests(unittest.TestCase):
                 }
             )
         return native
+
+    def test_nerve_cylinder_and_finite_simplex_ids_keep_their_owners(self):
+        for identifier, section in (
+            ("COL-0058", "classifying-spaces"),
+            ("COL-0059", "geometric-realization"),
+        ):
+            self.assertEqual(self.library["entries"][identifier]["section"], section)
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        self.assertEqual(
+            result["sections"]["geometric-realization"]["modules"],
+            ["Colib.Topology.Realization.FiniteSimplexAdapter"],
+        )
+        for identifier in ("COL-0058", "COL-0059"):
+            self.assertTrue(result["entries"][identifier]["references"])
 
     def test_initial_ids_keep_their_owners(self):
         self.assertTrue(

@@ -1,0 +1,288 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/CategoryTheory/Abelian/Projective/Dimension.lean",
+      "sha256": "ea50b7bf83b7d2186f2e155dcab581f4d2138160fda1d674a6f51127f096195e",
+      "copyright": "2026 algebraic-geometry contributors",
+      "authors": "kangxyz",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Ext.lean",
+      "sha256": "fb029327bd6f1e2a295000b9283bdfc3d1479fa7eeef8d8c6e3f10e701bd4d0f",
+      "copyright": "2026 algebraic-geometry contributors",
+      "authors": "kangxyz",
+      "license": "Apache-2.0"
+    }
+  ],
+  "canonical_objects": [
+    "Koszul.seqComplex",
+    "Koszul.koszulAugmentation",
+    "Koszul.seqProjectiveResolution",
+    "CategoryTheory.ProjectiveResolution",
+    "CategoryTheory.Abelian.Ext",
+    "CategoryTheory.HasProjectiveDimensionLE"
+  ],
+  "declarations": [
+    {
+      "source": "CategoryTheory.ProjectiveResolution.ext_eq_zero_of_isZero_X",
+      "target": "CategoryTheory.ProjectiveResolution.ext_eq_zero_of_isZero_X",
+      "target_module": "Colib.CategoryTheory.Abelian.Projective.Ext",
+      "disposition": "prerequisite extraction",
+      "hypotheses": "Arbitrary abelian category C with universe parameters u, v; arbitrary supported HasExt.{w}; supplied ProjectiveResolution X; its degree-n term is zero; arbitrary target Y and Ext class e.",
+      "correspondence_scope": "Same proof and assumptions as source; exact extraction.",
+      "status": "Source correspondence and independent read-only review passed; final integrated build, tests, lint and production axiom audit passed.",
+      "source_correspondence": "author_checked: exact source theorem conclusions and hypotheses retained; no independent review claimed."
+    },
+    {
+      "source": "ChainComplex.Koszul.ext_eq_zero_above_length",
+      "target": "Koszul.ext_eq_zero_above_length",
+      "target_module": "Colib.RingTheory.Koszul.Ext",
+      "disposition": "direct proof rewrite",
+      "hypotheses": "CommRing R; finite list s weakly regular on R; arbitrary ModuleCat.{u} R target N and HasExt.{w}; length s < n.",
+      "correspondence_scope": "Same quotient R / Ideal.ofList s and native Ext class. List.get/List.ofFn and equality of generated ideals connect indexing to the canonical Stacks proof; no comparison to the old tensor complex is needed.",
+      "status": "Source correspondence and independent read-only review passed; final integrated build, tests, lint and production axiom audit passed.",
+      "source_correspondence": "author_checked: exact source theorem conclusions and hypotheses retained; no independent review claimed."
+    },
+    {
+      "source": "ChainComplex.Koszul.quotient_hasProjectiveDimensionLE_of_weaklyRegular",
+      "target": "Koszul.quotient_hasProjectiveDimensionLE_of_weaklyRegular",
+      "target_module": "Colib.RingTheory.Koszul.Ext",
+      "disposition": "direct proof rewrite",
+      "hypotheses": "CommRing R; finite list s weakly regular on R. No Noetherianity, nontriviality, properness, or coefficient finiteness.",
+      "correspondence_scope": "Same HasProjectiveDimensionLE statement on R / Ideal.ofList s; proved from native Stacks resolution via Ext vanishing.",
+      "status": "Source correspondence and independent read-only review passed; final integrated build, tests, lint and production axiom audit passed.",
+      "source_correspondence": "author_checked: exact source theorem conclusions and hypotheses retained; no independent review claimed."
+    },
+    {
+      "source": "CategoryTheory.ProjectiveResolution.hasProjectiveDimensionLE_of_isZero_X",
+      "disposition": "upstream reuse candidate",
+      "upstream": "CategoryTheory.hasProjectiveDimensionLE_tfae_leftResolution",
+      "status": "Exact supplied-resolution specialization not yet compiled; not counted as closed migration.",
+      "obligation": "Build HasProjectiveResolution X from supplied P and convert P to ObjectProperty.LeftResolution; select TFAE implication. No source alias copied."
+    }
+  ],
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "reused": [
+      {
+        "module": "Mathlib.CategoryTheory.Abelian.Projective.Ext",
+        "declarations": [
+          "CategoryTheory.ProjectiveResolution.extMk_surjective",
+          "CategoryTheory.ProjectiveResolution.extMk_zero"
+        ],
+        "scope": "Native Ext classes represented by cocycles on the supplied projective resolution."
+      },
+      {
+        "module": "Mathlib.CategoryTheory.Abelian.Projective.Dimension",
+        "declarations": [
+          "CategoryTheory.HasProjectiveDimensionLT.mk"
+        ],
+        "scope": "Converts Ext vanishing into native projective dimension bound; no new dimension model."
+      },
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.Defs",
+        "declarations": [
+          "Koszul.seqComplex",
+          "Koszul.seqComplex_isZero_of_lt",
+          "Koszul.isKoszulRegularOn_self_iff"
+        ],
+        "scope": "Exterior-power Koszul complex on Fin r -> R and support vanishing above r."
+      },
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.Regular",
+        "declarations": [
+          "Koszul.isKoszulRegularOn_and_isKoszulRegular_of_regular"
+        ],
+        "scope": "First conjunct supplies Koszul regularity with module coefficients from IsWeaklyRegular on List.ofFn f; specialize coefficients to R."
+      },
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.TorComparison.QuotientTor",
+        "declarations": [
+          "Koszul.seqProjectiveResolution"
+        ],
+        "scope": "Existing projective resolution of R / Ideal.span (Set.range f), with complex seqComplex and map koszulAugmentation."
+      }
+    ],
+    "other_existing_interfaces": [
+      {
+        "module": "StacksFrontier.Algebra.Homology.ProjectiveDimension",
+        "declaration": "CategoryTheory.hasProjectiveDimensionLE_tfae_leftResolution",
+        "scope": "Public Tag 0CXC finite-resolution characterization, under HasProjectiveResolution X. Contains the mathematical finite-resolution dimension implication. No duplicate generic bound API is introduced; this broad-import module is not imported by the new lower helper."
+      },
+      {
+        "module": "Mathlib.RingTheory.Regular.ProjectiveDimension",
+        "declaration": "ModuleCat.projectiveDimension_quotient_eq_add_length_of_isWeaklyRegular",
+        "scope": "Not a replacement: requires a Noetherian local ring, a finite nontrivial module and membership of the sequence in the maximal ideal. The present general upper bound has none of those hypotheses."
+      }
+    ],
+    "search_scope": "Pinned Mathlib projective Ext/Dimension/Resolution sources, pinned Stacks projective dimension and Koszul family, plus name/content searches for zero-term Ext vanishing and regular-sequence dimension bounds. Also inspected Stacks files using ProjectiveResolution.extMk_surjective; no public zero-term vanishing theorem matching the arbitrary abelian-category/Ext-universe source was found.",
+    "increment": "A minimal generic zero-term Ext lemma, and weakly-regular sequence/list quotient endpoints directly on Stacks resolution. No alternate Koszul model and no arbitrary assertion of model equivalence."
+  },
+  "validation": {
+    "lean_compilation": "passed",
+    "independent_review": "Passed read-only source/mathematical review 2026-11-05: exact categorical helper extraction, canonical Stacks resolution/augmentation and support bound, weak-regularity first conjunct, list/ideal correspondence, original ModuleCat and arbitrary supported Ext universes, source licenses and fixed source hashes. Official 062F and 0CXC inspected as ingredients; no original archive review or compilation by the reviewer.",
+    "kernel_replay": "not requested; not run",
+    "completed_commands": [
+      {
+        "command": "lake build Colib.CategoryTheory.Abelian.Projective.Ext",
+        "result": "Passed."
+      },
+      {
+        "command": "lake exe batteries/runLinter --no-build Colib.CategoryTheory.Abelian.Projective.Ext",
+        "result": "Passed."
+      },
+      {
+        "command": "lake --log-level=error build Colib.RingTheory.Koszul.Ext ColibTest.KoszulExt",
+        "result": "Passed (exit 0).",
+        "guard_failure": null,
+        "peak_group_rss_bytes": 2603417600,
+        "owned_process_group_gone": true
+      },
+      {
+        "command": "lake exe batteries/runLinter --no-build Colib.CategoryTheory.Abelian.Projective.Ext Colib.RingTheory.Koszul.Ext",
+        "result": "Passed (exit 0).",
+        "guard_failure": null,
+        "peak_group_rss_bytes": 6008414208,
+        "owned_process_group_gone": true
+      },
+      {
+        "command": "lake exe mathlib/lint-style Colib.CategoryTheory.Abelian.Projective.Ext Colib.RingTheory.Koszul.Ext ColibTest.KoszulExt",
+        "result": "Passed (exit 0).",
+        "guard_failure": null,
+        "peak_group_rss_bytes": 1716776960,
+        "owned_process_group_gone": true
+      }
+    ],
+    "validation_baseline_revision": "bee0a67c18e023f641c64e701e833f1f6b7b3937",
+    "full_repository_validation": "Passed complete guarded scripts/check.sh on bee0a67 plus only this milestone in a separate worktree; original worktree and concurrent Product draft untouched.",
+    "resource_limits": {
+      "max_active_lean": 1,
+      "lean_threads": 1,
+      "lean_memory_mib": 4983,
+      "group_rss_limit_mib": 7475
+    },
+    "artifacts": [
+      {
+        "source": "Colib/CategoryTheory/Abelian/Projective/Ext.lean",
+        "source_sha256": "b4978a4854f58287db7bc87897d84ca58d71bd51cb2f9a13cd73254849d2e035",
+        "olean": ".lake/build/lib/lean/Colib/CategoryTheory/Abelian/Projective/Ext.olean",
+        "olean_sha256": "19178acecdae9f062d721f4e3ce86da1b5f4e866ed769f379bd68fb545bb78d3"
+      },
+      {
+        "source": "Colib/RingTheory/Koszul/Ext.lean",
+        "source_sha256": "9af45a0262a01ad5b6ef104a56284541be956551b077d79cae228aeb027e5052",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/Ext.olean",
+        "olean_sha256": "7d9669dfa07d036e9ed81ba16eafd0d6c68401c57297ea069441d401fb2db684"
+      },
+      {
+        "source": "ColibTest/KoszulExt.lean",
+        "source_sha256": "45be02da97a1a9d64fc0779c88191bd96fc7e7df81ab8789b8baf43c21212def",
+        "olean": ".lake/build/lib/lean/ColibTest/KoszulExt.olean",
+        "olean_sha256": "65a559783a0fcae5e004bdde8c17f04af97f54662d6b3a7e5773bd30bb95e036"
+      }
+    ],
+    "notes": "Pinned Stacks dependencies emitted existing style/deprecation warnings. No upstream files were edited. Text lint noted the absent optional nolints-style file and treated it as empty. Initial local quotient-transport/typechecking errors were repaired before the successful final build; no placeholders were used.",
+    "previous_integration": {
+      "baseline": "eb7d0782f8d8177bcb2412b3fcaddd1bdaee8cf2",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6252761088,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "max_active_lean": 1,
+        "lean_threads": 1,
+        "lean_memory_mib": 4983,
+        "group_rss_limit_mib": 7475
+      },
+      "results": {
+        "python_tests": "17 passed",
+        "catalog_metadata": "15 items, 3 chapters, 4 sections",
+        "production_build": "Passed",
+        "in_package_tests": "All five modules passed, including the added improper-ideal tests",
+        "declaration_lint": "Passed",
+        "text_style": "Passed",
+        "generated_entry": "Passed pinned mk_all check",
+        "production_axiom_audit": "98 declarations; only propext, Classical.choice, Quot.sound",
+        "library_export": "15 items, 27 indexed declarations",
+        "site_generation": "15 item pages, 5 reference pages"
+      },
+      "auditor_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+      "log_sha256": "c429fd13e0b6d6e0afe64246e18538c83408362935a1dd3abd48ac02b5cfb28c",
+      "guard_receipt_sha256": "79df292bb9935c644d87004aed346d2c02ede25881e1cc6341bc135998b56d70",
+      "root_sha256": "5c1f9d8aac781d87341f0732f1b8d2069e301258b2d559366abb50716b5161bf",
+      "repairs": "Added the new section to the catalog test fixture, shortened a citation string, and supplied explicit ring/list arguments in the new unit-ideal test before the successful complete check. Guard limits were unchanged. No kernel replay or separate downstream client checks."
+    },
+    "integration": {
+      "baseline": "bee0a67c18e023f641c64e701e833f1f6b7b3937",
+      "date": "2026-11-05",
+      "command": "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6802624512,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "max_active_lean": 1,
+        "lean_threads": 1,
+        "lean_memory_mib": 4983,
+        "group_rss_limit_mib": 7475
+      },
+      "results": {
+        "python_tests": "18 passed, including the remote exact-foundations ownership regression",
+        "catalog_metadata": "21 items, 4 chapters, 5 sections",
+        "production_build": "Passed, including all remote Quillen foundations",
+        "in_package_tests": "All six modules passed, including ExactGrothendieckGroup and KoszulExt",
+        "declaration_lint": "Passed",
+        "text_style": "Passed",
+        "generated_entry": "Passed pinned mk_all check; all remote imports preserved",
+        "production_axiom_audit": "217 declarations; only propext, Classical.choice, Quot.sound",
+        "library_export": "21 items, 40 indexed declarations",
+        "site_generation": "21 item pages, 6 reference pages"
+      },
+      "auditor_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+      "log_sha256": "96e2e7eb76762178a1a8cd8df7fbd65903ca7497aff1bd45d612fed6212d1da5",
+      "guard_receipt_sha256": "e3fb5dc56002041db9d8384ad3b658cde7ed166cf6145e7ad09ca985599b310b",
+      "root_sha256": "be2ebc9cfcf48d2a5abe1280fbefb2a539393fe1ac928ebbdabab94128e3bd76",
+      "repairs": "Rebased non-destructively in a separate worktree on bee0a67. Preserved remote Quillen imports, dynamic catalog fixture and ownership tests, and both test lists. Reassigned the unpublished Koszul item from colliding COL-0015 to unused COL-0021. Lean, Mathlib and Stacks pins unchanged. Guard limits unchanged; no kernel replay or separate client checks."
+    }
+  },
+  "supporting_targets": [
+    "Koszul.ext_eq_zero_of_isWeaklyRegular",
+    "Koszul.hasProjectiveDimensionLE_quotient_of_isWeaklyRegular"
+  ],
+  "tests": {
+    "module": "ColibTest.KoszulExt",
+    "scope": [
+      "Empty list without nontrivial-ring assumption",
+      "Singleton list with arbitrary coefficient module and supported Ext universe",
+      "Fin-indexed native span-of-range quotient",
+      "Singleton unit sequence generates the improper ideal and still gives the bound"
+    ],
+    "status": "Passed as part of complete guarded scripts/check.sh, including the improper ideal tests."
+  },
+  "library_item": "COL-0021; the categorical zero-term helper is supporting and has no independent Library ID.",
+  "target_baseline": "bee0a67c18e023f641c64e701e833f1f6b7b3937",
+  "literature": [
+    {
+      "source": "Stacks Project",
+      "tag": "062F",
+      "url": "https://stacks.math.columbia.edu/tag/062F",
+      "inspected": "2026-11-05",
+      "scope": "First sentence: successive multiplication injectivity implies module Koszul regularity. Used only as an acyclicity ingredient; no properness assumption. Not a direct statement of the Ext endpoint.",
+      "html_sha256": "86e50074e47ab88c6da8d69bdbaf10cf2553be41e61cc5634aa270bc78e6d36f"
+    },
+    {
+      "source": "Stacks Project",
+      "tag": "0CXC",
+      "url": "https://stacks.math.columbia.edu/tag/0CXC",
+      "inspected": "2026-11-05",
+      "scope": "Conditions (1) and (2): finite projective resolution and module projective dimension bound. Used only as an ingredient; the arbitrary abelian-category helper is not a verbatim source statement.",
+      "html_sha256": "8f8fac7a2d6ecb2fdb72b79cb62ed539d5b057c955c600ea63a19f6e3ed3c9b3"
+    }
+  ]
+}

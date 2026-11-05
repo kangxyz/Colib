@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0021"
+title = "Koszul quotient projective dimension and Ext bounds"
+kind = "theorem"
+section = "projective-dimension"
+order = 10
+statement = "The quotient of a commutative ring by a finite weakly regular sequence has projective dimension at most its length; every Ext class above that length vanishes."
+scope = "Arbitrary commutative rings, including trivial rings and the empty sequence; the ideal need not be proper. Coefficients lie in ModuleCat at the ring universe, and Ext may use any supported universe. Stacks 062F and 0CXC are ingredients, not verbatim statements of the combined endpoints."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use Stacks' exterior-power Koszul projective resolution and its vanishing terms above the sequence length. Native Ext representatives vanish at a zero term. List and finite-function indexing identify the same generated ideal."

@@ -311,3 +311,30 @@ The isolated tuple-symbol milestone passed the complete `scripts/check.sh` on
 2026-11-05: all four in-package test modules, lint and generated-root checks,
 91-declaration production axiom audit, and 14-item Library/site generation.
 Kernel replay and separate downstream client checks were not run.
+
+## Koszul quotient Ext milestone (2026-11-05)
+
+Library item `COL-0021` records the projective-dimension bound and higher Ext
+vanishing for quotients by finite weakly regular sequences. The implementation
+uses Stacks' existing exterior-power Koszul resolution and augmentation; it does
+not recreate or compare the source recursive tensor model. The native quotient,
+coefficients and supported Ext universe agree with the source endpoints.
+
+The source helper for vanishing at a zero term of a supplied projective resolution
+is extracted at its categorical owner. The separate generic dimension helper is
+still an unresolved upstream-reuse candidate, not counted as migrated. See
+[motivic-koszul-ext.json](migration/motivic-koszul-ext.json) for exact dispositions.
+
+Official Stacks Tags 062F and 0CXC were inspected and recorded only as ingredients:
+weak regularity gives Koszul acyclicity, and finite projective resolutions give
+dimension bounds. Neither tag is labeled as a verbatim statement of the combined
+Ext endpoint. Tests include the empty sequence, arbitrary supported Ext universe,
+the native finite-indexed quotient, and the singleton unit generating the improper
+ideal. No nontrivial-ring, proper-ideal or Noetherian assumption is introduced.
+
+After the remote Quillen contribution advanced main, this milestone was reapplied
+without overwriting it on `bee0a67c18e023f641c64e701e833f1f6b7b3937`. The previously
+unpublished Koszul item was allocated `COL-0021`, preserving remote IDs 0015-0020.
+The full guarded check passed with all six test modules, the 217-declaration axiom
+audit, and the 21-item Library/site. Dependency pins and resource limits were
+unchanged; kernel replay and separate downstream client checks were not run.

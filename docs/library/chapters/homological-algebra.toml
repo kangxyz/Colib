@@ -1,0 +1,11 @@
+[chapter]
+id = "homological-algebra"
+title = "Homological algebra"
+order = 30
+introduction = "Native resolutions and derived invariants supply the bounds used in cohomological applications. Each result retains its actual objects, coefficients and size assumptions."
+
+[[sections]]
+id = "projective-dimension"
+title = "Projective resolutions and dimension"
+order = 10
+introduction = "The finite exterior-power Koszul resolution of a weakly regular sequence gives projective dimension and Ext vanishing bounds for its actual ideal quotient. The underlying resolution and Ext groups are those of Stacks and Mathlib."

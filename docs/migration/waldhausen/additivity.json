@@ -1,0 +1,504 @@
+{
+  "source_revision": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "integration_base": "8d4b81261a9408e3550833e80fd6059f608b3e3d",
+  "library_items": [
+    "COL-0213",
+    "COL-0214",
+    "COL-0215",
+    "COL-0216",
+    "COL-0217",
+    "COL-0218",
+    "COL-0219",
+    "COL-0220",
+    "COL-0212"
+  ],
+  "actual_subdivision": "Unreversed ordinal join [n] -> [n] star [n], first-half endpoint.",
+  "final_statement": "For a genuine cofibration sequence F -> G -> H of exact functors, the original KMap of G is the pointwise product KMap F * KMap H, in this order, in every nonnegative K-degree. The actual pre-existing K-group multiplication is commutative also in degree zero.",
+  "remaining_scope": "No strict chosen-zero S-model comparison or general Quillen-Waldhausen comparison is included. No homeomorphism is asserted for arbitrary ordinary realization products.",
+  "tests": [
+    "ColibTest.OrdinalSubdivisionRealization",
+    "ColibTest.HomotopyEquivalencePi",
+    "ColibTest.WaldhausenSubdivisionMaps",
+    "ColibTest.WaldhausenAdditivityConditional",
+    "ColibTest.WaldhausenDeformation",
+    "ColibTest.WaldhausenAdditivity",
+    "ColibTest.RealizationProduct",
+    "ColibTest.WaldhausenProduct",
+    "ColibTest.WaldhausenMultiplication",
+    "ColibTest.WaldhausenAdditivityPushout"
+  ],
+  "production_modules": [
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.MixedOrdinal",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.MixedOrdinalBisimplicial",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.MixedOrdinalContraction",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.MixedOrdinalCylinder",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.MixedOrdinalEndpoints",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.MixedOrdinalFunctor",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoinDesc",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalSubdivision",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalSubdivisionBisimplicial",
+      "implementation_family": "waldhausen-mixed-ordinal-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Functor.PointwiseCoproduct",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Limits.PointwisePushoutInterchange",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.NaturalTransformation.HExt",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.CofiberEndpoint",
+      "implementation_family": "waldhausen-additivity-pushout-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.CofibrationSequence",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.CoproductAlgebra",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.CoproductFunctor",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.DeformationMap",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.DiagramIso",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.EndpointFamilies",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.EndpointHomotopies",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.EndpointNaturality",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.IntervalArrows",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.IntervalEndpoints",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.MixedDiagrams",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.MixedEndpointHomotopy",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.NormalizedDeformationMap",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.NormalizedEndpointFamilies",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.NormalizedMixedDiagrams",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.NormalizedPushout",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.NormalizedSumMap",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.NormalizedZeroMaps",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.PushoutCofibrations",
+      "implementation_family": "waldhausen-additivity-pushout-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.PushoutEndpoints",
+      "implementation_family": "waldhausen-additivity-pushout-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.PushoutFunctor",
+      "implementation_family": "waldhausen-additivity-pushout-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.PushoutPreservation",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.SplitSequence",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.SumDiagrams",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Additivity.ZeroFactorization",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Product.SSet",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.CategoryTheory.Waldhausen.Product.Structure",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.BasedHomotopyTools",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.Basic",
+      "implementation_family": "waldhausen-additivity-closed-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.Conditional",
+      "implementation_family": "waldhausen-conditional-additivity-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.DiagonalKMap",
+      "implementation_family": "waldhausen-cancellation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.DiagonalNaturality",
+      "implementation_family": "waldhausen-cancellation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.GroupFormula",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.GroupMultiplication",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.NormalizedEndpointHomotopies",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.NormalizedMixedHomotopy",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.RealizationHomotopy",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.SubdividedBasedHomotopy",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.SubdivisionBasepoint",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.SubdivisionEquivalence",
+      "implementation_family": "waldhausen-additivity-closed-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Additivity.SubdivisionGroupMap",
+      "implementation_family": "waldhausen-cancellation-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Product.Functoriality",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.Product.KEquivalence",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.KTheory.Waldhausen.WeakGridBasedHomotopy",
+      "implementation_family": "waldhausen-deformation-draft"
+    },
+    {
+      "module": "Colib.Topology.Category.TopCat.CompactHausdorffPushout",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Category.TopCat.SequentialColimit.CobaseChange",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Category.TopCat.SequentialColimit.Deformation",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Category.TopCat.SequentialColimit.HomotopyInvariance",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.ClassifyingSpace.Contraction",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.DeformationRetract.Basic",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.DeformationRetract.Cofibration",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.Equiv.AdjacentComposites",
+      "implementation_family": "waldhausen-cancellation-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.Equiv.Based",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.Equiv.IsoSquare",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.Equiv.Sigma",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.Extension",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.HomotopyGroup.CompactLifting",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.HomotopyGroup.Contractible",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.HomotopyGroup.Equivalence",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.HomotopyGroup.Homeomorph",
+      "implementation_family": "waldhausen-cancellation-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.HomotopyGroup.Loop.DegreeShift",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.HomotopyGroup.Loop.FiberExactness",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.HomotopyGroup.Nullhomotopy",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.HomotopyGroup.Product",
+      "implementation_family": "waldhausen-multiplication-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.IntervalEndpoints",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.RelativeCylinder",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Homotopy.RelativeInverse",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.Basic",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.Components",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.Equivalence",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.Exactness",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.LES",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.LESTail",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.Map",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.Sequence",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.HomotopyFiber.SourceEquivalence",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    },
+    {
+      "module": "Colib.Topology.MappingCylinder.Basic",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.MappingCylinder.Diagram",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.MappingCylinder.HomotopyExtension",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.MappingCylinder.Latching",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.MappingCylinder.PushoutCollapse",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.Pushout.Homotopy",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.Pushout.HomotopyEquivalence",
+      "implementation_family": "cellular-pushout-invariance-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.BoundaryHEP",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.CellularComparison",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.FiniteCompact",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.FiniteHausdorff",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.FiniteSkeleton",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.FiniteSubcomplex",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.LocallyCompactProduct",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.MonomorphismEmbedding",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.MonomorphismHEP",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.MonomorphismLifting",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.OrdinalSubdivisionComparison",
+      "implementation_family": "waldhausen-additivity-closed-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.OrdinalSubdivisionConditional",
+      "implementation_family": "waldhausen-conditional-additivity-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.OrdinalSubdivisionRealization",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.OrdinalSubdivisionRepresentable",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.OrdinalSubdivisionSimplex",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.ProductComparison",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.ProductSimplex",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.ProductSupport",
+      "implementation_family": "realization-product-comparison-draft"
+    },
+    {
+      "module": "Colib.Topology.Realization.SimplexBoundaryHEP",
+      "implementation_family": "ordinal-subdivision-realization-draft"
+    },
+    {
+      "module": "Colib.Topology.UnitInterval",
+      "implementation_family": "unbased-pi-equivalence-draft"
+    }
+  ],
+  "canonical_interface_changes": [
+    "Generalized CategoryTheory.rebaseFunctor and its existing companion declarations to independent source and target universes; the duplicate Additivity.NormalizeFunctor implementation is not retained.",
+    "Proved simplex-boundary homotopy extension directly with TopCat.I; the separate continuous-coordinate conversion entry point is not retained."
+  ]
+}

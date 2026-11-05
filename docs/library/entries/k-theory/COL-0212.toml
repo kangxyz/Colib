@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0212"
+title = "The original Waldhausen K-group law is commutative"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 70
+statement = "The actual existing multiplication of every Waldhausen K-group is commutative, including K-zero. The actual coproduct exact functor induces this same multiplication, via the product equivalence whose forward map is the pair of canonical projection KMaps."
+scope = "Commutativity requires only the Waldhausen structure: binary coproducts are constructed from its chosen zero and pushouts. No abelian fundamental-group, product-equivalence or commutativity assumption is added. The explicit CommGroup extends the existing Group by a definitional equality, rather than replacing its operations. Product and coproduct formulas retain the actual canonical KMaps. The H-space sum argument in the proof of Weibel V Theorem 1.2 is adapted using a homomorphism with both unit restrictions equal to identity."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0216"
+title = "Ordinary subdivision preserves actual realization homotopy type"
+kind = "theorem"
+section = "geometric-realization"
+order = 300
+statement = "The first-half endpoint of the genuine ordinary twofold subdivision of every simplicial set realizes to a homotopy equivalence. Its forward map is exactly the realized endpoint, is natural, and sends the degenerate subdivision vertex to the original vertex."
+scope = "The indexing functor is the unreversed ordinal join [n] maps to [n] star [n], acting by the same map on both halves. This is not identified with Mathlib subdivision or the reversed Segal subdivision in Weibel IV Exercises 3.9-3.10. The proof contracts subdivided representables, then uses actual cellular pushout and sequential homotopy invariance. Infinite-dimensional simplicial sets are included. No natural inverse is claimed. Weibel IV Characterization 3.1 is cited only as background on actual realization."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0214"
+title = "Homotopy invariance of cofibrant pushouts"
+kind = "theorem"
+section = "homotopy-colimits"
+order = 10
+statement = "A commuting map between actual topological pushout squares induces a homotopy equivalence when the three input maps are homotopy equivalences and the specified attaching map in each square has homotopy extension. Its forward map is exactly the supplied map of pushout objects."
+scope = "Unbased spaces in one arbitrary universe. Both attaching legs have actual HEP. Mapping cylinders, relative inverses and strong deformation retracts construct the inverse; gluing equivalence is not assumed. Hatcher Chapter 0 Exercise 27 treats cobase change along an HEP inclusion; the full commuting-square comparison is an adaptation of that argument."
+review = "author_checked"

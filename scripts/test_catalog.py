@@ -218,6 +218,38 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("No monicity", self.library["entries"]["COL-0209"]["scope"])
         self.assertIn("original field", self.library["entries"]["COL-0211"]["scope"])
 
+    def test_additivity_keeps_actual_maps_scope_and_tests(self):
+        expected = {
+            "COL-0213": "geometric-realization",
+            "COL-0214": "homotopy-colimits",
+            "COL-0215": "homotopy-colimits",
+            "COL-0216": "geometric-realization",
+            "COL-0217": "homotopy-groups",
+            "COL-0218": "waldhausen-k-theory",
+            "COL-0219": "waldhausen-k-theory",
+            "COL-0220": "geometric-realization",
+            "COL-0212": "waldhausen-k-theory",
+        }
+        for identifier, section in expected.items():
+            self.assertEqual(self.library["entries"][identifier]["section"], section)
+        self.assertIn("unreversed ordinal join", self.library["entries"]["COL-0216"]["scope"])
+        self.assertIn("Infinite-dimensional", self.library["entries"]["COL-0216"]["scope"])
+        self.assertIn("No comparison-equivalence or surjectivity assumption",
+                      self.library["entries"]["COL-0219"]["scope"])
+        self.assertIn("quotient-before-subobject", self.library["entries"]["COL-0219"]["scope"])
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for identifier in expected:
+            self.assertTrue(result["entries"][identifier]["references"])
+        ledger = json.loads((catalog.ROOT / "docs/migration/waldhausen/additivity.json").read_text())
+        self.assertEqual(ledger["source_revision"], "c561118b7795eb9780be9ed391c3251d6a4d0afd")
+        self.assertEqual(len(ledger["production_modules"]), 117)
+        self.assertFalse((catalog.ROOT /
+                          "Colib/CategoryTheory/Waldhausen/Additivity/NormalizeFunctor.lean").exists())
+        self.assertIn("independent", self.library["entries"]["COL-0051"]["scope"])
+        for test in ledger["tests"]:
+            for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+                self.assertIn(test, (catalog.ROOT / path).read_text())
+
     def native_fixture(self):
         native = {
             "bindings": [],
@@ -243,6 +275,7 @@ class LibraryTests(unittest.TestCase):
             "functor-constructions": "Colib.CategoryTheory.Functor.Rebase",
             "geometric-realization": "Colib.Topology.Realization.FiniteSimplexAdapter",
             "homotopy-groups": "Colib.Topology.Homotopy.HomotopyGroup.Map",
+            "homotopy-colimits": "Colib.Topology.Pushout.HomotopyEquivalence",
             "quillen-k-theory": "Colib.KTheory.Quillen.Basic",
             "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",

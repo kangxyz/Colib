@@ -26,4 +26,4 @@ introduction = "Quillen K-groups are the shifted homotopy groups of the realized
 id = "waldhausen-k-theory"
 title = "Waldhausen K-theory"
 order = 40
-introduction = "The current model realizes the unnormalized diagonal IsZero S-construction. Actual weak-row nerves and coherent weak-transformation cylinders retain its maps. Image-zero homotopy-group maps precede explicit based maps; normalization to a strict chosen-zero model and structural comparison theorems are separate obligations."
+introduction = "The current model realizes the unnormalized diagonal IsZero S-construction. Actual weak-row nerves and coherent weak-transformation cylinders retain its maps. Image-zero homotopy-group maps precede explicit based maps; ordinary subdivision and the based three-stage deformation prove additivity for the original canonical KMap. The actual product comparison identifies this with the original group multiplication, which is commutative even in K-zero. A strict chosen-zero model comparison and broader structural comparison theorems remain separate obligations."

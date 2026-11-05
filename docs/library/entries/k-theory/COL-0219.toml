@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0219"
+title = "Waldhausen additivity for the original canonical K-map"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 60
+statement = "For a cofibration sequence of exact functors F to G to H, the original public KMap of G equals the pointwise product of the original KMaps of F and H, in subobject-then-quotient order, in every nonnegative K-degree. The intermediate equality is with the actual coproduct functor H coproduct F."
+scope = "Source and target categories have the same object and morphism universe bounds, Waldhausen structures, and binary coproducts in the target. Exactness, objectwise cofiber pushout squares and the relative comparison cofibration condition are retained. No comparison-equivalence or surjectivity assumption appears in the final theorem. The ordinary subdivision comparison is proved, and the actual product comparison identifies coproduct with the existing group multiplication. The intermediate sum is quotient-before-subobject; proved commutativity gives the original F then H order, including K-zero. This is an adaptation of Weibel V Theorem 1.2, without a strict normalized S-construction or full Quillen-Waldhausen comparison."
+review = "author_checked"

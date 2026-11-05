@@ -21,3 +21,9 @@ id = "geometric-realization"
 title = "Geometric realization"
 order = 30
 introduction = "Coordinate comparisons retain the chosen realization, finite vertex sets, actual maps and interval orientation."
+
+[[sections]]
+id = "homotopy-colimits"
+title = "Homotopy invariance of colimits"
+order = 25
+introduction = "Homotopy extension, mapping cylinders and coherent timed deformations retain the actual comparison maps of pushouts and sequential colimits. Chosen stagewise inverses need not be compatible. These generic results support the cellular realization comparison."

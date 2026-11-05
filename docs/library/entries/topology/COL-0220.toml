@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0220"
+title = "Actual realization products on homotopy groups"
+kind = "theorem"
+section = "geometric-realization"
+order = 310
+statement = "The canonical map from realization of a simplicial product to the ordinary product of realizations is injective and admits exact continuous lifts of all compact-source maps. Its actual based homotopy-group map is an isomorphism in every positive degree."
+scope = "Both simplicial sets lie in one arbitrary universe. Compact source spaces are in Type 0, sufficient for cubes and their homotopies. A homeomorphism is established for a locally compact right realization, in particular a finite right simplicial set. No homeomorphism of arbitrary ordinary topological products is asserted. Weibel IV Characterization 3.1(6) concerns compactly generated products of nerves and is background for the precise ordinary-topology comparison proved here."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0218"
+title = "Based additivity deformation after ordinary subdivision"
+kind = "definition"
+section = "waldhausen-k-theory"
+order = 50
+statement = "A genuine cofibration sequence of exact functors gives a three-stage homotopy after ordinary horizontal subdivision, relative to the actual chosen-zero point. Its endpoint is the common normalized separated coproduct of the quotient and subobject functors."
+scope = "The input is objectwise cofiber pushout data and the relative cofibration condition, with no K-theory or realization hypothesis. Every stage has a proved constant chosen-zero track. The deformation uses the actual mixed ordinal cylinder and coherent endpoint isomorphisms. The cofibration-sequence definition admits independent category universes; the realized deformation uses common source and target object and morphism universe bounds. It is a proof construction for Weibel V Theorem 1.2, not a strict S-model comparison."
+review = "author_checked"

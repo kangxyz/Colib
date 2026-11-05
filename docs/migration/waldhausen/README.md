@@ -1,4 +1,4 @@
-# Waldhausen realization and weak-transformation chain
+# Waldhausen realization, functoriality and additivity
 
 ## Chosen model and public scope
 
@@ -14,8 +14,9 @@ comparison with a strict chosen-zero S-construction.
 `delooping` is literally Mathlib geometric realization of this diagonal S-set.
 The chosen basepoint is the realization of the constant-zero degree-zero simplex.
 `groups n` and `Structure.K n` are the existing homotopy groups in degree `n + 1`.
-Only positive K-degrees receive their automatic commutative-group instance; the
-additivity theorem needed for K-zero commutativity is not asserted here.
+The original group operations are retained. `Additivity.K_mul_comm` proves
+commutativity in every degree, including K-zero; `Additivity.KCommGroup` explicitly
+extends the existing group structure without replacing it.
 
 ## Maps and homotopies
 
@@ -42,15 +43,15 @@ Waldhausen categories. No arbitrary cross-universe extension is claimed.
 
 The constant chosen-zero functor is exact, and its actual simplicial map,
 realization map and K-map are the stated constant maps. This unit degeneration
-is not additivity or a K-zero commutativity theorem.
+supplies the two unit restrictions used by the later coproduct multiplication proof.
 
 ## Dependency boundaries
 
 Rows' pointwise weak multiplicativity, weak preservation by reindexing and
 postcomposition, and grid/nerve comparison do not need the derived row
 Waldhausen structure. The source's row structure assigns its weak field literally
-to this same pointwise predicate. The Reedy cofibration and row-pushout theorems
-are not imported or replaced by assumptions.
+to this same pointwise predicate. The separate Reedy cofibration and row-pushout theorems are not replaced by
+assumptions. Additivity below is proved directly on the actual interval grids.
 
 Generic bisimplicial diagonal operations live under AlgebraicTopology.
 Simplicial S-grid cylinders live under CategoryTheory.Waldhausen. Realization,
@@ -78,7 +79,7 @@ Canonical K-map functoriality and its actual zero-functor degeneration are COL-0
 are not allocated here; the latest upstream and separate K-zero integration
 reserve their own IDs. All new IDs require another conflict check before publication.
 
-## Validation boundaries
+## Earlier validation boundary
 
 The integration preparation is based on commit
 `e8e94fd934d4ba446cfc51c9191a9667900427a8` in an independent output tree with a
@@ -90,5 +91,72 @@ evidence. No isolated success is accepted solely because a target file exists.
 
 Compilation, source correspondence, independent mathematical review and the
 production axiom audit are distinct evidence. No kernel replay, downstream
-client assurance, strict-model normalization, additivity, approximation,
-localization, or Quillen/Waldhausen comparison is implied by compilation.
+client assurance, strict-model normalization, approximation, localization, or
+Quillen/Waldhausen comparison is implied by compilation.
+
+
+## Complete additivity and the existing group law
+
+The additional chain is integrated on main `8d4b81261a9408e3550833e80fd6059f608b3e3d`.
+The module-level source crosswalk is in `additivity.json`, with fixed source
+identities in `additivity-sources.json`. It adds 117 production modules, generalizes the existing canonical functor-rebasing
+interface to independent universes, and adds ten
+in-package regression files; earlier main changes are preserved.
+
+For a genuine cofibration sequence of exact functors `F -> G -> H`, the final
+`CategoryTheory.Waldhausen.Additivity.KMap_additivity_mul` states
+`KMap G n x = KMap F n x * KMap H n x` in every nonnegative K-degree. The actual
+exactness witnesses parameterize these maps. The common object and morphism
+universe bounds for source and target, target binary coproducts, objectwise
+cofiber pushout squares, and relative comparison cofibrations are retained.
+No realization-equivalence, product-equivalence, surjectivity, or commutativity
+hypothesis is added. In particular the statement includes K-zero.
+
+The proof retains the actual maps at each boundary:
+
+1. The ordinary subdivision is the unreversed ordinal join `[n] * [n]`, with
+   the same simplex map on both halves. Its first-half endpoint is realized
+   literally. It is not Mathlib's subdivision or reversed Segal subdivision.
+2. Subdivided representables contract by the actual two-stage ordinary
+   construction. The explicit boundary-cylinder retraction gives realized
+   monomorphism HEP, using the pinned relative simplicial cell complex.
+   Actual pushout and coherent sequential homotopy invariance propagate the
+   endpoint equivalence to every simplicial set, including infinite dimension.
+3. A generic unbased homotopy equivalence induces a bijective actual `piMap`.
+   Only the forward basepoint equation is required; no based inverse is assumed.
+   Degree one uses the genuine pointed-set tail of the homotopy-fiber sequence.
+4. The three-stage mixed-ordinal deformation has constant chosen-zero tracks.
+   The actual horizontal endpoint is surjective on based homotopy groups, so
+   cancellation gives equality of the original K-map with the actual sum-functor
+   K-map, initially in quotient-before-subobject order.
+5. The canonical realization-product map is injective and admits exact lifts
+   from compact Type 0 sources. Finite right support suffices for the actual
+   homotopy-group isomorphism. A homeomorphism is proved for locally compact
+   right realization, not for arbitrary ordinary topological products.
+6. The product K-equivalence has precisely the pair of the original projection
+   K-maps as its forward map. The coproduct functor therefore gives a group
+   homomorphism whose two unit restrictions are identity. This identifies it
+   with the existing multiplication and proves commutativity, also in K-zero.
+   Commutativity yields the final subobject-then-quotient order.
+
+COL-0213 through COL-0219 record realized HEP, pushout and sequential homotopy
+invariance, ordinary subdivision, unbased homotopy groups, the based deformation,
+and original K-map additivity. COL-0220 records the exact realization-product
+comparison; COL-0212 records the original commutative K-group law. The intervening
+IDs belong to independent work and are not allocated by this change.
+
+Hatcher's cellular HEP, cobase-change and homotopy-group exercises are cited with
+precise locators. Weibel IV 3.1 supplies realization background, explicitly with
+its compactly generated topology caveat for products. Weibel V Definition 1.1(b)
+and Theorem 1.2 supply the cofiber-sequence and additivity correspondence. Source
+adaptation and original comparison constructions are distinguished in the
+compiled reference annotations. A strict chosen-zero S-model comparison and
+broader Quillen-Waldhausen structural comparison remain separate obligations.
+
+The integration uses the normal native `scripts/check.sh` categories: strict
+production build, all in-package tests, Batteries declaration lint, Mathlib text
+style and generated-entry check, the pinned production axiom auditor, and native
+Library export/site validation. Only the three standard axioms are allowed.
+A successful build, literature correspondence and independent mathematical
+review remain separate claims; no kernel replay or extra downstream test is
+implied.

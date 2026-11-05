@@ -1,0 +1,1542 @@
+{
+  "source_revision": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "description": "Module-level source correspondence. Target hashes identify the integrated native sources. These records do not independently certify compilation or source equivalence.",
+  "files": [
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/MixedOrdinal.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MixedOrdinal.lean",
+          "sha256": "6120efc5305c1597629d49240e2842cf73ddff44f7226e10217eb963c7b8734a"
+        }
+      ],
+      "target_sha256": "dd401ee3c8e85b94b35c6588dfd3cae15eec65c91c969a837ca81fdf2e55da66",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/MixedOrdinalBisimplicial.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MixedOrdinalBisimplicial.lean",
+          "sha256": "88829684567548eb3558b9c6969688a2e4db57e69054756b0f695ed4a8afc35f"
+        }
+      ],
+      "target_sha256": "3054dce61d319167e3fab27b9abf135848146605c0e74e94e34eac49e5a14593",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/MixedOrdinalContraction.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MixedOrdinalContraction.lean",
+          "sha256": "1668de7d0bbd42682ac4432c2f94154b344181c959f4dfc56e46424697c7f96f"
+        }
+      ],
+      "target_sha256": "16651d32bbf8b721166b4ff09e9b0f230e80422a3ccc6d5e15127e32357f6762",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/MixedOrdinalCylinder.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MixedOrdinalCylinder.lean",
+          "sha256": "34a9843419059cec8a22a29850db18a66f9882587a31d3b09f192bf02a962892"
+        }
+      ],
+      "target_sha256": "eaf6a02a13a1ac8d480ac8f257e8cb29cb2d5edf40aaa0088eab086e38562155",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/MixedOrdinalEndpoints.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MixedOrdinalEndpoints.lean",
+          "sha256": "b3708253b8402806d2273766b430556a15b7c6df6b34751c899d3fc82245d3e6"
+        }
+      ],
+      "target_sha256": "7e041ff8d3c556e2431944eef304201968d78b2dadebac3a0a018ca035f23fc5",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/MixedOrdinalFunctor.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MixedOrdinalFunctor.lean",
+          "sha256": "3aa119c3a951bc27d2714754dcd56cf753e19ea1390b8fa76626ceb991b7a344"
+        }
+      ],
+      "target_sha256": "2355f8be15da6b92d40ac6cf5721d3150b29236a0c7feabfd6b6957d096b3d9d",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/OrdinalJoin.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/Edgewise.lean",
+          "sha256": "7ef4c057807efdbd2c8596e28a11ec59edfb801599abc831dab7df3753b0b7a1"
+        }
+      ],
+      "target_sha256": "f71d7c47841d6473c98d2d4a8a0032415427cb63d5d6c9df1f3f975513eed019",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/OrdinalJoinDesc.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc"
+        }
+      ],
+      "target_sha256": "51d83e1172c23e74017db7a02747177f380e4dcd443ca8f88f16b57e60743e3d",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/OrdinalSubdivision.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/OrdinalSubdivision.lean",
+          "sha256": "e2b76c4188ff9c89886449415601192448b417c4a9932aaf6d00bec9bc7e2a8a"
+        }
+      ],
+      "target_sha256": "ccd39153530b04fe52b31f3f29af5eed7bf83d9f9b0c1816d2c5e2ebfc4311c8",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/AlgebraicTopology/SimplicialSet/OrdinalSubdivisionBisimplicial.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/OrdinalSubdivisionBisimplicial.lean",
+          "sha256": "3274c355fb6506f4f13d8dbe8e486f4998f796e6c89b39a20ea3e0dcf425eb45"
+        }
+      ],
+      "target_sha256": "be6ee61cf1eed71e9ea71d528ec8dbf929af38a7ace6c95aca2a696975aa016c",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Functor/PointwiseCoproduct.lean",
+      "sources": [
+        {
+          "path": "Quillen/Aglib/CategoryTheory/Functor/PointwiseCoproduct.lean",
+          "sha256": "e04cd26e53be4850f1610e13c81a8b80d7f25bef24cf702758584ea11ba13459"
+        }
+      ],
+      "target_sha256": "cbad5c5ead42df02dbc4ab1df2d6b6ed0a6684386be5fc01a10a9bc7b41542e9",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Limits/PointwisePushoutInterchange.lean",
+      "sources": [
+        {
+          "path": "Quillen/Aglib/CategoryTheory/Limits/PointwisePushoutInterchange.lean",
+          "sha256": "b76fc73e7a11528c500e772f04871919d912f044f205dea738f59463db1b8abd"
+        }
+      ],
+      "target_sha256": "689efe488f3b916a2231f6d86785179deb5cda289f09eba29f165a3347103634",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/NaturalTransformation/HExt.lean",
+      "sources": [
+        {
+          "path": "Quillen/Aglib/CategoryTheory/NaturalTransformation/HExt.lean",
+          "sha256": "d93f29e6d495bcf4d4baa36d38948d0dc636b7b85800d31386a59b7ae628ed00"
+        }
+      ],
+      "target_sha256": "b433e626e81dce034fba9b415c0c25ea61ba246b341b880f5fd2cd58e92b20f4",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/CofiberEndpoint.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/CofiberEndpoint.lean",
+          "sha256": "05798b5820db73e95356d12bfe70117a1c54bf29b25a9b9d015841676a164d09"
+        }
+      ],
+      "target_sha256": "1b98dfa833f2cd268d067eaa995b9abbe4e95aebb9605aadfbe64047b4729028",
+      "scope": [
+        "Original categorical statement, hypotheses, maps and universe parameters retained; no additivity theorem claim."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/CofibrationSequence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/CofibrationSequence.lean",
+          "sha256": "bd6b91f7c3ab8ff72ae3cb3d99c69e58f21bcf7ed25fd987d914278120af2d28"
+        }
+      ],
+      "target_sha256": "a129672b926f7f7a784621770fc83c34bf604151bc4cdc149c0ee17abb0a7cb8",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/CoproductAlgebra.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/CoproductAlgebra.lean",
+          "sha256": "fa162d7926cfd54a67292236bddf1d0c028b3f6ce50801de05ffe1c45f287022"
+        }
+      ],
+      "target_sha256": "a1bdc09491412ebc299dd2265f5c541f1beaf9738219f96d2d81e1e67fe76a01",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/CoproductFunctor.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/GroupMultiplication.lean",
+          "sha256": "03304834090cda365b2c939e1b4f3076ec2d5f69cb27b7c7e98777195c7e3bc4"
+        }
+      ],
+      "target_sha256": "a8c2b4958d7b3c74882296a7d17c92c3384d9b2971df88a955aaabc144fe5a8b",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/DeformationMap.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/DeformationMap.lean",
+          "sha256": "1a12a53a23f4cd045e95d429ba05e1b53cba2b4ce1f162bf8ebb20e74a2246a8"
+        }
+      ],
+      "target_sha256": "bed5e513b404e4d60f9c57d02b7bcacb3d296367073767ea370d3db666900ad5",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/DiagramIso.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/DiagramIso.lean",
+          "sha256": "cf9b0e1fbebc5bd171472824ab83f8c8e487e5eb7bea0cd7452a86bc647340dc"
+        }
+      ],
+      "target_sha256": "e1c73ee2858e359e75e625dcbd01b0288d81f347b4de616039ee36cd5e6a7d1a",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/EndpointFamilies.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/EndpointFamilies.lean",
+          "sha256": "d34c3a80f10ca308494e85eb9498323616bb5bffb98134020d1011517697fa81"
+        }
+      ],
+      "target_sha256": "392bfc814380575c425687a3d7cf28ec0bc4ec99537e0d16568f17fece2639bf",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/EndpointHomotopies.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/EndpointHomotopies.lean",
+          "sha256": "d3e174c9fc0e213e11e549ede18f90d8433cc1d16731463b9e0b834fa69e69e5"
+        }
+      ],
+      "target_sha256": "f6686cd6ae037d1eb02257f3c680aed7534500dbd47c263f364349f1cf51d05e",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/EndpointNaturality.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/EndpointNaturality.lean",
+          "sha256": "6a8c32bf9555087d90420636670f8545d54bc47960eeb9f7b0f048fa802c089b"
+        }
+      ],
+      "target_sha256": "d851e409aa4bbd106c7db9508504d5ee5e1cf337f9b21b41c7499b1209c268ee",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/IntervalArrows.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/IntervalArrows.lean",
+          "sha256": "dd3833cbe75785b0f91821f3154ec74b21c5dae86a3c632209cc796980120801"
+        }
+      ],
+      "target_sha256": "aa057d2bb5f29d43a3e88b77536dab1f92d61d3a6de94d5a7bd7d88de933da56",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/IntervalEndpoints.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/IntervalEndpoints.lean",
+          "sha256": "9cea52314928282927f69f902f43de7cb5fe433558ba2ea2e1fbc9683bb2e61a"
+        }
+      ],
+      "target_sha256": "a7b2483946fea82e30d84afcb6749b752bd31102ccf63a3958c08c9581b08bd9",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/MixedDiagrams.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/MixedDiagrams.lean",
+          "sha256": "4eed4aa04109767847a01614a636ce6e07de0104989c72cbae1b5c9a908f058c"
+        }
+      ],
+      "target_sha256": "c7347c78ffbda5f231b7a78a0659691ff83cc4bdbcc0d562cec7f47a22e66db3",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/MixedEndpointHomotopy.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/MixedEndpointHomotopy.lean",
+          "sha256": "a120da5d95707a494d0a28aa86bd2300249e6a191f285a90b9698ab8f0856010"
+        }
+      ],
+      "target_sha256": "13985f601a859798acba8b99331cde84bb4eab14984bcf80919a5633df0401ff",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Functor/Rebase.lean",
+      "sources": [
+        {
+          "path": "Quillen/Aglib/CategoryTheory/Functor/Rebase.lean",
+          "sha256": "5daa86df25cbd7f135027a15ec59eeb44ce0778980875fa6ab24657ce2b076c8"
+        },
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizeFunctor.lean",
+          "sha256": "b8e97ddb8a0d0739f62e8ebe8f03895649355280b4c474051f663d0b04cb49fa"
+        }
+      ],
+      "target_sha256": "d517c6ae2791f71731929175b3b1fc5910d36ba57ba7d75041a93af62f97f693",
+      "scope": [
+        "The single existing rebase construction is generalized to independent universes. No duplicate normalization implementation is retained."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/NormalizedDeformationMap.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizedDeformationMap.lean",
+          "sha256": "960a6e3b7935982e2d90318c1acbe44461052557f0c12c239217af40cc5f30a1"
+        }
+      ],
+      "target_sha256": "f0f105bb2441619c571baa69d95616064f8ac85a44cdeb8a26c7443380384c04",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/NormalizedEndpointFamilies.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizedEndpointFamilies.lean",
+          "sha256": "4603d8b2e3e323c4a30c3ba41f3e862be5b38011a4b38fb46200f90322964191"
+        }
+      ],
+      "target_sha256": "afde989e519b49e73c4b1a3f19c091b82aa332f7260a79395270cfa5dcde17d4",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/NormalizedMixedDiagrams.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizedMixedDiagrams.lean",
+          "sha256": "897d9343359be594b587370b0a8c0e78514471ca252fa26d249b8138de04358f"
+        }
+      ],
+      "target_sha256": "4bc7f2395873c961c6086a199973ab6f2e912a54e1ff89e505dc27ca47f87406",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/NormalizedPushout.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizedPushout.lean",
+          "sha256": "49a03779dd3c19f624eb5ced14f56482d949a578c6ab09bcaf1ad09bba729a4c"
+        }
+      ],
+      "target_sha256": "23faebe879f71fbac8f141efc44517e7aba66b9535a267ed1949a0f7cd5b0a30",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/NormalizedSumMap.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizedSumMap.lean",
+          "sha256": "7d205537f4a906ed6bc8059c96ff025b608dc3c24f4049b08e7907b5725e0b07"
+        }
+      ],
+      "target_sha256": "39b8782143b263fae91916bbe9517e6989c13b0799e1f456decb9cc4103eee64",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/NormalizedZeroMaps.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizedZeroMaps.lean",
+          "sha256": "705ca00ea0e3320a17d3d6d3772e015f652ffaa82bd879b66bf48d30c95cd9c7"
+        }
+      ],
+      "target_sha256": "579f43bb7f2dd59c6196c7e5296ab0e0d2845b0d4630f72806c60536632af09e",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/PushoutCofibrations.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/PushoutCofibrations.lean",
+          "sha256": "c71cc47a4ebf31e8efbdd1295f007eb4139173d884a756f678a9200ccde55f69"
+        }
+      ],
+      "target_sha256": "af4e12e47fb9e053340ae3bdbe6d809bb068e581752f169a665d633354dadc45",
+      "scope": [
+        "Original categorical statement, hypotheses, maps and universe parameters retained; no additivity theorem claim."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/PushoutEndpoints.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/PushoutEndpoints.lean",
+          "sha256": "1770f14ed72193c57c3b25c9fb80396a95d796f76254cd1ac41ca79ec8b439f6"
+        }
+      ],
+      "target_sha256": "c42e72119bc77e464c8887ffa89d991eed446dcffbda0a5533ed6eeb00d662f2",
+      "scope": [
+        "Original categorical statement, hypotheses, maps and universe parameters retained; no additivity theorem claim."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/PushoutFunctor.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/PushoutFunctor.lean",
+          "sha256": "aab5695a48c48e003d56d79183f72a3c1d33f54ccb36b2b1b6d13452a6111526"
+        }
+      ],
+      "target_sha256": "3726e4ed90860ef1a40949ba4be3dbd6e5a366d31f809a5b6ad9fe04751df1f1",
+      "scope": [
+        "Original categorical statement, hypotheses, maps and universe parameters retained; no additivity theorem claim."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/PushoutPreservation.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/PushoutPreservation.lean",
+          "sha256": "0bc3d7b024d3004d64e022e92af50033f7c0161eb48d4c2a46a4318a4b46e4a5"
+        }
+      ],
+      "target_sha256": "0c9cae1fae4f2193d86b3d2072c7dd25f90195e2d9560e0827982bba5a480988",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/SplitSequence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/SplitSequence.lean",
+          "sha256": "4b1c57f8add7446a97986850ddef8a89d6750cd743052eba54c081235de97732"
+        }
+      ],
+      "target_sha256": "5df9bb2adb7a9e9a0691e49a953fc7309efd978ef444f43f161ca89c0b923927",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/SumDiagrams.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/SumDiagrams.lean",
+          "sha256": "387cebdf541abe0b2bc15f28b08a2318c0e51fab3b33eea04a168b5115fb0e26"
+        }
+      ],
+      "target_sha256": "6665eb13caf3bc5bb04c79891ad1c30d4e37bdbbd2a3ec8fdb299131da3905d1",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Additivity/ZeroFactorization.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/ZeroFactorization.lean",
+          "sha256": "7048707438fbff08d55017a2f681e96bb563f31ee15840ee5d356f5d743db720"
+        }
+      ],
+      "target_sha256": "004bceeadb6e6d0c46012ec05bd5cf2d8f89da98816628571e1e579b738d5603",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Product/SSet.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Product/SSet.lean",
+          "sha256": "6e407d7d04aa6387e08a9ad82fd7bd516109e7551dad5be16aca6ab34b9d7935"
+        }
+      ],
+      "target_sha256": "236f1d0ec77f726b9190a05b20f5f16037c53944140045a65869073d22cd709b",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/CategoryTheory/Waldhausen/Product/Structure.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/ExtensionCategory/Product.lean",
+          "sha256": "14fcd87f941f79123c6275c19af425d7a524d74e69f93ce3dde20989268db2dd"
+        }
+      ],
+      "target_sha256": "45609267fe7a8f61f061d092e3394ae64f07e850b2a9388bfc545b2c0d28c504",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/BasedHomotopyTools.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/BasedHomotopyTools.lean",
+          "sha256": "f78c86c0eb2fb246247862124c9dbbe729ba99994c0fb3707a1158ee0b490a48"
+        }
+      ],
+      "target_sha256": "ac95a720cca32ba307ed4c9d8be1aec5e0bb459f9fb8a2dbfa929c628bb37b73",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/Basic.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/BasedAdditivity.lean",
+          "sha256": "5861765d5534adb6a231bc97116878f916b15876071f66e824a2b43ec68b06b7"
+        }
+      ],
+      "target_sha256": "aac446913b84c2c6ff4d0918f62f2002a161e709da1502de897537a808f794da",
+      "scope": [
+        "actual source interface; proved global comparison instantiated"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/Conditional.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/BasedAdditivity.lean",
+          "sha256": "5861765d5534adb6a231bc97116878f916b15876071f66e824a2b43ec68b06b7"
+        },
+        {
+          "path": "Quillen/Waldhausen/Additivity/SubdivisionBasepoint.lean",
+          "sha256": "870f52c0dafd175821c158391a2a6db699c3d999f79f4547e6b5ddd2b816a9aa"
+        }
+      ],
+      "target_sha256": "694431b08976c755521ad40bc76897708b404015fc7e95c90e2150eb80f5613b",
+      "scope": [
+        "explicit comparison parameter added; not unconditional source completion"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/DiagonalKMap.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/DiagonalKMap.lean",
+          "sha256": "b74f11274eb701a8b2cad51c83e71af3fa74581d462f8fab69950d395b83d428"
+        }
+      ],
+      "target_sha256": "a3a07295a3fdd62d48a3da631b8ed4ec1beb34caba1ceae2360db23d2126b2ea",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/DiagonalNaturality.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/RealizedAdditivity.lean",
+          "sha256": "819800fd47195413182037da1e651d8eef90c09d84dc08ea6df238bbde4570dc"
+        }
+      ],
+      "target_sha256": "3795fe92a38b0cd07b11a39fb9827eb7c5339f78faff3d41d98778d77ae33059",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/GroupFormula.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/GroupFormula.lean",
+          "sha256": "58b29b37de8cf490b76e21a7e83831ac3df74c51f9aefd27d3de87d7603c7a4e"
+        }
+      ],
+      "target_sha256": "9cc8f61fa5e3522d8a2c8031a2e9ec17613152d84e4eac8bdce07c6a9fa9b74a",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/GroupMultiplication.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/GroupMultiplication.lean",
+          "sha256": "03304834090cda365b2c939e1b4f3076ec2d5f69cb27b7c7e98777195c7e3bc4"
+        }
+      ],
+      "target_sha256": "141814260bff0d048fc4524c41430805226432c9a6e35d3b0f5080bc252afb66",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/NormalizedEndpointHomotopies.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizedEndpointHomotopies.lean",
+          "sha256": "d6195796634fda35a6f559652561299c8f755cf71915eb68d7afbbbb07df6457"
+        }
+      ],
+      "target_sha256": "65a0399ec6bab322c0af3f221d07770e7dfcf85f63b6ea82f9f76f45186c32fc",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/NormalizedMixedHomotopy.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/NormalizedMixedHomotopy.lean",
+          "sha256": "b2b13280d27258b70995cbbcc7b0fc53acb355efb7d5898a8052d7acf0760ffa"
+        }
+      ],
+      "target_sha256": "47a370ea46646c4cd9e331cdc3f3c99049e9daec1135e73821b3876e94ad1f22",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/RealizationHomotopy.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/RealizationHomotopy.lean",
+          "sha256": "abe11105db5645026fd9a4fbbf3fe9ec3dff27d28066edee358ac4c7a61e1ad1"
+        }
+      ],
+      "target_sha256": "6ca7e63cd9901e9124b49ab20c4aa54d59a861fd1f3b4fd4a41735a277489f53",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/SubdividedBasedHomotopy.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/BasedAdditivity.lean",
+          "sha256": "5861765d5534adb6a231bc97116878f916b15876071f66e824a2b43ec68b06b7"
+        }
+      ],
+      "target_sha256": "8f901b00c7c064dd9d8f179de5bf207a77bbdaf5020abbae4fdd145c5379f34e",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/SubdivisionBasepoint.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/SubdivisionBasepoint.lean",
+          "sha256": "870f52c0dafd175821c158391a2a6db699c3d999f79f4547e6b5ddd2b816a9aa"
+        }
+      ],
+      "target_sha256": "a340f0108bae7ae36d424bfe34fb89056e54837248c7b3014867c4716976bf7a",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/SubdivisionEquivalence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Additivity/SubdivisionBasepoint.lean",
+          "sha256": "870f52c0dafd175821c158391a2a6db699c3d999f79f4547e6b5ddd2b816a9aa"
+        }
+      ],
+      "target_sha256": "e70aafde6676462e97627c391db24f1ae3828328a15f78dacff718b86da85860",
+      "scope": [
+        "actual source interface; proved global comparison instantiated"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Additivity/SubdivisionGroupMap.lean",
+      "sources": [],
+      "target_sha256": "ad92be05791d7c9d137d0f6cf24b59c519c8db29dee170701f94ed0829e9f425",
+      "scope": [
+        "New lower interface constructed in Colib from the existing canonical map and homotopy APIs. No source declaration is asserted to match exactly."
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Product/Functoriality.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Product/Functoriality.lean",
+          "sha256": "85824e3e829a42e86fc58d964356ea7290300e13468b2f67983f17378d3a2590"
+        }
+      ],
+      "target_sha256": "0ae6ad722254f52e75e0e5392dfbb9f55461456aac54a4d57c918b05e70db079",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/Product/KEquivalence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/Product/KEquivalence.lean",
+          "sha256": "567280886174d9e20cf9ffc79b2a99b46d015788ac14abc6c5b169c495590cac"
+        }
+      ],
+      "target_sha256": "a50a11a71be7c357f60c34fc0e190363a32b24d39aceaaf8c2b0773a047bc4bc",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/KTheory/Waldhausen/WeakGridBasedHomotopy.lean",
+      "sources": [
+        {
+          "path": "Quillen/Waldhausen/SConstruction/WeakGridBasedHomotopy.lean",
+          "sha256": "a1f3b941d3c8c0f815bc4daed88a1b3ff2aea901f0c30a9b3ce18f9bc54bfe28"
+        }
+      ],
+      "target_sha256": "13bd4eb98ad0a6a299a49a1d5c5ca5a058943c5c722325b254d5c2319822da3e",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Category/TopCat/CompactHausdorffPushout.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Pushout/CompactHausdorff.lean",
+          "sha256": "efec415f3328e8272f9f3d5e7a09c8d688ea6540f318ec1af7f106c7f23709bd"
+        }
+      ],
+      "target_sha256": "35f13f8db5181dd296d2bb936bdfb722803e33dbd1d5978ae6a5432470a1eff8",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Category/TopCat/SequentialColimit/CobaseChange.lean",
+      "sources": [
+        {
+          "path": "Quillen/CategoryTheory/TheoremA/SequentialCylinderReduction.lean",
+          "sha256": "f8b6983042286df942b540e8ec0a670043d6918fb30d5c563cd8273f790255c0"
+        }
+      ],
+      "target_sha256": "d2e45b2e3eaa69cb88e0b938331e6ccc490c2f9e0800c004321b58c8f450513e",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Category/TopCat/SequentialColimit/Deformation.lean",
+      "sources": [
+        {
+          "path": "Quillen/CategoryTheory/TheoremA/RealizationSequentialDeformation.lean",
+          "sha256": "559d26b237e5f4722b970a739cef71a31a1624afeb0181277df22d45355c2e8b"
+        }
+      ],
+      "target_sha256": "621189046f01e4ffc379d207cc5f06c4937275b7164a9e6f7ed33145d5d34b01",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Category/TopCat/SequentialColimit/HomotopyInvariance.lean",
+      "sources": [
+        {
+          "path": "Quillen/CategoryTheory/TheoremA/SequentialHomotopyInvariance.lean",
+          "sha256": "0224f164f24faf106939e67f0938eedae7a27c9010563179abcb401b49214cdf"
+        }
+      ],
+      "target_sha256": "e687746f74d4add8604b402ea79c0970f2d672eb090b626b3e962f68da907c63",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/ClassifyingSpace/Contraction.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/ClassifyingSpace/Equivalence.lean",
+          "sha256": "eea9dd57f2534b65123d321377749338fd1ff7534598c6e48b0a1f61de29f289"
+        }
+      ],
+      "target_sha256": "eb951f2fe76a4bd2fa4e9e1d48f0dea6c4b0360bbeb8dd316e071ad8ac77de76",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/DeformationRetract/Basic.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/DeformationRetract/Basic.lean",
+          "sha256": "6867b8c5026cbfb2c4ce74574bbad6feb112f96ea9569b9a30fe64cbf709cd15"
+        }
+      ],
+      "target_sha256": "b4aabc51bf93f2c5e78e180f303568746d09e8912a67743e79e604454d9f8c35",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace."
+      ]
+    },
+    {
+      "target": "Colib/Topology/DeformationRetract/Cofibration.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/DeformationRetract/Cofibration.lean",
+          "sha256": "38d74c67f5dfcc149f630348bc96a8f066711b20ba3f14039555f9913e4e75e4"
+        }
+      ],
+      "target_sha256": "4fc8a4278f77db10d7f7c9a1ab75c84465697d9019f59f0205721ab8bd632c0a",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/Equiv/AdjacentComposites.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/SourceEquivalence.lean",
+          "sha256": "05229162d045ab766ea8cca36180aa9be01c757c20ff7c39ce2107fa56d915a6"
+        }
+      ],
+      "target_sha256": "cd1c91f67ce61a1420a946f7b495813fc616e1d25df120589b5073a9326b23e5",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/Equiv/Based.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyEquiv/Based.lean",
+          "sha256": "b37b0a0b985cf2766e7a8d3154f28dc8942a07c0790fb660623b6122c6e8ba12"
+        }
+      ],
+      "target_sha256": "3dc2461a8eb43fcd37a4e2777d2e205b4da7649bd1f35eea0597a9dc47e16762",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/Equiv/IsoSquare.lean",
+      "sources": [
+        {
+          "path": "Quillen/CategoryTheory/TheoremA/SkeletalEquivalences.lean",
+          "sha256": "296abcdbce7d4c8a20c8e680198773ca1585782a091f2066d3a351560fc046d5"
+        }
+      ],
+      "target_sha256": "39c6bc1f27b56b341ff8e4642449c75d33a9ed8ff104f77660c75a3945a3f0a9",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/Equiv/Sigma.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/Coproduct.lean",
+          "sha256": "7fcf67669f0598491accb361be50411b20fd9abef2480b43b5be3cc1f31b1b8a"
+        }
+      ],
+      "target_sha256": "62b51dc6f4e841674269a8a7915382048c7cc87dfec898a25489981cc6a7075d",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/Extension.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HELP/Basic.lean",
+          "sha256": "1b1820f08ba902195e21b16323f87510a1df8690494b81f119b01f6c40a64fc3"
+        }
+      ],
+      "target_sha256": "e541f067c3301758c62df536955feda7c6fd399f306f396d0089cb6d9082292c",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces.",
+        "The separate continuous-coordinate conversion theorem is omitted; HEP remains stated using TopCat.I."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/HomotopyGroup/CompactLifting.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyGroups/CompactLifting.lean",
+          "sha256": "a33e04a39797fdc3ab3b78b58a0944a90f4bec797c81ae62a77b4a0df74fd02e"
+        }
+      ],
+      "target_sha256": "583306e6086a6ff9bf6c6a5c21f5f87c4209937b549b0b84499b0854a28d3bee",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/HomotopyGroup/Contractible.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyGroups/Contractible.lean",
+          "sha256": "735edd19fa5dfe5968c892ae10761a833d208db6ede18abff7e26ce2a0f6787f"
+        }
+      ],
+      "target_sha256": "6411d32c87c0d159584a7f9abb57722f762416ab0d0f1f9e83bbf119a9d9ed3f",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/HomotopyGroup/Equivalence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyGroups/Equivalence.lean",
+          "sha256": "c513aa3adac169dce3876cac860cbbb3cce4880dd26092ead80a71ad811c00c3"
+        }
+      ],
+      "target_sha256": "25b2410e2f3032103158faa87b049c0472ed015bf797e8cb00324078b739ebc7",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/HomotopyGroup/Homeomorph.lean",
+      "sources": [],
+      "target_sha256": "e1668bb66780cc7a0cd97393b3fdfa972df34289ac42f3f918e873450dc3707d",
+      "scope": [
+        "New lower interface constructed in Colib from the existing canonical map and homotopy APIs. No source declaration is asserted to match exactly."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/HomotopyGroup/Loop/DegreeShift.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyGroups/Loop/DegreeShift.lean",
+          "sha256": "4d8397ef31e6ab73ecebed55dd14c24b9e88cfb75bcf3715a8b1b16003036289"
+        }
+      ],
+      "target_sha256": "1e96300c62bd5f134656fddd2aa63d39f4fb43a5f5817e815ca0938f9a1019ae",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/HomotopyGroup/Loop/FiberExactness.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyGroups/Loop/FiberExactness.lean",
+          "sha256": "d8171d3bf8ee57094bdaba673099d75227aa95867e4f7f8dd1c2349c7a9e8ca7"
+        }
+      ],
+      "target_sha256": "de480c86e94feb8c9134e73667278ea50d05f35f6d5f9c9b1b8a5936c15f4a76",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/HomotopyGroup/Nullhomotopy.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyGroups/Map.lean",
+          "sha256": "6f2bc39e4298e8781968f2b5d0c9b53e2b07aa3dad602226e5c98f3d48e7347a"
+        }
+      ],
+      "target_sha256": "1af96e5f8461cc69557372802327d36e11d320528a5a45dbd03062a9b18b60ca",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/HomotopyGroup/Product.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyGroups/Product.lean",
+          "sha256": "0f324cd671ad81769c103d5a01f8b4fded8110ec3d9a0885dac332f9e2175e5c"
+        }
+      ],
+      "target_sha256": "c16d4d5efefc4acd31ec963f9e043acd7b8e50c5306f2777ae7655e9e05c97c1",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/IntervalEndpoints.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HELP/IntervalEndpoints.lean",
+          "sha256": "a258d836fd5b2d7ed83f0012e9749dd65174ba269865602980cc13317bb5882c"
+        }
+      ],
+      "target_sha256": "0be4e002c20479f329ab1a871f1f4ff8ef635406d19df8adfc9235e86ffe3a40",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace. Explicit FinCases import and local finite-simplex Hausdorff/discrete instances replace broad PrismCoordinates dependency."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/RelativeCylinder.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HELP/RelativeCylinder.lean",
+          "sha256": "1d7b9d8eeca9fd06c95e3f44d982fb91d28b80921f03c0bd22316c30f5735b78"
+        }
+      ],
+      "target_sha256": "ffa5cbfe2b8e930a84f4e9c42c744584896e0c27400c197639774b009b7d02d5",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Homotopy/RelativeInverse.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HELP/RelativeInverse.lean",
+          "sha256": "14178a729de713f19895a17e51cbac1db0be08c3f1a8bb136a779771a4305517"
+        }
+      ],
+      "target_sha256": "e1c50cea1ce0ce20d040b273a10fca1f0b647b9a597eecc827f6aec58611595a",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace."
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/Basic.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/Basic.lean",
+          "sha256": "d2b38d95df92357a13ff46ef7b15be23ceeecbd353840a0ff87dc585d724b3ea"
+        }
+      ],
+      "target_sha256": "f166e5fefd0469574283b0911937b11f9ea61bb7c29bc58f0d4a2aa6c7038d1b",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/Components.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/Components.lean",
+          "sha256": "a3fbfc896700c4bf08ddb59c69402935ff02aff1ee50b89c346381d498d93050"
+        }
+      ],
+      "target_sha256": "f8b6e1cd2f3137d147e33b1e5ef505887f0bdebb503cc6cfbd5912ce4f0bc182",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/Equivalence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/Equivalence.lean",
+          "sha256": "4d4aad4aae4f9a64e548f99b0b34500c1d38d0a268c148ee96feef3e9e187b2e"
+        }
+      ],
+      "target_sha256": "aafdc082859b5cfcb9d65753eb15c0fb2ece7cfff82bf8bab8b178cc6afdfb81",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/Exactness.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/Exactness.lean",
+          "sha256": "ba0dd7bc912aff3ef6a22f3935b3af4504812491016c656c636127d77707d6c1"
+        }
+      ],
+      "target_sha256": "9cb75e8d6c638b8a0c2564b313010defa491e799fbc54836304e059ee38212a0",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/LES.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/LES.lean",
+          "sha256": "de76d0919253bdce5168dbfe999f5296d11bda64637683b2425e636cf29426e8"
+        }
+      ],
+      "target_sha256": "2a3d4eb8d1485b04b9c0a8f1e69ca7de2b9bc0ed3414143065c13a6ee475badf",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/LESTail.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/LESTail.lean",
+          "sha256": "b7bd7ee09546aaa70c571eaf0b3c3145a8c68956870079314804064bc33bd987"
+        }
+      ],
+      "target_sha256": "bb189986f5209b8d822ca76f2d8a7f6429e4a25632e95ee3ed3f11b79ee1a4d7",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/Map.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/Map.lean",
+          "sha256": "71e1b7d8d64512f824b9bc0a2816a55abc09faf52cca69cd8c1934ba8db697cc"
+        }
+      ],
+      "target_sha256": "31a714e7fdb9fd0acd326637d13199892cfc91c22cbba72b187ca15e6722a176",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/Sequence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/Sequence.lean",
+          "sha256": "c2d0d8f1fb78fbe577eb4a8cf3eb0c66f0e3913254efa3ee1e88649d0f7c16bc"
+        }
+      ],
+      "target_sha256": "8906f3736db8be36503d34ed070829e39573b5cd3a92b5ccd37b627ddfc71f4d",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/HomotopyFiber/SourceEquivalence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HomotopyFiber/SourceEquivalence.lean",
+          "sha256": "05229162d045ab766ea8cca36180aa9be01c757c20ff7c39ce2107fa56d915a6"
+        }
+      ],
+      "target_sha256": "5f91d972d89fc7c6a963bf9e5ce6de81a9fedcab30b7a500b2f1425550da59cd",
+      "scope": [
+        "source adaptation"
+      ]
+    },
+    {
+      "target": "Colib/Topology/MappingCylinder/Basic.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/MappingCylinder/Basic.lean",
+          "sha256": "cfe390ad9b3db10d9e159d688df1799442e312f1e7b5b49258937e97fda9648e"
+        }
+      ],
+      "target_sha256": "dd9ce4b889060d699ea446b44469367289d09839ccac8951d3c45cdca55b802f",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace."
+      ]
+    },
+    {
+      "target": "Colib/Topology/MappingCylinder/Diagram.lean",
+      "sources": [
+        {
+          "path": "Quillen/CategoryTheory/TheoremA/MappingCylinderDiagram.lean",
+          "sha256": "4ad364671c832442e10fc2839cc9a434cee6e270137922d11a6c142356e65a05"
+        }
+      ],
+      "target_sha256": "4fa1c6c8dc6841f73d24eac9f8efb443017d29bac29b28b5d8a6861761ff83a2",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/MappingCylinder/HomotopyExtension.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/MappingCylinder/HomotopyExtension.lean",
+          "sha256": "4d8e2a636eedf3ca6417116110ffe8aa85baa4d008278ee8d7756c2369fee019"
+        }
+      ],
+      "target_sha256": "199e98f72ea5818577867663333f2d464861cac504e8df09cffad72215b64c17",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace."
+      ]
+    },
+    {
+      "target": "Colib/Topology/MappingCylinder/Latching.lean",
+      "sources": [
+        {
+          "path": "Quillen/CategoryTheory/TheoremA/RealizationPushoutLatching.lean",
+          "sha256": "04a88a36fc83dfc4a1fc93013a0d92cfbb3ada3bdd56b8245573a2a5724859dc"
+        }
+      ],
+      "target_sha256": "8150a60c5084ef89bdef19823d232293a2cad1d52b43b98b72d15f6b803b034f",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/MappingCylinder/PushoutCollapse.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/MappingCylinder/PushoutCollapse.lean",
+          "sha256": "d0863436f3f7ad7942f3e0d79b216f8d8f474a8869f68e41c2fb70a35f2d3746"
+        }
+      ],
+      "target_sha256": "0475d4fbf2f1521ac81b06934048e9ce96f6feb01735a404968569c81d868987",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Pushout/Homotopy.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Pushout/Homotopy.lean",
+          "sha256": "22e1ef547ec2c541530965595cfaafe4e3b971ca44e94014fa0495610c3de606"
+        }
+      ],
+      "target_sha256": "05c3994c00213730762d7bd63d30cbf0c87bbee2d3c5ba78e996bbc2b30b9271",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Pushout/HomotopyEquivalence.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Pushout/HomotopyEquivalence.lean",
+          "sha256": "00543858d477f15c72cad931d39196bc990c83618e9777a027c074d7ad0e5941"
+        }
+      ],
+      "target_sha256": "2b1c5758b7bf9a7e146efb07ed055151023608451378b4efaf52281692f10a2e",
+      "scope": [
+        "Full module proof closure; namespace and lower imports adapted. HEP proposition renamed, interval simplex coordinates opened in native namespace."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/BoundaryHEP.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/HELP/CompactRealizationLifting.lean",
+          "sha256": "9755796bfe2a31aa61b826b50edc3546b8fc38d3ebcb1617b63b1aab5cb39695"
+        }
+      ],
+      "target_sha256": "4f36c4d6de6b0dfbd0bcc2e9b41e63719b28bf19e4ca1118044fa82e818af774",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/CellularComparison.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseCellular.lean",
+          "sha256": "b2fe2c8b32706cc4cac3e1e3582703b125d2a9f3de0dc9cc30774cf6b1d1c148"
+        }
+      ],
+      "target_sha256": "43eb6b7fb6b25e36a805f62ab9b564a0e1307d52d1b6e38a62f9545b56d2bb0b",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/FiniteCompact.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/FiniteCompact.lean",
+          "sha256": "ac9c64080407ffcae57e44b3e9054d5760ef807c77e3415db3f18f45507729ea"
+        }
+      ],
+      "target_sha256": "1a3f03e9e2a4ed86186091df2344d45f5deabc02957bc71b81b96347e67547dc",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/FiniteHausdorff.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/FiniteHausdorff.lean",
+          "sha256": "00838e134098d475d0d819ff2ec8b99ff7ae8d50599fcd1f0f5817b0c4c299e9"
+        }
+      ],
+      "target_sha256": "d800a90e333cadfa87189327ee4eb4471492a8215bce0878301c0c74c054d4c9",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/FiniteSkeleton.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/FiniteSkeleton.lean",
+          "sha256": "a665f3fde3215bbfbbe80dea908d1c35981562e6112a8e7e0f729db6d8160e3c"
+        }
+      ],
+      "target_sha256": "36e2541828e19ee210473019f08d59c415b4b5ee2bb8cd85bdd515b2adb1ee7d",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/FiniteSubcomplex.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/FiniteSubcomplex.lean",
+          "sha256": "c72b679a8f4dcb0a7a2f7d8111a6d795ce435606d006a0ff22f0634ff1c5e045"
+        }
+      ],
+      "target_sha256": "cb49a673d30227f1049d784fe0ea7aa7a92784ec8268272076292591c3efd6f2",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/LocallyCompactProduct.lean",
+      "sources": [
+        {
+          "path": "Quillen/CategoryTheory/TheoremA/EnrichedBoundaryHEP.lean",
+          "sha256": "f4f6e81d602da9f95feae7002fd7bc19482652db15a2d5c8fdad414c7fd608d1"
+        }
+      ],
+      "target_sha256": "b66be20eeea08fe542772fe16dd21ead8b89003c499b23e7404f6874d539e710",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/MonomorphismEmbedding.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MonomorphismEmbedding.lean",
+          "sha256": "763b5ed63ac0d6ba21367507abf9f67e4f21248eb8370805fb0252f85fb65517"
+        }
+      ],
+      "target_sha256": "e1ec6a1a880c48da210786b42a0920bc5f73201d18b868ddd83d634cb98638fd",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/MonomorphismHEP.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MonomorphismHEP.lean",
+          "sha256": "723f6afa50a7c1f8e73a0e00cdedacba4252b5200ec39b2f79df446d48b0cfd0"
+        }
+      ],
+      "target_sha256": "c7aeae8653ba49360841148b385770e986c120ba6f0aeff12f6935450b196243",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/MonomorphismLifting.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/MonomorphismLifting.lean",
+          "sha256": "8bf2d05de48258cc72757ade11c3ce08ac07fb9a3daba1c2cd20fc6e37272773"
+        }
+      ],
+      "target_sha256": "ac5430bc1faefb5fe52ae6c6cbd59d621be2d808092776df34346d356e99d402",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/OrdinalSubdivisionComparison.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/OrdinalSubdivisionBisimplicial.lean",
+          "sha256": "3274c355fb6506f4f13d8dbe8e486f4998f796e6c89b39a20ea3e0dcf425eb45"
+        }
+      ],
+      "target_sha256": "8419870b045cdfc376a90e27ee1e07dfecd23a01d44e9bcb45ede8cc4993fb98",
+      "scope": [
+        "actual source interface; proved global comparison instantiated",
+        "new data constructor using the proved global comparison"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/OrdinalSubdivisionConditional.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/OrdinalSubdivisionBisimplicial.lean",
+          "sha256": "3274c355fb6506f4f13d8dbe8e486f4998f796e6c89b39a20ea3e0dcf425eb45"
+        }
+      ],
+      "target_sha256": "a2c8385dd98693357c4422f70afe4f994f1a8085ce7303d4cfb4b62f193b3a04",
+      "scope": [
+        "explicit comparison parameter added; not unconditional source completion",
+        "new explicit data structure; no existence assertion"
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/OrdinalSubdivisionRealization.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/OrdinalSubdivisionRealization.lean",
+          "sha256": "6ac749ee3a72b2025032b7c9954df2187ca094a2ebdbfe1e3d03bb4b2b0f7f0e"
+        }
+      ],
+      "target_sha256": "0e4e4d793b1453a6cf085758cb478b88600d86594e323a1b8b5b859f5a021964",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/OrdinalSubdivisionRepresentable.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/OrdinalSubdivisionRealization.lean",
+          "sha256": "6ac749ee3a72b2025032b7c9954df2187ca094a2ebdbfe1e3d03bb4b2b0f7f0e"
+        }
+      ],
+      "target_sha256": "901b68194da0e780d150ce67601b0c70900f0aaeba09c5e5025ab407df33a843",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/OrdinalSubdivisionSimplex.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/OrdinalSubdivisionSimplex.lean",
+          "sha256": "b4958d7b407da4c5448ed712dbb571ae65a5283ae8c6132b359c4523de3d7189"
+        }
+      ],
+      "target_sha256": "87850725516bad0b861b030ea5f84aad37c5c6d0882a3e47f50f2bfb2232358c",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/ProductComparison.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/ProductComparison.lean",
+          "sha256": "483aec19bd64ff2a0a0a29ca96d7017c634f20e8fc2489cf5ebfd89b533e2235"
+        }
+      ],
+      "target_sha256": "2757adb6848ff45c7b4f1032efcb8e744ebcc09b536a85d5fe059c27e7322de8",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/ProductSimplex.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/ProductSimplex.lean",
+          "sha256": "0be6410572325b5ea857747fab471746d5a07131b55960c8687b2056da9eca97"
+        }
+      ],
+      "target_sha256": "113168a4c215d63d12bfd205445849cec610c2bc617aea76d9705cf0c2b7b514",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/ProductSupport.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/ProductSupport.lean",
+          "sha256": "84dca1bdd24ba94a116aef073e3bc2ad8680ec03f25675570c53410e4a834f06"
+        }
+      ],
+      "target_sha256": "adc51de6b6224a3e963a5ec11a9cdc7f5b8c20aec1e72ad0124ee02b3c7ffbe0",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces."
+      ]
+    },
+    {
+      "target": "Colib/Topology/Realization/SimplexBoundaryHEP.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/Realization/SimplexBoundaryHEP.lean",
+          "sha256": "c3306315c9db6477f9794ac7f6640b7f99f678a59244af61eaa5c3936a495966"
+        }
+      ],
+      "target_sha256": "3862e976ad969e959741bdbbf39304499d508e74442ee066cb92bb01ef6c78fd",
+      "scope": [
+        "Source proof and actual maps adapted to native Colib ownership and pinned interfaces.",
+        "The geometric extension is applied directly in TopCat.I coordinates in the final HEP proof."
+      ]
+    },
+    {
+      "target": "Colib/Topology/UnitInterval.lean",
+      "sources": [
+        {
+          "path": "Quillen/Topology/UnitInterval.lean",
+          "sha256": "ed0dbaf5f0c33754a517414fb3f2d7be6b06a958094f27bf3a157a82eaf00293"
+        }
+      ],
+      "target_sha256": "4998932204c543708d8981ef682119f3e8bb7361650596153440e1513c1c2a29",
+      "scope": [
+        "source adaptation"
+      ]
+    }
+  ]
+}

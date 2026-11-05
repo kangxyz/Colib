@@ -26,7 +26,7 @@ kind = "book"
 title = "The K-book: An Introduction to Algebraic K-theory"
 authors = ["Charles A. Weibel"]
 year = 2013
-version = "Author's online chapters II, III and IV, inspected 2026-11-05"
+version = "Author's online chapters II, III, IV and V, inspected 2026-11-05"
 url = "https://sites.math.rutgers.edu/~weibel/Kbook.html"
 
 [[sources.WeibelKBook.documents]]
@@ -46,6 +46,12 @@ label = "Chapter IV, Definitions of higher K-theory"
 locator_prefix = "IV,"
 url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf"
 sha256 = "9f1c1b8cccfe19d547c27dd04c61f198fd7a0cddd0018a0b84442b00fa575248"
+
+[[sources.WeibelKBook.documents]]
+label = "Chapter V, The fundamental theorems of higher K-theory"
+locator_prefix = "V,"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.V.pdf"
+sha256 = "52dcc8ee3a1764e5ea309c59f093ac8e2a1ea64f3b94bacc05e6a2b6125b1da8"
 
 [sources.Milnor1970]
 kind = "article"

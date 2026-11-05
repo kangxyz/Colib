@@ -27,3 +27,17 @@ validation scope. Source correspondence and mathematical review retain their own
 
 The first Library release demonstrates this process on twelve entries. The amount of
 further migration is measured by the actual proof and interface repairs for subsequent slices.
+
+
+## Waldhausen additivity milestone
+
+The actual unnormalized S-construction now supports the complete original
+canonical K-map additivity formula, including degree zero. The ordinary
+unreversed subdivision endpoint is a proved realization homotopy equivalence;
+compact-source lifting for the actual realization-product comparison gives the
+original product K-map equivalence. Coproduct is the existing group law, which
+is proved commutative also in K-zero. Exactness, cofiber squares, relative
+cofibrations, target binary coproducts and the source universe bounds are retained.
+See [the chosen-model and source crosswalk](migration/waldhausen/README.md).
+A strict chosen-zero S-model comparison and broader Quillen-Waldhausen comparison
+remain separate work.

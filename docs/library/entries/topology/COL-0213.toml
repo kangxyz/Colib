@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0213"
+title = "Homotopy extension for realized simplicial monomorphisms"
+kind = "theorem"
+section = "geometric-realization"
+order = 290
+statement = "Every actual geometric realization of a simplicial monomorphism has the homotopy extension property. The proof starts from the explicit geometric simplex-boundary retraction and extends lifting along the actual relative skeletal cell complex."
+scope = "All simplicial sets in an arbitrary universe, including infinite-dimensional ones. No compactness of the whole realization or auxiliary cofibration hypothesis is assumed. The canonical realized map is retained. Hatcher Proposition 0.16 supplies the cellular HEP construction being adapted; the formalization uses the actual pinned simplicial relative cell complex and finite-simplex comparison."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0215"
+title = "Homotopy invariance of sequential cofibration colimits"
+kind = "theorem"
+section = "homotopy-colimits"
+order = 20
+statement = "A natural transformation of sequential diagrams which is a homotopy equivalence at every stage induces an actual homotopy equivalence of their colimits, provided both diagrams have HEP successor maps. The forward map is the canonical colimit comparison, also for specified colimit cocones."
+scope = "No coherence of the chosen inverses or homotopies is assumed. Controlled interval-square extension proves the mapping-cylinder latching HEP, and timed deformations have exact restrictions at each stage. The shrinking stationary-interval argument in Hatcher Proposition 0.16 is cited as background, not as the statement of this general sequential theorem."
+review = "author_checked"

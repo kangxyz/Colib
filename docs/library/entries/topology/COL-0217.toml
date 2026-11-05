@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0217"
+title = "Unbased equivalences induce canonical homotopy-group isomorphisms"
+kind = "theorem"
+section = "homotopy-groups"
+order = 90
+statement = "An unbased homotopy equivalence induces an isomorphism on every positive-dimensional based homotopy group through its actual forward map, requiring only an equality identifying the image of the chosen source basepoint with the target basepoint."
+scope = "Source and target topological universes are independent. The inverse and both homotopies may move basepoints. The construction retains the existing piMap on Pi (n + 1), including degree one via the genuine homotopy-fiber pointed-set tail. It does not assume a based inverse or replace the canonical forward group homomorphism."
+review = "author_checked"

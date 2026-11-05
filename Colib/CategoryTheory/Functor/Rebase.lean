@@ -19,18 +19,19 @@ No topology or homotopy groups occur in this module.
 
 Extracted from `Quillen/Aglib/CategoryTheory/Functor/Rebase.lean` at Quillen commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The source object maps, specified
-isomorphisms and universes are retained. Only ownership and lower imports change.
+isomorphisms are retained. Source and target object and morphism universes are now
+independent, so the same construction also applies to arrow-category inputs.
 -/
 
 @[expose] public noncomputable section
 
 open CategoryTheory
 
-universe v u
+universe v u v' u'
 
 namespace CategoryTheory
 
-variable {C : Type u} {D : Type u} [Category.{v} C] [Category.{v} D]
+variable {C : Type u} {D : Type u'} [Category.{v} C] [Category.{v'} D]
 
 /-- Replace the image of one specified object by the desired target object. -/
 def rebaseObj (F : C ⥤ D) (c : C) (d : D) (X : C) : D :=

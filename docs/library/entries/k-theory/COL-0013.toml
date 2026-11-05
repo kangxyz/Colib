@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0013"
+title = "Ordered homogeneous Milnor symbols"
+kind = "definition"
+section = "milnor-k-theory"
+order = 100
+statement = "An ordered n-tuple of units defines its product of degree-one symbols in the native degree-n Milnor K-group."
+scope = "An arbitrary field in any characteristic and every natural degree, including degree zero. This is a subtype wrapper of the Stacks list symbol, not a new model."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use the native list product and its degree-membership theorem."

@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0014"
+title = "Coordinate and adjacent Milnor symbol identities"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 110
+statement = "Homogeneous tuple symbols are multiplicatively additive in each coordinate, vanish on identity entries and adjacent Steinberg pairs, and change sign under coordinate inversion or an adjacent transposition."
+scope = "Arbitrary fields and natural degrees; the two adjacent indices satisfy i.val + 1 = j.val. Skew symmetry does not assert that repeated entries vanish. The Stacks reference supplies the defining quotient; the identities are derived consequences."
+review = "author_checked"
+provenance = "aglib"
+proof = "Rewrite native list symbols, use the degree-one additive and Steinberg identities, and apply the native adjacent-list swap theorem."

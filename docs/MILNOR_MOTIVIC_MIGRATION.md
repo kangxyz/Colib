@@ -289,3 +289,25 @@ The isolated milestone passed the complete `scripts/check.sh` acceptance on 2026
 including production/test builds, lint, generated-root validation, the pinned axiom
 audit and Library/site generation. The new leaf also passed a separate module-scoped
 axiom audit. Kernel replay and downstream client checks were not run.
+
+## Tuple-symbol milestone (2026-11-05)
+
+The next closed chain supplies ordered homogeneous tuple symbols and seven coordinate
+or adjacent-pair identities directly on Stacks' `MilnorKTheory`. Library items
+`COL-0013` and `COL-0014` record the construction and identities. The declaration ledger
+is [milnor-symbols.json](migration/milnor-symbols.json). It covers eight source
+endpoints plus one target-only coercion lemma; it does not complete either source
+module or assert a comparison with the old all-degree quotient.
+
+The official Stacks Tag 0EAY, first paragraph, was inspected directly. It supplies
+the tensor-algebra Steinberg quotient. Coordinate identities and adjacent Steinberg
+vanishing follow from this presentation; adjacent skew is a derived result proved
+using the pinned Stacks list theorem, not a verbatim statement of the remark. No new
+Milnor1970 correspondence claim is made without inspecting that paper for this chain.
+The old presentation machinery is not retained or counted as three equivalent target
+objects. Universal properties and the other omitted source results remain unresolved.
+
+The isolated tuple-symbol milestone passed the complete `scripts/check.sh` on
+2026-11-05: all four in-package test modules, lint and generated-root checks,
+91-declaration production axiom audit, and 14-item Library/site generation.
+Kernel replay and separate downstream client checks were not run.

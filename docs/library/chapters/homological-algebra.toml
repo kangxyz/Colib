@@ -14,7 +14,7 @@ introduction = "The finite exterior-power Koszul resolution of a weakly regular 
 id = "koszul-coefficients"
 title = "Koszul complexes with coefficients"
 order = 5
-introduction = "Native exterior-power Koszul complexes retain coefficient finiteness and annihilators. No regularity is assumed; Noetherianity is used only for finiteness of homology."
+introduction = "Native exterior-power Koszul complexes retain coefficient finiteness and annihilators. Degree-zero homology is the actual coefficient quotient without regularity; the original augmentation is a quasi-isomorphism under coefficient Koszul regularity. Noetherianity is used only for finiteness of homology."
 
 [[sections]]
 id = "ext-scalars"

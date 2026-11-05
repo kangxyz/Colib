@@ -1,0 +1,187 @@
+{
+  "topic": "Native target-ring normalization of top Koszul Ext under scalar extension",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "pinned_mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "pinned_stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "source_correspondence": {
+    "original_file": "/workspace/scratch/ab4c8cd79b02/aglib-candidate-101dbb8-20261104T1637Z/Aglib/Algebra/Homology/Koszul/Ext/BaseChange.lean",
+    "original_sha256": "26eef823a5e97ca3745a66a58121dabeea155f2ac56c6feaef86be390f10b86d",
+    "relationship": "Further native consumer of the migrated scalar-extension localization theorem. The original BaseChange file explicitly deferred the actual quotient comparison and target Koszul normalization; this ledger does not claim they were already in the original source.",
+    "closes": "The A-native cocycle normalization gap recorded in motivic-top-ext-base-change-quotient.json."
+  },
+  "scope": [
+    "All finite sequence lengths, including zero; Koszul-regular source; arbitrary coefficient modules. Rings and module carriers share one universe, while source and target HasExt universes are independent.",
+    "ScalarExtensionComparison requires no flatness or regularity: the actual tensor/exterior-power isomorphisms intertwine the native differential, degree-zero augmentation, and standard ordered top-coordinate cocycle.",
+    "The general exact-functor endpoint assumes finite-limit preservation of actual scalar extension and actual target Koszul regularity. The flat endpoint derives both from Module.Flat R A and source regularity. No coefficient flatness, Noetherianity, nontriviality or properness is imposed.",
+    "The localization endpoint targets the literal native quotient A/span(range(mapped sequence)), using the existing quotient tensor equivalence followed by equality of generated ideals."
+  ],
+  "native_constructions": [
+    "KoszulC.extPow_baseChange_natEquiv and KoszulC.d_baseChange_comm (StacksFrontier/RingTheory/Koszul/FlatBaseChange.lean).",
+    "Koszul.seqComplex, koszulAugmentation, seqProjectiveResolution, topGen and topEquiv; no replacement complex or resolution.",
+    "CochainComparison extends the actual chain comparison to the existing ProjectiveResolution.cochainComplex, retaining its degree -n components and augmentation.",
+    "ProjectiveResolution.ExactFunctor.mk₀_comp_extMk_mapExactFunctor carries the original extMk through the original mapExactFunctor, with derived localization and shift comparisons intact.",
+    "ModuleCat.extendScalarsQuotientIso composed with Ideal.quotientEquivAlgOfEq; its inverse has the required contravariant Ext source orientation."
+  ],
+  "endpoints": [
+    "Koszul.seqComplexBaseChangeIso",
+    "Koszul.seqComplexBaseChangeIso_augmentation",
+    "Koszul.seqComplexBaseChangeIso_topCocycle",
+    "Koszul.isKoszulRegular_algebraMap_of_flat",
+    "Koszul.seqTopExtClass_mapExactFunctor_normalized",
+    "Koszul.seqTopExtClass_baseChange_of_flat",
+    "Koszul.seqTopExtScalarExtension_native_isLocalizedModule"
+  ],
+  "normalization": "mk₀(q.inv) comp mapExactFunctor_F(seqTopExtClass_R(m)) = seqTopExtClass_A(1 tensor m), where q is the actual sequence-quotient base-change isomorphism.",
+  "source_sha256": {
+    "Colib/CategoryTheory/Abelian/Projective/ExactFunctor.lean": "31259a38b3072828fce36dfd32647dcb6afa4ce74876af5d3928fffa489a0693",
+    "Colib/CategoryTheory/Abelian/Projective/CochainComparison.lean": "64da85a3e1eecb691d517ac710804aa5243212446ca1fe88d6c2679ddbb23538",
+    "Colib/RingTheory/Koszul/ScalarExtensionComparison.lean": "c49a19b183c21ce40db77c9745716aa469d2bcf67e4dd8bbdcf477ea5468b267",
+    "Colib/RingTheory/Koszul/TopExtBaseChangeNormalization.lean": "82e03c127922def52d64bb7ba5609fbdd3f2b954735d94e4cab2898974c6a5fb",
+    "ColibTest/TopExtBaseChangeNormalization.lean": "eaa1363fa791d9cd61e90156f0487f25b623aa4de2a70841cc97289ce7c1eb5c"
+  },
+  "validation": {
+    "status": "Focused native build and strict per-leaf checks passed; independent mathematical review of the listed source hashes passed. Joint registered-tree aggregate validation is recorded in motivic-koszul-native-base-change-milestone.json.",
+    "receipts": [
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-normalization-build-final.json",
+        "sha256": "a3acd3c81c6de182b0124153525640723845c81980e1dd451de06d3404756f05",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.TopExtBaseChangeNormalization"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2652930048,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-normalization-strict-scalar-r2.json",
+        "sha256": "7656fe41aff38dfb030cd4d56cb88e86610883930008d972f0aeceb0774c1053",
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "-DwarningAsError=true",
+          "-DautoImplicit=false",
+          "-Dlinter.mathlibStandardSet=true",
+          "Colib/RingTheory/Koszul/ScalarExtensionComparison.lean"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2767446016,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-normalization-strict-cochain-r2.json",
+        "sha256": "03d59a2dcdb97298250540df1a32c14550a1e29ed6e0973555c248a11ba45419",
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "-DwarningAsError=true",
+          "-DautoImplicit=false",
+          "-Dlinter.mathlibStandardSet=true",
+          "Colib/CategoryTheory/Abelian/Projective/CochainComparison.lean"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2101063680,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-normalization-strict-ext-r2.json",
+        "sha256": "65a054e48ddd077e712f5313bf4f806f97c1e5a822ef83e902962f270dec6e36",
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "-DwarningAsError=true",
+          "-DautoImplicit=false",
+          "-Dlinter.mathlibStandardSet=true",
+          "Colib/RingTheory/Koszul/TopExtBaseChangeNormalization.lean"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2862469120,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-normalization-strict-test-final.json",
+        "sha256": "3356ab9cea2830bc761db3a2a69abfc688b306d9c018c74c1989de98643bf9bf",
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "-DwarningAsError=true",
+          "-DautoImplicit=false",
+          "-Dlinter.mathlibStandardSet=true",
+          "ColibTest/TopExtBaseChangeNormalization.lean"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2840207360,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      }
+    ],
+    "axioms": {
+      "log": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-normalization-test-r1.log",
+      "declarations": [
+        "Koszul.seqTopExtClass_mapExactFunctor_normalized",
+        "Koszul.seqTopExtScalarExtension_native_isLocalizedModule"
+      ],
+      "closure": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "note": "Printed on the final mathematical source; later changes were only whitespace and test-file removal of diagnostic hash commands. No kernel replay. The test-r1 run contains a subsequently repaired test failure; only its printed axiom closure is cited. Successful final test validation is recorded separately in top-normalization-strict-test-final.json."
+    }
+  },
+  "remaining": [
+    "Comparison to the old recursive Aglib cocycle model is not claimed.",
+    "Geometric purity, derived tensor compatibilities beyond this stated comparison and norm/transfer compatibilities are not claimed.",
+    "Independent review and final registered-source aggregate validation passed; see the joint milestone ledger. No commit or push by the integration worker."
+  ],
+  "integration": "Permanent registration, independent review and full combined-tree validation are recorded in motivic-koszul-native-base-change-milestone.json. Historical focused receipts here apply to the listed original source hashes."
+}

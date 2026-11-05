@@ -1,0 +1,202 @@
+{
+  "topic": "All-length native top Ext under localization of the base ring",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "sources": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Ext/BaseChange.lean",
+      "sha256": "26eef823a5e97ca3745a66a58121dabeea155f2ac56c6feaef86be390f10b86d"
+    },
+    {
+      "path": "Aglib/Algebra/Category/ModuleCat/ChangeOfRings/Linear.lean",
+      "sha256": "2a899fb8d01becd4f79bdc88ad9ca407c6f411181942bb3693f9b7aa04db1049"
+    },
+    {
+      "path": "Aglib/Algebra/Category/ModuleCat/Localization/ScalarExtension.lean",
+      "sha256": "2b57add1bd17dd292b27a2b001329ca2a02e523ae65cf99c985db869dda3ad18"
+    }
+  ],
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "source_declaration": "ChainComplex.Koszul.topExtScalarExtension_isLocalizedModule",
+  "scope": "For a localization A of a commutative ring R at T, the actual exact functor map on Ext from ModuleCat R to ModuleCat A is IsLocalizedModule T for a Koszul-regular finite quotient in top degree. Includes length zero, arbitrary coefficients, and independent HasExt sizes. Rings and module carriers share universe u as in the source.",
+  "upstream_audit": [
+    "Pinned Mathlib lacks the newer Ext.MapAdjunction module used by the source. Stacks.ExtAdjunction.extMap and extMap_bijective are reused instead; only the linear bundling and its unit triangle identity are added. No adjunction bijection proof is copied.",
+    "StacksFrontier.Homology.ExtendScalars.Flat already supplies native extension additivity and flat preservation of finite limits for the needed universes. Finite colimits follow from the native adjunction; no duplicate exactness lemma is added.",
+    "Mathlib scalar-extension adjunction, scalar actions, tensor localization instance, EnoughInjectives for modules, mapExtLinearMap and IsLocalizedModule.of_linearEquiv are reused directly.",
+    "A direct pure-tensor proof establishes base-ring linearity, avoiding the old auxiliary scalar-extension/tensor-product comparison model."
+  ],
+  "declarations": [
+    "ModuleCat.Algebra.extendScalars_linear",
+    "ModuleCat.extendRestrictScalarsAdj_unit_isLocalizedModule",
+    "Stacks.ExtAdjunction.extMapLinear",
+    "Stacks.ExtAdjunction.extMapLinear_apply",
+    "Stacks.ExtAdjunction.extMapLinear_comp_unit",
+    "Stacks.ExtAdjunction.extMapLinearEquiv",
+    "Koszul.seqTopExtScalarExtension_isLocalizedModule"
+  ],
+  "chosen_model": "Actual ModuleCat.extendScalars(algebraMap R A), its actual adjunction unit and existing Stacks extMap; native Koszul top Ext coefficient localization is composed with the existing bijective adjunction map upgraded to a linear equivalence. Target is Ext_A(F(R/I),F(N)), not merely Ext_R(R/I,G(F(N))).",
+  "limits": [
+    "This layer stops at F(R/I); COL-0166 supplies its actual quotient identification.",
+    "This layer does not normalize the target cocycle; COL-0167 supplies native target normalization.",
+    "Old named Aglib principal class comparison remains pending. No legacy environment or cache is restored.",
+    "No new Ext, resolution, scalar-action or localization model. No kernel replay or push. Shared integration belongs to the parent."
+  ],
+  "validation": {
+    "status": "Historical focused build, individual declaration lints and style passed. Final registered-source aggregate validation is in the joint milestone ledger.",
+    "receipts": [
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-ext-base-change-build-r2.json",
+        "sha256": "c26da06df25b1718bce4d42f9bc30298b50cc1cfa5843cbc8e3349c1a017b134",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtBaseChange",
+          "ColibTest.TopExtBaseChange"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2601504768,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-ext-base-change-lint-adjunction.json",
+        "sha256": "79b13240b6d3d3da714fe4b1e90a869b0929a1ea986ef041af42c1a1fda8dda3",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.CategoryTheory.Abelian.ExtAdjunctionLinear"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3414523904,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-ext-base-change-lint-linear.json",
+        "sha256": "73ec0ca9e96ad6955d6e71ac030fbdb132dacd5eeaddf040f19b717db2713ff1",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.Algebra.Category.ModuleCat.ChangeOfRings.Linear"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3138314240,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-ext-base-change-lint-top.json",
+        "sha256": "28242232b8f3626d203098c87d5e4b19aaffd19972292ed9c70d581bdce24890",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Koszul.TopExtBaseChange"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4577599488,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-ext-base-change-lint-unit.json",
+        "sha256": "b85253f86d56be69ccfa3f9ee6903b3b91367dc6660ce2ab67efbc6fc61988d0",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.Algebra.Category.ModuleCat.ChangeOfRings.Localization"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3277172736,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-ext-base-change-style.json",
+        "sha256": "fbe8be1d0ebb7e15ea167f7bc516f06d7d98e86f146cc3194d7d7f0f6ed03d10",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.Algebra.Category.ModuleCat.ChangeOfRings.Linear",
+          "Colib.Algebra.Category.ModuleCat.ChangeOfRings.Localization",
+          "Colib.CategoryTheory.Abelian.ExtAdjunctionLinear",
+          "Colib.RingTheory.Koszul.TopExtBaseChange",
+          "ColibTest.TopExtBaseChange"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1722437632,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      }
+    ]
+  },
+  "integration": "Permanent registration, independent review and full combined-tree validation are recorded in motivic-koszul-native-base-change-milestone.json. Historical focused receipts here apply to the listed original source hashes."
+}

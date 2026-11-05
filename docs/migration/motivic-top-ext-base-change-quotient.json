@@ -1,0 +1,180 @@
+{
+  "topic": "Actual quotient-source endpoint of native top Ext localization",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_correspondence": {
+    "original_endpoint": "ChainComplex.Koszul.topExtScalarExtension_isLocalizedModule",
+    "original_scope": "Source theorem stops at the actual scalar extension F(R/I); its documentation explicitly excludes quotient-source identification and A-native normalization.",
+    "comparison": "The quotient-source extension here is a further native consumer, not a claim that the original source already proved it.",
+    "checked_source_hashes": "All three source hashes in motivic-top-ext-base-change.json were independently recomputed and matched."
+  },
+  "scope": "All finite lengths including zero, Koszul-regular sequence, arbitrary coefficients, independent HasExt sizes, same carrier universe for rings/modules. Actual scalar extension followed by precomposition with the inverse of the canonical quotient isomorphism localizes Ext into Ext_A(A/IA,F(N)).",
+  "upstream_reuse": [
+    "Mathlib Algebra.TensorProduct.quotIdealMapEquivTensorQuot, including its pure-tensor formula.",
+    "Stacks.ExtAdjunction.precomp_mk₀_bijective_of_isIso; no copied proof of Ext invariance under isomorphism.",
+    "Existing Colib seqTopExtScalarExtension_isLocalizedModule and IsLocalizedModule.of_linearEquiv.",
+    "Existing exact-adjunction unit triangle identity and seqTopExtClass_comp_mk₀ for the original-R-complex normalization formula."
+  ],
+  "declarations": [
+    "ModuleCat.extendScalarsQuotientIso",
+    "ModuleCat.extendScalarsQuotientIso_hom_tmul",
+    "ModuleCat.map_span_range_algebraMap",
+    "Koszul.scalarExtensionQuotientExtEquiv",
+    "Koszul.seqTopExtScalarExtensionQuotient_isLocalizedModule",
+    "Koszul.seqTopExtClass_mapExactFunctor_eq_extMap"
+  ],
+  "validation": {
+    "status": "Historical focused guarded build, declaration lints and style passed. Subsequent independent review and full aggregate integration are recorded in the joint milestone ledger.",
+    "receipts": [
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-quotient-basechange-build-r6.json",
+        "receipt_sha256": "2138ce7b98eb13a8a587dc848c00365044a185601b9182002762e1e199179551",
+        "state": "completed",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2690838528,
+        "owned_group_gone": true,
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "ColibTest.TopExtBaseChangeQuotient"
+        ],
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        }
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-quotient-basechange-lint-quotient.json",
+        "receipt_sha256": "bbf665e0c8424793fd9b254d72f0a0c5b5370f27193e6c58e00e14491304334a",
+        "state": "completed",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3248963584,
+        "owned_group_gone": true,
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.Algebra.Category.ModuleCat.ChangeOfRings.Quotient"
+        ],
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        }
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-quotient-basechange-lint-top.json",
+        "receipt_sha256": "0d63458c55313ff3a87eff84e3bac643be811d128b1a153ff8ec89c85d54bed5",
+        "state": "completed",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4562243584,
+        "owned_group_gone": true,
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Koszul.TopExtBaseChangeQuotient"
+        ],
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        }
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-quotient-basechange-lint-test.json",
+        "receipt_sha256": "21c38acadba81853603e268b725dce3774381f2de016bca3573cc10cc8e9b787",
+        "state": "completed",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4557754368,
+        "owned_group_gone": true,
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "ColibTest.TopExtBaseChangeQuotient"
+        ],
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        }
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/top-quotient-basechange-style.json",
+        "receipt_sha256": "e31a5a2d3a8b253817a179ac63a6e764255619af91980c1825d81b9d93404f8e",
+        "state": "completed",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1720827904,
+        "owned_group_gone": true,
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.Algebra.Category.ModuleCat.ChangeOfRings.Quotient",
+          "Colib.RingTheory.Koszul.TopExtBaseChangeQuotient",
+          "ColibTest.TopExtBaseChangeQuotient"
+        ],
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        }
+      }
+    ],
+    "hashes": {
+      "Colib/Algebra/Category/ModuleCat/ChangeOfRings/Quotient.lean": "e037eaeca1e1d510a298fed1c7ff383332f8ae1156814ab6ec807650445c3ce2",
+      ".lake/build/lib/lean/Colib/Algebra/Category/ModuleCat/ChangeOfRings/Quotient.olean": "ca0720008029d865ed8c8d436788156888451eddba27813d815d0823e0912ab8",
+      "Colib/RingTheory/Koszul/TopExtBaseChangeQuotient.lean": "12f99936f14caf9113c7863a2557a0295bf254e15ac31988ec0b765e0d0122a8",
+      ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtBaseChangeQuotient.olean": "3ff666c89d2717c8f158fd05128cd9e73a0d1f20f87ffc0971eaac8259862fe2",
+      "ColibTest/TopExtBaseChangeQuotient.lean": "756096133089b74cda3dbafcfe7efbdbb1499e6bd2ac914ff8986a67a59c3e41",
+      ".lake/build/lib/lean/ColibTest/TopExtBaseChangeQuotient.olean": "69aee05645bcd4f82b9b00a4e6a8bdf69b74bb89081671e84c7faf6296fd358a"
+    },
+    "repairs": [
+      "Set the existing workspace LAKE_CACHE_DIR after the initial run attempted the read-only default home cache; no toolchain or resource change.",
+      "Use the actual ring-map-induced algebra instance for the native scalar extension tensor module. The pure-tensor formula is definitionally true.",
+      "Repair invalid line wrapping in test field notation."
+    ],
+    "limits": "No Aglib imports, no new Ext/resolution/localization model, no kernel replay, no push."
+  },
+  "historical_remaining": [
+    "A-native cocycle normalization is not proved. Need exact-functor compatibility of ProjectiveResolution.extMk, then the base-change chain comparison commuting with augmentation and top coordinate.",
+    "Pinned Stacks KoszulC.extPow_baseChange_natEquiv and d_baseChange_comm provide existing components; reuse rather than introduce another Koszul model.",
+    "Old recursive Aglib cocycle comparison and geometric purity are not established.",
+    "Parent owns shared Library registration, final aggregate checks and publication."
+  ],
+  "remaining": [
+    "This leaf does not provide A-native normalization. The subsequent Koszul.seqTopExtClass_mapExactFunctor_normalized and Koszul.seqTopExtClass_baseChange_of_flat in TopExtBaseChangeNormalization.lean prove it; their independent review and final receipts are recorded in motivic-top-ext-base-change-normalization.json and motivic-koszul-native-base-change-milestone.json.",
+    "Old recursive Aglib cocycle comparison and geometric purity remain unproved.",
+    "Final registered-source aggregate validation passed; see the joint milestone ledger."
+  ],
+  "integration": "Permanent registration, independent review and full combined-tree validation are recorded in motivic-koszul-native-base-change-milestone.json. Historical focused receipts here apply to the listed original source hashes."
+}

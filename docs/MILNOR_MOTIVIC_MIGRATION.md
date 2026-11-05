@@ -278,7 +278,8 @@ hashes, provenance, upstream alternatives, compilation evidence and the independ
 read-only mathematical/source review. The original Motivic archive was not re-read
 in that review; its provenance was checked against Aglib's manifest. This supporting
 primitive has no independent Library ID. Its existing Aglib consumer is the regular
-single-Koszul tensor augmentation theorem, not yet migrated by this milestone.
+single-Koszul tensor augmentation theorem, not migrated in that first milestone.
+The later native coefficient augmentation endpoint is now supplied by COL-0163.
 
 This milestone does not include the concurrently prepared Milnor symbol drafts, a
 Koszul construction, or a motivic application. It neither completes M0 nor claims
@@ -451,7 +452,8 @@ COL-0134 identifies N/IN with positive-length top Ext, linearly over R/I and
 naturally in every coefficient module N, using the existing native top cocycle.
 The quotient-source action belongs to Colib and uses Mathlib's annihilated-module
 construction. No coefficient regularity or finiteness is required. The empty
-sequence and comparison with old named Aglib classes remain pending. See
+sequence endpoint was later completed by COL-0137. Comparison with old named
+Aglib classes remains pending. See
 `migration/motivic-top-ext-coefficients.json` for the precise evidence.
 
 ### Module quasi-isomorphism criterion
@@ -555,3 +557,21 @@ still needs the actual completion field map and residue-field identification.
 Norm/transfer still needs the native transfer construction and its residue
 comparison with the exact finite-extension hypotheses. These are separate
 mathematical obligations, not consequences of the ramified restriction square.
+
+### Coefficient augmentation and native top Ext base change
+
+COL-0163 identifies coefficient H0 with the actual ideal quotient and proves
+the original augmentation is a quasi-isomorphism under coefficient Koszul
+regularity. Ring and coefficient universes remain independent; ULift only
+places the categorical quotient in the tensor-complex universe.
+
+COL-0164–COL-0167 complete the native scalar-extension chain: exact-functor
+compatibility of actual projective-resolution Ext cocycles, localization of
+top Ext, the actual isomorphism F(R/I) to A/IA, and equality with the native
+target-ring top cocycle of 1 tensor m. Flatness supplies target regularity and
+exactness. All lengths, including zero, and independent source/target Ext
+universes are retained. See migration/motivic-koszul-native-base-change-milestone.json.
+
+This does not prove comparison with old named recursive Aglib classes,
+geometric purity or norm/transfer compatibility. Component review, focused
+compilation and final registered-tree aggregate validation are separate facts.

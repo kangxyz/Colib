@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0164"
+title = "Exact functors preserve actual resolution Ext cocycles"
+kind = "comparison"
+section = "projective-dimension"
+order = 180
+statement = "An augmented cochain comparison and equality of its actual degree minus n cocycle components identify exact-functor images of projective-resolution Ext classes."
+scope = "Arbitrary abelian categories and independent category and Ext universes; additive functor preserving finite limits and colimits. No preservation of projectives or enough-projectives assumption. All natural degrees including zero."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0166"
+title = "Actual quotient source for localized top Ext"
+kind = "comparison"
+section = "projective-dimension"
+order = 200
+statement = "The native tensor quotient isomorphism identifies F(R/I) with A/IA; precomposition with its inverse gives actual top Ext localization with that quotient source."
+scope = "All finite lengths including zero, Koszul-regular source, arbitrary same-universe coefficients and independent Ext universes. The inverse quotient isomorphism has the actual contravariant Ext orientation. Native target cocycle normalization is supplied by COL-0167."
+review = "author_checked"

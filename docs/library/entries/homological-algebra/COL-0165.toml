@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0165"
+title = "Base-ring localization of native top Ext"
+kind = "theorem"
+section = "projective-dimension"
+order = 190
+statement = "The actual exact scalar-extension functor localizes top Ext of a native Koszul-regular quotient into Ext over the localized ring."
+scope = "All finite lengths including zero; arbitrary same-universe coefficient modules and independent source and target Ext universes. Target source is the actual F(R/I). The adjunction unit and Stacks Ext adjunction map are retained."
+review = "author_checked"

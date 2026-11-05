@@ -1,5 +1,8 @@
 module  -- shake: keep-all --deprecated_module: ignore
 
+public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Linear
+public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Localization
+public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Quotient
 public import Colib.Algebra.Category.ModuleCat.CoproductHomology
 public import Colib.Algebra.Category.ModuleCat.FilteredColimits
 public import Colib.Algebra.Homology.DerivedCategory.Ext.Quotient
@@ -15,8 +18,11 @@ public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.AffineBaseCha
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Compactness
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Functor
 public import Colib.AlgebraicTopology.SimplicialSet.Diagonal
+public import Colib.CategoryTheory.Abelian.ExtAdjunctionLinear
+public import Colib.CategoryTheory.Abelian.Projective.CochainComparison
 public import Colib.CategoryTheory.Abelian.Projective.Connecting
 public import Colib.CategoryTheory.Abelian.Projective.ConnectingTransport
+public import Colib.CategoryTheory.Abelian.Projective.ExactFunctor
 public import Colib.CategoryTheory.Abelian.Projective.Ext
 public import Colib.CategoryTheory.Abelian.Projective.ExtZero
 public import Colib.CategoryTheory.Bicategory.IsoQuotient
@@ -135,6 +141,7 @@ public import Colib.KTheory.Waldhausen.ZeroFunctor
 public import Colib.Library.Upstream
 public import Colib.LinearAlgebra.TensorAlgebra.HomogeneousLift
 public import Colib.LinearAlgebra.TensorAlgebra.IdealVanishing
+public import Colib.RingTheory.Koszul.CoefficientAugmentation
 public import Colib.RingTheory.Koszul.CoefficientFunctor
 public import Colib.RingTheory.Koszul.CoefficientRegularity
 public import Colib.RingTheory.Koszul.Coefficients
@@ -146,8 +153,12 @@ public import Colib.RingTheory.Koszul.PrincipalGeneratorChange
 public import Colib.RingTheory.Koszul.PrincipalGeneratorTransport
 public import Colib.RingTheory.Koszul.PrincipalSeqGenerator
 public import Colib.RingTheory.Koszul.PrincipalSeqGeneratorChange
+public import Colib.RingTheory.Koszul.ScalarExtensionComparison
 public import Colib.RingTheory.Koszul.TopExtAllLengths
 public import Colib.RingTheory.Koszul.TopExtAllNaturality
+public import Colib.RingTheory.Koszul.TopExtBaseChange
+public import Colib.RingTheory.Koszul.TopExtBaseChangeNormalization
+public import Colib.RingTheory.Koszul.TopExtBaseChangeQuotient
 public import Colib.RingTheory.Koszul.TopExtClass
 public import Colib.RingTheory.Koszul.TopExtCoefficients
 public import Colib.RingTheory.Koszul.TopExtGeneratorChange

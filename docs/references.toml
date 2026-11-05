@@ -144,3 +144,10 @@ volume = "1126"
 pages = "318-419"
 version = "Published LNM article, sections 1.1-1.3 inspected 2026-11-05"
 url = "https://www.math.uni-bielefeld.de/~fw/LNM1126_318-419.pdf"
+
+[sources.mathlib_koszul_pin]
+kind = "software"
+title = "Mathlib"
+authors = ["The mathlib community"]
+version = "Git commit 16edf57de7933555826307a3d81b4391a3657a09"
+url = "https://github.com/leanprover-community/mathlib4/tree/16edf57de7933555826307a3d81b4391a3657a09"

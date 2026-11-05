@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0163"
+title = "Coefficient homology zero and the actual Koszul augmentation"
+kind = "comparison"
+section = "koszul-coefficients"
+order = 170
+statement = "For every finite sequence, degree-zero homology of the native coefficient Koszul complex is the actual quotient M/IM. Its actual augmentation to that quotient is a quasi-isomorphism when the sequence is Koszul regular on M."
+scope = "Independent ring and coefficient universes; the categorical quotient uses ULift only to match the complex universe. No ring regularity or coefficient flatness is required. Weak coefficient regularity is a sufficient condition. Empty sequences are included."
+review = "author_checked"

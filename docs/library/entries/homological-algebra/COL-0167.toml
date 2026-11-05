@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0167"
+title = "Native top cocycle normalization under flat base change"
+kind = "comparison"
+section = "projective-dimension"
+order = 210
+statement = "After the actual quotient-source comparison, scalar extension of the native top Ext class of m is exactly the native target-ring top Ext class of 1 tensor m. Localization targets the literal quotient by the mapped sequence."
+scope = "Every finite length including zero; arbitrary same-universe coefficients and independent source and target Ext universes. Flatness derives target Koszul regularity and functor exactness from source regularity. The chain comparison itself requires no flatness. No old named recursive cocycle comparison or geometric purity claim."
+review = "author_checked"

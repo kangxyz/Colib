@@ -1,0 +1,350 @@
+{
+  "topic": "Coefficient H0 augmentation and native top Ext base-change milestone",
+  "base_main": "ae9601b1f33635b8e9e3fa733bea57a809c039df",
+  "catalog_ids": [
+    "COL-0163",
+    "COL-0164",
+    "COL-0165",
+    "COL-0166",
+    "COL-0167"
+  ],
+  "scope": [
+    "Actual coefficient H0 quotient and original augmentation, independent ring and coefficient universes, and quasi-isomorphism under coefficient Koszul regularity.",
+    "Actual scalar-extension map on Ext, actual F(R/I) isomorphism to A/IA, and normalization to the native target top cocycle 1 tensor m.",
+    "All natural sequence lengths including zero; flat base change derives target regularity and exactness, and localization has the literal target mapped-sequence quotient. Source and target Ext universes remain independent."
+  ],
+  "not_claimed": [
+    "Old named or recursive Aglib cocycle comparison",
+    "Geometric purity",
+    "Norm or transfer compatibility"
+  ],
+  "source_manifest": [
+    {
+      "path": "Colib/Algebra/Category/ModuleCat/ChangeOfRings/Linear.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/Algebra/Category/ModuleCat/ChangeOfRings/Linear.lean",
+      "reviewed_sha256": "bda44b6a2accf299202460d9fbeb2e2af822d013320b70d11e0aad766426b1de",
+      "integrated_sha256": "bda44b6a2accf299202460d9fbeb2e2af822d013320b70d11e0aad766426b1de",
+      "integrated_olean_sha256": "fbc54c31842f190dfc45755cb207f5c53106535a44b12082b4862084508be742"
+    },
+    {
+      "path": "Colib/Algebra/Category/ModuleCat/ChangeOfRings/Localization.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/Algebra/Category/ModuleCat/ChangeOfRings/Localization.lean",
+      "reviewed_sha256": "d6d5b5515f86533a79e572b284ebf9be64c5ec454c3421186a9eb2e4b1a7a30f",
+      "integrated_sha256": "d2447c523fa152fe0cc2b421a090163ad4a1c4a824689f0110a18cb3a08e646b",
+      "integrated_olean_sha256": "e90b699258c3a167e06025958575886232a0a9998550c0cbc442053b65d7d486"
+    },
+    {
+      "path": "Colib/Algebra/Category/ModuleCat/ChangeOfRings/Quotient.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/Algebra/Category/ModuleCat/ChangeOfRings/Quotient.lean",
+      "reviewed_sha256": "e037eaeca1e1d510a298fed1c7ff383332f8ae1156814ab6ec807650445c3ce2",
+      "integrated_sha256": "e037eaeca1e1d510a298fed1c7ff383332f8ae1156814ab6ec807650445c3ce2",
+      "integrated_olean_sha256": "ca0720008029d865ed8c8d436788156888451eddba27813d815d0823e0912ab8"
+    },
+    {
+      "path": "Colib/CategoryTheory/Abelian/ExtAdjunctionLinear.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/CategoryTheory/Abelian/ExtAdjunctionLinear.lean",
+      "reviewed_sha256": "a2a82cc0b29ea9bfead99b8afd5bb8eb4a3d88edfb1ab112667b67ef77646507",
+      "integrated_sha256": "a2a82cc0b29ea9bfead99b8afd5bb8eb4a3d88edfb1ab112667b67ef77646507",
+      "integrated_olean_sha256": "dd588db5e7933b26b4e42cb413fff9c500f163abcb33a38bfcb8c6ac89cf55e6"
+    },
+    {
+      "path": "Colib/CategoryTheory/Abelian/Projective/CochainComparison.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/CategoryTheory/Abelian/Projective/CochainComparison.lean",
+      "reviewed_sha256": "64da85a3e1eecb691d517ac710804aa5243212446ca1fe88d6c2679ddbb23538",
+      "integrated_sha256": "64da85a3e1eecb691d517ac710804aa5243212446ca1fe88d6c2679ddbb23538",
+      "integrated_olean_sha256": "e5d70a2aa81d741f13acff051cba0b33d2a40d5d5ba83e7bc11e931dfec716f0"
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/TopExtBaseChange.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/RingTheory/Koszul/TopExtBaseChange.lean",
+      "reviewed_sha256": "736d7059941fd80f4ef4af9fa4b5579f03a9e4045f367f9ff12a57bb541ed016",
+      "integrated_sha256": "ce9c6c8fc9c32066d39415b4b6609f3c44bd6ebdfea7f2e4c0806d883afb28f2",
+      "integrated_olean_sha256": "b9ffa4460a82e20bc259c97d8e340d088db7642a817b7b7426897f5625a25b32"
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/TopExtBaseChangeQuotient.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/RingTheory/Koszul/TopExtBaseChangeQuotient.lean",
+      "reviewed_sha256": "12f99936f14caf9113c7863a2557a0295bf254e15ac31988ec0b765e0d0122a8",
+      "integrated_sha256": "c56b8783504f26ce6c8f99190e6f9bded98017fcc149c5d691c4bae5b164f7c4",
+      "integrated_olean_sha256": "184bc25f1ffeb6f8ff67d32987817db7ddef5ad3fc20acceb3cbaaadfc14e826"
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/ScalarExtensionComparison.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/RingTheory/Koszul/ScalarExtensionComparison.lean",
+      "reviewed_sha256": "c49a19b183c21ce40db77c9745716aa469d2bcf67e4dd8bbdcf477ea5468b267",
+      "integrated_sha256": "c49a19b183c21ce40db77c9745716aa469d2bcf67e4dd8bbdcf477ea5468b267",
+      "integrated_olean_sha256": "68c755de9e8b89424f148d6cdb04196764b95f213fa1ce94f34a050e72e844a6"
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/TopExtBaseChangeNormalization.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/Colib/RingTheory/Koszul/TopExtBaseChangeNormalization.lean",
+      "reviewed_sha256": "82e03c127922def52d64bb7ba5609fbdd3f2b954735d94e4cab2898974c6a5fb",
+      "integrated_sha256": "641a6f6e64aad2253222d9cf690d89e90c7109cd96d743ce9abac3048b07cf4a",
+      "integrated_olean_sha256": "2f80ab9a9d65c18d4c8f220870efffdc1666f0c2950bdec40c473a53ffa1b2b6"
+    },
+    {
+      "path": "ColibTest/TopExtBaseChange.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/ColibTest/TopExtBaseChange.lean",
+      "reviewed_sha256": "d540f05f0caa84436c44f3c53f6a23b313a8307fb8d238625b9319e583792478",
+      "integrated_sha256": "d540f05f0caa84436c44f3c53f6a23b313a8307fb8d238625b9319e583792478",
+      "integrated_olean_sha256": "adc6d1c5b9a25976620386d4fc0792a793b3a35473353eb9b270878b37b49a0f"
+    },
+    {
+      "path": "ColibTest/TopExtBaseChangeQuotient.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/ColibTest/TopExtBaseChangeQuotient.lean",
+      "reviewed_sha256": "756096133089b74cda3dbafcfe7efbdbb1499e6bd2ac914ff8986a67a59c3e41",
+      "integrated_sha256": "756096133089b74cda3dbafcfe7efbdbb1499e6bd2ac914ff8986a67a59c3e41",
+      "integrated_olean_sha256": "69aee05645bcd4f82b9b00a4e6a8bdf69b74bb89081671e84c7faf6296fd358a"
+    },
+    {
+      "path": "ColibTest/TopExtBaseChangeNormalization.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012/ColibTest/TopExtBaseChangeNormalization.lean",
+      "reviewed_sha256": "eaa1363fa791d9cd61e90156f0487f25b623aa4de2a70841cc97289ce7c1eb5c",
+      "integrated_sha256": "eaa1363fa791d9cd61e90156f0487f25b623aa4de2a70841cc97289ce7c1eb5c",
+      "integrated_olean_sha256": "e0393af25869e91e7d46121d6de40271f10eae94a9d6c80d45f3cbe345b4affc"
+    },
+    {
+      "path": "Colib/CategoryTheory/Abelian/Projective/ExactFunctor.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-projective-exact-20261105-1508/Colib/CategoryTheory/Abelian/Projective/ExactFunctor.lean",
+      "reviewed_sha256": "31259a38b3072828fce36dfd32647dcb6afa4ce74876af5d3928fffa489a0693",
+      "integrated_sha256": "3c15d9e5cbbbfc713f1f3f314b62187c5a2ab5f4c3a822570e58640843a85c22",
+      "integrated_olean_sha256": "f3137250aef3c4d76e6f2b2083f794b131876abb1a40d8395eabad8c0e7ff428"
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/CoefficientAugmentation.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-coeff-augmentation-universes-20261105-1505/Colib/RingTheory/Koszul/CoefficientAugmentation.lean",
+      "reviewed_sha256": "0ff2e6db3ee5f4a93b2e61331a0fef6b2e71101f74b10c8172da5371ff4725b6",
+      "integrated_sha256": "6e3e2fb2022910ee681499f43e97d7199b3c6302af870b66484630459895ab87",
+      "integrated_olean_sha256": "2ab6214e7a2f77e6501dbc5daba255f45c2c30c7494950b0346db4dd75bec7a7"
+    },
+    {
+      "path": "ColibTest/KoszulCoefficientAugmentation.lean",
+      "reviewed_source": "/workspace/scratch/ab4c8cd79b02/colib-coeff-augmentation-universes-20261105-1505/ColibTest/KoszulCoefficientAugmentation.lean",
+      "reviewed_sha256": "28d1b0bdd62d7ab4185c95a76a6ba495f5c32cef4afa0c3999e833ce0443c17c",
+      "integrated_sha256": "28d1b0bdd62d7ab4185c95a76a6ba495f5c32cef4afa0c3999e833ce0443c17c",
+      "integrated_olean_sha256": "8a9bb0b057fa0a6608cc15f5fbbd4673c60ddb75864cb8716e50ca641bb99ef6"
+    }
+  ],
+  "review_status": "Three independent component reviews completed without blocking mathematical findings. Reviews cover the exact reviewed hashes, not the subsequent registration or documentation additions. Coefficient augmentation and ExactFunctor reviews were confirmed by the parent.",
+  "validation": {
+    "status": "Full native integration checks passed on ae9601b plus these registered sources. No kernel replay, resource-limit increase, commit or push.",
+    "coefficient_receipts": [
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/coefficient-augmentation-universes-build-r1.json",
+        "sha256": "5068d68a0d794c90ff1bf8bc534444482443dbc9e3f4332ce5caa0de92cc696c",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "+Colib.RingTheory.Koszul.CoefficientAugmentation",
+          "+ColibTest.KoszulCoefficientAugmentation"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2650345472,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/coefficient-augmentation-universes-lint.json",
+        "sha256": "d2a54338f782f8f7a30dedb102a4ac8f3faca15ba873528b6369b40f795ee50b",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Koszul.CoefficientAugmentation",
+          "ColibTest.KoszulCoefficientAugmentation"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 6003802112,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/coefficient-augmentation-universes-style.json",
+        "sha256": "4da1ccddeff93c6338d8d8f95d1afef8da97796314a4628884f6d43c52a0b26c",
+        "state": "completed",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.RingTheory.Koszul.CoefficientAugmentation",
+          "ColibTest.KoszulCoefficientAugmentation"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1718210560,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      }
+    ],
+    "exact_functor_receipts": [
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-projective-exact-20261105-1508/compile-final.json",
+        "sha256": "e96758c4f67e5fe55f9ac3fee43684e6e903becd93fa8e449d795003e3d4948d",
+        "state": "completed",
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "-DwarningAsError=true",
+          "-DautoImplicit=false",
+          "-Dlinter.mathlibStandardSet=true",
+          "-o",
+          ".lake/build/lib/lean/Colib/CategoryTheory/Abelian/Projective/ExactFunctor.olean",
+          "Colib/CategoryTheory/Abelian/Projective/ExactFunctor.lean"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2338459648,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      },
+      {
+        "path": "/workspace/scratch/ab4c8cd79b02/colib-projective-exact-20261105-1508/verify.json",
+        "sha256": "e49c072b482909190e885bd064e97169bf37cb55b8952557855d68b5f26e531b",
+        "state": "completed",
+        "command": [
+          "lake",
+          "env",
+          "lean",
+          "-DwarningAsError=true",
+          "-DautoImplicit=false",
+          "Verify.lean"
+        ],
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3366268928,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true
+      }
+    ],
+    "aggregate": {
+      "path": "/tmp/colib-koszul-check-r4-receipt.json",
+      "sha256": "25c9ea7c9d4620df59377a53f779292a167ea215775a80970e1508b3f63570e7",
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib && bash scripts/check.sh"
+      ],
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6782943232,
+      "duration_seconds": 59.9635802039993,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "log": "/tmp/colib-koszul-check-r4.log",
+      "log_sha256": "41e9374987bd82f42a5b6b72446bf3f53a7c8c239fcb76212df996f48acbb918",
+      "axiom_audit": "2504 declarations under Colib; only propext, Classical.choice, Quot.sound",
+      "catalog": "166 items; 549 indexed declarations; 6 chapters; 18 sections; 12 reference pages",
+      "source_consistency": "After the successful run only ledger metadata was finalized; no Lean source changed."
+    },
+    "earlier_baseline_aggregate": {
+      "path": "/tmp/colib-koszul-check-r3-receipt.json",
+      "sha256": "3fc16bd16aa089986ac3d0bbf92068546e1309c29d9f7285f4bec71f57ba8382",
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib && bash scripts/check.sh"
+      ],
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 7602860032,
+      "duration_seconds": 58.560448028030805,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true
+    },
+    "repairs": [
+      "First full run passed build, tests, lint, style and axiom audit, then catalog rejected missing precise source references for COL-0164 and COL-0166. Added pinned Mathlib ingredient citations.",
+      "Second run rejected two citation-attribute long lines. Wrapped the attributes without mathematical changes. Third run passed on e8e94fd.",
+      "Preserved subsequent ae9601b concurrent Waldhausen work; restored its verified official native cache and one Mathlib dependency. Fourth full run passed.",
+      "The optional Stacks cache restore rejected symlinked artifact parents; it was not bypassed or retried. Existing pinned Stacks artifacts already covered the complete closure."
+    ],
+    "cache_verification": [
+      "colib-prepared-cache-e8e94fd-20261105/verification.json",
+      "colib-prepared-cache-ae9601b-20261105/verification.json"
+    ]
+  },
+  "independent_reviews": [
+    {
+      "scope": "Base-ring localization",
+      "reviewer": "review_top_base_change",
+      "result": "No mathematical wiring error. Actual Ext over the target ring, exact adjunction triangle, independent HasExt sizes, arbitrary coefficients and zero length checked. Fin n plus IsKoszulRegular is not a claim to cover the full old List/IsWeaklyRegular API.",
+      "evidence": "top-ext-base-change-static-receipts-20261105.json; SHA256 24742b6db795db9d605492115c9ca43f224b8c13abac87c38a7cba337e891630",
+      "limits": "Historical receipt files lack runtime source-hash bindings. Original merged lint exited 137 and build-r1 exited 1. Successful build-r2 and individual lints/style are recorded separately. No prior separate test declaration-lint receipt."
+    },
+    {
+      "scope": "Actual quotient-source comparison",
+      "reviewer": "review_basechange_quotient",
+      "result": "Canonical tensor quotient inverse and pure-tensor formula checked; Ext precomposition with quotient iso inverse has correct variance. All three source/olean hashes and five receipts matched. Unit formula is only over original R complex.",
+      "limits": "Does not review the subsequent native normalization. No prior dedicated unit-formula or map-span consumer example; non-blocking."
+    },
+    {
+      "scope": "Native target-ring normalization",
+      "reviewer": "review_native_basechange",
+      "reviewed_at": "2026-11-05T15:59:00Z",
+      "result": "Actual exterior chain iso, augmentation and inverse square, native top coordinate 1 tensor m, quotient inverse Ext orientation, derived/shift transports, flatness-derived regularity and exactness checked. Literal mapped-sequence quotient, zero length, arbitrary coefficients and independent Ext sizes retained. Five source hashes and final receipts independently matched.",
+      "limits": "No old recursive/named Aglib model comparison or geometric purity. test-r1 contains a repaired test failure; only its printed standard-three axiom closure is cited."
+    }
+  ],
+  "integration_edits": "Only Library imports/attributes and attribution comments were added to reviewed production source. Mathematical statements and proofs are unchanged.",
+  "previous_base_main": "e8e94fd934d4ba446cfc51c9191a9667900427a8",
+  "concurrency": "Preserved all concurrent Waldhausen changes from ae9601b; merged only root imports and the test list."
+}

@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0138"
+title = "All-length top Ext naturality and scalars"
+kind = "theorem"
+section = "projective-dimension"
+order = 150
+statement = "The all-length coefficient quotient equivalence intertwines actual quotient maps with Yoneda postcomposition. Quotient scalars are source-multiplication precomposition, and ring representatives also act by coefficient-scalar postcomposition."
+scope = "All finite lengths including zero, a commutative ring and native Koszul-regular sequence, arbitrary same-universe coefficient modules and independent Ext universe. No coefficient regularity, finiteness, flatness or Noetherianity. This concerns native classes, not comparison with old named Aglib classes. Stacks 06XP provides Yoneda composition background, not the quotient-scalar calculation verbatim."
+review = "author_checked"
+provenance = "aglib"
+proof = "Reuse positive-length naturality. For zero length, descend by literal coefficient representatives and native class naturality. Apply the existing quotient-source action and generic Ext scalar identities."

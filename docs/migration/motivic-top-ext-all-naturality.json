@@ -1,0 +1,163 @@
+{
+  "topic": "All-length top Ext naturality and scalar compatibility",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Ext/Coefficients.lean",
+      "sha256": "83fe79562bf679c076e20e6e8800ef13aa00fcb5451c34c5b17d6c3d2930c7a6"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
+      "sha256": "6a21d3c77634df5c3b44ec2f3d98dac3dc4f1c50e56c9a78e68190faaa2822c3"
+    }
+  ],
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "scope": "Any finite sequence length including zero; commutative ring and native Koszul regularity; arbitrary coefficient modules and HasExt universe. The actual mapQ coefficient morphism intertwines with native Yoneda postcomposition. Quotient scalars act by source multiplication precomposition; ring representatives also act by coefficient scalar postcomposition.",
+  "upstream_audit": "Reuses existing Colib positive-length naturality verbatim in the successor branch; only zero branch uses the already-proved all-length representative formula and native coefficient class naturality. Scalar identities reuse the generic native quotientSourceModule_smul_eq_precomp and Mathlib Ext.smul_eq_comp_mk\u2080. No new action, quotient, complex, or class.",
+  "declarations": [
+    "Koszul.seqTopExtQuotientLinearEquivAll_naturality",
+    "Koszul.seqTopExtQuotientLinearEquivAll_smul",
+    "Koszul.seqTopExtQuotientLinearEquivAll_mk_smul"
+  ],
+  "limits": [
+    "Statements concern the canonical native classes, not compiled old Aglib named-class equality.",
+    "No Aglib environment/cache recovery or kernel replay.",
+    "Shared Library tags and full integration remain parent-owned."
+  ],
+  "validation": {
+    "status": "Native build, regression tests, declaration/style lint passed; slot released.",
+    "guard_script": "colib-environment-20261105/run_guarded_extonequotient_worktree.py",
+    "guard": "Native Lean 4.34.0-rc2; one process via flock; -j1 -M4983; RSS cap 7475 MiB.",
+    "runs": [
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-naturality-build.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtAllNaturality",
+          "ColibTest.TopExtAllNaturality"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2590081024,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-naturality-build-r2.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtAllNaturality",
+          "ColibTest.TopExtAllNaturality"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4314234880,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-naturality-lint.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Koszul.TopExtAllNaturality"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4308942848,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-naturality-style.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.RingTheory.Koszul.TopExtAllNaturality",
+          "ColibTest.TopExtAllNaturality"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1729855488,
+        "owned_group_gone": true
+      }
+    ],
+    "hashes": {
+      "Colib/RingTheory/Koszul/TopExtAllNaturality.lean": "1fad05a611e895a73b1d96398f2dfbe9817e159ee63ffb6efec393b0179d45ea",
+      "ColibTest/TopExtAllNaturality.lean": "733bb2e64014c234ec0c3c3e16fdcb26ce94f268325e6e532158950245e4f758",
+      ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtAllNaturality.olean": "da807bac7b5721f51d9e45549ddcbf72d06a610faac9ad1ec6b595a45819d6ae",
+      ".lake/build/lib/lean/ColibTest/TopExtAllNaturality.olean": "01280c3b064fe680e8d1bcb35c474d01f997568d20089307270e0f34321d2371"
+    },
+    "repair": "Used let instead of letI for local proposition-proof instances as required by native style lint. No mathematical changes or options raised.",
+    "tests": [
+      "Empty-sequence quotient scalar acts by actual source multiplication.",
+      "Arbitrary-length representative naturality for arbitrary coefficient morphism."
+    ],
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-all-natural-f215f7a-20261105-1342",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6929985536,
+      "duration_seconds": 57.437015522038564,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-all-natural-check-receipt.json",
+      "receipt_sha256": "00cb65ca4c2aacad39fd101aafbc7c2f5f1436ba7ac77db58d6c2e5824499672",
+      "log": "/tmp/colib-all-natural-check.log",
+      "log_sha256": "fec35bdf674d635046b34823cb626938ca0f3b171d78cb2acb8fafcd9e654190",
+      "kernel_replay": false,
+      "hashes": {
+        "Colib/RingTheory/Koszul/TopExtAllNaturality.lean": "51d8e839b35675592dcc6a4922322f4194fac99217f13b8e17bb0b02eb5cd111",
+        ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtAllNaturality.olean": "36984359c69bb0538c4c3f597ddc477e0621764a749a137933d369ad7cbe5095",
+        "ColibTest/TopExtAllNaturality.lean": "f24671208e1db4914a4fc76ec158abce1830d3ce26403ee414468e291e0e7233",
+        ".lake/build/lib/lean/ColibTest/TopExtAllNaturality.olean": "4e66f6a9d1ba97bae27d8e62c546b3eeccf5e12bd6da508835878e6205ec657a"
+      },
+      "tests": "Empty source scalar formula; arbitrary-length representative naturality; arbitrary quotient-class mapQ square; arbitrary-length ring-representative scalar postcomposition."
+    },
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematics, actual mapQ/Yoneda directions, hypotheses/universes, source provenance, source/olean hashes and historical receipts. No reviewer compilation or kernel replay; added quotient-class and ring-scalar regressions are checked during integration."
+    }
+  },
+  "target_baseline": "f215f7a7263ffef7ef5babae0a191b65bd03f7a4",
+  "library_item": "COL-0138",
+  "literature": {
+    "tag": "06XP",
+    "relation": "ingredient",
+    "scope": "Yoneda composition background only; actual mapQ and quotient scalar compatibility are proved here."
+  }
+}

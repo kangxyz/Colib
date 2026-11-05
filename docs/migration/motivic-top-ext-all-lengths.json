@@ -286,5 +286,10 @@
   },
   "target_baseline": "2b8929b6276dd534f48302b4da00ee138f5c8b51",
   "library_item": "COL-0137",
-  "mathlib_attribution": "ExtZero's cocycle reduction adapts Mathlib ProjectiveResolution.extMk_eq_zero_iff by Jo\u00ebl Riou, copyright 2025; the corresponding copyright and author are retained. The new degree-zero step uses native strict boundedness."
+  "mathlib_attribution": "ExtZero's cocycle reduction adapts Mathlib ProjectiveResolution.extMk_eq_zero_iff by Jo\u00ebl Riou, copyright 2025; the corresponding copyright and author are retained. The new degree-zero step uses native strict boundedness.",
+  "subsequent_naturality_extension": {
+    "ledger": "motivic-top-ext-all-naturality.json",
+    "item": "COL-0138",
+    "scope": "All-length actual mapQ naturality and quotient/ring scalar formulas now supplied. Earlier validation and item scope remain historical; old named-class comparison and a separate toAddEquiv endpoint are not claimed."
+  }
 }

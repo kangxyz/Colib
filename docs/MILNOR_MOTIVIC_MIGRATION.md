@@ -488,3 +488,11 @@ quotient equivalence definitionally. This supplies quotient endpoints and
 representatives, not all-length naturality or old named Aglib class comparison.
 The generic reduction retains Joël Riou's Mathlib attribution. See
 `migration/motivic-top-ext-all-lengths.json`.
+
+### All-length top Ext naturality and scalars
+
+COL-0138 adds the actual coefficient mapQ/Yoneda square in every length,
+including zero. Quotient scalars use source multiplication and ring representatives
+also use coefficient scalar postcomposition. Existing native positive-length
+naturality and quotient actions are reused; no old named Aglib class comparison
+is claimed. See `migration/motivic-top-ext-all-naturality.json`.

@@ -423,3 +423,24 @@ passed complete guarded `scripts/check.sh`: 31 Python tests, eighteen Lean test
 modules, declaration/text lint, generated-entry check, 510-declaration production
 axiom audit and the 42-item Library/site. Remote Q-category contributions were
 preserved. Pins and resource limits were unchanged; no kernel replay was run.
+
+## Consolidated completed Milnor and Koszul migration (2026-11-05)
+
+The isolated consolidation starts from main 6993f8b and retains all of its work.
+The exact source branches, completed unpublished work, selected files and reassigned
+permanent IDs are recorded in migration/milnor-motivic-consolidation.json. Reused
+branch IDs are never treated as identities: mathematical item titles and compiled
+bindings determine the fresh consolidated IDs. Each canonical leaf is selected once.
+The four-universe specified e=1 residue proof is maintained once, with the original
+common-universe APIs as wrappers. Top Ext determinant and positive-length ring
+quotient results are complete in the native model. Old Aglib named-class/model
+comparison, canonical arbitrary-uniformizer naturality, ramification e != 1 and
+general coefficient top quotient equivalence remain distinct unfinished obligations.
+No publication or branch deletion is performed by this integration task.
+
+The complete unified guarded check passed: 52 Python tests,
+68 Lean test modules, build/lint/style, generated-entry check,
+1606-declaration axiom audit and 133-item Library/site with 398 indexed declarations.
+The exact receipt hashes, source revisions, compiled declaration inventory and source/olean
+hashes are recorded in the consolidation manifest and individual ledgers.
+No kernel replay or publication was performed by the integration worker.

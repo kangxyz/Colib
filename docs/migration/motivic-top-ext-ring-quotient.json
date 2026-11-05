@@ -1,0 +1,107 @@
+{
+  "topic": "Native positive-length top Ext quotient line",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_file": "Aglib/Algebra/Homology/Koszul/Ext/Quotient.lean",
+  "source_sha256": "25a2205d668e7c8418ae47c72188956fbfb2fe3d398fa3124e64ab2968715588",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "source_declarations": [
+    "ChainComplex.Koszul.topExtClass_ring_ker",
+    "ChainComplex.Koszul.topExtRingQuotientLinearEquiv",
+    "ChainComplex.Koszul.topExtRingQuotientLinearEquiv_apply_mk"
+  ],
+  "scope": "Positive sequence length n+1, commutative ring, native Koszul regularity, arbitrary HasExt universe. Kernel of native standard top-coordinate ring coefficient class is span(range f); actual ring quotient is equivalent to Ext^(n+1)(R/(f),R), linearly over the same quotient ring and retaining representatives.",
+  "upstream_audit": "Exact pinned Stacks DualExactness.mem_span_iff_exists_dual_d_eq already proves that a functional is a top dual boundary iff all its values are in the sequence ideal. Its existing topEquiv_topGen fixes the ordered wedge normalization. This batch bridges that fact to native ProjectiveResolution.extMk boundaries and quotientSourceModule; it does not duplicate duality or build coinduction.",
+  "declarations": [
+    "Koszul.seqTopExtClass_ring_eq_zero_iff",
+    "Koszul.seqTopExtClass_ring_ker",
+    "Koszul.seqTopExtRingLinearEquiv",
+    "Koszul.seqTopExtRingLinearEquiv_apply_mk",
+    "Koszul.seqTopExtRingQuotientLinearEquiv",
+    "Koszul.seqTopExtRingQuotientLinearEquiv_apply_mk"
+  ],
+  "limits": [
+    "Positive length only in this batch. The source empty-list case remains separate.",
+    "Ring coefficients only. General coefficient quotient equivalence remains separate.",
+    "No imported old Aglib named class comparison claimed.",
+    "No old environment/cache recovery or kernel replay."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/TopExtRingQuotient.lean",
+        "source_sha256": "18be5702757e36c56f12d31fee28f14e149871f20f5aac3919bb31b724c09c2b",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtRingQuotient.olean",
+        "olean_sha256": "4d65cd17f8d5d3ea4e9fd49a31c75ba6f2d9f74a898d38ebeb148cad510e2eb8"
+      },
+      {
+        "source": "ColibTest/TopExtRingQuotient.lean",
+        "source_sha256": "4d6a4a37baf373d263ce86e6d6a06a338bee56a9f39b255424f69e53975bd85c",
+        "olean": ".lake/build/lib/lean/ColibTest/TopExtRingQuotient.olean",
+        "olean_sha256": "f068422527438a86fc1c1ee370fccfd2c1fb47fdaf902b6cebbfa781e3745b56"
+      }
+    ]
+  },
+  "library_item": "COL-0119",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Composition paragraph after Lemma 13.27.6",
+    "relation": "ingredient only",
+    "scope": "Yoneda composition underlying the already explicit native source action, not the top quotient computation. Dual exactness is reused directly from pinned Stacks code."
+  },
+  "integration_test_scope": "Retains rank-two kernel and unit representative; adds n=0 parameter (length one), all positive-length literal representatives and the explicit quotientSourceModule scalar law.",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent original-source review passed for positive length n+1, ring coefficients, native Koszul regularity and independent Ext universe; actual boundary/dual exactness/top-generator kernel proof, literal quotient representatives and native quotientSourceModule scalar action. Source/artifact hashes, four historical receipts and dependency pins verified. Reviewer did not compile, audit axioms, replay kernel or validate newly added tests. No equivalence of old weak-regularity/list interface or named old class is asserted."
+  },
+  "consolidated_source": {
+    "source": "native-koszul-top-ring-quotient",
+    "revision_or_worktree": "ee31478ebaafef8a8875000e8f479004141c840f",
+    "source_ledger_sha256": "b0576a6f6da142a5af8da052bd0fa4194a62395bcea36cbcac7c3d2ac957261e",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.TopExtRingQuotient"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

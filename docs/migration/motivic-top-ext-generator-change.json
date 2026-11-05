@@ -1,0 +1,121 @@
+{
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Ext/Top.lean",
+      "sha256": "601dfa3d8e7560bfa8f45701ff81048d444cb1c29c663fd56288fefc08f03dbd"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Ext/GeneratorChange.lean",
+      "sha256": "72a1779c230c85dad8563e85d21b9d063b23b297d20a9f12cfd9a9a6681cdf86"
+    }
+  ],
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "topic": "Arbitrary-matrix determinant action on native top Koszul Ext classes",
+  "scope": "Finite square matrix M over any commutative R; f and M.mulVec f are Koszul-regular; arbitrary coefficient module N and HasExt universe. Pullback along the actual quotient map R/(Mf) -> R/(f) sends seqTopExtClass f x to seqTopExtClass (Mf) (det M \u2022 x).",
+  "chosen_model": "The same Stacks seqComplex, exteriorPower.map, koszulAugmentation and seqProjectiveResolution. No parallel complex, quotient or Ext representation.",
+  "upstream_reuse": [
+    "Stacks Functoriality.koszul_map_comm provides chain commutation for any linear map intertwining duals.",
+    "The transpose and double-sum proof adapt the actual Stacks seqComplex_mulVec_iso proof; its IsUnit hypothesis is needed for inverse maps only, not for this directed chain map.",
+    "Mathlib exteriorPower.zeroEquiv_naturality proves the actual augmentation square.",
+    "Stacks TorComparison.Determinant.map_top_pi_eq_det_smul and Mathlib Matrix.det_transpose identify the top coordinate.",
+    "Colib seqTopExtClass_covariance closes the Ext action through an actual supplied resolution.Hom."
+  ],
+  "upstream_audit": "Functoriality supplies an IsUnit-based isomorphism and generic ungraded commutation, not a public arbitrary-matrix augmented resolution map. Descent contains a private span_mulVec_le; the short public ideal-inclusion helper here uses Ideal.span_le and closure under linear combinations. No copied exterior algebra or rank-one coordinate model.",
+  "declarations": [
+    "Koszul.seqDual_comp_transpose",
+    "Koszul.seqComplexMatrixMap",
+    "Koszul.span_mulVec_le",
+    "Koszul.seqQuotientMatrixMap",
+    "Koszul.seqComplexMatrixMap_comp_augmentation",
+    "Koszul.seqProjectiveResolutionMatrixHom",
+    "Koszul.seqComplexMatrixMap_top",
+    "Koszul.seqTopExtClass_generatorChange"
+  ],
+  "source_correspondence": "The determinant conclusion of ChainComplex.Koszul.topExtClass_generatorChange, in the canonical Stacks realization. The source final endpoint assumes equal generated ideals; its internal ext_covariance allows inclusion, which is automatic here. The ordered wedge coordinate and transpose convention are explicitly checked.",
+  "limits": [
+    "The full determinant formula on the canonical native classes is the target; a theorem naming the old Aglib recursive-model class is not asserted.",
+    "No claim that regularity of f alone implies regularity of Mf for arbitrary M; both hypotheses are retained.",
+    "No IsUnit assumption and no claim that the quotient map or resolution comparison is an isomorphism.",
+    "No Aglib environment/cache recovery or kernel replay."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/TopExtGeneratorChange.lean",
+        "source_sha256": "43d80c122be3fdab768e8f85492cc631f9a4a04c0b421fb4020fe81467fd3e6b",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtGeneratorChange.olean",
+        "olean_sha256": "eefa96d2107200427e5c0bf2fdb61a024343bf5261eae3c6d7852be90af76c98"
+      },
+      {
+        "source": "ColibTest/TopExtGeneratorChange.lean",
+        "source_sha256": "e6ab9146062f15290060d0bb4106f40ce0801b9176a13897a96d4fe0c73f068a",
+        "olean": ".lake/build/lib/lean/ColibTest/TopExtGeneratorChange.olean",
+        "olean_sha256": "cc96447a3239a2c2d5b7aba7dc76e5256277653dbd8805555e05d1320ce38117"
+      }
+    ]
+  },
+  "library_item": "COL-0112",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Composition paragraph after Lemma 13.27.6",
+    "relation": "ingredient only",
+    "scope": "Yoneda composition, not the matrix construction or determinant formula. The determinant computation reuses the exact pinned Stacks exteriorPower.map_top_pi_eq_det_smul."
+  },
+  "integration_test_scope": "Original representative rfl and rank-two arbitrary-coefficient test retained; arbitrary n and explicit n=0 generator-change examples added.",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed: transpose direction K(Mf) to K(f), ideal-inclusion quotient map and contravariant Ext pullback, actual augmentation and resolution.Hom, top determinant coordinate without inverse/unit hypotheses or omitted signs, both regularity assumptions, arbitrary coefficients and independent Ext universe. Source/artifact hashes and three historical receipts verified; reviewer did not compile or run kernel replay. Canonical Stacks realization is not equality with the old named Aglib class."
+  },
+  "consolidated_source": {
+    "source": "native-koszul-top-ring-quotient",
+    "revision_or_worktree": "ee31478ebaafef8a8875000e8f479004141c840f",
+    "source_ledger_sha256": "2bfe76688459d88a6993fbf224af1a89e13e0edb8d187bd59012047d82a0642c",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.TopExtGeneratorChange"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

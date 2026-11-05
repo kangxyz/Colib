@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0119"
+title = "Positive-length top Koszul Ext quotient line"
+kind = "comparison"
+section = "projective-dimension"
+order = 120
+statement = "The standard top-coordinate ring-coefficient class has kernel exactly the sequence ideal, and identifies the actual ring quotient with top Ext linearly over that quotient ring while preserving every representative."
+scope = "Any commutative ring and Koszul-regular sequence of positive length n+1, ring coefficients only, and independent Ext universe. No properness or nontrivial-ring hypothesis. Empty sequences and arbitrary coefficient quotient equivalences are outside this item. Native quotientSourceModule is used explicitly. The old Aglib named class comparison remains pending. Stacks 06XP is Yoneda composition background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Reuse pinned dual exactness and the ordered top generator to identify boundaries with the sequence ideal, then native quotient-kernel equivalence and quotient scalar action."

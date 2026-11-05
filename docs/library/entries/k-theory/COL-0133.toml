@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0133"
+title = "Surjectivity of native DVR tame residue"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 270
+statement = "The native specified and canonical DVR tame residues are surjective onto every homogeneous target degree, including degree zero."
+scope = "Independent ring/fraction-field universes, arbitrary target classes, no characteristic, completeness or coefficient-field assumption. Specified version requires an irreducible uniformizer; canonical version uses the existing chosen uniformizer and requires no new independence theorem. This is a native consequence of normalization and local residue-unit lifting, not an Aglib same-name theorem."
+review = "author_checked"
+proof = "Use existing native symbols and tame residue, local unit lifting and homogeneous extensionality."

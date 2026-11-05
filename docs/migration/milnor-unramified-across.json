@@ -1,0 +1,156 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
+  "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Unramified e=1 residue naturality on the single native model, with four independent universes R,S,F,E and specified uniformizers pi,j pi. The common-DVR-universe restriction is removed; canonical arbitrary-uniformizer independence remains separate.",
+  "hypotheses": "R:Type u and S:Type v are DVRs; F:Type w and E:Type z their fraction fields; j:R\u2192+*S local; f:F\u2192+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); all n, all homogeneous classes. No valuation or unit-part compatibility assumptions.",
+  "declarations": [
+    {
+      "target": "Stacks.Chow.milnorKRingMapLift",
+      "source": "native milnorKRingMap and Mathlib TensorAlgebra.lift/RingCon.lift",
+      "disposition": "cross-universe extension directly between existing native MilnorKRing objects; no new quotient/grading model"
+    },
+    {
+      "target": "Stacks.Chow.milnorKRingMapLift_symbol / _symbolProd",
+      "source": "native symbol generator formula",
+      "disposition": "coordinatewise field transport"
+    },
+    {
+      "target": "Stacks.Chow.milnorKRingMapLift_coe",
+      "source": "existing homogeneous milnorKTheoryMap",
+      "disposition": "strict equality on every homogeneous class, proved by existing tuple extensionality"
+    },
+    {
+      "target": "Stacks.Chow.milnorKRingMapLift_eq",
+      "source": "Stacks milnorKRingMap",
+      "disposition": "strict equality of ring homomorphisms in a common universe, proved by native tensor induction"
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorShiftMap_shift_symbolProd_map_across",
+      "source": "native shift coefficient and source residue symbol recursion",
+      "disposition": "four-universe e=1 compatibility on arbitrary list symbols"
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol_map_across",
+      "source": "MilnorK.DVR.residue_restrict",
+      "source_lines": "129\u2013139",
+      "disposition": "all universe parameters and all n/classes retained; specified-uniformizer version rather than canonical source version"
+    }
+  ],
+  "proof": "Construct the cross-universe ring transport using Mathlib TensorAlgebra.lift directly to the native target quotient; TwoSidedIdeal.span_le verifies the Steinberg kernel. Compare strictly with native ring transport and every previously maintained homogeneous map. Reuse the native shift multiplication/list parity proof of e=1 naturality, now with the extended ring map. The actual field-map decomposition proves order/unit-part compatibility, not an extra assumption.",
+  "upstream_reuse": [
+    "exists_eq_unit_mul_zpow",
+    "dvrFracOrd_eq_of_eq",
+    "dvrFracUnitPart_map",
+    "MilnorKShift.shift_mul",
+    "milnorKInvolution_symbolProd",
+    "milnorKRingMap_symbol",
+    "milnorKTheoryMap_eq_transport",
+    "milnorKTheory_addHom_ext"
+  ],
+  "upstream_audit": "Pinned milnorKRingMap is constrained by {k1 k2 k3 : Type u}; the Mathlib universal maps used to construct it are not. The extension avoids the excessive Invariance\u2192MilnorNorm.ResidueConstants closure, agrees with native transport where available, and adds no replacement ring/quotient/grading/involution. Existing common-fraction-field upstream naturality remains upstream.",
+  "validation": {
+    "source_comparison": "author_checked: four-universe specified-uniformizer e=1 source specialization",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+        "source_sha256": "dd3855f9a8f94f7eb45364ba4b52869c1f632f1d202508088a21ef7c497d9d92",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.olean",
+        "olean_sha256": "7369c307097f2997c52184b049dc96e59102c853f0d87138e4b823bc862c29a2"
+      },
+      {
+        "source": "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
+        "source_sha256": "52efe532a783447f2b5c7a895bea8b84b7bc51add0e2acf6df0751fd68e49612",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/RingTransport.olean",
+        "olean_sha256": "2911be498b9eb95937c21d5e810886c4245f386795ddad853861556a0c8b099a"
+      },
+      {
+        "source": "ColibTest/MilnorUnramifiedMapAcross.lean",
+        "source_sha256": "16ef70688caace3595be715423120589ffacbfca12bba8019fe5b787e060d739",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorUnramifiedMapAcross.olean",
+        "olean_sha256": "9182424899c697d2b873f0ce38e136eace917ed882266bbdf8110e995763f8cd"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": [
+    "COL-0111",
+    "COL-0113"
+  ],
+  "extraction_candidate": "Generalize universe parameters of native Stacks milnorKRingMap/transport at their owner; the comparison theorem supplies exact compatibility for such upstream work.",
+  "remaining_obligations": [
+    "Canonical arbitrary-uniformizer formulation should reuse upstream invariance after lowering its imports.",
+    "Ramification index e other than one is not addressed."
+  ],
+  "integration_recommendation": "Prefer replacing the prior restricted UnramifiedMap implementation with this general proof, preserving its public name as a wrapper or generalizing its signature. Avoid maintaining two independent proof chains long term. Parent owns shared integration/IDs.",
+  "supporting_public_declaration": "Stacks.Chow.dvrFracOrd_map_across: promoted from the private helper solely to support the old public compatibility signature.",
+  "compatibility": "UnramifiedMap imports the general leaf; all three old public signatures are wrappers. The old list recursion and private helpers were removed, leaving one general proof.",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "relation": "DVR tame-symbol/construction background only",
+    "scope": "The cross-universe extension and specified e=1 formula are proved from pinned native models; the tag does not state universe polymorphism or canonical naturality."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent original-source review passed: direct tensor/congruence lift to native quotient and Steinberg kernel, strict equality on all homogeneous classes and with original common-universe ring map, four independent universes, all-degree specified e=1 additive square, full shift recursion signs and minus-one term. Source/artifact and six historical receipt hashes checked; no reviewer compilation/kernel replay or review of modified wrapper bytes. Integrated helper exposure and wrappers are separately compiled and tested."
+  },
+  "consolidated_source": {
+    "source": "milnor-unramified-four-universes",
+    "revision_or_worktree": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+    "source_ledger_sha256": "2b4943c1fc807f65cf97523f447ecf029f2171897d8b63c4d5329fa67fc1e616",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorUnramifiedMapAcross"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

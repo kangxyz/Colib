@@ -1,0 +1,147 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Map",
+  "source_sha256": "50b66c05062b5d9fc512fe7d63be4aa09a5a7d2455d8fdfbc3d1135648bbd0d2",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Symbols.Transport",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Field functoriality for every nonnegative degree on the native Stacks MilnorKTheory, preserving independent field universes u/v/w. Equality with the native Stacks milnorKTransport.toIntLinearMap is proved when the universes agree.",
+  "hypotheses": "Fields k : Type u, K : Type v, L : Type w, ring homomorphisms, n : Nat. No injectivity or characteristic assumptions beyond fields.",
+  "declarations": [
+    {
+      "source": "MilnorK.map",
+      "target": "milnorKTheoryMap",
+      "disposition": "proof rewrite on native model retaining independent universes",
+      "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.map_symbol",
+      "target": "milnorKTheoryMap_tupleSymbol",
+      "disposition": "proof rewrite on native model retaining independent universes",
+      "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.map_id",
+      "target": "milnorKTheoryMap_id",
+      "disposition": "proof rewrite on native model retaining independent universes",
+      "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.map_comp",
+      "target": "milnorKTheoryMap_comp",
+      "disposition": "proof rewrite on native model retaining independent universes",
+      "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.mapAdd",
+      "target": "(milnorKTheoryMap \u03c6 n).toAddMonoidHom",
+      "disposition": "use existing forgetful operation; no duplicate definition",
+      "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "MilnorK.mapAdd_symbol",
+      "target": "milnorKTheoryMap_tupleSymbol",
+      "disposition": "same theorem applies definitionally to toAddMonoidHom; tested explicitly",
+      "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    }
+  ],
+  "upstream_gap_audit": {
+    "module": "StacksFrontier.AlgebraicGeometry.Chow.KeyLemma.MilnorKTransport",
+    "lines": "42\u201344",
+    "gap": "Pinned transport and its supporting ring/tensor maps bind all fields in Type u. Its functor laws are already present in that common universe. The source explicitly requires independent u/v/w.",
+    "resolution": "Use the already-proved universal lift on the same native objects, and prove literal equality of maps in the overlapping common-universe case. Do not duplicate the native ring or tensor transport implementation.",
+    "supporting_declarations": [
+      "milnorKRingMap_symbol",
+      "milnorKTransport_tupleSymbol",
+      "milnorKTheoryMap_eq_transport",
+      "milnorKTupleSymbol_comp_unitsMap_isSymbolMap"
+    ]
+  },
+  "proof": "Field images preserve coordinate multiplication and the equation a+b=1. The native universal lift then gives the map. Tuple evaluation is the existing lift evaluation; id and composition use native tuple extensionality. Existing native ring transport evaluation on generators and multiplicativity give its tuple formula, and native extensionality identifies the two maps.",
+  "validation": {
+    "source_comparison": "author_checked; exact original universes and all degree conditions retained",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+        "source_sha256": "9858482cb1200fdb0b90e37e54d6f53a23c969ae02e9f7e3f9583ee65bccc407",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Transport.olean",
+        "olean_sha256": "e46f5ae80d3904d882d95e6f1d9f0b224fa90337ae9a84ed19f434d28513ac46"
+      },
+      {
+        "source": "ColibTest/MilnorTransport.lean",
+        "source_sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorTransport.olean",
+        "olean_sha256": "8b6c1b9a216297c614ed5715a21c758fd4db7a43a339b22074f8fddd615c3420"
+      }
+    ]
+  },
+  "library_item": "COL-0115",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "literature": {
+    "reference": "Stacks Project, Tag 0EAY, first paragraph",
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "relation": "consequence",
+    "scope": "Functoriality from the defining generators and relations; independent-universe Lean implementation is not an explicit statement of the tag. Reuse repository verified reference.",
+    "retrieved_html_sha256": "3fb1e7be94522221ff9945a910ca8b6f67b5f80ffe74253efe22a8bc4c1d7df4"
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only source and mathematical correspondence review passed: all six source endpoints, independent u/v/w, every natural degree, identities/composition and exact equality with native common-universe transport. mapAdd reuses toAddMonoidHom. Source blob hash, pinned Mathlib/Stacks revisions and copyright verified. No compilation or kernel replay by the reviewer."
+  },
+  "consolidated_source": {
+    "source": "milnor-unramified-four-universes",
+    "revision_or_worktree": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+    "source_ledger_sha256": "d77e3d88db7ceb04da409760b48edaefed2ae625815ae53822554de959c416da",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorTransport"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

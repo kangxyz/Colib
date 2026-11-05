@@ -1,0 +1,123 @@
+{
+  "topic": "Canonical native top Koszul Ext coefficient classes and conditional covariance",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Ext/Top.lean",
+      "sha256": "601dfa3d8e7560bfa8f45701ff81048d444cb1c29c663fd56288fefc08f03dbd"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Ext/GeneratorChange.lean",
+      "sha256": "72a1779c230c85dad8563e85d21b9d063b23b297d20a9f12cfd9a9a6681cdf86"
+    }
+  ],
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "scope": "Any finite length n, commutative ring, Koszul-regular native sequence f, arbitrary coefficient module and HasExt universe. The literal native top-coordinate cocycle gives an R-linear surjection N -> Ext^n(R/(f),N), coefficient naturality, and a positive-degree boundary criterion. Supplied native resolution comparison plus a top-coordinate scalar square gives covariance by that scalar.",
+  "source_declarations": [
+    "ChainComplex.Koszul.topExtClass",
+    "ChainComplex.Koszul.topExtClass_apply",
+    "ChainComplex.Koszul.topExtClass_surjective",
+    "ChainComplex.Koszul.topExtClass_comp_mk\u2080",
+    "ChainComplex.Koszul.topExtClass_eq_zero_iff",
+    "ChainComplex.Koszul.GeneratorChange.ext_covariance (proof mechanism)"
+  ],
+  "upstream_audit": [
+    "Stacks TorComparison.TopHomology defines topEquiv and proves topEquiv_topGen: the ordered wedge maps to 1. Reused without recreating basis or orientation.",
+    "Stacks seqProjectiveResolution and seqComplex_isZero_of_lt supply resolution and top cocycle.",
+    "Mathlib ProjectiveResolution.extMk_surjective and extMk_eq_zero_iff supply classification and boundaries.",
+    "Mathlib ProjectiveResolution.mk\u2080_comp_extMk supplies pullback along actual supplied resolution comparisons.",
+    "Stacks TorComparison.Determinant already proves map_top_pi_eq_det_smul. Matrix-to-Koszul chain comparison and its augmentation square are supplied by the separate TopExtGeneratorChange leaf in this joint integration."
+  ],
+  "declarations": [
+    "Koszul.seqTopExtClass",
+    "Koszul.seqTopExtClass_apply",
+    "Koszul.seqTopExtClass_surjective",
+    "Koszul.seqTopExtClass_comp_mk\u2080",
+    "Koszul.seqTopExtClass_eq_zero_iff",
+    "Koszul.seqTopExtClass_covariance"
+  ],
+  "limits": [
+    "This general covariance API retains its supplied comparison and top-scalar hypotheses. The actual arbitrary-matrix construction and determinant specialization are now provided in motivic-top-ext-generator-change.json; old named Aglib class comparison remains pending.",
+    "No compiled comparison to the old Aglib named class or old recursive tensor complex.",
+    "Kernel not replayed; old environment/cache not restored."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/TopExtClass.lean",
+        "source_sha256": "62d8a578c66f0c3c696b41ac8e23c4a92199fd8fd51a686815f375f58c545a6c",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtClass.olean",
+        "olean_sha256": "09b8b42582691ed4ab8847995c559ae6c7a32eb0ebad7a12708ce8021eb2c1c7"
+      },
+      {
+        "source": "ColibTest/TopExtClass.lean",
+        "source_sha256": "7f3272d4e81432d2e3e4268b73a18325b58b2e18e66b913917f126caa9e77fe2",
+        "olean": ".lake/build/lib/lean/ColibTest/TopExtClass.olean",
+        "olean_sha256": "1526ac54f9040b362451d96b7b9e331388f82d6cbef55f8f7d3341c3e45af7bb"
+      }
+    ]
+  },
+  "library_item": "COL-0118",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Composition paragraph after Lemma 13.27.6",
+    "relation": "ingredient only",
+    "scope": "Yoneda composition, not the explicit native top coordinate classification or determinant comparison."
+  },
+  "integration_test_scope": "Retains Ext2 surjectivity, arbitrary-degree linearity and top-wedge normalization; adds degree-zero surjectivity, positive-degree boundary criterion, coefficient Yoneda naturality and explicitly conditional resolution covariance.",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed: actual native resolution and normalized ordered top wedge, all-degree construction/surjectivity/linearity/naturality including zero, positive-degree boundary criterion, correct contravariant comparison direction and explicit supplied top-coordinate scalar square. Source/artifact hashes and seven historical receipts verified; no reviewer compilation or kernel replay. No matrix comparison, augmentation proof or determinant scalar is provided. Exact historical cache write set was not independently certified."
+  },
+  "consolidated_source": {
+    "source": "native-koszul-top-ring-quotient",
+    "revision_or_worktree": "ee31478ebaafef8a8875000e8f479004141c840f",
+    "source_ledger_sha256": "61b23681c900c3c2278ce64af15005d06d06ae7dcb1bf94cb3d12203ae5ab178",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.TopExtClass"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

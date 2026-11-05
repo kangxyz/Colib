@@ -1,0 +1,116 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Basic",
+  "source_sha256": "e95f7b23ce0a17d80e05de4c8994b3762874d44f9d0363b342c715d37cf1fa94",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.RepeatedUniformizer",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Specified-uniformizer actual DVR specialization of all-degree repeated-uniformizer formula. Canonical residue evaluated at an arbitrary uniformizer remains pending. No general abstract DiscreteResidueData presentation is migrated.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; pi : R with Irreducible pi; n : Nat. Independent universes, arbitrary characteristic.",
+  "declarations": [
+    {
+      "source": "MilnorK.residue_symbol_uniformizers",
+      "target": "Stacks.Chow.dvrMilnorTameSymbol_tuple_uniformizers",
+      "disposition": "actual DVR specialization on native model; every n retained",
+      "scope_change": "Source abstract residue data are specialized to native actual DVR data attached to the stated irreducible uniformizer. This is not the canonical arbitrary-uniformizer endpoint MilnorK.DVR.residue_uniformizers."
+    }
+  ],
+  "supporting_declarations": [
+    "MilnorKShift.mk_zero_one_pow_succ",
+    "Stacks.Chow.dvrMilnorShiftMap_symbol_uniformizer"
+  ],
+  "proof": "Use native valuation one and unit part one of the chosen uniformizer, obtaining shift generator mk 0 1. Induction using the existing shift ring multiplication gives its (n+1)st power as mk 0 ({-1}^n). Native ordered tuple symbols of constant tuples are list products and hence powers. Extracting the native shift coefficient yields exactly n entries of -1, including the empty tuple when n=0.",
+  "upstream_reuse": [
+    "native MilnorKShift ring and multiplication",
+    "dvrFracOrd_eq_of_eq and dvrFracUnitPart_eq_of_eq",
+    "native dvrMilnorShiftMap and dvrMilnorTameSymbol",
+    "List.ofFn_const, map_replicate, prod_replicate"
+  ],
+  "validation": {
+    "source_comparison": "author_checked specialized actual DVR assumptions; no old-model equivalence claimed",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
+        "source_sha256": "a0cb3a3acecb54603b9605b4c47da39a733ed8f5ca51037c879b0340e404eb28",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.olean",
+        "olean_sha256": "b632500f979817d79fac771e4b5fccfbfcc6794bd435526a5b0174539a20c89a"
+      },
+      {
+        "source": "ColibTest/MilnorRepeatedUniformizer.lean",
+        "source_sha256": "14807ef4a3c9a39fb48592d568b6055d307fccb3f15240cf4016c2a117b14d85",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorRepeatedUniformizer.olean",
+        "olean_sha256": "4d6d3b99b86626cd57a455e98d0d72d1769014d40f29f3c269bb7b0b9ad12868"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0125",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, DVR residue",
+    "relation": "consequence",
+    "scope": "Computed from native shift relation and tame construction, not claimed as exact standalone text of the tag.",
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "retrieved_html_sha256": "3fb1e7be94522221ff9945a910ca8b6f67b5f80ffe74253efe22a8bc4c1d7df4"
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only review passed: native shift multiplication gives xi^(n+1)=(0,{-1}^n); uniformizer valuation/unit part, exact tuple extraction, n=0/1, independent universes and characteristic-free hypotheses checked. Source and copyright checked; only specified-uniformizer actual DVR specialization claimed. Corrected source-name prose and removed any nonvanishing assertion in the degree-two test; no proof changed. Reviewer did not recompile or run kernel replay."
+  },
+  "consolidated_source": {
+    "source": "milnor-residue-cone-sign",
+    "revision_or_worktree": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+    "source_ledger_sha256": "86b55edad267a04b6cd2e80111562f4dc497231eed7086c3ef2f84384d3a9497",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorRepeatedUniformizer"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

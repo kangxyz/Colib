@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0122"
+title = "Principal units vanish under DVR tame residue"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 160
+statement = "A symbol with a principal ring unit in any slot has zero DVR tame residue, for arbitrary other fraction-field unit entries. Its entire native shift-ring image already vanishes."
+scope = "A discrete valuation domain and fraction field in independent universes, every residue degree including zero. Both an arbitrary uniformizer and the canonical chosen-uniformizer map are covered. Stacks 0EAY is construction background for this consequence, not an exact statement of the principal-unit theorem. No full residue migration or old-model equivalence is asserted."
+review = "author_checked"
+provenance = "aglib"
+proof = "Native unit valuation and unit-part formulas kill both shift coordinates of a principal unit. Multiplicativity and the noncommutative zero-factor product lemma kill any containing tuple; take the tame coefficient."

@@ -1,0 +1,126 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
+  "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.Naturality",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Naturality of specified-uniformizer specialization under actual unramified local DVR maps; not arbitrary abstract residue data or ramified maps.",
+  "hypotheses": "Independent R,S,F,E universes; DVRs R,S, their fraction fields F,E; j:R\u2192+*S with IsLocalHom j; f:F\u2192+*E; hf: f(algebraMap R F r)=algebraMap S E(j r) for all r; Irreducible pi and Irreducible(j pi); all n including zero. No unit-part compatibility hypothesis.",
+  "declarations": [
+    {
+      "source": "MilnorK.K3.DVR.unitResidue_map / unitPart_map",
+      "source_module": "Aglib.KTheory.MilnorK.K3.DVRRestriction",
+      "source_lines": "122\u2013139",
+      "target": "Stacks.Chow.dvrFracUnitPart_map",
+      "disposition": "native multiplicative unit form; reuses Stacks fraction-unit decomposition instead of old normalizedLift model"
+    },
+    {
+      "source": "MilnorK.specialize_restrict",
+      "source_lines": "59\u201370",
+      "target": "Stacks.Chow.dvrMilnorSpecialization_map",
+      "disposition": "actual-DVR specialization, derives original compatibility condition from actual maps using hypotheses of source DVR section lines 119\u2013139"
+    }
+  ],
+  "proof": "Map the native exists_eq_unit_mul_zpow decomposition through f; apply dvrFracUnitPart_eq_of_eq to obtain the target unit part, then native ResidueField.map_residue. Extend to all homogeneous classes by the existing tuple extensionality and transport/specialization formulas.",
+  "upstream_reuse": [
+    "exists_eq_unit_mul_zpow",
+    "dvrFracUnitPart_eq_of_eq",
+    "IsLocalRing.ResidueField.map and map_residue",
+    "milnorKTheory_linearMap_ext",
+    "milnorKTheoryMap_tupleSymbol",
+    "dvrMilnorSpecialization_tupleSymbol"
+  ],
+  "upstream_audit": "Pinned Stacks supplies native unit decomposition and uniqueness, but no dvrFracUnitPart_map or homogeneous specialization naturality endpoint found. No alternate DVR/unit-part model is introduced.",
+  "validation": {
+    "source_comparison": "author_checked actual DVR specialization with derived unit-part compatibility; independent review pending.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+        "source_sha256": "1fd718b8b93ec03e6677275f21badfb1ebe3dbc75730845373fc87345b277d0a",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Naturality.olean",
+        "olean_sha256": "71c11d08f4976a07a22d5d64875186ac9b03c15a8d76bcb7ca65f2c6d5e51dfb"
+      },
+      {
+        "source": "ColibTest/MilnorNaturality.lean",
+        "source_sha256": "65298e29f837ab86925ef5e1d98cd158cdbcd2f171dd603dab5e95350687ecbb",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorNaturality.olean",
+        "olean_sha256": "025a9d5faa0afcfb9dd2ef1c52c95973eb5c546208552ee45eecf664e2029a65"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0130",
+  "extraction_candidate": "dvrFracUnitPart_map uses only native FractionUnits and residue-field maps; candidate for upstream low-level FractionUnits owner, independent of Milnor groups.",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tags 0EAH and 0EAY",
+    "relation": "consequence",
+    "scope": "Naturality follows from the native DVR unit decomposition and symbol construction. Do not claim an explicitly named standalone naturality theorem in these tags."
+  },
+  "nearby_existing": {
+    "module": "StacksFrontier.AlgebraicGeometry.Chow.DvrTameSymbol.Invariance",
+    "declaration": "dvrMilnorShiftMap_algebraMap",
+    "scope": "Same fraction field, same-universe DVRs and algebraMap; not the four-universe arbitrary compatible field-map homogeneous specialization endpoint."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent source/math/provenance/hash and historical receipt review passed. Four universes, local DVR map, compatible fraction-field map, both specified uniformizers irreducible, native decomposition/unit-part proof and all-degree homogeneous square verified. Ramification index one only. Reviewer did not compile or run kernel replay."
+  },
+  "consolidated_source": {
+    "source": "milnor-unramified-four-universes",
+    "revision_or_worktree": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+    "source_ledger_sha256": "2fc780fa7a6ae982c386803693f56ea7720b9cfc3ae83980116b49b97d53e5f0",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorNaturality"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

@@ -1,0 +1,2971 @@
+{
+  "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "source_branches": [
+    {
+      "branch": "migration/motivic-principal-ext",
+      "revision": "47fca59054929fc5a61eb9c75ee1a984f1199979"
+    },
+    {
+      "branch": "migration/milnor-transport-ext-quotient",
+      "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8"
+    },
+    {
+      "branch": "migration/transport-ext-principal-units",
+      "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96"
+    },
+    {
+      "branch": "migration/milnor-residue-cone-sign",
+      "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4"
+    },
+    {
+      "branch": "migration/basefield-connecting",
+      "revision": "45178bac37b0c2870840f7d50c31608427b791b0"
+    },
+    {
+      "branch": "migration/specialization-generator-transport",
+      "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5"
+    },
+    {
+      "branch": "migration/native-seq-specialization-product",
+      "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55"
+    },
+    {
+      "branch": "migration/dvr-naturality-generator-change",
+      "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b"
+    },
+    {
+      "branch": "migration/native-seq-generator-change",
+      "revision": "060343c42ce30a55dbbfc8985a97900b471028d6"
+    },
+    {
+      "branch": "migration/native-koszul-top-determinant",
+      "revision": "6cc47403535f13d0a9ad6ac239771ecb0e3c42c8"
+    },
+    {
+      "branch": "migration/milnor-right-unramified",
+      "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be"
+    },
+    {
+      "branch": "migration/milnor-unramified-four-universes",
+      "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b"
+    },
+    {
+      "branch": "migration/native-koszul-top-ring-quotient",
+      "revision": "ee31478ebaafef8a8875000e8f479004141c840f"
+    }
+  ],
+  "completed_unpublished": [
+    {
+      "source": "right-basefield-surjectivity",
+      "worktree": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+      "paths": [
+        "Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/Surjectivity.lean",
+        "Colib/KTheory/MilnorK/Symbols/Surjectivity.lean",
+        "ColibTest/MilnorRightBaseFieldProduct.lean",
+        "ColibTest/MilnorResidueSurjectivity.lean",
+        "docs/migration/milnor-right-basefield-product.json",
+        "docs/migration/milnor-residue-surjectivity.json"
+      ]
+    },
+    {
+      "source": "principal-ext-one-quotient",
+      "worktree": "/workspace/scratch/ab4c8cd79b02/colib-five-8a7b0b8-20261105-1025",
+      "paths": [
+        "Colib/RingTheory/Koszul/PrincipalExtOneQuotient.lean",
+        "ColibTest/PrincipalExtOneQuotient.lean",
+        "docs/migration/motivic-principal-ext-one-quotient.json"
+      ]
+    }
+  ],
+  "selected_files": [
+    {
+      "path": "Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "6596d92c37782b7735662d82b425b04396ef8cd1769bfb20cbd7197617d54f03",
+      "source_candidates": [
+        {
+          "source": "milnor-transport-ext-quotient",
+          "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8",
+          "sha256": "6af56706efe7381c92954f66d20e36cf1cca964799ce1390bd83af933b571280"
+        },
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "db4d6bdc2d69ff36b4d7d5d658887bf6b6cf2851bfa854dd57ceada6218582c1"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "6596d92c37782b7735662d82b425b04396ef8cd1769bfb20cbd7197617d54f03"
+        }
+      ]
+    },
+    {
+      "path": "Colib/Algebra/Homology/DerivedCategory/SingleCocycle.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "0fff6e1884ad9687d90b9d321c0fc6da45908ceaf7b7a2fcd070650bd3ddf1c5",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "0fff6e1884ad9687d90b9d321c0fc6da45908ceaf7b7a2fcd070650bd3ddf1c5"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "0fff6e1884ad9687d90b9d321c0fc6da45908ceaf7b7a2fcd070650bd3ddf1c5"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "0fff6e1884ad9687d90b9d321c0fc6da45908ceaf7b7a2fcd070650bd3ddf1c5"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "0fff6e1884ad9687d90b9d321c0fc6da45908ceaf7b7a2fcd070650bd3ddf1c5"
+        }
+      ]
+    },
+    {
+      "path": "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "d921e171c664e6f93cfd94151d00186342e65e91bd4a14e695edb432fbf57d84",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "d921e171c664e6f93cfd94151d00186342e65e91bd4a14e695edb432fbf57d84"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "d921e171c664e6f93cfd94151d00186342e65e91bd4a14e695edb432fbf57d84"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "d921e171c664e6f93cfd94151d00186342e65e91bd4a14e695edb432fbf57d84"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "d921e171c664e6f93cfd94151d00186342e65e91bd4a14e695edb432fbf57d84"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "d921e171c664e6f93cfd94151d00186342e65e91bd4a14e695edb432fbf57d84"
+        }
+      ]
+    },
+    {
+      "path": "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "2fd14c5a63fbdab2f257b4481d17fe983ada6781faa5e122a551aabbf818815a",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "2fd14c5a63fbdab2f257b4481d17fe983ada6781faa5e122a551aabbf818815a"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "2fd14c5a63fbdab2f257b4481d17fe983ada6781faa5e122a551aabbf818815a"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "2fd14c5a63fbdab2f257b4481d17fe983ada6781faa5e122a551aabbf818815a"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "2fd14c5a63fbdab2f257b4481d17fe983ada6781faa5e122a551aabbf818815a"
+        }
+      ]
+    },
+    {
+      "path": "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "831fea004bed43f9a270afdcc6e939b082c2f45bac6a5826cfb034642ec2b540",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "c1057126acec58858acb14a9175ddafb3698593326b30cadec71248fa64ee850"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "a32eeeebe993fb9adb8a3de0d454578a442f359c2052c669f163a5b7359be6ce"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "30e406c82c6047759cdeeb7cb446497e137dc6aec6c4d52e3d6bcc7f3430dc05"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "831fea004bed43f9a270afdcc6e939b082c2f45bac6a5826cfb034642ec2b540"
+        }
+      ]
+    },
+    {
+      "path": "Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "8dc0dfaba99c264ddcac5ccc91ad4892903df31b70653f69c31ed3c8e8e1172f",
+      "source_candidates": [
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "8dc0dfaba99c264ddcac5ccc91ad4892903df31b70653f69c31ed3c8e8e1172f"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "8dc0dfaba99c264ddcac5ccc91ad4892903df31b70653f69c31ed3c8e8e1172f"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "8dc0dfaba99c264ddcac5ccc91ad4892903df31b70653f69c31ed3c8e8e1172f"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+      "selected_source": "basefield-connecting",
+      "selected_revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+      "source_sha256": "0bdab99efc71649d522641ec1d87892c1568d21e00ad0ec199382faa8ef49591",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "0bdab99efc71649d522641ec1d87892c1568d21e00ad0ec199382faa8ef49591"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "db85b8ffd454f059febbb8bd9e8fafec221c11519bf012f16e81cb3137416333",
+      "source_candidates": [
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "9fc027f3b249dbca7bdd429bc5421e5f12a4632a7ec5ec7111c737256cc24d75"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "db85b8ffd454f059febbb8bd9e8fafec221c11519bf012f16e81cb3137416333"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "db85b8ffd454f059febbb8bd9e8fafec221c11519bf012f16e81cb3137416333"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/PrincipalUnits.lean",
+      "selected_source": "transport-ext-principal-units",
+      "selected_revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+      "source_sha256": "f330756edcd484cb3b25d90798d6ab8e80625a320b7e94448c2f1c01492fa17e",
+      "source_candidates": [
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "f330756edcd484cb3b25d90798d6ab8e80625a320b7e94448c2f1c01492fa17e"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
+      "selected_source": "milnor-residue-cone-sign",
+      "selected_revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+      "source_sha256": "0b0a1ea0c34a8598a07415ecbd8816998c814ad0733885e6c3637251854c4be7",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "0b0a1ea0c34a8598a07415ecbd8816998c814ad0733885e6c3637251854c4be7"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
+      "selected_source": "right-basefield-surjectivity",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+      "source_sha256": "19e732530bb4ffecc0e8b48b059cc1b577b034627d25e5879276852b4ca61efd",
+      "source_candidates": [
+        {
+          "source": "right-basefield-surjectivity",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+          "sha256": "19e732530bb4ffecc0e8b48b059cc1b577b034627d25e5879276852b4ca61efd"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "fd3c4c150cf86d304addc05b965b6602f2241dfc127117664da14a7ac83e16a1",
+      "source_candidates": [
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "fd3c4c150cf86d304addc05b965b6602f2241dfc127117664da14a7ac83e16a1"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "fd3c4c150cf86d304addc05b965b6602f2241dfc127117664da14a7ac83e16a1"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "bbeb6abd168b19824db3ecebda161ae460a1038fe34b42ad515c3c785cf381de",
+      "source_candidates": [
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "9f35de2eaea5d69ec6468ec4af67476422104b154f5626900b8de025ab0d9036"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "c31ef22daa4e3419b9a6387ff65bde0e6bbf1a20a7a41e7d17b74ed0316b7af9"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "1fac345fce8493ab5e43e71b3d1ce4be0dafdb3efaf67890df5fc9b82e10226f"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "bbeb6abd168b19824db3ecebda161ae460a1038fe34b42ad515c3c785cf381de"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "bbeb6abd168b19824db3ecebda161ae460a1038fe34b42ad515c3c785cf381de"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/SpecializationProduct.lean",
+      "selected_source": "native-seq-specialization-product",
+      "selected_revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+      "source_sha256": "30ab179986a9c86bb5ec9b660caa35fd8a9828076939fcfeef7ba5322af7c7e9",
+      "source_candidates": [
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "30ab179986a9c86bb5ec9b660caa35fd8a9828076939fcfeef7ba5322af7c7e9"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/Surjectivity.lean",
+      "selected_source": "right-basefield-surjectivity",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+      "source_sha256": "6e89c96eccab46e7c44bcac3391005871e6bb34abb756cfa8d921b77ae2d6ccb",
+      "source_candidates": [
+        {
+          "source": "right-basefield-surjectivity",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+          "sha256": "6e89c96eccab46e7c44bcac3391005871e6bb34abb756cfa8d921b77ae2d6ccb"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "13f0b0d63952eb6dd637553c98fd7320ed4b3d620268c678950b417aa99ad19d",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "414e05e2d0fd78968aa25b6b5400e8d7cb0e3db76a8287d4e107b1cedb4670c5"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "5a6d48a1b86e1526e8a093c420e4f9d18f14342afba2cf0b705a3e6b5bbc36b6"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "13f0b0d63952eb6dd637553c98fd7320ed4b3d620268c678950b417aa99ad19d"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "13f0b0d63952eb6dd637553c98fd7320ed4b3d620268c678950b417aa99ad19d"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "11bf0b5731df9e7f278796f40b3faff2affcba6d786ea8698897840ed48da7bf",
+      "source_candidates": [
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "825f51f1fdefb808e8b2374a5b174642e775286413c9da70d69b8d4b430ccc27"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "11bf0b5731df9e7f278796f40b3faff2affcba6d786ea8698897840ed48da7bf"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "49e430ae1171ec798850f3581029926026cf1748e94ee8006ef632e1f1cd9dea",
+      "source_candidates": [
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "49e430ae1171ec798850f3581029926026cf1748e94ee8006ef632e1f1cd9dea"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Symbols/Involution.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "4f124c6e650fbe1aea6491f944fa0fa3bfb55d6a3a4fb3e76c3f568c1b24dd96",
+      "source_candidates": [
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "4f124c6e650fbe1aea6491f944fa0fa3bfb55d6a3a4fb3e76c3f568c1b24dd96"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "4f124c6e650fbe1aea6491f944fa0fa3bfb55d6a3a4fb3e76c3f568c1b24dd96"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "dd1bbc97ce64095804c197ce6842bbbec1d50ce158239fa0c6c86c13e16ff5cb",
+      "source_candidates": [
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "dd1bbc97ce64095804c197ce6842bbbec1d50ce158239fa0c6c86c13e16ff5cb"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Symbols/Surjectivity.lean",
+      "selected_source": "right-basefield-surjectivity",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+      "source_sha256": "08ba17f1bb7b97f6a5bb3f9bd1910e0bdc2846e15a8a22dd7b1cb584f43ba2a1",
+      "source_candidates": [
+        {
+          "source": "right-basefield-surjectivity",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+          "sha256": "08ba17f1bb7b97f6a5bb3f9bd1910e0bdc2846e15a8a22dd7b1cb584f43ba2a1"
+        }
+      ]
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "7cf22e19a8368a51052c6a82b398a14c5fc9959d483ba15326153ca46c53b9e9",
+      "source_candidates": [
+        {
+          "source": "milnor-transport-ext-quotient",
+          "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8",
+          "sha256": "6a6d5ff795fa444a918b23c4d9d15b5881bf41a856135bd0f545dc17720cc106"
+        },
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "d53667fa29c7dec183e3107b11bf754210821f8a52deccb2be4d542566b9f795"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "a1f4459910fb423078627524e331083348177361078fd7755d3049189019c156"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "4318ac73b74a073c642fd45e691ad7a855b1a6698ee33b0767e619ebfdfa1e41"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "7cf22e19a8368a51052c6a82b398a14c5fc9959d483ba15326153ca46c53b9e9"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "7cf22e19a8368a51052c6a82b398a14c5fc9959d483ba15326153ca46c53b9e9"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "ab7642c2b320ec480db40ee62dc8cd3c5e6cfef745af4c277aa95a5752f1649e",
+      "source_candidates": [
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "80ac74c27dd3bbf125dd956ce819c3df34f123f2ff25f1780e221547655fa84a"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "759aa40d70da11f6d3fdc9842123efbf9a19d71ed998ce02cce5ff451e3ae955"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "ec109fe3d2194ac79c3753a48efd878b90facad20ecc30fc800877b119684163"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "ad6b1bc150f72ea81ef46c29702a64aa6d1882ddb7fc2adc717aaa52cb2c4a5e"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "ab7642c2b320ec480db40ee62dc8cd3c5e6cfef745af4c277aa95a5752f1649e"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/PrincipalExtOneQuotient.lean",
+      "selected_source": "principal-ext-one-quotient",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-five-8a7b0b8-20261105-1025",
+      "source_sha256": "be399bc371ac37669e25a2ca8a0d64f799df5b99b38932a627d975912b2eb26e",
+      "source_candidates": [
+        {
+          "source": "principal-ext-one-quotient",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-five-8a7b0b8-20261105-1025",
+          "sha256": "be399bc371ac37669e25a2ca8a0d64f799df5b99b38932a627d975912b2eb26e"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/PrincipalGeneratorChange.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "692aa748317b11933ca549660102a63f529fec5e27ea4b464853d7ae4654ec3d",
+      "source_candidates": [
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "26563a65c884b835d8728a716ec7b0e0ceb9087e8ee6c544786963b1e194cd4c"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "692aa748317b11933ca549660102a63f529fec5e27ea4b464853d7ae4654ec3d"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/PrincipalGeneratorTransport.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "74873c2b17f86450cd09261e7a5a5bf6f80579eb25f39aac6b3d7744694f6e7e",
+      "source_candidates": [
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "98123b762027ecd3fa2f24bfd6d53181c3be17a1295fdc27312d5b554841df8c"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "8e4739df9dea0e567ee619a6cc5480695831e69ce4a33f706803c839bebe0e43"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "74873c2b17f86450cd09261e7a5a5bf6f80579eb25f39aac6b3d7744694f6e7e"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/PrincipalSeqGenerator.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "38e35cc4d41941b19556f959f719e113f758ee7af73bd1de4a54c287a174904e",
+      "source_candidates": [
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "64b10eb1c3b065ad74cb33564a177d47b93643da9fad044eb73e4141c2cfe939"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "38e35cc4d41941b19556f959f719e113f758ee7af73bd1de4a54c287a174904e"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/PrincipalSeqGeneratorChange.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "5f709dc15348f7c6bdfe1620b9cc082a5a611731b30a5e503bcc58a194c2c855",
+      "source_candidates": [
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "5f709dc15348f7c6bdfe1620b9cc082a5a611731b30a5e503bcc58a194c2c855"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/TopExtClass.lean",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "9847ddbaf83fb016e4d2c46ca8672f147c9ea721a0753909b1b06e145a1456e7",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-determinant",
+          "revision": "6cc47403535f13d0a9ad6ac239771ecb0e3c42c8",
+          "sha256": "9847ddbaf83fb016e4d2c46ca8672f147c9ea721a0753909b1b06e145a1456e7"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "9847ddbaf83fb016e4d2c46ca8672f147c9ea721a0753909b1b06e145a1456e7"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/TopExtGeneratorChange.lean",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "39fbdccf08bad943223bb2f5ebe629fbc9849302616f110851945c680883dc22",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-determinant",
+          "revision": "6cc47403535f13d0a9ad6ac239771ecb0e3c42c8",
+          "sha256": "39fbdccf08bad943223bb2f5ebe629fbc9849302616f110851945c680883dc22"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "39fbdccf08bad943223bb2f5ebe629fbc9849302616f110851945c680883dc22"
+        }
+      ]
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/TopExtRingQuotient.lean",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "f06b0a1472b5ead731dcd54a3c4edcb205ad08209206999b4be9ff4c9211a8ec",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "f06b0a1472b5ead731dcd54a3c4edcb205ad08209206999b4be9ff4c9211a8ec"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/ExtQuotient.lean",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "03baf7dfed40c99a239592fb941d52bed4474f484e3de1bceead4c7e077f3eac",
+      "source_candidates": [
+        {
+          "source": "milnor-transport-ext-quotient",
+          "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8",
+          "sha256": "03baf7dfed40c99a239592fb941d52bed4474f484e3de1bceead4c7e077f3eac"
+        },
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "03baf7dfed40c99a239592fb941d52bed4474f484e3de1bceead4c7e077f3eac"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "03baf7dfed40c99a239592fb941d52bed4474f484e3de1bceead4c7e077f3eac"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MappingConeSign.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "fb3ccf1927c2b03bc8035f9802be0e982609c43775af440991869fefdf0d563d",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "fb3ccf1927c2b03bc8035f9802be0e982609c43775af440991869fefdf0d563d"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "fb3ccf1927c2b03bc8035f9802be0e982609c43775af440991869fefdf0d563d"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "fb3ccf1927c2b03bc8035f9802be0e982609c43775af440991869fefdf0d563d"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "fb3ccf1927c2b03bc8035f9802be0e982609c43775af440991869fefdf0d563d"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "fb3ccf1927c2b03bc8035f9802be0e982609c43775af440991869fefdf0d563d"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorBaseFieldProduct.lean",
+      "selected_source": "basefield-connecting",
+      "selected_revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+      "source_sha256": "d23b5a65c2af84644db23c21808c1b6bd316ecbc859a8f8581418b8c9cce479b",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "d23b5a65c2af84644db23c21808c1b6bd316ecbc859a8f8581418b8c9cce479b"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorNaturality.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "65298e29f837ab86925ef5e1d98cd158cdbcd2f171dd603dab5e95350687ecbb",
+      "source_candidates": [
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "65298e29f837ab86925ef5e1d98cd158cdbcd2f171dd603dab5e95350687ecbb"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "65298e29f837ab86925ef5e1d98cd158cdbcd2f171dd603dab5e95350687ecbb"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "65298e29f837ab86925ef5e1d98cd158cdbcd2f171dd603dab5e95350687ecbb"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorPrincipalUnits.lean",
+      "selected_source": "transport-ext-principal-units",
+      "selected_revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+      "source_sha256": "a6bf12db7e260f9c3ba1e833f9f40ab5079c66df2ef6ade94fa2f825866f7670",
+      "source_candidates": [
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "a6bf12db7e260f9c3ba1e833f9f40ab5079c66df2ef6ade94fa2f825866f7670"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorRepeatedUniformizer.lean",
+      "selected_source": "milnor-residue-cone-sign",
+      "selected_revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+      "source_sha256": "14807ef4a3c9a39fb48592d568b6055d307fccb3f15240cf4016c2a117b14d85",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "14807ef4a3c9a39fb48592d568b6055d307fccb3f15240cf4016c2a117b14d85"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorResidueSurjectivity.lean",
+      "selected_source": "right-basefield-surjectivity",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+      "source_sha256": "6097b3dc0aff82098d5374eb1e851a71cdffa12f9752fb45acba55ad8fd85482",
+      "source_candidates": [
+        {
+          "source": "right-basefield-surjectivity",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+          "sha256": "6097b3dc0aff82098d5374eb1e851a71cdffa12f9752fb45acba55ad8fd85482"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorRightBaseFieldProduct.lean",
+      "selected_source": "right-basefield-surjectivity",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+      "source_sha256": "c474113dab6a5d2fc0f899cb11dd18ff521c57c27714168d22f987622b9f7192",
+      "source_candidates": [
+        {
+          "source": "right-basefield-surjectivity",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+          "sha256": "c474113dab6a5d2fc0f899cb11dd18ff521c57c27714168d22f987622b9f7192"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorRightUnitProduct.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "5788b1835b1295dce8e1e7f96fbb5d9cb87ad492f76058226b0148547e36133d",
+      "source_candidates": [
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "5788b1835b1295dce8e1e7f96fbb5d9cb87ad492f76058226b0148547e36133d"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "5788b1835b1295dce8e1e7f96fbb5d9cb87ad492f76058226b0148547e36133d"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorSpecialization.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "e6be7d1dc55d92b84ae608997d977394fb88e741d9387b1cf83956faa83f405d",
+      "source_candidates": [
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "e6be7d1dc55d92b84ae608997d977394fb88e741d9387b1cf83956faa83f405d"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "e6be7d1dc55d92b84ae608997d977394fb88e741d9387b1cf83956faa83f405d"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "e6be7d1dc55d92b84ae608997d977394fb88e741d9387b1cf83956faa83f405d"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "e6be7d1dc55d92b84ae608997d977394fb88e741d9387b1cf83956faa83f405d"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "e6be7d1dc55d92b84ae608997d977394fb88e741d9387b1cf83956faa83f405d"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorSpecializationProduct.lean",
+      "selected_source": "native-seq-specialization-product",
+      "selected_revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+      "source_sha256": "09de4780a0c7be1580d9975ac7c8b8d64132ce83d3ea8191367538cad5115327",
+      "source_candidates": [
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "09de4780a0c7be1580d9975ac7c8b8d64132ce83d3ea8191367538cad5115327"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorTransport.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b",
+      "source_candidates": [
+        {
+          "source": "milnor-transport-ext-quotient",
+          "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8",
+          "sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b"
+        },
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorUnitProduct.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "875a6df04be5bb3cc2e1c1a3acc9d54a379d82f11decd15d34b73c17e590eb30",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "875a6df04be5bb3cc2e1c1a3acc9d54a379d82f11decd15d34b73c17e590eb30"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "875a6df04be5bb3cc2e1c1a3acc9d54a379d82f11decd15d34b73c17e590eb30"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "875a6df04be5bb3cc2e1c1a3acc9d54a379d82f11decd15d34b73c17e590eb30"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "875a6df04be5bb3cc2e1c1a3acc9d54a379d82f11decd15d34b73c17e590eb30"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorUnramifiedMap.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "71b19b2e4d78dd377e5ebe264ed9160192486ed1f6e0b5acd4f742843f526fd2",
+      "source_candidates": [
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "71b19b2e4d78dd377e5ebe264ed9160192486ed1f6e0b5acd4f742843f526fd2"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "71b19b2e4d78dd377e5ebe264ed9160192486ed1f6e0b5acd4f742843f526fd2"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/MilnorUnramifiedMapAcross.lean",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "16ef70688caace3595be715423120589ffacbfca12bba8019fe5b787e060d739",
+      "source_candidates": [
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "16ef70688caace3595be715423120589ffacbfca12bba8019fe5b787e060d739"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/PrincipalExtOne.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "ddf05b157f00e255c1d67ab1e1d9811c13732bd75cf7eb117c26b1791e2c0d7b",
+      "source_candidates": [
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "ddf05b157f00e255c1d67ab1e1d9811c13732bd75cf7eb117c26b1791e2c0d7b"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "ddf05b157f00e255c1d67ab1e1d9811c13732bd75cf7eb117c26b1791e2c0d7b"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "ddf05b157f00e255c1d67ab1e1d9811c13732bd75cf7eb117c26b1791e2c0d7b"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "ddf05b157f00e255c1d67ab1e1d9811c13732bd75cf7eb117c26b1791e2c0d7b"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "ddf05b157f00e255c1d67ab1e1d9811c13732bd75cf7eb117c26b1791e2c0d7b"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/PrincipalExtOneQuotient.lean",
+      "selected_source": "principal-ext-one-quotient",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-five-8a7b0b8-20261105-1025",
+      "source_sha256": "2a0ea68ad69a812443f3a627e397aa18d4e0062ce0d3ca39823cc673222f6bf8",
+      "source_candidates": [
+        {
+          "source": "principal-ext-one-quotient",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-five-8a7b0b8-20261105-1025",
+          "sha256": "2a0ea68ad69a812443f3a627e397aa18d4e0062ce0d3ca39823cc673222f6bf8"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/PrincipalGeneratorChange.lean",
+      "selected_source": "dvr-naturality-generator-change",
+      "selected_revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+      "source_sha256": "13d8883b6979f680c2c1dc90ced8a306e63e642445c34194728e49a1cf40655f",
+      "source_candidates": [
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "13d8883b6979f680c2c1dc90ced8a306e63e642445c34194728e49a1cf40655f"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "3051735d76473928f91c51010dd18acb780282ef20f2ef65b8f3c04e33b2a420"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/PrincipalGeneratorTransport.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "60b3af17c87dda1821d7b0abb088a5aa4f3272e2ad7e6a7c815b599f303c98e8",
+      "source_candidates": [
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "60b3af17c87dda1821d7b0abb088a5aa4f3272e2ad7e6a7c815b599f303c98e8"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "60b3af17c87dda1821d7b0abb088a5aa4f3272e2ad7e6a7c815b599f303c98e8"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "60b3af17c87dda1821d7b0abb088a5aa4f3272e2ad7e6a7c815b599f303c98e8"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/PrincipalSeqGenerator.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "5bb51c44e0e789ee3ec5785573f46c6eb2dd6372a74597aee2924aaea5984c96",
+      "source_candidates": [
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "5bb51c44e0e789ee3ec5785573f46c6eb2dd6372a74597aee2924aaea5984c96"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "5bb51c44e0e789ee3ec5785573f46c6eb2dd6372a74597aee2924aaea5984c96"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/PrincipalSeqGeneratorChange.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "35edc8b59e9d648cd962bee1a6f01169e1402a8f5e17e8f3a4240abd435cf095",
+      "source_candidates": [
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "35edc8b59e9d648cd962bee1a6f01169e1402a8f5e17e8f3a4240abd435cf095"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/ProjectiveConnecting.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "8a596de6368ee878d84c200d4b922e5461d367ce816e85a8473226ef32ed633b",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "8a596de6368ee878d84c200d4b922e5461d367ce816e85a8473226ef32ed633b"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "8a596de6368ee878d84c200d4b922e5461d367ce816e85a8473226ef32ed633b"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "8a596de6368ee878d84c200d4b922e5461d367ce816e85a8473226ef32ed633b"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "8a596de6368ee878d84c200d4b922e5461d367ce816e85a8473226ef32ed633b"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/SingleConeLift.lean",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "53319d56b25b0752f512f068a81e5b76e076d038d2ccb31804c19266d093d274",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "53319d56b25b0752f512f068a81e5b76e076d038d2ccb31804c19266d093d274"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "53319d56b25b0752f512f068a81e5b76e076d038d2ccb31804c19266d093d274"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "53319d56b25b0752f512f068a81e5b76e076d038d2ccb31804c19266d093d274"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "53319d56b25b0752f512f068a81e5b76e076d038d2ccb31804c19266d093d274"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/TopExtClass.lean",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "7f3272d4e81432d2e3e4268b73a18325b58b2e18e66b913917f126caa9e77fe2",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-determinant",
+          "revision": "6cc47403535f13d0a9ad6ac239771ecb0e3c42c8",
+          "sha256": "7f3272d4e81432d2e3e4268b73a18325b58b2e18e66b913917f126caa9e77fe2"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "7f3272d4e81432d2e3e4268b73a18325b58b2e18e66b913917f126caa9e77fe2"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/TopExtGeneratorChange.lean",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "e6ab9146062f15290060d0bb4106f40ce0801b9176a13897a96d4fe0c73f068a",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-determinant",
+          "revision": "6cc47403535f13d0a9ad6ac239771ecb0e3c42c8",
+          "sha256": "e6ab9146062f15290060d0bb4106f40ce0801b9176a13897a96d4fe0c73f068a"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "e6ab9146062f15290060d0bb4106f40ce0801b9176a13897a96d4fe0c73f068a"
+        }
+      ]
+    },
+    {
+      "path": "ColibTest/TopExtRingQuotient.lean",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "4d6a4a37baf373d263ce86e6d6a06a338bee56a9f39b255424f69e53975bd85c",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "4d6a4a37baf373d263ce86e6d6a06a338bee56a9f39b255424f69e53975bd85c"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-basefield-product.json",
+      "selected_source": "basefield-connecting",
+      "selected_revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+      "source_sha256": "0498ee5dd345ed26ea9939ff75dde1ab995e313870da50f961ac2640e9e0054d",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "0498ee5dd345ed26ea9939ff75dde1ab995e313870da50f961ac2640e9e0054d"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-naturality.json",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "2fc780fa7a6ae982c386803693f56ea7720b9cfc3ae83980116b49b97d53e5f0",
+      "source_candidates": [
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "f78c07b72692b2061f094e9ee3a812fcb881c5c7272dd0c393b3086067631b6f"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "2fc780fa7a6ae982c386803693f56ea7720b9cfc3ae83980116b49b97d53e5f0"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "2fc780fa7a6ae982c386803693f56ea7720b9cfc3ae83980116b49b97d53e5f0"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-principal-units.json",
+      "selected_source": "transport-ext-principal-units",
+      "selected_revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+      "source_sha256": "95f751bbd1b128409b1b451684ccf0f7bc75596267b81ebfa065d2dbbea4b09d",
+      "source_candidates": [
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "95f751bbd1b128409b1b451684ccf0f7bc75596267b81ebfa065d2dbbea4b09d"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-repeated-uniformizer.json",
+      "selected_source": "milnor-residue-cone-sign",
+      "selected_revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+      "source_sha256": "86b55edad267a04b6cd2e80111562f4dc497231eed7086c3ef2f84384d3a9497",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "86b55edad267a04b6cd2e80111562f4dc497231eed7086c3ef2f84384d3a9497"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-residue-surjectivity.json",
+      "selected_source": "right-basefield-surjectivity",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+      "source_sha256": "17368e8c0fad53475971cab7e902649a3c6b5f9e5cd075edd95a5b8f340fcb35",
+      "source_candidates": [
+        {
+          "source": "right-basefield-surjectivity",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+          "sha256": "17368e8c0fad53475971cab7e902649a3c6b5f9e5cd075edd95a5b8f340fcb35"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-right-basefield-product.json",
+      "selected_source": "right-basefield-surjectivity",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+      "source_sha256": "65351d8dd01dda4493fb365a910d38973ea1a921c23c1d3d7057185ea70caf83",
+      "source_candidates": [
+        {
+          "source": "right-basefield-surjectivity",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+          "sha256": "65351d8dd01dda4493fb365a910d38973ea1a921c23c1d3d7057185ea70caf83"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-right-unit-product.json",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "f14d866ddd6c61f47ed04f4c4c049da022d85fd58f18ae217c3709df2f46b1d1",
+      "source_candidates": [
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "f14d866ddd6c61f47ed04f4c4c049da022d85fd58f18ae217c3709df2f46b1d1"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "f14d866ddd6c61f47ed04f4c4c049da022d85fd58f18ae217c3709df2f46b1d1"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-specialization-product.json",
+      "selected_source": "native-seq-specialization-product",
+      "selected_revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+      "source_sha256": "56ebeaf4f997431aff2fe8299cffd89a4466a68e4c9b9b34b6658ce71ba7840f",
+      "source_candidates": [
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "56ebeaf4f997431aff2fe8299cffd89a4466a68e4c9b9b34b6658ce71ba7840f"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-specialization.json",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "12cd749f27c97d62e1c583b1bf9c733abeb5cf331d1808f59e55f17f0dd4a962",
+      "source_candidates": [
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "57fc7ee5e204f52b533b2db04b17219fe268450799ef53f4872c69df0e9c03ad"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "8935e293c334d62cc69486685e24b2463c48f4565923aa27a004fbef817bdf42"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "6df60a89db7d4b758fe1f81296f6ef55ff9eb4d3c8eb97b2254df26bf8d1f0f2"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "12cd749f27c97d62e1c583b1bf9c733abeb5cf331d1808f59e55f17f0dd4a962"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "12cd749f27c97d62e1c583b1bf9c733abeb5cf331d1808f59e55f17f0dd4a962"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-transport.json",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "d77e3d88db7ceb04da409760b48edaefed2ae625815ae53822554de959c416da",
+      "source_candidates": [
+        {
+          "source": "milnor-transport-ext-quotient",
+          "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8",
+          "sha256": "32ca0080355e17d663795a0bf82cbbd3dbf203d56bdf453a8a98d2780e27bc00"
+        },
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "2d44bb08318701efff414b7be84cf807210928a2752b6eb837b841bc89d8b0cb"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "4335826d823f43fa34985e74d01ee43bca29c1e6f6cb0c479263e6feba431012"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "fda72878cc3f9b8907ac69db6a08a2698ce653228c19c03f42ba8775d8ada769"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "d77e3d88db7ceb04da409760b48edaefed2ae625815ae53822554de959c416da"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "d77e3d88db7ceb04da409760b48edaefed2ae625815ae53822554de959c416da"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-unitproduct.json",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "d4421e6548057f0eaa957a18f55b0e5c446ad32a5a5b1271031f0b3f3e0f629e",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "537b030d201fc4ba6d7b71a286fbe1d54918caa53a1483549925e408057aa2f2"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "d6642730b579255afb125e46e8207dbf250f24dcb57ee4c99b9cdc27b982f1da"
+        },
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "d4421e6548057f0eaa957a18f55b0e5c446ad32a5a5b1271031f0b3f3e0f629e"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "d4421e6548057f0eaa957a18f55b0e5c446ad32a5a5b1271031f0b3f3e0f629e"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-unramified-across.json",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "2b4943c1fc807f65cf97523f447ecf029f2171897d8b63c4d5329fa67fc1e616",
+      "source_candidates": [
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "2b4943c1fc807f65cf97523f447ecf029f2171897d8b63c4d5329fa67fc1e616"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/milnor-unramified-map.json",
+      "selected_source": "milnor-unramified-four-universes",
+      "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "source_sha256": "86205547b65de8386385852f069617710eda295a01071dde12447ee04fd8c20b",
+      "source_candidates": [
+        {
+          "source": "milnor-right-unramified",
+          "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+          "sha256": "d5b17b0a48c83d6ccb30e67bd0b6ceccbc65cde2e0734a90dcd3e4286329ca44"
+        },
+        {
+          "source": "milnor-unramified-four-universes",
+          "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+          "sha256": "86205547b65de8386385852f069617710eda295a01071dde12447ee04fd8c20b"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-ext-quotient.json",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "8eafc5d673058fd9c14d01147e45d6cb1c23b97e55358f1f600ada6b17aeca39",
+      "source_candidates": [
+        {
+          "source": "milnor-transport-ext-quotient",
+          "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8",
+          "sha256": "d6b78c20e6abc1f186e3d6f062259228111d0835a734d65e9c4e1f869c9ea529"
+        },
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "c9f022d159309c393fa28946457f7fa5d094d2778cf5d28f2a29996eadd19c4f"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "8eafc5d673058fd9c14d01147e45d6cb1c23b97e55358f1f600ada6b17aeca39"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-principal-ext-one-quotient.json",
+      "selected_source": "principal-ext-one-quotient",
+      "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-five-8a7b0b8-20261105-1025",
+      "source_sha256": "72252d129db01f319e8200386f9700152a72e3c2ffd8f17f0982e032256d11f0",
+      "source_candidates": [
+        {
+          "source": "principal-ext-one-quotient",
+          "revision": "/workspace/scratch/ab4c8cd79b02/colib-five-8a7b0b8-20261105-1025",
+          "sha256": "72252d129db01f319e8200386f9700152a72e3c2ffd8f17f0982e032256d11f0"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-principal-ext-one.json",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "60a103d74bc4cdf4504ee2eaef3ff9dd9fc925933ce3dffa9a64faf203c3e794",
+      "source_candidates": [
+        {
+          "source": "transport-ext-principal-units",
+          "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+          "sha256": "826c93f921046cc41337d18e75378b58eebb3c96a106965946c1e07015da1831"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "663f85c144f8ca120c0908e49c67efeef6c8e35f780ce9fa1561ad967443f12d"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "1cbb559495aa45fbb2f79d163afdeb6f4db3e91ccdb2d52241fabbd3072fc54e"
+        },
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "709aeb7bfb05fd1a0b6ffe507f1e16936e0f9f1ec91b13a07746847e37778c52"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "60a103d74bc4cdf4504ee2eaef3ff9dd9fc925933ce3dffa9a64faf203c3e794"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-principal-generator-change.json",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "ac0360c05626021e94b054f86c09c23cb16f65832d2f26a639b5cce1c9a3d89c",
+      "source_candidates": [
+        {
+          "source": "dvr-naturality-generator-change",
+          "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+          "sha256": "85762b62777de9413d0d9e56e9303d271504e33b1183e4b3e9ec30577654f172"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "ac0360c05626021e94b054f86c09c23cb16f65832d2f26a639b5cce1c9a3d89c"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-principal-generator-sign.json",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "72e4ca161a52a968732a0ee1a154ce4c8d1b39f41c5c9fc5909a0a2f3cb62e5b",
+      "source_candidates": [
+        {
+          "source": "milnor-residue-cone-sign",
+          "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+          "sha256": "a56297ca92182326b952cc284c2ecc1e59dfbdce363b3d5020af7c86e7e652c7"
+        },
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "77eea5b1d3672c78ce46315e60d3f7960593f80465813ddfd8ec1ff1738d72f1"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "89ff507e456982432827189bf40076e355beb3be953e77e06036b9b8a0dfe50b"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "c423b0713cf9cdb6b0c8c07f45fbb02eae25c9ac6e3a8a645b5720c62c1f3e2e"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "72e4ca161a52a968732a0ee1a154ce4c8d1b39f41c5c9fc5909a0a2f3cb62e5b"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-principal-generator-transport.json",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "e43bfa3eae9c6658bb73f5f0e4df7b52cc2783f4ec036ceb72e6494c02b09e99",
+      "source_candidates": [
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "162aa046dbbd459b7b49257a0dd852d1762a959a823c09896f4a05be61681b42"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "cbc6204a61869239501630d6dac69f93a81a6f4faf6643365ff1c923f9768c66"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "e43bfa3eae9c6658bb73f5f0e4df7b52cc2783f4ec036ceb72e6494c02b09e99"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-principal-seq-generator-change.json",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "a3d08be389641c2a86236737460f3be5a5d417add5ca9a1001bc9525387d8cfd",
+      "source_candidates": [
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "a3d08be389641c2a86236737460f3be5a5d417add5ca9a1001bc9525387d8cfd"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-principal-seq-generator.json",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "7d2303ca02321dd605705c0e0dbdf2ed1e5186f0811f212fbaaac78399809e8d",
+      "source_candidates": [
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "05f1cd79d8273c1a2bd143f9642b4e5ea658f87073265f3b5a09a4b0d13d0bbb"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "7d2303ca02321dd605705c0e0dbdf2ed1e5186f0811f212fbaaac78399809e8d"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-projective-connecting.json",
+      "selected_source": "native-seq-generator-change",
+      "selected_revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "source_sha256": "432c4b5d9827f03913e2015cd520505dd83c17ebd70524358bd50cb5b5da33e9",
+      "source_candidates": [
+        {
+          "source": "basefield-connecting",
+          "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+          "sha256": "de72d484cf23001ec5c2b2a296f27a819ff77cca8ce8e8f5a4b2b39e15f8cbd7"
+        },
+        {
+          "source": "specialization-generator-transport",
+          "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+          "sha256": "3fbce003ebcf92254c49f7af7b772f83afb382dea0220d66740e2d1a0515acfd"
+        },
+        {
+          "source": "native-seq-specialization-product",
+          "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+          "sha256": "ef07b864eafd6bca09be5313638589e96d4a3bf420633741811d64fb0192ad72"
+        },
+        {
+          "source": "native-seq-generator-change",
+          "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+          "sha256": "432c4b5d9827f03913e2015cd520505dd83c17ebd70524358bd50cb5b5da33e9"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-top-ext-class.json",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "61b23681c900c3c2278ce64af15005d06d06ae7dcb1bf94cb3d12203ae5ab178",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-determinant",
+          "revision": "6cc47403535f13d0a9ad6ac239771ecb0e3c42c8",
+          "sha256": "61b23681c900c3c2278ce64af15005d06d06ae7dcb1bf94cb3d12203ae5ab178"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "61b23681c900c3c2278ce64af15005d06d06ae7dcb1bf94cb3d12203ae5ab178"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-top-ext-generator-change.json",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "2bfe76688459d88a6993fbf224af1a89e13e0edb8d187bd59012047d82a0642c",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-determinant",
+          "revision": "6cc47403535f13d0a9ad6ac239771ecb0e3c42c8",
+          "sha256": "2bfe76688459d88a6993fbf224af1a89e13e0edb8d187bd59012047d82a0642c"
+        },
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "2bfe76688459d88a6993fbf224af1a89e13e0edb8d187bd59012047d82a0642c"
+        }
+      ]
+    },
+    {
+      "path": "docs/migration/motivic-top-ext-ring-quotient.json",
+      "selected_source": "native-koszul-top-ring-quotient",
+      "selected_revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "source_sha256": "b0576a6f6da142a5af8da052bd0fa4194a62395bcea36cbcac7c3d2ac957261e",
+      "source_candidates": [
+        {
+          "source": "native-koszul-top-ring-quotient",
+          "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+          "sha256": "b0576a6f6da142a5af8da052bd0fa4194a62395bcea36cbcac7c3d2ac957261e"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "title": "Base-field action on DVR tame residue",
+      "id": "COL-0109",
+      "source": "basefield-connecting",
+      "source_id": "COL-0073"
+    },
+    {
+      "title": "Change of a principal regular generator",
+      "id": "COL-0110",
+      "source": "native-seq-generator-change",
+      "source_id": "COL-0094"
+    },
+    {
+      "title": "Cross-universe native Milnor ring transport",
+      "id": "COL-0111",
+      "source": "milnor-unramified-four-universes",
+      "source_id": "COL-0100"
+    },
+    {
+      "title": "Determinant action on native top Koszul Ext",
+      "id": "COL-0112",
+      "source": "native-koszul-top-ring-quotient",
+      "source_id": "COL-0095"
+    },
+    {
+      "title": "Four-universe specified unramified residue naturality",
+      "id": "COL-0113",
+      "source": "milnor-unramified-four-universes",
+      "source_id": "COL-0101"
+    },
+    {
+      "title": "Generator change for native singleton cocycles",
+      "id": "COL-0114",
+      "source": "native-seq-generator-change",
+      "source_id": "COL-0095"
+    },
+    {
+      "title": "Milnor field transport across universes",
+      "id": "COL-0115",
+      "source": "milnor-unramified-four-universes",
+      "source_id": "COL-0094"
+    },
+    {
+      "title": "Multiplicativity of specified specialization",
+      "id": "COL-0116",
+      "source": "native-seq-specialization-product",
+      "source_id": "COL-0086"
+    },
+    {
+      "title": "Native singleton Koszul resolution generator",
+      "id": "COL-0117",
+      "source": "native-seq-generator-change",
+      "source_id": "COL-0093"
+    },
+    {
+      "title": "Native top Koszul Ext coefficient classes",
+      "id": "COL-0118",
+      "source": "native-koszul-top-ring-quotient",
+      "source_id": "COL-0094"
+    },
+    {
+      "title": "Positive-length top Koszul Ext quotient line",
+      "id": "COL-0119",
+      "source": "native-koszul-top-ring-quotient",
+      "source_id": "COL-0097"
+    },
+    {
+      "title": "Principal degree-one Ext via the connecting class",
+      "id": "COL-0120",
+      "source": "native-seq-generator-change",
+      "source_id": "COL-0091"
+    },
+    {
+      "title": "Principal generator with inverse quotient transport",
+      "id": "COL-0121",
+      "source": "native-seq-generator-change",
+      "source_id": "COL-0092"
+    },
+    {
+      "title": "Principal units vanish under DVR tame residue",
+      "id": "COL-0122",
+      "source": "transport-ext-principal-units",
+      "source_id": "COL-0059"
+    },
+    {
+      "title": "Quotient-linearity of principal Ext-one",
+      "id": "COL-0123",
+      "source": "principal-ext-one-quotient",
+      "source_id": "COL-0064"
+    },
+    {
+      "title": "Quotient-ring scalars on Ext from a quotient",
+      "id": "COL-0124",
+      "source": "native-koszul-top-ring-quotient",
+      "source_id": "COL-0096"
+    },
+    {
+      "title": "Repeated uniformizers in DVR tame residue",
+      "id": "COL-0125",
+      "source": "milnor-residue-cone-sign",
+      "source_id": "COL-0065"
+    },
+    {
+      "title": "Resolution cocycles and the negative extension class",
+      "id": "COL-0126",
+      "source": "native-seq-generator-change",
+      "source_id": "COL-0090"
+    },
+    {
+      "title": "Ring-unit products and DVR tame residue",
+      "id": "COL-0127",
+      "source": "milnor-unramified-four-universes",
+      "source_id": "COL-0095"
+    },
+    {
+      "title": "Signed right base-field residue action",
+      "id": "COL-0128",
+      "source": "right-basefield-surjectivity",
+      "source_id": "COL-0102"
+    },
+    {
+      "title": "Signed right ring-unit residue product",
+      "id": "COL-0129",
+      "source": "milnor-unramified-four-universes",
+      "source_id": "COL-0098"
+    },
+    {
+      "title": "Specialization under uniformizer-preserving maps",
+      "id": "COL-0130",
+      "source": "milnor-unramified-four-universes",
+      "source_id": "COL-0097"
+    },
+    {
+      "title": "Specified unramified tame residue naturality",
+      "id": "COL-0131",
+      "source": "milnor-unramified-four-universes",
+      "source_id": "COL-0099"
+    },
+    {
+      "title": "Specified-uniformizer DVR specialization",
+      "id": "COL-0132",
+      "source": "milnor-unramified-four-universes",
+      "source_id": "COL-0096"
+    },
+    {
+      "title": "Surjectivity of native DVR tame residue",
+      "id": "COL-0133",
+      "source": "right-basefield-surjectivity",
+      "source_id": "COL-0103"
+    }
+  ],
+  "policy": "One selected canonical module per path. Four-universe residue proof is general; old APIs are wrappers. No push or branch deletion by integrator. Existing main files retained, except additive root/test/catalog/document integration.",
+  "test_union": {
+    "path": "ColibTest/PrincipalGeneratorChange.lean",
+    "source": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+    "reason": "Contains all later examples plus the arbitrary-coefficient N example omitted in native-seq-generator-change.",
+    "source_sha256": "13d8883b6979f680c2c1dc90ced8a306e63e642445c34194728e49a1cf40655f"
+  },
+  "already_in_main": {
+    "branch": "migration/motivic-principal-ext",
+    "revision": "47fca59054929fc5a61eb9c75ee1a984f1199979",
+    "modules": [
+      "Colib/Algebra/Homology/DerivedCategory/Ext/Regular.lean",
+      "Colib/RingTheory/Koszul/PrincipalExt.lean"
+    ],
+    "scope": "Production proofs and test already present in main; retain main permanent ID and existing files."
+  },
+  "scope_status": {
+    "closed": [
+      "General cone lift, augmentation square and localized negative extension-class formula",
+      "Actual Stacks singleton generator and generator change",
+      "Native arbitrary-matrix top Ext determinant formula",
+      "Positive-length ring-coefficient top Ext quotient line",
+      "Principal Ext-one native quotient-ring linear equivalence",
+      "Four-universe specified-uniformizer e=1 residue naturality with old APIs as wrappers",
+      "Native signed right base-field action and all-degree residue surjectivity"
+    ],
+    "pending": [
+      "Compiled comparison to the old Aglib named classes/recursive complex model",
+      "Milnor canonical naturality with arbitrary uniformizers and ramification e != 1",
+      "Repeated-uniformizer formula for canonical residue at arbitrary uniformizers",
+      "General abstract/twisted residue data and old degree-two compatibility",
+      "Top Ext ring quotient empty-sequence case and general coefficient quotient equivalence"
+    ]
+  },
+  "coverage_review": "Independent module/declaration audit confirms all 13 source branches represented; old PrincipalExt branch is already absorbed by main, latest Across proof replaces only private duplicate helpers, and the sole lost arbitrary-N test is restored.",
+  "independent_coverage_review": {
+    "status": "Passed read-only full file/declaration and source-target-pair coverage review of the unified candidate. No independent compilation by reviewer.",
+    "branches": 13,
+    "branch_production_union": 29,
+    "branch_test_union": 24,
+    "additional_completed_production": 4,
+    "additional_completed_tests": 3,
+    "already_in_main_production": 2,
+    "already_in_main_tests": 1,
+    "added_production": 31,
+    "added_tests": 26,
+    "source_target_pairs": "All historical ledger source-to-target pairs preserved; selected original files differ only by metadata except the reviewed Across wrappers and restored arbitrary-N test."
+  },
+  "main_preservation": {
+    "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+    "modified_existing_paths": [
+      ".github/workflows/lean-ci.yml",
+      "Colib.lean",
+      "docs/MILNOR_MOTIVIC_MIGRATION.md",
+      "docs/library/chapters/homological-algebra.toml",
+      "scripts/check.sh",
+      "scripts/test_catalog.py"
+    ],
+    "production_and_test_sources": "All existing main production and test sources retained byte-for-byte; no current main Library entries replaced."
+  },
+  "validation": {
+    "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+    "date": "2026-11-05",
+    "command": "bash scripts/check.sh",
+    "exit_code": 0,
+    "guard_failure": null,
+    "peak_group_rss_bytes": 6634946560,
+    "owned_process_group_gone": true,
+    "resource_limits": {
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "sample_seconds": 0.1,
+      "physical_memory_bytes": 10451427328,
+      "lean_threads": 1,
+      "max_active_lean": 1
+    },
+    "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+    "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+    "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+    "results": {
+      "python_tests": 52,
+      "lean_test_modules": 68,
+      "axiom_audit_declarations": 1606,
+      "library_items": 133,
+      "indexed_declarations": 398,
+      "chapters": 5,
+      "sections": 14,
+      "reference_pages": 10,
+      "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+    },
+    "kernel_replay": "Not requested; not run.",
+    "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+  },
+  "compiled_declaration_inventory": [
+    {
+      "name": "milnorKTheoryMap_tupleSymbol",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
+      "type": "\u2200 {k : Type u} {K : Type v} [inst : Field k] [inst_1 : Field K] {n : \u2115} (\u03c6 : k \u2192+* K) (a : Fin n \u2192 k\u02e3),\n  (milnorKTheoryMap \u03c6 n) (milnorKTupleSymbol a) = milnorKTupleSymbol (\u21d1(Units.map \u2191\u03c6) \u2218 a)"
+    },
+    {
+      "name": "Stacks.Chow.milnorKRingMapLift",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
+      "type": "{k : Type u} \u2192 {K : Type v} \u2192 [inst : Field k] \u2192 [inst_1 : Field K] \u2192 (k \u2192+* K) \u2192 MilnorKRing k \u2192+* MilnorKRing K"
+    },
+    {
+      "name": "CategoryTheory.ProjectiveResolution.mk\u2080_inv_comp_extMk_eq_neg_extClass",
+      "module": "Colib.CategoryTheory.Abelian.Projective.ConnectingTransport",
+      "type": "\u2200 {C : Type u_1} [inst : CategoryTheory.Category.{v_1, u_1} C] [inst_1 : CategoryTheory.Abelian C]\n  [inst_2 : CategoryTheory.HasExt C] {S : CategoryTheory.ShortComplex C} (hS : S.ShortExact) {X : C}\n  (P : CategoryTheory.ProjectiveResolution X) (e : X \u2245 S.X\u2083) (b : P.complex.X 0 \u27f6 S.X\u2082) (c : P.complex.X 1 \u27f6 S.X\u2081)\n  (hc : CategoryTheory.CategoryStruct.comp (P.complex.d 2 1) c = 0),\n  CategoryTheory.CategoryStruct.comp c S.f = CategoryTheory.CategoryStruct.comp (P.complex.d 1 0) b \u2192\n    CategoryTheory.CategoryStruct.comp b S.g = CategoryTheory.CategoryStruct.comp (P.\u03c0.f 0) e.hom \u2192\n      (CategoryTheory.Abelian.Ext.mk\u2080 e.inv).comp (P.extMk c 2 \u22ef hc) \u22ef = -hS.extClass"
+    },
+    {
+      "name": "Koszul.principalExtOneClass_comp_mk\u2080",
+      "module": "Colib.RingTheory.Koszul.PrincipalExtOne",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (a : R) (ha : IsSMulRegular R a)\n  (N : ModuleCat R) {N' : ModuleCat R} (g : N \u27f6 N') (x : \u2191N),\n  ((Koszul.principalExtOneClass a ha N) x).comp (CategoryTheory.Abelian.Ext.mk\u2080 g) \u22ef =\n    (Koszul.principalExtOneClass a ha N') ((CategoryTheory.ConcreteCategory.hom g) x)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorSpecialization_tuple_uniformizer",
+      "module": "Colib.KTheory.MilnorK.Residue.Specialization",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115)\n  (a : Fin n \u2192 F\u02e3) (i : Fin n),\n  a i = Stacks.Chow.dvrFracUniformizer F h\u03c0 \u2192 (Stacks.Chow.dvrMilnorSpecialization h\u03c0 n) (milnorKTupleSymbol a) = 0"
+    },
+    {
+      "name": "Stacks.Chow.milnorKRingMapLift_coe",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
+      "type": "\u2200 {k : Type u} {K : Type v} [inst : Field k] [inst_1 : Field K] (f : k \u2192+* K) (n : \u2115) (x : MilnorKTheory k n),\n  (Stacks.Chow.milnorKRingMapLift f) \u2191x = \u2191((milnorKTheoryMap f n) x)"
+    },
+    {
+      "name": "CategoryTheory.Abelian.Ext.quotientSourceModule_mk_smul",
+      "module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (I : Ideal R) (N : ModuleCat R)\n  (n : \u2115) (r : R) (e : CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 I)) N n), (Ideal.Quotient.mk I) r \u2022 e = r \u2022 e"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorSpecialization_tupleSymbol",
+      "module": "Colib.KTheory.MilnorK.Residue.Specialization",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115)\n  (a : Fin n \u2192 F\u02e3),\n  (Stacks.Chow.dvrMilnorSpecialization h\u03c0 n) (milnorKTupleSymbol a) =\n    milnorKTupleSymbol (Stacks.Chow.dvrFracUnitPart h\u03c0 \u2218 a)"
+    },
+    {
+      "name": "CategoryTheory.ProjectiveResolution.extMk_eq_neg_extClass",
+      "module": "Colib.CategoryTheory.Abelian.Projective.Connecting",
+      "type": "\u2200 {C : Type u_1} [inst : CategoryTheory.Category.{v_1, u_1} C] [inst_1 : CategoryTheory.Abelian C]\n  [inst_2 : CategoryTheory.HasExt C] {S : CategoryTheory.ShortComplex C} (P : CategoryTheory.ProjectiveResolution S.X\u2083)\n  (hS : S.ShortExact) (b : P.complex.X 0 \u27f6 S.X\u2082) (c : P.complex.X 1 \u27f6 S.X\u2081)\n  (hc : CategoryTheory.CategoryStruct.comp (P.complex.d 2 1) c = 0),\n  CategoryTheory.CategoryStruct.comp c S.f = CategoryTheory.CategoryStruct.comp (P.complex.d 1 0) b \u2192\n    CategoryTheory.CategoryStruct.comp b S.g = P.\u03c0.f 0 \u2192 P.extMk c 2 \u22ef hc = -hS.extClass"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol_unitTuple_mul",
+      "module": "Colib.KTheory.MilnorK.Residue.UnitProduct",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (m n : \u2115)\n  (a : Fin m \u2192 R\u02e3) (z : MilnorKTheory F (n + 1)),\n  (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 (m + n))\n      (GradedMonoid.GMul.mul (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)) z) =\n    GradedMonoid.GMul.mul (milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a))\n      ((Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) z)"
+    },
+    {
+      "name": "Koszul.seqTopExtClass_ring_ker",
+      "module": "Colib.RingTheory.Koszul.TopExtRingQuotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin (n + 1) \u2192 R)\n  (hf : Koszul.IsKoszulRegular f), (Koszul.seqTopExtClass f hf (ModuleCat.of R R)).ker = Ideal.span (Set.range f)"
+    },
+    {
+      "name": "Koszul.seqTopExtClass_covariance",
+      "module": "Colib.RingTheory.Koszul.TopExtClass",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin n \u2192 R)\n  (hf : Koszul.IsKoszulRegular f) (g : Fin n \u2192 R) (hg : Koszul.IsKoszulRegular g)\n  (q : ModuleCat.of R (R \u29f8 Ideal.span (Set.range g)) \u27f6 ModuleCat.of R (R \u29f8 Ideal.span (Set.range f)))\n  (\u03a6 : (Koszul.seqProjectiveResolution g hg).Hom (Koszul.seqProjectiveResolution f hf) q) (d : R),\n  CategoryTheory.CategoryStruct.comp (\u03a6.hom.f n) (Koszul.topEquiv R n).toModuleIso.hom =\n      CategoryTheory.CategoryStruct.comp (Koszul.topEquiv R n).toModuleIso.hom\n        (ModuleCat.ofHom ((LinearMap.lsmul R R) d)) \u2192\n    \u2200 (N : ModuleCat R) (x : \u2191N),\n      (CategoryTheory.Abelian.Ext.mk\u2080 q).comp ((Koszul.seqTopExtClass f hf N) x) \u22ef =\n        (Koszul.seqTopExtClass g hg N) (d \u2022 x)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol_tuple_uniformizers",
+      "module": "Colib.KTheory.MilnorK.Residue.RepeatedUniformizer",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115),\n  (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) (milnorKTupleSymbol fun x => Stacks.Chow.dvrFracUniformizer F h\u03c0) =\n    milnorKTupleSymbol fun x => -1"
+    },
+    {
+      "name": "Koszul.principalExtOneLinearEquiv",
+      "module": "Colib.RingTheory.Koszul.PrincipalExtOne",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : CategoryTheory.HasExt (ModuleCat R)] \u2192\n      (a : R) \u2192\n        IsSMulRegular R a \u2192\n          (N : ModuleCat R) \u2192\n            (\u2191N \u29f8 ((LinearMap.lsmul R \u2191N) a).range) \u2243\u2097[R]\n              CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 Ideal.span {a})) N 1"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorShiftMap_symbol_principal_unit",
+      "module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (u : R\u02e3),\n  (Units.map \u2191(IsLocalRing.residue R)) u = 1 \u2192\n    (Stacks.Chow.dvrMilnorShiftMap h\u03c0) (milnorKSymbol F ((Units.map \u2191(algebraMap R F)) u)) = 0"
+    },
+    {
+      "name": "Koszul.seqTopExtClass_surjective",
+      "module": "Colib.RingTheory.Koszul.TopExtClass",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin n \u2192 R)\n  (hf : Koszul.IsKoszulRegular f) (N : ModuleCat R), Function.Surjective \u21d1(Koszul.seqTopExtClass f hf N)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorSpecialization_map",
+      "module": "Colib.KTheory.MilnorK.Residue.Naturality",
+      "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (n : \u2115),\n      milnorKTheoryMap (IsLocalRing.ResidueField.map j) n \u2218\u2097 Stacks.Chow.dvrMilnorSpecialization h\u03c0 n =\n        Stacks.Chow.dvrMilnorSpecialization hj\u03c0 n \u2218\u2097 milnorKTheoryMap f n"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol_surjective",
+      "module": "Colib.KTheory.MilnorK.Residue.Surjectivity",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115),\n  Function.Surjective \u21d1(Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n)"
+    },
+    {
+      "name": "Koszul.seqComplexMatrixMap",
+      "module": "Colib.RingTheory.Koszul.TopExtGeneratorChange",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    {n : \u2115} \u2192 (f : Fin n \u2192 R) \u2192 (M : Matrix (Fin n) (Fin n) R) \u2192 Koszul.seqComplex (M.mulVec f) \u27f6 Koszul.seqComplex f"
+    },
+    {
+      "name": "Koszul.principalExtOneClass_generatorChange",
+      "module": "Colib.RingTheory.Koszul.PrincipalGeneratorChange",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (a c : R) (ha : IsSMulRegular R a)\n  (hca : IsSMulRegular R (c * a)) (N : ModuleCat R) (x : \u2191N),\n  (CategoryTheory.Abelian.Ext.mk\u2080 (ModuleCat.principalQuotientMulMap a c)).comp ((Koszul.principalExtOneClass a ha N) x)\n      \u22ef =\n    (Koszul.principalExtOneClass (c * a) hca N) (c \u2022 x)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol_map",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
+      "type": "\u2200 {R S : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] [inst_3 : CommRing S]\n  [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type v} {E : Type w} [inst_6 : Field F]\n  [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (n : \u2115),\n      (milnorKTheoryMap (IsLocalRing.ResidueField.map j) n).toAddMonoidHom.comp (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) =\n        (Stacks.Chow.dvrMilnorTameSymbol hj\u03c0 n).comp (milnorKTheoryMap f (n + 1)).toAddMonoidHom"
+    },
+    {
+      "name": "Koszul.principalExtOneQuotientLinearEquiv_smul",
+      "module": "Colib.RingTheory.Koszul.PrincipalExtOneQuotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (a : R) (ha : IsSMulRegular R a)\n  (N : ModuleCat R) (b : R \u29f8 Ideal.span {a}) (x : \u2191N \u29f8 Ideal.span {a} \u2022 \u22a4),\n  (Koszul.principalExtOneQuotientLinearEquiv a ha N) (b \u2022 x) =\n    (CategoryTheory.Abelian.Ext.mk\u2080 (CategoryTheory.Abelian.Ext.quotientSourceMul (Ideal.span {a}) b)).comp\n      ((Koszul.principalExtOneQuotientLinearEquiv a ha N) x) \u22ef"
+    },
+    {
+      "name": "Stacks.Chow.dvrFracOrd_map",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
+      "type": "\u2200 {R S : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] [inst_3 : CommRing S]\n  [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type v} {E : Type w} [inst_6 : Field F]\n  [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (x : F\u02e3),\n      Stacks.Chow.dvrFracOrd hj\u03c0 ((Units.map \u2191f) x) = Stacks.Chow.dvrFracOrd h\u03c0 x"
+    },
+    {
+      "name": "Koszul.seqQuotientMatrixMap",
+      "module": "Colib.RingTheory.Koszul.TopExtGeneratorChange",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    {n : \u2115} \u2192\n      (f : Fin n \u2192 R) \u2192\n        (M : Matrix (Fin n) (Fin n) R) \u2192\n          ModuleCat.of R (R \u29f8 Ideal.span (Set.range (M.mulVec f))) \u27f6 ModuleCat.of R (R \u29f8 Ideal.span (Set.range f))"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol'_mul_unitTuple",
+      "module": "Colib.KTheory.MilnorK.Residue.RightUnitProduct",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] (n m : \u2115) (z : MilnorKTheory F (n + 1))\n  (a : Fin m \u2192 R\u02e3),\n  (Stacks.Chow.dvrMilnorTameSymbol' R F (n + m))\n      (cast \u22ef (GradedMonoid.GMul.mul z (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)))) =\n    (-1) ^ m \u2022\n      GradedMonoid.GMul.mul ((Stacks.Chow.dvrMilnorTameSymbol' R F n) z)\n        (milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a))"
+    },
+    {
+      "name": "Koszul.seqTopExtClass_apply",
+      "module": "Colib.RingTheory.Koszul.TopExtClass",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin n \u2192 R)\n  (hf : Koszul.IsKoszulRegular f) (N : ModuleCat R) (x : \u2191N),\n  (Koszul.seqTopExtClass f hf N) x =\n    (Koszul.seqProjectiveResolution f hf).extMk\n      (CategoryTheory.CategoryStruct.comp (Koszul.topEquiv R n).toModuleIso.hom\n        (ModuleCat.ofHom (LinearMap.toSpanSingleton R (\u2191N) x)))\n      (n + 1) \u22ef \u22ef"
+    },
+    {
+      "name": "Koszul.seqTopExtRingLinearEquiv_apply_mk",
+      "module": "Colib.RingTheory.Koszul.TopExtRingQuotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin (n + 1) \u2192 R)\n  (hf : Koszul.IsKoszulRegular f) (x : R),\n  (Koszul.seqTopExtRingLinearEquiv f hf) ((Ideal.Quotient.mk (Ideal.span (Set.range f))) x) =\n    (Koszul.seqTopExtClass f hf (ModuleCat.of R R)) x"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorSpecialization",
+      "module": "Colib.KTheory.MilnorK.Residue.Specialization",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : IsDomain R] \u2192\n      [inst_2 : IsDiscreteValuationRing R] \u2192\n        {F : Type v} \u2192\n          [inst_3 : Field F] \u2192\n            [inst_4 : Algebra R F] \u2192\n              [IsFractionRing R F] \u2192\n                {\u03c0 : R} \u2192 Irreducible \u03c0 \u2192 (n : \u2115) \u2192 MilnorKTheory F n \u2192\u2097[\u2124] MilnorKTheory (IsLocalRing.ResidueField R) n"
+    },
+    {
+      "name": "Koszul.seqTopExtClass_generatorChange",
+      "module": "Colib.RingTheory.Koszul.TopExtGeneratorChange",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] {n : \u2115} (f : Fin n \u2192 R) (M : Matrix (Fin n) (Fin n) R)\n  [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (hf : Koszul.IsKoszulRegular f)\n  (hMf : Koszul.IsKoszulRegular (M.mulVec f)) (N : ModuleCat R) (x : \u2191N),\n  (CategoryTheory.Abelian.Ext.mk\u2080 (Koszul.seqQuotientMatrixMap f M)).comp ((Koszul.seqTopExtClass f hf N) x) \u22ef =\n    (Koszul.seqTopExtClass (M.mulVec f) hMf N) (M.det \u2022 x)"
+    },
+    {
+      "name": "Koszul.principalExtOneClass",
+      "module": "Colib.RingTheory.Koszul.PrincipalExtOne",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : CategoryTheory.HasExt (ModuleCat R)] \u2192\n      (a : R) \u2192\n        IsSMulRegular R a \u2192\n          (N : ModuleCat R) \u2192 \u2191N \u2192\u2097[R] CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 Ideal.span {a})) N 1"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol'_tuple_principal_unit",
+      "module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] (n : \u2115) (a : Fin (n + 1) \u2192 F\u02e3)\n  (i : Fin (n + 1)) (u : R\u02e3),\n  a i = (Units.map \u2191(algebraMap R F)) u \u2192\n    (Units.map \u2191(IsLocalRing.residue R)) u = 1 \u2192 (Stacks.Chow.dvrMilnorTameSymbol' R F n) (milnorKTupleSymbol a) = 0"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorSpecialization_ringUnits",
+      "module": "Colib.KTheory.MilnorK.Residue.Specialization",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115)\n  (a : Fin n \u2192 R\u02e3),\n  (Stacks.Chow.dvrMilnorSpecialization h\u03c0 n) (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)) =\n    milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a)"
+    },
+    {
+      "name": "Koszul.seqTopExtClass_eq_zero_iff",
+      "module": "Colib.RingTheory.Koszul.TopExtClass",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin n \u2192 R)\n  (hf : Koszul.IsKoszulRegular f) (N : ModuleCat R) (m : \u2115),\n  m + 1 = n \u2192\n    \u2200 (x : \u2191N),\n      (Koszul.seqTopExtClass f hf N) x = 0 \u2194\n        \u2203 g,\n          CategoryTheory.CategoryStruct.comp ((Koszul.seqComplex f).d n m) g =\n            CategoryTheory.CategoryStruct.comp (Koszul.topEquiv R n).toModuleIso.hom\n              (ModuleCat.ofHom (LinearMap.toSpanSingleton R (\u2191N) x))"
+    },
+    {
+      "name": "Koszul.principalExtOneQuotientLinearEquiv_apply_mk",
+      "module": "Colib.RingTheory.Koszul.PrincipalExtOneQuotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (a : R) (ha : IsSMulRegular R a)\n  (N : ModuleCat R) (x : \u2191N),\n  (Koszul.principalExtOneQuotientLinearEquiv a ha N) (Submodule.Quotient.mk x) = (Koszul.principalExtOneClass a ha N) x"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol'_mul_baseField",
+      "module": "Colib.KTheory.MilnorK.Residue.RightBaseFieldProduct",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {k : Type w} [inst_6 : Field k] (f : k \u2192+* R)\n  (n m : \u2115) (z : MilnorKTheory F (n + 1)) (x : MilnorKTheory k m),\n  (Stacks.Chow.dvrMilnorTameSymbol' R F (n + m))\n      (cast \u22ef (GradedMonoid.GMul.mul z ((milnorKTheoryMap ((algebraMap R F).comp f) m) x))) =\n    (-1) ^ m \u2022\n      GradedMonoid.GMul.mul ((Stacks.Chow.dvrMilnorTameSymbol' R F n) z)\n        ((milnorKTheoryMap ((IsLocalRing.residue R).comp f) m) x)"
+    },
+    {
+      "name": "Koszul.seqTopExtClass_comp_mk\u2080",
+      "module": "Colib.RingTheory.Koszul.TopExtClass",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin n \u2192 R)\n  (hf : Koszul.IsKoszulRegular f) {N N' : ModuleCat R} (g : N \u27f6 N') (x : \u2191N),\n  ((Koszul.seqTopExtClass f hf N) x).comp (CategoryTheory.Abelian.Ext.mk\u2080 g) \u22ef =\n    (Koszul.seqTopExtClass f hf N') ((CategoryTheory.ConcreteCategory.hom g) x)"
+    },
+    {
+      "name": "Stacks.Chow.dvrFracOrd_map_across",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+      "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (x : F\u02e3),\n      Stacks.Chow.dvrFracOrd hj\u03c0 ((Units.map \u2191f) x) = Stacks.Chow.dvrFracOrd h\u03c0 x"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol_mul_unitTuple",
+      "module": "Colib.KTheory.MilnorK.Residue.RightUnitProduct",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n m : \u2115)\n  (z : MilnorKTheory F (n + 1)) (a : Fin m \u2192 R\u02e3),\n  (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 (n + m))\n      (cast \u22ef (GradedMonoid.GMul.mul z (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)))) =\n    (-1) ^ m \u2022\n      GradedMonoid.GMul.mul ((Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) z)\n        (milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a))"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol'_baseField_mul",
+      "module": "Colib.KTheory.MilnorK.Residue.BaseFieldProduct",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {k : Type w} [inst_6 : Field k] (f : k \u2192+* R)\n  (m n : \u2115) (x : MilnorKTheory k m) (z : MilnorKTheory F (n + 1)),\n  (Stacks.Chow.dvrMilnorTameSymbol' R F (m + n))\n      (GradedMonoid.GMul.mul ((milnorKTheoryMap ((algebraMap R F).comp f) m) x) z) =\n    GradedMonoid.GMul.mul ((milnorKTheoryMap ((IsLocalRing.residue R).comp f) m) x)\n      ((Stacks.Chow.dvrMilnorTameSymbol' R F n) z)"
+    },
+    {
+      "name": "CategoryTheory.Abelian.Ext.quotientSourceIsTorsionBySet",
+      "module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (I : Ideal R) (N : ModuleCat R)\n  (n : \u2115), Module.IsTorsionBySet R (CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 I)) N n) \u2191I"
+    },
+    {
+      "name": "Koszul.principalExtOneQuotientLinearEquiv_comp_mk\u2080",
+      "module": "Colib.RingTheory.Koszul.PrincipalExtOneQuotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (a : R) (ha : IsSMulRegular R a)\n  (N : ModuleCat R) {N' : ModuleCat R} (g : N \u27f6 N') (x : \u2191N),\n  ((Koszul.principalExtOneQuotientLinearEquiv a ha N) (Submodule.Quotient.mk x)).comp (CategoryTheory.Abelian.Ext.mk\u2080 g)\n      \u22ef =\n    (Koszul.principalExtOneQuotientLinearEquiv a ha N')\n      (Submodule.Quotient.mk ((CategoryTheory.ConcreteCategory.hom g) x))"
+    },
+    {
+      "name": "Koszul.seqTopExtRingLinearEquiv",
+      "module": "Colib.RingTheory.Koszul.TopExtRingQuotient",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : CategoryTheory.HasExt (ModuleCat R)] \u2192\n      {n : \u2115} \u2192\n        (f : Fin (n + 1) \u2192 R) \u2192\n          Koszul.IsKoszulRegular f \u2192\n            (R \u29f8 Ideal.span (Set.range f)) \u2243\u2097[R]\n              CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 Ideal.span (Set.range f))) (ModuleCat.of R R) (n + 1)"
+    },
+    {
+      "name": "Stacks.Chow.milnorKRingMapLift_eq",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
+      "type": "\u2200 {k : Type u} [inst : Field k] {k' : Type u} [inst_1 : Field k'] (f : k \u2192+* k'),\n  Stacks.Chow.milnorKRingMapLift f = milnorKRingMap f"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol'_unitTuple_mul",
+      "module": "Colib.KTheory.MilnorK.Residue.UnitProduct",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] (m n : \u2115) (a : Fin m \u2192 R\u02e3)\n  (z : MilnorKTheory F (n + 1)),\n  (Stacks.Chow.dvrMilnorTameSymbol' R F (m + n))\n      (GradedMonoid.GMul.mul (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)) z) =\n    GradedMonoid.GMul.mul (milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a))\n      ((Stacks.Chow.dvrMilnorTameSymbol' R F n) z)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorShiftMap_shift_symbolProd_map",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
+      "type": "\u2200 {R S : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] [inst_3 : CommRing S]\n  [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type v} {E : Type w} [inst_6 : Field F]\n  [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (l : List F\u02e3),\n      (milnorKRingMap (IsLocalRing.ResidueField.map j))\n          ((Stacks.Chow.dvrMilnorShiftMap h\u03c0) (milnorKSymbolProd F l)).shift =\n        ((Stacks.Chow.dvrMilnorShiftMap hj\u03c0) (milnorKSymbolProd E (List.map (\u21d1(Units.map \u2191f)) l))).shift"
+    },
+    {
+      "name": "Koszul.seqTopExtRingQuotientLinearEquiv",
+      "module": "Colib.RingTheory.Koszul.TopExtRingQuotient",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : CategoryTheory.HasExt (ModuleCat R)] \u2192\n      {n : \u2115} \u2192\n        (f : Fin (n + 1) \u2192 R) \u2192\n          Koszul.IsKoszulRegular f \u2192\n            (R \u29f8 Ideal.span (Set.range f)) \u2243\u2097[R \u29f8 Ideal.span (Set.range f)]\n              CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 Ideal.span (Set.range f))) (ModuleCat.of R R) (n + 1)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorSpecialization_gmul",
+      "module": "Colib.KTheory.MilnorK.Residue.SpecializationProduct",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (m n : \u2115)\n  (x : MilnorKTheory F m) (y : MilnorKTheory F n),\n  (Stacks.Chow.dvrMilnorSpecialization h\u03c0 (m + n)) (GradedMonoid.GMul.mul x y) =\n    GradedMonoid.GMul.mul ((Stacks.Chow.dvrMilnorSpecialization h\u03c0 m) x) ((Stacks.Chow.dvrMilnorSpecialization h\u03c0 n) y)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol_map_across",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+      "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (n : \u2115),\n      (milnorKTheoryMap (IsLocalRing.ResidueField.map j) n).toAddMonoidHom.comp (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) =\n        (Stacks.Chow.dvrMilnorTameSymbol hj\u03c0 n).comp (milnorKTheoryMap f (n + 1)).toAddMonoidHom"
+    },
+    {
+      "name": "Koszul.principalExtMk_transport_eq_neg_class",
+      "module": "Colib.RingTheory.Koszul.PrincipalGeneratorTransport",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (a : R) (ha : IsSMulRegular R a)\n  {Q : ModuleCat R} (P : CategoryTheory.ProjectiveResolution Q) (e : Q \u2245 ModuleCat.of R (R \u29f8 Ideal.span {a}))\n  (b : P.complex.X 0 \u27f6 ModuleCat.of R R) (c : P.complex.X 1 \u27f6 ModuleCat.of R R)\n  (hc : CategoryTheory.CategoryStruct.comp (P.complex.d 2 1) c = 0),\n  CategoryTheory.CategoryStruct.comp c (ModuleCat.ofHom ((LinearMap.lsmul R R) a)) =\n      CategoryTheory.CategoryStruct.comp (P.complex.d 1 0) b \u2192\n    CategoryTheory.CategoryStruct.comp b (ModuleCat.ofHom (Submodule.mkQ (Ideal.span {a}))) =\n        CategoryTheory.CategoryStruct.comp (P.\u03c0.f 0) e.hom \u2192\n      \u2200 (N : ModuleCat R) (x : \u2191N),\n        (CategoryTheory.Abelian.Ext.mk\u2080 e.inv).comp\n            (P.extMk (CategoryTheory.CategoryStruct.comp c (ModuleCat.ofHom (LinearMap.toSpanSingleton R (\u2191N) x))) 2 \u22ef\n              \u22ef)\n            \u22ef =\n          -(Koszul.principalExtOneClass a ha N) x"
+    },
+    {
+      "name": "Koszul.singletonSeqExtMk_eq_neg_class",
+      "module": "Colib.RingTheory.Koszul.PrincipalSeqGenerator",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] (a : R) [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (ha : IsSMulRegular R a)\n  (hf : Koszul.IsKoszulRegular fun x => a) (N : ModuleCat R) (x : \u2191N),\n  (CategoryTheory.Abelian.Ext.mk\u2080 (Koszul.singletonSeqQuotientIso a).inv).comp\n      ((Koszul.seqProjectiveResolution (fun x => a) hf).extMk\n        (CategoryTheory.CategoryStruct.comp (Koszul.singletonSeqCoordinate a)\n          (ModuleCat.ofHom (LinearMap.toSpanSingleton R (\u2191N) x)))\n        2 \u22ef \u22ef)\n      \u22ef =\n    -(Koszul.principalExtOneClass a ha N) x"
+    },
+    {
+      "name": "Koszul.principalExtOneQuotientLinearEquiv",
+      "module": "Colib.RingTheory.Koszul.PrincipalExtOneQuotient",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : CategoryTheory.HasExt (ModuleCat R)] \u2192\n      (a : R) \u2192\n        IsSMulRegular R a \u2192\n          (N : ModuleCat R) \u2192\n            (\u2191N \u29f8 Ideal.span {a} \u2022 \u22a4) \u2243\u2097[R \u29f8 Ideal.span {a}]\n              CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 Ideal.span {a})) N 1"
+    },
+    {
+      "name": "Stacks.Chow.milnorKRingMapLift_symbolProd",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
+      "type": "\u2200 {k : Type u} {K : Type v} [inst : Field k] [inst_1 : Field K] (f : k \u2192+* K) (l : List k\u02e3),\n  (Stacks.Chow.milnorKRingMapLift f) (milnorKSymbolProd k l) = milnorKSymbolProd K (List.map (\u21d1(Units.map \u2191f)) l)"
+    },
+    {
+      "name": "milnorKTheoryMap",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
+      "type": "{k : Type u} \u2192\n  {K : Type v} \u2192 [inst : Field k] \u2192 [inst_1 : Field K] \u2192 (k \u2192+* K) \u2192 (n : \u2115) \u2192 MilnorKTheory k n \u2192\u2097[\u2124] MilnorKTheory K n"
+    },
+    {
+      "name": "CategoryTheory.Abelian.Ext.quotientSourceModule",
+      "module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : CategoryTheory.HasExt (ModuleCat R)] \u2192\n      (I : Ideal R) \u2192\n        (N : ModuleCat R) \u2192 (n : \u2115) \u2192 _root_.Module (R \u29f8 I) (CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 I)) N n)"
+    },
+    {
+      "name": "Koszul.principalExtOneLinearEquiv_apply_mk",
+      "module": "Colib.RingTheory.Koszul.PrincipalExtOne",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (a : R) (ha : IsSMulRegular R a)\n  (N : ModuleCat R) (x : \u2191N),\n  (Koszul.principalExtOneLinearEquiv a ha N) (Submodule.Quotient.mk x) = (Koszul.principalExtOneClass a ha N) x"
+    },
+    {
+      "name": "Koszul.seqTopExtClass_ring_eq_zero_iff",
+      "module": "Colib.RingTheory.Koszul.TopExtRingQuotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin (n + 1) \u2192 R)\n  (hf : Koszul.IsKoszulRegular f) (x : R),\n  (Koszul.seqTopExtClass f hf (ModuleCat.of R R)) x = 0 \u2194 x \u2208 Ideal.span (Set.range f)"
+    },
+    {
+      "name": "milnorKTheoryMap_eq_transport",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
+      "type": "\u2200 {k : Type u} [inst : Field k] {n : \u2115} {k' : Type u} [inst_1 : Field k'] (\u03c6 : k \u2192+* k'),\n  milnorKTheoryMap \u03c6 n = (milnorKTransport \u03c6 n).toIntLinearMap"
+    },
+    {
+      "name": "milnorKTheoryMap_id",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
+      "type": "\u2200 {k : Type u} [inst : Field k] {n : \u2115}, milnorKTheoryMap (RingHom.id k) n = LinearMap.id"
+    },
+    {
+      "name": "Stacks.Chow.dvrFracUnitPart_map",
+      "module": "Colib.KTheory.MilnorK.Residue.Naturality",
+      "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (x : F\u02e3),\n      Stacks.Chow.dvrFracUnitPart hj\u03c0 ((Units.map \u2191f) x) =\n        (Units.map \u2191(IsLocalRing.ResidueField.map j)) (Stacks.Chow.dvrFracUnitPart h\u03c0 x)"
+    },
+    {
+      "name": "Koszul.singletonSeqExtMk_generatorChange",
+      "module": "Colib.RingTheory.Koszul.PrincipalSeqGeneratorChange",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (a c : R),\n  IsSMulRegular R a \u2192\n    IsSMulRegular R (c * a) \u2192\n      \u2200 (hf : Koszul.IsKoszulRegular fun x => a) (hcf : Koszul.IsKoszulRegular fun x => c * a) (N : ModuleCat R)\n        (x : \u2191N),\n        (CategoryTheory.Abelian.Ext.mk\u2080\n                (CategoryTheory.CategoryStruct.comp (Koszul.singletonSeqQuotientIso (c * a)).hom\n                  (CategoryTheory.CategoryStruct.comp (ModuleCat.principalQuotientMulMap a c)\n                    (Koszul.singletonSeqQuotientIso a).inv))).comp\n            ((Koszul.seqProjectiveResolution (fun x => a) hf).extMk\n              (CategoryTheory.CategoryStruct.comp (Koszul.singletonSeqCoordinate a)\n                (ModuleCat.ofHom (LinearMap.toSpanSingleton R (\u2191N) x)))\n              2 \u22ef \u22ef)\n            \u22ef =\n          (Koszul.seqProjectiveResolution (fun x => c * a) hcf).extMk\n            (CategoryTheory.CategoryStruct.comp (Koszul.singletonSeqCoordinate (c * a))\n              (ModuleCat.ofHom (LinearMap.toSpanSingleton R (\u2191N) (c \u2022 x))))\n            2 \u22ef \u22ef"
+    },
+    {
+      "name": "milnorKTheoryMap_comp",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
+      "type": "\u2200 {k : Type u} {K : Type v} {L : Type w} [inst : Field k] [inst_1 : Field K] [inst_2 : Field L] {n : \u2115} (\u03c6 : k \u2192+* K)\n  (\u03c8 : K \u2192+* L), milnorKTheoryMap (\u03c8.comp \u03c6) n = milnorKTheoryMap \u03c8 n \u2218\u2097 milnorKTheoryMap \u03c6 n"
+    },
+    {
+      "name": "Koszul.seqTopExtClass",
+      "module": "Colib.RingTheory.Koszul.TopExtClass",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : CategoryTheory.HasExt (ModuleCat R)] \u2192\n      {n : \u2115} \u2192\n        (f : Fin n \u2192 R) \u2192\n          Koszul.IsKoszulRegular f \u2192\n            (N : ModuleCat R) \u2192 \u2191N \u2192\u2097[R] CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 Ideal.span (Set.range f))) N n"
+    },
+    {
+      "name": "Koszul.seqComplexMatrixMap_comp_augmentation",
+      "module": "Colib.RingTheory.Koszul.TopExtGeneratorChange",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] {n : \u2115} (f : Fin n \u2192 R) (M : Matrix (Fin n) (Fin n) R),\n  CategoryTheory.CategoryStruct.comp ((Koszul.seqComplexMatrixMap f M).f 0) ((Koszul.koszulAugmentation f).f 0) =\n    CategoryTheory.CategoryStruct.comp ((Koszul.koszulAugmentation (M.mulVec f)).f 0) (Koszul.seqQuotientMatrixMap f M)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorShiftMap_shift_symbolProd_map_across",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+      "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (l : List F\u02e3),\n      (Stacks.Chow.milnorKRingMapLift (IsLocalRing.ResidueField.map j))\n          ((Stacks.Chow.dvrMilnorShiftMap h\u03c0) (milnorKSymbolProd F l)).shift =\n        ((Stacks.Chow.dvrMilnorShiftMap hj\u03c0) (milnorKSymbolProd E (List.map (\u21d1(Units.map \u2191f)) l))).shift"
+    },
+    {
+      "name": "CategoryTheory.Abelian.Ext.quotientSourceModule_smul_eq_precomp",
+      "module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] (I : Ideal R) (N : ModuleCat R)\n  (n : \u2115) (b : R \u29f8 I) (e : CategoryTheory.Abelian.Ext (ModuleCat.of R (R \u29f8 I)) N n),\n  b \u2022 e = (CategoryTheory.Abelian.Ext.mk\u2080 (CategoryTheory.Abelian.Ext.quotientSourceMul I b)).comp e \u22ef"
+    },
+    {
+      "name": "Koszul.seqProjectiveResolutionMatrixHom",
+      "module": "Colib.RingTheory.Koszul.TopExtGeneratorChange",
+      "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    {n : \u2115} \u2192\n      (f : Fin n \u2192 R) \u2192\n        (M : Matrix (Fin n) (Fin n) R) \u2192\n          (hf : Koszul.IsKoszulRegular f) \u2192\n            (hMf : Koszul.IsKoszulRegular (M.mulVec f)) \u2192\n              (Koszul.seqProjectiveResolution (M.mulVec f) hMf).Hom (Koszul.seqProjectiveResolution f hf)\n                (Koszul.seqQuotientMatrixMap f M)"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol_tuple_principal_unit",
+      "module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115)\n  (a : Fin (n + 1) \u2192 F\u02e3) (i : Fin (n + 1)) (u : R\u02e3),\n  a i = (Units.map \u2191(algebraMap R F)) u \u2192\n    (Units.map \u2191(IsLocalRing.residue R)) u = 1 \u2192 (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) (milnorKTupleSymbol a) = 0"
+    },
+    {
+      "name": "Koszul.seqTopExtRingQuotientLinearEquiv_apply_mk",
+      "module": "Colib.RingTheory.Koszul.TopExtRingQuotient",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : CategoryTheory.HasExt (ModuleCat R)] {n : \u2115} (f : Fin (n + 1) \u2192 R)\n  (hf : Koszul.IsKoszulRegular f) (x : R),\n  (Koszul.seqTopExtRingQuotientLinearEquiv f hf) ((Ideal.Quotient.mk (Ideal.span (Set.range f))) x) =\n    (Koszul.seqTopExtClass f hf (ModuleCat.of R R)) x"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorShiftMap_symbolProd_principal_unit",
+      "module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (l : List F\u02e3)\n  (u : R\u02e3),\n  (Units.map \u2191(IsLocalRing.residue R)) u = 1 \u2192\n    (Units.map \u2191(algebraMap R F)) u \u2208 l \u2192 (Stacks.Chow.dvrMilnorShiftMap h\u03c0) (milnorKSymbolProd F l) = 0"
+    },
+    {
+      "name": "Stacks.Chow.milnorKRingMapLift_symbol",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
+      "type": "\u2200 {k : Type u} {K : Type v} [inst : Field k] [inst_1 : Field K] (f : k \u2192+* K) (a : k\u02e3),\n  (Stacks.Chow.milnorKRingMapLift f) (milnorKSymbol k a) = milnorKSymbol K ((Units.map \u2191f) a)"
+    },
+    {
+      "name": "Koszul.seqComplexMatrixMap_top",
+      "module": "Colib.RingTheory.Koszul.TopExtGeneratorChange",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] {n : \u2115} (f : Fin n \u2192 R) (M : Matrix (Fin n) (Fin n) R),\n  CategoryTheory.CategoryStruct.comp ((Koszul.seqComplexMatrixMap f M).f n) (Koszul.topEquiv R n).toModuleIso.hom =\n    CategoryTheory.CategoryStruct.comp (Koszul.topEquiv R n).toModuleIso.hom\n      (ModuleCat.ofHom ((LinearMap.lsmul R R) M.det))"
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol'_surjective",
+      "module": "Colib.KTheory.MilnorK.Residue.Surjectivity",
+      "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] (n : \u2115),\n  Function.Surjective \u21d1(Stacks.Chow.dvrMilnorTameSymbol' R F n)"
+    }
+  ],
+  "compiled_source_artifacts": [
+    {
+      "source": "Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
+      "source_sha256": "253b0d8431622503339878d15bda823dd21140691eef3f4414bb1d05d39cb1ad",
+      "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.olean",
+      "olean_sha256": "df825f0342e76f97c69da845c123c59af47d54c0f86593ad3b20bdbcb7fb76d3"
+    },
+    {
+      "source": "Colib/Algebra/Homology/DerivedCategory/SingleCocycle.lean",
+      "source_sha256": "0fff6e1884ad9687d90b9d321c0fc6da45908ceaf7b7a2fcd070650bd3ddf1c5",
+      "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/DerivedCategory/SingleCocycle.olean",
+      "olean_sha256": "8ae6efc6c957dda824bdd4bb861a522d529e58c961b63ec321037ce2ac8d7225"
+    },
+    {
+      "source": "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+      "source_sha256": "d921e171c664e6f93cfd94151d00186342e65e91bd4a14e695edb432fbf57d84",
+      "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/HomotopyCategory/MappingCone.olean",
+      "olean_sha256": "27e311e31ca5d68ad6d2f47f3514ce1f652da8f60ffcc54dfd333608116a8545"
+    },
+    {
+      "source": "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
+      "source_sha256": "2fd14c5a63fbdab2f257b4481d17fe983ada6781faa5e122a551aabbf818815a",
+      "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.olean",
+      "olean_sha256": "c47f8bbae56707d28ea04a8db34854a6de21d1c45c7708b8d06ad8ee1dfd7602"
+    },
+    {
+      "source": "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
+      "source_sha256": "dd577f24dd1fc6ae7034267e1c9e96f3acaa58c70026f15f96aa03a67357fcda",
+      "olean": ".lake/build/lib/lean/Colib/CategoryTheory/Abelian/Projective/Connecting.olean",
+      "olean_sha256": "55b7bf2ba984ffed3998147531e3299d8c25556fa12902955769252a35ba7cea"
+    },
+    {
+      "source": "Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.lean",
+      "source_sha256": "8dc0dfaba99c264ddcac5ccc91ad4892903df31b70653f69c31ed3c8e8e1172f",
+      "olean": ".lake/build/lib/lean/Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.olean",
+      "olean_sha256": "e9dacc77ef7e91b19fa586ec5f4459bc1cd4bf74c6e95abe12da991c07cc3190"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+      "source_sha256": "5764e33314cb89cf1fae2c58b3af5f896b5d50fc513f3895a20a38f94eb88e77",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/BaseFieldProduct.olean",
+      "olean_sha256": "e3f19aa9414c28ee6b5619cd69236c96f107f21135239034221e61c017b24f1d"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+      "source_sha256": "1fd718b8b93ec03e6677275f21badfb1ebe3dbc75730845373fc87345b277d0a",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Naturality.olean",
+      "olean_sha256": "71c11d08f4976a07a22d5d64875186ac9b03c15a8d76bcb7ca65f2c6d5e51dfb"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/PrincipalUnits.lean",
+      "source_sha256": "43343b7d4c7812667334a1b9367407c5ec0c5b4419196780ecc149a8620a0211",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/PrincipalUnits.olean",
+      "olean_sha256": "23d6c034b84295cc1fd2b50be72f31c5bd793db1f20814cf42a46c6e0ac7ffae"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
+      "source_sha256": "a0cb3a3acecb54603b9605b4c47da39a733ed8f5ca51037c879b0340e404eb28",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.olean",
+      "olean_sha256": "b632500f979817d79fac771e4b5fccfbfcc6794bd435526a5b0174539a20c89a"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
+      "source_sha256": "3fef44425ebf9e5d42a7f87c077b3670a02fcc7737da80e4d6c01c222459d971",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.olean",
+      "olean_sha256": "05c8ac96bf4c3ea2417fea9260f4809af804606ae33d5ffe432e1b797f807a47"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+      "source_sha256": "e3989853b6d1b0b6d1985853b6858a7088cfdce0d45359d93c684194c29f13a4",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RightUnitProduct.olean",
+      "olean_sha256": "6e62ff3b38d874b91ff69d3b9716d386b53f79df28f9d6e2545ca0ef83fa2f47"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+      "source_sha256": "41da7bd1e231154c4cf769f77e5703af68716aec30dab29e23dfeaab18c47381",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Specialization.olean",
+      "olean_sha256": "7477a8c77a6f8f0035144e707cda0518d808fdb35dfd52dac09cbb0a6cc0c49a"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/SpecializationProduct.lean",
+      "source_sha256": "3096ef6f486e399a1db6c6e32d714954833cee2b0564297489df32ce6ba78e25",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/SpecializationProduct.olean",
+      "olean_sha256": "00440030008a1426ec1e524b9734c0436612a1c3cbacb65fe71b4f1d067c55cd"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/Surjectivity.lean",
+      "source_sha256": "9d25bd19358e7149fb65bb39a1a0a458348f9f17736278e1c6969a0e2000d5ab",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Surjectivity.olean",
+      "olean_sha256": "7108fc8477748c3d0d3ae5a5b112a714a5c09ac57a0b2ccffb55f1210737a931"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+      "source_sha256": "8fbe5baec8a5513b6b700499cc2a355b47a0511780a0ed37eb492bf11908fd71",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnitProduct.olean",
+      "olean_sha256": "bfad15126acac8fffa2dea17af6e111d3406bf3851aa9e0096a6946b5a20d19a"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+      "source_sha256": "f0d0920558cf6d5dafac0ecfa4bb47aeb31f16c8974ad7d432dda0c3a9668855",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMap.olean",
+      "olean_sha256": "66ec8c00083585e066a5e8bcea8544eb0594e028aa664aa9e00b12b0fa292adf"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+      "source_sha256": "dd3855f9a8f94f7eb45364ba4b52869c1f632f1d202508088a21ef7c497d9d92",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.olean",
+      "olean_sha256": "7369c307097f2997c52184b049dc96e59102c853f0d87138e4b823bc862c29a2"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Symbols/Involution.lean",
+      "source_sha256": "4f124c6e650fbe1aea6491f944fa0fa3bfb55d6a3a4fb3e76c3f568c1b24dd96",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Involution.olean",
+      "olean_sha256": "27323d10857e9dad552eba73900998fe2ccae6673ee861f88948f6dfdb18cc6f"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
+      "source_sha256": "52efe532a783447f2b5c7a895bea8b84b7bc51add0e2acf6df0751fd68e49612",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/RingTransport.olean",
+      "olean_sha256": "2911be498b9eb95937c21d5e810886c4245f386795ddad853861556a0c8b099a"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Symbols/Surjectivity.lean",
+      "source_sha256": "08ba17f1bb7b97f6a5bb3f9bd1910e0bdc2846e15a8a22dd7b1cb584f43ba2a1",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Surjectivity.olean",
+      "olean_sha256": "4817ea1c353cbfc18e2ff36056adc5be065a25095bb440c52e9655c1936e1cc1"
+    },
+    {
+      "source": "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+      "source_sha256": "9858482cb1200fdb0b90e37e54d6f53a23c969ae02e9f7e3f9583ee65bccc407",
+      "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Transport.olean",
+      "olean_sha256": "e46f5ae80d3904d882d95e6f1d9f0b224fa90337ae9a84ed19f434d28513ac46"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
+      "source_sha256": "5eca56475c63716b58c990ad6cb40b4641c94be4c01ba0ea2c91c8813ad098a8",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalExtOne.olean",
+      "olean_sha256": "287af56f1e96803235679f2ca7fdf68aa2d4d4c219dc8e219e88d78ab89a2e12"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/PrincipalExtOneQuotient.lean",
+      "source_sha256": "af877ee6a3738cde96d5613bb9db76df59bad7aab3b74b3d325ea05f0bdce4f4",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalExtOneQuotient.olean",
+      "olean_sha256": "fb55c8379170e2b2389ac4196174ff637746fc69a327dae0bc6a32730460d719"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/PrincipalGeneratorChange.lean",
+      "source_sha256": "067d8b6e147b8f94537d9decde740f46eb1d547aa75ba65b0662336530a05c5b",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalGeneratorChange.olean",
+      "olean_sha256": "721883da98878e8eaae00f27f8fdf70c528d0cf697769d2531e28b7a25b57276"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/PrincipalGeneratorTransport.lean",
+      "source_sha256": "5eb01f760dee834044ff04d7c175c84a9436b436f4e86b95d161cca9f385500e",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalGeneratorTransport.olean",
+      "olean_sha256": "5bcecabe05999bc1b907581156579c20ab6fab500536128b3ac1445b447fc8c3"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/PrincipalSeqGenerator.lean",
+      "source_sha256": "7ae7670483ed1f5ec5b97942920bac3fdbdd360089752cc394bd255627153075",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalSeqGenerator.olean",
+      "olean_sha256": "be14ea6da4a07110852faf135590bdd21c2e68274c3fd6e06627be9ed390c887"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/PrincipalSeqGeneratorChange.lean",
+      "source_sha256": "1942e114ed6cdb1e73b7e0a055124fa6bf74d540c55ffa5fc836baeaa9da6390",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalSeqGeneratorChange.olean",
+      "olean_sha256": "e01276fc6ffb5280759c8933bd8f604743e783387a042e8786bf3fbbf21978fa"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/TopExtClass.lean",
+      "source_sha256": "62d8a578c66f0c3c696b41ac8e23c4a92199fd8fd51a686815f375f58c545a6c",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtClass.olean",
+      "olean_sha256": "09b8b42582691ed4ab8847995c559ae6c7a32eb0ebad7a12708ce8021eb2c1c7"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/TopExtGeneratorChange.lean",
+      "source_sha256": "43d80c122be3fdab768e8f85492cc631f9a4a04c0b421fb4020fe81467fd3e6b",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtGeneratorChange.olean",
+      "olean_sha256": "eefa96d2107200427e5c0bf2fdb61a024343bf5261eae3c6d7852be90af76c98"
+    },
+    {
+      "source": "Colib/RingTheory/Koszul/TopExtRingQuotient.lean",
+      "source_sha256": "18be5702757e36c56f12d31fee28f14e149871f20f5aac3919bb31b724c09c2b",
+      "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtRingQuotient.olean",
+      "olean_sha256": "4d65cd17f8d5d3ea4e9fd49a31c75ba6f2d9f74a898d38ebeb148cad510e2eb8"
+    },
+    {
+      "source": "ColibTest/ExtQuotient.lean",
+      "source_sha256": "03baf7dfed40c99a239592fb941d52bed4474f484e3de1bceead4c7e077f3eac",
+      "olean": ".lake/build/lib/lean/ColibTest/ExtQuotient.olean",
+      "olean_sha256": "5f343f051bf8c4885c6f38d5887f90aa4146c54216de28521bf7b60351855613"
+    },
+    {
+      "source": "ColibTest/MappingConeSign.lean",
+      "source_sha256": "fb3ccf1927c2b03bc8035f9802be0e982609c43775af440991869fefdf0d563d",
+      "olean": ".lake/build/lib/lean/ColibTest/MappingConeSign.olean",
+      "olean_sha256": "ba224ba90c1c7d7d4cb9bb23fbe00a43d6dd0b2715a017dac8ea0c586f9d06e3"
+    },
+    {
+      "source": "ColibTest/MilnorBaseFieldProduct.lean",
+      "source_sha256": "d23b5a65c2af84644db23c21808c1b6bd316ecbc859a8f8581418b8c9cce479b",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorBaseFieldProduct.olean",
+      "olean_sha256": "d6335ed26b90f793d71462c190ea59ec0a9a4bd88e51fb0d192f12086405114b"
+    },
+    {
+      "source": "ColibTest/MilnorNaturality.lean",
+      "source_sha256": "65298e29f837ab86925ef5e1d98cd158cdbcd2f171dd603dab5e95350687ecbb",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorNaturality.olean",
+      "olean_sha256": "025a9d5faa0afcfb9dd2ef1c52c95973eb5c546208552ee45eecf664e2029a65"
+    },
+    {
+      "source": "ColibTest/MilnorPrincipalUnits.lean",
+      "source_sha256": "a6bf12db7e260f9c3ba1e833f9f40ab5079c66df2ef6ade94fa2f825866f7670",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorPrincipalUnits.olean",
+      "olean_sha256": "ba1569f4e3c4ede33703a111d725959bbd568bb6749db1a4df6c49aa1bfb3db6"
+    },
+    {
+      "source": "ColibTest/MilnorRepeatedUniformizer.lean",
+      "source_sha256": "14807ef4a3c9a39fb48592d568b6055d307fccb3f15240cf4016c2a117b14d85",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorRepeatedUniformizer.olean",
+      "olean_sha256": "4d6d3b99b86626cd57a455e98d0d72d1769014d40f29f3c269bb7b0b9ad12868"
+    },
+    {
+      "source": "ColibTest/MilnorResidueSurjectivity.lean",
+      "source_sha256": "6097b3dc0aff82098d5374eb1e851a71cdffa12f9752fb45acba55ad8fd85482",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorResidueSurjectivity.olean",
+      "olean_sha256": "290bfa819afbdb0d4b1d32a76247c86631c1f1ea7d789b6809a2c394bcfe6d0c"
+    },
+    {
+      "source": "ColibTest/MilnorRightBaseFieldProduct.lean",
+      "source_sha256": "c474113dab6a5d2fc0f899cb11dd18ff521c57c27714168d22f987622b9f7192",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorRightBaseFieldProduct.olean",
+      "olean_sha256": "c48c5fdd90e591c6be4afe900455d34882644bea4f0b7edda7d859f610426b0c"
+    },
+    {
+      "source": "ColibTest/MilnorRightUnitProduct.lean",
+      "source_sha256": "5788b1835b1295dce8e1e7f96fbb5d9cb87ad492f76058226b0148547e36133d",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorRightUnitProduct.olean",
+      "olean_sha256": "eea890c46b742edbcfca834818717b1c89afe10066a6bd363b2ad443aee6bdbb"
+    },
+    {
+      "source": "ColibTest/MilnorSpecialization.lean",
+      "source_sha256": "e6be7d1dc55d92b84ae608997d977394fb88e741d9387b1cf83956faa83f405d",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorSpecialization.olean",
+      "olean_sha256": "c3a48cbce542dce7e72a1f9f5e86d6246164704b732dd9a659cf188c0fddebcc"
+    },
+    {
+      "source": "ColibTest/MilnorSpecializationProduct.lean",
+      "source_sha256": "09de4780a0c7be1580d9975ac7c8b8d64132ce83d3ea8191367538cad5115327",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorSpecializationProduct.olean",
+      "olean_sha256": "afb192b49ba21b967c06b7a6ab107e94797d6f02c627607bdc5e686b3c2b5e53"
+    },
+    {
+      "source": "ColibTest/MilnorTransport.lean",
+      "source_sha256": "520f19b0576a8be45a9ff848f4c3561c270c2e345297c87cf4f90bbcc17b0e5b",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorTransport.olean",
+      "olean_sha256": "8b6c1b9a216297c614ed5715a21c758fd4db7a43a339b22074f8fddd615c3420"
+    },
+    {
+      "source": "ColibTest/MilnorUnitProduct.lean",
+      "source_sha256": "875a6df04be5bb3cc2e1c1a3acc9d54a379d82f11decd15d34b73c17e590eb30",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorUnitProduct.olean",
+      "olean_sha256": "47d0790a525e032ce7680170c89a241e2c3adbbb7ea44467a3d6fa9226b6e3e7"
+    },
+    {
+      "source": "ColibTest/MilnorUnramifiedMap.lean",
+      "source_sha256": "71b19b2e4d78dd377e5ebe264ed9160192486ed1f6e0b5acd4f742843f526fd2",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorUnramifiedMap.olean",
+      "olean_sha256": "00e34ea95bfbab0bf47b3015d538126c0e87fed9401d5def6ebd078a83e8eebd"
+    },
+    {
+      "source": "ColibTest/MilnorUnramifiedMapAcross.lean",
+      "source_sha256": "16ef70688caace3595be715423120589ffacbfca12bba8019fe5b787e060d739",
+      "olean": ".lake/build/lib/lean/ColibTest/MilnorUnramifiedMapAcross.olean",
+      "olean_sha256": "9182424899c697d2b873f0ce38e136eace917ed882266bbdf8110e995763f8cd"
+    },
+    {
+      "source": "ColibTest/PrincipalExtOne.lean",
+      "source_sha256": "ddf05b157f00e255c1d67ab1e1d9811c13732bd75cf7eb117c26b1791e2c0d7b",
+      "olean": ".lake/build/lib/lean/ColibTest/PrincipalExtOne.olean",
+      "olean_sha256": "feac041d3f0a262e72a49e27e0f94f4f4a2c105310c8904cc4982a3843ae21f1"
+    },
+    {
+      "source": "ColibTest/PrincipalExtOneQuotient.lean",
+      "source_sha256": "2a0ea68ad69a812443f3a627e397aa18d4e0062ce0d3ca39823cc673222f6bf8",
+      "olean": ".lake/build/lib/lean/ColibTest/PrincipalExtOneQuotient.olean",
+      "olean_sha256": "b4c07012b9006b7d4328c917502b15582a1dec83db9c138744ffd127511bf3ba"
+    },
+    {
+      "source": "ColibTest/PrincipalGeneratorChange.lean",
+      "source_sha256": "13d8883b6979f680c2c1dc90ced8a306e63e642445c34194728e49a1cf40655f",
+      "olean": ".lake/build/lib/lean/ColibTest/PrincipalGeneratorChange.olean",
+      "olean_sha256": "e325ae56e52d8597d5a76f748d58a0f129c9450fa3df99a37e91b1091e36738f"
+    },
+    {
+      "source": "ColibTest/PrincipalGeneratorTransport.lean",
+      "source_sha256": "60b3af17c87dda1821d7b0abb088a5aa4f3272e2ad7e6a7c815b599f303c98e8",
+      "olean": ".lake/build/lib/lean/ColibTest/PrincipalGeneratorTransport.olean",
+      "olean_sha256": "d2287949faf7a33c16ff2558c082ead658429ea44c27a1f511158b4881986a17"
+    },
+    {
+      "source": "ColibTest/PrincipalSeqGenerator.lean",
+      "source_sha256": "5bb51c44e0e789ee3ec5785573f46c6eb2dd6372a74597aee2924aaea5984c96",
+      "olean": ".lake/build/lib/lean/ColibTest/PrincipalSeqGenerator.olean",
+      "olean_sha256": "273d2559a05a93cd86b7bc110cc870b3fe15cdc357cecdec0430dc5a9448291d"
+    },
+    {
+      "source": "ColibTest/PrincipalSeqGeneratorChange.lean",
+      "source_sha256": "35edc8b59e9d648cd962bee1a6f01169e1402a8f5e17e8f3a4240abd435cf095",
+      "olean": ".lake/build/lib/lean/ColibTest/PrincipalSeqGeneratorChange.olean",
+      "olean_sha256": "8c1bd3070b0c6521711da07399cbb1602e7ec9c4208062605efd7c5aa6a2a2f3"
+    },
+    {
+      "source": "ColibTest/ProjectiveConnecting.lean",
+      "source_sha256": "8a596de6368ee878d84c200d4b922e5461d367ce816e85a8473226ef32ed633b",
+      "olean": ".lake/build/lib/lean/ColibTest/ProjectiveConnecting.olean",
+      "olean_sha256": "ee8cb582ed03d173ffa3340cb7f342b67be2ff7878d05c858110d4a7c6537d39"
+    },
+    {
+      "source": "ColibTest/SingleConeLift.lean",
+      "source_sha256": "53319d56b25b0752f512f068a81e5b76e076d038d2ccb31804c19266d093d274",
+      "olean": ".lake/build/lib/lean/ColibTest/SingleConeLift.olean",
+      "olean_sha256": "f50ea8f0fb70653c3b152cfc8b7739e15b89d0f8c85d2fd78917e483f2bda015"
+    },
+    {
+      "source": "ColibTest/TopExtClass.lean",
+      "source_sha256": "7f3272d4e81432d2e3e4268b73a18325b58b2e18e66b913917f126caa9e77fe2",
+      "olean": ".lake/build/lib/lean/ColibTest/TopExtClass.olean",
+      "olean_sha256": "1526ac54f9040b362451d96b7b9e331388f82d6cbef55f8f7d3341c3e45af7bb"
+    },
+    {
+      "source": "ColibTest/TopExtGeneratorChange.lean",
+      "source_sha256": "e6ab9146062f15290060d0bb4106f40ce0801b9176a13897a96d4fe0c73f068a",
+      "olean": ".lake/build/lib/lean/ColibTest/TopExtGeneratorChange.olean",
+      "olean_sha256": "cc96447a3239a2c2d5b7aba7dc76e5256277653dbd8805555e05d1320ce38117"
+    },
+    {
+      "source": "ColibTest/TopExtRingQuotient.lean",
+      "source_sha256": "4d6a4a37baf373d263ce86e6d6a06a338bee56a9f39b255424f69e53975bd85c",
+      "olean": ".lake/build/lib/lean/ColibTest/TopExtRingQuotient.olean",
+      "olean_sha256": "f068422527438a86fc1c1ee370fccfd2c1fb47fdaf902b6cebbfa781e3745b56"
+    }
+  ],
+  "compiled_inventory_scope": "The inventory records declarations emitted by the native Library exporter for the selected modules, not an exhaustive list of generated/private helpers. Complete source-file coverage and all public-API preservation were independently checked; the production axiom audit covers all 1606 production declarations.",
+  "branch_coverage": [
+    {
+      "branch": "migration/motivic-principal-ext",
+      "revision": "47fca59054929fc5a61eb9c75ee1a984f1199979",
+      "represented_selected_paths": [],
+      "already_in_main": [
+        "Colib/Algebra/Homology/DerivedCategory/Ext/Regular.lean",
+        "Colib/RingTheory/Koszul/PrincipalExt.lean",
+        "ColibTest/PrincipalExt.lean"
+      ]
+    },
+    {
+      "branch": "migration/milnor-transport-ext-quotient",
+      "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8",
+      "represented_selected_paths": [
+        "Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+        "ColibTest/ExtQuotient.lean",
+        "ColibTest/MilnorTransport.lean",
+        "docs/migration/milnor-transport.json",
+        "docs/migration/motivic-ext-quotient.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/transport-ext-principal-units",
+      "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+      "represented_selected_paths": [
+        "Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
+        "Colib/KTheory/MilnorK/Residue/PrincipalUnits.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+        "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
+        "ColibTest/ExtQuotient.lean",
+        "ColibTest/MilnorPrincipalUnits.lean",
+        "ColibTest/MilnorTransport.lean",
+        "ColibTest/PrincipalExtOne.lean",
+        "docs/migration/milnor-principal-units.json",
+        "docs/migration/milnor-transport.json",
+        "docs/migration/motivic-ext-quotient.json",
+        "docs/migration/motivic-principal-ext-one.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/milnor-residue-cone-sign",
+      "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
+      "represented_selected_paths": [
+        "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+        "Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
+        "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "ColibTest/MappingConeSign.lean",
+        "ColibTest/MilnorRepeatedUniformizer.lean",
+        "ColibTest/MilnorUnitProduct.lean",
+        "docs/migration/milnor-repeated-uniformizer.json",
+        "docs/migration/milnor-unitproduct.json",
+        "docs/migration/motivic-principal-generator-sign.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/basefield-connecting",
+      "revision": "45178bac37b0c2870840f7d50c31608427b791b0",
+      "represented_selected_paths": [
+        "Colib/Algebra/Homology/DerivedCategory/SingleCocycle.lean",
+        "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+        "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
+        "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
+        "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+        "ColibTest/MappingConeSign.lean",
+        "ColibTest/MilnorBaseFieldProduct.lean",
+        "ColibTest/MilnorTransport.lean",
+        "ColibTest/MilnorUnitProduct.lean",
+        "ColibTest/ProjectiveConnecting.lean",
+        "ColibTest/SingleConeLift.lean",
+        "docs/migration/milnor-basefield-product.json",
+        "docs/migration/milnor-transport.json",
+        "docs/migration/milnor-unitproduct.json",
+        "docs/migration/motivic-principal-generator-sign.json",
+        "docs/migration/motivic-projective-connecting.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/specialization-generator-transport",
+      "revision": "31f76f4f4a23cc65dec4a6728db7fdf045f065d5",
+      "represented_selected_paths": [
+        "Colib/Algebra/Homology/DerivedCategory/SingleCocycle.lean",
+        "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+        "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
+        "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
+        "Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
+        "Colib/RingTheory/Koszul/PrincipalGeneratorTransport.lean",
+        "ColibTest/MappingConeSign.lean",
+        "ColibTest/MilnorSpecialization.lean",
+        "ColibTest/PrincipalExtOne.lean",
+        "ColibTest/PrincipalGeneratorTransport.lean",
+        "ColibTest/ProjectiveConnecting.lean",
+        "ColibTest/SingleConeLift.lean",
+        "docs/migration/milnor-specialization.json",
+        "docs/migration/motivic-principal-ext-one.json",
+        "docs/migration/motivic-principal-generator-sign.json",
+        "docs/migration/motivic-principal-generator-transport.json",
+        "docs/migration/motivic-projective-connecting.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/native-seq-specialization-product",
+      "revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+      "represented_selected_paths": [
+        "Colib/Algebra/Homology/DerivedCategory/SingleCocycle.lean",
+        "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+        "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
+        "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
+        "Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Residue/SpecializationProduct.lean",
+        "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
+        "Colib/RingTheory/Koszul/PrincipalGeneratorTransport.lean",
+        "Colib/RingTheory/Koszul/PrincipalSeqGenerator.lean",
+        "ColibTest/MappingConeSign.lean",
+        "ColibTest/MilnorSpecialization.lean",
+        "ColibTest/MilnorSpecializationProduct.lean",
+        "ColibTest/PrincipalExtOne.lean",
+        "ColibTest/PrincipalGeneratorTransport.lean",
+        "ColibTest/PrincipalSeqGenerator.lean",
+        "ColibTest/ProjectiveConnecting.lean",
+        "ColibTest/SingleConeLift.lean",
+        "docs/migration/milnor-specialization-product.json",
+        "docs/migration/milnor-specialization.json",
+        "docs/migration/motivic-principal-ext-one.json",
+        "docs/migration/motivic-principal-generator-sign.json",
+        "docs/migration/motivic-principal-generator-transport.json",
+        "docs/migration/motivic-principal-seq-generator.json",
+        "docs/migration/motivic-projective-connecting.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/dvr-naturality-generator-change",
+      "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
+      "represented_selected_paths": [
+        "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+        "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
+        "Colib/RingTheory/Koszul/PrincipalGeneratorChange.lean",
+        "ColibTest/MilnorNaturality.lean",
+        "ColibTest/MilnorSpecialization.lean",
+        "ColibTest/MilnorTransport.lean",
+        "ColibTest/PrincipalExtOne.lean",
+        "ColibTest/PrincipalGeneratorChange.lean",
+        "docs/migration/milnor-naturality.json",
+        "docs/migration/milnor-specialization.json",
+        "docs/migration/milnor-transport.json",
+        "docs/migration/motivic-principal-ext-one.json",
+        "docs/migration/motivic-principal-generator-change.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/native-seq-generator-change",
+      "revision": "060343c42ce30a55dbbfc8985a97900b471028d6",
+      "represented_selected_paths": [
+        "Colib/Algebra/Homology/DerivedCategory/SingleCocycle.lean",
+        "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+        "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
+        "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
+        "Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.lean",
+        "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
+        "Colib/RingTheory/Koszul/PrincipalGeneratorChange.lean",
+        "Colib/RingTheory/Koszul/PrincipalGeneratorTransport.lean",
+        "Colib/RingTheory/Koszul/PrincipalSeqGenerator.lean",
+        "Colib/RingTheory/Koszul/PrincipalSeqGeneratorChange.lean",
+        "ColibTest/MappingConeSign.lean",
+        "ColibTest/PrincipalExtOne.lean",
+        "ColibTest/PrincipalGeneratorChange.lean",
+        "ColibTest/PrincipalGeneratorTransport.lean",
+        "ColibTest/PrincipalSeqGenerator.lean",
+        "ColibTest/PrincipalSeqGeneratorChange.lean",
+        "ColibTest/ProjectiveConnecting.lean",
+        "ColibTest/SingleConeLift.lean",
+        "docs/migration/motivic-principal-ext-one.json",
+        "docs/migration/motivic-principal-generator-change.json",
+        "docs/migration/motivic-principal-generator-sign.json",
+        "docs/migration/motivic-principal-generator-transport.json",
+        "docs/migration/motivic-principal-seq-generator-change.json",
+        "docs/migration/motivic-principal-seq-generator.json",
+        "docs/migration/motivic-projective-connecting.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/native-koszul-top-determinant",
+      "revision": "6cc47403535f13d0a9ad6ac239771ecb0e3c42c8",
+      "represented_selected_paths": [
+        "Colib/RingTheory/Koszul/TopExtClass.lean",
+        "Colib/RingTheory/Koszul/TopExtGeneratorChange.lean",
+        "ColibTest/TopExtClass.lean",
+        "ColibTest/TopExtGeneratorChange.lean",
+        "docs/migration/motivic-top-ext-class.json",
+        "docs/migration/motivic-top-ext-generator-change.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/milnor-right-unramified",
+      "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
+      "represented_selected_paths": [
+        "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+        "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+        "Colib/KTheory/MilnorK/Symbols/Involution.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+        "ColibTest/MilnorNaturality.lean",
+        "ColibTest/MilnorRightUnitProduct.lean",
+        "ColibTest/MilnorSpecialization.lean",
+        "ColibTest/MilnorTransport.lean",
+        "ColibTest/MilnorUnitProduct.lean",
+        "ColibTest/MilnorUnramifiedMap.lean",
+        "docs/migration/milnor-naturality.json",
+        "docs/migration/milnor-right-unit-product.json",
+        "docs/migration/milnor-specialization.json",
+        "docs/migration/milnor-transport.json",
+        "docs/migration/milnor-unitproduct.json",
+        "docs/migration/milnor-unramified-map.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/milnor-unramified-four-universes",
+      "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+      "represented_selected_paths": [
+        "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+        "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+        "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+        "Colib/KTheory/MilnorK/Symbols/Involution.lean",
+        "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+        "ColibTest/MilnorNaturality.lean",
+        "ColibTest/MilnorRightUnitProduct.lean",
+        "ColibTest/MilnorSpecialization.lean",
+        "ColibTest/MilnorTransport.lean",
+        "ColibTest/MilnorUnitProduct.lean",
+        "ColibTest/MilnorUnramifiedMap.lean",
+        "ColibTest/MilnorUnramifiedMapAcross.lean",
+        "docs/migration/milnor-naturality.json",
+        "docs/migration/milnor-right-unit-product.json",
+        "docs/migration/milnor-specialization.json",
+        "docs/migration/milnor-transport.json",
+        "docs/migration/milnor-unitproduct.json",
+        "docs/migration/milnor-unramified-across.json",
+        "docs/migration/milnor-unramified-map.json"
+      ],
+      "already_in_main": []
+    },
+    {
+      "branch": "migration/native-koszul-top-ring-quotient",
+      "revision": "ee31478ebaafef8a8875000e8f479004141c840f",
+      "represented_selected_paths": [
+        "Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
+        "Colib/RingTheory/Koszul/TopExtClass.lean",
+        "Colib/RingTheory/Koszul/TopExtGeneratorChange.lean",
+        "Colib/RingTheory/Koszul/TopExtRingQuotient.lean",
+        "ColibTest/ExtQuotient.lean",
+        "ColibTest/TopExtClass.lean",
+        "ColibTest/TopExtGeneratorChange.lean",
+        "ColibTest/TopExtRingQuotient.lean",
+        "docs/migration/motivic-ext-quotient.json",
+        "docs/migration/motivic-top-ext-class.json",
+        "docs/migration/motivic-top-ext-generator-change.json",
+        "docs/migration/motivic-top-ext-ring-quotient.json"
+      ],
+      "already_in_main": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0114"
+title = "Generator change for native singleton cocycles"
+kind = "theorem"
+section = "projective-dimension"
+order = 90
+statement = "The actual Stacks singleton resolution coefficient cocycles transform by multiplication by c under the quotient map conjugated by the canonical singleton quotient identifications."
+scope = "Ring-regular a and c*a, explicit singleton Koszul-regularity proofs, arbitrary coefficients in the ring universe and independent Ext universe. The map uses hom for c*a then the actual ideal-inclusion map then inv for a. Negative normalizations cancel. No general matrix comparison or theorem naming the old Aglib generator is asserted. Tag 06XP is extension-class background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use native extension-class naturality and the exact checked singleton resolution normalization."

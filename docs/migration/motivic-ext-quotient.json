@@ -1,0 +1,198 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
+      "sha256": "6a21d3c77634df5c3b44ec2f3d98dac3dc4f1c50e56c9a78e68190faaa2822c3"
+    }
+  ],
+  "provenance": {
+    "copyright": "2026 algebraic-geometry contributors",
+    "authors": "kangxyz",
+    "license": "Apache-2.0",
+    "origin_scope": "Native Aglib quotient-action infrastructure for its Motivic-derived Koszul Ext calculation; not claimed to be verbatim from the original Motivic archive."
+  },
+  "canonical_objects": [
+    "CategoryTheory.Abelian.Ext",
+    "Ideal.Quotient",
+    "Module.IsTorsionBySet.module",
+    "LinearMap.mulRight"
+  ],
+  "declarations": [
+    {
+      "source": "CategoryTheory.Abelian.Ext.quotientSourceIsTorsionBySet",
+      "target": "CategoryTheory.Abelian.Ext.quotientSourceIsTorsionBySet",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "disposition": "Exact source declaration and proof body retained; module documentation, metadata import and compiled Library/reference annotations added.",
+      "status": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "CategoryTheory.Abelian.Ext.quotientSourceModule",
+      "target": "CategoryTheory.Abelian.Ext.quotientSourceModule",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "disposition": "Exact source declaration and proof body retained; module documentation, metadata import and compiled Library/reference annotations added.",
+      "status": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "CategoryTheory.Abelian.Ext.quotientSourceModule_mk_smul",
+      "target": "CategoryTheory.Abelian.Ext.quotientSourceModule_mk_smul",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "disposition": "Exact source declaration and proof body retained; module documentation, metadata import and compiled Library/reference annotations added.",
+      "status": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "CategoryTheory.Abelian.Ext.quotientSourceMul",
+      "target": "CategoryTheory.Abelian.Ext.quotientSourceMul",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "disposition": "Exact source declaration and proof body retained; module documentation, metadata import and compiled Library/reference annotations added.",
+      "status": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "CategoryTheory.Abelian.Ext.quotientSourceMul_mk",
+      "target": "CategoryTheory.Abelian.Ext.quotientSourceMul_mk",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "disposition": "Exact source declaration and proof body retained; module documentation, metadata import and compiled Library/reference annotations added.",
+      "status": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    },
+    {
+      "source": "CategoryTheory.Abelian.Ext.quotientSourceModule_smul_eq_precomp",
+      "target": "CategoryTheory.Abelian.Ext.quotientSourceModule_smul_eq_precomp",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+      "disposition": "Exact source declaration and proof body retained; module documentation, metadata import and compiled Library/reference annotations added.",
+      "status": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    }
+  ],
+  "hypotheses": "CommRing R; I any ideal; N any R-module in the ring universe; n any natural degree; independently chosen HasExt universe. No regularity, Noetherianity, finiteness or properness hypotheses. Source multiplication declarations do not depend on HasExt.",
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "reused": [
+      {
+        "module": "Mathlib.Algebra.Module.Torsion.Basic",
+        "declarations": [
+          "Module.IsTorsionBySet.module",
+          "Module.IsTorsionBySet.mk_smul"
+        ],
+        "scope": "The actual existing quotient module construction; no new quotient action implementation."
+      },
+      {
+        "module": "Mathlib.Algebra.Homology.DerivedCategory.Ext.Linear",
+        "declarations": [
+          "CategoryTheory.Abelian.Ext.mk\u2080_smul",
+          "CategoryTheory.Abelian.Ext.smul_comp"
+        ],
+        "scope": "Existing native Ext linearity and Yoneda scalar compatibility."
+      },
+      {
+        "module": "Mathlib.RingTheory.Ideal.Quotient.Operations",
+        "declarations": [
+          "Ideal.Quotient.mk_surjective",
+          "Ideal.Quotient.eq_zero_iff_mem"
+        ],
+        "scope": "Existing ideal quotient and representative calculus."
+      }
+    ],
+    "nearby_existing": [
+      {
+        "module": "StacksFrontier.RingTheory.Dualizing.ExtCohenMacaulaySerre",
+        "declaration": "CategoryTheory.Abelian.Ext.smul_eq_zero_of_mem_annihilator",
+        "scope": "Already proves source-annihilator scalar vanishing for standard Ext universe with no Noetherian hypotheses on that declaration. We do not copy or claim a new general annihilator theorem. The migrated result specializes to quotient sources, preserves arbitrary HasExt universe, constructs the quotient action using Mathlib and identifies source multiplication. Importing the higher Dualizing application into this lower Ext interface is deliberately avoided."
+      },
+      {
+        "module": "StacksFrontier.Algebra.Homology.DerivedCategory.Ext.ExtOneQuotient",
+        "declaration": "CategoryTheory.Abelian.Ext.extOneQuotientEquiv",
+        "scope": "Computes degree-one Ext as a quotient of relation-object maps in a field-linear category; not a quotient-ring scalar action on Ext from R/I."
+      },
+      {
+        "module": "Mathlib.Algebra.Category.ModuleCat.Ext.Basic",
+        "declaration": "CategoryTheory.Abelian.Ext.postcomp_smul_id_eq_zero_of_mem_annihilator",
+        "scope": "Existing source-annihilator scalar vanishing at the standard Ext universe; not the arbitrary-w explicit quotient action API."
+      }
+    ],
+    "search_scope": "Exact pinned Mathlib and Stacks source trees searched for quotientSource, IsTorsionBySet/Ext, quotient-module and annihilator/Ext APIs. No matching quotient-source action plus Yoneda multiplication API found."
+  },
+  "scope_limits": [
+    "No new or parallel Ext, derived category, quotient ring, or Koszul object.",
+    "Explicit quotientSourceModule, not a global instance. Original R-action retained on representatives.",
+    "Does not yet identify a principal degree-one generator or prove a quotient-linear Ext-one equivalence."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
+        "source_sha256": "253b0d8431622503339878d15bda823dd21140691eef3f4414bb1d05d39cb1ad",
+        "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.olean",
+        "olean_sha256": "df825f0342e76f97c69da845c123c59af47d54c0f86593ad3b20bdbcb7fb76d3"
+      },
+      {
+        "source": "ColibTest/ExtQuotient.lean",
+        "source_sha256": "03baf7dfed40c99a239592fb941d52bed4474f484e3de1bceead4c7e077f3eac",
+        "olean": ".lake/build/lib/lean/ColibTest/ExtQuotient.olean",
+        "olean_sha256": "5f343f051bf8c4885c6f38d5887f90aa4146c54216de28521bf7b60351855613"
+      }
+    ]
+  },
+  "library_item": "COL-0124",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Section 13.27, composition paragraph after Lemma 13.27.6 and before Lemma 13.27.7",
+    "relation": "ingredient only",
+    "scope": "Yoneda/derived Ext composition and associativity; not a verbatim assertion of R/I-action or R-scalar compatibility.",
+    "verification": "Official page directly inspected by independent reviewer on 2026-11-05."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only source/mathematical/upstream/provenance/hash review passed. All six declaration bodies agree with Aglib; same quotient, original R-action and Yoneda source multiplication with zero_add degree witness are retained. Same ring/module universe u and independent Ext universe w; source multiplication is independent of HasExt. No extra hypotheses or Ext-one identification. Review did not compile or run kernel replay."
+  },
+  "consolidated_source": {
+    "source": "native-koszul-top-ring-quotient",
+    "revision_or_worktree": "ee31478ebaafef8a8875000e8f479004141c840f",
+    "source_ledger_sha256": "8eafc5d673058fd9c14d01147e45d6cb1c23b97e55358f1f600ada6b17aeca39",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.ExtQuotient"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

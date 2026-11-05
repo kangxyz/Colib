@@ -1,0 +1,148 @@
+{
+  "topic": "Principal resolution generator with actual quotient transport",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single.lean",
+      "sha256": "e0416aecd5ce1ac1a0422a7409afc40bd659cb28008e83aae75c4a26ced1ef1b"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ideal.lean",
+      "sha256": "afe441c58756f16d107f2002cefc1aaec6806700270b293ce0741f5e2381f572"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext.lean",
+      "sha256": "061e56a857f77e8240ce12376e4c63c8bf730246da84fb752b9de2f24c36cb5e"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext/Ideal.lean",
+      "sha256": "6a7a578a2ada139397a290a2b4adf8e1e3256dbfa70fe86f60874cd287929c47"
+    }
+  ],
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "provenance": "New canonical comparison interfaces prompted by the native Aglib/Motivic-derived principal Ext family. No legacy definition is imported or reconstructed.",
+  "declarations": [
+    {
+      "module": "Colib.CategoryTheory.Abelian.Projective.ConnectingTransport",
+      "name": "CategoryTheory.ProjectiveResolution.mk\u2080_inv_comp_extMk_eq_neg_extClass",
+      "scope": "Any abelian category with arbitrary HasExt universe. P resolves X, e:X\u2245S.X3, c and b lift the short exact differential and augmentation. Actual inverse-isomorphism Yoneda precomposition of P.extMk c equals minus S.extClass."
+    },
+    {
+      "module": "Colib.RingTheory.Koszul.PrincipalGeneratorTransport",
+      "name": "Koszul.principalExtMk_transport_eq_neg_class",
+      "scope": "CommRing R, a regular on R, arbitrary coefficients N and HasExt universe. P resolves any Q equipped with e:Q\u2245R/(a); explicit degree-zero and degree-one maps b,c and their two commuting equations identify transported coefficient cocycles with minus principalExtOneClass."
+    }
+  ],
+  "upstream_reuse": [
+    "Mathlib ShortComplex.isoMk and shortExact_of_iso",
+    "Mathlib ShortExact.extClass_naturality",
+    "Mathlib Ext.mk\u2080_comp_mk\u2080_assoc, composition with identity and negation",
+    "Mathlib ProjectiveResolution.extMk_comp_mk\u2080",
+    "Previously proved Colib ProjectiveResolution.extMk_eq_neg_extClass",
+    "Previously proved Colib principalExtOneClass on the native principal short exact sequence"
+  ],
+  "upstream_audit": "Reuses the exact-pin projective/connecting audit from motivic-projective-connecting.json. The additional transport is provided by native ShortComplex isomorphism and Ext naturality; no new resolution is formed and no alternative quotient or Ext implementation is introduced.",
+  "source_substitution": {
+    "P": "Actual Aglib ChainComplex.Koszul.singleProjectiveResolution R a ha, not recreated in Colib.",
+    "Q": "The actual source SingleQuotient R a.",
+    "e": "(singleQuotientIdealLinearEquiv a).toModuleIso.",
+    "b_and_c": "Identity morphisms under the original definitionally rank-one degree-zero and degree-one objects.",
+    "hc": "singleComplex_d_add_two R a 0 followed by zero_comp.",
+    "h": "singleComplex_d_one_zero R a and composition with identity.",
+    "hb": "singleAugmentation_f_zero and singleAugmentationMap_comp_ideal (with the equality reversed as needed).",
+    "class": "singleExtOneClass_apply identifies the source cocycle; singleIdealExtOneClass_apply identifies the inverse quotient transport.",
+    "augmentation_evidence": "/-- The original augmentation becomes the literal ideal quotient projection. -/\n@[reassoc]\ntheorem singleAugmentationMap_comp_ideal :\n    singleAugmentationMap R a \u226b (singleQuotientIdealLinearEquiv a).toModuleIso.hom =\n      ModuleCat.ofHom (Ideal.span {a}).mkQ := by\n  apply ModuleCat.hom_ext\n  apply LinearMap.ext\n  exact singleQuotientIdealLinearEquiv_apply_mk a\n\n\n"
+  },
+  "scope_limits": [
+    "Generic transported and principal-native formulas compiled; a theorem directly naming old Aglib singleIdealExtOneClass is not compiled in this batch.",
+    "No old Aglib environment rebuilt and no removed cache restored, per parent constraint.",
+    "No production dependency on Aglib and no copied legacy complex model.",
+    "The actual old-source named instantiation remains pending; source file inspection is distinct from a compiled comparison."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.lean",
+        "source_sha256": "8dc0dfaba99c264ddcac5ccc91ad4892903df31b70653f69c31ed3c8e8e1172f",
+        "olean": ".lake/build/lib/lean/Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.olean",
+        "olean_sha256": "e9dacc77ef7e91b19fa586ec5f4459bc1cd4bf74c6e95abe12da991c07cc3190"
+      },
+      {
+        "source": "Colib/RingTheory/Koszul/PrincipalGeneratorTransport.lean",
+        "source_sha256": "5eb01f760dee834044ff04d7c175c84a9436b436f4e86b95d161cca9f385500e",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalGeneratorTransport.olean",
+        "olean_sha256": "5bcecabe05999bc1b907581156579c20ab6fab500536128b3ac1445b447fc8c3"
+      },
+      {
+        "source": "ColibTest/PrincipalGeneratorTransport.lean",
+        "source_sha256": "60b3af17c87dda1821d7b0abb088a5aa4f3272e2ad7e6a7c815b599f303c98e8",
+        "olean": ".lake/build/lib/lean/ColibTest/PrincipalGeneratorTransport.olean",
+        "olean_sha256": "d2287949faf7a33c16ff2558c082ead658429ea44c27a1f511158b4881986a17"
+      }
+    ]
+  },
+  "library_item": "COL-0121",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Composition paragraph after Lemma 13.27.6",
+    "relation": "ingredient only",
+    "scope": "Yoneda composition, not the explicit quotient-transport sign formula or old named source instantiation."
+  },
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "native_resolution_progress": "The actual Stacks singleton seqProjectiveResolution coordinate, differential and augmentation comparison is now instantiated in motivic-principal-seq-generator.json. A compiled theorem naming the actual old Aglib singleIdealExtOneClass remains pending.",
+  "generator_change_progress": "Native singleton generator change is proved in motivic-principal-seq-generator-change.json using the actual conjugated quotient map; old named Aglib comparison remains pending.",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed for both source leaves: actual inverse-isomorphism Yoneda precomposition, negative sign, explicit differential and augmentation equations, arbitrary coefficient module and independent Ext universe. Four Aglib blobs, six source/olean artifacts, two dependency sources and five historical receipts checked. Actual named old singleIdealExtOneClass instantiation remains pending. Reviewer did not compile, run kernel replay or review this integration tree."
+  },
+  "consolidated_source": {
+    "source": "native-seq-generator-change",
+    "revision_or_worktree": "060343c42ce30a55dbbfc8985a97900b471028d6",
+    "source_ledger_sha256": "e43bfa3eae9c6658bb73f5f0e4df7b52cc2783f4ec036ceb72e6494c02b09e99",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.PrincipalGeneratorTransport"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

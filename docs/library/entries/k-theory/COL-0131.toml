@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0131"
+title = "Specified unramified tame residue naturality"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 240
+statement = "The actual residue square commutes for a compatible fraction-field map over a local DVR map taking a specified uniformizer to a uniformizer."
+scope = "R and S share a universe; F and E have independent universes. Ramification index one only, arbitrary residue degree and homogeneous classes. The specified uniformizer is explicit. The four-universe theorem is COL-0113; these signatures are compatibility wrappers. Canonical arbitrary-uniformizer naturality remains pending. Tag 0EAY is DVR tame-symbol background only."
+review = "author_checked"
+proof = "Specialize the four-universe theorem, using strict equality with the original common-universe ring map."
+provenance = "aglib"

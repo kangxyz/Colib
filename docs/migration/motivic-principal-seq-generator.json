@@ -1,0 +1,139 @@
+{
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single.lean",
+      "sha256": "e0416aecd5ce1ac1a0422a7409afc40bd659cb28008e83aae75c4a26ced1ef1b"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ideal.lean",
+      "sha256": "afe441c58756f16d107f2002cefc1aaec6806700270b293ce0741f5e2381f572"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext.lean",
+      "sha256": "061e56a857f77e8240ce12376e4c63c8bf730246da84fb752b9de2f24c36cb5e"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext/Ideal.lean",
+      "sha256": "6a7a578a2ada139397a290a2b4adf8e1e3256dbfa70fe86f60874cd287929c47"
+    }
+  ],
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "topic": "Native singleton Koszul resolution generator comparison",
+  "provenance": "Motivic-derived principal Ext generator migration using the pinned Stacks exterior-power model, not the old Aglib two-term model.",
+  "module": "Colib.RingTheory.Koszul.PrincipalSeqGenerator",
+  "declarations": [
+    "Koszul.singletonSeqQuotientIso",
+    "Koszul.singletonSeqCoordinate",
+    "Koszul.singletonSeqCoordinate_cocycle",
+    "Koszul.singletonSeqCoordinate_comp_lsmul",
+    "Koszul.singletonSeqAugmentation_comp_quotientIso",
+    "Koszul.singletonSeqExtMk_eq_neg_class"
+  ],
+  "mathematical_scope": "CommRing R, a regular on R, any proof hf of Koszul regularity of its singleton sequence, arbitrary coefficients and HasExt universe. The actual Stacks seqProjectiveResolution coefficient cocycle, precomposed with the inverse canonical quotient identification, is minus the standard principal connecting class.",
+  "upstream_reuse": [
+    "Stacks seqProjectiveResolution uses the actual seqComplex and koszulAugmentation.",
+    "Stacks seqComplex_isZero_of_lt supplies the degree-two cocycle equation.",
+    "Stacks zeroEquiv_d_zero and seqDual_apply identify the differential.",
+    "Stacks koszulAugmentation_f_zero identifies the augmentation.",
+    "Mathlib exteriorPower.zeroEquiv and oneEquiv, LinearMap.proj and Submodule.quotEquivOfEq supply all coordinates and transport.",
+    "Colib principalExtMk_transport_eq_neg_class supplies the previously verified sign."
+  ],
+  "upstream_audit": "Exact pinned sources searched in Koszul Defs, Relations, Augmentation, TorComparison and Descent. Descent contains a private singleton regularity proof; the present theorem consumes the native hf parameter rather than duplicating that proof. hf is also obtainable from generic weak-regularity comparison. No existing public Ext connecting comparison was found.",
+  "source_correspondence": {
+    "P": "Actual Aglib ChainComplex.Koszul.singleProjectiveResolution R a ha, not recreated in Colib.",
+    "Q": "The actual source SingleQuotient R a.",
+    "e": "(singleQuotientIdealLinearEquiv a).toModuleIso.",
+    "b_and_c": "Identity morphisms under the original definitionally rank-one degree-zero and degree-one objects.",
+    "hc": "singleComplex_d_add_two R a 0 followed by zero_comp.",
+    "h": "singleComplex_d_one_zero R a and composition with identity.",
+    "hb": "singleAugmentation_f_zero and singleAugmentationMap_comp_ideal (with the equality reversed as needed).",
+    "class": "singleExtOneClass_apply identifies the source cocycle; singleIdealExtOneClass_apply identifies the inverse quotient transport.",
+    "augmentation_evidence": "/-- The original augmentation becomes the literal ideal quotient projection. -/\n@[reassoc]\ntheorem singleAugmentationMap_comp_ideal :\n    singleAugmentationMap R a \u226b (singleQuotientIdealLinearEquiv a).toModuleIso.hom =\n      ModuleCat.ofHom (Ideal.span {a}).mkQ := by\n  apply ModuleCat.hom_ext\n  apply LinearMap.ext\n  exact singleQuotientIdealLinearEquiv_apply_mk a\n\n\n"
+  },
+  "limits": [
+    "This theorem names the actual Stacks resolution and explicitly proves its differential and augmentation squares.",
+    "It does not identify the old Aglib complex with Stacks by an imported chain isomorphism and does not compile a theorem naming old singleIdealExtOneClass.",
+    "Old named-source comparison remains pending; textual source correspondence is separate from Lean validation.",
+    "No Aglib environment or cache restored; no kernel replay."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/PrincipalSeqGenerator.lean",
+        "source_sha256": "7ae7670483ed1f5ec5b97942920bac3fdbdd360089752cc394bd255627153075",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalSeqGenerator.olean",
+        "olean_sha256": "be14ea6da4a07110852faf135590bdd21c2e68274c3fd6e06627be9ed390c887"
+      },
+      {
+        "source": "ColibTest/PrincipalSeqGenerator.lean",
+        "source_sha256": "5bb51c44e0e789ee3ec5785573f46c6eb2dd6372a74597aee2924aaea5984c96",
+        "olean": ".lake/build/lib/lean/ColibTest/PrincipalSeqGenerator.olean",
+        "olean_sha256": "273d2559a05a93cd86b7bc110cc870b3fe15cdc357cecdec0430dc5a9448291d"
+      }
+    ]
+  },
+  "library_item": "COL-0117",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Yoneda extension class paragraph after Definition 13.27.4",
+    "relation": "ingredient only",
+    "scope": "Extension classes, not the exterior-coordinate or native resolution sign calculation."
+  },
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "generator_change_progress": "Native singleton generator change is proved in motivic-principal-seq-generator-change.json using the actual conjugated quotient map; old named Aglib comparison remains pending.",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed for native seqProjectiveResolution, degree-one exterior coordinate, degree-two cocycle, inverse quotient precomposition, augmentation square and negative sign, weak-regularity test without properness, same ring/coefficient universe and independent Ext universe. Source/artifact hashes and seven historical receipts verified; no new compilation or kernel replay by reviewer. Old named Aglib generator comparison remains pending."
+  },
+  "consolidated_source": {
+    "source": "native-seq-generator-change",
+    "revision_or_worktree": "060343c42ce30a55dbbfc8985a97900b471028d6",
+    "source_ledger_sha256": "7d2303ca02321dd605705c0e0dbdf2ed1e5186f0811f212fbaaac78399809e8d",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.PrincipalSeqGenerator"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

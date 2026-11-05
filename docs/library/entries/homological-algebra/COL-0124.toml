@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0124"
+title = "Quotient-ring scalars on Ext from a quotient"
+kind = "theorem"
+section = "ext-scalars"
+order = 10
+statement = "The defining ideal annihilates Ext from R/I. The explicit R/I-module structure retains the original R-action on representatives and acts by Yoneda precomposition with source multiplication."
+scope = "Any commutative ring, any ideal, any degree and same-universe coefficient module, with arbitrary supported Ext universe. No regularity, finiteness, Noetherianity or properness. The quotient action is explicit, not a global instance. No degree-one generator or quotient-linear Ext-one equivalence is asserted. Stacks 06XP, the composition paragraph after Lemma 13.27.6, is an ingredient only; quotient-scalar compatibility is proved here."
+review = "author_checked"
+provenance = "aglib"
+proof = "Source multiplication by ideal elements is zero; native Ext linearity yields annihilation. Reuse the existing annihilated-module quotient action and compute its representatives by Yoneda composition."

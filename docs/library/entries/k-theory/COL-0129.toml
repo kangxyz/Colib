@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0129"
+title = "Signed right ring-unit residue product"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 230
+statement = "Right multiplication of an arbitrary homogeneous class by a degree-m tuple of ring units multiplies its tame residue product by the integer parity sign (-1)^m."
+scope = "Independent ring/fraction-field universes and arbitrary n/m including zero. Actual degree transport (n+1)+m=(n+m)+1 is retained. Specified and canonical uniformizer endpoints use native products and residue. This is a new consequence, not a nonexistent Aglib right-product declaration. Stacks 0EAY describes DVR tame-symbol background; the formula is deduced from pinned shift multiplication."
+review = "author_checked"
+proof = "Use the exact native shift multiplication, grading involution and actual unit decomposition."

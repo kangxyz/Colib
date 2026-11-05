@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0121"
+title = "Principal generator with inverse quotient transport"
+kind = "comparison"
+section = "projective-dimension"
+order = 60
+statement = "A compatible native projective-resolution cocycle, precomposed with the inverse actual quotient isomorphism, equals minus the standard principal connecting class for every coefficient element."
+scope = "Any commutative ring with ring-regular a, arbitrary coefficients in the ring universe and an independent Ext universe. Explicit resolution, quotient isomorphism and differential/augmentation equations remain inputs. The named old Aglib resolution and generator have not been instantiated. Tag 06XP supplies Yoneda composition only."
+review = "author_checked"
+proof = "Reuse the pinned native models and their existing functoriality, with explicit coordinates and transports."

@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0110"
+title = "Change of a principal regular generator"
+kind = "theorem"
+section = "projective-dimension"
+order = 80
+statement = "For ring-regular a and c*a, the actual quotient map R/(c*a) to R/(a) pulls the standard principal connecting class of x back to the class of c acting on x."
+scope = "Arbitrary multiplier c and coefficients, no equality of ideals or coefficient regularity. Coefficients share the ring universe; Ext universe independent. No old named Aglib generator identification. Tag 06XP is extension-class background."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use native extension-class naturality and the exact checked singleton resolution normalization."

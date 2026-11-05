@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0126"
+title = "Resolution cocycles and the negative extension class"
+kind = "comparison"
+section = "projective-dimension"
+order = 50
+statement = "For a native projective resolution of the quotient of a short exact sequence, compatible degree-zero augmentation and degree-one cocycle lifts identify extMk of the cocycle with the negative standard extension class."
+scope = "An abelian category, arbitrary supplied projective resolution and independently supported Ext universe, with explicit cocycle, differential and augmentation equations. This is a new general interface; named old Aglib principal-generator and quotient-transport instantiations remain pending. Stacks 06XP supplies Yoneda extension-class background only, not this normalization comparison."
+review = "author_checked"
+proof = "Construct a native cone lift retaining both projections, prove its augmentation square, use the negative cone triangle projection, then localize and cancel the invertible augmentation in the actual extMk/extClass formulas."

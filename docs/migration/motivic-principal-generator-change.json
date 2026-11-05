@@ -1,0 +1,107 @@
+{
+  "topic": "Principal regular generator change by a possibly nonunit multiplier",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_file": "Aglib/Algebra/Homology/Koszul/Ext/GeneratorChange.lean",
+  "source_sha256": "72a1779c230c85dad8563e85d21b9d063b23b297d20a9f12cfd9a9a6681cdf86",
+  "source_declaration": "ChainComplex.Koszul.topExtClass_generatorChange, line 605; generic ext_covariance immediately preceding it",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "scope": "For a and c*a regular on the commutative ring, arbitrary coefficient module and HasExt universe, the literal native quotient map R/(c*a) -> R/(a) pulls the standard principal connecting class of x back to the class of c \u2022 x. No nonunit restriction, ideal equality, Noetherianity, or coefficient regularity.",
+  "relation_to_source": "One-generator determinant transformation in the standard connecting-class normalization. The source final theorem assumes equal generated ideals; its internal ext_covariance supports inclusion. Here inclusion is automatic from c*a. The general matrix theorem and literal old Aglib named class equality are not claimed.",
+  "upstream_audit": "Exact pinned Mathlib/Stacks RingTheory sources searched for principal extClass/ExtOne and singleton extMk. Their generic ShortExact.extClass_naturality supplies the mathematical mechanism; native Submodule.mapQ supplies the actual quotient map. No matching principal generator-change endpoint found.",
+  "new_declarations": [
+    "ModuleCat.principalQuotientMulMap",
+    "ModuleCat.principalShortComplexMulHom",
+    "Koszul.principalExtOneClass_generatorChange"
+  ],
+  "upstream_reuse": [
+    "Mathlib Submodule.mapQ with actual ideal inclusion",
+    "Mathlib ShortComplex.Hom and ShortExact.extClass_naturality",
+    "Mathlib Ext associativity and mk\u2080 composition",
+    "Previously proved Colib standard principal short exact sequence and its connecting class"
+  ],
+  "chosen_model": "The existing principalShortComplex only. No new complex, projective resolution, quotient representation or Ext model.",
+  "limits": [
+    "The comparison with the old Aglib named generator is still textual, not a compiled theorem.",
+    "No Aglib environment/cache recovery and no kernel replay."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/PrincipalGeneratorChange.lean",
+        "source_sha256": "067d8b6e147b8f94537d9decde740f46eb1d547aa75ba65b0662336530a05c5b",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalGeneratorChange.olean",
+        "olean_sha256": "721883da98878e8eaae00f27f8fdf70c528d0cf697769d2531e28b7a25b57276"
+      },
+      {
+        "source": "ColibTest/PrincipalGeneratorChange.lean",
+        "source_sha256": "13d8883b6979f680c2c1dc90ced8a306e63e642445c34194728e49a1cf40655f",
+        "olean": ".lake/build/lib/lean/ColibTest/PrincipalGeneratorChange.olean",
+        "olean_sha256": "e325ae56e52d8597d5a76f748d58a0f129c9450fa3df99a37e91b1091e36738f"
+      }
+    ]
+  },
+  "review_correction": "Preserved source copyright 2026 Aglib contributors; separated the actual ChainComplex.Koszul declaration namespace from its Aglib source module. Proof unchanged. Isolated integration reviewer revalidates the corrected source. Corrected source rebuilt in principal-seq-change-build-r1.json and passed declaration/style lint in principal-seq-change-lint/style.json.",
+  "library_item": "COL-0110",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Yoneda extension class paragraph after Definition 13.27.4",
+    "relation": "ingredient only",
+    "scope": "Extension-class interpretation, not the explicit generator change formula or old named source comparison."
+  },
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed for ideal inclusion, actual quotient-map direction, short-exact naturality and scalar c, arbitrary coefficients and independent Ext universe. Original source namespace and Aglib copyright have been corrected in the source copied here. Historical evidence checked; reviewer did not compile or run kernel replay. New integrated sources/artifacts are validated separately."
+  },
+  "consolidated_source": {
+    "source": "native-seq-generator-change",
+    "revision_or_worktree": "060343c42ce30a55dbbfc8985a97900b471028d6",
+    "source_ledger_sha256": "ac0360c05626021e94b054f86c09c23cb16f65832d2f26a639b5cce1c9a3d89c",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "native_matrix_progress": "The general arbitrary-matrix formula is included in TopExtGeneratorChange. The single-generator leaf retains its narrower statement; old Aglib named-model comparison remains pending.",
+  "tests": {
+    "modules": [
+      "ColibTest.PrincipalGeneratorChange"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

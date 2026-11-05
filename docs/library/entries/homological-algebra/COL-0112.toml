@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0112"
+title = "Determinant action on native top Koszul Ext"
+kind = "theorem"
+section = "projective-dimension"
+order = 110
+statement = "An arbitrary finite square matrix gives an actual augmented native Koszul resolution comparison whose pullback sends the top coefficient class to the class of the determinant acting on that coefficient."
+scope = "Any commutative ring, arbitrary coefficient module in the ring universe and independent Ext universe, with both f and M.mulVec f Koszul-regular. No matrix invertibility or equality of generated ideals is assumed. Includes length zero and the actual quotient map R/(Mf) to R/(f). The old Aglib named recursive-model class comparison remains pending. Stacks 06XP is Yoneda composition background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use the transposed matrix exterior-power map, check differential and augmentation squares, identify its top coordinate by the pinned determinant theorem, and apply native Ext covariance."

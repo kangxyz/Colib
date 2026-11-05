@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0113"
+title = "Four-universe specified unramified residue naturality"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 250
+statement = "A local DVR map preserving a specified uniformizer and compatible fraction-field map commute with tame residue in all degrees, with all four universes independent."
+scope = "Actual DVRs R/S and fraction fields F/E, local ring map and compatibility equation, irreducibility of pi and its image. Only ramification index one and specified uniformizers. Canonical arbitrary-uniformizer and other ramification indices remain pending. COL-0131 preserves the restricted signatures as wrappers."
+review = "author_checked"
+proof = "Use native universal maps and actual shift multiplication, with strict comparison to existing maps."
+provenance = "aglib"

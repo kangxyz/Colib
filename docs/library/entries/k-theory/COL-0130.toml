@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0130"
+title = "Specialization under uniformizer-preserving maps"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 220
+statement = "An actual local map of DVRs and compatible fraction-field map preserving the specified uniformizer commute with specialization in every degree."
+scope = "Four independent universes, all natural degrees, actual residue-field map. The image of the chosen uniformizer must be irreducible: ramification index one only. No general ramified or twisted specialization and no uniformizer independence are asserted. Tag 0EAY is construction background."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use native structure maps and their exact naturality, with explicit compatibility equations."

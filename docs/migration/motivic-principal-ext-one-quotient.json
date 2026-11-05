@@ -1,0 +1,173 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ideal.lean",
+      "sha256": "afe441c58756f16d107f2002cefc1aaec6806700270b293ce0741f5e2381f572"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext/Ideal.lean",
+      "sha256": "6a7a578a2ada139397a290a2b4adf8e1e3256dbfa70fe86f60874cd287929c47"
+    }
+  ],
+  "provenance": {
+    "copyright": "2026 algebraic-geometry contributors",
+    "authors": "kangxyz",
+    "license": "Apache-2.0",
+    "origin_scope": "Native Aglib quotient-linearity for its Motivic-derived principal Koszul Ext-one calculation."
+  },
+  "hypotheses": "CommRing R; IsSMulRegular R a; arbitrary N in ring universe and independent HasExt universe. No Noetherianity, finiteness, coefficient regularity or nonunit assumption.",
+  "canonical_objects": [
+    "Mathlib native coefficient quotient N / (I \u2022 top)",
+    "Mathlib native Module (R / I) (N / (I \u2022 top)) instance",
+    "CategoryTheory.Abelian.Ext",
+    "Ext.quotientSourceModule",
+    "Koszul.principalExtOneLinearEquiv"
+  ],
+  "endpoint_comparison": [
+    {
+      "source": "ChainComplex.Koszul.singleIdealExtOneQuotientLinearEquiv",
+      "target": "Koszul.principalExtOneQuotientLinearEquiv",
+      "relation": "Same quotient-linear endpoint, with standard connecting-class normalization and canonical ideal-action quotient. The scalar-image coefficient quotient is compared by literal submodule equality, preserving every representative."
+    },
+    {
+      "source": "ChainComplex.Koszul.singleIdealExtOneQuotientLinearEquiv_apply_mk",
+      "target": "Koszul.principalExtOneQuotientLinearEquiv_apply_mk",
+      "relation": "Representative formula for the standard connecting class, not identification with the old resolution cocycle."
+    },
+    {
+      "source": "ChainComplex.Koszul.singleIdealExtOneQuotientLinearEquiv_smul",
+      "target": "Koszul.principalExtOneQuotientLinearEquiv_smul",
+      "relation": "Same native Yoneda source-multiplication formula for the current equivalence."
+    },
+    {
+      "source": "ChainComplex.Koszul.singleIdealExtOneClass_comp_mk\u2080",
+      "target": "Koszul.principalExtOneQuotientLinearEquiv_comp_mk\u2080",
+      "relation": "Coefficient naturality on literal quotient representatives for the current normalized class."
+    }
+  ],
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "reused": [
+      {
+        "module": "Mathlib.Algebra.Module.Torsion.Basic",
+        "scope": "Existing module instance on N/(I \u2022 top), constructed by isTorsionBySet_quotient_ideal_smul. No new coefficient module instance is declared."
+      },
+      {
+        "module": "Mathlib.RingTheory.Ideal.Operations",
+        "declaration": "Submodule.ideal_span_singleton_smul",
+        "scope": "Identifies the principal ideal action with pointwise scalar action."
+      },
+      {
+        "module": "Mathlib.Algebra.Module.Submodule.Pointwise",
+        "declaration": "Submodule.pointwise_smul_def",
+        "scope": "Together with Submodule.map_top identifies the action submodule with the scalar linear-map range."
+      },
+      {
+        "module": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
+        "declarations": [
+          "Ext.quotientSourceModule",
+          "Ext.quotientSourceModule_mk_smul",
+          "Ext.quotientSourceModule_smul_eq_precomp"
+        ],
+        "scope": "Previously migrated native Ext quotient action and source-multiplication identification, reused unchanged."
+      },
+      {
+        "module": "Colib.RingTheory.Koszul.PrincipalExtOne",
+        "scope": "Previously checked standard connecting-class equivalence, representative formula and coefficient naturality, reused unchanged."
+      }
+    ],
+    "source_helpers_not_copied": [
+      "ChainComplex.Koszul.singleQuotientIsTorsionBy",
+      "ChainComplex.Koszul.singleQuotientModule",
+      "ChainComplex.Koszul.singleQuotientModule_mk_smul"
+    ],
+    "reason": "Mathlib already provides the canonical ideal-action quotient and its R/I-module instance. Inline applications of the existing three equality lemmas compare it with the scalar-image interface; no named duplicate bridge theorem is introduced.",
+    "nearby_stacks": "Ext.extOneQuotientEquiv in StacksFrontier.Algebra.Homology.DerivedCategory.Ext.ExtOneQuotient remains Field-linear and supplies no principal quotient-ring linearity API. Koszul.ExtGeneratedInDegreeOne handles self-Ext rather than arbitrary coefficients."
+  },
+  "scope_limits": [
+    "Generic negative normalization, actual Stacks singleton formula and its generator change are included; direct comparison with the old Aglib named resolution.extMk class remains pending.",
+    "No global Ext quotient-module instance or new coefficient quotient model is introduced.",
+    "Source coefficient-action helpers are replaced by existing upstream facilities, not counted as newly migrated implementation."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/PrincipalExtOneQuotient.lean",
+        "source_sha256": "af877ee6a3738cde96d5613bb9db76df59bad7aab3b74b3d325ea05f0bdce4f4",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalExtOneQuotient.olean",
+        "olean_sha256": "fb55c8379170e2b2389ac4196174ff637746fc69a327dae0bc6a32730460d719"
+      },
+      {
+        "source": "ColibTest/PrincipalExtOneQuotient.lean",
+        "source_sha256": "2a0ea68ad69a812443f3a627e397aa18d4e0062ce0d3ca39823cc673222f6bf8",
+        "olean": ".lake/build/lib/lean/ColibTest/PrincipalExtOneQuotient.olean",
+        "olean_sha256": "b4c07012b9006b7d4328c917502b15582a1dec83db9c138744ffd127511bf3ba"
+      }
+    ]
+  },
+  "library_item": "COL-0123",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Section 13.27, composition paragraph after Lemma 13.27.6",
+    "relation": "ingredient only",
+    "scope": "Yoneda composition; quotient-linearity itself is derived here from native actions and R-linearity, not stated verbatim in the cited paragraph.",
+    "verified": "Official paragraph previously directly checked and applicability confirmed by independent reviewer."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed: native coefficient quotient instance and explicit Ext action, equality of principal-ideal coefficient image and scalar image, representative-preserving comparison, quotient-linearity by representatives, Yoneda precomposition with zero_add degree witness, and representative naturality all checked. Source endpoints and hypotheses retained at the standard connecting-class normalization only. Old resolution.extMk and sign comparison remain pending. Source/target/olean hashes and prior receipts verified; no compilation or kernel replay by reviewer."
+  },
+  "consolidated_source": {
+    "source": "principal-ext-one-quotient",
+    "revision_or_worktree": "/workspace/scratch/ab4c8cd79b02/colib-five-8a7b0b8-20261105-1025",
+    "source_ledger_sha256": "72252d129db01f319e8200386f9700152a72e3c2ffd8f17f0982e032256d11f0",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.PrincipalExtOneQuotient"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

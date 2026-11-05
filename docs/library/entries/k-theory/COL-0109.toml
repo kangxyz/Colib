@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0109"
+title = "Base-field action on DVR tame residue"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 190
+statement = "An arbitrary base-field Milnor class, transported through a field map into the valuation ring, commutes with left multiplication and the canonical DVR tame residue."
+scope = "Independent ring, fraction-field and base-field universes, arbitrary degrees m/n including zero and arbitrary homogeneous classes on both sides. The field map must land in the valuation ring. Stacks 0EAY is construction background, not the exact formula. No whole-residue or old-model comparison is claimed."
+review = "author_checked"
+provenance = "aglib"
+proof = "Use additive tuple extensionality, native graded multiplication, field transport and the ring-unit tuple residue formula."

@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0117"
+title = "Native singleton Koszul resolution generator"
+kind = "theorem"
+section = "projective-dimension"
+order = 70
+statement = "The actual singleton Stacks seqProjectiveResolution coordinate cocycle, after inverse canonical quotient transport, equals minus the standard coefficient connecting class."
+scope = "CommRing R, a regular on R, supplied singleton Koszul-regularity proof, arbitrary coefficient module in the ring universe and independent Ext universe. Differential and augmentation coordinates are checked on the native exterior-power complex. No imported old Aglib named generator comparison is asserted. Stacks 06XP is extension-class background only."
+review = "author_checked"
+proof = "Use the actual pinned native model and its explicit structure maps."

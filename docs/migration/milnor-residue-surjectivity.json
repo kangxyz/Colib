@@ -1,0 +1,119 @@
+{
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0133",
+  "scope": "Surjectivity of the native DVR residue in every nonnegative target degree, for specified and canonical uniformizers. Arbitrary target classes, not only symbols.",
+  "hypotheses": "R:Type u with CommRing, IsDomain and IsDiscreteValuationRing; F:Type v with Field, Algebra R F, IsFractionRing R F. Independent universes; all n:Nat; specified version assumes Irreducible pi. No characteristic, completeness or coefficient-field assumption.",
+  "source_correspondence": "Native consequence of Stacks normalization dvrMilnorTameSymbol_uniformizer (Tag 0EAY) plus Mathlib local residue-unit lifting and existing homogeneous extensionality. No same-name Aglib residue surjectivity endpoint was found; do not label it as direct migration of one.",
+  "upstream_audit": "No matching full all-degree surjectivity declaration found in pinned DvrTameSymbol tree. FractionUnits only contains surjectivity of the fraction-unit decomposition, which is distinct. Generic local-ring unit-map surjectivity already exists and is directly reused.",
+  "declarations": [
+    {
+      "target": "milnorKTheory_surjective_of_tupleSymbol",
+      "source": "milnorKTheory_addHom_ext and QuotientAddGroup.eq_zero_iff",
+      "relation": "consequence",
+      "scope": "Any additive map from an independent-universe additive commutative group is onto the homogeneous native group if every tuple symbol is in its range."
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol_surjective",
+      "source": "dvrMilnorTameSymbol_uniformizer; IsLocalRing.surjective_units_map_of_local_ringHom",
+      "relation": "consequence",
+      "scope": "Every n, arbitrary specified uniformizer."
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol'_surjective",
+      "source": "Existing canonical residue definition",
+      "relation": "consequence",
+      "scope": "Choose the existing native uniformizer; no independence proof required."
+    }
+  ],
+  "proof": "Every residue-field unit lifts to an actual DVR unit by the native local ring theorem. A tuple of lifts followed by the specified uniformizer maps to the desired tuple by Stacks normalization. The quotient by the residue map range has zero canonical projection on every tuple; existing extensionality makes that projection zero on all classes, proving surjectivity.",
+  "provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "validation": {
+    "source_comparison": "author_checked native consequence and nonduplication audit",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/Surjectivity.lean",
+        "source_sha256": "9d25bd19358e7149fb65bb39a1a0a458348f9f17736278e1c6969a0e2000d5ab",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Surjectivity.olean",
+        "olean_sha256": "7108fc8477748c3d0d3ae5a5b112a714a5c09ac57a0b2ccffb55f1210737a931"
+      },
+      {
+        "source": "Colib/KTheory/MilnorK/Symbols/Surjectivity.lean",
+        "source_sha256": "08ba17f1bb7b97f6a5bb3f9bd1910e0bdc2846e15a8a22dd7b1cb584f43ba2a1",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Surjectivity.olean",
+        "olean_sha256": "4817ea1c353cbfc18e2ff36056adc5be065a25095bb440c52e9655c1936e1cc1"
+      },
+      {
+        "source": "ColibTest/MilnorResidueSurjectivity.lean",
+        "source_sha256": "6097b3dc0aff82098d5374eb1e851a71cdffa12f9752fb45acba55ad8fd85482",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorResidueSurjectivity.olean",
+        "olean_sha256": "290bfa819afbdb0d4b1d32a76247c86631c1f1ea7d789b6809a2c394bcfe6d0c"
+      }
+    ]
+  },
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, normalization on units followed by a uniformizer",
+    "relation": "consequence",
+    "scope": "DVR tame-symbol background and unit/uniformizer normalization; the stated corollary is proved here, not claimed as a standalone theorem in the tag."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed for quotient-by-range tuple criterion with independent source universe, actual local residue-unit lifting, units followed by uniformizer normalization with correct order/degree/sign, all target degrees including zero, and specified/existing canonical residue definitions. Three source/olean groups and five historical receipt hashes checked; no reviewer compilation or kernel replay. No new choice-independence result or same-name Aglib migration is asserted."
+  },
+  "consolidated_source": {
+    "source": "right-basefield-surjectivity",
+    "revision_or_worktree": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+    "source_ledger_sha256": "17368e8c0fad53475971cab7e902649a3c6b5f9e5cd075edd95a5b8f340fcb35",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorResidueSurjectivity"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

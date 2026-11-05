@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0120"
+title = "Principal degree-one Ext via the connecting class"
+kind = "theorem"
+section = "projective-dimension"
+order = 40
+statement = "For a ring-regular scalar, the standard principal short exact sequence identifies N/aN with Ext-one from R/(a) to N as R-modules. Literal representatives map to the standard connecting class, naturally under coefficient postcomposition."
+scope = "Any commutative ring, ring-regular scalar, same-universe coefficient module and arbitrary supported Ext universe. No coefficient regularity, finiteness, Noetherianity or nonunit hypothesis. This is only R-linear; comparison to the old resolution cocycle, its sign and quotient-ring linearity remain pending. Stacks 06XP after Lemma 13.27.3 is the contravariant long exact sequence ingredient only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Native long exact Ext gives a surjective connecting map from N, with kernel exactly the scalar image. The native quotient-by-kernel equivalence gives the result with the explicit connecting-class normalization."

@@ -1,0 +1,112 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Product",
+  "source_sha256": "6513cc434212c2cf539bdc9f89dd33837d6a1a99fdbfb91be7d6bf71c9b18bf3",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.BaseFieldProduct",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Canonical native DVR residue respects left multiplication by arbitrary base-field Milnor classes for a field homomorphism into the actual valuation ring.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; k : Type w, Field k; f : k \u2192+* R; m,n : Nat; x : MilnorKTheory k m; z : MilnorKTheory F (n+1). All three universes independent. No characteristic or positive-degree assumptions. The map lands in R, not just F.",
+  "declarations": [
+    {
+      "source": "MilnorK.DVR.residue_product_base_field_left",
+      "source_lines": "156\u2013171",
+      "target": "Stacks.Chow.dvrMilnorTameSymbol'_baseField_mul",
+      "disposition": "native-model proof rewrite, exact source field-into-ring and arbitrary homogeneous factors retained",
+      "degree_transport": "Source associativity cast disappears by definitional equality of m+(n+1) and (m+n)+1."
+    }
+  ],
+  "proof": "Compose native DirectSum.gMulHom (flipped at the fixed right class), the native-model field transport, and the native canonical residue as additive maps. Native tuple extensionality reduces equality to the existing ring-unit tuple residue product formula. The unit maps of composite ring homomorphisms agree coordinatewise by Units.ext. Evaluate the resulting additive-map equality at the arbitrary base class.",
+  "upstream_reuse": [
+    "Mathlib DirectSum.gMulHom; no new multiplication operation or bundled product",
+    "Colib milnorKTheory_addHom_ext and cross-universe milnorKTheoryMap",
+    "Colib canonical native residue ring-unit tuple formula",
+    "Stacks native MilnorKTheory and dvrMilnorTameSymbol'"
+  ],
+  "upstream_audit": "Pinned MilnorNorm.ResidueConstants has a whole-ring shift-map statement for a field into a DVR, but binds its field and ring to one universe and imports the large norm graph. This endpoint is homogeneous, canonical, three-universe and proven from the lower compiled unit-tuple interface; no high-level theorem or ring model is copied.",
+  "validation": {
+    "source_comparison": "author_checked hypotheses, arbitrary x/z, independent universes, canonical map, literal residue and embedding composites",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+        "source_sha256": "5764e33314cb89cf1fae2c58b3af5f896b5d50fc513f3895a20a38f94eb88e77",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/BaseFieldProduct.olean",
+        "olean_sha256": "e3f19aa9414c28ee6b5619cd69236c96f107f21135239034221e61c017b24f1d"
+      },
+      {
+        "source": "ColibTest/MilnorBaseFieldProduct.lean",
+        "source_sha256": "d23b5a65c2af84644db23c21808c1b6bd316ecbc859a8f8581418b8c9cce479b",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorBaseFieldProduct.olean",
+        "olean_sha256": "d6335ed26b90f793d71462c190ea59ec0a9a4bd88e51fb0d192f12086405114b"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0109",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, DVR tame residue",
+    "relation": "consequence",
+    "scope": "Projection formula for a field acting through the DVR, derived from native tame construction, not an assertion of exact standalone wording."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only source/math/provenance/hash/receipt review passed: independent u/v/w, arbitrary m/n and arbitrary x/z, actual map into the valuation ring, exact residue/field composites, native graded products and definitional degree cast verified. Higher same-universe ResidueConstants helper is not a matching lower interface. No compilation or kernel replay by reviewer."
+  },
+  "consolidated_source": {
+    "source": "basefield-connecting",
+    "revision_or_worktree": "45178bac37b0c2870840f7d50c31608427b791b0",
+    "source_ledger_sha256": "0498ee5dd345ed26ea9939ff75dde1ab995e313870da50f961ac2640e9e0054d",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorBaseFieldProduct"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

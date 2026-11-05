@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0118"
+title = "Native top Koszul Ext coefficient classes"
+kind = "theorem"
+section = "projective-dimension"
+order = 100
+statement = "The standard top exterior coordinate gives an R-linear surjection from coefficients to native top Ext, compatible with coefficient maps; in positive degree vanishing is exactly the cocycle boundary criterion."
+scope = "Any finite length including zero, commutative ring, Koszul-regular sequence and arbitrary coefficient module in the ring universe, with independent Ext universe. Conditional covariance requires a supplied native resolution comparison and its top-coordinate scalar equation. The matrix comparison and determinant specialization are supplied separately by COL-0112; the old named Aglib class comparison remains pending. Stacks 06XP is Yoneda composition background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Reuse native topEquiv, seqProjectiveResolution and Mathlib extMk classification, boundaries and naturality."

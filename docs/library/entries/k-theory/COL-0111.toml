@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0111"
+title = "Cross-universe native Milnor ring transport"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 245
+statement = "A field map between independent universes induces a ring homomorphism between the existing native Milnor quotient rings, agreeing with the maintained homogeneous maps and with pinned ring transport in a common universe."
+scope = "Native TensorAlgebra and congruence lifts, actual Steinberg ideal and quotient only. No second presentation, grading or independently maintained homogeneous map. Stacks 0EAY is construction background, not an explicit universe-polymorphism theorem."
+review = "author_checked"
+proof = "Use native universal maps and actual shift multiplication, with strict comparison to existing maps."

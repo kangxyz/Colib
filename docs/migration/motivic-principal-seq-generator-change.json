@@ -1,0 +1,102 @@
+{
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_file": "Aglib/Algebra/Homology/Koszul/Ext/GeneratorChange.lean",
+  "source_sha256": "72a1779c230c85dad8563e85d21b9d063b23b297d20a9f12cfd9a9a6681cdf86",
+  "source_declaration": "ChainComplex.Koszul.topExtClass_generatorChange, line 605; generic ext_covariance immediately preceding it",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "topic": "Generator change on actual native singleton resolution cocycles",
+  "declaration": "Koszul.singletonSeqExtMk_generatorChange",
+  "scope": "CommRing R, a and c*a regular; native Koszul regularity proofs hf/hcf; arbitrary coefficients N and HasExt universe. Precomposition of the a-coordinate extMk by the quotient map sends it to the c*a-coordinate extMk with coefficient c \u2022 x.",
+  "chosen_model": "Both sides are literally Stacks seqProjectiveResolution.extMk, not newly defined class wrappers. The quotient map is conjugated by the actual singletonSeqQuotientIso maps.",
+  "upstream_audit": "Exact pin Mathlib Projective/Ext.lean includes generic ProjectiveResolution.mk\u2080_comp_extMk for supplied resolution comparison maps. Stacks provides the actual singleton resolution and exterior coordinates. The selected proof instead reuses the proved native coordinate-to-connecting-class comparison and ShortExact naturality; no comparison complex or model is introduced.",
+  "upstream_reuse": [
+    "Mathlib Ext.mk\u2080_comp_mk\u2080_assoc and Ext.mk\u2080_id_comp",
+    "Mathlib isomorphism inverse identities and Ext.comp_neg",
+    "Colib singletonSeqExtMk_eq_neg_class on each side",
+    "Colib principalExtOneClass_generatorChange"
+  ],
+  "sign": "Both actual resolution cocycles are negative standard connecting classes, so the two signs cancel in generator change.",
+  "source_correspondence": "One-generator specialization of the source determinant formula, with ideal inclusion sufficient as in the source internal ext_covariance. The theorem identifies coefficients and actual quotient maps in the chosen Stacks model.",
+  "limits": [
+    "Literal old Aglib singleIdealExtOneClass comparison is not compiled and remains pending.",
+    "No Aglib environment/cache recovery; no kernel replay."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/PrincipalSeqGeneratorChange.lean",
+        "source_sha256": "1942e114ed6cdb1e73b7e0a055124fa6bf74d540c55ffa5fc836baeaa9da6390",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalSeqGeneratorChange.olean",
+        "olean_sha256": "e01276fc6ffb5280759c8933bd8f604743e783387a042e8786bf3fbbf21978fa"
+      },
+      {
+        "source": "ColibTest/PrincipalSeqGeneratorChange.lean",
+        "source_sha256": "35edc8b59e9d648cd962bee1a6f01169e1402a8f5e17e8f3a4240abd435cf095",
+        "olean": ".lake/build/lib/lean/ColibTest/PrincipalSeqGeneratorChange.olean",
+        "olean_sha256": "8c1bd3070b0c6521711da07399cbb1602e7ec9c4208062605efd7c5aa6a2a2f3"
+      }
+    ]
+  },
+  "library_item": "COL-0114",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Yoneda extension class paragraph after Definition 13.27.4",
+    "relation": "ingredient only",
+    "scope": "Extension-class interpretation, not the explicit generator change formula or old named source comparison."
+  },
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed: both sides literal Stacks seqProjectiveResolution.extMk; actual conjugated quotient map and identity on representatives; coefficient c acting on x and cancelling negative signs; explicit regularity hypotheses and independent Ext universe. Source/artifact hashes and four historical receipts checked; no new compilation, kernel replay or full catalog review by reviewer. This is a one-generator mathematical correspondence plus arbitrary-coefficient generalization, not an imported old Aglib named comparison."
+  },
+  "consolidated_source": {
+    "source": "native-seq-generator-change",
+    "revision_or_worktree": "060343c42ce30a55dbbfc8985a97900b471028d6",
+    "source_ledger_sha256": "a3d08be389641c2a86236737460f3be5a5d417add5ca9a1001bc9525387d8cfd",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.PrincipalSeqGeneratorChange"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

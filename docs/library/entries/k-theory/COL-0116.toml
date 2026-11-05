@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0116"
+title = "Multiplicativity of specified specialization"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 210
+statement = "Specified-uniformizer DVR specialization preserves the native graded product of arbitrary homogeneous Milnor classes."
+scope = "Independent ring and fraction-field universes, arbitrary natural degrees including zero, arbitrary homogeneous factors and all characteristics. Only actual DVR specified-uniformizer scope is migrated, not general abstract or twisted residue data or uniformizer independence. Tag 0EAY is construction background only."
+review = "author_checked"
+proof = "Use the actual pinned native model and its explicit structure maps."
+provenance = "aglib"

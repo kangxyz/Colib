@@ -1,0 +1,124 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Specialization",
+  "source_sha256": "66b82775d5a8fb931b13293d337dd2c82df616d78fa92e937b89e582fb57e751",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.Specialization",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Specified-uniformizer actual DVR specialization only, as the main component of the existing Stacks shift-ring map restricted to native homogeneous groups. Not general abstract residue data, twisted specialization, old degree-two compatibility or uniformizer independence.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; pi : R, Irreducible pi; n : Nat. Independent universes, all characteristics. Uniformizer-slot vanishing additionally names i : Fin n and equality a i = dvrFracUniformizer F hpi.",
+  "declarations": [
+    {
+      "source": "MilnorK.DVR.specializeWithUniformizer",
+      "target": "Stacks.Chow.dvrMilnorSpecialization",
+      "disposition": "native main-component restriction; actual DVR scope retained"
+    },
+    {
+      "source": "MilnorK.specialize_symbol",
+      "target": "Stacks.Chow.dvrMilnorSpecialization_tupleSymbol",
+      "disposition": "actual-DVR specialization of abstract-data theorem; exact native unit-part tuple formula"
+    },
+    {
+      "source": "MilnorK.DVR.specializeWithUniformizer_ring_units",
+      "target": "Stacks.Chow.dvrMilnorSpecialization_ringUnits",
+      "disposition": "actual DVR direct proof rewrite"
+    },
+    {
+      "source": "MilnorK.specialize_symbol_uniformizer",
+      "target": "Stacks.Chow.dvrMilnorSpecialization_tuple_uniformizer",
+      "disposition": "actual-DVR specialization; arbitrary tuple position retained"
+    }
+  ],
+  "supporting_declarations": [
+    "Stacks.Chow.dvrMilnorShiftMap_main_mem",
+    "Stacks.Chow.dvrMilnorSpecialization_coe",
+    "Stacks.Chow.main_dvrMilnorShiftMap_symbolProd"
+  ],
+  "proof": "Native tensor-to-shift grading already controls both coordinates; project its main part to establish homogeneous membership. Restrict the existing main component of dvrMilnorShiftMap and package its existing additive behavior as an integer-linear map. Multiplicativity of the existing shift map and native main_mul give the ordered tuple formula. Existing unit-part formulas give literal ring-unit reduction and unit part one for the specified uniformizer. The native symbol-one vanishing lemma handles any tuple slot.",
+  "upstream_audit": "Pinned MilnorTameSymbol packages only the shift coefficient as a degree-lowering residue; mainHom and main_mul are present in MilnorKShift but no homogeneous DVR specialization endpoint was found. This file adds only a restriction and missing computation properties, not a new shift ring, residue map or presentation.",
+  "validation": {
+    "source_comparison": "author_checked explicit actual-DVR scope, selected uniformizer, unit-part formula and independent universes; no general abstract comparison asserted",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "source_sha256": "41da7bd1e231154c4cf769f77e5703af68716aec30dab29e23dfeaab18c47381",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Specialization.olean",
+        "olean_sha256": "7477a8c77a6f8f0035144e707cda0518d808fdb35dfd52dac09cbb0a6cc0c49a"
+      },
+      {
+        "source": "ColibTest/MilnorSpecialization.lean",
+        "source_sha256": "e6be7d1dc55d92b84ae608997d977394fb88e741d9387b1cf83956faa83f405d",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorSpecialization.olean",
+        "olean_sha256": "c3a48cbce542dce7e72a1f9f5e86d6246164704b732dd9a659cf188c0fddebcc"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0132",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, Milnor K-theory and DVR tame construction",
+    "relation": "consequence",
+    "scope": "Main component of the native formalized shift construction; do not claim the tag explicitly states a uniformizer-independent specialization."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed for the original source statements and proofs: main-component homogeneous restriction, ordered unit-part formula, literal ring-unit reduction, arbitrary uniformizer slot, degree zero and independent universes. Source/artifact hashes and prior five receipts verified; reviewer did not compile, rerun kernel replay or inspect this integration tree. New metadata and integrated artifacts are checked separately."
+  },
+  "consolidated_source": {
+    "source": "milnor-unramified-four-universes",
+    "revision_or_worktree": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+    "source_ledger_sha256": "12cd749f27c97d62e1c583b1bf9c733abeb5cf331d1808f59e55f17f0dd4a962",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorSpecialization"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

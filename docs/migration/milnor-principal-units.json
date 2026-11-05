@@ -1,0 +1,121 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.DVR",
+  "source_sha256": "75ae5f7cceeab0d9e00d53d121cf396bc7707642eab18b2c28e2ca12b5f06e3b",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Only principal-unit vanishing, at an arbitrary tuple position, for the existing native DVR tame residue. Does not claim migration of the full Residue directory.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; n : Nat, tuple a : Fin (n+1) \u2192 F\u02e3, position i, unit u : R\u02e3 with a i equal to its field image and residue unit equal to 1. Other tuple positions are arbitrary fraction-field units. Universes u/v independent.",
+  "declarations": [
+    {
+      "source": "MilnorK.DVR.residue_principal_ring_unit",
+      "source_lines": "89\u2013102",
+      "target": "Stacks.Chow.dvrMilnorTameSymbol'_tuple_principal_unit",
+      "disposition": "direct proof rewrite with canonical native residue; no alternate DVR data or model",
+      "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
+    }
+  ],
+  "supporting_declarations": [
+    "Stacks.Chow.dvrMilnorShiftMap_symbol_principal_unit",
+    "Stacks.Chow.dvrMilnorShiftMap_symbolProd_principal_unit",
+    "Stacks.Chow.dvrMilnorTameSymbol_tuple_principal_unit"
+  ],
+  "upstream_audit": {
+    "reuse": [
+      "DvrTameSymbol.MilnorTameSymbol supplies native all-degree maps, degree-one shift evaluation, embedded unit valuation zero and unit part equal to literal residue",
+      "DvrTameSymbol.Invariance already proves uniformizer independence and equality of the chosen-uniformizer map with any uniformizer; not reimplemented or imported for this result",
+      "Mathlib List.prod_eq_zero gives zero in a noncommutative ordered product containing a zero factor"
+    ],
+    "gap": "No principal-unit arbitrary-slot vanishing endpoint found in pinned DvrTameSymbol or MilnorNorm; existing all-units residue vanishing requires every entry to come from ring units, which is strictly less general for this purpose.",
+    "warning": "Older upstream module prose claims uniformizer independence is absent, but pinned Invariance implements it; rely on declarations rather than stale prose."
+  },
+  "proof": "The principal unit has zero valuation and residue unit one, so both coordinates of its native Milnor shift image are zero. Ring-map multiplicativity and List.prod_eq_zero kill every list symbol containing it, without reordering or restrictions on other entries. The tuple result follows by List.mem_ofFn and the native residue coefficient. The canonical map is the existing chosen-uniformizer map.",
+  "validation": {
+    "source_comparison": "author_checked original source exact conditions and arbitrary position; canonical object replacement only, no general old/new equivalence",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/PrincipalUnits.lean",
+        "source_sha256": "43343b7d4c7812667334a1b9367407c5ec0c5b4419196780ecc149a8620a0211",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/PrincipalUnits.olean",
+        "olean_sha256": "23d6c034b84295cc1fd2b50be72f31c5bd793db1f20814cf42a46c6e0ac7ffae"
+      },
+      {
+        "source": "ColibTest/MilnorPrincipalUnits.lean",
+        "source_sha256": "a6bf12db7e260f9c3ba1e833f9f40ab5079c66df2ef6ade94fa2f825866f7670",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorPrincipalUnits.olean",
+        "olean_sha256": "ba1569f4e3c4ede33703a111d725959bbd568bb6749db1a4df6c49aa1bfb3db6"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0122",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, tame residue of a DVR",
+    "relation": "consequence",
+    "scope": "A consequence of the actual native tame-symbol construction and principal-unit normalization; not presented as an exact standalone statement of the tag.",
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "retrieved_html_sha256": "3fb1e7be94522221ff9945a910ca8b6f67b5f80ffe74253efe22a8bc4c1d7df4"
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only review passed: arbitrary slot and arbitrary other fraction-field units, residue degree zero, independent ring/field universes, both shift coordinates, noncommutative zero-factor multiplication and canonical/arbitrary uniformizer endpoints checked. Existing native uniformizer independence reused; no reconstruction or whole-residue migration claimed. Source and target hashes, pins, attribution and prior receipts verified; reviewer did not recompile or run kernel replay."
+  },
+  "consolidated_source": {
+    "source": "transport-ext-principal-units",
+    "revision_or_worktree": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
+    "source_ledger_sha256": "95f751bbd1b128409b1b451684ccf0f7bc75596267b81ebfa065d2dbbea4b09d",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorPrincipalUnits"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

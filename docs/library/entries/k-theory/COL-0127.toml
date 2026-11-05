@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0127"
+title = "Ring-unit products and DVR tame residue"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 180
+statement = "Tame residue of a left ring-unit tuple times any homogeneous class equals the reduced ring-unit tuple times the residue of that class."
+scope = "A discrete valuation domain and fraction field in independent universes, arbitrary left degree m and residue degree n, including zero, and arbitrary right class in degree n+1. Both specified and canonical uniformizer maps use the actual ring units and residue homomorphism. Stacks 0EAY is construction background for the consequence, not its verbatim statement."
+review = "author_checked"
+provenance = "aglib"
+proof = "The left ring-unit product has shift image (reduced product, zero). The native multiplication formula leaves exactly the reduced product times the right shift coefficient, with the actual natural-number grading."

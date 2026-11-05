@@ -1,0 +1,174 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_files": [
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext.lean",
+      "sha256": "061e56a857f77e8240ce12376e4c63c8bf730246da84fb752b9de2f24c36cb5e"
+    },
+    {
+      "path": "Aglib/Algebra/Homology/Koszul/Single/Ext/Ideal.lean",
+      "sha256": "6a7a578a2ada139397a290a2b4adf8e1e3256dbfa70fe86f60874cd287929c47"
+    }
+  ],
+  "provenance": {
+    "copyright": "2026 algebraic-geometry contributors",
+    "authors": "kangxyz",
+    "license": "Apache-2.0",
+    "origin_scope": "Native Aglib principal Ext-one consequences in its Motivic-derived Koszul family. This is a reproof via canonical short exact sequences, not a literal port of the old resolution."
+  },
+  "canonical_objects": [
+    "ModuleCat.shortComplexOfCompEqZero",
+    "ShortComplex.ShortExact.extClass",
+    "CategoryTheory.Abelian.Ext",
+    "Ideal.Quotient",
+    "Submodule.Quotient",
+    "LinearMap.quotKerEquivOfSurjective"
+  ],
+  "hypotheses": "CommRing R; IsSMulRegular R a; arbitrary coefficient module N in the ring universe and independent HasExt universe. No coefficient regularity, finiteness, Noetherianity or nonunit assumption.",
+  "endpoint_comparison": [
+    {
+      "source": "ChainComplex.Koszul.singleIdealExtOneLinearEquiv",
+      "target": "Koszul.principalExtOneLinearEquiv",
+      "relation": "Same native module isomorphism endpoint N/aN \u2243\u2097[R] Ext\u00b9(R/(a),N), using the native scalar-image quotient directly instead of its source alias. Map normalization is by standard connecting class.",
+      "status": "Endpoint reproof; old resolution-class comparison pending."
+    },
+    {
+      "source": "ChainComplex.Koszul.singleIdealExtOneClass_comp_mk\u2080",
+      "target": "Koszul.principalExtOneClass_comp_mk\u2080",
+      "relation": "Same coefficient-naturality property for the newly normalized standard connecting class; not an assertion that this class equals the old resolution cocycle."
+    }
+  ],
+  "declarations": [
+    "ModuleCat.principalShortComplex",
+    "ModuleCat.principalShortComplex_shortExact",
+    "Koszul.principalExtOneClass",
+    "Koszul.principalExtOneClass_apply",
+    "Koszul.principalExtOneClass_surjective",
+    "Koszul.principalExtOneClass_eq_zero_iff",
+    "Koszul.principalExtOneClass_ker",
+    "Koszul.principalExtOneLinearEquiv",
+    "Koszul.principalExtOneLinearEquiv_apply_mk",
+    "Koszul.principalExtOneClass_comp_mk\u2080"
+  ],
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "reused": [
+      "ModuleCat.shortComplexOfCompEqZero and shortComplex_shortExact",
+      "Ext.contravariant_sequence_exact\u2081 and contravariant_sequence_exact\u2083",
+      "Ext.subsingleton_of_projective",
+      "Ext.linearEquiv\u2080 and bilinearCompOfLinear",
+      "LinearMap.ringLmapEquivSelf and ModuleCat.homLinearEquiv",
+      "Submodule.quotEquivOfEq and LinearMap.quotKerEquivOfSurjective"
+    ],
+    "nearby_existing": [
+      {
+        "module": "StacksFrontier.Algebra.Homology.DerivedCategory.Ext.ExtOneQuotient",
+        "declarations": [
+          "Ext.ker_extClassComp",
+          "Ext.extOneQuotientEquiv"
+        ],
+        "scope": "Field-linear categories only. Supplies the general presentation proof pattern but cannot be directly specialized to arbitrary CommRing R. No parallel generalized presentation API is added: this file treats the concrete principal sequence."
+      },
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.ExtGeneratedInDegreeOne",
+        "declarations": [
+          "Koszul.koszulExtMk",
+          "Koszul.closure_range_ext_comp_eq_top"
+        ],
+        "scope": "Self-Ext of quotient by a Koszul-regular sequence with quotient coefficients, standard HasExt universe. Not the requested arbitrary-coefficient principal Ext-one linear equivalence."
+      },
+      {
+        "module": "Mathlib.RingTheory.Regular.Category",
+        "declaration": "ModuleCat.smulShortComplex",
+        "scope": "Native scalar sequence ends at the pointwise scalar-top quotient. Here shortComplexOfCompEqZero uses the literal ideal quotient and mkQ directly; no new chain complex or projective resolution is constructed."
+      }
+    ]
+  },
+  "scope_limits": [
+    "The standard connecting class normalization is explicit in principalExtOneClass_apply.",
+    "Generic explicit-data negative generator comparison and inverse quotient transport are proved in motivic-principal-generator-transport.json. Actual named Aglib singleIdealExtOneClass / singleProjectiveResolution instantiation remains pending.",
+    "No new Koszul, derived category, Ext or quotient model.",
+    "Quotient-ring linearity is included in the consolidated PrincipalExtOneQuotient leaf. Old Aglib named-class/sign comparison remains pending."
+  ],
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
+        "source_sha256": "5eca56475c63716b58c990ad6cb40b4641c94be4c01ba0ea2c91c8813ad098a8",
+        "olean": ".lake/build/lib/lean/Colib/RingTheory/Koszul/PrincipalExtOne.olean",
+        "olean_sha256": "287af56f1e96803235679f2ca7fdf68aa2d4d4c219dc8e219e88d78ab89a2e12"
+      },
+      {
+        "source": "ColibTest/PrincipalExtOne.lean",
+        "source_sha256": "ddf05b157f00e255c1d67ab1e1d9811c13732bd75cf7eb117c26b1791e2c0d7b",
+        "olean": ".lake/build/lib/lean/ColibTest/PrincipalExtOne.olean",
+        "olean_sha256": "feac041d3f0a262e72a49e27e0f94f4f4a2c105310c8904cc4982a3843ae21f1"
+      }
+    ]
+  },
+  "library_item": "COL-0120",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Section 13.27, contravariant long exact sequence paragraph after Lemma 13.27.3 and before Definition 13.27.4",
+    "relation": "ingredient only",
+    "scope": "Supports exactness for the standard principal short exact sequence; not the principal quotient computation or a comparison with the old resolution cocycle.",
+    "verified": "Official page directly checked by independent reviewer on 2026-11-05."
+  },
+  "native_resolution_progress": "The actual Stacks singleton seqProjectiveResolution coordinate, differential and augmentation comparison is now instantiated in motivic-principal-seq-generator.json. A compiled theorem naming the actual old Aglib singleIdealExtOneClass remains pending.",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only mathematical/source/provenance/hash review passed: literal quotient and connecting-class normalization, exact-sequence directions/degrees, surjectivity and kernel, coefficient naturality, same u for ring/module and independent w for Ext checked. Unit and zero rings allowed. Only R-linearity is proved; old resolution-cocycle equality and signs remain pending. No compilation or kernel replay by reviewer."
+  },
+  "consolidated_source": {
+    "source": "native-seq-generator-change",
+    "revision_or_worktree": "060343c42ce30a55dbbfc8985a97900b471028d6",
+    "source_ledger_sha256": "60a103d74bc4cdf4504ee2eaef3ff9dd9fc925933ce3dffa9a64faf203c3e794",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.PrincipalExtOne"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

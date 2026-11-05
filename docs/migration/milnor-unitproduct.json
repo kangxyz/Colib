@@ -1,0 +1,117 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Product",
+  "source_sha256": "6513cc434212c2cf539bdc9f89dd33837d6a1a99fdbfb91be7d6bf71c9b18bf3",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.UnitProduct",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Canonical actual-DVR residue commutes with left multiplication by a tuple of ring units, with arbitrary homogeneous right factor; also proves specified-uniformizer version.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; m,n : Nat; a : Fin m \u2192 R\u02e3; z : MilnorKTheory F (n+1). Independent universes; no positivity or characteristic assumptions. Left entries are actual ring units, not arbitrary field units.",
+  "declarations": [
+    {
+      "source": "MilnorK.DVR.residue_product_ring_units_left",
+      "source_lines": "135\u2013151",
+      "target": "Stacks.Chow.dvrMilnorTameSymbol'_unitTuple_mul",
+      "disposition": "direct native proof rewrite",
+      "degree_transport": "Source degreeCongr (Nat.add_assoc m n 1).symm is definitionally the identity on native natural-number grading because m+(n+1) and (m+n)+1 reduce identically."
+    }
+  ],
+  "supporting_declarations": [
+    "Stacks.Chow.dvrMilnorTameSymbol_unitTuple_mul"
+  ],
+  "proof": "Native dvrMilnorShiftMap is a ring map. Its ring-unit tuple value is the existing dvrMilnorShiftMap_unitSymbolProd, with reduced symbol as main component and zero shift component. The existing shift multiplication formula leaves only the reduced symbol times the shift of the arbitrary right class. Native homogeneous coercions give the typed result. Specialize the uniformizer to the existing canonical choice for the canonical endpoint.",
+  "upstream_reuse": [
+    "dvrMilnorShiftMap_unitSymbolProd",
+    "MilnorKShift.shift_mul",
+    "native dvrMilnorTameSymbol and dvrMilnorTameSymbol'",
+    "native GradedMonoid.GMul.mul and SetLike.coe_gMul"
+  ],
+  "upstream_audit": "Pinned low-level MilnorTameSymbol supplies all-unit shift evaluation and unit-prefix/uniformizer normalization, but not this typed formula for arbitrary homogeneous right factor. High-level ResidueConstants supplies base-field projection formulas; it is not imported or copied.",
+  "validation": {
+    "source_comparison": "author_checked exact ring-unit and arbitrary right-class hypotheses, degrees, canonical choice and literal residue map",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "source_sha256": "8fbe5baec8a5513b6b700499cc2a355b47a0511780a0ed37eb492bf11908fd71",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnitProduct.olean",
+        "olean_sha256": "bfad15126acac8fffa2dea17af6e111d3406bf3851aa9e0096a6946b5a20d19a"
+      },
+      {
+        "source": "ColibTest/MilnorUnitProduct.lean",
+        "source_sha256": "875a6df04be5bb3cc2e1c1a3acc9d54a379d82f11decd15d34b73c17e590eb30",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorUnitProduct.olean",
+        "olean_sha256": "47d0790a525e032ce7680170c89a241e2c3adbbb7ea44467a3d6fa9226b6e3e7"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0127",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, DVR tame residue",
+    "relation": "consequence",
+    "scope": "Left ring-unit product formula derived from native construction; not asserted as exact standalone wording of the tag.",
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "retrieved_html_sha256": "3fb1e7be94522221ff9945a910ca8b6f67b5f80ffe74253efe22a8bc4c1d7df4"
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only source/proof/type/provenance/hash/receipt review passed: left ring-unit image is (reduced symbol,0), multiplication leaves exactly reduced symbol times residue of an arbitrary right class. Independent universes, arbitrary m/n including zero, and definitional equality m+(n+1)=(m+n)+1 preserve the original grading. No full Residue.Product migration or old-model equivalence claimed. Reviewer did not compile or run kernel replay."
+  },
+  "consolidated_source": {
+    "source": "milnor-unramified-four-universes",
+    "revision_or_worktree": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+    "source_ledger_sha256": "d4421e6548057f0eaa957a18f55b0e5c446ad32a5a5b1271031f0b3f3e0f629e",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorUnitProduct"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

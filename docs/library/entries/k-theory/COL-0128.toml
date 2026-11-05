@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0128"
+title = "Signed right base-field residue action"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 260
+statement = "Right multiplication by an arbitrary base-field homogeneous class, mapped through the valuation ring, gives the corresponding residue product with integer degree parity sign."
+scope = "Three independent universes, arbitrary degrees and arbitrary classes on both sides, actual map into the valuation ring and exact degree equality cast. No characteristic restriction. This is a native consequence, not an Aglib same-name right-product theorem. Tag 0EAY is DVR tame-symbol background, not the exact signed formula."
+review = "author_checked"
+proof = "Use existing native symbols and tame residue, local unit lifting and homogeneous extensionality."

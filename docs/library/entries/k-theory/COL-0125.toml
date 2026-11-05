@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0125"
+title = "Repeated uniformizers in DVR tame residue"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 170
+statement = "The tame residue, at a specified uniformizer, of its (n+1)-fold tuple symbol is the n-fold tuple symbol of minus one in the residue field."
+scope = "A discrete valuation domain and fraction field in independent universes, every natural n including zero and arbitrary characteristic. This is a specified-uniformizer DVR specialization; the canonical map evaluated at an arbitrary uniformizer is not supplied here. No nonvanishing of the minus-one symbol is asserted. Stacks 0EAY is construction background, not a verbatim formula citation."
+review = "author_checked"
+provenance = "aglib"
+proof = "The uniformizer maps to the native shift generator. Its (n+1)-st power has coefficient equal to the n-th power of the minus-one symbol; extract that coefficient."

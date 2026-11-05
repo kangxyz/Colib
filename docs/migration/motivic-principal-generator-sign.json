@@ -1,0 +1,151 @@
+{
+  "topic": "Comparison of the old principal resolution cocycle with the standard connecting class",
+  "status": "Generic cone/augmentation/localization, actual native singleton comparison and arbitrary-matrix native determinant formulas are proved. Only the old named Aglib source-model/class comparison remains pending.",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "source_evidence": {
+    "old_class": {
+      "path": "../aglib-candidate-101dbb8-20261104T1637Z/Aglib/Algebra/Homology/Koszul/Single/Ext.lean",
+      "sha256": "061e56a857f77e8240ce12376e4c63c8bf730246da84fb752b9de2f24c36cb5e"
+    },
+    "old_ideal_transport": {
+      "path": "../aglib-candidate-101dbb8-20261104T1637Z/Aglib/Algebra/Homology/Koszul/Single/Ext/Ideal.lean",
+      "sha256": "6a7a578a2ada139397a290a2b4adf8e1e3256dbfa70fe86f60874cd287929c47"
+    },
+    "native_ext_mk": {
+      "path": ".lake/packages/mathlib/Mathlib/CategoryTheory/Abelian/Projective/Ext.lean",
+      "sha256": "4eeb6088f22d9f923cd034e37a4cf8231718de83d6d5f23f91a4112e28fa8a6c"
+    },
+    "native_ext_class": {
+      "path": ".lake/packages/mathlib/Mathlib/Algebra/Homology/DerivedCategory/Ext/ExtClass.lean",
+      "sha256": "28bd1d031e1ac428ae0ae05cd0c150946f4a44e2e5bd2da1de7df0a8b1622152"
+    },
+    "cone_triangle": {
+      "path": ".lake/packages/mathlib/Mathlib/Algebra/Homology/HomotopyCategory/Pretriangulated.lean",
+      "sha256": "60a09978a003f47e1b882a8a0ee29cd8d59ddf3a8fed8990411cc41e8454f933"
+    },
+    "cone_lift": {
+      "path": ".lake/packages/mathlib/Mathlib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+      "sha256": "4db6d463c22f0a35187a4f0d2c2868cd3142d8b1671fa63938476ae163b096b7"
+    },
+    "cochain_single": {
+      "path": ".lake/packages/mathlib/Mathlib/Algebra/Homology/HomotopyCategory/HomComplexSingle.lean",
+      "sha256": "bf42191204c42ccfb9e1e767286635a9e3d898865606b6f8a70263b24bf72b67"
+    }
+  },
+  "verified_source_facts": [
+    "Aglib singleExtOneClass is ProjectiveResolution.extMk of the unnegated toSpanSingleton cocycle in degree one.",
+    "Aglib singleIdealExtOneClass precomposes that class with the inverse scalar-quotient-to-ideal-quotient isomorphism.",
+    "Mathlib ProjectiveResolution.extMk_hom represents extMk by the unnegated Cocycle.toSingleMk shifted morphism after inverting the augmentation.",
+    "Mathlib mappingCone.triangle defines its third arrow using -mappingCone.fst. The public inl_v_triangle_mor\u2083_f identity explicitly includes that minus sign.",
+    "Mathlib ShortExact.extClass_hom identifies the extension class with single\u03b4, which uses the same cone triangle third arrow.",
+    "Mathlib Cochain.\u03b4_toSingleMk has sign n-prime.negOnePow. For a degree-zero cochain beta and degree-one differential this contributes a minus."
+  ],
+  "implemented_interface": {
+    "module": "Colib.Algebra.Homology.HomotopyCategory.MappingCone",
+    "declaration": "CochainComplex.mappingCone.lift_comp_triangle_mor\u2083",
+    "statement": "For h : delta beta + alpha.comp(ofHom phi) = 0, lift phi alpha beta h followed by triangle(phi).mor3 equals equivHomShift.symm(-alpha).",
+    "scope": "Any preadditive category with binary biproducts; no abelian, module, finiteness or resolution assumptions.",
+    "provenance": "New supporting identity directly deduced from pinned Mathlib definitions and lift projection API; not claimed to be an original Aglib declaration."
+  },
+  "upstream_audit": {
+    "reused": [
+      "mappingCone.triangle",
+      "mappingCone.lift",
+      "mappingCone.lift_f_fst_v",
+      "Cocycle.equivHomShift_symm_precomp"
+    ],
+    "nearby": [
+      "StacksFrontier.Algebra.Homology.DerivedCategory.CanonicalDeltaFunctor has a private liftOfDegreewiseSplit_comp_triangle_mor\u2083 for a special splitting lift, built with -cocycleOfDegreewiseSplit. It does not expose the general arbitrary-lift sign formula.",
+      "StacksFrontier.Algebra.Homology.HomotopyCategory.DegreewiseSplit.exists_lift_mappingCone_mor\u2083 proves existence from a null homotopy, not the formula for an already specified cocycle lift.",
+      "Stacks module-cohomology CocycleFormula.mapExactFunctor_extMk concerns injective resolutions and exact-functor transport; it does not compare a projective extMk class with ShortExact.extClass.",
+      "Aglib Koszul.Ext.GeneratorChange.extClass_cast is a private cast formula for topExtClass, not a ShortExact.extClass comparison."
+    ],
+    "search": "Searched all pinned Mathlib and Stacks files mentioning extMk for extClass; inspected projective Ext/Extend APIs, cone triangle/lift APIs, and source Aglib extMk/extClass co-occurrences."
+  },
+  "precise_remaining_obligation": {
+    "objects": "Let S be a short exact sequence; P a native ProjectiveResolution of S.X3; b : P0 -> S.X2; c : P1 -> S.X1; b followed by S.g is the augmentation and c followed by S.f equals d10 followed by b.",
+    "cone_lift": "Closed generically by ShortComplex.singleConeLift in Colib.Algebra.Homology.HomotopyCategory.SingleConeLift; see motivic-projective-connecting.json.",
+    "augmentation_square": "Closed generically by singleConeLift_comp_desc with actual single-object identifications; see motivic-projective-connecting.json.",
+    "localized_identity": "Closed by CategoryTheory.ProjectiveResolution.extMk_eq_neg_extClass for explicit hc/h/hb and arbitrary native P. This does not instantiate the named old source class.",
+    "source_instantiation": "Instantiate the general formula on the actual old singleProjectiveResolution and transport via the existing Aglib quotient isomorphism; production may not import Aglib or recreate its model. A source-side comparison check or verified canonical-resolution comparison is still required.",
+    "why_existing_results_do_not_suffice": "ProjectiveResolution.mk\u2080_comp_extMk only accepts a Hom between two projective resolutions, while the native cone used for extClass is a Z-indexed complex, not such a resolution. Equal quotient endpoints, equal kernels, surjectivity and naturality do not determine a generator sign."
+  },
+  "blocker_classification": "Unproved mathematical interface/compatibility, not access denial, compilation resource failure or an external action requiring approval.",
+  "scope_limit": "Only named old Aglib principal-generator/source-quotient instantiation remains pending; do not claim its sign equality from the generic theorem alone.",
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
+        "source_sha256": "d921e171c664e6f93cfd94151d00186342e65e91bd4a14e695edb432fbf57d84",
+        "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/HomotopyCategory/MappingCone.olean",
+        "olean_sha256": "27e311e31ca5d68ad6d2f47f3514ce1f652da8f60ffcc54dfd333608116a8545"
+      },
+      {
+        "source": "ColibTest/MappingConeSign.lean",
+        "source_sha256": "fb3ccf1927c2b03bc8035f9802be0e982609c43775af440991869fefdf0d563d",
+        "olean": ".lake/build/lib/lean/ColibTest/MappingConeSign.olean",
+        "olean_sha256": "ba224ba90c1c7d7d4cb9bb23fbe00a43d6dd0b2715a017dac8ea0c586f9d06e3"
+      }
+    ]
+  },
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "library_item": "Supporting mapping-cone sign interface only; no separate Library item.",
+  "independent_review": {
+    "scope": "Historical source review predates later generic/localized/native singleton results. Its then-pending statements are not current obligations; see precise_remaining_obligation and the subsequent connecting/transport/seq ledgers.",
+    "report": "Read-only independent review passed: native triangle third arrow uses -fst; projection API gives the shifted -alpha with correct direction and degree. Only preadditive category and binary biproduct assumptions, independent object/Hom universes. Source-evidence and artifact hashes plus prior receipts checked. This is a new supporting identity, not migration of an Aglib declaration. Full old generator/extMk comparison, augmentation and localization obligations remain pending. Reviewer did not compile or run kernel replay."
+  },
+  "transport_progress": "Generic inverse-quotient transport and principal coefficient comparison are now proved in motivic-principal-generator-transport.json. Actual old named singleIdealExtOneClass source instantiation remains pending.",
+  "native_resolution_progress": "The actual Stacks singleton seqProjectiveResolution coordinate, differential and augmentation comparison is now instantiated in motivic-principal-seq-generator.json. A compiled theorem naming the actual old Aglib singleIdealExtOneClass remains pending.",
+  "generator_change_progress": "Native singleton generator change is proved in motivic-principal-seq-generator-change.json using the actual conjugated quotient map; old named Aglib comparison remains pending.",
+  "consolidated_source": {
+    "source": "native-seq-generator-change",
+    "revision_or_worktree": "060343c42ce30a55dbbfc8985a97900b471028d6",
+    "source_ledger_sha256": "72e4ca161a52a968732a0ee1a154ce4c8d1b39f41c5c9fc5909a0a2f3cb62e5b",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MappingConeSign"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Product",
+  "source_sha256": "6513cc434212c2cf539bdc9f89dd33837d6a1a99fdbfb91be7d6bf71c9b18bf3",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.SpecializationProduct",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Actual DVR, specified-uniformizer specialization preserves arbitrary homogeneous products. Not the general abstract residue-data theorem, twisted specialization or uniformizer independence.",
+  "hypotheses": "R : Type u with CommRing, IsDomain, IsDiscreteValuationRing; F : Type v with Field, Algebra R F, IsFractionRing R F; pi : R with Irreducible pi; m,n : Nat; arbitrary x : MilnorKTheory F m and y : MilnorKTheory F n. Independent universes, no positivity or characteristic restriction.",
+  "declarations": [
+    {
+      "source": "MilnorK.specialize_product",
+      "source_lines": "40\u201355",
+      "target": "Stacks.Chow.dvrMilnorSpecialization_gmul",
+      "disposition": "actual-DVR specialization, replacing abstract residue data by genuine DVR native shift map",
+      "preserved_scope": "All m/n and arbitrary homogeneous factors; not only tuple symbols."
+    }
+  ],
+  "proof": "Coerce both sides into the native Milnor ring; existing dvrMilnorShiftMap.map_mul and MilnorKShift.main_mul prove equality directly. No product reconstruction, new ring model, symbol induction, or abstract compatibility assumption is needed.",
+  "upstream_reuse": [
+    "Stacks dvrMilnorShiftMap is already a ring homomorphism",
+    "Stacks MilnorKShift.main_mul",
+    "Mathlib SetLike.coe_gMul",
+    "Colib dvrMilnorSpecialization_coe identifies the homogeneous restriction"
+  ],
+  "upstream_audit": "The underlying multiplicativity is already upstream. This is only its missing typed homogeneous specialization interface, consuming the newly migrated main-component restriction. No claim of a new ring-theoretic multiplicativity theorem.",
+  "validation": {
+    "source_comparison": "author_checked explicit actual-DVR specialization scope, arbitrary classes, independent universes and all degrees",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/SpecializationProduct.lean",
+        "source_sha256": "3096ef6f486e399a1db6c6e32d714954833cee2b0564297489df32ce6ba78e25",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/SpecializationProduct.olean",
+        "olean_sha256": "00440030008a1426ec1e524b9734c0436612a1c3cbacb65fe71b4f1d067c55cd"
+      },
+      {
+        "source": "ColibTest/MilnorSpecializationProduct.lean",
+        "source_sha256": "09de4780a0c7be1580d9975ac7c8b8d64132ce83d3ea8191367538cad5115327",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorSpecializationProduct.olean",
+        "olean_sha256": "afb192b49ba21b967c06b7a6ab107e94797d6f02c627607bdc5e686b3c2b5e53"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0116",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, formalized DVR shift construction",
+    "relation": "consequence",
+    "scope": "Homogeneous restriction of multiplicativity of the existing shift main component. Do not claim an explicit standalone theorem or uniformizer independence in the tag."
+  },
+  "source_scope_limit": "The abstract DiscreteResidueData plus UnitReductionCompatible source theorem, twisted specialization and uniformizer independence are not migrated by this actual-DVR endpoint.",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only source/math/copyright review passed: actual-DVR specified-uniformizer specialization only, arbitrary homogeneous factors and degrees including zero, independent universes, native GMul coercion, upstream ring hom and main_mul with no shift-coordinate signs. Source and target source hashes checked. Reviewer did not compile, validate external literature, or audit this later ledger/integrated tree."
+  },
+  "consolidated_source": {
+    "source": "native-seq-specialization-product",
+    "revision_or_worktree": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
+    "source_ledger_sha256": "56ebeaf4f997431aff2fe8299cffd89a4466a68e4c9b9b34b6658ce71ba7840f",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorSpecializationProduct"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

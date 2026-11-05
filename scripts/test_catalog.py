@@ -31,6 +31,7 @@ class LibraryTests(unittest.TestCase):
             "modules": [],
         }
         module_names = {
+            "ext-scalars": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
             "projective-dimension": "Colib.RingTheory.Koszul.Ext",
             "koszul-coefficients": "Colib.RingTheory.Koszul.Coefficients",
             "exact-categories": "Colib.CategoryTheory.ExactCategory.Basic",

@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0132"
+title = "Specified-uniformizer DVR specialization"
+kind = "definition"
+section = "milnor-k-theory"
+order = 200
+statement = "The main component of the native DVR shift map restricts to a degree-preserving integer-linear specialization, with exact unit-part tuple formula, ring-unit reduction and specified-uniformizer slot vanishing."
+scope = "Independent ring and fraction-field universes, arbitrary degree including zero and all characteristics. The uniformizer is specified. No uniformizer independence, general twisted residue data or old-model comparison is asserted. Tag 0EAY is construction background only."
+review = "author_checked"
+proof = "Reuse the pinned native models and their existing functoriality, with explicit coordinates and transports."
+provenance = "aglib"

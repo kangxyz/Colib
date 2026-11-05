@@ -15,3 +15,9 @@ id = "koszul-coefficients"
 title = "Koszul complexes with coefficients"
 order = 5
 introduction = "Native exterior-power Koszul complexes retain coefficient finiteness and annihilators. No regularity is assumed; Noetherianity is used only for finiteness of homology."
+
+[[sections]]
+id = "ext-scalars"
+title = "Scalar actions on Ext"
+order = 20
+introduction = "Native Yoneda composition determines scalar actions on Ext. Explicit quotient actions preserve the original ring action and record the actual source multiplication maps."

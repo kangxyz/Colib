@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0115"
+title = "Milnor field transport across universes"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 150
+statement = "A field homomorphism induces an integer-linear map on every native homogeneous Milnor K-group, preserving ordered symbols, identities and composition. In a common universe it equals the existing Stacks transport."
+scope = "Fields in independent universes u/v/w and every natural degree, including zero. The additive interface is the existing forgetful map. Stacks 0EAY is construction background for functoriality, not an explicit independent-universe theorem."
+review = "author_checked"
+provenance = "aglib"
+proof = "Field images satisfy the symbol relations; apply the native universal lift and tuple extensionality. Compare actual maps to existing transport by their tuple values."

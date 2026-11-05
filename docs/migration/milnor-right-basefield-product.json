@@ -1,0 +1,101 @@
+{
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0128",
+  "scope": "Canonical native DVR residue with arbitrary right degree-m base-field class and arbitrary left degree-(n+1) fraction-field class. Field map must land in the actual DVR; sign (-1)^m and ordinary degree cast retained.",
+  "hypotheses": "R:Type u is DVR, F:Type v its fraction field, k:Type w a field, f:k\u2192+*R. Independent universes, arbitrary characteristic, all n,m:Nat and arbitrary homogeneous classes z and x. No fraction-field-only map substitution is allowed.",
+  "source_correspondence": "This is not a migrated same-name source theorem. Aglib Residue.Product at 101dbb8564fb0e29f28cfcb79168d878b5ab489f provides left formulas only. These right formulas directly extend the native Stacks shift multiplication; no new residue model.",
+  "declarations": [
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol'_mul_baseField",
+      "source": "Native signed right-unit tuple formula, homogeneous symbol extensionality and bundled graded multiplication",
+      "relation": "consequence",
+      "scope": "Right arbitrary base-field class, left arbitrary fraction-field class, all degrees. Complement to source MilnorK.DVR.residue_product_base_field_left, not an alleged same-name source theorem."
+    }
+  ],
+  "upstream_audit": "No direct signed right arbitrary base-field homogeneous endpoint found in pinned low DVR interfaces; native shift_mul underlies the already checked tuple formula. This leaf only extends it by the existing generation/extensionality API.",
+  "provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "validation": {
+    "source_comparison": "author_checked native consequence; not a same-name source migration",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
+        "source_sha256": "3fef44425ebf9e5d42a7f87c077b3670a02fcc7737da80e4d6c01c222459d971",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.olean",
+        "olean_sha256": "05c8ac96bf4c3ea2417fea9260f4809af804606ae33d5ffe432e1b797f807a47"
+      },
+      {
+        "source": "ColibTest/MilnorRightBaseFieldProduct.lean",
+        "source_sha256": "c474113dab6a5d2fc0f899cb11dd18ff521c57c27714168d22f987622b9f7192",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorRightBaseFieldProduct.olean",
+        "olean_sha256": "c48c5fdd90e591c6be4afe900455d34882644bea4f0b7edda7d859f610426b0c"
+      }
+    ]
+  },
+  "proof": "Bundle both sides as additive maps out of the right homogeneous base-field group. Native AddEquiv.cast handles the degree equality and DirectSum.gMulHom handles multiplication. Existing milnorKTheory_addHom_ext reduces to tuple symbols, whose images are actual DVR units. Apply the previously checked right-unit tuple formula. No new product or involution map.",
+  "literature": {
+    "source": "Stacks Project",
+    "locator": "Tag 0EAY, DVR shift construction",
+    "relation": "consequence",
+    "scope": "DVR tame-symbol background and unit/uniformizer normalization; the stated corollary is proved here, not claimed as a standalone theorem in the tag."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed: three universes, actual map into DVR, arbitrary classes/degrees, integer parity sign and exact equality cast, additive extension via existing tuple extensionality, no second model or nonexistent source right formula. Source/olean and four historical receipt hashes verified; no reviewer compilation or kernel replay."
+  },
+  "consolidated_source": {
+    "source": "right-basefield-surjectivity",
+    "revision_or_worktree": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
+    "source_ledger_sha256": "65351d8dd01dda4493fb365a910d38973ea1a921c23c1d3d7057185ea70caf83",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorRightBaseFieldProduct"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

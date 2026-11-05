@@ -1,0 +1,131 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
+  "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "target_module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
+  "original_provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "scope": "Compatibility wrappers with original common-DVR-universe signatures; general four-universe specified e=1 proof lives in UnramifiedMapAcross. Canonical and ramified formulations remain pending.",
+  "hypotheses": "R,S : Type u are DVRs; F : Type v and E : Type w are their fraction fields; j:R\u2192+*S with IsLocalHom j; f:F\u2192+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); arbitrary n:Nat and all degree n+1 classes. No compatibility-of-valuations or unit-parts assumed.",
+  "declarations": [
+    {
+      "source": "MilnorK.K3.DVR.value_map",
+      "source_module": "Aglib.KTheory.MilnorK.K3.DVRRestriction",
+      "target": "Stacks.Chow.dvrFracOrd_map",
+      "disposition": "native integer-order compatibility from actual mapped DVR decomposition; does not require IsLocalHom j"
+    },
+    {
+      "source": "MilnorK.residue_restrict, symbol recursion; native shift coefficient",
+      "target": "Stacks.Chow.dvrMilnorShiftMap_shift_symbolProd_map",
+      "disposition": "actual DVR e=1 list-symbol proof in native shift ring, preserving all signed multiplication terms"
+    },
+    {
+      "source": "MilnorK.DVR.residue_restrict",
+      "source_lines": "129\u2013139",
+      "target": "Stacks.Chow.dvrMilnorTameSymbol_map",
+      "disposition": "partial migration: specified uniformizers and common DVR universe; field universes independent, arbitrary classes/all n retained"
+    }
+  ],
+  "proof": "Map native unit-times-uniformizer decomposition to prove actual dvrFracOrd_map. Existing Naturality.dvrFracUnitPart_map proves the other coordinate. Induct over list symbols using native shift_mul; involution parity on list symbols handles the signed term without copying or importing a second involution or Shift.map. Homogeneous tuple extensionality proves equality of the two actual additive composites.",
+  "upstream_reuse": [
+    "exists_eq_unit_mul_zpow",
+    "dvrFracOrd_eq_of_eq",
+    "dvrFracUnitPart_map",
+    "MilnorKShift.shift_mul",
+    "milnorKInvolution_symbolProd",
+    "milnorKRingMap_symbol",
+    "milnorKTheoryMap_eq_transport",
+    "milnorKTheory_addHom_ext"
+  ],
+  "upstream_audit": "Pinned Invariance.dvrMilnorTameSymbol'_algebraMap already covers common fraction field; Invariance imports MilnorNorm.ResidueConstants with an excessive closure. The new leaf allows an actual f:F\u2192E and does not define Shift.map or reprove its ring structure. Private list-map normalization is not advertised as a new mathematical theorem.",
+  "validation": {
+    "source_comparison": "author_checked partial migration; exact e=1 and specified-uniformizer/common-DVR-universe scope",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+        "source_sha256": "f0d0920558cf6d5dafac0ecfa4bb47aeb31f16c8974ad7d432dda0c3a9668855",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMap.olean",
+        "olean_sha256": "66ec8c00083585e066a5e8bcea8544eb0594e028aa664aa9e00b12b0fa292adf"
+      },
+      {
+        "source": "ColibTest/MilnorUnramifiedMap.lean",
+        "source_sha256": "71b19b2e4d78dd377e5ebe264ed9160192486ed1f6e0b5acd4f742843f526fd2",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorUnramifiedMap.olean",
+        "olean_sha256": "00e34ea95bfbab0bf47b3015d538126c0e87fed9401d5def6ebd078a83e8eebd"
+      }
+    ]
+  },
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0131",
+  "extraction_candidate": "The direct order comparison belongs upstream near FractionUnits; full native field-map naturality should eventually share low extracted Invariance/ResidueConstants infrastructure rather than clone it.",
+  "remaining_obligations": [
+    "Canonical arbitrary-uniformizer result: reuse upstream invariance after import lowering.",
+    "Ramification e other than one is not addressed."
+  ],
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "relation": "construction background/consequence only",
+    "scope": "DVR tame-symbol background in the tag; the explicit formula is proved using pinned Stacks shift multiplication and unit decomposition, not claimed as a standalone theorem in the tag."
+  },
+  "four_universe_progress": "Closed by milnor-unramified-across.json / COL-0113. This original common-universe module now preserves its public signatures as wrappers around the single general proof. Canonical arbitrary-uniformizer and e != 1 remain pending.",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Original implementation passed read-only review before integration. In this integration its public signatures are retained as direct specializations of the independently reviewed four-universe proof; wrappers are checked by the new build and existing regression tests, not claimed reviewed by the original source hash review."
+  },
+  "consolidated_source": {
+    "source": "milnor-unramified-four-universes",
+    "revision_or_worktree": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+    "source_ledger_sha256": "86205547b65de8386385852f069617710eda295a01071dde12447ee04fd8c20b",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorUnramifiedMap"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

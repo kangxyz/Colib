@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0123"
+title = "Quotient-linearity of principal Ext-one"
+kind = "theorem"
+section = "ext-scalars"
+order = 20
+statement = "The standard principal Ext-one equivalence is linear over R/(a), using the native action on N/((a)N) and the explicit quotient action on Ext. Representatives retain their connecting class and quotient scalars act by Yoneda source multiplication."
+scope = "A commutative ring and ring-regular scalar, arbitrary coefficient module in the ring universe and independent supported Ext universe. Representative coefficient naturality is included. No equality or sign comparison with the old resolution.extMk class is asserted. Stacks 06XP after Lemma 13.27.6 is a composition ingredient only, not this quotient-linearity calculation."
+review = "author_checked"
+provenance = "aglib"
+proof = "Identify the principal ideal times the whole coefficient module with the scalar image, preserving representatives. Lift the R-linear equivalence to R/(a)-linearity by quotient representatives and the native scalar actions; reuse the Yoneda formula."

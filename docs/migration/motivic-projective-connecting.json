@@ -1,0 +1,149 @@
+{
+  "topic": "Resolution cocycles versus standard connecting classes",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "status": "Generic comparison proved and validated. Direct named Aglib generator/quotient-transport instantiation remains a separately identified source correspondence task.",
+  "provenance": "New lower interface required for the native Aglib/Motivic-derived principal Ext migration; not claimed as a literal source declaration. All constructions use pinned Mathlib objects and previously proved cone sign interface.",
+  "declarations": [
+    {
+      "module": "Colib.Algebra.Homology.HomotopyCategory.SingleConeLift",
+      "names": [
+        "CategoryTheory.ShortComplex.singleConeLift_relation",
+        "CategoryTheory.ShortComplex.singleConeLift",
+        "CategoryTheory.ShortComplex.singleConeLift_comp_desc",
+        "CategoryTheory.ShortComplex.singleConeLift_comp_triangle_mor\u2083"
+      ],
+      "scope": "For any cochain complex K and short complex S, maps b:K0->S2, c:K(-1)->S1 with dc=0 and cf=db construct a native cone lift. Its composition with descShortComplex is any augmentation with the specified degree-zero component; its third-arrow composition represents -c."
+    },
+    {
+      "module": "Colib.Algebra.Homology.DerivedCategory.SingleCocycle",
+      "names": [
+        "CategoryTheory.ShortComplex.ShortExact.map_comp_single\u03b4_eq_neg_cocycle"
+      ],
+      "scope": "Localizing the actual cone square yields Q(pi) followed by single-delta equal to the negative cocycle shifted map, including Q.commShiftIso."
+    },
+    {
+      "module": "Colib.CategoryTheory.Abelian.Projective.Connecting",
+      "names": [
+        "CategoryTheory.ProjectiveResolution.extMk_eq_neg_extClass"
+      ],
+      "scope": "In any abelian category and arbitrary HasExt universe, for P resolving S.X3 and S short exact, if b:P0->S2 lifts augmentation, c:P1->S1 satisfies cf=d10 b and d21 c=0, then P.extMk c = -hS.extClass."
+    }
+  ],
+  "mathematical_scope": {
+    "hypotheses": "Arbitrary abelian category; independent HasExt universe for final theorem. No commutative ring, module, Noetherian, finiteness, coefficient regularity or bounded-resolution assumption.",
+    "sign": "Negative, established by a checked proof from the pinned native cone triangle; not an assumed convention.",
+    "coefficients": "The regression test proves P.extMk(c followed by g) = -(hS.extClass.comp (Ext.mk0 g)) for arbitrary coefficient morphisms g."
+  },
+  "upstream_reuse": [
+    "Mathlib Cochain/Cocycle.toSingleMk and delta_toSingleMk",
+    "Mathlib mappingCone.lift, lift_desc_f, descShortComplex",
+    "Mathlib DerivedCategory.descShortComplex_triangleOfSESdelta",
+    "Mathlib ProjectiveResolution.cochainComplexXIso, cochainComplex_d, pi-prime_f_zero",
+    "Mathlib ProjectiveResolution.extMk_hom and ShortExact.extClass_hom",
+    "Mathlib ShiftedHom composition/map APIs and cancellation for Q(pi-prime)"
+  ],
+  "upstream_audit": "Continues the exact-pin audit in motivic-principal-generator-sign.json: public extMk naturality acts between projective resolutions, not a short exact cone. Stacks has private degreewise-splitting cases and exact-functor injective-resolution formulas, neither supplies this general projective connecting-class comparison.",
+  "source_instantiation_remaining": {
+    "old_source": "Aglib.Algebra.Homology.Koszul.Single.Ext and Single.Ext.Ideal at fixed source revision.",
+    "expected_substitution": "Use the actual old singleProjectiveResolution, identity maps on degree zero and one, singleComplex_d_one_zero, singleComplex_d_add_two and singleAugmentation_f_zero. The theorem identifies its identity cocycle with minus the short exact scalar-quotient class. Then coefficient postcomposition and extClass_naturality along singleQuotientIdealLinearEquiv transport to the actual ideal quotient.",
+    "not_claimed": "No Lean theorem directly naming the old Aglib singleIdealExtOneClass has been compiled here. No Aglib production import, copied legacy complex or alternate resolution was introduced."
+  },
+  "validation": {
+    "source_comparison": "Retained explicit source correspondence and mathematical scope in this ledger.",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/Algebra/Homology/DerivedCategory/SingleCocycle.lean",
+        "source_sha256": "0fff6e1884ad9687d90b9d321c0fc6da45908ceaf7b7a2fcd070650bd3ddf1c5",
+        "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/DerivedCategory/SingleCocycle.olean",
+        "olean_sha256": "8ae6efc6c957dda824bdd4bb861a522d529e58c961b63ec321037ce2ac8d7225"
+      },
+      {
+        "source": "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
+        "source_sha256": "2fd14c5a63fbdab2f257b4481d17fe983ada6781faa5e122a551aabbf818815a",
+        "olean": ".lake/build/lib/lean/Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.olean",
+        "olean_sha256": "c47f8bbae56707d28ea04a8db34854a6de21d1c45c7708b8d06ad8ee1dfd7602"
+      },
+      {
+        "source": "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
+        "source_sha256": "dd577f24dd1fc6ae7034267e1c9e96f3acaa58c70026f15f96aa03a67357fcda",
+        "olean": ".lake/build/lib/lean/Colib/CategoryTheory/Abelian/Projective/Connecting.olean",
+        "olean_sha256": "55b7bf2ba984ffed3998147531e3299d8c25556fa12902955769252a35ba7cea"
+      },
+      {
+        "source": "ColibTest/ProjectiveConnecting.lean",
+        "source_sha256": "8a596de6368ee878d84c200d4b922e5461d367ce816e85a8473226ef32ed633b",
+        "olean": ".lake/build/lib/lean/ColibTest/ProjectiveConnecting.olean",
+        "olean_sha256": "ee8cb582ed03d173ffa3340cb7f342b67be2ff7878d05c858110d4a7c6537d39"
+      },
+      {
+        "source": "ColibTest/SingleConeLift.lean",
+        "source_sha256": "53319d56b25b0752f512f068a81e5b76e076d038d2ccb31804c19266d093d274",
+        "olean": ".lake/build/lib/lean/ColibTest/SingleConeLift.olean",
+        "olean_sha256": "f50ea8f0fb70653c3b152cfc8b7739e15b89d0f8c85d2fd78917e483f2bda015"
+      }
+    ]
+  },
+  "library_item": "COL-0126",
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed for all three new leaves: cone-lift differential sign, augmentation square, all degree-zero/cochain transports, Q.commShiftIso and localization, extMk negative extClass formula, independent HasExt universe and coefficient postcomposition checked. Source evidence/hashes and prior receipts verified. No named old singleExtOneClass/singleIdealExtOneClass source instantiation exists; its original inverse quotient-isomorphism precomposition remains an obligation. Reviewer did not compile or run kernel replay."
+  },
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/06XP",
+    "locator": "Section 13.27, Yoneda extension class paragraph after Definition 13.27.4",
+    "relation": "ingredient/background only",
+    "scope": "Extension-class interpretation; the native cone-sign and projective-resolution comparison is proved here, not a verbatim citation."
+  },
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "consolidated_source": {
+    "source": "native-seq-generator-change",
+    "revision_or_worktree": "060343c42ce30a55dbbfc8985a97900b471028d6",
+    "source_ledger_sha256": "432c4b5d9827f03913e2015cd520505dd83c17ebd70524358bd50cb5b5da33e9",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.ProjectiveConnecting",
+      "ColibTest.SingleConeLift"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

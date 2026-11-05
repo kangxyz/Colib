@@ -1,0 +1,117 @@
+{
+  "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "library_item": "COL-0129",
+  "scope": "Native consequence: right multiplication by an arbitrary-length tuple of actual DVR units contributes the integer parity sign (-1)^m. Arbitrary homogeneous left class, both specified and canonical residues.",
+  "hypotheses": "R : Type u is a DVR, F : Type v is its fraction field; all n,m : Nat, z : MilnorKTheory F (n+1), a : Fin m \u2192 R\u02e3. Independent universes and arbitrary characteristic. Specified version assumes Irreducible pi; canonical version uses the existing chosen uniformizer.",
+  "source_correspondence": "This is not a migrated same-name source theorem. Aglib Residue.Product at 101dbb8564fb0e29f28cfcb79168d878b5ab489f provides left formulas only. These right formulas directly extend the native Stacks shift multiplication; no new residue model.",
+  "declarations": [
+    {
+      "target": "Stacks.Chow.milnorKInvolution_symbolProd",
+      "source": "Native MilnorKInvolution_milnorKSymbol and map_mul",
+      "relation": "consequence",
+      "scope": "Every ordered list symbol has sign (-1)^length under the existing involution."
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol_mul_unitTuple",
+      "source": "Native MilnorKShift.shift_mul and dvrMilnorShiftMap_unitSymbolProd",
+      "relation": "consequence",
+      "scope": "All-degree right tuple of actual ring units, arbitrary left homogeneous class; degree cast Nat.add_right_comm n 1 m."
+    },
+    {
+      "target": "Stacks.Chow.dvrMilnorTameSymbol'_mul_unitTuple",
+      "source": "Native canonical residue definition",
+      "relation": "consequence",
+      "scope": "Same statement at the existing chosen uniformizer."
+    }
+  ],
+  "upstream_audit": "Searched pinned MilnorKInvolution/MilnorKSymbolProd and Chow graph: no existing symbolProd involution parity endpoint or signed right tuple residue formula. Native shift_mul already gives a*d+b*sigma(c)+b*d*{-1}; with a right unit tuple its shift is zero, leaving b*sigma(c). No repeated proof of shift multiplication.",
+  "provenance": {
+    "copyright": "2026 Motivic Cohomology contributors",
+    "authors": [
+      "kangxyz"
+    ],
+    "license": "Apache-2.0"
+  },
+  "validation": {
+    "source_comparison": "author_checked as native consequence, not a same-name Aglib migration",
+    "consolidated_check": "Passed full guarded unified check.",
+    "kernel_replay": "Not requested and not run.",
+    "integration": {
+      "baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
+      "date": "2026-11-05",
+      "command": "bash scripts/check.sh",
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_group_rss_bytes": 6634946560,
+      "owned_process_group_gone": true,
+      "resource_limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "log_sha256": "ca85e397a100540ac692c1610b1be9cdb942d42095602df1a6f232826ea6e1ca",
+      "guard_receipt_sha256": "ec3adc61d0d4239b86563e3651d739a56b5b4b4be8aed08014c21dc46bee1daf",
+      "root_sha256": "59d5a1e054721715e27c4ef9e9e5ed0660643d5562c28b6b00159ddae6d2278c",
+      "results": {
+        "python_tests": 52,
+        "lean_test_modules": 68,
+        "axiom_audit_declarations": 1606,
+        "library_items": 133,
+        "indexed_declarations": 398,
+        "chapters": 5,
+        "sections": 14,
+        "reference_pages": 10,
+        "checks": "Complete production build, in-package tests, declaration/text lint, mk_all, production axiom audit and Library/site passed."
+      },
+      "kernel_replay": "Not requested; not run.",
+      "publication": "Candidate validated, not committed or pushed by integration worker. Parent owns publication and any branch cleanup."
+    },
+    "artifacts": [
+      {
+        "source": "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+        "source_sha256": "e3989853b6d1b0b6d1985853b6858a7088cfdce0d45359d93c684194c29f13a4",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RightUnitProduct.olean",
+        "olean_sha256": "6e62ff3b38d874b91ff69d3b9716d386b53f79df28f9d6e2545ca0ef83fa2f47"
+      },
+      {
+        "source": "Colib/KTheory/MilnorK/Symbols/Involution.lean",
+        "source_sha256": "4f124c6e650fbe1aea6491f944fa0fa3bfb55d6a3a4fb3e76c3f568c1b24dd96",
+        "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Involution.olean",
+        "olean_sha256": "27323d10857e9dad552eba73900998fe2ccae6673ee861f88948f6dfdb18cc6f"
+      },
+      {
+        "source": "ColibTest/MilnorRightUnitProduct.lean",
+        "source_sha256": "5788b1835b1295dce8e1e7f96fbb5d9cb87ad492f76058226b0148547e36133d",
+        "olean": ".lake/build/lib/lean/ColibTest/MilnorRightUnitProduct.olean",
+        "olean_sha256": "eea890c46b742edbcfca834818717b1c89afe10066a6bd363b2ad443aee6bdbb"
+      }
+    ]
+  },
+  "literature": {
+    "url": "https://stacks.math.columbia.edu/tag/0EAY",
+    "relation": "construction background/consequence only",
+    "scope": "DVR tame-symbol background in the tag; the explicit formula is proved using pinned Stacks shift multiplication and unit decomposition, not claimed as a standalone theorem in the tag."
+  },
+  "independent_review": {
+    "scope": "Historical independent source/math/provenance review of the selected original leaf; consolidated metadata, IDs and merged test files are checked separately.",
+    "report": "Read-only independent review passed for ordered-list involution, integer parity sign, arbitrary left homogeneous class/right ring-unit tuple, precise degree equality transport, specified and canonical endpoints and all characteristics. Source/olean hashes and five successful historical receipts checked; no recompilation or kernel replay by reviewer. No matching Aglib right-product theorem exists, so this is a native consequence. Official 0EAY describes DVR tame-symbol background, not the shift/involution implementation or this formula."
+  },
+  "consolidated_source": {
+    "source": "milnor-unramified-four-universes",
+    "revision_or_worktree": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
+    "source_ledger_sha256": "f14d866ddd6c61f47ed04f4c4c049da022d85fd58f18ae217c3709df2f46b1d1",
+    "coverage_manifest": "milnor-motivic-consolidation.json"
+  },
+  "consolidated_status": "Selected once in the unified candidate. Publication is performed only by the parent after validation; this ledger does not claim an earlier feature branch was merged.",
+  "tests": {
+    "modules": [
+      "ColibTest.MilnorRightUnitProduct"
+    ],
+    "status": "Passed as part of the complete unified test suite."
+  }
+}

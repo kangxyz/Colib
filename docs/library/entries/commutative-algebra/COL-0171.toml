@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0171"
+title = "Finite principal homology from support"
+kind = "theorem"
+section = "principal-euler"
+order = 30
+statement = "For finite modules over a Noetherian ring, support containment and finite scalar cokernel of the ambient module imply finite scalar homology of the smaller module and its actual subquotients."
+scope = "No locality or scalar regularity is required. Uses native support, submodules, kernels and quotients."
+review = "author_checked"

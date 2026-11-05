@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0172"
+title = "Prime filtrations and localized multiplicities"
+kind = "comparison"
+section = "principal-euler"
+order = 40
+statement = "A native prime RelSeries gives both the principal Euler sum and the equality between minimal prime-label counts and localized module lengths."
+scope = "The same actual filtration is used for both formulas. Finite Noetherian modules supply existence; arbitrary chosen filtrations retain their explicit endpoint and quotient hypotheses."
+review = "author_checked"

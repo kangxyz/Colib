@@ -586,3 +586,16 @@ classes and degree zero are tested. No second completion, valuation or Milnor
 model is introduced, and no full Milnor-group injectivity, norm, transfer or
 tensor decomposition is asserted. See migration/milnor-completion.json for
 source provenance, component review and aggregate validation evidence.
+
+### Principal Euler length and local associativity
+
+COL-0169--COL-0173 migrate the complete five-leaf Principal Euler chain using
+native periodic complexes, support, prime RelSeries and LocalizedModule.
+Outer finiteness implies exact-sequence additivity; support containment gives
+finite scalar homology of actual subquotients. A single prime filtration
+controls both the Euler sum and localized multiplicities. The final local
+associativity formula includes dimension zero, where the closed-point Euler
+contribution is zero, and specializes to cokernel length for a regular scalar.
+No second scalar-homology or prime-filtration model is introduced.
+See migration/principal-euler.md and migration/motivic-principal-euler.json
+for exact hypotheses, source correspondence and validation boundaries.

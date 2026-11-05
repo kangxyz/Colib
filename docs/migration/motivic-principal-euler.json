@@ -1,0 +1,1088 @@
+{
+  "title": "Principal Euler finite-length chain and minimal-support associativity",
+  "component_status": "Native five-leaf chain, regression examples, declaration lints, style and allowlisted axiom audit passed; registered-tree integration remains separate.",
+  "target_baseline": "ebed72d44aa5f338f8a464863747bdb8a8b53f64",
+  "component_worktree": "/workspace/scratch/ab4c8cd79b02/colib-principal-euler-ebed72d-20261105-1745",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "r5lab_revision_credited_by_source": "95a3772b895fbc19a81684be4ffd519d0fdcd6b3",
+  "pinned_mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "pinned_stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "lean_toolchain": "leanprover/lean4:v4.34.0-rc2",
+  "source_scope_status": "Selected mathematical outcomes from five PrincipalEuler files, including the separately requested Associativity endpoint. This is not a claim of literal full migration of every helper in those source files, nor registration of the entire source module set.",
+  "source_correspondence": [
+    {
+      "source_file": "Aglib/RingTheory/Multiplicity/PrincipalEuler/Basic.lean",
+      "source_sha256": "f164baf700c2747343b36363e9b6b173b9f065d5871b9d66c7d13b17bfa21741",
+      "target_file": "Colib/RingTheory/Multiplicity/PrincipalEuler/Basic.lean",
+      "correspondence": {
+        "Module.principalEuler": "Module.principalEuler, now a transparent abbreviation of native periodicLength",
+        "Module.principalEuler_zero_of_finite_length": "Module.principalEuler_zero_of_finite_length",
+        "Module.principalEuler_of_regular": "Module.principalEuler_of_regular",
+        "Module.FinitePrincipal": "Module.FinitePrincipal, native two-periodic scalar homology",
+        "Module.finitePrincipal_of_regular": "Module.finitePrincipal_of_regular"
+      },
+      "r5lab_source_sha256_recorded_by_source": "d15099f8ac6ef7764769d54446a0995386aec85b1b6770c405de472eb9fde981"
+    },
+    {
+      "source_file": "Aglib/RingTheory/Multiplicity/PrincipalEuler/Additivity.lean",
+      "source_sha256": "ff7dc2b939e2e72a71a1b3a65b921037aefdabee2093e138b40ef73c9ec26f74",
+      "target_file": "Colib/RingTheory/Multiplicity/PrincipalEuler/Additivity.lean",
+      "correspondence": {
+        "Module.principalEuler_add_of_exact": "Module.principalEuler_add_of_exact; strengthened outer-finiteness form also supplied",
+        "Module.principalEuler_congr": "Module.principalEuler_congr",
+        "Module.finitePrincipal_congr": "Module.finitePrincipal_congr",
+        "Int.integer_telescope": "Not copied; Fin.sum_univ_succ and Fin.sum_univ_castSucc used directly"
+      },
+      "r5lab_source_sha256_recorded_by_source": "26ee2397a837a665bc1b1c6f248fdacdc0d43009ea147acb68137233d7c5446d"
+    },
+    {
+      "source_file": "Aglib/RingTheory/Multiplicity/PrincipalEuler/Support.lean",
+      "source_sha256": "c30b1ac6d8a329ba5e9ba1e88f286b42c11dd4983fcc6b94662dd4795accf671",
+      "target_file": "Colib/RingTheory/Multiplicity/PrincipalEuler/Support.lean",
+      "correspondence": {
+        "Module.support_scalarCokernel": "Module.support_quotient_range_lsmul, native actual quotient",
+        "Module.scalar_mem_annihilator_kernel": "Module.mem_annihilator_ker_lsmul",
+        "Module.finitePrincipal_of_support_subset": "Module.finitePrincipal_of_support_subset",
+        "Module.finitePrincipal_terms": "Native submodule and actual subquotient corollaries; no PrimeFiltrationFrom structure",
+        "Module.principalEuler_eq_sum_of_finite_cokernel": "Module.principalEuler_eq_sum_of_prime_relSeries_of_finite_cokernel in Filtration"
+      },
+      "r5lab_source_sha256_recorded_by_source": "5dd0cee73230a6d3cf58f6ac525d8aa880a5bc6e7ad08eb823b6f0e2913099eb"
+    },
+    {
+      "source_file": "Aglib/RingTheory/Multiplicity/PrincipalEuler/Filtration.lean",
+      "source_sha256": "405b304e0b7f4c09844b9f7043ba153588646fe70febc612f787cdc7fdf124bb",
+      "target_file": "Colib/RingTheory/Multiplicity/PrincipalEuler/Filtration.lean",
+      "correspondence": {
+        "Module.principalEuler_add_of_submodule_le": "Module.principalEuler_add_of_submodule_le",
+        "Module.principalEuler_eq_sum": "Module.principalEuler_eq_sum_of_prime_relSeries, for a native bottom-to-top RelSeries with actual quotient equivalences",
+        "Module.principalEuler_of_quotientFiltration": "Source custom quotient-filtration wrapper not copied; native successive subquotient additivity and RelSeries sum supplied"
+      },
+      "r5lab_source_sha256_recorded_by_source": "860f378ac24bc0033903038bcae32ff592ede183c1c0378541bfd5a3a092a1f6"
+    },
+    {
+      "source_file": "Aglib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean",
+      "source_sha256": "a50cb34591c0466aa7449f0a6c90ef14e2d50feafdd7f575fc93ff1644e30456",
+      "target_file": "Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean",
+      "correspondence": {
+        "Module.supportDim_le_one_of_finite_cokernel": "Module.supportDim_le_one_of_finite_cokernel",
+        "Module.principalEuler_eq_weighted_sum_of_supportDim": "Module.principalEuler_associativity_of_supportDim; intrinsic minimal support points and native localized modules",
+        "Module.principalEuler_eq_weighted_sum": "Module.principalEuler_associativity",
+        "Module.principalEuler_associativity": "Module.principalEuler_associativity; no custom moduleMinimalPrimes wrapper",
+        "Module.principalCokernel_associativity": "Module.principalCokernel_associativity; regularity on contributing prime quotients is derived",
+        "Module.finitePrincipal_minimalPrime": "Covered by finitePrincipal_of_support_subset and native support monotonicity; no dedicated wrapper copied"
+      },
+      "r5lab_source_sha256_recorded_by_source": "bf1fac16ef81cd1e488dd55b90c1a3ebb8edcd9faa70f6691fe1b5843db48f74"
+    }
+  ],
+  "source_correspondence_review": "Author-checked against the named source files and pinned native theorem signatures. Independent mathematical review of these final source hashes is not recorded here.",
+  "public_declarations": {
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Basic.lean": [
+      "Module.principalEuler",
+      "Module.principalEuler_eq_length_quotient_sub_length_ker",
+      "Module.principalEuler_zero_of_finite_length",
+      "Module.principalEuler_of_regular",
+      "Module.FinitePrincipal",
+      "Module.finitePrincipal_iff_isFiniteLength",
+      "Module.finitePrincipal_of_regular"
+    ],
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Additivity.lean": [
+      "Module.finitePrincipal_and_principalEuler_add_of_exact",
+      "Module.finitePrincipal_of_exact",
+      "Module.principalEuler_add_of_exact_of_outer_finite",
+      "Module.principalEuler_add_of_exact",
+      "Module.principalEuler_congr",
+      "Module.finitePrincipal_congr"
+    ],
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Support.lean": [
+      "Module.support_quotient_range_lsmul",
+      "Module.mem_annihilator_ker_lsmul",
+      "Module.support_ker_lsmul_subset",
+      "Module.finitePrincipal_of_support_subset",
+      "Module.finitePrincipal_of_finite_cokernel",
+      "Module.finitePrincipal_submodule_of_finite_cokernel",
+      "Module.finitePrincipal_subquotient_of_finite_cokernel"
+    ],
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Filtration.lean": [
+      "Module.principalEuler_add_of_submodule_le",
+      "Module.principalEuler_eq_sum_of_prime_relSeries",
+      "Module.principalEuler_eq_sum_of_prime_relSeries_of_finite_cokernel",
+      "Module.minimal_range_eq_minimal_support_of_prime_relSeries",
+      "Module.ncard_eq_length_localizedModule_of_prime_relSeries",
+      "Module.length_localizedModule_ne_top_of_prime_relSeries",
+      "Module.length_localizedModule_toNat_eq_ncard_of_prime_relSeries",
+      "Module.exists_prime_relSeries_principalEuler_sum_and_localLength"
+    ],
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean": [
+      "Module.supportDim_le_one_of_finite_cokernel",
+      "Module.principalEuler_primeQuotient_eq_ord",
+      "Module.principalEuler_quotient_closedPoint_eq_zero",
+      "Module.principalEuler_eq_finsum_nonclosed_support",
+      "Module.principalEuler_associativity_of_supportDim",
+      "Module.principalEuler_associativity",
+      "Module.principalCokernel_associativity"
+    ]
+  },
+  "public_declaration_count": 35,
+  "test_example_count": 27,
+  "normalization": {
+    "definition": "Module.principalEuler is native AlgebraicGeometry.periodicLength of twoPeriodicComplex with degree-zero differential 0 and degree-one differential LinearMap.lsmul A M t.",
+    "concrete_expression": "Integer cast of length_A(M/tM).toNat minus integer cast of length_A(ker(t)).toNat.",
+    "finiteness": "ENat.toNat maps infinity to zero; finite-length meaning is a separate hypothesis, expressed by FinitePrincipal.",
+    "universes": "Independent ring/module universes; three exact-sequence modules may have distinct universes."
+  },
+  "scope": [
+    "Basic finite-length cancellation and regular-scalar cokernel formula without adding finite-length assumptions to the formal regularity identity.",
+    "Exact-sequence Euler additivity and middle finite scalar homology from finiteness at the two outer terms; linear-equivalence transport.",
+    "Over a Noetherian ring, finite modules and support containment transfer finite scalar homology from finite scalar cokernel of the ambient module; actual submodule and subquotient corollaries.",
+    "Native RelSeries bottom-to-top prime filtration Euler sum plus minimal-label occurrence counts equal native localized lengths, using the same filtration. Generic statements require supplied filtration, not Noetherianity; existence is deduced for finite modules over Noetherian rings.",
+    "For a finite module over a Noetherian local ring, support dimension at most one and finite scalar cokernel imply the Euler-weighted associativity sum over minimal support points.",
+    "The usual endpoint derives the dimension bound from scalar membership in the maximal ideal and finite scalar cokernel. Scalar regularity on the original module additionally gives the pure cokernel-length associativity formula."
+  ],
+  "associativity": {
+    "endpoint": "Module.principalEuler_associativity",
+    "assumptions": [
+      "CommRing A",
+      "IsNoetherianRing A",
+      "IsLocalRing A",
+      "AddCommGroup M",
+      "Module A M",
+      "Module.Finite A M",
+      "t belongs to IsLocalRing.maximalIdeal A",
+      "Module.length A (M / range(lsmul A M t)) is not infinity"
+    ],
+    "formula": "principalEuler(M,t) = finsum over q minimal in support_A(M) of length_{A_q}(LocalizedModule(q.primeCompl,M)).toNat * principalEuler(A/q,t), with natural lengths cast to integers.",
+    "regular_endpoint": "Module.principalCokernel_associativity adds IsSMulRegular M t and replaces both Euler integers with principal-cokernel lengths.",
+    "excluded_extra_assumptions": [
+      "Cohen-Macaulay",
+      "equidimensional",
+      "domain",
+      "coefficient flatness",
+      "nonzero module",
+      "dimension exactly one"
+    ],
+    "zero_dimensional_case": "Native 02QF sums over nonclosed support points. Under dimension at most one these are minimal, but the closed point can be minimal in dimension zero. The proof first replaces order by Euler only at nonclosed points, then extends the sum with the zero Euler contribution at the closed point. It does not extend the raw order sum or invoke the dimension-exactly-one equality of index sets.",
+    "regression": "For a field and zero scalar, principalEuler is zero while Ring.ord of zero is one; test covers this distinction."
+  },
+  "native_reuse": [
+    {
+      "result": "AlgebraicGeometry.periodicLength_zero_eq_length_quotient_sub_length_ker",
+      "reference": "Stacks 0EA6",
+      "role": "canonical scalar Euler normalization"
+    },
+    {
+      "result": "AlgebraicGeometry.periodicLength_eq_zero_of_iso",
+      "reference": "Stacks 0EA8",
+      "role": "finite-length cancellation"
+    },
+    {
+      "result": "Module.lengthIndex_add_of_ladder",
+      "role": "exact-sequence index additivity"
+    },
+    {
+      "result": "Module.setOf_minimal_range_eq_setOf_minimal_support_and_ncard_eq_length",
+      "reference": "Stacks 00L7",
+      "role": "native prime-filtration local multiplicities"
+    },
+    {
+      "result": "IsNoetherianRing.exists_relSeries_isQuotientEquivQuotientPrime",
+      "reference": "Stacks 00L0 via Mathlib",
+      "role": "native finite prime filtration"
+    },
+    {
+      "result": "AlgebraicGeometry.periodicLength_mul_eq_finsum_support",
+      "reference": "Stacks 02QF",
+      "role": "direct intrinsic associativity endpoint"
+    },
+    {
+      "result": "Module.supportDim_le_supportDim_quotSMulTop_succ",
+      "role": "dimension bound from finite scalar cokernel"
+    },
+    {
+      "result": "IsSMulRegular.notMem_of_mem_minimalPrimes",
+      "role": "regularity on contributing prime quotients"
+    }
+  ],
+  "not_claimed": [
+    "Source Interchange or Localization modules",
+    "All literal source helper APIs or source PrimeFiltrationFrom datatype",
+    "A separate scalar homology, periodic complex, localization or filtration model",
+    "Original-object face-cycle equality or full motivic comparison",
+    "Kernel replay",
+    "Library IDs, chapter registration, generated root imports or whole registered-tree aggregate check"
+  ],
+  "validation": {
+    "evidence_directory": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745",
+    "final_success_stages": [
+      "28-chain-test-r1",
+      "29-basic-lint",
+      "30-additivity-lint",
+      "31-support-lint",
+      "32-filtration-lint",
+      "33-associativity-lint",
+      "34-test-lint",
+      "35-style",
+      "36-axiom-audit"
+    ],
+    "checks": [
+      {
+        "stage": "01-two-periodic",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/01-two-periodic.json",
+        "receipt_sha256": "d5ed314f65d0fbd3a4d13fce5e63e94549c12dca1215060a4c998661065b7d78",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/01-two-periodic.log",
+        "log_sha256": "b65a482c2259a08de9be5cf58ad0097d471883da7aa829b044f8717ee438905d",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.AlgebraicGeometry.Chow.CalculationMultiplicities.TwoPeriodic:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 6.618920164997689,
+        "peak_rss_bytes": 2200952832,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "02-periodic-defs",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/02-periodic-defs.json",
+        "receipt_sha256": "ec760456d88d61bbf454c53772139838dc39582d0d31949baf671867ecdd6c4b",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/02-periodic-defs.log",
+        "log_sha256": "1b542d33c72e7c9502bb298d5d485a1db12908e023ed99855def02a0ba1b14a9",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.AlgebraicGeometry.Chow.PeriodicComplexesHerbrand.Defs:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 3.2474684810149483,
+        "peak_rss_bytes": 2334912512,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "03-periodic-length",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/03-periodic-length.json",
+        "receipt_sha256": "ae67bfaa6d3658e8f28075355d0e60ffd3ed9227a05b3e046098ad29aaaa7a8c",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/03-periodic-length.log",
+        "log_sha256": "5b81c213696b094130ed95e3a117d62337a59e73b87381818da6d54c6b87c46a",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.AlgebraicGeometry.Chow.PeriodicComplexesHerbrand.Length:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 5.574958875018638,
+        "peak_rss_bytes": 2379792384,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "04-basic-r1",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/04-basic-r1.json",
+        "receipt_sha256": "f166a2c00b655da4ab54038007deaac5dc2fa7b0d77e485d6340f37844d7ba05",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/04-basic-r1.log",
+        "log_sha256": "4768a7f070576ea6ce5b1168a8b68d2e947f84be31e0d46cdb9b307c1540f2f9",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic:olean"
+        ],
+        "state": "completed",
+        "exit_code": 1,
+        "duration_seconds": 4.343286485003773,
+        "peak_rss_bytes": 2364272640,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "05-basic-r2",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/05-basic-r2.json",
+        "receipt_sha256": "b5e7c11c7a9526c1d6bbe5875201c3fa42a232ef95cd826350726c9eda61bae0",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/05-basic-r2.log",
+        "log_sha256": "54372b931e1d42b205fbb00df69df126f386621dc45cfa5f799aa22779b90f15",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 4.107953304017428,
+        "peak_rss_bytes": 2365227008,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "06-index-additivity",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/06-index-additivity.json",
+        "receipt_sha256": "5c4389753447d7b4775f81fd9ba1f18e077d8221e42f1d5fd11fd1fb500b6041",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/06-index-additivity.log",
+        "log_sha256": "b6e35a331296e0ac247351e30d60f5bb909a79e15e5e30fbdf5b6e7de454e9ef",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.RingTheory.Length.IndexAdditivity:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 7.821490211004857,
+        "peak_rss_bytes": 2269028352,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "07-additivity-r1",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/07-additivity-r1.json",
+        "receipt_sha256": "8703fe2a42e95d46d26273f0bce8456e23f983ee4d9725fb278518709aa6bb51",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/07-additivity-r1.log",
+        "log_sha256": "b214ad2e1fbd5daf64dd25eb60665834ef695ad772fcef328f21f56cca654378",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Additivity:olean"
+        ],
+        "state": "completed",
+        "exit_code": 1,
+        "duration_seconds": 4.1942586390068755,
+        "peak_rss_bytes": 2372509696,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "08-additivity-r2",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/08-additivity-r2.json",
+        "receipt_sha256": "a3d0a5ee0acc168bb5e954cf102a62e1a2c2d228757ff8111aba80e4a7b43971",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/08-additivity-r2.log",
+        "log_sha256": "28c380611338ea222737288feedfeb5aae0cde2b2b322f86030e4027c4afd95c",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Additivity:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 4.405014865973499,
+        "peak_rss_bytes": 2373292032,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "09-support-basic",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/09-support-basic.json",
+        "receipt_sha256": "1a227d24a60c632d59e2e22c773e494bea418388f95ea18540efee8cf6a90e6b",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/09-support-basic.log",
+        "log_sha256": "48f733fbf126d4f20ff8888f869a3adbcb09578f6829444107a229f587ae4e71",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.RingTheory.Support.Basic:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 10.659553667006548,
+        "peak_rss_bytes": 2876080128,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "10-support-finite",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/10-support-finite.json",
+        "receipt_sha256": "1233cb9c7f48d345678b64e5759fc1518f10373bcd3069a80e6cc07ffa12d20b",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/10-support-finite.log",
+        "log_sha256": "638f954fda5c14239ee1a2b8b026294c28bd520194eebd2e0b5d10749b966ff3",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.RingTheory.Support.Finite:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 6.362254357954953,
+        "peak_rss_bytes": 2911866880,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "11-support-finite-dimensional",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/11-support-finite-dimensional.json",
+        "receipt_sha256": "5f7c3306e3edf36b4c48dbbf8e7ec4031441812ca7780e91b70e0b2e2336a0ca",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/11-support-finite-dimensional.log",
+        "log_sha256": "4fd581cf1f625209ce4383db9033671874462a42c98b24266485c17761d5b4b7",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.RingTheory.Support.FiniteDimensional:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 6.07684617000632,
+        "peak_rss_bytes": 2899324928,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "12-support-r1",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/12-support-r1.json",
+        "receipt_sha256": "d22c5106f3ad1fccd72e821a8cf6398c3e4ae4e4b8861a6a7d68eaf68a396d16",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/12-support-r1.log",
+        "log_sha256": "414215d9b61b6a4dbcacdea432fc7c917510ac83853d179d1a702a022e3836e4",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Support:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 5.87448563502403,
+        "peak_rss_bytes": 2937413632,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "13-length-additivity",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/13-length-additivity.json",
+        "receipt_sha256": "a26d2468416d200643e9e9ee341aa1c562e0d88a48b1d3515b713ce6bcfd74f2",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/13-length-additivity.log",
+        "log_sha256": "6fdbae9148ef76ff2ad6e2f3fc09dd66112c32c6253a96446a9067b485bc5efb",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.RingTheory.Length.Additivity:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 8.605591030034702,
+        "peak_rss_bytes": 2701467648,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "14-filtration-r1",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/14-filtration-r1.json",
+        "receipt_sha256": "49bab0ac86429f185e7d184773301002dfbf25e339339b20dc578ff0ca481306",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/14-filtration-r1.log",
+        "log_sha256": "b51c9c0dd4e21408c7e8c2ef02374ede38a7bb77576419b652b629f174502726",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration:olean"
+        ],
+        "state": "completed",
+        "exit_code": 1,
+        "duration_seconds": 6.848453343030997,
+        "peak_rss_bytes": 2948009984,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "15-filtration-r2",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/15-filtration-r2.json",
+        "receipt_sha256": "3adad78a00b6989252a0ea708dbbbe4b6116d21ecd6fb848c692d2ee1670ff4b",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/15-filtration-r2.log",
+        "log_sha256": "b760c7e529d8799f93475b71c1272f4dbea51f509c8213bd91b0dc5b1e2043a2",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration:olean"
+        ],
+        "state": "completed",
+        "exit_code": 1,
+        "duration_seconds": 6.278153638995718,
+        "peak_rss_bytes": 2949914624,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "16-filtration-probe",
+        "kind": "diagnostic_probe_not_deliverable",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/16-filtration-probe.json",
+        "receipt_sha256": "cadc5214c7bf97907a99e84d1772385c32c2a7aa193712e58cd019345d1dd23c",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/16-filtration-probe.log",
+        "log_sha256": "b4617d537812ea9e209e2fb9ad809f5f055644420557e80509e5214a0dd33cd8",
+        "command": [
+          "lake",
+          "env",
+          "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/capped-toolchain/bin/lean",
+          "-DautoImplicit=false",
+          "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/FiltrationProbe.lean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 5.663647432986181,
+        "peak_rss_bytes": 3092221952,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "17-filtration-probe-public",
+        "kind": "diagnostic_probe_not_deliverable",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/17-filtration-probe-public.json",
+        "receipt_sha256": "0d2d7ad1168fabc8a639841bf6a8d0c7445a582de7ac04f6ae914a0f10eede18",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/17-filtration-probe-public.log",
+        "log_sha256": "206a46163b39f96ea92b34e1ce481840702b52d5ad58db919df93555dddc75e5",
+        "command": [
+          "lake",
+          "env",
+          "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/capped-toolchain/bin/lean",
+          "-DautoImplicit=false",
+          "-DwarningAsError=true",
+          "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/FiltrationProbe.lean"
+        ],
+        "state": "completed",
+        "exit_code": 1,
+        "duration_seconds": 3.25525770499371,
+        "peak_rss_bytes": 3170197504,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "18-filtration-probe-public-import",
+        "kind": "diagnostic_probe_not_deliverable",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/18-filtration-probe-public-import.json",
+        "receipt_sha256": "96a5ed7e67bd348fbaf96cef166e1b1d2749533b295691715b3bd3ba9107ff7d",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/18-filtration-probe-public-import.log",
+        "log_sha256": "eb2bc928295c6fc17b17176f3a9a7cdbc1f58eb4ca85e07fb90909d08b1ba5ff",
+        "command": [
+          "lake",
+          "env",
+          "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/capped-toolchain/bin/lean",
+          "-DautoImplicit=false",
+          "-DwarningAsError=true",
+          "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/FiltrationProbe.lean"
+        ],
+        "state": "completed",
+        "exit_code": 1,
+        "duration_seconds": 3.3498781609814614,
+        "peak_rss_bytes": 3192217600,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "19-filtration-probe-projections",
+        "kind": "diagnostic_probe_not_deliverable",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/19-filtration-probe-projections.json",
+        "receipt_sha256": "2dbde78e78a6da9d387e5948c50869d86bdb0c6d0b67fe04a47edf89a3321ac4",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/19-filtration-probe-projections.log",
+        "log_sha256": "323087ca0c6155c65e9de3606f8ec9999706bdb43494c668c86506e890df6cfc",
+        "command": [
+          "lake",
+          "env",
+          "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/capped-toolchain/bin/lean",
+          "-DautoImplicit=false",
+          "-DwarningAsError=true",
+          "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/FiltrationProbe.lean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 3.464118851989042,
+        "peak_rss_bytes": 3188387840,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "20-filtration-r3",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/20-filtration-r3.json",
+        "receipt_sha256": "90c81fb0ec202f489774d606161168dc35be8eb2545e9bc97b1353e3569bb9f0",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/20-filtration-r3.log",
+        "log_sha256": "9f5c3572acf21e9368327e44df4a5a50572e435961723b700961e5947d765fac",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 6.383978808997199,
+        "peak_rss_bytes": 2957127680,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "21-support-length",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/21-support-length.json",
+        "receipt_sha256": "e614488d97c7cfb65eb3404e54eb612340545ab8a782479701fa4a278dbd961d",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/21-support-length.log",
+        "log_sha256": "dd0be5d64917a7d46d93b972887262b8082d767985b2c4fe0c8df5a115ed728f",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.AlgebraicGeometry.Chow.CalculationMultiplicities.SupportLength:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 5.850004070030991,
+        "peak_rss_bytes": 2907627520,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "22-local-order",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/22-local-order.json",
+        "receipt_sha256": "82e17c13d153ebcce38ba131ec0dfec84f9f69c5042b080d4398fc10d2c38182",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/22-local-order.log",
+        "log_sha256": "43dd1e8cd8d1d6feb61410398816dec75141a35259f6cc1df796744a7af7d122",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.AlgebraicGeometry.Chow.CalculationMultiplicities.LocalOrder:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 6.604210054967552,
+        "peak_rss_bytes": 2914566144,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "23-periodic-additivity",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/23-periodic-additivity.json",
+        "receipt_sha256": "3a70d4070c699b8dded16519ef73e32e3722aa007774287d16a8be078ebe7675",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/23-periodic-additivity.log",
+        "log_sha256": "4470073de85e5a8478daecf4d8837d1435631d2a07fd05fb786c411fba2448b2",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.AlgebraicGeometry.Chow.PeriodicComplexesHerbrand.Additivity:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 4.504298658983316,
+        "peak_rss_bytes": 2379624448,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "24-multiplication",
+        "kind": "required_upstream_olean",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/24-multiplication.json",
+        "receipt_sha256": "46dec11115d2ade63cc5457f2f65b516804b5b2888a19a0c5672c4a3262a4501",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/24-multiplication.log",
+        "log_sha256": "c57153ff28e1c6ce4c5b54f39c5dcc90102fc8c5bc4ce8ec7f2457efeda7ca66",
+        "command": [
+          "lake",
+          "build",
+          "StacksFrontier.AlgebraicGeometry.Chow.CalculationMultiplicities.Multiplication:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 10.028038012969773,
+        "peak_rss_bytes": 2999001088,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "25-associativity-r1",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/25-associativity-r1.json",
+        "receipt_sha256": "94b475f7874ace1e9014ba5e5fac603b9065d61f41e033e9c8f468cd33dea945",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/25-associativity-r1.log",
+        "log_sha256": "0d3650f2a46a6b836421d7e08420e91e4b6a86b41ab50c15740e68de9e53b4e8",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity:olean"
+        ],
+        "state": "completed",
+        "exit_code": 1,
+        "duration_seconds": 5.638410631974693,
+        "peak_rss_bytes": 2951049216,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "26-associativity-probe",
+        "kind": "diagnostic_probe_not_deliverable",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/26-associativity-probe.json",
+        "receipt_sha256": "35357d7f62069c319696392ce25cd952907965f66cc4fb8565dc233474761e1b",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/26-associativity-probe.log",
+        "log_sha256": "4b265a4d5656ae651a19176acc260ccdd5cd6511049a8f9159c0a3641d3e70a5",
+        "command": [
+          "lake",
+          "env",
+          "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/capped-toolchain/bin/lean",
+          "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/AssociativityProbe.lean"
+        ],
+        "state": "completed",
+        "exit_code": 1,
+        "duration_seconds": 3.250202493974939,
+        "peak_rss_bytes": 3165392896,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "27-associativity-r2",
+        "kind": "production_leaf_iteration",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/27-associativity-r2.json",
+        "receipt_sha256": "4ebf2500dc58183bc8876e95e816864f890478a8fcf02d2eb90664f36a56124d",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/27-associativity-r2.log",
+        "log_sha256": "91410414177f55566e5a0209653b8964d1b95a1419e66b5cd7a5e7b995cf1a96",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 6.26681246800581,
+        "peak_rss_bytes": 2957975552,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "28-chain-test-r1",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/28-chain-test-r1.json",
+        "receipt_sha256": "90cf23c000b56f8c2c154d538ed4d30a7ae728f32dfd4975bbe9ebd75c6891d1",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/28-chain-test-r1.log",
+        "log_sha256": "61167238a6d3c4c29110fbe5ba3fad1d40740e5ad20c15be2e00b71e59fc48eb",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.PrincipalEuler:olean"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 23.729025378997903,
+        "peak_rss_bytes": 2958979072,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "29-basic-lint",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/29-basic-lint.json",
+        "receipt_sha256": "afc211339a4ba9b32eb393477fcc964d86d9ae739c9af9dcc2e7d608425694c8",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/29-basic-lint.log",
+        "log_sha256": "bae7e1385895bf6a1c0373c1a981aaf6cd66d08d44b03902f1a9d8d844474564",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 7.950157027982641,
+        "peak_rss_bytes": 3662901248,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "30-additivity-lint",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/30-additivity-lint.json",
+        "receipt_sha256": "99f8ecf7860ea929dbe7d7faac313d3c9f9f7d07fd24a59b252a6788047ec779",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/30-additivity-lint.log",
+        "log_sha256": "30d2fbd31d297d0dd0b443566069259852094a946581cfa48dbfe4344509c00e",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Additivity"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 3.7664568920154124,
+        "peak_rss_bytes": 3831562240,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "31-support-lint",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/31-support-lint.json",
+        "receipt_sha256": "128ed30a7c5ce9e532ef5accb9b9dc91c6b12844006396356013f710e0db5135",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/31-support-lint.log",
+        "log_sha256": "dda6fe7b220d64951f48671ac1be6f485772a9a804c17811fe241ac2abbc7778",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Support"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 8.400258258974645,
+        "peak_rss_bytes": 4992806912,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "32-filtration-lint",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/32-filtration-lint.json",
+        "receipt_sha256": "ad6aa6c23af1d1b3e0836cc94795da5efa3b70d03ac1d078f930f32f854b238c",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/32-filtration-lint.log",
+        "log_sha256": "a9e9a940176a9f9fec3dfb32629224b384ec598ea0e0a9c378ef8c5714b6d5bc",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 5.246025785978418,
+        "peak_rss_bytes": 5132083200,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "33-associativity-lint",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/33-associativity-lint.json",
+        "receipt_sha256": "657884362dca83f15e47495911a5c161edea28c4c3ec9d3aced7fc84d51eae3c",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/33-associativity-lint.log",
+        "log_sha256": "eb5269a953c3598573104d548c1a50259e006b3752c10c465bfc79c15ef845cd",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 4.599969186005183,
+        "peak_rss_bytes": 5151858688,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "34-test-lint",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/34-test-lint.json",
+        "receipt_sha256": "2469bec952d2f5024d257f13e19fd9703ab7ae5918d04d6cd874072eb5807e09",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/34-test-lint.log",
+        "log_sha256": "a0010b6af2f7c26e422a13b20e2546e0728b0c5a79f0fcaf4bc4cb7b8187633b",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "ColibTest.PrincipalEuler"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 4.612104657979216,
+        "peak_rss_bytes": 5149822976,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "35-style",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/35-style.json",
+        "receipt_sha256": "2b03c10087660b343b2c114071315933e6006ee6a7ba5e356e2bc35e688d9f9b",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/35-style.log",
+        "log_sha256": "94edd925acddc5ceaafe9d5fb4b6b6e0c5340803f6ddc58e0528cf39e9bb2171",
+        "command": [
+          "lake",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Additivity",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Support",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity",
+          "ColibTest.PrincipalEuler"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 1.6893706299597397,
+        "peak_rss_bytes": 1650388992,
+        "guard_failure": null,
+        "owned_group_gone": true
+      },
+      {
+        "stage": "36-axiom-audit",
+        "kind": "final_source_validation",
+        "receipt_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/36-axiom-audit.json",
+        "receipt_sha256": "230048c8ab143291c8e518f70a8e8b9acb2ec4ab4b5d825f67664b6ba5f0073f",
+        "log_path": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/36-axiom-audit.log",
+        "log_sha256": "ce01b005548b9780413fd1ead85ba47052577e7d616646148ae1471fa2a5cceb",
+        "command": [
+          "lake",
+          "env",
+          ".lake/tools/axiom-audit/.lake/build/bin/axiom-audit",
+          "--root",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler",
+          "--modules",
+          "Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration,Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity"
+        ],
+        "state": "completed",
+        "exit_code": 0,
+        "duration_seconds": 4.909774832020048,
+        "peak_rss_bytes": 4652445696,
+        "guard_failure": null,
+        "owned_group_gone": true
+      }
+    ],
+    "guard": {
+      "script": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/run_guarded.py",
+      "script_sha256": "7aeab2ce6463e1b252010e67511599a2fc521c1246d031b9b58a950ac4fdae68",
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "lean_threads": 1,
+      "max_active_lean": 1,
+      "sample_seconds": 0.1,
+      "disk_start_reserve_gib": 5,
+      "disk_cancel_reserve_gib": 4,
+      "shared_wrapper_unchanged": true
+    },
+    "all_owned_groups_gone": true,
+    "guard_failures": 0,
+    "peak_rss_bytes": 5151858688,
+    "upstream_leaf_build_count": 12,
+    "axiom_audit": {
+      "audited_declarations": 50,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "result": "passed",
+      "tool_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+      "kernel_replay": false
+    },
+    "style_warning": "scripts/nolints-style.txt was absent and treated as empty; style passed without suppressions.",
+    "failed_attempts_are_not_success_evidence": true,
+    "repairs": [
+      "Basic: replaced proof-local letI with let to satisfy strict style lint.",
+      "Additivity: redundant middle-finiteness binder renamed _hV; preserved three-finiteness corollary and supplied stronger outer-finiteness theorem.",
+      "Filtration: explicitly included proof-only hquot/hhead/hlast in their section. Replaced typed tuple-pattern relation syntax with UV.1/UV.2 projections: public export of the pattern relation introduced synthetic sorry; diagnostics and final axiom audit verified the projection version has no sorryAx.",
+      "Associativity: explicit range_lsmul_eq_smul_top rewrite and local closed-point maximality instance resolved native API elaboration; proof-local let replaces letI."
+    ],
+    "dependency_files_unchanged": [
+      "lakefile.toml",
+      "lake-manifest.json",
+      "lean-toolchain"
+    ],
+    "remote_actions": "No remote branch creation or push by this component worker.",
+    "handoff": "Compiler slot released after stage 36. Final integrator owns latest-main registration, aggregate validation and any separately authorized publication. This ledger was produced outside the worktree after handoff to avoid concurrent writes.",
+    "dependency_files_unchanged_note": "Checked before and at handoff; subsequent integration files are outside this historical component record.",
+    "timestamp_note": "36 chronological component receipts precede integration; this ledger was assembled after handoff. Historical failed attempts and diagnostics remain visible and are not counted as completed proof validation.",
+    "component_source_hash_binding": "Reconstructed after handoff, not a retained pre-build SHA-256 manifest. Do not treat these hashes as an additional independent validation; use final registered-tree evidence for exact source-hash binding."
+  },
+  "component_source_snapshots": {
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Basic.lean": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/component-source/Colib/RingTheory/Multiplicity/PrincipalEuler/Basic.lean",
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Additivity.lean": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/component-source/Colib/RingTheory/Multiplicity/PrincipalEuler/Additivity.lean",
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Support.lean": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/component-source/Colib/RingTheory/Multiplicity/PrincipalEuler/Support.lean",
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Filtration.lean": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/component-source/Colib/RingTheory/Multiplicity/PrincipalEuler/Filtration.lean",
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/component-source/Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean",
+    "ColibTest/PrincipalEuler.lean": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/component-source/ColibTest/PrincipalEuler.lean",
+    "docs/migration/principal-euler.md": "/workspace/scratch/ab4c8cd79b02/principal-euler-validation-20261105-1745/component-source/docs/migration/principal-euler.md"
+  },
+  "component_snapshot_note": "These snapshots were reconstructed after handoff by removing the integrator-confirmed additions public import Colib.Util.References and standalone colib_tag attributes. They contain no colib_tag, colib_ref or References imports; the original Stacks attributes remain. The integrator subsequently combined reference attributes and began registered builds. Historical traces are now being overwritten, so these reconstructed SHA-256 values were not independently matched to a pre-build source checksum. Historical successful receipts remain valid execution evidence; exact registered-source hash binding and full-tree validation belong to the integrator's separate record. Test and mathematical documentation were copied unchanged.",
+  "reconstructed_component_source_sha256": {
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Basic.lean": "10d8e357c2660e4348f28d1e5b966ed543f7112ebfdbded8afd82dae434ae5a5",
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Additivity.lean": "ed40080f77a4ccab41ba3993cdfae5bcec20ed668545d435b4c0a30130d36dc0",
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Support.lean": "10f885ffa60fb8da057635993cb8180770007a0edf9d89c5c73b032c63d31b30",
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Filtration.lean": "a6a80fd7d7def5b53d16f021996382c354b5bf401e5235ef5107b0d8539193af",
+    "Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean": "6f16f65149e8a592632cb9d9c63fcad4ff58b9ff7cd504811962beb339f9c1d5",
+    "ColibTest/PrincipalEuler.lean": "49b3c9a4bfc14418a2ee7340566f3ae47260155eaf338cae1783316194446a68",
+    "docs/migration/principal-euler.md": "eefb8adeb91a7dee3aa549c71e6200da2c56fa81c9ac69e84b37773fed49776e"
+  },
+  "library_items": [
+    "COL-0169",
+    "COL-0170",
+    "COL-0171",
+    "COL-0172",
+    "COL-0173"
+  ],
+  "integration_review": {
+    "Basic_Additivity_Associativity_tests_documentation": "Independent source review by a reviewer who did not author these leaves. Verified native cokernel-minus-kernel sign, outer-finiteness exactness, independent universes, dimension-zero closed-point cancellation and regular-scalar specialization against pinned upstream.",
+    "Support_Filtration": "Integrator source review, separate from their author: verified finite-length support containment for native kernels/cokernels, actual subquotient support maps, telescoping on the same native RelSeries, endpoint assumptions, and native 00L7 localized multiplicities.",
+    "limitations": "Review concerns the migrated algebraic chain; no full motivic comparison or separate kernel replay is claimed."
+  },
+  "registered_tree_validation": {
+    "status": "passed",
+    "baseline": "ebed72d44aa5f338f8a464863747bdb8a8b53f64",
+    "command": "bash scripts/check.sh",
+    "receipt_sha256": "c808c11c7b7664989e062723bdfcec8ddcd8d27bf12530c842ef3e86e41465e8",
+    "log_sha256": "96a97ae894c34eb66496516188c940929a331be922c071b9da7929ecc52b52f6",
+    "exit_code": 0,
+    "guard": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-principal-euler-ebed72d-20261105-1745",
+      "pid": 8,
+      "pgid": 8,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6576164864,
+      "duration_seconds": 124.01373572699958,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 8,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ]
+    },
+    "kernel_replay": false,
+    "source_hashes": {
+      "Colib/RingTheory/Multiplicity/PrincipalEuler/Additivity.lean": "44f07379a27f7291df5a5dd4a13cd87f46e1c6d7e6290bd984f2a33e54af5a77",
+      "Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean": "61e3b8d5716107ef8c0757684205bc6108770fc819e3a32ca415fa77f4dcdaa2",
+      "Colib/RingTheory/Multiplicity/PrincipalEuler/Basic.lean": "c184acd2b1864339253c00f8895cc8c7a24803d3c61b68caf00a777ae7ceaa46",
+      "Colib/RingTheory/Multiplicity/PrincipalEuler/Filtration.lean": "2d7e58db272e7e10b1bfd098fbc881844e1ba127bbd33b1f7682912f4ecd0ed5",
+      "Colib/RingTheory/Multiplicity/PrincipalEuler/Support.lean": "8fb51ba64e16c8522555484e3b1dc6422ee3a2995ebe7a30395265aa0feac330"
+    },
+    "test_sha256": "49b3c9a4bfc14418a2ee7340566f3ae47260155eaf338cae1783316194446a68",
+    "dependency_hashes": {
+      "lake-manifest.json": "305047fed14ab46f9a0d8e23e5cefa5ef5c6ea89ebf0b34f52ec172f0b9d9652",
+      "lakefile.toml": "b681aa44d657deeaed64537578c53698eb8546fa15fd44c74d949c928d94a6e1",
+      "lean-toolchain": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+    },
+    "results": [
+      "56 Python regression tests",
+      "Colib build",
+      "in-package Lean tests",
+      "declaration lint",
+      "Mathlib style lint",
+      "generated root import check",
+      "2572 production declarations passed allowlisted axiom audit",
+      "172 Library items and 573 indexed declarations exported"
+    ],
+    "evidence_directory": "/workspace/scratch/ab4c8cd79b02/principal-euler-integration-20261105-1807",
+    "notes": "Final source hashes refer to the registered code actually checked. Subsequent changes only add this evidence and clarify the migration documentation; no Lean source or dependency changes."
+  }
+}

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0169"
+title = "Principal Euler integer on the native periodic complex"
+kind = "definition"
+section = "principal-euler"
+order = 10
+statement = "The scalar Euler integer is the native periodic length, with cokernel-minus-kernel sign, finite-length cancellation and the regular-scalar specialization."
+scope = "Independent ring and module universes. Finiteness is separate from the total integer expression; infinite lengths are not silently interpreted as finite."
+review = "author_checked"

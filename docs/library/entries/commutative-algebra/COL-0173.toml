@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0173"
+title = "Principal Euler associativity over a local ring"
+kind = "theorem"
+section = "principal-euler"
+order = 50
+statement = "The Euler integer is the sum of prime-quotient Euler integers weighted by native localized module lengths at minimal support points. A regular scalar gives the pure cokernel-length formula."
+scope = "Finite module over a Noetherian local ring, scalar in the maximal ideal and finite scalar cokernel. The dimension-at-most-one formulation includes dimension zero; the closed-point Euler contribution vanishes."
+review = "author_checked"

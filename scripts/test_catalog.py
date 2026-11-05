@@ -40,6 +40,22 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("Colib.KTheory.MilnorK.Residue.Completion",
                       (root / "Colib.lean").read_text())
 
+    def test_principal_euler_complete_chain_registration(self):
+        root = catalog.ROOT
+        leaves = ("Basic", "Additivity", "Support", "Filtration", "Associativity")
+        for number, leaf in zip(range(169, 174), leaves):
+            identifier = f"COL-{number:04d}"
+            self.assertEqual(self.library["entries"][identifier]["section"], "principal-euler")
+            module = f"Colib.RingTheory.Multiplicity.PrincipalEuler.{leaf}"
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            self.assertIn("ColibTest.PrincipalEuler", (root / path).read_text())
+        source = (root / "Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean").read_text()
+        self.assertIn("principalEuler_quotient_closedPoint_eq_zero", source)
+        self.assertIn("principalCokernel_associativity", source)
+
     def native_fixture(self):
         native = {
             "bindings": [],
@@ -66,6 +82,7 @@ class LibraryTests(unittest.TestCase):
             "quillen-k-theory": "Colib.KTheory.Quillen.Basic",
             "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
+            "principal-euler": "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic",
             "finite-algebra-coefficients": "Colib.RingTheory.Length.FiniteAlgebra",
         }
         native["modules"] = [

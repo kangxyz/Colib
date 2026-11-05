@@ -1,0 +1,11 @@
+[chapter]
+id = "commutative-algebra"
+title = "Commutative algebra"
+order = 15
+introduction = "Native module lengths, supports and localizations provide the local algebra used in multiplicity and cohomological constructions."
+
+[[sections]]
+id = "principal-euler"
+title = "Principal Euler length and associativity"
+order = 10
+introduction = "The native scalar periodic complex fixes the cokernel-minus-kernel convention. Exact-sequence additivity and support finiteness lead to prime-filtration sums and localized multiplicities, followed by intrinsic local associativity including dimension zero."

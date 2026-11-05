@@ -166,6 +166,11 @@ public import Colib.RingTheory.Koszul.TopExtGeneratorChange
 public import Colib.RingTheory.Koszul.TopExtLocalization
 public import Colib.RingTheory.Koszul.TopExtRingQuotient
 public import Colib.RingTheory.Length.FiniteAlgebra
+public import Colib.RingTheory.Multiplicity.PrincipalEuler.Additivity
+public import Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity
+public import Colib.RingTheory.Multiplicity.PrincipalEuler.Basic
+public import Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration
+public import Colib.RingTheory.Multiplicity.PrincipalEuler.Support
 public import Colib.Topology.Category.TopCat.PushoutInteriors
 public import Colib.Topology.Category.TopCat.Pushouts
 public import Colib.Topology.Category.TopCat.SequentialColimit.Compact

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0170"
+title = "Additivity of principal Euler length"
+kind = "theorem"
+section = "principal-euler"
+order = 20
+statement = "Finite scalar kernels and cokernels at the two ends of a short exact sequence imply middle finiteness and Euler additivity; linear equivalence preserves both invariants."
+scope = "Independent universes for the three modules. Exactness, injectivity and surjectivity refer to the actual linear maps; middle finiteness is derived."
+review = "author_checked"

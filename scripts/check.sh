@@ -26,7 +26,7 @@ lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest
   ColibTest.WaldhausenRows ColibTest.WaldhausenWeakHomotopy \
   ColibTest.WaldhausenCanonicalMap ColibTest.WaldhausenKFunctor ColibTest.WaldhausenZeroFunctor \
   ColibTest.ModuleColimitHomology ColibTest.AffineOpenPair \
-  ColibTest.MilnorCanonicalRamifiedMap ColibTest.MilnorDvrNormalization ColibTest.MilnorCompletion ColibTest.KoszulCoefficientAugmentation ColibTest.TopExtBaseChange ColibTest.TopExtBaseChangeQuotient ColibTest.TopExtBaseChangeNormalization \
+  ColibTest.MilnorCanonicalRamifiedMap ColibTest.MilnorDvrNormalization ColibTest.MilnorCompletion ColibTest.PrincipalEuler ColibTest.KoszulCoefficientAugmentation ColibTest.TopExtBaseChange ColibTest.TopExtBaseChangeQuotient ColibTest.TopExtBaseChangeNormalization \
   ColibTest.NerveZeroSkeleton ColibTest.RealizationBoundary ColibTest.SkeletalAttachment \
   ColibTest.GraphAttachmentGeneration ColibTest.NerveGraphData ColibTest.KZeroSurjectivity
 lake exe mathlib/mk_all --lib Colib --check

@@ -151,3 +151,10 @@ title = "Mathlib"
 authors = ["The mathlib community"]
 version = "Git commit 16edf57de7933555826307a3d81b4391a3657a09"
 url = "https://github.com/leanprover-community/mathlib4/tree/16edf57de7933555826307a3d81b4391a3657a09"
+
+[sources.aglib_principal_euler_pin]
+kind = "software"
+title = "Aglib Principal Euler source"
+authors = ["kangxyz and Aglib contributors"]
+version = "Git commit 101dbb8564fb0e29f28cfcb79168d878b5ab489f"
+url = "https://github.com/kangxyz/aglib/tree/101dbb8564fb0e29f28cfcb79168d878b5ab489f"

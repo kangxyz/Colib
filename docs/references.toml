@@ -78,14 +78,20 @@ kind = "book"
 title = "Algebraic Topology"
 authors = ["Allen Hatcher"]
 year = 2002
-version = "Author's online Chapter 4, Section 4.1 inspected 2026-11-05"
-url = "https://pi.math.cornell.edu/~hatcher/AT/ATch4.pdf"
+version = "Author's online Chapters 2 and 4, Sections 2.1 and 4.1 inspected 2026-11-05"
+url = "https://pi.math.cornell.edu/~hatcher/AT/ATpage.html"
 
 [[sources.HatcherAT.documents]]
 label = "Chapter 4, Homotopy Theory"
 locator_prefix = "Section 4.1,"
 url = "https://pi.math.cornell.edu/~hatcher/AT/ATch4.pdf"
 sha256 = "2406a6d735efabec618e336e351066237f903b8c917a7ddc73034e80ba83b737"
+
+[[sources.HatcherAT.documents]]
+label = "Chapter 2, Homology"
+locator_prefix = "Section 2.1,"
+url = "https://pi.math.cornell.edu/~hatcher/AT/ATch2.pdf"
+sha256 = "7d18d52c9ae10ec5275f967451f98352b3098a04f251423a67a11b88724f464c"
 
 [sources.MunkresTopology]
 kind = "book"

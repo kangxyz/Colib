@@ -61,6 +61,7 @@ public import Colib.Topology.Realization.Basic
 public import Colib.Topology.Realization.Constant
 public import Colib.Topology.Realization.Cylinder
 public import Colib.Topology.Realization.FiniteSimplexAdapter
+public import Colib.Topology.Realization.PrismCoordinates
 public import Colib.Topology.Realization.Simplex
 public import Colib.Topology.Realization.SimplicialColimits
 public import Colib.Util.References

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0065"
+title = "Finite prism cells and barycentric coordinates"
+kind = "proposition"
+section = "geometric-realization"
+order = 70
+statement = "The product of a finite real barycentric simplex with the unit interval is covered by finitely many closed prism cells. Each cell is homeomorphic to the next-dimensional simplex by the explicit split-vertex coordinates. Adjacent-cell overlaps have the common suffix height and vanishing duplicated coordinates."
+scope = "The subdivision follows the lower-to-upper vertex order in the opening geometric construction of the cited proof, not its homology conclusion. The lower duplicated weight is the vertex weight plus the strict suffix mass minus the interval parameter; the upper weight is the parameter minus that suffix mass. The cells may overlap. This finite-coordinate layer does not prove a global gluing theorem, a geometric-realization product comparison, realization of simplicial homotopies, or KMap composition. The supporting Hausdorff instance for arbitrary finite vertex types is not attributed to the prism paragraph. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

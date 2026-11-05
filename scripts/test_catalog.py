@@ -96,6 +96,13 @@ class LibraryTests(unittest.TestCase):
         for index in range(60, 65):
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
 
+    def test_finite_prism_id_keeps_its_owner(self):
+        self.assertEqual(
+            self.library["entries"]["COL-0065"]["section"], "geometric-realization"
+        )
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        self.assertTrue(result["entries"]["COL-0065"]["references"])
+
     def test_initial_ids_keep_their_owners(self):
         self.assertTrue(
             {f"COL-{index:04d}" for index in range(1, 13)}

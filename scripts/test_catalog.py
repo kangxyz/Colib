@@ -32,6 +32,7 @@ class LibraryTests(unittest.TestCase):
         }
         module_names = {
             "waldhausen-categories": "Colib.CategoryTheory.Waldhausen.Basic",
+            "waldhausen-k-theory": "Colib.KTheory.Waldhausen.Basic",
             "homology-colimits": "Colib.Algebra.Category.ModuleCat.FilteredColimits",
             "affine-open-pairs": "Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Functor",
             "ext-scalars": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
@@ -75,6 +76,18 @@ class LibraryTests(unittest.TestCase):
                 }
             )
         return native
+
+    def test_waldhausen_homotopy_chain_keeps_model_and_owners(self):
+        self.assertEqual(self.library["entries"]["COL-0154"]["section"], "waldhausen-categories")
+        for number in range(155, 159):
+            self.assertEqual(
+                self.library["entries"][f"COL-{number:04d}"]["section"], "waldhausen-k-theory"
+            )
+        self.assertIn("unnormalized", self.library["entries"]["COL-0146"]["scope"])
+        self.assertIn("strict chosen-zero", self.library["entries"]["COL-0154"]["scope"])
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for number in range(154, 159):
+            self.assertTrue(result["entries"][f"COL-{number:04d}"]["references"])
 
     def test_three_route_chains_keep_grouped_owners(self):
         for identifier, section in (

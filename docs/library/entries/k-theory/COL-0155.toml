@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0155"
+title = "Realized unnormalized Waldhausen groups and maps"
+kind = "definition"
+section = "waldhausen-k-theory"
+order = 10
+statement = "The realization of the IsZero diagonal S-set, based at its specified zero vertex, defines connective homotopy groups; exact functors induce actual realization maps and homomorphisms based at the image zero."
+scope = "groups n is pi_(n+1), and K-zero commutativity is not asserted. groupsMap has the image-zero target; groupsMapOfZeroEq requires an explicit equality to a prescribed target zero. No strict-model comparison or additivity theorem is claimed. Map constructions use C and D in the same object and hom universes. Source correspondence was checked on 2026-11-05; compilation and independent review are recorded separately."
+review = "author_checked"

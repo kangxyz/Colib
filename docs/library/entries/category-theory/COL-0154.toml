@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0154"
+title = "Actual weak-row nerve presentation"
+kind = "theorem"
+section = "waldhausen-categories"
+order = 1450
+statement = "The two-degree IsZero S-grid is naturally isomorphic to the nerve of the full quotient-row categories restricted to pointwise weak maps; its diagonal is the existing unnormalized S-set, and exact-functor maps commute with the comparison."
+scope = "Objects retain all zero, cofibration and quotient pushout conditions; mixed arrows and weak maps are unchanged. Row Reedy cofibrations, row pushout constructions and row Waldhausen structures are not dependencies. This is not a comparison with a strict chosen-zero model. Exact-functor naturality retains the common object and hom universes. Source correspondence was checked on 2026-11-05; compilation and independent review are recorded separately."
+review = "author_checked"

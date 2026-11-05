@@ -21,3 +21,9 @@ id = "quillen-k-theory"
 title = "Quillen K-theory"
 order = 30
 introduction = "Quillen K-groups are the shifted homotopy groups of the realized Q-category, based at the original zero vertex. The Q-classifying space BQ is distinguished from its loop space. Comparisons with algebraic K-zero and deeper structural theorems require separate results."
+
+[[sections]]
+id = "waldhausen-k-theory"
+title = "Waldhausen K-theory"
+order = 40
+introduction = "The current model realizes the unnormalized diagonal IsZero S-construction. Actual weak-row nerves and coherent weak-transformation cylinders retain its maps. Image-zero homotopy-group maps precede explicit based maps; normalization to a strict chosen-zero model and structural comparison theorems are separate obligations."

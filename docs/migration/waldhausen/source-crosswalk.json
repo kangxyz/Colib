@@ -1,0 +1,2656 @@
+[
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/KTheory.lean",
+      "source_declaration": "Quillen.Waldhausen.zeroSimplex",
+      "source_line": 39,
+      "source_sha256": "6405889b624a2b3e875cf5d3018503cdf745d802f00444f83732ca19df003bab",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.zeroSimplex",
+    "target_line": 47,
+    "target_sha256": "b069adc16aa56b2f7de06fa153c245ff69394c46c84c60cb53fdca4ff0b6896e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/KTheory.lean",
+      "source_declaration": "Quillen.Waldhausen.delooping",
+      "source_line": 49,
+      "source_sha256": "6405889b624a2b3e875cf5d3018503cdf745d802f00444f83732ca19df003bab",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.delooping",
+    "target_line": 57,
+    "target_sha256": "b069adc16aa56b2f7de06fa153c245ff69394c46c84c60cb53fdca4ff0b6896e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/KTheory.lean",
+      "source_declaration": "Quillen.Waldhausen.basepoint",
+      "source_line": 52,
+      "source_sha256": "6405889b624a2b3e875cf5d3018503cdf745d802f00444f83732ca19df003bab",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.basepoint",
+    "target_line": 60,
+    "target_sha256": "b069adc16aa56b2f7de06fa153c245ff69394c46c84c60cb53fdca4ff0b6896e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/KTheory.lean",
+      "source_declaration": "Quillen.Waldhausen.groups",
+      "source_line": 59,
+      "source_sha256": "6405889b624a2b3e875cf5d3018503cdf745d802f00444f83732ca19df003bab",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.groups",
+    "target_line": 67,
+    "target_sha256": "b069adc16aa56b2f7de06fa153c245ff69394c46c84c60cb53fdca4ff0b6896e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/KTheory.lean",
+      "source_declaration": "Quillen.Waldhausen.Structure.Delooping",
+      "source_line": 68,
+      "source_sha256": "6405889b624a2b3e875cf5d3018503cdf745d802f00444f83732ca19df003bab",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.Structure.Delooping",
+    "target_line": 76,
+    "target_sha256": "b069adc16aa56b2f7de06fa153c245ff69394c46c84c60cb53fdca4ff0b6896e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/KTheory.lean",
+      "source_declaration": "Quillen.Waldhausen.Structure.kBasepoint",
+      "source_line": 71,
+      "source_sha256": "6405889b624a2b3e875cf5d3018503cdf745d802f00444f83732ca19df003bab",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.Structure.kBasepoint",
+    "target_line": 79,
+    "target_sha256": "b069adc16aa56b2f7de06fa153c245ff69394c46c84c60cb53fdca4ff0b6896e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/KTheory.lean",
+      "source_declaration": "Quillen.Waldhausen.Structure.K",
+      "source_line": 74,
+      "source_sha256": "6405889b624a2b3e875cf5d3018503cdf745d802f00444f83732ca19df003bab",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.Structure.K",
+    "target_line": 82,
+    "target_sha256": "b069adc16aa56b2f7de06fa153c245ff69394c46c84c60cb53fdca4ff0b6896e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functor.lean",
+      "source_declaration": "Quillen.Waldhausen.deloopingMap",
+      "source_line": 102,
+      "source_sha256": "6dded72fbc649309cc8352d6df4c5ace1c4c315a51d5aa429881a02f790a5d90",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Map.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.deloopingMap",
+    "target_line": 46,
+    "target_sha256": "0e70f834553a67e3c8390ebe75fd34ac3a7c383ba9167ee7142e51ade3196475",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functor.lean",
+      "source_declaration": "Quillen.Waldhausen.sSetMap_zeroSimplex",
+      "source_line": 110,
+      "source_sha256": "6dded72fbc649309cc8352d6df4c5ace1c4c315a51d5aa429881a02f790a5d90",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Map.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.sSetMap_zeroSimplex",
+    "target_line": 53,
+    "target_sha256": "0e70f834553a67e3c8390ebe75fd34ac3a7c383ba9167ee7142e51ade3196475",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functor.lean",
+      "source_declaration": "Quillen.Waldhausen.deloopingMap_basepoint",
+      "source_line": 120,
+      "source_sha256": "6dded72fbc649309cc8352d6df4c5ace1c4c315a51d5aa429881a02f790a5d90",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Map.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.deloopingMap_basepoint",
+    "target_line": 63,
+    "target_sha256": "0e70f834553a67e3c8390ebe75fd34ac3a7c383ba9167ee7142e51ade3196475",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functor.lean",
+      "source_declaration": "Quillen.Waldhausen.groupsMap",
+      "source_line": 131,
+      "source_sha256": "6dded72fbc649309cc8352d6df4c5ace1c4c315a51d5aa429881a02f790a5d90",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Map.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.groupsMap",
+    "target_line": 75,
+    "target_sha256": "0e70f834553a67e3c8390ebe75fd34ac3a7c383ba9167ee7142e51ade3196475",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-realization-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functor.lean",
+      "source_declaration": "Quillen.Waldhausen.groupsMapOfZeroEq",
+      "source_line": 136,
+      "source_sha256": "6dded72fbc649309cc8352d6df4c5ace1c4c315a51d5aa429881a02f790a5d90",
+      "transformation": "owner/import changes; documentation narrows claims to unnormalized model; Map replaces Quillen.piMap by migrated HomotopyGroup.piMap"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Map.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.groupsMapOfZeroEq",
+    "target_line": 80,
+    "target_sha256": "0e70f834553a67e3c8390ebe75fd34ac3a7c383ba9167ee7142e51ade3196475",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 30,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.IsRow",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.IsRow",
+    "target_line": 35,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 44,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.objects",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.objects",
+    "target_line": 49,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 47,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.Obj",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.Obj",
+    "target_line": 52,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 50,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.forget",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.forget",
+    "target_line": 55,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 51,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.forget_full",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.forget_full",
+    "target_line": 56,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 52,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.forget_faithful",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.forget_faithful",
+    "target_line": 57,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 56,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.evaluation",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.evaluation",
+    "target_line": 61,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 60,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.horizontalArrow",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 71,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.cof",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 75,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weq",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weq",
+    "target_line": 65,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 79,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.cof_app",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 83,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.cof_multiplicative",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 93,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weq_multiplicative",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weq_multiplicative",
+    "target_line": 68,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 97,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.cof_iso",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 102,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weq_iso",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weq_iso",
+    "target_line": 72,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 108,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.zero",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.zero",
+    "target_line": 78,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 114,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.isZero",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Basic.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.isZero",
+    "target_line": 84,
+    "target_sha256": "570884f6d378dc857aa0a92f8efd869b7827a634e3615fc3119df019ffe7caa3",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Basic.lean",
+      "source_line": 133,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.cof_zero",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 33,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.IsRow.postcomp",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.IsRow.postcomp",
+    "target_line": 36,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 40,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.postcompose",
+    "target_line": 43,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 52,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_obj_diagram",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.postcompose_obj_diagram",
+    "target_line": 55,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 54,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_map_app",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.postcompose_map_app",
+    "target_line": 57,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 59,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_cof",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 65,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_exact",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 74,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_evaluation",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.postcompose_evaluation",
+    "target_line": 67,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 78,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_horizontalArrow",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 85,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_reindex",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.postcompose_reindex",
+    "target_line": 72,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 89,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_id",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.postcompose_id",
+    "target_line": 76,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Functoriality.lean",
+      "source_line": 95,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.postcompose_comp_postcompose",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.postcompose_comp_postcompose",
+    "target_line": 82,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": null,
+      "change": "Extracted weak preservation component from source exactness proof"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.postcompose_weq",
+    "target_line": 62,
+    "target_sha256": "c16f45a792c0857a84659934c9d16d33709de1ab3caac6c895c757fdab205a7e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/GridBridge.lean",
+      "source_line": 29,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridRestriction",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/GridBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridRestriction",
+    "target_line": 33,
+    "target_sha256": "fdd752d9e701cb1a289a835fb43e32100a65adc65f1f74b16f8cc4421f8be4c0",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/GridBridge.lean",
+      "source_line": 34,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.isRow_of_isSimplex₂",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/GridBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.isRow_of_isSimplex₂",
+    "target_line": 38,
+    "target_sha256": "fdd752d9e701cb1a289a835fb43e32100a65adc65f1f74b16f8cc4421f8be4c0",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/GridBridge.lean",
+      "source_line": 43,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.isSimplex₂_iff",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/GridBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.isSimplex₂_iff",
+    "target_line": 47,
+    "target_sha256": "fdd752d9e701cb1a289a835fb43e32100a65adc65f1f74b16f8cc4421f8be4c0",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/GridBridge.lean",
+      "source_line": 60,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridRestriction_reindex",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/GridBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridRestriction_reindex",
+    "target_line": 64,
+    "target_sha256": "fdd752d9e701cb1a289a835fb43e32100a65adc65f1f74b16f8cc4421f8be4c0",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 29,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.WeakRows",
+      "change": "direct pointwise weq, definitionally the source waldhausenStructure.weq field"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.WeakRows",
+    "target_line": 33,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 32,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakRows_eqToHom_app",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakRows_eqToHom_app",
+    "target_line": 36,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 39,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridToWeakChain",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridToWeakChain",
+    "target_line": 43,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 60,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakChainToGrid",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakChainToGrid",
+    "target_line": 64,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 83,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakChainToGrid_obj",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakChainToGrid_obj",
+    "target_line": 87,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 88,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakChainToGrid_map",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakChainToGrid_map",
+    "target_line": 92,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 96,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakChainToGrid_isSimplex₂",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakChainToGrid_isSimplex₂",
+    "target_line": 100,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 109,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakChainToGrid_row",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakChainToGrid_row",
+    "target_line": 113,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 125,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakChainToGrid_gridToWeakChain",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakChainToGrid_gridToWeakChain",
+    "target_line": 129,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 137,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridToWeakChain_weakChainToGrid",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridToWeakChain_weakChainToGrid",
+    "target_line": 141,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveBridge.lean",
+      "source_line": 151,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridWeakChainEquiv",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveBridge.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridWeakChainEquiv",
+    "target_line": 155,
+    "target_sha256": "f48a97a1af36d105bb7ef54f1383bea5d98da4c9a3d700a0160b7c62771d73f6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveFunctoriality.lean",
+      "source_line": 32,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakRowsPostcompose",
+      "change": "direct pointwise weak-map preservation instead of row exactness theorem"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveFunctoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakRowsPostcompose",
+    "target_line": 36,
+    "target_sha256": "07dd4233626674597413a7224773bf4436baed80c4c32c444f56025b256c23f5",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveFunctoriality.lean",
+      "source_line": 39,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakRowsPostcompose_reindex",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveFunctoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakRowsPostcompose_reindex",
+    "target_line": 43,
+    "target_sha256": "07dd4233626674597413a7224773bf4436baed80c4c32c444f56025b256c23f5",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveFunctoriality.lean",
+      "source_line": 45,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridToWeakChain_postcompose",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveFunctoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridToWeakChain_postcompose",
+    "target_line": 49,
+    "target_sha256": "07dd4233626674597413a7224773bf4436baed80c4c32c444f56025b256c23f5",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveFunctoriality.lean",
+      "source_line": 58,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakRowNerveMap",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveFunctoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakRowNerveMap",
+    "target_line": 62,
+    "target_sha256": "07dd4233626674597413a7224773bf4436baed80c4c32c444f56025b256c23f5",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveFunctoriality.lean",
+      "source_line": 65,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridNerveIso_naturality",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveFunctoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridNerveIso_naturality",
+    "target_line": 69,
+    "target_sha256": "07dd4233626674597413a7224773bf4436baed80c4c32c444f56025b256c23f5",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveFunctoriality.lean",
+      "source_line": 72,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.sSetWeakRowDiagonalIso_naturality",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveFunctoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.sSetWeakRowDiagonalIso_naturality",
+    "target_line": 76,
+    "target_sha256": "07dd4233626674597413a7224773bf4436baed80c4c32c444f56025b256c23f5",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NerveFunctoriality.lean",
+      "source_line": 79,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakRowNerveMap_component",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NerveFunctoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakRowNerveMap_component",
+    "target_line": 83,
+    "target_sha256": "07dd4233626674597413a7224773bf4436baed80c4c32c444f56025b256c23f5",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 29,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakRowsReindex",
+      "change": "direct pointwise weak-map preservation instead of row exactness theorem"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakRowsReindex",
+    "target_line": 34,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 36,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridToWeakChain_reindex",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridToWeakChain_reindex",
+    "target_line": 41,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 43,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakRowCategories",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakRowCategories",
+    "target_line": 48,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 50,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.weakRowNerve",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.weakRowNerve",
+    "target_line": 55,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 53,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridNerveIso",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridNerveIso",
+    "target_line": 58,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 64,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridNerveIso_hom_component",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridNerveIso_hom_component",
+    "target_line": 69,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 71,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.gridNerveIso_inv_val",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.gridNerveIso_inv_val",
+    "target_line": 76,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 76,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.sSetWeakRowDiagonalIso",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.sSetWeakRowDiagonalIso",
+    "target_line": 81,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/NervePresentation.lean",
+      "source_line": 80,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.sSetWeakRowDiagonalIso_hom_app",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/NervePresentation.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.sSetWeakRowDiagonalIso_hom_app",
+    "target_line": 85,
+    "target_sha256": "fb4f4e6700e06692fecadef5ec10a3c2ac59633adf64532cf770b853de96676e",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 28,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.indexMap",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.indexMap",
+    "target_line": 31,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 35,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.IsRow.precomp",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.IsRow.precomp",
+    "target_line": 38,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 44,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.reindex",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.reindex",
+    "target_line": 47,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 50,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.reindex_obj_diagram",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.reindex_obj_diagram",
+    "target_line": 53,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 53,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.reindex_map_app",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.reindex_map_app",
+    "target_line": 56,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 57,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.reindex_zero",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.reindex_zero",
+    "target_line": 60,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 64,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.reindex_cof",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 71,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.reindex_exact",
+      "change": "Not required for actual weak-row nerve comparison; belongs to future Reedy/Extension/row pushout layer"
+    },
+    "status": "explicitly-deferred-heavy-row-structure"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 80,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.reindex_id",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.reindex_id",
+    "target_line": 71,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": "Quillen/Waldhausen/SConstruction/Rows/Reindex.lean",
+      "source_line": 83,
+      "source_declaration": "Quillen.Waldhausen.QuotientRows.reindex_comp",
+      "change": "namespace/import adaptation; actual objects/maps retained"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.reindex_comp",
+    "target_line": 74,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-rows-draft",
+    "source_mapping": {
+      "source": null,
+      "change": "Extracted weak preservation component from source exactness proof"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/Reindex.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.QuotientRows.reindex_weq",
+    "target_line": 66,
+    "target_sha256": "f72e926ac6857fc3a2aaf30e375816050891cf2128d24cac862677d05708974c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": null,
+      "source_change": "new bridge proof over actual existing maps"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/WeakNaturalTransformation.lean",
+    "target_declaration": "weakRowsPostcomposeTransformation",
+    "target_line": 28,
+    "target_sha256": "2c03960b83501eb1839bacef0b0a8165d2a58d07ad54d2917ac8bdb4b8d36f46",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": null,
+      "source_change": "new bridge proof over actual existing maps"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/WeakNaturalTransformation.lean",
+    "target_declaration": "weakRowsPostcomposeTransformation_app",
+    "target_line": 39,
+    "target_sha256": "2c03960b83501eb1839bacef0b0a8165d2a58d07ad54d2917ac8bdb4b8d36f46",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": null,
+      "source_change": "new bridge proof over actual existing maps"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/Rows/WeakNaturalTransformation.lean",
+    "target_declaration": "weakRowsPostcomposeTransformation_reindex_app",
+    "target_line": 45,
+    "target_sha256": "2c03960b83501eb1839bacef0b0a8165d2a58d07ad54d2917ac8bdb4b8d36f46",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinder.lean",
+        "line": 32
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinder.lean",
+    "target_declaration": "nerveTimeFunctor",
+    "target_line": 36,
+    "target_sha256": "eb476cd347fcf8baa68c6361979b455af41e8f7572932cd7b80202ef5674efb7",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinder.lean",
+        "line": 42
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinder.lean",
+    "target_declaration": "nerveCylinderDiagram",
+    "target_line": 46,
+    "target_sha256": "eb476cd347fcf8baa68c6361979b455af41e8f7572932cd7b80202ef5674efb7",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinder.lean",
+        "line": 46
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinder.lean",
+    "target_declaration": "nerveCylinderDiagram_zero",
+    "target_line": 50,
+    "target_sha256": "eb476cd347fcf8baa68c6361979b455af41e8f7572932cd7b80202ef5674efb7",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinder.lean",
+        "line": 53
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinder.lean",
+    "target_declaration": "nerveCylinderDiagram_one",
+    "target_line": 57,
+    "target_sha256": "eb476cd347fcf8baa68c6361979b455af41e8f7572932cd7b80202ef5674efb7",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinder.lean",
+        "line": 61
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinder.lean",
+    "target_declaration": "nerveCylinderDiagram_rowMap",
+    "target_line": 65,
+    "target_sha256": "eb476cd347fcf8baa68c6361979b455af41e8f7572932cd7b80202ef5674efb7",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinder.lean",
+        "line": 71
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinder.lean",
+    "target_declaration": "selected_isSimplex₂",
+    "target_line": 75,
+    "target_sha256": "eb476cd347fcf8baa68c6361979b455af41e8f7572932cd7b80202ef5674efb7",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinder.lean",
+        "line": 78
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinder.lean",
+    "target_declaration": "cylinder_map_weak",
+    "target_line": 82,
+    "target_sha256": "eb476cd347fcf8baa68c6361979b455af41e8f7572932cd7b80202ef5674efb7",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinder.lean",
+        "line": 91
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinder.lean",
+    "target_declaration": "nerveCylinderDiagram_isSimplex₂",
+    "target_line": 95,
+    "target_sha256": "eb476cd347fcf8baa68c6361979b455af41e8f7572932cd7b80202ef5674efb7",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinderNaturality.lean",
+        "line": 24
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinderNaturality.lean",
+    "target_declaration": "mk₁_whiskerLeft",
+    "target_line": 28,
+    "target_sha256": "dbd04d777b4c9c01e6cc7aae8e40ab9fd448ea06158b60a763810fc400f3ed56",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinderNaturality.lean",
+        "line": 37
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinderNaturality.lean",
+    "target_declaration": "nerveCylinderDiagram_precomp",
+    "target_line": 41,
+    "target_sha256": "dbd04d777b4c9c01e6cc7aae8e40ab9fd448ea06158b60a763810fc400f3ed56",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinderNaturality.lean",
+        "line": 47
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinderNaturality.lean",
+    "target_declaration": "nerveCylinderDiagram_congr_app",
+    "target_line": 51,
+    "target_sha256": "dbd04d777b4c9c01e6cc7aae8e40ab9fd448ea06158b60a763810fc400f3ed56",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/NerveCylinderZero.lean",
+        "line": 31
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/NerveCylinderZero.lean",
+    "target_declaration": "nerveCylinderDiagram_eq_const_of_zero",
+    "target_line": 35,
+    "target_sha256": "2a0badd94fe480a6636fe4bab57a844fd4bfd0bb7195e63553c267685954d7d6",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+        "line": 36
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+    "target_declaration": "diagonalGridMap_reindex",
+    "target_line": 40,
+    "target_sha256": "5ee43802bcfbef8933ae74aced2f7a7b082e0f1cf173b7ab922e6338dc730075",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+        "line": 54
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+    "target_declaration": "weakGridFamilyCylinder",
+    "target_line": 58,
+    "target_sha256": "5ee43802bcfbef8933ae74aced2f7a7b082e0f1cf173b7ab922e6338dc730075",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+        "line": 70
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+    "target_declaration": "weakGridFamilyCylinder_zero",
+    "target_line": 74,
+    "target_sha256": "5ee43802bcfbef8933ae74aced2f7a7b082e0f1cf173b7ab922e6338dc730075",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+        "line": 77
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+    "target_declaration": "weakGridFamilyCylinder_one",
+    "target_line": 81,
+    "target_sha256": "5ee43802bcfbef8933ae74aced2f7a7b082e0f1cf173b7ab922e6338dc730075",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+        "line": 85
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+    "target_declaration": "diagonalWeakGridHomotopy",
+    "target_line": 89,
+    "target_sha256": "5ee43802bcfbef8933ae74aced2f7a7b082e0f1cf173b7ab922e6338dc730075",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+        "line": 35
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+    "target_declaration": "weakNaturalTransformationCylinder",
+    "target_line": 39,
+    "target_sha256": "d687414d0c5243b3fab71b5095c6f0507d93be4e6a0dbc485575c071df17f88f",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+        "line": 43
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+    "target_declaration": "weakNaturalTransformationCylinder_app_hom_val",
+    "target_line": 47,
+    "target_sha256": "d687414d0c5243b3fab71b5095c6f0507d93be4e6a0dbc485575c071df17f88f",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+        "line": 50
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+    "target_declaration": "weakNaturalTransformationCylinder_zero",
+    "target_line": 54,
+    "target_sha256": "d687414d0c5243b3fab71b5095c6f0507d93be4e6a0dbc485575c071df17f88f",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+        "line": 56
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+    "target_declaration": "weakNaturalTransformationCylinder_one",
+    "target_line": 60,
+    "target_sha256": "d687414d0c5243b3fab71b5095c6f0507d93be4e6a0dbc485575c071df17f88f",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+        "line": 64
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+    "target_declaration": "weakNaturalTransformationHomotopy",
+    "target_line": 68,
+    "target_sha256": "d687414d0c5243b3fab71b5095c6f0507d93be4e6a0dbc485575c071df17f88f",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": null,
+      "source_change": "new bridge proof over actual existing maps"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/HomotopyMap.lean",
+    "target_declaration": "groupsMapOfZeroEq_eq_piMap",
+    "target_line": 31,
+    "target_sha256": "26fc3f6b3aea7e9dc8346d1d8720297d6d8f531fe5521ca010a6f9196c4d6a19",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": null,
+      "source_change": "new bridge proof over actual existing maps"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/HomotopyMap.lean",
+    "target_declaration": "groupsMapOfZeroEq_eq_of_weakNaturalTransformation",
+    "target_line": 44,
+    "target_sha256": "26fc3f6b3aea7e9dc8346d1d8720297d6d8f531fe5521ca010a6f9196c4d6a19",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakGridHomotopy.lean",
+        "line": 94
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/WeakNaturalTransformation.lean",
+    "target_declaration": "diagonalWeakGridRealizationHomotopy",
+    "target_line": 41,
+    "target_sha256": "86fc889265b73f0ecfa0c9fcf36a0e24656a395a91a1eb25c24cc2db55e2c41b",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformation.lean",
+        "line": 71
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/WeakNaturalTransformation.lean",
+    "target_declaration": "weakNaturalTransformationRealizationHomotopy",
+    "target_line": 56,
+    "target_sha256": "86fc889265b73f0ecfa0c9fcf36a0e24656a395a91a1eb25c24cc2db55e2c41b",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformationBased.lean",
+        "line": 37
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/WeakNaturalTransformationBased.lean",
+    "target_declaration": "weakNaturalTransformationCylinder_fixed_zero",
+    "target_line": 40,
+    "target_sha256": "252fcfda76c82360a51ccca83125a265807aad1dd11f2dd8b52ae728ab787128",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformationBased.lean",
+        "line": 48
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/WeakNaturalTransformationBased.lean",
+    "target_declaration": "weakNaturalTransformationRealizationHomotopy_fixed_zero",
+    "target_line": 51,
+    "target_sha256": "252fcfda76c82360a51ccca83125a265807aad1dd11f2dd8b52ae728ab787128",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": {
+        "path": "Quillen/Waldhausen/SConstruction/WeakNaturalTransformationBased.lean",
+        "line": 56
+      },
+      "source_change": "namespace/import owner and realization namespace"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/WeakNaturalTransformationBased.lean",
+    "target_declaration": "weakNaturalTransformationBasedHomotopy",
+    "target_line": 59,
+    "target_sha256": "252fcfda76c82360a51ccca83125a265807aad1dd11f2dd8b52ae728ab787128",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": null,
+      "source_change": "new bridge proof over actual existing maps"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/WeakRowHomotopy.lean",
+    "target_declaration": "weakRowNerveHomotopy",
+    "target_line": 30,
+    "target_sha256": "f8a8afd3b71bc0ff05e5ff6e8d5b6b3ef8b93e98bf1717307319b6dcc8b16024",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-weak-homotopy-draft",
+    "source_mapping": {
+      "source": null,
+      "source_change": "new bridge proof over actual existing maps"
+    },
+    "target_path": "Colib/KTheory/Waldhausen/WeakRowHomotopy.lean",
+    "target_declaration": "weakRowRealizationHomotopy",
+    "target_line": 36,
+    "target_sha256": "f8a8afd3b71bc0ff05e5ff6e8d5b6b3ef8b93e98bf1717307319b6dcc8b16024",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/PointedFunctor.lean",
+      "source_declaration": "Quillen.Waldhausen.IsExact.rebase",
+      "source_line": 66,
+      "source_sha256": "926e5676d5e6ed88fecbbce69d585cb5cb6573c18e2de72d3a41bd6ecc7b2fe1",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.IsExact.rebase",
+    "target_line": 31,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/PointedFunctor.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap",
+      "source_line": 73,
+      "source_sha256": "926e5676d5e6ed88fecbbce69d585cb5cb6573c18e2de72d3a41bd6ecc7b2fe1",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap",
+    "target_line": 38,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.deloopingMap_basepoint_of_zeroEq",
+      "source_line": 35,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.deloopingMap_basepoint_of_zeroEq",
+    "target_line": 47,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap_basepoint",
+      "source_line": 42,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap_basepoint",
+    "target_line": 54,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": true,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.groupsMapOfZeroEq_eq_piMap",
+      "source_line": 46,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Private entries give source-level spelling, not an exported fully qualified kernel name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.groupsMapOfZeroEq_eq_piMap",
+    "target_line": 58,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap_eq_piMap",
+      "source_line": 55,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap_eq_piMap",
+    "target_line": 67,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": null,
+      "source_declaration": null,
+      "source_line": null,
+      "source_sha256": null,
+      "source_commit": null,
+      "scope": "New direct zero-object uniqueness helper",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.rebaseFunctor_eq_of_zeroEq",
+    "target_line": 74,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap_eq_piMap_of_zeroEq",
+      "source_line": 101,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap_eq_piMap_of_zeroEq",
+    "target_line": 89,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.deloopingMap_id",
+      "source_line": 123,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.deloopingMap_id",
+    "target_line": 101,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap_id",
+      "source_line": 144,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/CanonicalMap.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap_id",
+    "target_line": 107,
+    "target_sha256": "1999c32ed7ce226e0ecaa1f8e81ab62ff540e4e3b2a6b67986e720371a827ab4",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.normalizedWeakTransformation",
+      "source_line": 61,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.normalizedWeakTransformation",
+    "target_line": 31,
+    "target_sha256": "3fdcb17aac021c9ba46e05d494ebbe6df2f348a57d942334266c9c975a09672c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.normalizedWeakTransformation_weak",
+      "source_line": 70,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.normalizedWeakTransformation_weak",
+    "target_line": 40,
+    "target_sha256": "3fdcb17aac021c9ba46e05d494ebbe6df2f348a57d942334266c9c975a09672c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap_eq_of_weakNatTrans",
+      "source_line": 80,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap_eq_of_weakNatTrans",
+    "target_line": 50,
+    "target_sha256": "3fdcb17aac021c9ba46e05d494ebbe6df2f348a57d942334266c9c975a09672c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap_eq_of_iso",
+      "source_line": 93,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap_eq_of_iso",
+    "target_line": 64,
+    "target_sha256": "3fdcb17aac021c9ba46e05d494ebbe6df2f348a57d942334266c9c975a09672c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.sSetMap_comp_sSetMap",
+      "source_line": 113,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.sSetMap_comp_sSetMap",
+    "target_line": 71,
+    "target_sha256": "3fdcb17aac021c9ba46e05d494ebbe6df2f348a57d942334266c9c975a09672c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.deloopingMap_comp_deloopingMap",
+      "source_line": 129,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.deloopingMap_comp_deloopingMap",
+    "target_line": 81,
+    "target_sha256": "3fdcb17aac021c9ba46e05d494ebbe6df2f348a57d942334266c9c975a09672c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": true,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.piMap_congr",
+      "source_line": 137,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Private entries give source-level spelling, not an exported fully qualified kernel name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.piMap_congr",
+    "target_line": 89,
+    "target_sha256": "3fdcb17aac021c9ba46e05d494ebbe6df2f348a57d942334266c9c975a09672c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap_comp_KMap",
+      "source_line": 153,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/Functoriality.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap_comp_KMap",
+    "target_line": 97,
+    "target_sha256": "3fdcb17aac021c9ba46e05d494ebbe6df2f348a57d942334266c9c975a09672c",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/KFunctor.lean",
+      "source_declaration": "Quillen.Waldhausen.SmallWaldhausenCategory",
+      "source_line": 25,
+      "source_sha256": "264a92b8f90bf848a3ef83c21a45b3161669a3bc05d10d4f729458be590033e5",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/KFunctor.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.SmallWaldhausenCategory",
+    "target_line": 25,
+    "target_sha256": "da62f3f3a6222ddc906269f28ea969bc52ba045305413ccabb9cdab56ae6b7e2",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/KFunctor.lean",
+      "source_declaration": "Quillen.Waldhausen.SmallWaldhausenCategory.Hom",
+      "source_line": 37,
+      "source_sha256": "264a92b8f90bf848a3ef83c21a45b3161669a3bc05d10d4f729458be590033e5",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/KFunctor.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.SmallWaldhausenCategory.Hom",
+    "target_line": 37,
+    "target_sha256": "da62f3f3a6222ddc906269f28ea969bc52ba045305413ccabb9cdab56ae6b7e2",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-kmap-draft",
+    "source_mapping": {
+      "private": false,
+      "source_path": "Quillen/Waldhausen/KFunctor.lean",
+      "source_declaration": "Quillen.Waldhausen.SmallWaldhausenCategory.KFunctor",
+      "source_line": 53,
+      "source_sha256": "264a92b8f90bf848a3ef83c21a45b3161669a3bc05d10d4f729458be590033e5",
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "scope": "Retained original statement; direct new proof for strict-zero reduction and identity",
+      "name_note": "Public declaration name."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/KFunctor.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.SmallWaldhausenCategory.KFunctor",
+    "target_line": 53,
+    "target_sha256": "da62f3f3a6222ddc906269f28ea969bc52ba045305413ccabb9cdab56ae6b7e2",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-zero-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Topology/HomotopyGroups/Map.lean",
+      "source_declaration": "Quillen.genLoopPostcomp_constant",
+      "source_line": 173,
+      "source_sha256": "6f2bc39e4298e8781968f2b5d0c9b53e2b07aa3dad602226e5c98f3d48e7347a",
+      "scope": "Same original statement, objects, hypotheses and universes; ownership/import adjustment. KMap_zeroFunctor uses direct rewriting rather than private piMap_congr."
+    },
+    "target_path": "Colib/Topology/Homotopy/HomotopyGroup/Constant.lean",
+    "target_declaration": "GenLoop.postcomp_constant",
+    "target_line": 25,
+    "target_sha256": "6a7c3a4f379cb21a3d535799506a771844ba8ef9ff3fe7830ac2d12ad21268ed",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-zero-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Topology/HomotopyGroups/Map.lean",
+      "source_declaration": "Quillen.homotopyGroupMapHom_const",
+      "source_line": 180,
+      "source_sha256": "6f2bc39e4298e8781968f2b5d0c9b53e2b07aa3dad602226e5c98f3d48e7347a",
+      "scope": "Same original statement, objects, hypotheses and universes; ownership/import adjustment. KMap_zeroFunctor uses direct rewriting rather than private piMap_congr."
+    },
+    "target_path": "Colib/Topology/Homotopy/HomotopyGroup/Constant.lean",
+    "target_declaration": "HomotopyGroup.mapHom_const",
+    "target_line": 32,
+    "target_sha256": "6a7c3a4f379cb21a3d535799506a771844ba8ef9ff3fe7830ac2d12ad21268ed",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-zero-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Topology/HomotopyGroups/Map.lean",
+      "source_declaration": "Quillen.piMap_const",
+      "source_line": 190,
+      "source_sha256": "6f2bc39e4298e8781968f2b5d0c9b53e2b07aa3dad602226e5c98f3d48e7347a",
+      "scope": "Same original statement, objects, hypotheses and universes; ownership/import adjustment. KMap_zeroFunctor uses direct rewriting rather than private piMap_congr."
+    },
+    "target_path": "Colib/Topology/Homotopy/HomotopyGroup/Constant.lean",
+    "target_declaration": "HomotopyGroup.piMap_const",
+    "target_line": 42,
+    "target_sha256": "6a7c3a4f379cb21a3d535799506a771844ba8ef9ff3fe7830ac2d12ad21268ed",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-zero-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.zeroFunctor",
+      "source_line": 182,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "scope": "Same original statement, objects, hypotheses and universes; ownership/import adjustment. KMap_zeroFunctor uses direct rewriting rather than private piMap_congr."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/ZeroFunctor.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.zeroFunctor",
+    "target_line": 30,
+    "target_sha256": "672d6289f87a211253ce5bd300f90bd9be8ba4725db06313c99e510f17e06cfd",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-zero-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.zeroFunctor_isExact",
+      "source_line": 186,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "scope": "Same original statement, objects, hypotheses and universes; ownership/import adjustment. KMap_zeroFunctor uses direct rewriting rather than private piMap_congr."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/ZeroFunctor.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.zeroFunctor_isExact",
+    "target_line": 34,
+    "target_sha256": "672d6289f87a211253ce5bd300f90bd9be8ba4725db06313c99e510f17e06cfd",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-zero-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.sSetMap_zeroFunctor",
+      "source_line": 194,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "scope": "Same original statement, objects, hypotheses and universes; ownership/import adjustment. KMap_zeroFunctor uses direct rewriting rather than private piMap_congr."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/ZeroFunctor.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.sSetMap_zeroFunctor",
+    "target_line": 42,
+    "target_sha256": "672d6289f87a211253ce5bd300f90bd9be8ba4725db06313c99e510f17e06cfd",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-zero-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.deloopingMap_zeroFunctor",
+      "source_line": 202,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "scope": "Same original statement, objects, hypotheses and universes; ownership/import adjustment. KMap_zeroFunctor uses direct rewriting rather than private piMap_congr."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/ZeroFunctor.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.deloopingMap_zeroFunctor",
+    "target_line": 50,
+    "target_sha256": "672d6289f87a211253ce5bd300f90bd9be8ba4725db06313c99e510f17e06cfd",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "draft_family": "waldhausen-zero-draft",
+    "source_mapping": {
+      "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+      "source_path": "Quillen/Waldhausen/Functoriality/KMap.lean",
+      "source_declaration": "Quillen.Waldhausen.KMap_zeroFunctor",
+      "source_line": 211,
+      "source_sha256": "493f9c5d2fa8a290a77f54000312603e8dcb14cc0c2a34d26e644762f19c0735",
+      "scope": "Same original statement, objects, hypotheses and universes; ownership/import adjustment. KMap_zeroFunctor uses direct rewriting rather than private piMap_congr."
+    },
+    "target_path": "Colib/KTheory/Waldhausen/ZeroFunctor.lean",
+    "target_declaration": "CategoryTheory.Waldhausen.KMap_zeroFunctor",
+    "target_line": 59,
+    "target_sha256": "672d6289f87a211253ce5bd300f90bd9be8ba4725db06313c99e510f17e06cfd",
+    "status": "integrated-source; see strict-attempts for exact compilation evidence"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/CategoryTheory/TheoremA/Diagonal.lean",
+    "source_declaration": "diagonalSSet",
+    "source_line": 34,
+    "source_sha256": "68fbab22c75d6c6db2e396a1d30382b10ce4ea670deb12ab90d198567b3fe686",
+    "target_path": "Colib/AlgebraicTopology/SimplicialSet/Diagonal.lean",
+    "target_declaration": "diagonalSSet",
+    "target_line": 40,
+    "target_sha256": "66f56aac0aa6d3fb482916c805efef5469ca824355f9e6c490abff232a876947",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/CategoryTheory/TheoremA/Diagonal.lean",
+    "source_declaration": "diagonalMap",
+    "source_line": 38,
+    "source_sha256": "68fbab22c75d6c6db2e396a1d30382b10ce4ea670deb12ab90d198567b3fe686",
+    "target_path": "Colib/AlgebraicTopology/SimplicialSet/Diagonal.lean",
+    "target_declaration": "diagonalMap",
+    "target_line": 44,
+    "target_sha256": "66f56aac0aa6d3fb482916c805efef5469ca824355f9e6c490abff232a876947",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/CategoryTheory/TheoremA/Diagonal.lean",
+    "source_declaration": "diagonalFunctor",
+    "source_line": 43,
+    "source_sha256": "68fbab22c75d6c6db2e396a1d30382b10ce4ea670deb12ab90d198567b3fe686",
+    "target_path": "Colib/AlgebraicTopology/SimplicialSet/Diagonal.lean",
+    "target_declaration": "diagonalFunctor",
+    "target_line": 49,
+    "target_sha256": "66f56aac0aa6d3fb482916c805efef5469ca824355f9e6c490abff232a876947",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/CategoryTheory/TheoremA/Diagonal.lean",
+    "source_declaration": "diagonalFlipIso",
+    "source_line": 48,
+    "source_sha256": "68fbab22c75d6c6db2e396a1d30382b10ce4ea670deb12ab90d198567b3fe686",
+    "target_path": "Colib/AlgebraicTopology/SimplicialSet/Diagonal.lean",
+    "target_declaration": "diagonalFlipIso",
+    "target_line": 54,
+    "target_sha256": "66f56aac0aa6d3fb482916c805efef5469ca824355f9e6c490abff232a876947",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/CategoryTheory/TheoremA/Diagonal.lean",
+    "source_declaration": "diagonalFlipIso_naturality",
+    "source_line": 55,
+    "source_sha256": "68fbab22c75d6c6db2e396a1d30382b10ce4ea670deb12ab90d198567b3fe686",
+    "target_path": "Colib/AlgebraicTopology/SimplicialSet/Diagonal.lean",
+    "target_declaration": "diagonalFlipIso_naturality",
+    "target_line": 61,
+    "target_sha256": "66f56aac0aa6d3fb482916c805efef5469ca824355f9e6c490abff232a876947",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "Grid₂",
+    "source_line": 32,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "Grid₂",
+    "target_line": 39,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "grid₂",
+    "source_line": 38,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "grid₂",
+    "target_line": 45,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "gridMap₂",
+    "source_line": 42,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "gridMap₂",
+    "target_line": 49,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "gridMap₂_obj_grid₂",
+    "source_line": 51,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "gridMap₂_obj_grid₂",
+    "target_line": 58,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "gridMap₂_id",
+    "source_line": 58,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "gridMap₂_id",
+    "target_line": 65,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "gridMap₂_comp",
+    "source_line": 61,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "gridMap₂_comp",
+    "target_line": 68,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "gridMap₂_interchange",
+    "source_line": 66,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "gridMap₂_interchange",
+    "target_line": 73,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "gridMap₂_diagonal",
+    "source_line": 72,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "gridMap₂_diagonal",
+    "target_line": 79,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "IsSimplex₂",
+    "source_line": 78,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "IsSimplex₂",
+    "target_line": 85,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "IsSimplex₂.precomp",
+    "source_line": 101,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "IsSimplex₂.precomp",
+    "target_line": 108,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "isSimplex₂_diagonal_iff",
+    "source_line": 116,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "isSimplex₂_diagonal_iff",
+    "target_line": 123,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialSSetOfProperties",
+    "source_line": 122,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialSSetOfProperties",
+    "target_line": 129,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialSSetOfProperties_intervalMap_val",
+    "source_line": 136,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialSSetOfProperties_intervalMap_val",
+    "target_line": 143,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialSSetOfProperties_nerveMap_val",
+    "source_line": 142,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialSSetOfProperties_nerveMap_val",
+    "target_line": 149,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "zeroSimplex₂",
+    "source_line": 149,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "zeroSimplex₂",
+    "target_line": 156,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialDiagonalIsoOfProperties",
+    "source_line": 159,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialDiagonalIsoOfProperties",
+    "target_line": 166,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialDiagonalIsoOfProperties_hom_val",
+    "source_line": 167,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialDiagonalIsoOfProperties_hom_val",
+    "target_line": 174,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialDiagonalIsoOfProperties_inv_val",
+    "source_line": 172,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialDiagonalIsoOfProperties_inv_val",
+    "target_line": 179,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialSSet",
+    "source_line": 184,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialSSet",
+    "target_line": 184,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialDiagonalIso",
+    "source_line": 188,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialDiagonalIso",
+    "target_line": 188,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "IsSimplex₂.postcomp",
+    "source_line": 198,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "IsSimplex₂.postcomp",
+    "target_line": 198,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialSSetMap",
+    "source_line": 212,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialSSetMap",
+    "target_line": 212,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialSSetMap_app_val",
+    "source_line": 219,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialSSetMap_app_val",
+    "target_line": 219,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialDiagonalIso_naturality",
+    "source_line": 224,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/CategoryTheory/Waldhausen/SConstruction/Bisimplicial.lean",
+    "target_declaration": "bisimplicialDiagonalIso_naturality",
+    "target_line": 224,
+    "target_sha256": "e6735cbbf917a43e2c4c5c339d82765cbe3733be70c5280ef4d66ba01a2b746d",
+    "status": "adapted source declaration"
+  },
+  {
+    "source_snapshot": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+    "source_path": "Quillen/Waldhausen/SConstruction/Bisimplicial.lean",
+    "source_declaration": "bisimplicialDiagonalIsoOfProperties_zero",
+    "source_line": 177,
+    "source_sha256": "ef696c11ea8747a6ab82efe49d5e77c99bcb49206009241194f8416b980b3f32",
+    "target_path": "Colib/KTheory/Waldhausen/BisimplicialZero.lean",
+    "target_declaration": "bisimplicialDiagonalIsoOfProperties_zero",
+    "target_line": 29,
+    "target_sha256": "00c6db9ad5de355b8285ffabd164a2f264d232dd50fdc92af79b26b508c7b54a",
+    "status": "adapted source declaration"
+  }
+]

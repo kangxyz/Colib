@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0156"
+title = "Weak natural transformations and realization homotopies"
+kind = "proposition"
+section = "waldhausen-k-theory"
+order = 20
+statement = "A pointwise weak natural transformation between exact functors induces an actual simplicial homotopy of their S-maps and a continuous homotopy of their realization maps; it also induces the componentwise transformation and degreewise nerve homotopy on actual weak-row categories."
+scope = "The nerve-direction cylinder retains endpoint rows and actual mixed arrows and proves reindexing coherence. No invertibility or strict preservation of chosen zeros is assumed. The result is a free homotopy and does not itself identify maps with different basepoint targets. C and D share the stated object and hom universes. Source correspondence was checked on 2026-11-05; compilation and independent review are recorded separately."
+review = "author_checked"

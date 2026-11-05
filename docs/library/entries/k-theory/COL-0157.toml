@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0157"
+title = "Based weak-transformation homotopies and group maps"
+kind = "proposition"
+section = "waldhausen-k-theory"
+order = 30
+statement = "When both exact functors send the source specified zero to the same target specified zero by explicit object equalities, the weak-transformation realization homotopy fixes that vertex and the equality-rebased homotopy-group maps agree."
+scope = "The zero equalities are additional hypotheses only for this based strengthening, not axioms of the IsZero S-model. Zero-object uniqueness supplies the constant transformation component. Canonical rebasing and pointed KMap results are a separate construction. No arbitrary path-independence or strict-model normalization is asserted. Source correspondence was checked on 2026-11-05; compilation and independent review are recorded separately."
+review = "author_checked"

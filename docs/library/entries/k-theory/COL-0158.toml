@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0158"
+title = "Canonical pointed Waldhausen K-map functoriality"
+kind = "proposition"
+section = "waldhausen-k-theory"
+order = 40
+statement = "Exact functors induce canonical K-group homomorphisms by rebasing along the unique zero-object isomorphism; pointwise weak natural transformations give equal maps, identities and composition are preserved, and these maps form a group-valued functor on small Waldhausen categories. The actual zero functor induces the trivial K-map."
+scope = "The original exact functors need not preserve chosen zeros strictly. Functor rebasing is explicit and does not normalize the IsZero S-model. Equality of maps uses the actual conjugated weak transformation and based realization homotopy. C, D and intermediate categories retain the common object and hom universes; the packaged category is small. No arbitrary basepoint-path independence or strict-model comparison is asserted. Source correspondence was checked on 2026-11-05; compilation and independent review are recorded separately."
+review = "author_checked"

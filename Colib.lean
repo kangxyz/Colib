@@ -95,6 +95,7 @@ public import Colib.KTheory.MilnorK.Residue.BaseFieldProduct
 public import Colib.KTheory.MilnorK.Residue.CanonicalNormalization
 public import Colib.KTheory.MilnorK.Residue.CanonicalRamifiedMap
 public import Colib.KTheory.MilnorK.Residue.CoefficientRetraction
+public import Colib.KTheory.MilnorK.Residue.Completion
 public import Colib.KTheory.MilnorK.Residue.DegreeOne
 public import Colib.KTheory.MilnorK.Residue.Naturality
 public import Colib.KTheory.MilnorK.Residue.PrincipalUnits

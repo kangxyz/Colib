@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0168"
+title = "Native DVR residues under actual completion"
+kind = "comparison"
+section = "milnor-k-theory"
+order = 690
+statement = "The native fraction-field lift to the actual maximal-ideal adic completion commutes with canonical Milnor tame residues in every degree. The inverse actual residue-field identification recovers the original residue, so completion preserves and reflects residue vanishing."
+scope = "A domain DVR R and any selected fraction field F, in independent universes; all n and arbitrary native Milnor classes of degree n+1, including n=0. Uses Mathlib AdicCompletion, FractionRing, IsFractionRing.lift and the actual residue-field map. No injectivity or surjectivity of the full Milnor-group map, norm, transfer or tensor decomposition is asserted. Stacks 0AP1 supplies completion input and 0EAY is tame-symbol background, not a quotation of the square."
+review = "author_checked"

@@ -1,0 +1,329 @@
+{
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_file": "Aglib/KTheory/MilnorK/Residue/AdicCompletion.lean",
+  "source_lines": "28\u201358",
+  "source_sha256": "8efe2b9459396edf954db0d053f81504949a3b4c3ae0ed4171959b309bfbff9e",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "title": "Native DVR completion residue compatibility",
+  "target_baseline": "3d27ac0598e93e81d9d09a6676e0a6ab58a7df98",
+  "library_item": "COL-0168",
+  "historical_component_status": "compiled_and_leaf_tests_lint_style_passed",
+  "historical_component_files": {
+    "Colib/KTheory/MilnorK/Residue/Completion.lean": "d24fa1b425e8f3866d33eb264fcf25ea55dff6e2218dba4f8566ed4105b2d97d",
+    "ColibTest/MilnorCompletion.lean": "fabd8cf49ebeaf134ddf0696e1c5de990bc88fc8eb0fe70361db1317ef65d18c"
+  },
+  "historical_component_checks": {
+    "completion-leaf-r3": {
+      "command": [
+        "lake",
+        "build",
+        "Colib.KTheory.MilnorK.Residue.Completion:olean"
+      ],
+      "exit_code": 0,
+      "state": "completed",
+      "duration_seconds": 12.410218925972003,
+      "peak_rss_bytes": 3208458240,
+      "guard_failure": null,
+      "owned_group_gone": true,
+      "log": "validation/completion-leaf-r3.log"
+    },
+    "completion-test": {
+      "command": [
+        "lake",
+        "build",
+        "ColibTest.MilnorCompletion:olean"
+      ],
+      "exit_code": 0,
+      "state": "completed",
+      "duration_seconds": 8.431340598035604,
+      "peak_rss_bytes": 3155333120,
+      "guard_failure": null,
+      "owned_group_gone": true,
+      "log": "validation/completion-test.log"
+    },
+    "completion-lint": {
+      "command": [
+        "lake",
+        "exe",
+        "batteries/runLinter",
+        "--no-build",
+        "Colib.KTheory.MilnorK.Residue.Completion"
+      ],
+      "exit_code": 0,
+      "state": "completed",
+      "duration_seconds": 16.506532736006193,
+      "peak_rss_bytes": 5321371648,
+      "guard_failure": null,
+      "owned_group_gone": true,
+      "log": "validation/completion-lint.log"
+    },
+    "completion-test-lint": {
+      "command": [
+        "lake",
+        "exe",
+        "batteries/runLinter",
+        "--no-build",
+        "ColibTest.MilnorCompletion"
+      ],
+      "exit_code": 0,
+      "state": "completed",
+      "duration_seconds": 5.546756766969338,
+      "peak_rss_bytes": 5738655744,
+      "guard_failure": null,
+      "owned_group_gone": true,
+      "log": "validation/completion-test-lint.log"
+    },
+    "completion-style": {
+      "command": [
+        "lake",
+        "exe",
+        "mathlib/lint-style",
+        "Colib.KTheory.MilnorK.Residue.Completion",
+        "ColibTest.MilnorCompletion"
+      ],
+      "exit_code": 0,
+      "state": "completed",
+      "duration_seconds": 2.1190675559919327,
+      "peak_rss_bytes": 1622593536,
+      "guard_failure": null,
+      "owned_group_gone": true,
+      "log": "validation/completion-style.log"
+    }
+  },
+  "historical_worktree": "/workspace/scratch/ab4c8cd79b02/colib-completion-20261105-1451",
+  "source_declarations": {
+    "MilnorK.DVR.residue_completion_restrict": "Stacks.Chow.dvrMilnorTameSymbol'_completion",
+    "MilnorK.DVR.residue_completion_identification": "Stacks.Chow.dvrMilnorTameSymbol'_completion_identification"
+  },
+  "scope": "Actual AdicCompletion and FractionRing, literal IsFractionRing.lift; independent ring/fraction-field universes; canonical all-degree square, inverse residue identification, zero iff on arbitrary native Milnor classes. Fraction-lift uniqueness and zero iff are consequences, not source quotations. No full group injectivity or surjectivity, norm or transfer.",
+  "literature": {
+    "0AP1": "Existing completion domain/DVR input",
+    "0EAY": "Tame-symbol background only; not the completion square verbatim"
+  },
+  "checks": {
+    "author_source_correspondence": "author_checked",
+    "independent_review": {
+      "status": "passed",
+      "scope": "Parent reports read-only completion component review passed; not aggregate compilation or kernel replay."
+    },
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-milestone-3d27ac0-20261105-1638",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6036828160,
+      "duration_seconds": 134.64082076400518,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-completion-check-r2.json",
+      "receipt_sha256": "28839a6937b1fb12117a14b1de271272a851f89da4f10744242472153576429a",
+      "log": "/tmp/colib-completion-check-r2.log",
+      "log_sha256": "6ccdbefdc25723c9830c616f48e7f47a76e080d58aa2792bd9cf9f45f070cd4d",
+      "status": "passed",
+      "hashes": {
+        "Colib/KTheory/MilnorK/Residue/Completion.lean": "8c793d732ce87b402c0f17580e735d5f0b05af0cda782fc3c92843da508f15ca",
+        "ColibTest/MilnorCompletion.lean": "fabd8cf49ebeaf134ddf0696e1c5de990bc88fc8eb0fe70361db1317ef65d18c",
+        "Colib.lean": "315979309e2262d8f725c71507aec0c919cc3186ff4e2edf353935f588ccd4e3",
+        "scripts/check.sh": "28f2f9d6a09ff616fc4ccb9201f64283922221565216b7eca8f1466d1631b6fc",
+        "scripts/test_catalog.py": "47dfeaa90622da469aa3a90fc290f95e48559399d0254f2bf275de51b3d6098f",
+        ".github/workflows/lean-ci.yml": "89c726df618b143b46687a93c789adb145da89511cc4b8e0c68752498e3d1863",
+        "docs/library/entries/k-theory/COL-0168.toml": "c82243bb93d28188921468a1f32d19428047c7468f1774e74badecd62d47480e",
+        "docs/library/chapters/k-theory.toml": "2ae89eb11139011e6f1a4c37911ddc2b2ff3e09ac0f10cbfc9bc1c90713385cd",
+        "docs/MILNOR_MOTIVIC_MIGRATION.md": "cd20878c2476e96b890a9133a2bc08011c3e7faf7c258a3f920cf661702fffc6",
+        ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Completion.olean": "77db946ddecaf8b1b1d3be48092c57da902412bec9a0375fcd8469f8eef74ab1",
+        ".lake/build/lib/lean/ColibTest/MilnorCompletion.olean": "c1502200532cadc8b44f8dab9046b1f862a6549bbef016e57b09b8f01d539fea"
+      },
+      "results": {
+        "python_tests": 55,
+        "production": "passed",
+        "in_package_tests": "passed",
+        "declaration_lint": "passed",
+        "style": "passed with empty nolints exception list",
+        "generated_root": "passed",
+        "production_axiom_audit": "2522 declarations; only propext, Classical.choice, Quot.sound",
+        "library": "167 items, 554 indexed declarations; three COL-0168 endpoint bindings verified",
+        "site": "6 chapters, 18 sections, 167 item pages, 12 reference pages"
+      },
+      "source_consistency": "Only scoped reference/Library attributes added to reviewed production component. Test copied byte-for-byte. Final Lean files unchanged after successful native checks; ledger finalized afterward."
+    },
+    "kernel_replay": "not requested or run",
+    "pushed": false,
+    "focused_declaration_lint": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe batteries/runLinter --no-build Colib.KTheory.MilnorK.Residue.Completion && lake exe batteries/runLinter --no-build ColibTest.MilnorCompletion"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-milestone-3d27ac0-20261105-1638",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 5906010112,
+      "duration_seconds": 10.446943524002563,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "lake",
+          "command_path": "lake"
+        }
+      ],
+      "receipt": "/tmp/colib-completion-leaf-lint.json",
+      "receipt_sha256": "e73cccc884fd8fd7405a52d721bd7b1b98074f810f4d6d3277d8b97533c19875",
+      "log": "/tmp/colib-completion-leaf-lint.log",
+      "log_sha256": "ce722aa005da17c7de7b098d991c6cbb7b1645b120eaba9b3aeedf6a8c0dab83"
+    }
+  },
+  "cache_reuse": {
+    "method": "Same pinned shared package tree as validated component, identical lake-manifest.json, native Lake --no-build dependency/trace check; existing Colib outputs copied from validated main tree, not fabricated traces. No upstream rebuild.",
+    "native_validation": {
+      "state": "completed",
+      "command": [
+        "lake",
+        "--no-build",
+        "build",
+        "+StacksFrontier.RingTheory.AdicCompletion.PermanenceOfProperties:olean"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-milestone-3d27ac0-20261105-1638",
+      "pid": 8,
+      "pgid": 8,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 875130880,
+      "duration_seconds": 4.6158842879813164,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 8,
+          "rss_bytes": 0,
+          "executable": "lake",
+          "command_path": "lake"
+        }
+      ],
+      "receipt": "/tmp/colib-completion-upstream-no-build-r2.json",
+      "receipt_sha256": "a7a5329232e9e5c24e94a6ea4a76ff9e83eac268545a88bc2bf258d6704fb1d6",
+      "log": "/tmp/colib-completion-upstream-no-build-r2.log",
+      "log_sha256": "401f688e736fd8dc4440146ee476e7b81666e6f5c15aaedef46f6483beb26deb"
+    },
+    "result": "All targets up-to-date (4697 jobs).",
+    "source_package_path": "/workspace/scratch/ab4c8cd79b02/colib-main-20261105-7603d2d/.lake/packages"
+  },
+  "preliminary_receipts": [
+    {
+      "state": "completed",
+      "command": [
+        "lake",
+        "--no-build",
+        "build",
+        "+StacksFrontier.RingTheory.AdicCompletion.PermanenceOfProperties:olean"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-milestone-3d27ac0-20261105-1638",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 1,
+      "guard_failure": null,
+      "peak_rss_bytes": 861421568,
+      "duration_seconds": 3.879269936005585,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "lake",
+          "command_path": "lake"
+        }
+      ],
+      "receipt": "/tmp/colib-completion-upstream-no-build.json",
+      "receipt_sha256": "ad4f966825019ebbbcb952a0dee1cf6322ded6d80836fdf3afdaf479d39e65c2",
+      "log": "/tmp/colib-completion-upstream-no-build.log",
+      "log_sha256": "4f07bceec850f02a35f4e809f3907e4d4c780006a8f194009f215efa3f1299d3"
+    },
+    {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib && bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-milestone-3d27ac0-20261105-1638",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 1,
+      "guard_failure": null,
+      "peak_rss_bytes": 1072734208,
+      "duration_seconds": 1.1626685460214503,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-completion-check-r1.json",
+      "receipt_sha256": "649a764f90f67a0cfaa87fc0c1416ae7389ffb49f11253a613fc76c769823436",
+      "log": "/tmp/colib-completion-check-r1.log",
+      "log_sha256": "a52bdc364a816db5f4cc3a3102d3abcff3a9d4ce551507ac595ae9b7665b7953"
+    }
+  ],
+  "preliminary_receipts_note": "First no-build failed only on default read-only Lake cache path; rerun used the existing writable XDG cache. mk_all updated root ordering and returned 1, so aggregate script was run separately afterward. These are retained as non-success receipts.",
+  "status": "integrated_all_native_checks_passed_not_committed_or_pushed"
+}

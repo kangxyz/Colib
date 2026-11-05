@@ -552,8 +552,8 @@ modules are reused rather than copied into a second model. Tests include four
 independent universes, the empty prefix, repeated signs, and the residue kernel.
 See `migration/milnor-dvr-normalization.json` for source and review evidence.
 
-This milestone does not assert completion or norm compatibility. Completion
-still needs the actual completion field map and residue-field identification.
+This earlier milestone did not assert completion or norm compatibility. The
+completion obligation is discharged by COL-0168 below.
 Norm/transfer still needs the native transfer construction and its residue
 comparison with the exact finite-extension hypotheses. These are separate
 mathematical obligations, not consequences of the ramified restriction square.
@@ -575,3 +575,14 @@ universes are retained. See migration/motivic-koszul-native-base-change-mileston
 This does not prove comparison with old named recursive Aglib classes,
 geometric purity or norm/transfer compatibility. Component review, focused
 compilation and final registered-tree aggregate validation are separate facts.
+
+### Actual DVR completion compatibility
+
+COL-0168 completes the native completion chain from the existing Stacks 0AP1
+completion input to Mathlib's literal fraction lift, its uniqueness triangle,
+the canonical all-degree residue square, the inverse actual residue-field
+identification and preservation/reflection of residue vanishing. Arbitrary
+classes and degree zero are tested. No second completion, valuation or Milnor
+model is introduced, and no full Milnor-group injectivity, norm, transfer or
+tensor decomposition is asserted. See migration/milnor-completion.json for
+source provenance, component review and aggregate validation evidence.

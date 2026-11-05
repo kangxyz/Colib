@@ -22,6 +22,24 @@ class LibraryTests(unittest.TestCase):
             catalog.ROOT / "docs/references.toml", self.root / "docs/references.toml"
         )
 
+    def test_completion_milestone_native_scope_and_ci(self):
+        root = catalog.ROOT
+        ledger = json.loads((root / "docs/migration/milnor-completion.json").read_text())
+        self.assertEqual(ledger["library_item"], "COL-0168")
+        self.assertEqual(ledger["source_file"],
+                         "Aglib/KTheory/MilnorK/Residue/AdicCompletion.lean")
+        source = (root / "Colib/KTheory/MilnorK/Residue/Completion.lean").read_text()
+        for declaration in ledger["source_declarations"].values():
+            self.assertIn(declaration.removeprefix("Stacks.Chow."), source)
+        self.assertIn("IsFractionRing.lift", source)
+        self.assertIn("AdicCompletion.residueField_map_bijective", source)
+        self.assertIn("dvrMilnorTameSymbol'_completion_eq_zero_iff", source)
+        self.assertIn('colib_tag "COL-0168"', source)
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            self.assertIn("ColibTest.MilnorCompletion", (root / path).read_text())
+        self.assertIn("Colib.KTheory.MilnorK.Residue.Completion",
+                      (root / "Colib.lean").read_text())
+
     def native_fixture(self):
         native = {
             "bindings": [],

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0210"
+title = "Normal prime subfields of p-group intermediate extensions"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 30
+statement = "In a finite Galois extension whose automorphism group is a p-group, every nontrivial intermediate field contains a normal degree-p subfield. The overgroup of its actual fixing subgroup gives the actual fixed field, and restriction inside the original intermediate field strictly decreases the remaining degree."
+scope = "A prime p, a finite Galois ambient field, its actual p-group of algebra automorphisms, and a nonbottom intermediate field. The normal index-p overgroup is proved from native Sylow subgroup interpolation and subgroup index results. No characteristic, perfectness or alternate field/group model is assumed."
+review = "author_checked"

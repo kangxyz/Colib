@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0211"
+title = "Normal prime subfields inside the original embedded field"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 40
+statement = "A nontrivial finite field embedded into a finite Galois p-group extension contains an actual normal degree-p intermediate field with strictly smaller remaining degree. Native equivalence with the embedding range transports the fixed-field construction back into the original field."
+scope = "A prime p, finite-dimensional original and ambient fields, an actual algebra homomorphism into the Galois p-group ambient field, and original degree greater than one. The conclusion is an IntermediateField of the original field, not a range replacement. Composed consumers retain the literal Sylow fixed field and AdjoinRoot branch; relative Galoisness is obtained from the fixed-field theorem."
+review = "author_checked"

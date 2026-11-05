@@ -694,3 +694,20 @@ replace only the old nested branch wrapper. No additional multiplication, norm,
 branch or order model is introduced. This is an algebraic branch-count theorem,
 not a Milnor norm-residue or transfer theorem.
 See migration/motivic-charpoly-branches.json for source comparison and checks.
+
+### Finite Sylow fixed fields and original-branch degree reduction
+
+COL-0208--COL-0211 complete the native finite Sylow fixed-field, literal
+AdjoinRoot branch-embedding and normal prime-subfield chain. All fields,
+subgroups, quotient algebras and maps are existing Mathlib objects. No adapter
+layer, branch wrapper or alternate field model is introduced. The subgroup
+interpolation and Galois correspondence are used directly, and native
+restriction and range equivalences return the subfield inside the original
+field. The remaining degree strictly decreases.
+The supplied finite splitting family is retained, including zero and constant
+polynomials. Relative Galoisness above the finite fixed field is native;
+ambient Galoisness over the original base is needed for base-degree
+coprimality, not for the original-branch normal-subfield consumer. This is a
+finite field-theoretic reduction, not an infinite special-field construction
+or a Milnor norm, reciprocity or transfer theorem.
+See migration/motivic-sylow-branches.json for source comparison and checks.

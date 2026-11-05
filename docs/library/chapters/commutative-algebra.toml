@@ -27,3 +27,9 @@ id = "charpoly-branches"
 title = "Characteristic polynomials and exact branch multiplicities"
 order = 40
 introduction = "Actual multiplication characteristic polynomials connect scalar extension, integral closures and DVR residue reduction. A supplied tensor decomposition yields the integral product identity; normalized factor counts then prove the exact ramification-weighted residue-branch multiplicities with all relative residue degrees retained."
+
+[[sections]]
+id = "sylow-field-reduction"
+title = "Sylow fixed fields and normal prime subfields"
+order = 50
+introduction = "Native finite Sylow fixed fields descend the supplied small splitting polynomials. Literal irreducible AdjoinRoot branches embed into the chosen overfield; native fixing subgroups and fixed fields then supply a normal prime-degree subfield inside the original branch, with strictly smaller remaining degree. The finite-family scope and all Galois hypotheses remain explicit."

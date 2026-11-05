@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0209"
+title = "Literal polynomial branches in a specified splitting overfield"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 20
+statement = "An irreducible divisor after coefficient extension admits an algebra homomorphism from its original AdjoinRoot quotient to the specified splitting overfield, and its polynomial degree is at most the degree of the original polynomial."
+scope = "A compatible tower of fields, a nonzero original polynomial splitting in the supplied overfield, and the literal irreducible divisor with its divisibility proof. No monicity, finite-dimensionality, Galois, characteristic or perfectness premise is required. No additional branch type is introduced."
+review = "author_checked"

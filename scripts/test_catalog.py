@@ -190,6 +190,34 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("power basis", self.library["entries"]["COL-0204"]["scope"])
         self.assertIn("Characteristic-zero", self.library["entries"]["COL-0207"]["scope"])
 
+    def test_sylow_branch_native_chain_registration(self):
+        root = catalog.ROOT
+        modules = {
+            "COL-0208": "Colib.FieldTheory.SylowFixedField",
+            "COL-0209": "Colib.FieldTheory.AdjoinRootSplitBranchEmbedding",
+            "COL-0210": "Colib.FieldTheory.PGroupNormalSubfield",
+            "COL-0211": "Colib.FieldTheory.PGroupNormalSubfieldEmbedding",
+        }
+        for identifier, module in modules.items():
+            self.assertEqual(self.library["entries"][identifier]["section"],
+                             "sylow-field-reduction")
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+            self.assertNotIn("structure ", source)
+            self.assertNotIn("def ", source)
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            for module in (
+                    "ColibTest.SylowFixedField",
+                    "ColibTest.AdjoinRootSplitBranchEmbedding",
+                    "ColibTest.PGroupNormalSubfield",
+                    "ColibTest.PGroupNormalSubfieldEmbedding",
+            ):
+                self.assertIn(module, (root / path).read_text())
+        self.assertIn("Zero polynomials", self.library["entries"]["COL-0208"]["scope"])
+        self.assertIn("No monicity", self.library["entries"]["COL-0209"]["scope"])
+        self.assertIn("original field", self.library["entries"]["COL-0211"]["scope"])
+
     def native_fixture(self):
         native = {
             "bindings": [],
@@ -199,6 +227,7 @@ class LibraryTests(unittest.TestCase):
             "modules": [],
         }
         module_names = {
+            "sylow-field-reduction": "Colib.FieldTheory.PGroupNormalSubfieldEmbedding",
             "waldhausen-categories": "Colib.CategoryTheory.Waldhausen.Basic",
             "waldhausen-k-theory": "Colib.KTheory.Waldhausen.Basic",
             "homology-colimits": "Colib.Algebra.Category.ModuleCat.FilteredColimits",

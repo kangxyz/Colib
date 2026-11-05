@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0208"
+title = "Finite Sylow fixed fields and small-polynomial splitting"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 10
+statement = "In a finite prime-power extension, roots and splitting of supplied polynomials of degree below the prime descend to the original intermediate field. The actual Sylow fixed field has prime-power upper degree, and in a finite Galois ambient extension its base degree is coprime to the prime, simultaneously splitting any specified finite family already split upstairs."
+scope = "The prime-power root argument needs finiteness over the intermediate field and an actual prime-power degree, not Galoisness. Zero polynomials, constants and zero exponents are retained. Ambient Galoisness is required only for the base-degree coprimality and simultaneous coprime-field conclusion. No infinite special-field construction or splitting claim for unspecified polynomials is made."
+review = "author_checked"

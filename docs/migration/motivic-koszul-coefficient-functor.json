@@ -1,0 +1,190 @@
+{
+  "purpose": "Canonical coefficient functor and preservation of short exact sequences for the motivic Koszul migration.",
+  "target_module": "Colib.RingTheory.Koszul.CoefficientFunctor",
+  "baseline": "28fd2c9712d671368022acabb0ab50e4de657db3",
+  "source_context": {
+    "repository": "kangxyz/aglib",
+    "revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+    "module": "Aglib.Algebra.Homology.Koszul.Coefficient",
+    "source_sha256": "818fd38dfd14af03e4d5fda940653c7a6929f2e8249fb38ac1c6ffec9289e839",
+    "manifest": "kangxyz/aglib@101dbb8564fb0e29f28cfcb79168d878b5ab489f:docs/migration/motivic-koszul.json",
+    "original_source": "Motivic/Algebra/Homology/KoszulCoefficientComplex.lean",
+    "original_sha256": "133eadd8193364628cad326f5cfbe4eaf8ea8a8b6f0f52c132f71aaf27fac10b",
+    "disposition": "New native lower interface supporting coefficient migration, not a claim that an additional Aglib theorem was migrated verbatim. Existing recursive coefficientComplex and its structural identities are not duplicated.",
+    "copyright": "New Colib proof; no Aglib proof copied. Original source provenance is contextual."
+  },
+  "canonical_objects": [
+    "Koszul.seqComplexTensor",
+    "ModuleCat",
+    "HomologicalComplex",
+    "ShortComplex.map",
+    "ShortComplex.ShortExact"
+  ],
+  "scope": {
+    "ring": "R : Type u, CommRing R",
+    "coefficients": "ModuleCat.{v} R; independent u and v",
+    "complex_universe": "ModuleCat.{max u v} R",
+    "sequence": "Arbitrary f : Fin r -> R, including r=0; no regularity",
+    "maps": "Degree n map is exactly LinearMap.lTensor (exteriorPower R n (Fin r -> R)) g.hom",
+    "exactness": "An actual coefficient ShortExact maps to an actual ShortExact of complexes; no coefficient flatness, finiteness or Noetherian assumptions."
+  },
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "search_scope": "Searched full StacksFrontier for coefficient maps/functors on seqComplexTensor and located the 10 referencing Koszul modules; inspected the relevant Defs, Regular and Localization interfaces plus intersection KoszulEuler. Searched Mathlib flat tensor exactness and degreewise short exactness.",
+    "interfaces": [
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.Defs",
+        "declaration": "seqComplexTensor",
+        "use": "Definitional object of the new functor; no comparison needed."
+      },
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.Localization",
+        "declaration": "seqComplexTensorCongr",
+        "use": "Existing equivalence-only coefficient map. It does not provide general coefficient morphisms or an exact coefficient functor."
+      },
+      {
+        "module": "StacksFrontier.RingTheory.Koszul.Regular",
+        "declaration": "private coefficientTensorFunctor",
+        "use": "Different variable: fixed coefficient M and varying left module/complex. No higher application imported."
+      },
+      {
+        "module": "StacksFrontier.AlgebraicGeometry.Intersection.AlgebraicMultiplicities.KoszulEuler",
+        "declaration": "private tensorCoefficients",
+        "use": "Again fixes coefficient and varies left module; not the requested functor."
+      },
+      {
+        "module": "Mathlib.RingTheory.Flat.Basic",
+        "declarations": [
+          "Module.Flat.lTensor_exact",
+          "Module.Flat.lTensor_preserves_injective_linearMap"
+        ],
+        "use": "Direct reuse for degreewise exactness and monomorphism."
+      },
+      {
+        "module": "Mathlib.LinearAlgebra.TensorProduct.RightExactness",
+        "declaration": "LinearMap.lTensor_surjective",
+        "use": "Direct reuse for degreewise epimorphism."
+      },
+      {
+        "module": "Mathlib.Algebra.Homology.HomologicalComplexAbelian",
+        "declaration": "HomologicalComplex.shortExact_of_degreewise_shortExact",
+        "use": "Direct reuse to obtain categorical short exactness of complexes."
+      }
+    ]
+  },
+  "boundaries": [
+    "No old recursive model comparison, quotient comparison or new Koszul complex.",
+    "No long homology sequence or connecting-map normalization is claimed.",
+    "No direct additional Aglib source endpoint is counted; this is missing native infrastructure.",
+    "No changed pins, root imports, registry, IDs, commits or pushes."
+  ],
+  "validation": {
+    "source_correspondence": "author_checked for stated infrastructure scope",
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematical/interface review, source context, native objects and universes, hashes and historical guard receipts. No reviewer compilation or kernel replay."
+    },
+    "kernel_replay": "not requested; not run",
+    "full_check": "pending parent integration",
+    "commands": [
+      {
+        "command": "lake build Colib.RingTheory.Koszul.CoefficientFunctor ColibTest.KoszulCoefficientFunctor",
+        "result": "passed; existing Stacks Defs show-tactic warning replayed"
+      },
+      {
+        "command": "lake exe batteries/runLinter --no-build Colib.RingTheory.Koszul.CoefficientFunctor ColibTest.KoszulCoefficientFunctor",
+        "result": "passed"
+      },
+      {
+        "command": "lake exe mathlib/lint-style Colib.RingTheory.Koszul.CoefficientFunctor ColibTest.KoszulCoefficientFunctor",
+        "result": "passed; existing absent nolints-style file treated as empty"
+      }
+    ],
+    "receipts": [
+      {
+        "file": "coeffexact-build-3.json",
+        "sha256": "86d07c8fb5a180720a89374032486c39a9210fd50c5d512b64ce9d499ea90c05"
+      },
+      {
+        "file": "coeffexact-lint.json",
+        "sha256": "dda3bc374c931ba19880147642dbfef91e3583cfa24f50b1f71799bbf01270d7"
+      },
+      {
+        "file": "coeffexact-style.json",
+        "sha256": "142950ea79d29a67fb37ef9865b99ca3fa65d29c8ca0212d0ffcd115d17ac4b8"
+      }
+    ],
+    "artifacts": [
+      {
+        "source": "Colib/RingTheory/Koszul/CoefficientFunctor.lean",
+        "source_sha256": "036b76052caf2b34e14bea5e4dfe25d5d3eda075c95d28fac441433eadcfacb3",
+        "olean_sha256": "232af003bf2d22981cccaf8dbe840f14713a799085e776726300023316a987d9"
+      },
+      {
+        "source": "ColibTest/KoszulCoefficientFunctor.lean",
+        "source_sha256": "08775f49efd1660007389253612fac7952aaaf6de203336a797bf8de4aaa79c5",
+        "olean_sha256": "7c801dc06f7de0840a8c9908f1958c62df570110b6931c749e4b6eb5eff7c97a"
+      }
+    ],
+    "tests": [
+      "Functor object is definitionally seqComplexTensor",
+      "Pure-tensor action is x tensor g(m)",
+      "Actual coefficient ShortExact maps to complex ShortExact",
+      "Empty Koszul sequence and degree zero with independent universes",
+      "Native ModuleCat.smulShortComplex maps to ShortExact under scalar regularity"
+    ],
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-coeff-functor-28fd2c9-20261105-1353",
+      "pid": 21,
+      "pgid": 21,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 7344926720,
+      "duration_seconds": 60.81562710402068,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 21,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-coeff-functor-check-receipt.json",
+      "receipt_sha256": "c3c02f2880a2545026e660e686f501a1c3287ec5ff6e3c2c0d524885e45cf7b5",
+      "log": "/tmp/colib-coeff-functor-check.log",
+      "log_sha256": "a3905204865700e22c9ebbf3e81a9e5f6d9138a972ad68c0901f7cfb56fa70e7",
+      "kernel_replay": false,
+      "hashes": {
+        "Colib/RingTheory/Koszul/CoefficientFunctor.lean": "5523762b4977c13cca888317a6fec458adb81bcf1b3dd6aed1e7f4ed70a61d69",
+        ".lake/build/lib/lean/Colib/RingTheory/Koszul/CoefficientFunctor.olean": "97987491262bb2419fa2f448c7bff3aeb48c03efb6f457d6cbb82164c6637751",
+        "ColibTest/KoszulCoefficientFunctor.lean": "f46265b338921806786b74a3daa06e85098534858460bccd14f64616dcfbbd7f",
+        ".lake/build/lib/lean/ColibTest/KoszulCoefficientFunctor.olean": "7c801dc06f7de0840a8c9908f1958c62df570110b6931c749e4b6eb5eff7c97a"
+      }
+    }
+  },
+  "declarations": [
+    "Koszul.seqComplexTensorFunctor",
+    "Koszul.seqComplexTensorFunctor_map_f",
+    "Koszul.seqComplexTensorFunctor_additive",
+    "Koszul.seqComplexTensorFunctor_degreewise_shortExact",
+    "Koszul.seqComplexTensorFunctor_shortExact"
+  ],
+  "historical_baseline": "2b8929b6276dd534f48302b4da00ee138f5c8b51",
+  "library_item": "COL-0141"
+}

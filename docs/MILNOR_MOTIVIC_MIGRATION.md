@@ -505,3 +505,12 @@ degree-one residue consequence in four independent universes. Exponent zero
 is permitted in the conditional nonlocal statement; locality forces positivity.
 This does not close all-degree ramification or canonical arbitrary-uniformizer
 comparison. See the two degree-one migration ledgers.
+
+### The native exact coefficient functor
+
+COL-0141 packages seqComplexTensor itself as an additive coefficient functor,
+with every coefficient map acting by the identity on the exterior factor.
+It preserves actual short exact sequences without regularity or coefficient
+flatness hypotheses, retaining independent ring and coefficient universes.
+This is a new lower interface, not another source endpoint or recursive model.
+See `migration/motivic-koszul-coefficient-functor.json`.

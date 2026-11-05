@@ -88,6 +88,7 @@ public import Colib.KTheory.Quillen.Map.Functoriality
 public import Colib.Library.Upstream
 public import Colib.LinearAlgebra.TensorAlgebra.HomogeneousLift
 public import Colib.LinearAlgebra.TensorAlgebra.IdealVanishing
+public import Colib.RingTheory.Koszul.CoefficientFunctor
 public import Colib.RingTheory.Koszul.CoefficientRegularity
 public import Colib.RingTheory.Koszul.Coefficients
 public import Colib.RingTheory.Koszul.Ext

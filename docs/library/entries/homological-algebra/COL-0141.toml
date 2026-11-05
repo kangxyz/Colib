@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0141"
+title = "The exact Koszul coefficient functor"
+kind = "definition"
+section = "koszul-coefficients"
+order = 30
+statement = "The additive coefficient functor has exactly the native seqComplexTensor objects and identity-tensored coefficient maps. Every coefficient short exact sequence maps to a short exact sequence of complexes, degreewise and globally."
+scope = "Any commutative ring in universe u, arbitrary ModuleCat coefficients in independent universe v, and target complexes in universe max u v. Arbitrary finite sequence including empty, without sequence regularity or coefficient flatness, finiteness or Noetherianity. New native lower interface, not an additional migrated Aglib declaration or recursive-model comparison. Stacks 0622/0623 supply definitions only."
+review = "author_checked"
+proof = "Tensor functoriality gives the chain maps and additive laws. Free exterior terms are flat, so native flat-tensor exactness and degreewise short exactness give the complex-level result."

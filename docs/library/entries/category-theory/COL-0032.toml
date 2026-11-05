@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0032"
+title = "Admissible epimorphisms with an extra matrix component"
+kind = "lemma"
+section = "exact-categories"
+order = 60
+statement = "For an arbitrary map f : A to T and an admissible epimorphism p : B to T, the biproduct row [f, p] : A biproduct B to T is an admissible epimorphism."
+scope = "A chosen exact structure on a preadditive category with finite biproducts and independent object and hom universes. Derived from the composition and base-change axioms, not cited as a separately numbered matrix theorem. No abelian or weak idempotent completeness assumption is required. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

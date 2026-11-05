@@ -118,6 +118,16 @@ class LibraryTests(unittest.TestCase):
         for index in range(27, 30):
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
 
+    def test_admissible_pullback_ids_keep_their_owners(self):
+        for index in (32, 33):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"],
+                "exact-categories",
+            )
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in (32, 33):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
     def test_unknown_reference_is_rejected(self):
         native = self.native_fixture()
         native["citations"][0]["source"] = "missing"

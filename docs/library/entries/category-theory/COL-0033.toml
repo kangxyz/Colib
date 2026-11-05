@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0033"
+title = "Exact functors preserve admissible pullbacks"
+kind = "proposition"
+section = "exact-categories"
+order = 70
+statement = "An exact functor sends a pullback square along an admissible epimorphism to a pullback square, and preserves the corresponding cospan limit."
+scope = "Chosen exact structures on source and target preadditive categories with finite biproducts and independent object and hom universes. The square uses the actual images of all four maps. This covers only the pullback clause of Proposition 5.2, not its pushout clause, arbitrary pullbacks, or Q-construction functor laws. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

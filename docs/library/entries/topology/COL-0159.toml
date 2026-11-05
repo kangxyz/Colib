@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0159"
+title = "Actual skeletal attachments and compact path reduction"
+kind = "theorem"
+section = "geometric-realization"
+order = 200
+statement = "Realization carries the actual relative skeletal cell attachments to geometric pushouts and their exhaustive tower to a colimit. Every compact-source map factors through an ordinary finite skeleton. Inclusions of stages containing every edge are full on fundamental groupoids."
+scope = "Single-step attachments have no Mono hypothesis. The relative tower requires Mono, and relative-stage T1 requires T1 of the initial realization. Ordinary fullness requires stage at least 2. The conclusion is fullness and endpoint-fixed path reduction, not faithfulness or a presentation. Implementation adapted from Quillen commit c561118b7795eb9780be9ed391c3251d6a4d0afd; source correspondence and independent mathematical review are separate from compilation."
+review = "author_checked"

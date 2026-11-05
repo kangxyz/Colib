@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0160"
+title = "Surjectivity of the actual completion comparison"
+kind = "theorem"
+section = "classifying-spaces"
+order = 100
+statement = "For every category, every path class between original object vertices in its nerve realization is the image of a morphism in its actual groupoid completion. The original completed-loop comparison is surjective at every object."
+scope = "Object and morphism universes remain independent. The proof uses actual boundary and skeletal pushouts, the actual vertex skeleton, genuine arrow paths and the original groupoid-completion comparison. No injectivity, retraction or bijectivity is asserted. Implementation adapted from Quillen commit c561118b7795eb9780be9ed391c3251d6a4d0afd; source correspondence and independent mathematical review are separate from compilation."
+review = "author_checked"

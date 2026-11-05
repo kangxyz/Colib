@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0161"
+title = "Actual zero-skeleton of a category nerve"
+kind = "comparison"
+section = "classifying-spaces"
+order = 90
+statement = "The actual zero-dimensional skeleton of a category nerve is isomorphic to the constant simplicial set of its universe-lifted objects. Its geometric realization is canonically homeomorphic to the discrete original object type, with explicit forward and inverse vertex formulas. The skeleton inclusion preserves the actual classifying-space vertex."
+scope = "The pinned skeleton convention uses skeleton 1 for the zero-dimensional skeleton. Object and morphism universes u and v are independent; the nerve and its constant comparison live in max u v using ULift of the object type. The final homeomorphism removes this lift and retains the actual realization topology, not merely a bijection of sets. The citation is background for vertices, identity chains and nerve realization, not a claim that these exact API comparisons occur in the source. Only the first thirteen source declarations are included. No comparison of connected components or zero-dimensional homotopy classes of the whole classifying space, arbitrary-functor naturality, general skeletal attachment, Theorem B, path generation or groupoid equivalence is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

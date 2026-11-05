@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0034"
+title = "Categories of isomorphism classes of 1-morphisms"
+kind = "definition"
+section = "bicategories"
+order = 10
+statement = "A bicategory determines a category with the same objects and with arrows given by isomorphism classes of 1-morphisms. Whiskering defines composition, and the unitors and associator give the category laws."
+scope = "An arbitrary bicategory with independent object, 1-morphism and 2-morphism universes. Only invertible 2-morphisms identify arrows; arbitrary 2-morphisms do not. Weibel IV Definition 6.1 is background for the restricted-span application, not a reference asserting this general construction. Implementation provenance is recorded separately in the source module. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

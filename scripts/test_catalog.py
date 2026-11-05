@@ -34,6 +34,8 @@ class LibraryTests(unittest.TestCase):
             "projective-dimension": "Colib.RingTheory.Koszul.Ext",
             "koszul-coefficients": "Colib.RingTheory.Koszul.Coefficients",
             "exact-categories": "Colib.CategoryTheory.ExactCategory.Basic",
+            "bicategories": "Colib.CategoryTheory.Bicategory.IsoQuotient",
+            "restricted-spans": "Colib.CategoryTheory.QConstruction.Basic",
             "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
             "finite-algebra-coefficients": "Colib.RingTheory.Length.FiniteAlgebra",
@@ -127,6 +129,13 @@ class LibraryTests(unittest.TestCase):
         result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
         for index in (32, 33):
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
+    def test_quotient_and_restricted_span_ids_keep_their_owners(self):
+        self.assertEqual(self.library["entries"]["COL-0034"]["section"], "bicategories")
+        self.assertEqual(self.library["entries"]["COL-0035"]["section"], "restricted-spans")
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for identifier in ("COL-0034", "COL-0035"):
+            self.assertTrue(result["entries"][identifier]["references"])
 
     def test_unknown_reference_is_rejected(self):
         native = self.native_fixture()

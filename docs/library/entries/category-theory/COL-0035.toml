@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0035"
+title = "Restricted-span categories modulo apex isomorphism"
+kind = "definition"
+section = "restricted-spans"
+order = 10
+statement = "Two morphism properties satisfying identity, composition and mixed pullback-calculus hypotheses determine a category of restricted spans modulo commuting apex isomorphisms, with composition represented by the actual pullback."
+scope = "A category C with independent object and hom universes, two morphism properties containing identities and closed under composition, pullbacks of the left property against the right, and mutual base-change stability. In the exact-category specialization the left leg is an admissible epimorphism and the right leg an admissible monomorphism. The hom universe may grow to the maximum of the object and hom universes. This item does not construct an exact structure, prove smallness, a universal property, exact-functor functoriality, or higher K-groups. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

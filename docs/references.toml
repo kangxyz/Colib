@@ -26,7 +26,7 @@ kind = "book"
 title = "The K-book: An Introduction to Algebraic K-theory"
 authors = ["Charles A. Weibel"]
 year = 2013
-version = "Author's online chapters II and III, inspected 2026-11-05"
+version = "Author's online chapters II, III and IV, inspected 2026-11-05"
 url = "https://sites.math.rutgers.edu/~weibel/Kbook.html"
 
 [[sources.WeibelKBook.documents]]
@@ -40,6 +40,12 @@ label = "Chapter III, K1 and K2 of a ring"
 locator_prefix = "III,"
 url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf"
 sha256 = "ba1bc2d25680ab25c4baadc5ab28e39d1077dc66bb12ca4e2174b6cb55f81307"
+
+[[sources.WeibelKBook.documents]]
+label = "Chapter IV, Definitions of higher K-theory"
+locator_prefix = "IV,"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf"
+sha256 = "9f1c1b8cccfe19d547c27dd04c61f198fd7a0cddd0018a0b84442b00fa575248"
 
 [sources.Milnor1970]
 kind = "article"

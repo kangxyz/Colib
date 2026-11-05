@@ -3,6 +3,7 @@ module  -- shake: keep-all --deprecated_module: ignore
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
 public import Colib.CategoryTheory.Abelian.Projective.Ext
+public import Colib.CategoryTheory.Bicategory.IsoQuotient
 public import Colib.CategoryTheory.ExactCategory.Abelian
 public import Colib.CategoryTheory.ExactCategory.AdditiveInvariant
 public import Colib.CategoryTheory.ExactCategory.Basic
@@ -10,6 +11,7 @@ public import Colib.CategoryTheory.ExactCategory.Functor.Basic
 public import Colib.CategoryTheory.ExactCategory.Functor.Pullbacks
 public import Colib.CategoryTheory.ExactCategory.Functor.SerreLocalization
 public import Colib.CategoryTheory.ExactCategory.MatrixDeflation
+public import Colib.CategoryTheory.QConstruction.Basic
 public import Colib.KTheory.GrothendieckGroup.Abelian
 public import Colib.KTheory.GrothendieckGroup.AbelianNaturality
 public import Colib.KTheory.GrothendieckGroup.Basic

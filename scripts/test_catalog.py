@@ -122,6 +122,16 @@ class LibraryTests(unittest.TestCase):
         for index in range(68, 71):
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
 
+    def test_based_invariance_and_kmap_composition_ids_keep_their_owners(self):
+        for identifier, section in (
+            ("COL-0071", "homotopy-groups"),
+            ("COL-0072", "quillen-k-theory"),
+        ):
+            self.assertEqual(self.library["entries"][identifier]["section"], section)
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for identifier in ("COL-0071", "COL-0072"):
+            self.assertTrue(result["entries"][identifier]["references"])
+
     def test_initial_ids_keep_their_owners(self):
         self.assertTrue(
             {f"COL-{index:04d}" for index in range(1, 13)}

@@ -18,8 +18,8 @@ No topology or homotopy groups occur in this module.
 ## Implementation provenance
 
 Extracted from `Quillen/Aglib/CategoryTheory/Functor/Rebase.lean` at Quillen commit
-`c561118b7795eb9780be9ed391c3251d6a4d0afd`. The source maps, basepoints,
-universes and degree shift are retained. Only ownership and lower imports change.
+`c561118b7795eb9780be9ed391c3251d6a4d0afd`. The source object maps, specified
+isomorphisms and universes are retained. Only ownership and lower imports change.
 -/
 
 @[expose] public noncomputable section

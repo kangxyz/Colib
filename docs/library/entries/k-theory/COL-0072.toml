@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0072"
+title = "Composition of zero-based Quillen K-group maps"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 30
+statement = "For composable exact functors F and G, the original zero-based Quillen K-group maps satisfy (F.comp G).KMap n = (G.KMap n).comp (F.KMap n) for every natural number n. Their identification with the induced homotopy-group maps of the normalized Q-functors is definitional."
+scope = "The three categories share object and hom universe parameters and each has a preadditive structure, finite biproducts, and a specified exact structure. The maps act on the actual (n + 1)st homotopy groups at chosen zero vertices, with F applied before G. The proof uses the normalized Q-functor comparison with its exact eqToHom base component and a genuine homotopy fixed at zero. The source functoriality paragraph supports composition; its separate assertion about isomorphic functors is not claimed here. No higher coherence, general natural-isomorphism invariance of KMap, algebraic K0 comparison, or zero-object claim for Q is established. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

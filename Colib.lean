@@ -45,6 +45,7 @@ public import Colib.KTheory.MilnorK.Symbols.Relations
 public import Colib.KTheory.MilnorK.Symbols.SymbolMap
 public import Colib.KTheory.Quillen.Basic
 public import Colib.KTheory.Quillen.Map.Basic
+public import Colib.KTheory.Quillen.Map.Functoriality
 public import Colib.Library.Upstream
 public import Colib.LinearAlgebra.TensorAlgebra.HomogeneousLift
 public import Colib.LinearAlgebra.TensorAlgebra.IdealVanishing
@@ -56,6 +57,7 @@ public import Colib.Topology.ClassifyingSpace.Basic
 public import Colib.Topology.ClassifyingSpace.Map
 public import Colib.Topology.ClassifyingSpace.NerveHomotopy
 public import Colib.Topology.ClassifyingSpace.PointedFunctor
+public import Colib.Topology.Homotopy.HomotopyGroup.BasedHomotopy
 public import Colib.Topology.Homotopy.HomotopyGroup.Map
 public import Colib.Topology.Realization.Basic
 public import Colib.Topology.Realization.Constant

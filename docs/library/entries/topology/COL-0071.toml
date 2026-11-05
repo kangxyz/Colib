@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0071"
+title = "Based homotopy invariance of induced maps"
+kind = "proposition"
+section = "homotopy-groups"
+order = 20
+statement = "Continuous maps joined by a homotopy fixed at their specified basepoint induce equal maps on the actual homotopy quotient and equal homotopy-group homomorphisms. Postcomposition gives a homotopy of generalized loops relative to the entire cube boundary; the piMap specialization uses degree n + 1."
+scope = "The loop-index type and source and target spaces have independent universes. Both endpoint basepoint equations and constancy of the homotopy at the basepoint for every parameter are required. The quotient-map result permits an arbitrary index type N; the homomorphism result requires DecidableEq N and Nonempty N. The arbitrary-index statements generalize the cited finite-dimensional account, while piMap adapts its positive-dimensional case. No invariance under unrestricted unbased homotopies is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

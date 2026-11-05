@@ -25,10 +25,12 @@ public import Colib.CategoryTheory.Functor.Rebase.Composition
 public import Colib.CategoryTheory.QConstruction.Basic
 public import Colib.CategoryTheory.QConstruction.Connected
 public import Colib.CategoryTheory.QConstruction.Core
+public import Colib.CategoryTheory.QConstruction.EdgeClass
 public import Colib.CategoryTheory.QConstruction.Functor
 public import Colib.CategoryTheory.QConstruction.HomotopyGroup
 public import Colib.CategoryTheory.QConstruction.Isomorphisms
 public import Colib.CategoryTheory.QConstruction.ObjectClass
+public import Colib.CategoryTheory.QConstruction.ObjectClassFunctoriality
 public import Colib.CategoryTheory.QConstruction.ZeroEndomorphisms
 public import Colib.KTheory.GrothendieckGroup.Abelian
 public import Colib.KTheory.GrothendieckGroup.AbelianNaturality
@@ -36,6 +38,9 @@ public import Colib.KTheory.GrothendieckGroup.Basic
 public import Colib.KTheory.GrothendieckGroup.Field
 public import Colib.KTheory.GrothendieckGroup.FieldExact
 public import Colib.KTheory.GrothendieckGroup.Map
+public import Colib.KTheory.GrothendieckGroup.Multiplicative
+public import Colib.KTheory.GrothendieckGroup.QCocycle
+public import Colib.KTheory.GrothendieckGroup.QGroupoid
 public import Colib.KTheory.GrothendieckGroup.SerreLocalization
 public import Colib.KTheory.GrothendieckGroup.SerreQuotient
 public import Colib.KTheory.GrothendieckGroup.SerreSubgroup

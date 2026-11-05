@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0078"
+title = "Generator extensionality for multiplicative Grothendieck maps"
+kind = "proposition"
+section = "grothendieck-groups"
+order = 130
+statement = "Two homomorphisms from the multiplicative form of the algebraic Grothendieck group to any group are equal if they agree on every actual object generator."
+scope = "The source category is preadditive with finite biproducts, a selected exact structure, and independent object and hom universes. The target need not be commutative. This uses the existing free-abelian quotient presentation without adding relations. It is extensionality for already defined homomorphisms, not an unrestricted lifting universal property into noncommutative groups. The citation is limited to the object-generation consequence of the definition. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

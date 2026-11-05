@@ -141,6 +141,16 @@ class LibraryTests(unittest.TestCase):
         for index in range(73, 76):
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
 
+    def test_algebraic_q_groupoid_ids_keep_their_owners(self):
+        for index in range(76, 81):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"],
+                "exact-categories" if index < 78 else "grothendieck-groups",
+            )
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in range(76, 81):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
     def test_initial_ids_keep_their_owners(self):
         self.assertTrue(
             {f"COL-{index:04d}" for index in range(1, 13)}

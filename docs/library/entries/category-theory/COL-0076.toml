@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0076"
+title = "Closed Q-edges in groupoid targets"
+kind = "proposition"
+section = "exact-categories"
+order = 180
+statement = "Closing a Q-arrow with the canonical zero-apex arrows in any groupoid-valued functor gives a based endomorphism equal to an object class. An admissible quotient contributes its kernel object class, an admissible inclusion contributes the identity, and closing respects composition with the End multiplication order."
+scope = "The source category is preadditive with finite biproducts, a selected exact structure, and independent object and hom universes. The normalization uses the actual span factorization and quotient representatives. The composition formula is edge(f followed by g) = edge(g) * edge(f), since End multiplication reverses categorical composition. The kernel object is existentially obtained, not uniquely selected. The cited fundamental-group presentation is background for this purely categorical calculation; no realized path or fundamental-group identification is supplied. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

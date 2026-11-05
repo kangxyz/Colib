@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0080"
+title = "Grothendieck group of the Q-groupoid completion"
+kind = "theorem"
+section = "grothendieck-groups"
+order = 150
+statement = "The multiplicative algebraic Grothendieck group is canonically isomorphic to the endomorphism group at the image of zero in the actual categorical localization that inverts every Q-arrow. The two explicit maps recover object generators and are mutual inverses."
+scope = "The source category is preadditive with finite biproducts, a selected exact structure, and independent object and hom universes. Actual localization induction proves that the canonical object classes generate this entire vertex group, and hence that this particular group is commutative. This does not make all endomorphisms in arbitrary groupoid targets commute. End multiplication is the reverse of categorical composition. The cited fundamental-group presentation is background for the algebraic localization calculation only. No equivalence with the realized fundamental groupoid, fundamental-group comparison, homotopical K0 comparison, or topological edge-path generation theorem is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

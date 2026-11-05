@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0077"
+title = "Functoriality of categorical object classes"
+kind = "proposition"
+section = "exact-categories"
+order = 190
+statement = "Postcomposing a groupoid-valued Q-functor with a functor between groupoids sends each canonical object class to the corresponding object class for the composite functor."
+scope = "The source category is preadditive with finite biproducts, a selected exact structure, and independent object and hom universes. The equality is for the actual images of the two canonical arrows and their inverses under target functors. The presentation literature is background only. This is not naturality of a topological fundamental-group comparison or a theorem about exact-functor K-group maps. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

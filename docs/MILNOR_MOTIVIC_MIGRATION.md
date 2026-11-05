@@ -479,3 +479,12 @@ endpoint rewrites a source declaration; weak-sequence and scalar short-exact
 statements are native consequences. This does not assert homology regularity,
 properness, or equivalence with the old recursive model. See
 `migration/motivic-koszul-coefficient-regularity.json`.
+
+### Top Ext coefficient quotients in all lengths
+
+COL-0137 closes the empty-sequence quotient endpoint using the degree-zero
+projective-resolution cocycle criterion. Positive lengths reuse the existing
+quotient equivalence definitionally. This supplies quotient endpoints and
+representatives, not all-length naturality or old named Aglib class comparison.
+The generic reduction retains Joël Riou's Mathlib attribution. See
+`migration/motivic-top-ext-all-lengths.json`.

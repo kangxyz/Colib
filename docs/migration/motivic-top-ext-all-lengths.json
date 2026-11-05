@@ -1,0 +1,290 @@
+{
+  "topic": "Empty-sequence and unified all-length native top Ext coefficient equivalence",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_file": "Aglib/Algebra/Homology/Koszul/Ext/Coefficients.lean",
+  "source_sha256": "83fe79562bf679c076e20e6e8800ef13aa00fcb5451c34c5b17d6c3d2930c7a6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "scope": "All finite sequence lengths, including zero, over a commutative ring with native Koszul regularity; arbitrary N and HasExt universe. Exact top-class kernel is I\u2022N and the actual quotient N/IN computes native top Ext, linearly over R/I. Empty sequence specializes to I=0 and degree-zero Ext.",
+  "upstream_audit": "Mathlib ProjectiveResolution.extMk_eq_zero_iff provides positive-degree boundary criterion only. Its CohomologyClass/Cocycle.toSingleMk_mem_coboundaries_iff and native cochainComplex.IsStrictlyLE 0 directly prove the degree-zero injectivity lemma. Existing Stacks topEquiv_topGen supplies coefficient detection. Positive-length kernel/equivalence are reused from Colib.TopExtCoefficients.",
+  "new_generic_lemma": "CategoryTheory.ProjectiveResolution.extMk_zero_eq_zero_iff, any abelian category/HasExt universe/projective resolution. Degree-zero cocycle represents zero iff its map is zero.",
+  "declarations": [
+    "Koszul.seqTopExtClass_empty_eq_zero_iff",
+    "Koszul.seqTopExtClass_ker_all",
+    "Koszul.seqTopExtLinearEquivAll",
+    "Koszul.seqTopExtLinearEquivAll_apply_mk",
+    "Koszul.seqTopExtQuotientLinearEquivAll",
+    "Koszul.seqTopExtQuotientLinearEquivAll_apply_mk",
+    "Koszul.seqTopExtQuotientLinearEquivAll_succ"
+  ],
+  "reuse": "The positive-length quotient-linear branch literally returns the existing seqTopExtQuotientLinearEquiv, with a definitional equality theorem. No second complex, Ext type, quotient action, or positive-length kernel proof is introduced.",
+  "limits": [
+    "This unifies the native class, not a compiled identification with an old Aglib named cocycle.",
+    "No Aglib environment/cache recovery or kernel replay.",
+    "Shared integration and Library registration remain parent-owned.",
+    "All-length naturality and toAddEquiv compatibility endpoints are not supplied by this increment."
+  ],
+  "validation": {
+    "status": "Both production leaves, tests, declaration lint and style lint passed. Slot released and all owned process groups gone.",
+    "guard_script": "colib-environment-20261105/run_guarded_extonequotient_worktree.py",
+    "guard": "Native Lean 4.34.0-rc2, one process via flock; -j1 -M4983; process-group RSS cap 7475 MiB.",
+    "runs": [
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-build-r1.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtAllLengths",
+          "ColibTest.TopExtAllLengths"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2135990272,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-build-r2.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtAllLengths",
+          "ColibTest.TopExtAllLengths"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2618650624,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-build-r3.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtAllLengths",
+          "ColibTest.TopExtAllLengths"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 4344999936,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-build-r4.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtAllLengths",
+          "ColibTest.TopExtAllLengths"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 4343197696,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-build-r5.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtAllLengths",
+          "ColibTest.TopExtAllLengths"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 4341104640,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-build-r6.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtAllLengths",
+          "ColibTest.TopExtAllLengths"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4336484352,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-lint.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.CategoryTheory.Abelian.Projective.ExtZero",
+          "Colib.RingTheory.Koszul.TopExtAllLengths"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5121847296,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-all-style.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.CategoryTheory.Abelian.Projective.ExtZero",
+          "Colib.RingTheory.Koszul.TopExtAllLengths",
+          "ColibTest.TopExtAllLengths"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1719660544,
+        "owned_group_gone": true
+      }
+    ],
+    "hashes": {
+      "Colib/CategoryTheory/Abelian/Projective/ExtZero.lean": "31625ca228e9169a05982d40507febb09348edb040c592af92a5d0273d13b096",
+      "Colib/RingTheory/Koszul/TopExtAllLengths.lean": "5b062ba6d7b4861d5154ad988abbe668b6bb50274b8f06dced750ed7888d6d3a",
+      "ColibTest/TopExtAllLengths.lean": "cd4250ee686dd0e818a683a02c9ec274aff3d6daaebb8a6fe4b4cf9dd4593089",
+      ".lake/build/lib/lean/Colib/CategoryTheory/Abelian/Projective/ExtZero.olean": "b5dcbcb1f6ab1d8869750c2ca7deb302320cb984eb3ea387ca2bec3c967d93da",
+      ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtAllLengths.olean": "deaa61f0161624aa1702998cd1385e7b0dcbd12f0fe55a64ded82a6ac270bf65",
+      ".lake/build/lib/lean/ColibTest/TopExtAllLengths.olean": "3ec1fa4b7ff0af08617427ba19f8d3c544ec533f2dc3b863032426e177169237"
+    },
+    "tests": [
+      "Empty-sequence cocycle vanishes iff coefficient is zero.",
+      "Actual all-length quotient representative preserves the existing cocycle.",
+      "Explicit N/0 is R-linearly equivalent to Ext^0(R/0,N), after rewriting the empty generated ideal."
+    ],
+    "proof_repairs": "Opened native Limits namespace, made coordinate evaluation explicit, and rewrote the empty ideal explicitly in the regression test. No global transparency options or raised resource limits.",
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematics, source correspondence, hypotheses, hashes and existing receipts; no reviewer compilation or kernel replay. Attribution suggestion implemented during integration."
+    },
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-all-lengths-2b8929b-20261105-1334",
+      "pid": 8,
+      "pgid": 8,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6305517568,
+      "duration_seconds": 68.1851925359806,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 8,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-all-lengths-check3-receipt.json",
+      "receipt_sha256": "dcf6e60b1eef5967d9e4bde798f1cfcb002f40be24c2ee02d8c4d4d86a40f4fb",
+      "log": "/tmp/colib-all-lengths-check3.log",
+      "log_sha256": "30edc99da2e1bcbd51192508b0e66856c644813908db0b396e168ce088d312bb",
+      "kernel_replay": false,
+      "hashes": {
+        "Colib/CategoryTheory/Abelian/Projective/ExtZero.lean": "d67cc61950b8aae786a8f94de15bc30aa3c01824eba7caf7444688769f73847e",
+        ".lake/build/lib/lean/Colib/CategoryTheory/Abelian/Projective/ExtZero.olean": "b5dcbcb1f6ab1d8869750c2ca7deb302320cb984eb3ea387ca2bec3c967d93da",
+        "Colib/RingTheory/Koszul/TopExtAllLengths.lean": "133e873d40d3944a7644cb27269e5990c51ec8d7fc69e7f569281e7565a4fd72",
+        ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtAllLengths.olean": "58640e16f47f3b297c00b357c2752050ee6a8f8c49090c0c06c5d07c16fb8360",
+        "ColibTest/TopExtAllLengths.lean": "f42fb012c42a62a88a278c0e38db72f3b13124df11e873e843f8d5be9e2988e2",
+        ".lake/build/lib/lean/ColibTest/TopExtAllLengths.olean": "f9ea18a144def93041ea2059d682395ce9cb43758632c164ddf3d424ac63886f"
+      },
+      "tests": "Empty kernel, all-length representatives, empty quotient realization, definitional successor compatibility, and empty quotient scalar action."
+    },
+    "integration_initial_attempts": [
+      {
+        "state": "completed",
+        "command": [
+          "bash",
+          "-c",
+          "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-all-lengths-2b8929b-20261105-1334",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2169393152,
+        "duration_seconds": 10.439795676036738,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "bash",
+            "command_path": "bash"
+          }
+        ]
+      },
+      {
+        "state": "completed",
+        "command": [
+          "bash",
+          "scripts/check.sh"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-all-lengths-2b8929b-20261105-1334",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2637676544,
+        "duration_seconds": 8.891934835002758,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "bash",
+            "command_path": "bash"
+          }
+        ]
+      }
+    ],
+    "integration_format_repairs": "The native header linter requires a single copyright line; combined both preserved attributions on that line. Wrapped the new module comment and shortened the precise reference annotation to satisfy the 100-character limit. No proof or resource-limit change."
+  },
+  "target_baseline": "2b8929b6276dd534f48302b4da00ee138f5c8b51",
+  "library_item": "COL-0137",
+  "mathlib_attribution": "ExtZero's cocycle reduction adapts Mathlib ProjectiveResolution.extMk_eq_zero_iff by Jo\u00ebl Riou, copyright 2025; the corresponding copyright and author are retained. The new degree-zero step uses native strict boundedness."
+}

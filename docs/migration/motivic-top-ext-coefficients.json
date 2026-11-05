@@ -171,5 +171,10 @@
     "tag": "06XP",
     "relation": "ingredient",
     "scope": "Covariant long exact Ext sequence; not a verbatim coefficient quotient computation."
+  },
+  "subsequent_all_length_extension": {
+    "ledger": "motivic-top-ext-all-lengths.json",
+    "item": "COL-0137",
+    "scope": "Empty-sequence and all-length quotient endpoints now supplied. Earlier validation and scope above remain historical. All-length naturality and old named-class comparison are not asserted."
   }
 }

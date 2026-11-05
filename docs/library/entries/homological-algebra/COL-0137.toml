@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0137"
+title = "Top Koszul coefficient quotients in all lengths"
+kind = "comparison"
+section = "projective-dimension"
+order = 140
+statement = "For every finite sequence length, the exact top-class kernel is IN and the actual coefficient quotient N/IN identifies with top Ext linearly over R/I. Empty sequences give degree-zero Ext; the positive-length quotient equivalence is definitionally the existing one."
+scope = "A commutative ring, native Koszul-regular sequence, arbitrary same-universe coefficient module and independent Ext universe. No coefficient flatness, regularity, finiteness or Noetherianity. This item supplies quotient endpoints and representatives, not all-length naturality or an old Aglib named-class comparison. Stacks 06XP is Ext background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Degree-zero projective-resolution cocycles have no boundaries; the ordered top generator detects coefficients. Reuse the positive-length kernel and quotient equivalence unchanged. The generic cocycle reduction adapts Joël Riou's Mathlib proof."

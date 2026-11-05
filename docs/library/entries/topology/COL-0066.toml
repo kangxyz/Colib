@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0066"
+title = "Canonical cylinder comparison and standard prism cells"
+kind = "definition"
+section = "geometric-realization"
+order = 80
+statement = "Every simplicial set has a canonical continuous comparison from its realized simplicial cylinder to its topological cylinder, naturally in simplicial maps. For a standard representable simplex, the finitely many actual maximal prism cells cover the realization and adjacent cells agree on their shared face."
+scope = "For arbitrary X in SSet u, only the continuous map and its naturality are asserted, with the actual TopCat.I interval identification. The Hatcher citation is background for this general comparison map and an adaptation for the finite standard-prism cells and common faces. No invertibility for arbitrary X, realization of homotopies, based homotopy, or KMap composition is proved. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

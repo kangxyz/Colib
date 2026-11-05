@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0067"
+title = "Homeomorphism of the realized standard prism"
+kind = "theorem"
+section = "geometric-realization"
+order = 90
+statement = "The realization of the product of the standard n-simplex and the standard simplicial interval is homeomorphic to the finite real barycentric n-simplex times the ordinary unit interval. The forward homeomorphism is the actual prism-coordinate map, and the closed-cell inverse charts agree on all overlaps."
+scope = "The source realization retains its simplicial-set universe, while the target is Convexity.StdSimplex over the real numbers with Fin (n + 1) vertices times unitInterval. The actual coordinate map is bijective, and compactness of the realized finite prism and the Hausdorff target give its continuous inverse. This adapts only the geometric prism construction in the opening of the cited proof, not its homology-invariance conclusion. It does not assert a product comparison for arbitrary simplicial sets, a general realization-of-homotopies theorem, a based strengthening, or KMap composition. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

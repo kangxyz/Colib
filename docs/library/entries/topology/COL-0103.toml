@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0103"
+title = "Deformation of an attachment collar onto the old space"
+kind = "proposition"
+section = "geometric-realization"
+order = 230
+statement = "The boundary-fixed radial maps descend through the actual parametrized simplex pushout. They restrict to a relative homotopy of the open collar from its identity to inclusion composed with a continuous retraction onto the old space, fixing the entire old-space image. The resulting homotopy equivalence has the actual old-space inclusion as its forward map."
+scope = "All natural dimensions and arbitrary parameter spaces are retained in one TopCat universe. Cylinder descent uses the fixed unit interval, not local compactness of the parameter space. Continuity of the chosen retraction uses the proved closed embedding of the old space through its inducing property. A global radial homotopy on the whole attachment is also constructed, but its final image is proved to lie in the old space only for collar points. The whole attachment is not asserted to retract onto the old space. Boardman supplies the pushout-of-homotopies ingredient; Hatcher supplies radial-construction background only. No general CW homotopy extension theorem, product or mapping-cylinder collar homeomorphism, or edge-path generation is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

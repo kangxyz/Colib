@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0102"
+title = "Open collars in parametrized simplex attachments"
+kind = "proposition"
+section = "geometric-realization"
+order = 220
+statement = "The actual inclusion of a parametrized finite real simplex boundary is a closed embedding. In its pushout the old space is closed embedded, and the simplex defect extends continuously with value one on the old space. Its strict superlevel set at one half is an open neighborhood of the old-space image."
+scope = "The parameter space, old space and pushout lie in one TopCat universe. The parameter and old spaces are arbitrary: no discreteness, separation, compactness, local compactness or local connectedness assumption is imposed. The other attaching map need not be injective. Closedness of the boundary product inclusion and of the old-space inclusion is proved, not separately assumed. Every natural simplex dimension is allowed, including zero. The references supply pushout gluing, final topology and cobase change of closed embeddings; the explicit defect formula is not attributed to the paper. No homotopy extension property or deformation is concluded in this item. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -58,3 +58,11 @@ label = "Published article, scanned copy"
 locator_prefix = "Section 1"
 url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnorktheoryforms.pdf"
 sha256 = "a588baab393966542c0a1cfed96a4bc09561f96838ed317fc25b7f9a39df84ff"
+
+[sources.BuhlerExactCategories]
+kind = "article"
+title = "Exact Categories"
+authors = ["Theo Bühler"]
+year = 2009
+version = "arXiv:0811.1480v2, revised 2009-04-22; inspected 2026-11-05"
+url = "https://arxiv.org/pdf/0811.1480v2"

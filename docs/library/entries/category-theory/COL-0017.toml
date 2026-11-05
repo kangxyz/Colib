@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0017"
+title = "The canonical exact structure on an abelian category"
+kind = "example"
+section = "exact-categories"
+order = 30
+statement = "All short exact sequences in an abelian category form an exact structure."
+scope = "The canonical exact structure, not an arbitrary selected exact structure on the same abelian category. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

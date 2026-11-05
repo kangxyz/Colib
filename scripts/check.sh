@@ -7,7 +7,8 @@ python3 scripts/catalog.py check
 lake build Colib
 lake test
 lake lint
-lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest.FiniteAlgebraImport ColibTest.MilnorSymbols
+lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest.FiniteAlgebraImport \
+  ColibTest.MilnorSymbols ColibTest.ExactGrothendieckGroup
 lake exe mathlib/mk_all --lib Colib --check
 
 # Aglib's pinned production auditor. This tool is separate from mathematical dependencies.

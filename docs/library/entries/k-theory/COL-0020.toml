@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0020"
+title = "Dimension for the exact K₀ of finite-dimensional vector spaces"
+kind = "theorem"
+section = "grothendieck-groups"
+order = 70
+statement = "Dimension identifies the algebraic K₀ of the canonical exact structure on finite modules over a field with the integers, preserving every object class."
+scope = "A field k in Type u and FGModuleCat k with carriers in Type u. The equivalence composes the abelian presentation comparison with the existing categorical dimension equivalence; it is not a computation of a Q-construction homotopy group. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

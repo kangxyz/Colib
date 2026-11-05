@@ -1,0 +1,11 @@
+[chapter]
+id = "category-theory"
+title = "Category theory"
+order = 5
+introduction = "Categorical foundations retain their chosen objects, universal properties and admissible maps. Exact structures supply the conflations used by algebraic K-theory without requiring an ambient abelian category."
+
+[[sections]]
+id = "exact-categories"
+title = "Exact categories"
+order = 10
+introduction = "A chosen class of kernel-cokernel pairs determines an exact structure. Its admissible maps satisfy the Quillen axioms and the mixed pullback theorem. Abelian categories provide the canonical example using all short exact sequences."

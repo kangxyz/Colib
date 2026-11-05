@@ -2,7 +2,13 @@ module  -- shake: keep-all --deprecated_module: ignore
 
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
+public import Colib.CategoryTheory.ExactCategory.Abelian
+public import Colib.CategoryTheory.ExactCategory.AdditiveInvariant
+public import Colib.CategoryTheory.ExactCategory.Basic
+public import Colib.KTheory.GrothendieckGroup.Abelian
+public import Colib.KTheory.GrothendieckGroup.Basic
 public import Colib.KTheory.GrothendieckGroup.Field
+public import Colib.KTheory.GrothendieckGroup.FieldExact
 public import Colib.KTheory.MilnorK.DegreeTwo
 public import Colib.KTheory.MilnorK.Symbols.Basic
 public import Colib.KTheory.MilnorK.Symbols.Relations

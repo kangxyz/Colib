@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0019"
+title = "The abelian exact K₀ comparison"
+kind = "comparison"
+section = "grothendieck-groups"
+order = 60
+statement = "The algebraic K₀ of the canonical abelian exact structure is additively equivalent to the pinned Stacks categorical Grothendieck group, preserving object generators in both directions."
+scope = "An abelian category with its canonical all-short-exact-sequence structure. This compares two algebraic presentations, not homotopy-theoretic K-theory. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

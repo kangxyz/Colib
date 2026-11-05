@@ -28,15 +28,17 @@ class LibraryTests(unittest.TestCase):
             "citations": [],
             "stacks": [],
             "declarations": [],
-            "modules": [
-                {"name": "Colib.KTheory.GrothendieckGroup.Field", "imports": []}
-            ],
+            "modules": [],
         }
         module_names = {
+            "exact-categories": "Colib.CategoryTheory.ExactCategory.Basic",
             "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
-            "finite-algebra-coefficients": "Colib.AlgebraicGeometry.Cycles.FiniteAlgebra",
+            "finite-algebra-coefficients": "Colib.RingTheory.Length.FiniteAlgebra",
         }
+        native["modules"] = [
+            {"name": name, "imports": []} for name in sorted(set(module_names.values()))
+        ]
         for identifier in self.library["entries"]:
             name = "CategoryTheory.example_" + identifier.removeprefix("COL-")
             native["bindings"].append({"name": name, "id": identifier})
@@ -68,6 +70,24 @@ class LibraryTests(unittest.TestCase):
         )
         self.assertEqual(
             self.library["entries"]["COL-0004"]["section"], "grothendieck-groups"
+        )
+
+    def test_exact_foundations_and_k0_ids_keep_their_owners(self):
+        for index in range(15, 18):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"],
+                "exact-categories",
+            )
+        for index in range(18, 21):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"],
+                "grothendieck-groups",
+            )
+        native = self.native_fixture()
+        result = catalog.compile_library(self.library, native, {}, "main")
+        self.assertEqual(
+            result["sections"]["exact-categories"]["modules"],
+            ["Colib.CategoryTheory.ExactCategory.Basic"],
         )
 
     def test_unknown_reference_is_rejected(self):

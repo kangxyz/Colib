@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0016"
+title = "Mixed pullbacks of admissible maps"
+kind = "proposition"
+section = "exact-categories"
+order = 20
+statement = "In an exact category, pulling an admissible monomorphism back along an admissible epimorphism gives an admissible monomorphism."
+scope = "The specified pullback square and its actual projection maps. This is derived from the exact-structure axioms, not assumed as a new axiom. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

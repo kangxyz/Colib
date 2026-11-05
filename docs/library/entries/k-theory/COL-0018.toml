@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0018"
+title = "Algebraic K₀ of an exact structure"
+kind = "definition"
+section = "grothendieck-groups"
+order = 50
+statement = "The free abelian group on objects modulo conflation relations represents conflation-additive functions into abelian groups."
+scope = "The selected exact structure and Lean object universes are retained. Isomorphic objects have equal classes as a consequence. No identification with a homotopy group of the Quillen Q-construction is claimed. Source correspondence was checked against the cited clauses on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

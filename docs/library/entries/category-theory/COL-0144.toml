@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0144"
+title = "Waldhausen structures and exact functors"
+kind = "definition"
+section = "waldhausen-categories"
+order = 1420
+statement = "A specified zero object, cofibrations and weak equivalences satisfy the Waldhausen axioms; exact functors preserve zero objects and admissible pushouts and are closed under identity, composition and natural isomorphism."
+scope = "Zero preservation is not strict preservation of the specified object. Saturation and extension are not required. Natural-isomorphism invariance of exactness does not assert an induced homotopy. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

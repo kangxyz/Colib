@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0147"
+title = "Filtered colimits commute with module homology"
+kind = "theorem"
+section = "homology-colimits"
+order = 1450
+statement = "Module categories satisfy AB5, and homology of arbitrary complex shape commutes with filtered colimits through the canonical comparison isomorphism and its component formulas."
+scope = "The ring may be noncommutative. Both object and morphism universes of the filtered index category are bounded by the module universe via UnivLE. The ring universe is independent. The inverse is the actual colimit.post map. The directed-set commutative-module statement in 00DB is generalized; 04B0 supplies the abelian-group exactness ingredient. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

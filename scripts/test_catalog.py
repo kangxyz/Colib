@@ -31,6 +31,9 @@ class LibraryTests(unittest.TestCase):
             "modules": [],
         }
         module_names = {
+            "waldhausen-categories": "Colib.CategoryTheory.Waldhausen.Basic",
+            "homology-colimits": "Colib.Algebra.Category.ModuleCat.FilteredColimits",
+            "affine-open-pairs": "Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Functor",
             "ext-scalars": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
             "projective-dimension": "Colib.RingTheory.Koszul.Ext",
             "koszul-coefficients": "Colib.RingTheory.Koszul.Coefficients",
@@ -72,6 +75,18 @@ class LibraryTests(unittest.TestCase):
                 }
             )
         return native
+
+    def test_three_route_chains_keep_grouped_owners(self):
+        for identifier, section in (
+            ("COL-0144", "waldhausen-categories"),
+            ("COL-0145", "waldhausen-categories"),
+            ("COL-0146", "waldhausen-categories"),
+            ("COL-0147", "homology-colimits"),
+            ("COL-0148", "homology-colimits"),
+            ("COL-0149", "affine-open-pairs"),
+        ):
+            self.assertEqual(self.library["entries"][identifier]["section"], section)
+        catalog.compile_library(self.library, self.native_fixture(), {}, "main")
 
     def test_nerve_cylinder_and_finite_simplex_ids_keep_their_owners(self):
         for identifier, section in (

@@ -21,3 +21,9 @@ id = "ext-scalars"
 title = "Scalar actions on Ext"
 order = 20
 introduction = "Native Yoneda composition determines scalar actions on Ext. Explicit quotient actions preserve the original ring action and record the actual source multiplication maps."
+
+[[sections]]
+id = "homology-colimits"
+title = "Homology and exact colimits"
+order = 30
+introduction = "Canonical comparisons identify module homology across filtered colimits and coproducts with explicit universe bounds."

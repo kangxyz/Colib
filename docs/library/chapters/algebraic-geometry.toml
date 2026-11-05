@@ -1,0 +1,11 @@
+[chapter]
+id = "algebraic-geometry"
+title = "Algebraic geometry"
+order = 40
+introduction = "Scheme constructions retain their actual morphisms and geometric hypotheses."
+
+[[sections]]
+id = "affine-open-pairs"
+title = "Affine open pairs"
+order = 10
+introduction = "Chosen pullbacks retain the coefficient functor and quasi-compactness over affine bases."

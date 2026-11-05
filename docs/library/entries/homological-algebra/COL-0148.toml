@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0148"
+title = "Coproduct homology and coproducts of quasi-isomorphisms"
+kind = "theorem"
+section = "homology-colimits"
+order = 1460
+statement = "Homology commutes with coproducts of module complexes, naturally in families of chain maps, and coproducts of quasi-isomorphisms are quasi-isomorphisms."
+scope = "The coproduct index lies in the module universe, the ring may be noncommutative and the complex shape is arbitrary. The inverse comparison is sigmaComparison, with actual coproduct-inclusion formulas. No derived-category equivalence is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

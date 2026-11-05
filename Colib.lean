@@ -1,5 +1,7 @@
 module  -- shake: keep-all --deprecated_module: ignore
 
+public import Colib.Algebra.Category.ModuleCat.CoproductHomology
+public import Colib.Algebra.Category.ModuleCat.FilteredColimits
 public import Colib.Algebra.Homology.DerivedCategory.Ext.Quotient
 public import Colib.Algebra.Homology.DerivedCategory.Ext.Regular
 public import Colib.Algebra.Homology.DerivedCategory.SingleCocycle
@@ -9,6 +11,9 @@ public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIsoCriterion
 public import Colib.Algebra.Module.LocalizedModule.IdealQuotient
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
+public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.AffineBaseChange
+public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Compactness
+public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Functor
 public import Colib.CategoryTheory.Abelian.Projective.Connecting
 public import Colib.CategoryTheory.Abelian.Projective.ConnectingTransport
 public import Colib.CategoryTheory.Abelian.Projective.Ext
@@ -42,6 +47,13 @@ public import Colib.CategoryTheory.QConstruction.Isomorphisms
 public import Colib.CategoryTheory.QConstruction.ObjectClass
 public import Colib.CategoryTheory.QConstruction.ObjectClassFunctoriality
 public import Colib.CategoryTheory.QConstruction.ZeroEndomorphisms
+public import Colib.CategoryTheory.Waldhausen.Basic
+public import Colib.CategoryTheory.Waldhausen.CofibrationClosedSubcategory
+public import Colib.CategoryTheory.Waldhausen.EquivalenceStructure
+public import Colib.CategoryTheory.Waldhausen.ExactFunctor
+public import Colib.CategoryTheory.Waldhausen.ExactFunctorIso
+public import Colib.CategoryTheory.Waldhausen.SConstruction
+public import Colib.CategoryTheory.Waldhausen.SMap
 public import Colib.KTheory.GrothendieckComparison.ObjectLoops
 public import Colib.KTheory.GrothendieckGroup.Abelian
 public import Colib.KTheory.GrothendieckGroup.AbelianNaturality

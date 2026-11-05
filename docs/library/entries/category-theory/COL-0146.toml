@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0146"
+title = "Unnormalized diagonal S-construction and functoriality"
+kind = "definition"
+section = "waldhausen-categories"
+order = 1440
+statement = "Grid diagrams with zero diagonal objects, cofibration rows, pushout squares and weak-equivalence transitions form a simplicial set; exact postcomposition preserves these diagrams and satisfies identity and composition."
+scope = "Diagonal objects need only be zero, not equal to the specified zero object. This is an unnormalized model, not an identification with the strict original S-construction. Arbitrary predicates define the simplicial set; no weak-equivalence-subcategory nerve identification is proved. Maps retain the same-universe assumptions. No K-theory or homotopy comparison is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

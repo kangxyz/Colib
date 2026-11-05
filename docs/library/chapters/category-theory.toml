@@ -27,3 +27,9 @@ id = "functor-constructions"
 title = "Functor constructions"
 order = 40
 introduction = "Specified object isomorphisms can replace selected functor values while retaining an explicit natural-isomorphism comparison."
+
+[[sections]]
+id = "waldhausen-categories"
+title = "Waldhausen categories"
+order = 50
+introduction = "Structures and exact functors support inheritance, transport and an explicitly unnormalized diagonal S-construction."

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0149"
+title = "Affine-base-change functor and quasi-compact fibers"
+kind = "theorem"
+section = "affine-open-pairs"
+order = 1470
+statement = "A fixed open immersion into an affine scheme gives a contravariant coefficient-base-change functor with its actual pullback projections and inclusion transformation; compact sources give compact pullbacks over affine coefficient schemes."
+scope = "The functor retains chosen pullbacks and an identity projection isomorphism, not equality of independently chosen objects. The inclusion transformation points from the ambient functor to the open functor in the opposite category. The compactness theorem requires only CompactSpace U and any map U to Spec R, not IsOpenImmersion. Compact means quasi-compact, without a Hausdorff assumption. No affineness of the pulled-back open is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

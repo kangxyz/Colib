@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0145"
+title = "Inheritance and transport of Waldhausen structures"
+kind = "proposition"
+section = "waldhausen-categories"
+order = 1430
+statement = "Cofibration-closed full subcategories inherit a Waldhausen structure with exact inclusion; equivalences transport structures with exact functors in both directions."
+scope = "The subcategory hypothesis contains every ambient pushout apex of the specified kind. Transport retains an explicit object z and a proof that its image is zero. Two-out-of-three is inherited only when assumed in the ambient category. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -134,3 +134,13 @@ label = "Pushouts and Adjunction Spaces, Revision D"
 locator_prefix = "Proposition"
 url = "https://math.jhu.edu/~jmb/note/pushout.pdf"
 sha256 = "e53e2280fc34f080208788061904e9c9235332149e1848845049f0e8aadffdc0"
+
+[sources.Waldhausen1985]
+kind = "article"
+title = "Algebraic K-theory of spaces"
+authors = ["Friedhelm Waldhausen"]
+year = 1985
+volume = "1126"
+pages = "318-419"
+version = "Published LNM article, sections 1.1-1.3 inspected 2026-11-05"
+url = "https://www.math.uni-bielefeld.de/~fw/LNM1126_318-419.pdf"

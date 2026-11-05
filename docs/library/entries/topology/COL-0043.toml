@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0043"
+title = "Based classifying spaces of categories"
+kind = "definition"
+section = "classifying-spaces"
+order = 10
+statement = "The classifying space of a category is the geometric realization of its nerve. An object determines a zero-simplex and an actual point of that space."
+scope = "Independent object and hom universes are realized in TopCat at their maximum. The point is the image of the realized standard zero-simplex under the vertex map. The supporting functor map currently uses common source and target universe parameters. Supporting shifted homotopy groups are genuine based homotopy groups, with group structure in every shifted degree and commutativity only in positive shifted degree. No arbitrary category is identified with Quillen K-theory. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

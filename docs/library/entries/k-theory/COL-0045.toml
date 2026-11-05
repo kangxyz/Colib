@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0045"
+title = "Quillen K-groups of an exact category"
+kind = "definition"
+section = "quillen-k-theory"
+order = 10
+statement = "For a chosen exact structure E, its nonnegative Quillen K-group in degree n is the (n + 1)st homotopy group of the realized nerve of Q(E), based at the vertex represented by the original zero object."
+scope = "A preadditive category with finite biproducts and independent object and hom universes, equipped with a selected exact structure. E.KSpace is BQ(E), not the loop space called KA in Weibel Definition 6.3. The basepoint is the actual realized zero vertex, not a claimed zero object of Q. Positive K-degrees inherit higher-homotopy commutativity; K-zero commutativity and the Grothendieck-group comparison remain separate. No small-skeleton or zero-object-choice independence, loop-space equivalence, or deeper K-theory theorem is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

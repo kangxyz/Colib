@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0044"
+title = "Shifted homotopy groups of restricted-span categories"
+kind = "definition"
+section = "restricted-spans"
+order = 30
+statement = "A restricted-span category with a chosen original object determines the (n + 1)st homotopy group of its realized nerve at the corresponding vertex, for every nonnegative n."
+scope = "Both leg properties contain identities and are closed under composition; mixed pullbacks exist and both mutual base-change stability hypotheses hold. The distinguished object is arbitrary despite the parameter name zero. No exact structure or zero-object property is assumed. These are groups in every shifted degree and commutative groups in positive shifted degree; degree-zero commutativity and a Grothendieck-group comparison are not asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

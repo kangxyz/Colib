@@ -17,6 +17,7 @@ public import Colib.CategoryTheory.ExactCategory.QCategory
 public import Colib.CategoryTheory.QConstruction.Basic
 public import Colib.CategoryTheory.QConstruction.Connected
 public import Colib.CategoryTheory.QConstruction.Functor
+public import Colib.CategoryTheory.QConstruction.HomotopyGroup
 public import Colib.CategoryTheory.QConstruction.ZeroEndomorphisms
 public import Colib.KTheory.GrothendieckGroup.Abelian
 public import Colib.KTheory.GrothendieckGroup.AbelianNaturality
@@ -34,6 +35,7 @@ public import Colib.KTheory.MilnorK.Symbols.Ext
 public import Colib.KTheory.MilnorK.Symbols.Product
 public import Colib.KTheory.MilnorK.Symbols.Relations
 public import Colib.KTheory.MilnorK.Symbols.SymbolMap
+public import Colib.KTheory.Quillen.Basic
 public import Colib.Library.Upstream
 public import Colib.LinearAlgebra.TensorAlgebra.HomogeneousLift
 public import Colib.LinearAlgebra.TensorAlgebra.IdealVanishing
@@ -41,4 +43,5 @@ public import Colib.RingTheory.Koszul.Coefficients
 public import Colib.RingTheory.Koszul.Ext
 public import Colib.RingTheory.Koszul.PrincipalExt
 public import Colib.RingTheory.Length.FiniteAlgebra
+public import Colib.Topology.ClassifyingSpace.Basic
 public import Colib.Util.References

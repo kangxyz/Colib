@@ -15,3 +15,9 @@ id = "milnor-k-theory"
 title = "Milnor K-theory"
 order = 20
 introduction = "The canonical graded object is the Steinberg quotient of the tensor algebra on the multiplicative group of a field. We first construct its homogeneous groups, then compare the degree-two component with the ordered-pair presentation. Ordered tuple symbols then expose coordinate additivity and adjacent Steinberg and sign identities directly on those homogeneous groups. The literature references identify the defining relations and the scope of each comparison."
+
+[[sections]]
+id = "quillen-k-theory"
+title = "Quillen K-theory"
+order = 30
+introduction = "Quillen K-groups are the shifted homotopy groups of the realized Q-category, based at the original zero vertex. The Q-classifying space BQ is distinguished from its loop space. Comparisons with algebraic K-zero and deeper structural theorems require separate results."

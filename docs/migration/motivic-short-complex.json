@@ -26,9 +26,9 @@
         "ShortComplex.QuasiIso"
       ],
       "actual_source_consumer": "Aglib.Algebra.Homology.Koszul.Single.Tensor.Quotient.tensorAugmentation_quasiIso_of_regular",
-      "correspondence_scope": "Same statement, universe parameters, hypotheses, conclusion and proof as fixed Aglib source; module documentation adds provenance. No weakening or Koszul construction.",
+      "correspondence_scope": "Same statement, universes, hypotheses and conclusion as the fixed Aglib source. The proof is now a short corollary of the general modulo-boundary iff in ModuleQuasiIsoCriterion; the repeated homology proof was removed.",
       "library_item": "Supporting lower primitive; no independent Library ID allocated by the integrator.",
-      "validation": {
+      "historical_validation": {
         "source_comparison": "author_checked",
         "lean_compilation": "passed",
         "independent_review": {
@@ -89,6 +89,53 @@
           "notes": "Existing pinned Stacks MilnorKTheory show-tactic style warnings were replayed; no changed-source warning or failure. Initial invocation without the existing activation environment failed on the default read-only Lake cache path; corrected using the existing activate.sh before the complete successful check. Kernel replay and downstream client checks were not run.",
           "check_log_sha256": "6348fe545c66b916f15f35b92dc54de16dd70c599388adf8b74a4c20e54f3330"
         }
+      },
+      "validation": {
+        "state": "completed",
+        "command": [
+          "bash",
+          "-c",
+          "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-criterion-3eae8e1-20261105-1309",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 6650998784,
+        "duration_seconds": 52.344334425986744,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "bash",
+            "command_path": "bash"
+          }
+        ],
+        "baseline": "3eae8e16dff525f9f42c9dba48bc9683c02d7f83",
+        "receipt": "/tmp/colib-criterion-check-receipt.json",
+        "receipt_sha256": "d625427ce044002eab2024c9a30fbbcf18ae01418076d134b46db946b5964f1c",
+        "log": "/tmp/colib-criterion-check.log",
+        "log_sha256": "10a2718cc3f74af8f76be2d6e13dfccea6bd2862abcaf1dee80501b010837ef8",
+        "kernel_replay": false,
+        "hashes": {
+          "Colib/Algebra/Homology/ShortComplex/ModuleQuasiIso.lean": "387cb64402e4de54cda069b4b5f1044c9154b2feb5542897e44434c669a1a9f8",
+          ".lake/build/lib/lean/Colib/Algebra/Homology/ShortComplex/ModuleQuasiIso.olean": "ae595ed1d7fe203eaa6195f10906aa79b08b5fb91cb79896e3bb0d0a2c6065ac",
+          "Colib/Algebra/Homology/ShortComplex/ModuleQuasiIsoCriterion.lean": "154a21393ac6afc07309c0306934a5a78e74393ec34489c0338f8eba6564d4e5",
+          ".lake/build/lib/lean/Colib/Algebra/Homology/ShortComplex/ModuleQuasiIsoCriterion.olean": "d3cfa0dc7ba44b427e7419bacb2e97a26dfa382ed87c258903aa783f1cae4bde",
+          "ColibTest/ModuleQuasiIsoCriterion.lean": "fd018995fee89c8a8a75dbe52db919f03a4d44f3de7156e6fa7efb419960720b",
+          ".lake/build/lib/lean/ColibTest/ModuleQuasiIsoCriterion.olean": "e5303ec4629034dc95d39f72fb9b09cf91e6d08c4905a1e610ab71020fa4aeea"
+        },
+        "independent_review": "Read-only reviewer confirmed the dependency reversal and unchanged original public API in this integration tree; no reviewer compilation."
       }
     }
   ],
@@ -152,5 +199,6 @@
     ],
     "search_scope": "Pinned local StacksCore, StacksFrontier and Mathlib trees searched for lifting/reflecting cycles/boundaries and quasi-isomorphism criteria; inspected exact ModuleCat, ConcreteCategory, QuasiIso, Ab, LimitQuasiIso, Eta.Derived, DoubleQuasiIso sources. A second whole-Mathlib search checked quasiIso/QuasiIso alongside cycle, boundary, bijective, surjective and injective. No public elementwise replacement with the source assumptions was found.",
     "conclusion": "Native homology infrastructure is reused in full. The increment is only a public minimal lower-owner sufficient criterion, already private in more general forms upstream. This is not claimed as new mathematics."
-  }
+  },
+  "proof_owner": "ModuleQuasiIsoCriterion directly imports Mathlib and owns the sole general homology proof; ModuleQuasiIso imports it and preserves the old API as a short corollary."
 }

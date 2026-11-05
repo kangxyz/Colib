@@ -453,3 +453,12 @@ The quotient-source action belongs to Colib and uses Mathlib's annihilated-modul
 construction. No coefficient regularity or finiteness is required. The empty
 sequence and comparison with old named Aglib classes remain pending. See
 `migration/motivic-top-ext-coefficients.json` for the precise evidence.
+
+### Module quasi-isomorphism criterion
+
+The lower module criterion now characterizes quasi-isomorphisms by reflecting
+boundaries and lifting cycles modulo boundaries, for noncommutative rings and
+independent module universes. The old exact-lifting API is a short corollary of
+this single proof. Equivalent private higher-level Stacks helpers are recorded
+in `migration/motivic-short-complex-criterion.json`; no new mathematics or
+additional source-model comparison is claimed.

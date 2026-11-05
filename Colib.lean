@@ -6,6 +6,7 @@ public import Colib.Algebra.Homology.DerivedCategory.SingleCocycle
 public import Colib.Algebra.Homology.HomotopyCategory.MappingCone
 public import Colib.Algebra.Homology.HomotopyCategory.SingleConeLift
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
+public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIsoCriterion
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
 public import Colib.CategoryTheory.Abelian.Projective.Connecting
 public import Colib.CategoryTheory.Abelian.Projective.ConnectingTransport

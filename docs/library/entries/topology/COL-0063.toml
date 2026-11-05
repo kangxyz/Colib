@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0063"
+title = "Topological cylinders preserve colimits"
+kind = "proposition"
+section = "geometric-realization"
+order = 50
+statement = "Product on the right with a locally compact space is left adjoint to its compact-open mapping-space functor. Consequently product with the actual topological unit interval preserves existing colimits of arbitrary specified object and morphism universe sizes."
+scope = "All spaces in the adjunction lie in a common TopCat universe. The general adjunction requires Mathlib LocallyCompactSpace but no Hausdorff instance; Munkres Theorems 46.10-46.11 require locally compact Hausdorff spaces and are cited only as background. Stacks 0038(1) supplies the left-adjoint preservation principle, not the compact-open construction. Preservation does not assert existence of colimits of every size or preservation of products by geometric realization. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -86,3 +86,11 @@ label = "Chapter 4, Homotopy Theory"
 locator_prefix = "Section 4.1,"
 url = "https://pi.math.cornell.edu/~hatcher/AT/ATch4.pdf"
 sha256 = "2406a6d735efabec618e336e351066237f903b8c917a7ddc73034e80ba83b737"
+
+[sources.MunkresTopology]
+kind = "book"
+title = "Topology"
+authors = ["James R. Munkres"]
+year = 2000
+version = "Second edition, Theorems 46.10-46.11 inspected 2026-11-05"
+url = "https://math.ucr.edu/~res/math205B-2018/Munkres%20-%20Topology.pdf"

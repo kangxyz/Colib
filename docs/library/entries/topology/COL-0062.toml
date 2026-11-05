@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0062"
+title = "Simplex representatives of realization points"
+kind = "proposition"
+section = "geometric-realization"
+order = 40
+statement = "Every point in the actual realization of a simplicial set is the image of a point of a realized representable simplex under the realization of a simplex map."
+scope = "This adapts the general simplicial realization description to the pinned left Kan extension model and colimit inclusions. Only existence is asserted: the representative is not claimed unique, nondegenerate, or interior. No connectivity or exact-category hypothesis is imposed. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

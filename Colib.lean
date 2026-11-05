@@ -57,5 +57,10 @@ public import Colib.Topology.ClassifyingSpace.Map
 public import Colib.Topology.ClassifyingSpace.NerveHomotopy
 public import Colib.Topology.ClassifyingSpace.PointedFunctor
 public import Colib.Topology.Homotopy.HomotopyGroup.Map
+public import Colib.Topology.Realization.Basic
+public import Colib.Topology.Realization.Constant
+public import Colib.Topology.Realization.Cylinder
 public import Colib.Topology.Realization.FiniteSimplexAdapter
+public import Colib.Topology.Realization.Simplex
+public import Colib.Topology.Realization.SimplicialColimits
 public import Colib.Util.References

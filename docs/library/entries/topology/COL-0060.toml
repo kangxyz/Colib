@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0060"
+title = "Realized vertices and interval endpoints"
+kind = "definition"
+section = "geometric-realization"
+order = 20
+statement = "A vertex determines a point of the actual geometric realization. The realized standard interval has a continuous unit-interval parameter with zero equal to the image of delta 1 and one equal to the image of delta 0."
+scope = "The construction retains the chosen realization and its ULift interval convention at each simplicial-set universe. The citation is background for vertices and the standard interval, not a theorem about these exact APIs. No product comparison or realization-of-homotopies theorem is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

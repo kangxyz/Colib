@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0061"
+title = "Realization of constant simplicial maps"
+kind = "lemma"
+section = "geometric-realization"
+order = 30
+statement = "The realization of the literal constant simplicial map at a vertex is pointwise equal to the constant map at that realized vertex."
+scope = "Source and target simplicial sets share their universe. The proof factors the actual map through the point simplex. The cited functoriality and point-simplex facts are background, not an independently named constant-map theorem in the source. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

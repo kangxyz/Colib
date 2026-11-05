@@ -86,6 +86,16 @@ class LibraryTests(unittest.TestCase):
         for identifier in ("COL-0058", "COL-0059"):
             self.assertTrue(result["entries"][identifier]["references"])
 
+    def test_realization_prerequisite_ids_keep_their_owners(self):
+        for index in range(60, 65):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"],
+                "geometric-realization",
+            )
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in range(60, 65):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
     def test_initial_ids_keep_their_owners(self):
         self.assertTrue(
             {f"COL-{index:04d}" for index in range(1, 13)}

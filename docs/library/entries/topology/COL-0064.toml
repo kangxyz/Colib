@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0064"
+title = "Simplicial cylinders preserve colimits"
+kind = "proposition"
+section = "geometric-realization"
+order = 60
+statement = "Product on the left with a fixed simplicial set preserves colimits, as does product on the right with the standard simplicial interval. Shape-specific variants allow distinct diagram object and morphism universes when Type u has colimits of that shape."
+scope = "The arbitrary-shape statements retain HasColimitsOfShape J (Type u); the ordinary PreservesColimits instances do not remove this universe restriction. Pointwise presheaf colimits and the left-adjoint Type product principle are the cited ingredients, and braiding gives the right interval product. No comparison with topological cylinders, realization product theorem, or realization of simplicial homotopies is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

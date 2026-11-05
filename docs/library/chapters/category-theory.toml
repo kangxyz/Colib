@@ -21,3 +21,9 @@ id = "restricted-spans"
 title = "Restricted spans"
 order = 30
 introduction = "Restricted spans compose by mixed pullbacks and become ordinary morphisms after quotienting by apex isomorphisms. Admissible epimorphisms on the left and admissible monomorphisms on the right recover the shape of Quillen's Q-construction once an exact-category adapter supplies the hypotheses."
+
+[[sections]]
+id = "functor-constructions"
+title = "Functor constructions"
+order = 40
+introduction = "Specified object isomorphisms can replace selected functor values while retaining an explicit natural-isomorphism comparison."

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0054"
+title = "Pointed maps from a specified object isomorphism"
+kind = "definition"
+section = "classifying-spaces"
+order = 30
+statement = "A functor and a specified isomorphism of its chosen object image with a target object give a homomorphism between the shifted classifying-space homotopy groups at the prescribed vertices. The reflexively pointed identity induces the identity homomorphism."
+scope = "Source and target share object and hom universe parameters. The functor is explicitly rebased before realization to obtain a strictly pointed map. Literature supplies realization and pointed homotopy-map ingredients, not this rebasing algorithm. Independence of the specified isomorphism, composition of these pointed maps, and natural-isomorphism invariance are not proved in this item. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

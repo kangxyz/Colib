@@ -72,3 +72,17 @@ authors = ["Theo Bühler"]
 year = 2009
 version = "arXiv:0811.1480v2, revised 2009-04-22; inspected 2026-11-05"
 url = "https://arxiv.org/pdf/0811.1480v2"
+
+[sources.HatcherAT]
+kind = "book"
+title = "Algebraic Topology"
+authors = ["Allen Hatcher"]
+year = 2002
+version = "Author's online Chapter 4, Section 4.1 inspected 2026-11-05"
+url = "https://pi.math.cornell.edu/~hatcher/AT/ATch4.pdf"
+
+[[sources.HatcherAT.documents]]
+label = "Chapter 4, Homotopy Theory"
+locator_prefix = "Section 4.1,"
+url = "https://pi.math.cornell.edu/~hatcher/AT/ATch4.pdf"
+sha256 = "2406a6d735efabec618e336e351066237f903b8c917a7ddc73034e80ba83b737"

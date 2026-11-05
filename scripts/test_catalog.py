@@ -37,6 +37,8 @@ class LibraryTests(unittest.TestCase):
             "bicategories": "Colib.CategoryTheory.Bicategory.IsoQuotient",
             "restricted-spans": "Colib.CategoryTheory.QConstruction.Basic",
             "classifying-spaces": "Colib.Topology.ClassifyingSpace.Basic",
+            "functor-constructions": "Colib.CategoryTheory.Functor.Rebase",
+            "homotopy-groups": "Colib.Topology.Homotopy.HomotopyGroup.Map",
             "quillen-k-theory": "Colib.KTheory.Quillen.Basic",
             "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
@@ -172,6 +174,17 @@ class LibraryTests(unittest.TestCase):
             )
         result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
         for index in range(46, 51):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
+    def test_quillen_map_ids_keep_their_owners(self):
+        owners = {
+            51: "functor-constructions", 52: "homotopy-groups",
+            53: "classifying-spaces", 54: "classifying-spaces", 55: "quillen-k-theory",
+        }
+        for index, section in owners.items():
+            self.assertEqual(self.library["entries"][f"COL-{index:04d}"]["section"], section)
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in owners:
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
 
     def test_unknown_reference_is_rejected(self):

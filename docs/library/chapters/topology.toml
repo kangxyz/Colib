@@ -9,3 +9,9 @@ id = "classifying-spaces"
 title = "Classifying spaces"
 order = 10
 introduction = "The realized nerve of a category has a point for every object. Based homotopy groups provide the topological constructions later specialized to Quillen's Q-category."
+
+[[sections]]
+id = "homotopy-groups"
+title = "Homotopy groups"
+order = 20
+introduction = "Pointed continuous maps act on actual generalized-loop homotopy quotients. Their group homomorphisms retain the existing multiplication and degree conventions."

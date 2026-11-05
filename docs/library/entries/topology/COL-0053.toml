@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0053"
+title = "Functor maps on classifying-space homotopy groups"
+kind = "definition"
+section = "classifying-spaces"
+order = 20
+statement = "A functor induces a homomorphism on shifted homotopy groups of realized nerves, based at the chosen object and its image. These maps preserve identity and composition."
+scope = "Source and target share object and hom universe parameters. The continuous map is the realization of the actual nerve map, and the target basepoint is the actual image object. This does not supply arbitrary independently chosen target basepoints or rebased-map composition. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

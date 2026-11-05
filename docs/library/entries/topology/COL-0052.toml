@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0052"
+title = "Maps on based homotopy groups"
+kind = "definition"
+section = "homotopy-groups"
+order = 10
+statement = "Postcomposition by a pointed continuous map descends to homotopy quotients and gives homomorphisms on positive-dimensional homotopy groups, preserving identity and composition."
+scope = "Generalized loops may have an arbitrary indexing type N. The group-homomorphism construction requires DecidableEq N and Nonempty N; the general quotient map also covers the zeroth homotopy set. The piMap specialization uses degree n + 1. Multiplication is Mathlib's existing q-before-p convention, not asserted to match the printed concatenation convention verbatim. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

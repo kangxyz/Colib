@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0055"
+title = "Exact-functor maps on Quillen K-groups"
+kind = "definition"
+section = "quillen-k-theory"
+order = 20
+statement = "An exact functor induces a homomorphism on every nonnegative Quillen K-group at the chosen zero vertices. The identity exact functor induces the identity homomorphism."
+scope = "Chosen exact structures on preadditive categories with finite biproducts and common source and target object and hom universe parameters. The canonical mapZeroObject isomorphism is sent to its actual Q-isomorphism, and the Q-functor is explicitly rebased before acting on the actual (n + 1)st homotopy group. KMap composition and natural-isomorphism invariance are not proved here; no K-zero comparison or zero-object claim in Q is made. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

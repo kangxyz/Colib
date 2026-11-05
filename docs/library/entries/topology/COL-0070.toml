@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0070"
+title = "Realized homotopies and fixed vertices"
+kind = "proposition"
+section = "geometric-realization"
+order = 120
+statement = "A simplicial homotopy realizes to a continuous homotopy of its endpoint maps. If its restriction to a vertex cylinder is strictly constant, the realized homotopy fixes that point. Natural transformations similarly give homotopies of classifying-space maps, relative to the chosen vertex when their component is eqToHom of the specified equality of image objects."
+scope = "The simplicial source and target share a universe. The two categories use common object and hom universe parameters; the object parameter is independent of the hom parameter, and the realized nerves use their maximum. The relative result is an actual HomotopyRel on the singleton basepoint and requires the stated constant-cylinder equality, or both the object equality and component equality to eqToHom; equal image objects alone do not suffice. Weibel directly supplies the unbased natural-transformation construction and is background only for the fixed-vertex strengthening. Hatcher uses a Delta-complex description, cited only as background without a proved model comparison. No induced homotopy-group map invariance or KMap composition theorem is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

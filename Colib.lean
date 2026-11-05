@@ -60,7 +60,10 @@ public import Colib.Topology.Homotopy.HomotopyGroup.Map
 public import Colib.Topology.Realization.Basic
 public import Colib.Topology.Realization.Constant
 public import Colib.Topology.Realization.Cylinder
+public import Colib.Topology.Realization.CylinderEndpoints
+public import Colib.Topology.Realization.CylinderIso
 public import Colib.Topology.Realization.FiniteSimplexAdapter
+public import Colib.Topology.Realization.HomotopyBridge
 public import Colib.Topology.Realization.Prism
 public import Colib.Topology.Realization.PrismCoordinates
 public import Colib.Topology.Realization.PrismGluing

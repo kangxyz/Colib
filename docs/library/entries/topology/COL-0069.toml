@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0069"
+title = "Endpoints of the realization cylinder comparison"
+kind = "proposition"
+section = "geometric-realization"
+order = 110
+statement = "Realizing each of the two simplicial endpoint inclusions and then applying the canonical cylinder comparison equals the corresponding topological endpoint inclusion."
+scope = "These are exact map equalities for arbitrary simplicial sets, with zero and one in the stated order and the actual lifted TopCat.I interval. The standard-interval literature is background for the implemented identities, not an attribution of their exact API formulation. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

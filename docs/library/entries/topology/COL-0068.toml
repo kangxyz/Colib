@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0068"
+title = "Canonical realization cylinder isomorphism"
+kind = "theorem"
+section = "geometric-realization"
+order = 100
+statement = "For every simplicial set, its canonical continuous comparison from the realized simplicial interval cylinder to the actual topological interval cylinder is an isomorphism in TopCat. Its components form the natural comparison transformation."
+scope = "The second factor is specifically the standard simplicial interval, identified with TopCat.I at the same universe. The proof extends the finite standard-prism comparison through the actual colimit of representables. Hatcher supplies the finite prism ingredient; Weibel discusses products of classifying spaces with compactly generated topology and is background only. This does not prove preservation of arbitrary binary products in ordinary TopCat. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

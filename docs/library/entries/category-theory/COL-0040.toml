@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0040"
+title = "Uniqueness of Q-morphisms with zero target"
+kind = "lemma"
+section = "exact-categories"
+order = 110
+statement = "A Q-hom set whose target represents a zero object of the original category is a subsingleton. In particular, every endomorphism of the distinguished zero vertex equals its identity."
+scope = "A chosen exact structure on a preadditive category with finite biproducts and independent object and hom universes. The right admissible monomorphism into the original zero object forces each span apex to be zero, giving uniqueness modulo apex isomorphism. This is a derived consequence of the cited span description, not a separately numbered literature theorem. Existence of arrows from arbitrary sources to that vertex is not asserted. The distinguished vertex is not claimed to be initial, terminal or a zero object in Q. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

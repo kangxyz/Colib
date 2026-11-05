@@ -144,6 +144,16 @@ class LibraryTests(unittest.TestCase):
         for identifier in ("COL-0036", "COL-0037"):
             self.assertTrue(result["entries"][identifier]["references"])
 
+    def test_q_connectedness_ids_keep_their_owners(self):
+        for index in (38, 39, 40):
+            self.assertEqual(
+                self.library["entries"][f"COL-{index:04d}"]["section"],
+                "exact-categories",
+            )
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in (38, 39, 40):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
     def test_unknown_reference_is_rejected(self):
         native = self.native_fixture()
         native["citations"][0]["source"] = "missing"

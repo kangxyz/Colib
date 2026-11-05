@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0039"
+title = "Connectedness of the Q-category"
+kind = "proposition"
+section = "exact-categories"
+order = 100
+statement = "The Q-category is nonempty and connected: the vertex represented by the original zero object has a chosen arrow to every object, giving zigzags through that vertex."
+scope = "A chosen exact structure on a preadditive category with finite biproducts and independent object and hom universes. This is categorical connectedness, not a theorem about a geometric realization or its fundamental group. The chosen arrow is represented by the identity/zero span. Its existence does not assert uniqueness; the distinguished vertex is not claimed to be initial, terminal or a zero object in Q, and contractibility is not asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

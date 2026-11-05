@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0038"
+title = "The Q-category of an exact structure"
+kind = "definition"
+section = "exact-categories"
+order = 90
+statement = "The admissible epimorphisms and admissible monomorphisms of a selected exact structure define its Q-category, with arrows given by restricted spans modulo apex isomorphism."
+scope = "A chosen exact structure on a preadditive category with finite biproducts and independent object and hom universes. The left leg is an admissible epimorphism and the right leg an admissible monomorphism. This specializes the restricted-span construction using the exact-structure axioms; no nerve, classifying space, homotopy group or higher K-group is constructed. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0198"
+title = "Exact uniformizer norm coefficient in residue degree one"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 120
+statement = "In residue degree one, the integral norm of the original extension uniformizer equals the base uniformizer times an actual base unit. Its residue is (-1) to the exponent minus one times the inverse residue-field norm of the ramification unit."
+scope = "Finite torsion-free local DVR extension, henselian target and invertible uniformizer exponent, with specified compatible finite-dimensional fraction fields and the actual integral-closure presentation. No perfectness or cancellation of residue powers is used."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0195"
+title = "Principal-unit roots and henselian uniformizer normalization"
+kind = "theorem"
+section = "henselian-ramification"
+order = 10
+statement = "Positive invertible exponents give roots with residue one in a henselian local ring. A surjective actual residue map then writes each extension unit as a base unit times a principal-unit power and adjusts an actual uniformizer equation."
+scope = "The extension ring is henselian; the exponent is explicitly positive and invertible there. Residue degree one supplies surjectivity of the actual residue map. No domain, characteristic-zero or monogenic-basis premise is imposed on the principal-root theorem."
+review = "author_checked"

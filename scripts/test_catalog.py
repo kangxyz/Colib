@@ -118,6 +118,29 @@ class LibraryTests(unittest.TestCase):
             for module in ("ColibTest.FractionBranches", "ColibTest.DVRResidueNorm"):
                 self.assertIn(module, (root / path).read_text())
 
+    def test_uniformizer_norm_complete_chain_registration(self):
+        root = catalog.ROOT
+        modules = {
+            "COL-0195": "Colib.RingTheory.Henselian.UniformizerNormalization",
+            "COL-0196": "Colib.RingTheory.DiscreteValuationRing.RamificationDegree",
+            "COL-0197": "Colib.RingTheory.Norm.UniformizerBinomial",
+            "COL-0198": "Colib.RingTheory.Norm.DVRUniformizer",
+            "COL-0199": "Colib.RingTheory.Norm.DVRPrimeUniformizer",
+        }
+        for identifier, module in modules.items():
+            section = ("henselian-ramification" if identifier < "COL-0197"
+                       else "finite-algebra-coefficients")
+            self.assertEqual(self.library["entries"][identifier]["section"], section)
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            for test in ("HenselianPrincipalRoots", "HenselianUniformizerNormalization",
+                         "DVRRamificationDegree", "DVRUniformizerBinomial",
+                         "DVRUniformizerNorm", "DVRPrimeUniformizerNorm"):
+                self.assertIn("ColibTest." + test, (root / path).read_text())
+        self.assertIn("ordinary norm-order", self.library["entries"]["COL-0199"]["scope"])
+
     def native_fixture(self):
         native = {
             "bindings": [],
@@ -147,6 +170,7 @@ class LibraryTests(unittest.TestCase):
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
             "adic-completion": "Colib.RingTheory.AdicCompletion.FiniteAlgebra",
             "principal-euler": "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic",
+            "henselian-ramification": "Colib.RingTheory.Henselian.UniformizerNormalization",
             "finite-algebra-coefficients": "Colib.RingTheory.Length.FiniteAlgebra",
         }
         native["modules"] = [

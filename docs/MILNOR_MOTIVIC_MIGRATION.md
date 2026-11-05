@@ -649,3 +649,17 @@ separability, completeness or characteristic-zero restriction. This milestone
 does not claim a Milnor norm, transfer or norm-residue-symbol comparison.
 See migration/motivic-fraction-residue.json for provenance, precise scope and
 component versus registered-tree validation.
+
+### Henselian uniformizers and exact prime-degree norm coefficients
+
+COL-0195--COL-0199 complete the principal-unit Hensel root, actual uniformizer
+normalization, native DVR degree formula and exact norm-coefficient chain.
+The fundamental identity proves the actual field degree equals the supplied
+uniformizer exponent times residue degree, without perfectness or a norm-order
+model. Eisenstein binomials determine the exact determinant sign; residue-one
+adjustment and the existing unit-norm formula recover the original uniformizer
+coefficient. The prime-degree theorem keeps its henselian target, invertible
+exponent, actual integral-closure and compatible finite-dimensional field data.
+The exponent-one case needs neither henselianity nor primality. No ordinary
+norm-order, Milnor transfer or norm-residue-symbol theorem is claimed.
+See migration/motivic-uniformizer-norm.json for precise scope and provenance.

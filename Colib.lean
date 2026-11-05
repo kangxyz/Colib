@@ -159,6 +159,9 @@ public import Colib.RingTheory.AdicCompletion.FiniteDedekindBranches
 public import Colib.RingTheory.AdicCompletion.FractionBranches
 public import Colib.RingTheory.AdicCompletion.OriginalBranch
 public import Colib.RingTheory.AdicCompletion.SemilocalBranches
+public import Colib.RingTheory.DiscreteValuationRing.RamificationDegree
+public import Colib.RingTheory.Henselian.PrincipalRoots
+public import Colib.RingTheory.Henselian.UniformizerNormalization
 public import Colib.RingTheory.Koszul.CoefficientAugmentation
 public import Colib.RingTheory.Koszul.CoefficientFunctor
 public import Colib.RingTheory.Koszul.CoefficientRegularity
@@ -191,9 +194,12 @@ public import Colib.RingTheory.Multiplicity.PrincipalEuler.Associativity
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Basic
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Filtration
 public import Colib.RingTheory.Multiplicity.PrincipalEuler.Support
+public import Colib.RingTheory.Norm.DVRPrimeUniformizer
 public import Colib.RingTheory.Norm.DVRResidue
+public import Colib.RingTheory.Norm.DVRUniformizer
 public import Colib.RingTheory.Norm.FiniteAlgebra
 public import Colib.RingTheory.Norm.PolynomialFiber
+public import Colib.RingTheory.Norm.UniformizerBinomial
 public import Colib.Topology.Category.TopCat.PushoutInteriors
 public import Colib.Topology.Category.TopCat.Pushouts
 public import Colib.Topology.Category.TopCat.SequentialColimit.Compact

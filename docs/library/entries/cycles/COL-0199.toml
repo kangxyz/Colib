@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0199"
+title = "Exact prime-degree uniformizer norm coefficient"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 130
+statement = "In prime fraction-field degree, the original uniformizer norm is the base uniformizer to the residue degree times an actual base unit. The unit residue is (-1)^(f*(e-1)) times the inverse residue-field norm of the original ramification unit, where f is the residue degree and e is the supplied uniformizer exponent."
+scope = "Finite torsion-free local DVR extension with compatible finite-dimensional fraction fields and integral-closure presentation. The prime-degree conclusion assumes a henselian target and invertible exponent. The exponent-one branch needs neither henselianity nor primality. No ordinary norm-order, Milnor-transfer or norm-residue-symbol theorem is claimed."
+review = "author_checked"

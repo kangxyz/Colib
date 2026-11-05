@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0197"
+title = "Uniformizer binomials and their exact signed norm"
+kind = "theorem"
+section = "finite-algebra-coefficients"
+order = 110
+statement = "A positive-degree uniformizer binomial is Eisenstein and irreducible over the specified fraction field, hence is the minimal polynomial of any actual root. When the actual extension degree equals its degree, that root is primitive and its norm is the uniformizer times (-1) to the exponent minus one."
+scope = "Arbitrary positive exponent, including inseparable binomials. Finite-dimensionality and degree equality are needed for the primitive-root and norm conclusions. No integral power basis, henselianity or residue-characteristic assumption."
+review = "author_checked"

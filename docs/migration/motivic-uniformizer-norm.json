@@ -1,0 +1,524 @@
+{
+  "milestone": "Henselian uniformizers and exact prime-degree norm coefficients",
+  "baseline": "ecb29508d1436810b00796d2e9f579182ffbb79b",
+  "aglib_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "library_items": [
+    "COL-0195",
+    "COL-0196",
+    "COL-0197",
+    "COL-0198",
+    "COL-0199"
+  ],
+  "source_correspondence": {
+    "state": "author_checked",
+    "independent_literature_review": false,
+    "sources": [
+      {
+        "source": "Aglib/RingTheory/HenselianPrincipalRoots.lean",
+        "source_sha256": "da04dd6697c40e816b91615ca92adfbcf037596c07215f597a420dd2294d4c11",
+        "original": {
+          "source_module": "Motivic.Aglib.RingTheory.HenselianPrincipalRoots",
+          "source_sha256": "9badf58282a434272b448f648f70f2e70793a82794512653469493d5a3558dd6",
+          "module": "Aglib.RingTheory.HenselianPrincipalRoots",
+          "sha256": "da04dd6697c40e816b91615ca92adfbcf037596c07215f597a420dd2294d4c11"
+        },
+        "destination": "Colib/RingTheory/Henselian/PrincipalRoots.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "f666a13f5b57ae2a216a4a045637f6ceac2d05ec62c5e14934d65d999ebbaa9c",
+        "source_declarations": [
+          {
+            "name": "exists_root",
+            "line": 35
+          },
+          {
+            "name": "exists_unit_root",
+            "line": 51
+          },
+          {
+            "name": "exists_pow_eq",
+            "line": 62
+          },
+          {
+            "name": "isUnit_natCast_of_residue_charZero",
+            "line": 71
+          },
+          {
+            "name": "exists_unit_root_of_residue_charZero",
+            "line": 79
+          },
+          {
+            "name": "exists_pow_eq_of_residue_charZero",
+            "line": 85
+          }
+        ]
+      },
+      {
+        "source": "Aglib/RingTheory/HenselianUniformizerNormalization.lean",
+        "source_sha256": "c09d94d2f0b7729a01645aa505d293779ffdc3142713a3744e3ced7558057e93",
+        "original": {
+          "source_module": "Motivic.Aglib.RingTheory.HenselianUniformizerNormalization",
+          "source_sha256": "db64034350587ee40affd3058a5e4eb70dbe8675006f5a3aee345f2c18d39747",
+          "module": "Aglib.RingTheory.HenselianUniformizerNormalization",
+          "sha256": "c09d94d2f0b7729a01645aa505d293779ffdc3142713a3744e3ced7558057e93"
+        },
+        "destination": "Colib/RingTheory/Henselian/UniformizerNormalization.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "a90aae4a8a145f8b75baa4e11367b32897fc464a3997789db20a6867d540ae6a",
+        "source_declarations": [
+          {
+            "name": "exists_unit_residue_lift",
+            "line": 37
+          },
+          {
+            "name": "exists_base_unit_mul_principal_pow",
+            "line": 61
+          },
+          {
+            "name": "exists_principal_adjusted_uniformizer",
+            "line": 82
+          },
+          {
+            "name": "exists_principal_adjusted_uniformizer_of_residue_finrank_one",
+            "line": 106
+          }
+        ]
+      },
+      {
+        "source": "Aglib/RingTheory/DVRRamificationDegree.lean",
+        "source_sha256": "7e773818e89786db19bafa4fa0633763fb8d92b2d774319286a446da893f82bd",
+        "original": {
+          "source_module": "Motivic.Aglib.RingTheory.DVRRamificationDegree",
+          "source_sha256": "0989e962d932824371e840d85385c29e423b63aa12cb44cf3b56c76eb67c4b40",
+          "module": "Aglib.RingTheory.DVRRamificationDegree",
+          "sha256": "7e773818e89786db19bafa4fa0633763fb8d92b2d774319286a446da893f82bd"
+        },
+        "destination": "Colib/RingTheory/DiscreteValuationRing/RamificationDegree.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "ed7a7f13e63e5622cdccf930736564d7c2c04d9bfe502c5c7519d54f16fb5292",
+        "source_declarations": [
+          {
+            "name": "finrank_eq_ramification_mul_residue_finrank",
+            "line": 36
+          },
+          {
+            "name": "ramification_eq_one_or_residue_finrank_eq_one",
+            "line": 64
+          }
+        ]
+      },
+      {
+        "source": "Aglib/RingTheory/DVRUniformizerBinomial.lean",
+        "source_sha256": "19bd4e670f65d4acd28ef6bb5e7ca8bc9538d827b51da36b734645078b5af9a9",
+        "original": {
+          "source_module": "Motivic.Aglib.RingTheory.DVRUniformizerBinomial",
+          "source_sha256": "19bd4e670f65d4acd28ef6bb5e7ca8bc9538d827b51da36b734645078b5af9a9",
+          "module": "Aglib.RingTheory.DVRUniformizerBinomial",
+          "sha256": "19bd4e670f65d4acd28ef6bb5e7ca8bc9538d827b51da36b734645078b5af9a9"
+        },
+        "destination": "Colib/RingTheory/Norm/UniformizerBinomial.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "508f5425d9c735d224b6b1b5938175cdf0e29cf8b662c5ee0f9c8dd895cb6d45",
+        "source_declarations": [
+          {
+            "name": "uniformizer_binomial_isEisensteinAt",
+            "line": 31
+          },
+          {
+            "name": "uniformizer_binomial_irreducible",
+            "line": 61
+          },
+          {
+            "name": "uniformizer_binomial_irreducible_fraction",
+            "line": 70
+          },
+          {
+            "name": "minpoly_eq_uniformizer_binomial",
+            "line": 79
+          },
+          {
+            "name": "adjoin_uniformizer_binomial_root_eq_top",
+            "line": 92
+          },
+          {
+            "name": "norm_uniformizer_binomial_root",
+            "line": 103
+          }
+        ]
+      },
+      {
+        "source": "Aglib/RingTheory/DVRUniformizerNorm.lean",
+        "source_sha256": "bd0ff0ea712be6174a592fec522b23e42e6788922f3cd3bcfe807ecd3b45ed64",
+        "original": {
+          "source_module": "Motivic.Aglib.RingTheory.DVRUniformizerNorm",
+          "source_sha256": "719efebb658cc2cdf1d497f7189d796be0d1caf4066a89ffa093a104d5da6a77",
+          "module": "Aglib.RingTheory.DVRUniformizerNorm",
+          "sha256": "bd0ff0ea712be6174a592fec522b23e42e6788922f3cd3bcfe807ecd3b45ed64"
+        },
+        "destination": "Colib/RingTheory/Norm/DVRUniformizer.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "707ea12cc7e8e68671f3ff3048812a04dd9df2a2082181bc161ed6e3cf2b03a7",
+        "source_declarations": [
+          {
+            "name": "exists_uniformizer_norm_coefficient_of_residue_finrank_one",
+            "line": 44
+          }
+        ]
+      },
+      {
+        "source": "Aglib/RingTheory/DVRPrimeUniformizerNorm.lean",
+        "source_sha256": "2c9e1e98145e9ca28d2b9726eeb13e1af312ad0f1271e32c36c7604731b8e898",
+        "original": {
+          "source_module": "Motivic.Aglib.RingTheory.DVRPrimeUniformizerNorm",
+          "source_sha256": "8a5fe1563cd9fc32767cd8dce5b2815043cd8edc59cb9a16324caaac88b19d98",
+          "module": "Aglib.RingTheory.DVRPrimeUniformizerNorm",
+          "sha256": "2c9e1e98145e9ca28d2b9726eeb13e1af312ad0f1271e32c36c7604731b8e898"
+        },
+        "destination": "Colib/RingTheory/Norm/DVRPrimeUniformizer.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "2ab3facf6d31b413eab6691023ab9655cb04f482b152b5192e9be0ea1f29577c",
+        "source_declarations": [
+          {
+            "name": "exists_uniformizer_norm_coefficient_of_exponent_one",
+            "line": 39
+          },
+          {
+            "name": "exists_uniformizer_norm_coefficient_of_prime_degree",
+            "line": 76
+          }
+        ]
+      },
+      {
+        "source": "AglibTest/HenselianPrincipalRoots.lean",
+        "source_sha256": "1d73308cc36d20da88fc40839469e9b87e18eaa1e1f1ec99dedc05f072e7f305",
+        "destination": "ColibTest/HenselianPrincipalRoots.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "cb0c43eab247d47fd1231f8433d6b40857e70197838bcbdac1944672b7a865e4",
+        "source_declarations": [
+          {
+            "name": "actual_unit_root",
+            "line": 29
+          },
+          {
+            "name": "maximalIdeal_perturbation",
+            "line": 35
+          },
+          {
+            "name": "exponent_one",
+            "line": 42
+          },
+          {
+            "name": "mixed_characteristic_root",
+            "line": 48
+          },
+          {
+            "name": "residue_charZero_root",
+            "line": 58
+          },
+          {
+            "name": "exponent_zero_obstruction",
+            "line": 64
+          }
+        ]
+      },
+      {
+        "source": "AglibTest/HenselianUniformizerNormalization.lean",
+        "source_sha256": "26407334d93c7a5d3c305d78d9aef3f0dd3a0254ae296935a38b1392d715b51f",
+        "destination": "ColibTest/HenselianUniformizerNormalization.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "a619a6290008929e0080049e868ac4ad1f9e4435eb7a476305f9504ab4f5a44d",
+        "source_declarations": [
+          {
+            "name": "unit_lift",
+            "line": 25
+          },
+          {
+            "name": "principal_root_factorization",
+            "line": 30
+          },
+          {
+            "name": "exponent_one",
+            "line": 37
+          },
+          {
+            "name": "residue_characteristic_zero",
+            "line": 47
+          },
+          {
+            "name": "actual_residue_degree_one",
+            "line": 57
+          }
+        ]
+      },
+      {
+        "source": "AglibTest/DVRRamificationDegree.lean",
+        "source_sha256": "3d4ee59361ff8ba65d4d2a3094fff786c6214d7ba62b1880ca62050e1c481761",
+        "destination": "ColibTest/DVRRamificationDegree.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "cadfc0021a95b10e6e610655ea28f7da135140a4e888b0a59bf041d0d18f8ec9",
+        "source_declarations": [
+          {
+            "name": "actual_degree",
+            "line": 31
+          },
+          {
+            "name": "exponent_positive",
+            "line": 36
+          },
+          {
+            "name": "prime_dichotomy",
+            "line": 45
+          },
+          {
+            "name": "residue_degree_one",
+            "line": 51
+          },
+          {
+            "name": "exponent_one",
+            "line": 57
+          }
+        ]
+      },
+      {
+        "source": "AglibTest/DVRUniformizerBinomial.lean",
+        "source_sha256": "9d4eca59e745c56797e36dafa245bb60711845812519eccfa17482941d195e14",
+        "destination": "ColibTest/DVRUniformizerBinomial.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "8ba6469dbb60499c096d5382ef6484b78bc909da38ac0ce78469f98d0a5afb4b",
+        "source_declarations": [
+          {
+            "name": "actual_irreducible",
+            "line": 24
+          },
+          {
+            "name": "inseparable_exponent",
+            "line": 30
+          },
+          {
+            "name": "actual_minpoly",
+            "line": 37
+          },
+          {
+            "name": "actual_primitive",
+            "line": 45
+          },
+          {
+            "name": "degree_one",
+            "line": 51
+          },
+          {
+            "name": "quadratic_sign",
+            "line": 60
+          },
+          {
+            "name": "cubic_sign",
+            "line": 66
+          }
+        ]
+      },
+      {
+        "source": "AglibTest/DVRUniformizerNorm.lean",
+        "source_sha256": "1f2bc9aeae6d74d1222347d275beb1dc6a1bdbfda18a4815b6971d429ac7257e",
+        "destination": "ColibTest/DVRUniformizerNorm.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "6de0427159ab266426b8e52fc4f94b50ce339d41830e5e4161870da7a2522257",
+        "source_declarations": [
+          {
+            "name": "exact_coefficient",
+            "line": 37
+          },
+          {
+            "name": "quadratic_sign",
+            "line": 46
+          },
+          {
+            "name": "residue_characteristic_zero",
+            "line": 53
+          },
+          {
+            "name": "complete_DVR_coefficient",
+            "line": 78
+          }
+        ]
+      },
+      {
+        "source": "AglibTest/DVRPrimeUniformizerNorm.lean",
+        "source_sha256": "11757ebadf7bd966a73fff33ae1a2d8bc06fdccd2d69c1442e77b040dcaf9a56",
+        "destination": "ColibTest/DVRPrimeUniformizerNorm.lean",
+        "status": "source_correspondence_checked",
+        "draft_sha256": "4e24b70da69981e0c1ec5ff81ed9196a99bf88420a4b3c811af0d4061f7a6f7f",
+        "source_declarations": [
+          {
+            "name": "exponent_one",
+            "line": 31
+          },
+          {
+            "name": "prime_coefficient",
+            "line": 46
+          },
+          {
+            "name": "ordinary_field_norm_coefficient",
+            "line": 56
+          },
+          {
+            "name": "residue_characteristic_zero",
+            "line": 68
+          }
+        ]
+      }
+    ],
+    "native_degree_supplier": {
+      "module": "StacksFrontier.RingTheory.DiscreteValuationRing.FundamentalIdentity",
+      "declaration": "Stacks.DiscreteValuationRing.Ramification.ramificationIdx_mul_inertiaDeg_eq_finrank"
+    },
+    "degree_proof_change": "The native local fundamental identity replaces the original ordinary norm-order proof. PerfectField, IsIntegralClosure and explicit FiniteDimensional premises are absent from the degree leaf. Exact coefficient leaves retain integral-closure and finite-dimensional field data.",
+    "scope_boundary": [
+      "No ordinary norm-order theorem or second order model",
+      "No general Milnor transfer or norm-residue-symbol theorem",
+      "The old complete-DVR construction consumer is not copied"
+    ],
+    "source_mathematical_review": {
+      "state": "completed",
+      "scope": [
+        "Native fundamental-identity hypotheses and actual ramification-index identification",
+        "Positive invertible exponents in the henselian target and the actual residue map",
+        "Eisenstein minimal polynomial and determinant sign",
+        "Actual integral unit coefficient and inverse ramification-unit residue norm",
+        "Exponent-one and residue-degree-one prime-degree branches"
+      ],
+      "result": "No mathematical mismatch found. Copyright, authors and Apache notices match all six original pinned Aglib sources.",
+      "boundary": "Component-author source correspondence review, separate from compilation; not external independent peer review or a fresh external literature audit.",
+      "original_provenance": "Original Motivic identity and hashes are recorded by the pinned Aglib source manifest; the directly inspected source files are from Aglib 101dbb8564fb0e29f28cfcb79168d878b5ab489f."
+    }
+  },
+  "scope": [
+    {
+      "id": "COL-0195",
+      "statement": "Positive invertible exponents give roots with residue one in a henselian local ring. A surjective actual residue map then writes each extension unit as a base unit times a principal-unit power and adjusts an actual uniformizer equation.",
+      "conditions": "The extension ring is henselian; the exponent is explicitly positive and invertible there. Residue degree one supplies surjectivity of the actual residue map. No domain, characteristic-zero or monogenic-basis premise is imposed on the principal-root theorem."
+    },
+    {
+      "id": "COL-0196",
+      "statement": "For the exponent in an actual uniformizer equation, the fraction-field degree equals that exponent times the actual residue-field degree. In prime field degree, the exponent or residue degree equals one.",
+      "conditions": "Finite torsion-free extension of DVRs with specified compatible fraction fields. Flatness, faithfulness and locality are derived. No perfectness, separability, henselianity, integral-closure presentation or explicit finite-dimensionality premise is needed."
+    },
+    {
+      "id": "COL-0197",
+      "statement": "A positive-degree uniformizer binomial is Eisenstein and irreducible over the specified fraction field, hence is the minimal polynomial of any actual root. When the actual extension degree equals its degree, that root is primitive and its norm is the uniformizer times (-1) to the exponent minus one.",
+      "conditions": "Arbitrary positive exponent, including inseparable binomials. Finite-dimensionality and degree equality are needed for the primitive-root and norm conclusions. No integral power basis, henselianity or residue-characteristic assumption."
+    },
+    {
+      "id": "COL-0198",
+      "statement": "In residue degree one, the integral norm of the original extension uniformizer equals the base uniformizer times an actual base unit. Its residue is (-1) to the exponent minus one times the inverse residue-field norm of the ramification unit.",
+      "conditions": "Finite torsion-free local DVR extension, henselian target and invertible uniformizer exponent, with specified compatible finite-dimensional fraction fields and the actual integral-closure presentation. No perfectness or cancellation of residue powers is used."
+    },
+    {
+      "id": "COL-0199",
+      "statement": "In prime fraction-field degree, the original uniformizer norm is the base uniformizer to the residue degree times an actual base unit. The unit residue is (-1)^(f*(e-1)) times the inverse residue-field norm of the original ramification unit, where f is the residue degree and e is the supplied uniformizer exponent.",
+      "conditions": "Finite torsion-free local DVR extension with compatible finite-dimensional fraction fields and integral-closure presentation. The prime-degree conclusion assumes a henselian target and invertible exponent. The exponent-one branch needs neither henselianity nor primality. No ordinary norm-order, Milnor-transfer or norm-residue-symbol theorem is claimed."
+    }
+  ],
+  "component_validation": {
+    "production_leaves": 6,
+    "test_leaves": 6,
+    "production_theorems": 21,
+    "named_test_theorems": 30,
+    "declaration_lint_modules": 12,
+    "style": "passed",
+    "production_and_test_axiom_audits": "passed",
+    "kernel_replay": false,
+    "registered_tree": false
+  },
+  "registered_tree_validation": {
+    "state": "passed",
+    "command": "bash scripts/check.sh",
+    "production_build": "passed",
+    "in_package_tests": "passed",
+    "python_tests": 64,
+    "declaration_lint": "passed",
+    "text_style": "passed",
+    "generated_entry": "passed",
+    "production_axiom_audit": {
+      "declarations": 2912,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "library_export": {
+      "items": 196,
+      "indexed_declarations": 658,
+      "chapters": 7,
+      "sections": 22,
+      "reference_pages": 14
+    },
+    "website_build": "passed",
+    "resource_limits": {
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "sample_seconds": 0.1,
+      "physical_memory_bytes": 10451427328,
+      "lean_threads": 1,
+      "max_active_lean": 1
+    },
+    "peak_owned_rss_bytes": 6924177408,
+    "owned_group_gone": true,
+    "guard_failure": null,
+    "kernel_replay": false,
+    "pins_changed": false,
+    "component_evidence_directory": "uniformizer-norm-validation-20261105-2151",
+    "registered_tree_evidence_directory": "uniformizer-norm-integration-20261105-2157",
+    "receipt": "03-full-check.json",
+    "log": "03-full-check.log"
+  },
+  "registered_sources": {
+    "Colib/RingTheory/Henselian/PrincipalRoots.lean": {
+      "sha256": "c36b6e18a9cc89737b8a6e0273d73ec6264050ec043646e1e2c80a3aa63ce259",
+      "validated_component_sha256": "f666a13f5b57ae2a216a4a045637f6ceac2d05ec62c5e14934d65d999ebbaa9c"
+    },
+    "Colib/RingTheory/Henselian/UniformizerNormalization.lean": {
+      "sha256": "773c831940ec820e7009eab75950453cfca1b62c68b7b06c6e2ca7f9bd65e344",
+      "validated_component_sha256": "a90aae4a8a145f8b75baa4e11367b32897fc464a3997789db20a6867d540ae6a"
+    },
+    "Colib/RingTheory/DiscreteValuationRing/RamificationDegree.lean": {
+      "sha256": "3fc273487f4e18c61dfcba920c01d35ca760c4b37f9544c98dc81bd1ef4108c1",
+      "validated_component_sha256": "ed7a7f13e63e5622cdccf930736564d7c2c04d9bfe502c5c7519d54f16fb5292"
+    },
+    "Colib/RingTheory/Norm/UniformizerBinomial.lean": {
+      "sha256": "c17af50e88c6bf5041bf5ecd36595b562f819f572bd27666435938ff8193b33e",
+      "validated_component_sha256": "508f5425d9c735d224b6b1b5938175cdf0e29cf8b662c5ee0f9c8dd895cb6d45"
+    },
+    "Colib/RingTheory/Norm/DVRUniformizer.lean": {
+      "sha256": "80bada58d827393a220f5f1d8ee7f2d41ec1571664b3678a87383f0070f2e4e1",
+      "validated_component_sha256": "707ea12cc7e8e68671f3ff3048812a04dd9df2a2082181bc161ed6e3cf2b03a7"
+    },
+    "Colib/RingTheory/Norm/DVRPrimeUniformizer.lean": {
+      "sha256": "1057783574eaa3b9ee8ce61ed33bab08fa696184e7fa518c8cd2ea585c6d13f6",
+      "validated_component_sha256": "2ab3facf6d31b413eab6691023ab9655cb04f482b152b5192e9be0ea1f29577c"
+    },
+    "ColibTest/HenselianPrincipalRoots.lean": {
+      "sha256": "cb0c43eab247d47fd1231f8433d6b40857e70197838bcbdac1944672b7a865e4",
+      "validated_component_sha256": "cb0c43eab247d47fd1231f8433d6b40857e70197838bcbdac1944672b7a865e4"
+    },
+    "ColibTest/HenselianUniformizerNormalization.lean": {
+      "sha256": "a619a6290008929e0080049e868ac4ad1f9e4435eb7a476305f9504ab4f5a44d",
+      "validated_component_sha256": "a619a6290008929e0080049e868ac4ad1f9e4435eb7a476305f9504ab4f5a44d"
+    },
+    "ColibTest/DVRRamificationDegree.lean": {
+      "sha256": "e3ca6292baee934cee4d4b15106bda600474019701deff06240de3059322e8e0",
+      "validated_component_sha256": "e3ca6292baee934cee4d4b15106bda600474019701deff06240de3059322e8e0"
+    },
+    "ColibTest/DVRUniformizerBinomial.lean": {
+      "sha256": "8ba6469dbb60499c096d5382ef6484b78bc909da38ac0ce78469f98d0a5afb4b",
+      "validated_component_sha256": "8ba6469dbb60499c096d5382ef6484b78bc909da38ac0ce78469f98d0a5afb4b"
+    },
+    "ColibTest/DVRUniformizerNorm.lean": {
+      "sha256": "6de0427159ab266426b8e52fc4f94b50ce339d41830e5e4161870da7a2522257",
+      "validated_component_sha256": "6de0427159ab266426b8e52fc4f94b50ce339d41830e5e4161870da7a2522257"
+    },
+    "ColibTest/DVRPrimeUniformizerNorm.lean": {
+      "sha256": "4e24b70da69981e0c1ec5ff81ed9196a99bf88420a4b3c811af0d4061f7a6f7f",
+      "validated_component_sha256": "4e24b70da69981e0c1ec5ff81ed9196a99bf88420a4b3c811af0d4061f7a6f7f"
+    }
+  }
+}

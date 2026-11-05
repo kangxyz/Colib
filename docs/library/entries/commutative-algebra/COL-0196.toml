@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0196"
+title = "The native DVR degree formula and prime-degree dichotomy"
+kind = "theorem"
+section = "henselian-ramification"
+order = 20
+statement = "For the exponent in an actual uniformizer equation, the fraction-field degree equals that exponent times the actual residue-field degree. In prime field degree, the exponent or residue degree equals one."
+scope = "Finite torsion-free extension of DVRs with specified compatible fraction fields. Flatness, faithfulness and locality are derived. No perfectness, separability, henselianity, integral-closure presentation or explicit finite-dimensionality premise is needed."
+review = "author_checked"

@@ -15,3 +15,9 @@ id = "adic-completion"
 title = "Adic completion and actual local branches"
 order = 20
 introduction = "The canonical finite-algebra tensor map, Chinese remainder decomposition and positive-power comparison identify actual completed local branches. Explicit quotient evaluations fix the maps and completed-base scalar actions. Native fraction-field pushouts then identify the completed fraction tensor product over all original branches, with the original localization and completion coordinates."
+
+[[sections]]
+id = "henselian-ramification"
+title = "Henselian roots and DVR ramification"
+order = 30
+introduction = "Simple-root Hensel lifting supplies residue-one roots for invertible exponents and normalizes actual uniformizer equations. The native local fundamental identity identifies the supplied ramification exponent and residue degree with the actual fraction-field degree, without a separate norm-order model."

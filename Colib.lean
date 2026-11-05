@@ -7,6 +7,7 @@ public import Colib.Algebra.Homology.HomotopyCategory.MappingCone
 public import Colib.Algebra.Homology.HomotopyCategory.SingleConeLift
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIsoCriterion
+public import Colib.Algebra.Module.LocalizedModule.IdealQuotient
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
 public import Colib.CategoryTheory.Abelian.Projective.Connecting
 public import Colib.CategoryTheory.Abelian.Projective.ConnectingTransport
@@ -104,6 +105,7 @@ public import Colib.RingTheory.Koszul.TopExtAllNaturality
 public import Colib.RingTheory.Koszul.TopExtClass
 public import Colib.RingTheory.Koszul.TopExtCoefficients
 public import Colib.RingTheory.Koszul.TopExtGeneratorChange
+public import Colib.RingTheory.Koszul.TopExtLocalization
 public import Colib.RingTheory.Koszul.TopExtRingQuotient
 public import Colib.RingTheory.Length.FiniteAlgebra
 public import Colib.Topology.Category.TopCat.PushoutInteriors

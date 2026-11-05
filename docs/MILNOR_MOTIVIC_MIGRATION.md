@@ -514,3 +514,11 @@ It preserves actual short exact sequences without regularity or coefficient
 flatness hypotheses, retaining independent ring and coefficient universes.
 This is a new lower interface, not another source endpoint or recursive model.
 See `migration/motivic-koszul-coefficient-functor.json`.
+
+### Fixed-base top Ext coefficient localization
+
+COL-0142 identifies Yoneda postcomposition by coefficient localization as an
+actual localized-module map on native top Ext, in all finite lengths. The ring
+and quotient source remain fixed; this is not base-ring localization or an old
+named-class comparison. A lower ideal-quotient helper retains independent
+module universes. See `migration/motivic-top-ext-localization.json`.

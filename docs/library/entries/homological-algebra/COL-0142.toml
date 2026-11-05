@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0142"
+title = "Fixed-base top Ext coefficient localization"
+kind = "theorem"
+section = "projective-dimension"
+order = 160
+statement = "Yoneda postcomposition by an actual coefficient-module localization map is a localization map on native top Ext of a Koszul-regular quotient, in every finite length."
+scope = "The commutative base ring and source quotient stay fixed. Arbitrary finite sequence, including empty, with native Koszul regularity; same-universe coefficients and independent Ext universe. No coefficient flatness, finiteness, regularity or Noetherianity. The generic quotient-localization helper admits independent module universes. No base-ring localization or old named Aglib class comparison is asserted. Stacks 06XP is Yoneda-composition background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Reuse native localization of an actual ideal coefficient quotient, then conjugate its literal mapQ through the existing top Ext linear equivalences and coefficient-class naturality."

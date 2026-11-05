@@ -1,0 +1,164 @@
+{
+  "topic": "All-length native top Ext coefficient localization",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_file": "Aglib/Algebra/Homology/Koszul/Ext/Localization.lean",
+  "source_sha256": "c76b8a8caac994412f20c819907f914648b96e5cbb8b78965f68e7d55716d98f",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "source_declaration": "ChainComplex.Koszul.topExtPostcomp_isLocalizedModule; its private quotientIdealMap_isLocalizedModule is extracted at the generic linear-map owner.",
+  "scope": "Fixed commutative base ring, any finite sequence length including zero, native Koszul regularity, arbitrary coefficients and HasExt universe. For actual module localization g at T, native Yoneda postcomposition on top Ext is IsLocalizedModule T. No new localized scalar action is installed.",
+  "upstream_audit": "Mathlib LocalizedModule.Submodule already provides localized submodules, toLocalizedQuotient and localization instances, plus compatibility of localized ideal multiples. Reused directly. No matching fixed-base top Ext postcomposition endpoint found in the pinned Stacks Koszul files.",
+  "declarations": [
+    "Submodule.isLocalizedModule_mapQ_smul_top",
+    "Koszul.seqTopExtPostcomp_isLocalizedModule"
+  ],
+  "chosen_model": "Existing literal mapQ and canonical native top class equivalence. No alternate quotient, localization module, resolution or Ext model. Local auxiliary Localization T-module instance is the existing Mathlib one and does not escape the proof.",
+  "old_named_class_status": "Still pending. Existing principalExtMk_transport_eq_neg_class already proves the native universal statement for every supplied resolution and actual quotient isomorphism satisfying the source squares. A further universal-property wrapper would not prove a theorem naming an unimported Aglib constant; no old environment is rebuilt.",
+  "limits": [
+    "Base ring and quotient source stay fixed. Scalar-extension/base-ring localization is a separate theorem.",
+    "The actual old Aglib named class comparison is not asserted.",
+    "No kernel replay or old environment/cache recovery.",
+    "Shared integration remains parent-owned."
+  ],
+  "validation": {
+    "status": "Both production leaves, regression tests, declaration/style lint passed; slot released.",
+    "guard_script": "colib-environment-20261105/run_guarded_extonequotient_worktree.py",
+    "guard": "Native Lean 4.34.0-rc2; one process via flock; -j1 -M4983; RSS cap 7475 MiB.",
+    "runs": [
+      {
+        "receipt": "colib-environment-20261105/top-ext-localization-build-r1.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtLocalization",
+          "ColibTest.TopExtLocalization"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 1961218048,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-localization-build-r2.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "build",
+          "Colib.RingTheory.Koszul.TopExtLocalization",
+          "ColibTest.TopExtLocalization"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 4395470848,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-localization-lint.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.Algebra.Module.LocalizedModule.IdealQuotient",
+          "Colib.RingTheory.Koszul.TopExtLocalization"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5000728576,
+        "owned_group_gone": true
+      },
+      {
+        "receipt": "colib-environment-20261105/top-ext-localization-style.json",
+        "command": [
+          "lake",
+          "--log-level=error",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.Algebra.Module.LocalizedModule.IdealQuotient",
+          "Colib.RingTheory.Koszul.TopExtLocalization",
+          "ColibTest.TopExtLocalization"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-combined-ae0cdc5-20261105-1012",
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1725505536,
+        "owned_group_gone": true
+      }
+    ],
+    "hashes": {
+      "Colib/Algebra/Module/LocalizedModule/IdealQuotient.lean": "291dcee5d894fcb83b0e178d8652857e7f640bcdcb9c91379d5797aba75da163",
+      "Colib/RingTheory/Koszul/TopExtLocalization.lean": "e21d011efc79952f43847d511907ac75a0c254587b81f35d3a64695000d0c380",
+      "ColibTest/TopExtLocalization.lean": "84043228463eeaa17f33dc3d215b718db8d7aa14a2a632d4aa46708ca899a7ac",
+      ".lake/build/lib/lean/Colib/Algebra/Module/LocalizedModule/IdealQuotient.olean": "5a4c1f79d5c72b9f4ee6be806c86d6d859c201e75e16e893b0bb0103c26dae4f",
+      ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtLocalization.olean": "0eb9586a85fd56449bd7f55f39e359b86cc89040c4a43dccf25aae3ccacf2686",
+      ".lake/build/lib/lean/ColibTest/TopExtLocalization.olean": "62ffd46e9e62c111902732423081143d7e14cfb54b47622203e172eb8e96a20b"
+    },
+    "repair": "Added exact lower Mathlib.RingTheory.Ideal.Operations import for the generic ideal quotient helper; no upstream rebuild, transparency options, or raised resource limits.",
+    "tests": [
+      "Degree-zero/empty-sequence localization of actual Yoneda postcomposition.",
+      "Rank-two localization with arbitrary coefficient module localization and HasExt universe."
+    ],
+    "independent_review": {
+      "status": "passed",
+      "scope": "Read-only mathematics, actual maps and local instances, source interface differences and hypotheses/universes, provenance, hashes and historical receipts. No reviewer compilation or kernel replay."
+    },
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib; bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-top-local-d9ef4e0-20261105-1405",
+      "pid": 7,
+      "pgid": 7,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 7267491840,
+      "duration_seconds": 60.38660885003628,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 7,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-top-local-check-receipt.json",
+      "receipt_sha256": "01436c4c5059834616a08b156b86fb7c20aa5d19c7a49462889485244119336a",
+      "log": "/tmp/colib-top-local-check.log",
+      "log_sha256": "ae9f5810d0d3991ad0775b7e566348b6fe2c772df4ca5cde55dad99640b32c3e",
+      "kernel_replay": false,
+      "hashes": {
+        "Colib/Algebra/Module/LocalizedModule/IdealQuotient.lean": "291dcee5d894fcb83b0e178d8652857e7f640bcdcb9c91379d5797aba75da163",
+        ".lake/build/lib/lean/Colib/Algebra/Module/LocalizedModule/IdealQuotient.olean": "5a4c1f79d5c72b9f4ee6be806c86d6d859c201e75e16e893b0bb0103c26dae4f",
+        "Colib/RingTheory/Koszul/TopExtLocalization.lean": "34b1e7a31c813fbdc9105baf4ad21405d6ec78c0c7a45f0e3a17faa2deca72fb",
+        ".lake/build/lib/lean/Colib/RingTheory/Koszul/TopExtLocalization.olean": "2d8b80883f67757f8262d27e912a2225c0d12a589b9c040960c2d097389d026f",
+        "ColibTest/TopExtLocalization.lean": "c28d56896da88ecd3184261860f849a945300c0662d5b3aae3c1b2df1dbd60db",
+        ".lake/build/lib/lean/ColibTest/TopExtLocalization.olean": "a7618fbe6bc6854b5b4f055414e44f766457d05afcbbd6ae5d2c3ced4c0c462b"
+      }
+    }
+  },
+  "target_baseline": "d9ef4e032600f5b21208adb453f4a93f152da083",
+  "library_item": "COL-0142",
+  "source_interface_boundary": "The Aglib endpoint takes a List and IsWeaklyRegular, while this native interface takes Fin n and IsKoszulRegular. Pinned regularity implications can derive the latter, but no old named-cocycle equality is asserted.",
+  "literature": {
+    "tag": "06XP",
+    "relation": "ingredient",
+    "scope": "Yoneda composition only, not the fixed-base coefficient localization theorem verbatim."
+  }
+}

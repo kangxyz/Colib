@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0083"
+title = "Triangle relations for realized edge paths"
+kind = "proposition"
+section = "geometric-realization"
+order = 150
+statement = "A specified simplicial triangle gives an endpoint-fixed homotopy between the concatenation of its two short realized edges and its long realized edge. Paths with equal endpoints in a realized finite standard simplex are homotopic."
+scope = "The actual Edge.CompStruct, characteristic maps and endpoint casts are retained. The conclusion is relative path homotopy, not strict equality of paths. The cited convex interpolation is an ingredient after the pinned finite-simplex coordinate comparison. This does not prove that arbitrary paths are represented by edge paths. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

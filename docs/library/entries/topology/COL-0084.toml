@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0084"
+title = "Paths represented by categorical arrows"
+kind = "definition"
+section = "classifying-spaces"
+order = 50
+statement = "A categorical morphism determines an actual path between the corresponding classifying-space vertices. These paths are natural in functors, and a natural-transformation component gives a path between the two image vertices."
+scope = "The categories share object and hom universe parameters for the naturality statements; the two parameters may differ. Identity arrows give constant paths. The component-path construction is not by itself an additional proof of a homotopy of entire classifying-space maps. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

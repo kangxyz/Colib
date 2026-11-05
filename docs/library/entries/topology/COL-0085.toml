@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0085"
+title = "Category-to-fundamental-groupoid functor"
+kind = "definition"
+section = "classifying-spaces"
+order = 60
+statement = "A category maps to the actual fundamental groupoid of its realized nerve by sending objects to vertex points and morphisms to their arrow-path classes. Composition is justified by the endpoint-fixed homotopy supplied by a realized two-simplex."
+scope = "Object and hom universe parameters are retained. The source presentation literature is background for the triangle composition relation only. Fullness, faithfulness, essential surjectivity, equivalence with categorical localization, and a complete fundamental-group presentation are not established. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

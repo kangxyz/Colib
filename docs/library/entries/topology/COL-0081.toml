@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0081"
+title = "Realized simplicial edge paths"
+kind = "definition"
+section = "geometric-realization"
+order = 130
+statement = "An edge of a simplicial set gives an actual continuous path between its realized vertices. The path is natural in simplicial maps at every interval parameter, and a degenerate identity edge gives the constant path."
+scope = "The construction retains the actual interval parametrization and vertex endpoints in a fixed simplicial-set universe. The literature is background for realization of simplices, not a claim that these exact API identities occur in the source. No approximation of arbitrary paths by edge paths is asserted. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

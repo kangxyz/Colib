@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0082"
+title = "Endpoint-fixed paths in finite simplices"
+kind = "proposition"
+section = "geometric-realization"
+order = 140
+statement = "Any two paths with the same endpoints in a finite real barycentric simplex are homotopic relative to those endpoints by the explicit jointly continuous convex interpolation."
+scope = "The vertex type is arbitrary with a Finite instance, and the coefficient field is the real numbers. This adapts the linear homotopy of paths in convex subsets in Example 1.1 to the actual finitely supported coordinate simplex. It makes no assertion about arbitrary target spaces or edge-path approximation. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

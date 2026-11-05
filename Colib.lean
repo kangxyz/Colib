@@ -32,6 +32,7 @@ public import Colib.CategoryTheory.QConstruction.Isomorphisms
 public import Colib.CategoryTheory.QConstruction.ObjectClass
 public import Colib.CategoryTheory.QConstruction.ObjectClassFunctoriality
 public import Colib.CategoryTheory.QConstruction.ZeroEndomorphisms
+public import Colib.KTheory.GrothendieckComparison.ObjectLoops
 public import Colib.KTheory.GrothendieckGroup.Abelian
 public import Colib.KTheory.GrothendieckGroup.AbelianNaturality
 public import Colib.KTheory.GrothendieckGroup.Basic
@@ -61,9 +62,11 @@ public import Colib.RingTheory.Koszul.Coefficients
 public import Colib.RingTheory.Koszul.Ext
 public import Colib.RingTheory.Koszul.PrincipalExt
 public import Colib.RingTheory.Length.FiniteAlgebra
+public import Colib.Topology.ClassifyingSpace.ArrowPaths
 public import Colib.Topology.ClassifyingSpace.Basic
 public import Colib.Topology.ClassifyingSpace.Map
 public import Colib.Topology.ClassifyingSpace.NerveHomotopy
+public import Colib.Topology.ClassifyingSpace.Path
 public import Colib.Topology.ClassifyingSpace.PointedFunctor
 public import Colib.Topology.Homotopy.HomotopyGroup.BasedHomotopy
 public import Colib.Topology.Homotopy.HomotopyGroup.Map
@@ -72,11 +75,14 @@ public import Colib.Topology.Realization.Constant
 public import Colib.Topology.Realization.Cylinder
 public import Colib.Topology.Realization.CylinderEndpoints
 public import Colib.Topology.Realization.CylinderIso
+public import Colib.Topology.Realization.EdgePath
 public import Colib.Topology.Realization.FiniteSimplexAdapter
 public import Colib.Topology.Realization.HomotopyBridge
 public import Colib.Topology.Realization.Prism
 public import Colib.Topology.Realization.PrismCoordinates
 public import Colib.Topology.Realization.PrismGluing
 public import Colib.Topology.Realization.Simplex
+public import Colib.Topology.Realization.SimplexHomotopy
 public import Colib.Topology.Realization.SimplicialColimits
+public import Colib.Topology.Realization.Triangle
 public import Colib.Util.References

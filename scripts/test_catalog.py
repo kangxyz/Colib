@@ -151,6 +151,17 @@ class LibraryTests(unittest.TestCase):
         for index in range(76, 81):
             self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
 
+    def test_object_loop_bridge_ids_keep_their_owners(self):
+        for index in range(81, 87):
+            section = (
+                "geometric-realization" if index < 84 else
+                "classifying-spaces" if index < 86 else "grothendieck-groups"
+            )
+            self.assertEqual(self.library["entries"][f"COL-{index:04d}"]["section"], section)
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for index in range(81, 87):
+            self.assertTrue(result["entries"][f"COL-{index:04d}"]["references"])
+
     def test_initial_ids_keep_their_owners(self):
         self.assertTrue(
             {f"COL-{index:04d}" for index in range(1, 13)}

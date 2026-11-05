@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0056"
+title = "Composition of rebased functors"
+kind = "proposition"
+section = "functor-constructions"
+order = 20
+statement = "Rebasing a composite using the composite specified object isomorphism is naturally isomorphic to composing the rebased functors. The comparison component at the chosen object equals eqToHom of the displayed equality of base objects."
+scope = "The three categories use common object and hom universe parameters. The actual natural isomorphism and its exact transported base component are retained. The literature citation is background only and does not assert this explicit rebasing algorithm. No based realization homotopy, KMap composition, natural-isomorphism invariance, or higher coherence theorem is proved. Source correspondence was checked against the cited background scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -9,6 +9,7 @@ public import Colib.CategoryTheory.ExactCategory.Abelian
 public import Colib.CategoryTheory.ExactCategory.AdditiveInvariant
 public import Colib.CategoryTheory.ExactCategory.Basic
 public import Colib.CategoryTheory.ExactCategory.Functor.Basic
+public import Colib.CategoryTheory.ExactCategory.Functor.NormalizedQ
 public import Colib.CategoryTheory.ExactCategory.Functor.Pullbacks
 public import Colib.CategoryTheory.ExactCategory.Functor.QConstruction
 public import Colib.CategoryTheory.ExactCategory.Functor.QIsomorphisms
@@ -18,6 +19,7 @@ public import Colib.CategoryTheory.ExactCategory.MatrixDeflation
 public import Colib.CategoryTheory.ExactCategory.QCategory
 public import Colib.CategoryTheory.ExactCategory.QIsomorphisms
 public import Colib.CategoryTheory.Functor.Rebase
+public import Colib.CategoryTheory.Functor.Rebase.Composition
 public import Colib.CategoryTheory.QConstruction.Basic
 public import Colib.CategoryTheory.QConstruction.Connected
 public import Colib.CategoryTheory.QConstruction.Core

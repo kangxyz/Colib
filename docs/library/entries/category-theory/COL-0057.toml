@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0057"
+title = "Composition of zero-normalized Q-functors"
+kind = "proposition"
+section = "exact-categories"
+order = 160
+statement = "Canonical zero-object isomorphisms normalize the Q-functors of exact functors. The normalization of a composite is naturally isomorphic to the composite of the normalized functors, and the comparison at the zero vertex equals eqToHom of the stated base-object equality."
+scope = "Chosen exact structures on three preadditive categories with finite biproducts and common object and hom universe parameters. The comparison is the transported generic rebasing comparison, using the actual induced Q-functors and canonical zero-object isomorphisms. The cited literature provides background, not the specific comparison or component equation. This is categorical data only: no based realization homotopy, KMap composition, natural-isomorphism invariance, or complete higher coherence is established. Source correspondence was checked against the cited background scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

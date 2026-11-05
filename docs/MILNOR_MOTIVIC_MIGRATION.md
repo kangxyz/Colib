@@ -1,0 +1,291 @@
+# Milnor K-theory and Motivic migration plan
+
+## Scope and fixed baseline
+
+This plan covers the Milnor K-theory results and the Motivic-derived results present in Aglib,
+including their necessary lower prerequisites. It is a plan for implementation. Completion and review claims are limited to the explicit
+milestone records below and their declaration-level ledgers.
+
+- Source Aglib revision: `101dbb8564fb0e29f28cfcb79168d878b5ab489f`.
+- Initial Colib revision: `7603d2dba0e5c67646277ca269b76ec341bf3078`.
+- Lean: `leanprover/lean4:v4.34.0-rc2`.
+- Mathlib: `16edf57de7933555826307a3d81b4391a3657a09`.
+- Stacks: `f8e70c5dd04bfabcb423d5e325461f527c85a5d6`.
+
+The initial static inventory identifies 186 Milnor modules within 301 Motivic-derived production
+modules, with an Aglib production dependency closure of 350 modules. These numbers overlap;
+they are not three additive workloads. Module counts are planning evidence, not declaration
+coverage or a mathematical completeness certificate. Confirm the inventory against the fixed
+source tree and its migration manifests, then reconcile every source declaration. The older
+pilot revisions in [MIGRATION.md](MIGRATION.md) remain historical provenance.
+
+Only Mathlib and Stacks are direct mathematical package dependencies. Mathlib's existing
+transitive tooling packages are not additional mathematical libraries. Do not add Aglib,
+Motivic, Quillen, or another application as a package dependency. Preserve the pinned basis;
+a pin change is a separate compatibility decision, not a silent migration repair.
+
+## Canonical objects and proof direction
+
+Use Stacks' `MilnorKTheory` directly as the Milnor K-theory model. Rewrite source proofs against
+its actual definitions, symbols, quotient relations and maps. Do not make an equivalence with
+the complete Aglib model a prerequisite, and do not maintain a second general-purpose Milnor
+K-theory implementation in Colib.
+
+Search the pinned Mathlib and Stacks declarations before defining anything. Extend the native
+mathematical namespace. A source model comparison is allowed only when a specific proof needs
+it; keep that comparison local to its boundary, prove the exact generator/map equations it
+uses, and do not expose a parallel downstream API. Reuse the existing degree-two comparison in
+`Colib.KTheory.MilnorK.DegreeTwo` when relevant rather than recreating it. Its presence does not
+require later results to factor through the pair presentation.
+
+For every migrated statement preserve its actual field/ring/scheme assumptions, finiteness and
+separability conditions, universes, coefficients, degree conventions, signs and canonical maps.
+A theorem conditional on supplied norm data, compatibility, a reciprocity hypothesis, or a
+complex structure remains conditional until those hypotheses are separately proved. Do not
+replace a mathematical conclusion by a weaker statement and record it as full migration.
+
+## Source reconciliation and evidence
+
+Maintain a declaration-level migration ledger under `docs/migration/`, generated where possible
+and reviewed where mathematical judgment is required. Record at least:
+
+- Source repository, full revision, module, declaration name and original provenance/license.
+- Exact statement and hypotheses, including implicit structures and universe parameters.
+- Target owner, declaration or upstream declaration, and the selected canonical objects.
+- Disposition: upstream reuse, direct proof rewrite, local comparison, prerequisite extraction,
+  or unresolved obligation. Keep unresolved work visible; absence is not upstream reuse.
+- Proof obligations, dependencies, source/literature locator and correspondence scope.
+- Validation revision, commands, results and the relevant Library item, where applicable.
+
+Reconcile source definitions, instances, public and supporting lemmas, notation and consumers.
+When multiple source declarations become one upstream result, explain the statement-preserving
+mapping. A removed alias still needs a ledger disposition. Include source tests as evidence of
+intended interfaces, but do not count tests as migrated production theorems.
+
+The 350-module closure is an upper bound on source modules needing inspection, not an instruction
+to copy them. Replace dependencies by upstream results wherever possible. Extract only the
+minimal missing lower primitive when a source proof depends on a higher application module.
+Record exclusions with a concrete reason and show that no selected result is lost.
+
+## Pinned upstream audit before construction
+
+Audit the pinned Stacks interfaces before assigning any new mathematical construction, especially
+intersection theory, cycles, finite correspondences and the Nisnevich site. These subjects may
+already have the needed objects and lemmas upstream. Do not infer a gap from Aglib's old imports
+or from a missing result under the same name. Inspect the actual declaration, defining module,
+hypotheses, canonical maps and import closure at the pinned revision.
+
+For each proposed local construction, record the closest Stacks/Mathlib interface and one of:
+exact reuse; reuse after a proved specialization; a genuinely missing lemma on the upstream
+object; or an unavailable construction with concrete evidence. Differences in packaging alone
+do not justify rebuilding a site or an intersection-theoretic framework. Reuse the existing
+upstream site, cycle and intersection objects whenever applicable. Only the verified difference
+becomes Colib work, and every downstream lane consumes that chosen object.
+
+The initial pinned survey has located `Stacks.Chow.intersectionProduct` and its bilinear interface in
+`Chow/IntersectionProduct.lean`,
+`Stacks.Intersection.ChowRing.chowMulFun` and `ChowRing` in
+`Intersection/ChowRing/Basic.lean`, and relative-cycle composition interfaces in
+`Chow/RelativeCycles/CompositionRelativeCyclesGeneral.lean` and `Composition.lean`.
+Bind these candidates to exact declarations and hypotheses before use. In particular, the
+Chow-ring construction for nonsingular projective varieties over an algebraically closed field
+must not be presented as arbitrary smooth-scheme cycle-level correspondence composition.
+The Nisnevich interface has not yet been located by name in the initial survey. That is not
+evidence that Stacks lacks an equivalent interface, and does not authorize rebuilding it.
+
+The detailed pinned-interface audit is a prerequisite for implementation in the corresponding
+lane. Its findings may eliminate or reorder work below without reducing declaration coverage.
+
+## Mathematical ownership and independent work
+
+Use [ARCHITECTURE.md](ARCHITECTURE.md), [LIBRARY.md](LIBRARY.md) and
+[CONTRIBUTING.md](../CONTRIBUTING.md) as the ownership rules. Suggested work lanes are:
+
+1. **Inventory and upstream interfaces.** Own the ledger and dependency graph. Identify the
+   Stacks symbol, graded product, quotient and map APIs and provide precise native signatures
+   to other lanes. This lane does not build a complete alternate-model comparison.
+2. **Generic prerequisites.** Own disjoint files under the appropriate `Colib.Algebra`,
+   `Colib.RingTheory`, `Colib.CategoryTheory`, or generic sheaf/module owners. Prove reusable
+   statements at their weakest valid hypotheses, below Milnor and motivic applications.
+3. **Milnor symbols and operations.** Own new files under `Colib.KTheory.MilnorK`, extending the
+   Stacks model with the required tuple-symbol, multilinearity, Steinberg, graded-product,
+   functoriality and low-degree results.
+4. **Milnor norms and residues.** Start from the accepted canonical symbol/map interfaces.
+   Separate field-extension norms, local residue maps, compatibility equations, and complexes
+   into disjoint owners. Do not let residue constructions depend on their later applications.
+5. **Motivic geometric foundations.** Reuse audited Stacks intersection/cycle interfaces first.
+   Own only missing finite-correspondence, cycle and finite-flat geometry
+   under their actual `Colib.AlgebraicGeometry` owners, consuming generic length/module facts.
+6. **Transfers and cohomological applications.** First locate and audit any applicable upstream
+   Nisnevich-site interface, including equivalent presentations under other names. Start after the required geometric, site and
+   sheaf interfaces are fixed. Own transfer structures, Nisnevich constructions, invariance,
+   and the remaining source endpoints according to the verified dependency graph.
+
+These are dependency lanes, not promises that every named topic is unconditional in the source.
+Split a lane further only along verified import boundaries. Each assignment records its exact
+mathematical targets, source locators, proof obligations and owned paths. Use separate worktrees
+or branches for overlap. Serialize Git index/HEAD operations and integration commits. A single
+integrator owns the root imports, shared chapter files, bibliography and ID reservations; workers
+submit proposed edits for these shared paths rather than overwriting each other.
+
+Do not create empty source families or chapters in anticipation of future work. Independent
+lanes can begin concurrently once their interfaces and ownership are explicit. Routine choices
+inside the authorized task do not require a new approval pause.
+
+## Implementation milestones and acceptance
+
+### M0. Close the inventory and establish the native interface
+
+Verify the source and target revisions, clean/owned worktree status, all selected modules and
+closure edges. Enumerate declarations and classify missing prerequisites. Inspect Stacks'
+canonical APIs and select the smallest first proof chain. Record source-versus-target differences
+without assuming that similarly named objects agree.
+
+Acceptance: every selected source module has an owner; the declaration ledger has no unexplained
+omissions; initial native interfaces and prerequisite contracts are explicit. The inventory can
+still mark proof work pending. A plan/inventory-only commit must not claim theorem completion.
+
+### M1. Migrate canonical symbol foundations
+
+Rewrite the first closed chain directly on `MilnorKTheory`: required symbol constructors and
+equations, relations, multiplication/functoriality, and the low-degree endpoints used downstream.
+Use existing Stacks results or Colib's degree-two boundary where they fit. If a proof needs a local
+presentation comparison, state exactly why and prove its symbol-preservation equation.
+
+Acceptance: the migrated declarations use the canonical model; source hypotheses and signs are
+preserved; changed leaves and relevant tests compile; no second general model has been added.
+The ledger and Library identify the precise completed chain, not all 186 Milnor modules.
+
+### M2. Close lower prerequisites and geometric foundations
+
+After the pinned upstream audit, migrate only genuinely missing generic algebra/category/site/sheaf
+primitives in dependency order. Do not recreate available intersection theory or Nisnevich sites. Reuse the
+existing finite-algebra length formula at its RingTheory owner. Rewrite the actual finite
+correspondence/cycle/finite-flat constructions and their composition or coefficient equations
+against the chosen upstream objects. General lemmas stay below scheme and motivic applications.
+
+Acceptance: each extracted primitive has an actual consumer and no upward import cycle; the
+specific geometry equations are proved, not replaced by interfaces that merely assume them.
+Independent completed chains may be integrated before the entire milestone is finished.
+
+### M3. Migrate norms, residues and compatibility
+
+Port source norm and residue results onto the canonical groups. Identify the exact extension,
+valuation, degree, coefficient and generator conventions at every map. Prove the needed
+projection, functoriality, base-change or residue equations only in their source-valid scope.
+
+Treat norm tower independence as a distinct proof obligation. A norm defined using a chosen
+tower is not automatically independent of that tower. A theorem assuming compatibility does
+not construct it. Record choice-dependent or conditional results accurately until independence
+is established by an actual proof.
+
+Acceptance: each claimed map has its construction and defining equations; every independence
+or compatibility assertion has proof evidence or remains explicitly unresolved/conditional.
+No unrestricted norm API is inferred from a special or supplied-data construction.
+
+### M4. Migrate transfers and motivic consumers
+
+Build the transfer and cohomological chains in the verified dependency order, retaining ordinary
+versus derived constructions and the exact Nisnevich, regularity, smoothness or field hypotheses
+of the source. Transport only the maps and structures whose required equations are already
+proved. Include the remaining Motivic-derived results identified by the ledger, not only the
+representative topics named in this plan.
+
+Treat every differential-square-zero assertion as its own proof obligation. A construction
+parameterized by a proof of `d² = 0`, or a conditional complex API, is not a proof that the intended
+residue maps square to zero. Do not claim Gersten/Rost/related complex completion merely because
+a structure with that field compiles. Prove the required reciprocity/cancellation statements at
+their actual hypotheses, or retain the source's conditional statement and disclose the gap.
+
+Acceptance: the relevant diagrams, signs and differential equations are established at their
+stated scope; consumer statements preserve the source assumptions and use the canonical maps.
+Outstanding mathematical obligations remain visible in the ledger and delivery report.
+
+### M5. Reconcile the complete selected surface
+
+Revisit every source declaration and dependency disposition. Verify that no chosen endpoint was
+lost in renaming, consolidation, extraction or upstream reuse. Remove unnecessary temporary
+adapters, retain only justified local comparisons, and check the final production import graph.
+
+Acceptance: every selected declaration has a checked target or a precise, reported blocker;
+there is no Aglib/Motivic/Quillen production dependency and no newly invented axiom. Report partial
+completion honestly if any required result is still blocked. A module-count match alone is not
+acceptance, and compilation alone is not independent mathematical review.
+
+## Library items, references and source credit
+
+Update source, Library and relevant tests in the same mathematical contribution. Reserve IDs
+centrally after checking the current tree. The initial baseline occupies `COL-0001` through
+`COL-0012`; this document does not reserve future IDs. Preserve released IDs through renames.
+
+Add `@[colib_tag]` for independently citable public items, ordinary names for helpers, native
+`@[stacks]` for applicable Stacks correspondences, and precise `@[colib_ref]` locators for books
+and papers. Reuse existing bibliography identities. Inspect and record new references with
+their edition/version, relevant clause and actual scope before marking correspondence checked.
+Do not present a related theorem as an exact citation for a stronger statement.
+
+Keep implementation credit and license notices distinct from mathematical bibliography. Preserve
+original contributors when adapting source. New chapters/sections have introductions and real
+compiled items. Record `author_checked` only after the author's actual source comparison;
+independent review requires separate evidence and a stated checked span.
+
+## Validation, publication and stopping conditions
+
+For each proof chain, compile changed leaves with their real prerequisites and reuse valid
+artifacts. Add focused in-package tests for public interfaces, symbol/map normalization and
+important specializations. Generate `Colib.lean` with Mathlib `mk_all`; do not hand-maintain an
+incomplete root. Keep the explicit test-module text-lint lists in `scripts/check.sh` and
+`.github/workflows/lean-ci.yml` synchronized when adding test modules.
+
+At each meaningful integration milestone run applicable checks through `scripts/check.sh`:
+Python tests and metadata validation, production build, in-package tests, declaration lint,
+Mathlib text style, generated-root check, the pinned production axiom audit, native Library export
+and site generation. Reuse only checks whose inputs remain unchanged after repairs. The permitted
+production axiom closure is `propext`, `Classical.choice`, and `Quot.sound`. No placeholders,
+new axioms or `native_decide` enter production. Kernel replay and separate client checks are not
+part of this task unless explicitly requested.
+
+The active task authorizes milestone pushes after planning and implementation without another
+routine confirmation. The implementation integrator, not a read-only/planning worker, owns them.
+Before every commit/push, inspect HEAD, status and remote changes; stage only owned paths; preserve
+concurrent work; never force-push over it. Keep a milestone coherent and review its diff. Verify
+that the intended commit reached `kangxyz/colib` and monitor that exact SHA's CI. Diagnose and fix
+authorized recoverable failures before declaring the milestone complete. Record commands,
+results, remote SHA and CI links. Do not describe a pushed but failing build as accepted.
+
+The baseline default branch is `main`, with no branch protection or rulesets reported during the
+initial survey. Recheck current repository policy before publication. Existing main CI also
+publishes caches and the Library after success; do not introduce separate deployment changes as
+part of mathematical migration.
+
+Work continues until the selected declaration surface is reconciled and validated, or a concrete
+mathematical, tooling or authorization blocker requires input. A blocker report identifies the
+exact statement/action, completed work, missing evidence and smallest next step. Source
+correspondence, native verification and independent mathematical review remain separate claims
+in every milestone and final report.
+
+## First prerequisite milestone (2026-11-05)
+
+The first selected leaf is
+`CategoryTheory.ShortComplex.quasiIso_of_liftCycles_of_reflectBoundaries` in
+`Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso`. It preserves the fixed Aglib
+statement and proof over an arbitrary ring with independent scalar/carrier universes.
+It uses Mathlib's canonical kernel/range homology and proves a sufficient criterion:
+exact lifting of cycles and reflection of boundaries imply the native quasi-isomorphism.
+
+[The declaration ledger](migration/motivic-short-complex.json) records exact source
+hashes, provenance, upstream alternatives, compilation evidence and the independent
+read-only mathematical/source review. The original Motivic archive was not re-read
+in that review; its provenance was checked against Aglib's manifest. This supporting
+primitive has no independent Library ID. Its existing Aglib consumer is the regular
+single-Koszul tensor augmentation theorem, not yet migrated by this milestone.
+
+This milestone does not include the concurrently prepared Milnor symbol drafts, a
+Koszul construction, or a motivic application. It neither completes M0 nor claims
+completion of M1 or M2. Integration validation is recorded separately from the leaf
+build and independent review; incomplete checks remain explicit in the ledger.
+
+The isolated milestone passed the complete `scripts/check.sh` acceptance on 2026-11-05,
+including production/test builds, lint, generated-root validation, the pinned axiom
+audit and Library/site generation. The new leaf also passed a separate module-scoped
+axiom audit. Kernel replay and downstream client checks were not run.

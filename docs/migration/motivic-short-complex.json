@@ -1,0 +1,156 @@
+{
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.Algebra.Homology.ShortComplex.ModuleQuasiIso",
+  "source_sha256": "29b6f06f69ccb0dca8ed0c59af8841b6a2bc526e6dfd5291d66e53cb13265477",
+  "original_provenance": {
+    "author": "Motivic Cohomology contributors",
+    "license": "Apache-2.0",
+    "original_module": "Motivic/Algebra/Homology/ModuleQuasiIsoCriterion.lean",
+    "aglib_manifest": "docs/migration/motivic-koszul.json",
+    "original_source_sha256": "92e6a21ecde28c66b2b24a502b5ebaec7cd389d920e41cf93406e7636398a997"
+  },
+  "declarations": [
+    {
+      "source": "CategoryTheory.ShortComplex.quasiIso_of_liftCycles_of_reflectBoundaries",
+      "target": "CategoryTheory.ShortComplex.quasiIso_of_liftCycles_of_reflectBoundaries",
+      "target_module": "Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso",
+      "disposition": "prerequisite extraction",
+      "hypotheses": "R : Type u, Ring R; S T : ShortComplex (ModuleCat.{v} R), independent u and v; a short-complex morphism phi; every target cycle lifts exactly along phi.tau_2 to a source cycle; every source cycle whose image is a target boundary is a source boundary.",
+      "conclusion": "ShortComplex.QuasiIso phi, for the native homology map.",
+      "canonical_objects": [
+        "CategoryTheory.ShortComplex",
+        "ModuleCat",
+        "ShortComplex.moduleCatLeftHomologyData",
+        "ShortComplex.LeftHomologyMapData",
+        "ShortComplex.QuasiIso"
+      ],
+      "actual_source_consumer": "Aglib.Algebra.Homology.Koszul.Single.Tensor.Quotient.tensorAugmentation_quasiIso_of_regular",
+      "correspondence_scope": "Same statement, universe parameters, hypotheses, conclusion and proof as fixed Aglib source; module documentation adds provenance. No weakening or Koszul construction.",
+      "library_item": "Supporting lower primitive; no independent Library ID allocated by the integrator.",
+      "validation": {
+        "source_comparison": "author_checked",
+        "lean_compilation": "passed",
+        "independent_review": {
+          "status": "passed",
+          "date": "2026-11-05",
+          "scope": "Read-only independent comparison of the target statement, proof, universes, ring hypotheses, canonical homology maps, retained copyright/license, fixed Aglib source, and the closest pinned Mathlib/Stacks interfaces. No blocking mathematical or source-correspondence issue found. Original Motivic archive not directly re-inspected; its path/hash checked against the Aglib migration manifest. No compilation or kernel replay performed by the reviewer."
+        },
+        "kernel_replay": "not requested; not run",
+        "validation_baseline_revision": "7603d2dba0e5c67646277ca269b76ec341bf3078",
+        "target_source_sha256": "701ef9c3226c55c526b1d9c4e5591b6a6baea54503bd5cfdc9b05d07a39ab940",
+        "olean_sha256": "5dafc713448d5ceb106421f9b08de3bd3330afda98dab3bf2f8bbf1901ed9f3f",
+        "commands": [
+          {
+            "command": "lake build Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso",
+            "result": "Passed, one target built, dependencies reused."
+          },
+          {
+            "command": "lake exe batteries/runLinter --no-build Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso",
+            "result": "Passed."
+          },
+          {
+            "command": "lake exe mathlib/lint-style Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso",
+            "result": "Passed (exit 0); absent scripts/nolints-style.txt treated as empty, as reported by tool."
+          }
+        ],
+        "artifact": ".lake/build/lib/lean/Colib/Algebra/Homology/ShortComplex/ModuleQuasiIso.olean",
+        "full_repository_validation": "Passed scripts/check.sh in an isolated baseline snapshot containing only this milestone, excluding concurrent Milnor Symbols drafts.",
+        "integration_validation": {
+          "date": "2026-11-05",
+          "baseline_revision": "7603d2dba0e5c67646277ca269b76ec341bf3078",
+          "scope": "Baseline plus ModuleQuasiIso, generated Colib.lean, this ledger and the migration plan; no other worker drafts. Dependencies and compatible artifacts reused.",
+          "root_source_sha256": "7bf6153680446287c4fd19014c278507e01a45250169bf27d90daa75f16ff2a1",
+          "command": "bash scripts/check.sh",
+          "exit_code": 0,
+          "results": {
+            "python_unit_tests": "17 passed",
+            "catalog_check": "2 chapters, 3 sections, 12 permanent items checked",
+            "production_build": "Passed; 2377 Lake jobs, compatible dependencies reused",
+            "in_package_tests": "Passed: ColibTest.Pilot, ColibTest.References, ColibTest.FiniteAlgebraImport",
+            "declaration_lint": "Passed",
+            "text_style": "Passed; absent scripts/nolints-style.txt treated as empty",
+            "generated_root": "Passed; generated with pinned mathlib/mk_all and checked",
+            "production_axiom_audit": "75 declarations passed; only propext, Classical.choice, Quot.sound",
+            "library_export": "12 items, 15 indexed declarations",
+            "site_generation": "2 chapters, 3 sections, 12 item pages, 5 reference pages"
+          },
+          "auditor_revision": "46024e005996495c65ef609368e11ab39c4222e3",
+          "additional_leaf_audit": {
+            "command": "lake env .lake/tools/axiom-audit/.lake/build/bin/axiom-audit --root Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso --json",
+            "audited": 1,
+            "ok": true,
+            "axioms_used": [
+              "propext",
+              "Classical.choice",
+              "Quot.sound"
+            ]
+          },
+          "notes": "Existing pinned Stacks MilnorKTheory show-tactic style warnings were replayed; no changed-source warning or failure. Initial invocation without the existing activation environment failed on the default read-only Lake cache path; corrected using the existing activate.sh before the complete successful check. Kernel replay and downstream client checks were not run.",
+          "check_log_sha256": "6348fe545c66b916f15f35b92dc54de16dd70c599388adf8b74a4c20e54f3330"
+        }
+      }
+    }
+  ],
+  "upstream_audit": {
+    "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+    "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+    "interfaces": [
+      {
+        "module": "Mathlib.Algebra.Homology.ShortComplex.ModuleCat",
+        "declarations": [
+          "moduleCatLeftHomologyData",
+          "moduleCatHomologyIso"
+        ],
+        "disposition": "exact reuse of canonical kernel/range homology, not a new construction"
+      },
+      {
+        "module": "Mathlib.Algebra.Homology.ShortComplex.QuasiIso",
+        "declarations": [
+          "LeftHomologyMapData.quasiIso_iff",
+          "quasiIso_of_epi_of_isIso_of_mono"
+        ],
+        "disposition": "First is used directly; second requires middle-component isomorphism, which source hypotheses do not imply."
+      },
+      {
+        "module": "StacksFrontier.Algebra.DGA.FreeResolution.LimitQuasiIso",
+        "declarations": [
+          "shortComplex_quasiIso_of_cycle_boundaries"
+        ],
+        "disposition": "Private higher DGA-owner helper; permits cycle lifting modulo boundaries. Not a public lower interface. Extract source minimal generic theorem instead of importing DGA applications."
+      },
+      {
+        "module": "StacksFrontier.Homology.Eta.Derived",
+        "declarations": [
+          "quasiIso_iff_cycles"
+        ],
+        "disposition": "Private higher eta-owner helper; equivalent homology criterion with modulo-boundary lifting. Not a public lower interface."
+      },
+      {
+        "module": "StacksFrontier.Algebra.Homology.DoubleQuasiIso",
+        "declarations": [
+          "quasiIsoAt_of_bijective_cycles",
+          "quasiIsoAt_of_bijective_opcycles"
+        ],
+        "disposition": "Homological complexes with respectively vanishing incoming or outgoing differentials; these zero-differential hypotheses are absent from the source short-complex criterion."
+      },
+      {
+        "module": "Mathlib.Algebra.Homology.ShortComplex.QuasiIso",
+        "declarations": [
+          "quasiIso_iff_isIso_liftCycles",
+          "quasiIso_iff_isIso_descOpcycles"
+        ],
+        "disposition": "Special cases requiring three displayed differentials to vanish; these hypotheses are not present in the source criterion. The generic LeftHomologyMapData.quasiIso_iff is reused instead."
+      },
+      {
+        "module": "StacksFrontier.RingTheory.NaiveCotangent.Cocartesian",
+        "declarations": [
+          "quasiIso_of_cycle_boundaries"
+        ],
+        "disposition": "Private higher naive-cotangent helper at line 346; permits lifting modulo boundaries and assumes CommRing. Not a public lower interface. Independently inspected as a third related private criterion."
+      }
+    ],
+    "search_scope": "Pinned local StacksCore, StacksFrontier and Mathlib trees searched for lifting/reflecting cycles/boundaries and quasi-isomorphism criteria; inspected exact ModuleCat, ConcreteCategory, QuasiIso, Ab, LimitQuasiIso, Eta.Derived, DoubleQuasiIso sources. A second whole-Mathlib search checked quasiIso/QuasiIso alongside cycle, boundary, bijective, surjective and injective. No public elementwise replacement with the source assumptions was found.",
+    "conclusion": "Native homology infrastructure is reused in full. The increment is only a public minimal lower-owner sufficient criterion, already private in more general forms upstream. This is not claimed as new mathematics."
+  }
+}

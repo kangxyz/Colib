@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0207"
+title = "Exact residue-branch multiplicities from the tensor decomposition"
+kind = "theorem"
+section = "charpoly-branches"
+order = 60
+statement = "For each monic irreducible factor of the scalar-extended residue minimal polynomial, the sum of branch ramification exponents times degrees over the corresponding simple residue intermediate fields equals the original ramification exponent."
+scope = "Characteristic-zero base residue field, actual finite tensor decomposition, compatible integral elements, finite torsion-free local DVR integral closures with the original scalar towers, a specified residue power basis and actual uniformizer equations. The characteristic-polynomial product is proved, not assumed. This is not a Milnor norm-residue theorem."
+review = "author_checked"

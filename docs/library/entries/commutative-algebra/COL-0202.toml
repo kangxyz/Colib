@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0202"
+title = "Multiplication characteristic polynomials and minimal-polynomial powers"
+kind = "theorem"
+section = "charpoly-branches"
+order = 10
+statement = "The characteristic polynomial of actual multiplication evaluates to the norm of the scalar translate. On the simple intermediate field it is the original minimal polynomial; on an ambient finite field extension it is the minimal polynomial raised to the degree over that intermediate field."
+scope = "The evaluation formula uses a finite free commutative algebra. The ambient minimal-polynomial power formula retains an infinite base field; the simple-generator formula needs neither infinitude nor separability."
+review = "author_checked"

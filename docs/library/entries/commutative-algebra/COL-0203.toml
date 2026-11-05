@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0203"
+title = "Actual tensor decompositions and characteristic-polynomial products"
+kind = "theorem"
+section = "charpoly-branches"
+order = 20
+statement = "An actual finite tensor-product algebra equivalence identifies the scalar-extended multiplication characteristic polynomial with the product of the characteristic polynomials of the literal images of one tensor the original element."
+scope = "Finite-dimensional field extension and a supplied finite product of finite-dimensional fields. Binary and dependent finite-product formulas use the original multiplication maps. No separability or infinite-field premise is added."
+review = "author_checked"

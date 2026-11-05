@@ -1,0 +1,322 @@
+{
+  "milestone": "Actual characteristic polynomials and exact residue-branch counts",
+  "baseline": "7ef0a70afb3fa25012e6bf81675c7a6af68da30c",
+  "aglib_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "library_items": [
+    "COL-0202",
+    "COL-0203",
+    "COL-0204",
+    "COL-0205",
+    "COL-0206",
+    "COL-0207"
+  ],
+  "source_correspondence": {
+    "state": "author_checked",
+    "independent_literature_review": false,
+    "original_repository": {
+      "repository": "https://github.com/kangxyz/motivic",
+      "revision": "b368f6965228e63643380033ec224335bcd24a2c"
+    },
+    "modules": [
+      {
+        "source_module": "Motivic.Aglib.FieldTheory.FieldCharpolyPower",
+        "source_sha256": "e737f131c4bcc5ae458a4e4c7c61eb2da9755ee5dca2fceddca2ff6a499d01dd",
+        "module": "Aglib.FieldTheory.FieldCharpolyPower",
+        "sha256": "e737f131c4bcc5ae458a4e4c7c61eb2da9755ee5dca2fceddca2ff6a499d01dd",
+        "declarations": [
+          {
+            "line": 27,
+            "name": "eval_charpoly_lmul"
+          },
+          {
+            "line": 36,
+            "name": "charpoly_lmul_adjoin_gen"
+          },
+          {
+            "line": 47,
+            "name": "charpoly_lmul_eq_minpoly_pow"
+          }
+        ],
+        "target_module": "Colib.RingTheory.Charpoly.Basic",
+        "target_file": "Colib/RingTheory/Charpoly/Basic.lean"
+      },
+      {
+        "source_module": "Motivic.Aglib.FieldTheory.TensorCharpolyProduct",
+        "source_sha256": "345a7a58eabf621ee55656bb830c1a4bd898d6f776b24bdee6bf86384ccc6fc3",
+        "module": "Aglib.FieldTheory.TensorCharpolyProduct",
+        "sha256": "345a7a58eabf621ee55656bb830c1a4bd898d6f776b24bdee6bf86384ccc6fc3",
+        "declarations": [
+          {
+            "line": 31,
+            "name": "charpoly_lmul_algEquiv"
+          },
+          {
+            "line": 41,
+            "name": "charpoly_lmul_prod"
+          },
+          {
+            "line": 52,
+            "name": "charpoly_lmul_pi"
+          },
+          {
+            "line": 76,
+            "name": "map_charpoly_lmul_eq_prod_tensor"
+          }
+        ],
+        "target_module": "Colib.RingTheory.Charpoly.TensorProduct",
+        "target_file": "Colib/RingTheory/Charpoly/TensorProduct.lean"
+      },
+      {
+        "source_module": "Motivic.Aglib.RingTheory.DVRCharpolyResidue",
+        "source_sha256": "97a5da150ae4356fd86501570a7528ab11264b336c2fb91138f82982490d0e5d",
+        "module": "Aglib.RingTheory.DVRCharpolyResidue",
+        "sha256": "6566e43e16a277524565d4e71203ee77fdb85497dae643b94ce2c68530846370",
+        "declarations": [
+          {
+            "line": 32,
+            "name": "eval_charpoly_lmul_eq_norm"
+          },
+          {
+            "line": 46,
+            "name": "map_charpoly_lmul_integralClosure"
+          },
+          {
+            "line": 76,
+            "name": "residue_charpoly_lmul_eq_pow"
+          },
+          {
+            "line": 93,
+            "name": "residue_charpoly_lmul_eq_minpoly_pow"
+          },
+          {
+            "line": 105,
+            "name": "residue_charpoly_lmul_eq_minpoly_pow_of_powerBasis"
+          }
+        ],
+        "target_module": "Colib.RingTheory.Charpoly.DVRResidue",
+        "target_file": "Colib/RingTheory/Charpoly/DVRResidue.lean"
+      },
+      {
+        "source_module": "Motivic.Aglib.RingTheory.IntegralTensorCharpolyProduct",
+        "source_sha256": "e14a5a48af0744f88a5d253dbe85900e2ef4dd8e276f5c54eae58ce56916907c",
+        "module": "Aglib.RingTheory.IntegralTensorCharpolyProduct",
+        "sha256": "316b3833f73d8e50a3b472b791189475a9ee8323d19e437f002a449d02874acd",
+        "declarations": [
+          {
+            "line": 28,
+            "name": "map_charpoly_lmul_eq_prod_integralClosure"
+          }
+        ],
+        "target_module": "Colib.RingTheory.Charpoly.IntegralTensorProduct",
+        "target_file": "Colib/RingTheory/Charpoly/IntegralTensorProduct.lean"
+      },
+      {
+        "source_module": "Motivic.Aglib.RingTheory.PolynomialPowerFactorCount",
+        "source_sha256": "55bf93aead8994e62fd83a00f93e9cddea70d66e2818524959b4f79093275c8b",
+        "module": "Aglib.RingTheory.PolynomialPowerFactorCount",
+        "sha256": "032cedec6e97b67bb0ccc42893d9e89106a539095a0edbfcfaaebbdff37202aa",
+        "declarations": [
+          {
+            "line": 29,
+            "name": "count_normalizedFactors_prod_irreducible_pow"
+          },
+          {
+            "line": 46,
+            "name": "sum_weights_eq_of_prod_eq_squarefree_pow"
+          }
+        ],
+        "target_module": "Colib.RingTheory.Polynomial.PowerFactorCount",
+        "target_file": "Colib/RingTheory/Polynomial/PowerFactorCount.lean"
+      },
+      {
+        "source_module": "Motivic.Aglib.RingTheory.DVRCharpolyBranchCount",
+        "source_sha256": "69e9289e0eb47b2a877999cb674a92a3ad98736aae3e9e83a9530043ebc9fc7a",
+        "module": "Aglib.RingTheory.DVRCharpolyBranchCount",
+        "sha256": "ae49dc11bc992fbf0139adb1d95cca5d7bed6c48328e873bcd350c3dff827858",
+        "declarations": [
+          {
+            "line": 53,
+            "name": "sum_residue_branch_degrees_eq_ramification"
+          }
+        ],
+        "target_module": "Colib.RingTheory.Charpoly.DVRBranchCount",
+        "target_file": "Colib/RingTheory/Charpoly/DVRBranchCount.lean"
+      }
+    ],
+    "proof_changes": [
+      "Generic finite-free evaluation is owned once by Charpoly.Basic and reused by the field alias.",
+      "Only the nested irreducible-branch representation is replaced by a polynomial and Monic, Irreducible and divisibility proof arguments.",
+      "The original sixteen theorem statements and native-object proof chain are retained; the unused AdjoinRoot presentation dependency is removed."
+    ],
+    "review_boundary": "Source correspondence and compilation are distinct; no external independent mathematical review is claimed."
+  },
+  "scope": [
+    {
+      "id": "COL-0202",
+      "statement": "The characteristic polynomial of actual multiplication evaluates to the norm of the scalar translate. On the simple intermediate field it is the original minimal polynomial; on an ambient finite field extension it is the minimal polynomial raised to the degree over that intermediate field.",
+      "conditions": "The evaluation formula uses a finite free commutative algebra. The ambient minimal-polynomial power formula retains an infinite base field; the simple-generator formula needs neither infinitude nor separability."
+    },
+    {
+      "id": "COL-0203",
+      "statement": "An actual finite tensor-product algebra equivalence identifies the scalar-extended multiplication characteristic polynomial with the product of the characteristic polynomials of the literal images of one tensor the original element.",
+      "conditions": "Finite-dimensional field extension and a supplied finite product of finite-dimensional fields. Binary and dependent finite-product formulas use the original multiplication maps. No separability or infinite-field premise is added."
+    },
+    {
+      "id": "COL-0204",
+      "statement": "The integral multiplication characteristic polynomial maps to its original fraction-field characteristic polynomial. Its residue reduction is the residue multiplication characteristic polynomial to the uniformizer exponent, hence a minimal-polynomial power with the full relative residue degree.",
+      "conditions": "The localization comparison uses finite free integral closures and compatible scalar towers. DVR reduction uses a finite torsion-free local extension, an infinite base residue field and an actual uniformizer equation. Only an actual residue power basis with the specified generator reduces the exponent to the ramification exponent alone."
+    },
+    {
+      "id": "COL-0205",
+      "statement": "The generic tensor decomposition and compatible integral elements imply the corresponding product identity between their actual integral multiplication characteristic polynomials. Equality is proved in the fraction field and descended through the injective base map.",
+      "conditions": "Finite free integral closures, the specified fraction fields and scalar towers, an actual tensor algebra equivalence and compatible integral elements. Neither an integral product identity nor a branch multiplicity formula is assumed."
+    },
+    {
+      "id": "COL-0206",
+      "statement": "Normalized-factor multiplicity in a finite product of monic irreducible powers equals the sum of the matching weights. If the product is the e-th power of a monic squarefree polynomial, the total weight above each monic irreducible divisor is exactly e.",
+      "conditions": "Polynomials over a field with decidable equality, literal monic irreducible factors and natural-number weights. The branch is the polynomial with its monicity, irreducibility and divisibility proofs, without an additional branch representation."
+    },
+    {
+      "id": "COL-0207",
+      "statement": "For each monic irreducible factor of the scalar-extended residue minimal polynomial, the sum of branch ramification exponents times degrees over the corresponding simple residue intermediate fields equals the original ramification exponent.",
+      "conditions": "Characteristic-zero base residue field, actual finite tensor decomposition, compatible integral elements, finite torsion-free local DVR integral closures with the original scalar towers, a specified residue power basis and actual uniformizer equations. The characteristic-polynomial product is proved, not assumed. This is not a Milnor norm-residue theorem."
+    }
+  ],
+  "component_validation": {
+    "production_leaves": 6,
+    "test_leaves": 6,
+    "production_theorems": 16,
+    "production_axiom_audit": {
+      "allowed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audited": 115,
+      "axiomsUsed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ok": true,
+      "root": "Colib",
+      "violations": []
+    },
+    "consumer_axiom_audit": {
+      "allowed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audited": 23,
+      "axiomsUsed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ok": true,
+      "root": "ColibTest",
+      "violations": []
+    },
+    "declaration_lint_modules": 12,
+    "text_style": "passed",
+    "kernel_replay": false,
+    "registered_tree": false,
+    "freeze_sha256": "3ef63ac7e2b4a87c62feec5086985c8135ceb80c50c2cb3253b052ce3181c8be"
+  },
+  "registered_tree_validation": {
+    "state": "passed",
+    "command": "bash scripts/check.sh",
+    "production_build": "passed",
+    "in_package_tests": "passed",
+    "python_tests": 66,
+    "declaration_lint": "passed",
+    "text_style": "passed",
+    "generated_entry": "passed",
+    "production_axiom_audit": {
+      "declarations": 2943,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "library_export": {
+      "items": 204,
+      "indexed_declarations": 682,
+      "chapters": 7,
+      "sections": 23,
+      "reference_pages": 14
+    },
+    "website_build": "passed",
+    "resource_limits": {
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "sample_seconds": 0.1,
+      "physical_memory_bytes": 10451427328,
+      "lean_threads": 1,
+      "max_active_lean": 1
+    },
+    "peak_owned_rss_bytes": 6221680640,
+    "owned_group_gone": true,
+    "guard_failure": null,
+    "kernel_replay": false,
+    "pins_changed": false,
+    "component_evidence_directory": "charpoly-branch-validation-20261105-2242",
+    "registered_tree_evidence_directory": "charpoly-branch-integration-20261105-2247",
+    "receipt": "03-full-check-r2.json",
+    "log": "03-full-check-r2.log",
+    "superseded_registration_failure": "The first full check found a long citation string. Only citation text was shortened; the successful replacement check is retained.",
+    "mathematical_source_identity": "All twelve frozen files match after removing only new Library attributes and reference imports."
+  },
+  "registered_sources": {
+    "Colib/RingTheory/Charpoly/Basic.lean": {
+      "sha256": "5cb8c585d5053cc62ee1cd52c5ca762b2a593e09b7ed440053315e3ab90b4627",
+      "validated_component_sha256": "913fe9761ab8a12a39bbaab6657155f0b6f6a447bb3680007d3b0a1606841848"
+    },
+    "Colib/RingTheory/Charpoly/TensorProduct.lean": {
+      "sha256": "cceed95002aa2524e62d8aa842ba607b34a7fbc4a72c31512aa5b9bec00150bf",
+      "validated_component_sha256": "8d7a3b3e664797226e3bfb1364b9e4e797133c874ce3fe0c25e3e9612e80c194"
+    },
+    "Colib/RingTheory/Charpoly/DVRResidue.lean": {
+      "sha256": "8dedd0a010fb96f188cca69fc36205ebb91b413a583645c9348070c3e36b7d96",
+      "validated_component_sha256": "b76381e9520ef8f8b5ae55ee82b7f939783e38038d3f4c95cc8cc7f8d18c0a3f"
+    },
+    "Colib/RingTheory/Charpoly/IntegralTensorProduct.lean": {
+      "sha256": "6ecf91f67b19929ac67b8590acf958ee9869c80ad21afcb9466d967af78e0fa2",
+      "validated_component_sha256": "fd7776ab648970b64b12a548d94198fc10da66f79f726737174997d71997dc9a"
+    },
+    "Colib/RingTheory/Polynomial/PowerFactorCount.lean": {
+      "sha256": "cbab215120174fd9f35c39ddc930d23068b85537fbad9c76ab4749e1042311cf",
+      "validated_component_sha256": "ef2cc05b22a6da3e21999942fdc13d95996ef3a22704ac50e2e2b4dd368c3f1f"
+    },
+    "Colib/RingTheory/Charpoly/DVRBranchCount.lean": {
+      "sha256": "a2931d03cd2ab490cf7e2264321803a125ab544646e03e5f910742a7542c1748",
+      "validated_component_sha256": "5ef1280bcd95e4bfabfa11b4577d5aab35ae8690e00ae028812c64fa92ea21ad"
+    },
+    "ColibTest/FieldCharpolyPower.lean": {
+      "sha256": "3f50333cd43414cadeb48cb0df48d084098314f06a9fa38731835932f246c528",
+      "validated_component_sha256": "3f50333cd43414cadeb48cb0df48d084098314f06a9fa38731835932f246c528"
+    },
+    "ColibTest/TensorCharpolyProduct.lean": {
+      "sha256": "60f9b29bbb7fc579756e9e5783c42bdf74e665d9184b3e3af27f5ae9c6758270",
+      "validated_component_sha256": "60f9b29bbb7fc579756e9e5783c42bdf74e665d9184b3e3af27f5ae9c6758270"
+    },
+    "ColibTest/DVRCharpolyResidue.lean": {
+      "sha256": "59398c64fc15dff6ab81a35d1b1fc5435f7dca7b34fca04a381b426d1f3b3362",
+      "validated_component_sha256": "59398c64fc15dff6ab81a35d1b1fc5435f7dca7b34fca04a381b426d1f3b3362"
+    },
+    "ColibTest/IntegralTensorCharpolyProduct.lean": {
+      "sha256": "b80c861ade7f9ef40d83eb52776c4973c958d540fb2dc588cf23f02c603f1674",
+      "validated_component_sha256": "b80c861ade7f9ef40d83eb52776c4973c958d540fb2dc588cf23f02c603f1674"
+    },
+    "ColibTest/PolynomialPowerFactorCount.lean": {
+      "sha256": "1d4ed0857fa44da1c9ff7eb7d16f514ff2f93163e9477ae628caf1d363d53498",
+      "validated_component_sha256": "1d4ed0857fa44da1c9ff7eb7d16f514ff2f93163e9477ae628caf1d363d53498"
+    },
+    "ColibTest/DVRCharpolyBranchCount.lean": {
+      "sha256": "44005d84e5f0ef57821a9f005237ddc72e41e9a021318e35c62b53ea4fb88e7f",
+      "validated_component_sha256": "44005d84e5f0ef57821a9f005237ddc72e41e9a021318e35c62b53ea4fb88e7f"
+    }
+  }
+}

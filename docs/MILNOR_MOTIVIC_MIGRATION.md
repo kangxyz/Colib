@@ -678,3 +678,19 @@ DVR extension, actual compatible fraction fields and finite-dimensional field
 data remain explicit. No second order model is introduced; the old relative
 ideal-norm helper and Milnor transfer are not claimed.
 See migration/motivic-dvr-norm-order.json for exact scope and source comparison.
+
+### Actual characteristic polynomials and exact residue-branch counts
+
+COL-0202--COL-0207 complete the actual multiplication characteristic-polynomial,
+DVR residue, integral tensor-product and exact residue-branch multiplicity chain.
+The integral product formula is derived from the supplied generic tensor algebra
+equivalence and compatible integral elements, not accepted as a new hypothesis.
+The general residue exponent retains the degree over the simple residue
+intermediate field; reducing it to the ramification exponent requires the
+specified residue power basis and generator equality. The final count retains
+characteristic-zero residue, all original scalar towers and integral closures,
+and the actual uniformizer equations. Literal monic irreducible polynomials
+replace only the old nested branch wrapper. No additional multiplication, norm,
+branch or order model is introduced. This is an algebraic branch-count theorem,
+not a Milnor norm-residue or transfer theorem.
+See migration/motivic-charpoly-branches.json for source comparison and checks.

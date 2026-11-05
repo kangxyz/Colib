@@ -21,3 +21,9 @@ id = "henselian-ramification"
 title = "Henselian roots, ramification and DVR orders"
 order = 30
 introduction = "Simple-root Hensel lifting supplies residue-one roots for invertible exponents and normalizes actual uniformizer equations. The native local fundamental identity identifies the supplied ramification exponent and residue degree with the actual fraction-field degree, without a separate norm-order model. The existing fraction order is then identified with the actual negative valuation logarithm, including integer powers, poles and independence of a chosen irreducible."
+
+[[sections]]
+id = "charpoly-branches"
+title = "Characteristic polynomials and exact branch multiplicities"
+order = 40
+introduction = "Actual multiplication characteristic polynomials connect scalar extension, integral closures and DVR residue reduction. A supplied tensor decomposition yields the integral product identity; normalized factor counts then prove the exact ramification-weighted residue-branch multiplicities with all relative residue degrees retained."

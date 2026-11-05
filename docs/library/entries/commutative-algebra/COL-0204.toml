@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0204"
+title = "DVR reduction of actual multiplication characteristic polynomials"
+kind = "theorem"
+section = "charpoly-branches"
+order = 30
+statement = "The integral multiplication characteristic polynomial maps to its original fraction-field characteristic polynomial. Its residue reduction is the residue multiplication characteristic polynomial to the uniformizer exponent, hence a minimal-polynomial power with the full relative residue degree."
+scope = "The localization comparison uses finite free integral closures and compatible scalar towers. DVR reduction uses a finite torsion-free local extension, an infinite base residue field and an actual uniformizer equation. Only an actual residue power basis with the specified generator reduces the exponent to the ramification exponent alone."
+review = "author_checked"

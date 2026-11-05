@@ -160,6 +160,36 @@ class LibraryTests(unittest.TestCase):
         self.assertNotIn("[PerfectField", source)
         self.assertNotIn("[HenselianLocalRing", source)
 
+    def test_charpoly_branch_complete_chain_registration(self):
+        root = catalog.ROOT
+        modules = {
+            "COL-0202": "Colib.RingTheory.Charpoly.Basic",
+            "COL-0203": "Colib.RingTheory.Charpoly.TensorProduct",
+            "COL-0204": "Colib.RingTheory.Charpoly.DVRResidue",
+            "COL-0205": "Colib.RingTheory.Charpoly.IntegralTensorProduct",
+            "COL-0206": "Colib.RingTheory.Polynomial.PowerFactorCount",
+            "COL-0207": "Colib.RingTheory.Charpoly.DVRBranchCount",
+        }
+        for identifier, module in modules.items():
+            self.assertEqual(self.library["entries"][identifier]["section"],
+                             "charpoly-branches")
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            for module in (
+                    "ColibTest.FieldCharpolyPower",
+                    "ColibTest.TensorCharpolyProduct",
+                    "ColibTest.DVRCharpolyResidue",
+                    "ColibTest.IntegralTensorCharpolyProduct",
+                    "ColibTest.PolynomialPowerFactorCount",
+                    "ColibTest.DVRCharpolyBranchCount",
+            ):
+                self.assertIn(module, (root / path).read_text())
+        self.assertIn("infinite base field", self.library["entries"]["COL-0202"]["scope"])
+        self.assertIn("power basis", self.library["entries"]["COL-0204"]["scope"])
+        self.assertIn("Characteristic-zero", self.library["entries"]["COL-0207"]["scope"])
+
     def native_fixture(self):
         native = {
             "bindings": [],
@@ -189,6 +219,7 @@ class LibraryTests(unittest.TestCase):
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
             "adic-completion": "Colib.RingTheory.AdicCompletion.FiniteAlgebra",
             "principal-euler": "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic",
+            "charpoly-branches": "Colib.RingTheory.Charpoly.DVRBranchCount",
             "henselian-ramification": "Colib.RingTheory.Henselian.UniformizerNormalization",
             "finite-algebra-coefficients": "Colib.RingTheory.Length.FiniteAlgebra",
         }

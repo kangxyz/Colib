@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0206"
+title = "Exact weights over squarefree polynomial factors"
+kind = "theorem"
+section = "charpoly-branches"
+order = 50
+statement = "Normalized-factor multiplicity in a finite product of monic irreducible powers equals the sum of the matching weights. If the product is the e-th power of a monic squarefree polynomial, the total weight above each monic irreducible divisor is exactly e."
+scope = "Polynomials over a field with decidable equality, literal monic irreducible factors and natural-number weights. The branch is the polynomial with its monicity, irreducibility and divisibility proofs, without an additional branch representation."
+review = "author_checked"

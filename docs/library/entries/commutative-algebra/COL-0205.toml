@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0205"
+title = "Integral characteristic-polynomial products from actual tensor branches"
+kind = "theorem"
+section = "charpoly-branches"
+order = 40
+statement = "The generic tensor decomposition and compatible integral elements imply the corresponding product identity between their actual integral multiplication characteristic polynomials. Equality is proved in the fraction field and descended through the injective base map."
+scope = "Finite free integral closures, the specified fraction fields and scalar towers, an actual tensor algebra equivalence and compatible integral elements. Neither an integral product identity nor a branch multiplicity formula is assumed."
+review = "author_checked"

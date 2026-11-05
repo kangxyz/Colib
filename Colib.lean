@@ -88,6 +88,7 @@ public import Colib.Topology.Realization.CylinderEndpoints
 public import Colib.Topology.Realization.CylinderIso
 public import Colib.Topology.Realization.EdgePath
 public import Colib.Topology.Realization.FiniteSimplexAdapter
+public import Colib.Topology.Realization.GraphAttachmentAnchors
 public import Colib.Topology.Realization.HomotopyBridge
 public import Colib.Topology.Realization.Prism
 public import Colib.Topology.Realization.PrismCoordinates
@@ -101,6 +102,7 @@ public import Colib.Topology.Realization.SimplexAttachmentFullness
 public import Colib.Topology.Realization.SimplexAttachmentPathGeneration
 public import Colib.Topology.Realization.SimplexBoundary
 public import Colib.Topology.Realization.SimplexBoundaryCollar
+public import Colib.Topology.Realization.SimplexBoundaryEndpoints
 public import Colib.Topology.Realization.SimplexCharts
 public import Colib.Topology.Realization.SimplexHomotopy
 public import Colib.Topology.Realization.SimplicialColimits

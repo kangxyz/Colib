@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0108"
+title = "Compatible anchors in parametrized graph attachments"
+kind = "definition"
+section = "geometric-realization"
+order = 280
+statement = "For an actual one-simplex attachment, given a groupoid-valued vertex assignment with specified vertex isomorphisms and compatible original edge morphisms, every attachment point admits anchor data agreeing with old vertices and individual geometric-edge spokes up to original groupoid arrows."
+scope = "The parameter and old vertex spaces need not be discrete, connected or separated. The topological spaces share one universe, while source-groupoid object and morphism universes remain independent. A spoke uses PathConnectedSpace.somePath, mapped into the target and preceded by the given vertex isomorphism; it is a path class, not a specified straight segment or an actual Path-valued output. The spoke composition identity concerns paths inside a single geometric edge. The supplied edge morphisms and their hedge compatibility equation are hypotheses of anchor existence, not conclusions. Nonempty Anchor is proved separately for each point; no continuous global selection, arbitrary-path compatibility, edge generation, fullness, faithfulness, equivalence or fundamental-group retraction is established. The citations supply convex path-homotopy and endpoint-transport ingredients or background, not this exact anchor construction. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

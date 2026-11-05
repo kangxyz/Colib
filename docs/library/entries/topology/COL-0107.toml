@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0107"
+title = "Endpoints of the geometric one-simplex boundary"
+kind = "proposition"
+section = "geometric-realization"
+order = 270
+statement = "The boundary of the native finite real one-simplex consists exactly of the two specified vertex points boundaryZero and boundaryOne, and those points are distinct."
+scope = "This is an explicit classification of boundary points in dimension one. The simplex-coordinate description is background rather than a claim that the source states these exact API identities. No new equivalence with Fin 2, boundary homeomorphism, arbitrary-dimensional endpoint classification, homotopy extension property or path-generation theorem is constructed. Source correspondence was checked against the cited scope on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

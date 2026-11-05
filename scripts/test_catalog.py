@@ -137,6 +137,13 @@ class LibraryTests(unittest.TestCase):
         for identifier in ("COL-0034", "COL-0035"):
             self.assertTrue(result["entries"][identifier]["references"])
 
+    def test_q_functoriality_ids_keep_their_owners(self):
+        self.assertEqual(self.library["entries"]["COL-0036"]["section"], "restricted-spans")
+        self.assertEqual(self.library["entries"]["COL-0037"]["section"], "exact-categories")
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for identifier in ("COL-0036", "COL-0037"):
+            self.assertTrue(result["entries"][identifier]["references"])
+
     def test_unknown_reference_is_rejected(self):
         native = self.native_fixture()
         native["citations"][0]["source"] = "missing"

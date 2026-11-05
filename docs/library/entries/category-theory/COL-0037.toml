@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0037"
+title = "Q-functors induced by exact functors"
+kind = "definition"
+section = "exact-categories"
+order = 80
+statement = "An additive conflation-preserving functor between chosen exact structures induces the Q-functor that applies the underlying functor to objects and span representatives. Exact-functor identities and composition induce the corresponding identities and composition of Q-functors."
+scope = "Preadditive source and target categories with finite biproducts and independent object and hom universes, each with a chosen exact structure. Admissibility and the selective pullback-preservation condition are derived from exactness, not supplied as extra hypotheses. Only the induced categorical Q-functor clause is covered, not natural-transformation maps, classifying spaces or higher K-groups. Source correspondence was checked against the cited clause on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

@@ -9,9 +9,11 @@ public import Colib.CategoryTheory.ExactCategory.AdditiveInvariant
 public import Colib.CategoryTheory.ExactCategory.Basic
 public import Colib.CategoryTheory.ExactCategory.Functor.Basic
 public import Colib.CategoryTheory.ExactCategory.Functor.Pullbacks
+public import Colib.CategoryTheory.ExactCategory.Functor.QConstruction
 public import Colib.CategoryTheory.ExactCategory.Functor.SerreLocalization
 public import Colib.CategoryTheory.ExactCategory.MatrixDeflation
 public import Colib.CategoryTheory.QConstruction.Basic
+public import Colib.CategoryTheory.QConstruction.Functor
 public import Colib.KTheory.GrothendieckGroup.Abelian
 public import Colib.KTheory.GrothendieckGroup.AbelianNaturality
 public import Colib.KTheory.GrothendieckGroup.Basic

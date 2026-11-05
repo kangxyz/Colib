@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0036"
+title = "Functoriality of restricted-span categories"
+kind = "definition"
+section = "restricted-spans"
+order = 20
+statement = "A functor preserving both leg properties and the mixed pullbacks used in span composition induces a functor between restricted-span quotient categories, by applying the original functor to the apex and both legs. Identity and composition of compatible functors are respected."
+scope = "Source and target categories have independent object and hom universes and the mixed pullback calculus required by their restricted-span categories. The functor needs only selective cospan preservation, not preservation of all pullbacks; the latter is a sufficient adapter. No additivity or exact structure is assumed. This generalizes the exact-functor Q-construction clause, without constructing natural-transformation maps, a universal property, classifying spaces or higher K-groups. Source correspondence was checked against the cited clause on 2026-11-05; this does not record independent mathematical review or compilation."
+review = "author_checked"

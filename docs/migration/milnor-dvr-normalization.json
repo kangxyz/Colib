@@ -1,0 +1,217 @@
+{
+  "title": "DVR ramified specialization, canonical normalization and kernel independence",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "stacks_revision": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_revision": "16edf57de7933555826307a3d81b4391a3657a09",
+  "lean": "4.34.0-rc2",
+  "declarations": [
+    {
+      "name": "Stacks.Chow.dvrMilnorSpecialization_map_ramified",
+      "source": "MilnorK.DVR.specialize_ramified_restrict",
+      "module": "Aglib.KTheory.MilnorK.Residue.RamifiedRestriction",
+      "lines": "183\u2013205",
+      "scope": "Four independent universes, local compatible DVR map, j\u03c0=u\u03c1^e, all n, arbitrary homogeneous class. Right plus correction by literal residue of u, canonical residue in correction. Specialization retains specified uniformizers."
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorSpecialization_eq_on_residue_kernel",
+      "source": "MilnorK.specialize_eq_on_residue_kernel",
+      "module": "Aglib.KTheory.MilnorK.Residue.Change",
+      "lines": "156 onward",
+      "scope": "Actual DVR specialization, arbitrary class in canonical residue kernel, any two irreducible uniformizers. Not arbitrary abstract residue data."
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol'_tuple_snoc_uniformizer",
+      "source": "MilnorK.DVR.residue_ring_units_uniformizer",
+      "module": "Aglib.KTheory.MilnorK.Residue.DVR",
+      "lines": "74\u201386",
+      "scope": "Any irreducible uniformizer, all n including empty unit prefix."
+    },
+    {
+      "name": "Stacks.Chow.dvrMilnorTameSymbol'_tuple_uniformizers",
+      "source": "MilnorK.DVR.residue_uniformizers",
+      "module": "Aglib.KTheory.MilnorK.Residue.DVR",
+      "lines": "105\u2013110",
+      "scope": "Canonical residue of n+1 repeated copies of any uniformizer gives n copies of -1. No nonvanishing claim."
+    }
+  ],
+  "receipts": [
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-dvr-normalization-test-5.json",
+      "sha256": "eb57fa203393a4f6dfee37ef385bdcb61f32516c69dced80e2e211c2d6318427",
+      "exit_code": 0,
+      "peak_rss_bytes": 2442596352,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-dvr-specialization-lint.json",
+      "sha256": "ecb1febffccddf6d30f1d3d4b90ad96058d828d60d05203952cee9092f1acc6e",
+      "exit_code": 0,
+      "peak_rss_bytes": 4029284352,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-dvr-normalization-lint.json",
+      "sha256": "d69d45af8aaa796a606e2bf6ac3656591d1fb571418a522c2d19155701878b6c",
+      "exit_code": 0,
+      "peak_rss_bytes": 4028506112,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-dvr-test-lint.json",
+      "sha256": "997c8db89f1e6753bb6ae2487c3f8be4073fc10317282efd5bc7fe988756d1c8",
+      "exit_code": 0,
+      "peak_rss_bytes": 4021444608,
+      "guard_failure": null,
+      "owned_group_gone": true
+    },
+    {
+      "path": "/workspace/scratch/ab4c8cd79b02/colib-environment-20261105/milnor-dvr-normalization-style.json",
+      "sha256": "c53258092cfb48d5fb702a8d0cfcbd05c4397d9975c1c41d847bbb0dc648882c",
+      "exit_code": 0,
+      "peak_rss_bytes": 1736339456,
+      "guard_failure": null,
+      "owned_group_gone": true
+    }
+  ],
+  "historical_worktree": "/workspace/scratch/ab4c8cd79b02/colib-descent-principal-36f7d61-20261105-0937",
+  "historical_checks": {
+    "author_source_correspondence": "author_checked",
+    "independent_review": "pending",
+    "build_test": "passed, 2153 jobs",
+    "kernel_replay": "not requested or run",
+    "shared_files_changed": false,
+    "pushed": false,
+    "declaration_lint": "passed independently for all three leaves",
+    "style": "passed",
+    "maximum_peak_rss_bytes": 4029284352
+  },
+  "historical_files": [
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/RamifiedSpecialization.lean",
+      "source_sha256": "b7795b276ffa5ebb91363539911ff6a538879cd6be6782d3cf727d7d9f6a9325",
+      "olean_sha256": "3fbf298df4c76515f0ef2e113423c72102e6f6477970f0d88837065d712ba012"
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/CanonicalNormalization.lean",
+      "source_sha256": "bc0cc16b4151e814d2578d5a5f59a3c9630ca1f77bc1e6354fbe6efa96abf521",
+      "olean_sha256": "863d65c172a9bf53ca5a3bb4d40a9079996a91ab5d41465cf565845f594cf0cc"
+    },
+    {
+      "path": "ColibTest/MilnorDvrNormalization.lean",
+      "source_sha256": "fd312651a6db0c5f0cb54d1e9c146bc18e79f6769bf9b09930e45d07837ff72e",
+      "olean_sha256": "e059e79505326bcff06c896c2c2c30af6871b6249679188d344432a85aa730ea"
+    }
+  ],
+  "target_baseline": "0f7e776978e88c9fc9801c1ddb4b6121df9b335f",
+  "library_items": [
+    "COL-0150",
+    "COL-0151",
+    "COL-0152"
+  ],
+  "checks": {
+    "static_integration": {
+      "status": "passed",
+      "catalog": "6 chapters, 17 sections, 152 unique permanent items",
+      "python_tests": "53 passed",
+      "diff_check": "passed",
+      "root_imports": "static exact match to all production files; native mk_all --check pending",
+      "declaration_names": "7 new declarations checked unique among production sources"
+    },
+    "unified_build": "passed: production build, full in-package tests, declaration lint, style, generated root check, production axiom audit and Library export/site",
+    "kernel_replay": "not requested or run",
+    "pushed": false,
+    "independent_review": {
+      "status": "passed",
+      "reviewer": "review_dvr_function_chain",
+      "scope": "Static independent mathematics, source correspondence and evidence review of the four new DVR endpoints, not the entire Residue directory; no reviewer compilation or kernel replay.",
+      "report": "The four endpoints correspond line by line to Aglib DVR lines 74\u201386 and 105\u2013110, Change lines 156\u2013163, and RamifiedRestriction lines 183\u2013205. Canonical final-slot normalization and repeated minus-one symbols include n=0 and arbitrary characteristic. Ramified specialization has the right-hand plus correction and no erroneous ramification multiplier; four independent universes, the actual local square and j(pi)=u*rho^e are retained. Uniformizer independence of specialization is asserted only on the canonical residue kernel. All objects are native Stacks, with no sorry or added axiom. Historical source, olean and receipt hashes match the pinned environment. Completion and norm compatibility remain unproved.",
+      "evidence_delivery": "Parent forwarded the completed independent review on 2026-11-05; the reviewer did not recompile this integrated tree."
+    },
+    "historical_hash_recheck": {
+      "status": "passed",
+      "count": 11,
+      "scope": "Three historical source hashes, three historical olean hashes and five receipt hashes rechecked against the author ledger; integrated source hashes checked separately. Historical builds do not validate the integrated tree with its added reference attributes."
+    },
+    "integration": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "-c",
+        "lake exe mathlib/mk_all --lib Colib && bash scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-dvr-milestone-0f7e776-20261105-1511",
+      "pid": 8,
+      "pgid": 8,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6832037888,
+      "duration_seconds": 61.1013562210137,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 8,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ],
+      "receipt": "/tmp/colib-dvr-milestone-check-r4-receipt.json",
+      "receipt_sha256": "9b9e7af5b6d50f68f9abce618bf5a527372fd91f4a644946ef90236110cd3a67",
+      "log": "/tmp/colib-dvr-milestone-check-r4.log",
+      "log_sha256": "4fe3ff6d773644be316f3883242111b62feebec4b52352098104b53b2f187e22",
+      "kernel_replay": false,
+      "axiom_audit": "1870 declarations; only propext, Classical.choice, Quot.sound",
+      "catalog": "152 items, 495 indexed declarations",
+      "source_consistency": "No Lean source changes after this successful run. Only review/validation ledger metadata finalized afterward.",
+      "retries": "Initial cache path was read-only; used existing writable cache. The next two attempts caught an added citation-attribute long line; shortened/wrapped prose only, no mathematical proof change."
+    }
+  },
+  "scope": "Complete native DVR residue/specialization chain through canonical ramified residue, right-plus angular correction, specialization independence on the canonical residue kernel, and canonical tuple normalization. Completion and norm/transfer compatibility remain outside this milestone.",
+  "literature": {
+    "tag": "0EAY",
+    "relation": "background",
+    "scope": "Tame-symbol background only; exact source provenance and adapted conclusions are listed by declaration."
+  },
+  "remaining_obligations": [
+    "Completion: construct the actual fraction-field map into completion, residue-field identification, and canonical residue compatibility.",
+    "Norm/transfer: construct native Milnor norm or transfer and prove residue compatibility under its precise finite-extension hypotheses."
+  ],
+  "files": [
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/CanonicalRamifiedMap.lean",
+      "source_sha256": "9841a35d2b56220ba1ef5ca483a773d8d5bb126d61f28d5454b73bc2ced59e78",
+      "olean_sha256": "37050ef81f847672dc1a2a7774013dd68dd844bdf449fe6155850b5d8ae89d5a"
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/CanonicalNormalization.lean",
+      "source_sha256": "d58301d5349bd14eaa7eb204a573c66d79947aec973539815acd67f95ade43b5",
+      "olean_sha256": "79737a2b913834be345fcadb1979cdcb7db5294b7fb1a8289bc1688e5615e340"
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Residue/RamifiedSpecialization.lean",
+      "source_sha256": "dedd8d60342eb120f77f3b2d626780984e16eea05a6f29c11f09f12d0e82577d",
+      "olean_sha256": "b4a1f15c02b50e736be9d1051bbfdbd2c4ea2ab9ee9f8a77489c66f6b9a39f34"
+    },
+    {
+      "path": "ColibTest/MilnorCanonicalRamifiedMap.lean",
+      "source_sha256": "ce7442d5a9763e798cf0541874d7ac126e0815b812347c64e0a69dd9bbc7be4d",
+      "olean_sha256": "760413cba54a16dbd29beee740a4d65b36410933faae50ab7a36922af4999acd"
+    },
+    {
+      "path": "ColibTest/MilnorDvrNormalization.lean",
+      "source_sha256": "fd312651a6db0c5f0cb54d1e9c146bc18e79f6769bf9b09930e45d07837ff72e",
+      "olean_sha256": "e059e79505326bcff06c896c2c2c30af6871b6249679188d344432a85aa730ea"
+    }
+  ]
+}

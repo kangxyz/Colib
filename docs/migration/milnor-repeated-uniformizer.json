@@ -12,7 +12,7 @@
     ],
     "license": "Apache-2.0"
   },
-  "scope": "Specified-uniformizer actual DVR specialization of all-degree repeated-uniformizer formula. Canonical residue evaluated at an arbitrary uniformizer remains pending. No general abstract DiscreteResidueData presentation is migrated.",
+  "scope": "Specified-uniformizer actual DVR specialization of all-degree repeated-uniformizer formula. The formerly pending canonical residue at an arbitrary uniformizer is now supplied by CanonicalNormalization (COL-0152); this ledger retains historical validation for the specified-uniformizer precursor. No general abstract DiscreteResidueData presentation is migrated.",
   "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; pi : R with Irreducible pi; n : Nat. Independent universes, arbitrary characteristic.",
   "declarations": [
     {
@@ -112,5 +112,10 @@
       "ColibTest.MilnorRepeatedUniformizer"
     ],
     "status": "Passed as part of the complete unified test suite."
+  },
+  "canonical_endpoint": {
+    "library_item": "COL-0152",
+    "module": "Colib.KTheory.MilnorK.Residue.CanonicalNormalization",
+    "ledger": "milnor-dvr-normalization.json"
   }
 }

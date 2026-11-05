@@ -69,6 +69,8 @@ public import Colib.KTheory.GrothendieckGroup.SerreQuotient
 public import Colib.KTheory.GrothendieckGroup.SerreSubgroup
 public import Colib.KTheory.MilnorK.DegreeTwo
 public import Colib.KTheory.MilnorK.Residue.BaseFieldProduct
+public import Colib.KTheory.MilnorK.Residue.CanonicalNormalization
+public import Colib.KTheory.MilnorK.Residue.CanonicalRamifiedMap
 public import Colib.KTheory.MilnorK.Residue.CoefficientRetraction
 public import Colib.KTheory.MilnorK.Residue.DegreeOne
 public import Colib.KTheory.MilnorK.Residue.Naturality
@@ -77,6 +79,7 @@ public import Colib.KTheory.MilnorK.Residue.RamifiedDegreeOne
 public import Colib.KTheory.MilnorK.Residue.RamifiedMap
 public import Colib.KTheory.MilnorK.Residue.RamifiedOrder
 public import Colib.KTheory.MilnorK.Residue.RamifiedShiftAlgebra
+public import Colib.KTheory.MilnorK.Residue.RamifiedSpecialization
 public import Colib.KTheory.MilnorK.Residue.RamifiedUnitPart
 public import Colib.KTheory.MilnorK.Residue.RepeatedUniformizer
 public import Colib.KTheory.MilnorK.Residue.RightBaseFieldProduct

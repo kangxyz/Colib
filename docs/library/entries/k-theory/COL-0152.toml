@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0152"
+title = "Canonical DVR tuple normalization"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 300
+statement = "The canonical DVR residue of ring-unit symbols followed by any uniformizer is their literal reduction; the residue of n+1 repeated uniformizers is the n-fold symbol of minus one."
+scope = "Any DVR and its fraction field in independent universes, any irreducible uniformizer, all natural n including zero, and arbitrary characteristic. No nonvanishing assertion for the repeated minus-one symbol. Native Stacks Milnor K-theory throughout; no comparison with a separate old model is asserted. Stacks 0EAY is background, not a verbatim source."
+review = "author_checked"
+provenance = "aglib"
+proof = "Rewrite with the low-dependency canonical-uniformizer bridge and reuse the native unit-prefix and repeated-uniformizer formulas."

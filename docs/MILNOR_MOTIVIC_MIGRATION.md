@@ -528,5 +528,30 @@ module universes. See `migration/motivic-top-ext-localization.json`.
 COL-0143 closes the general-e specified-uniformizer actual local DVR residue
 comparison in four universes. Its main component keeps the unit correction,
 including negative integer orders, and its shift algebra uses native two-torsion
-without inverting two. Canonical chosen-uniformizer comparison remains pending.
+without inverting two. Canonical chosen-uniformizer comparison is supplied by COL-0150 below.
 See `migration/milnor-ramified-map.json`.
+
+### Canonical all-degree ramification
+
+COL-0150 closes the canonical-uniformizer obligation of COL-0143. Uniformizer
+independence follows from the already proved general-e identity-map case; the
+bridge has the existing native conclusion without copying the high-import
+Invariance twist proof. Four universes and the actual local-map, fraction-map
+and ramification equation hypotheses remain explicit. See
+`migration/milnor-canonical-ramified-map.json`.
+
+### Native DVR residue and specialization milestone
+
+COL-0150–COL-0152 complete one native functional chain: canonical all-degree
+ramified residue, specialization with the literal right-plus unit correction,
+uniformizer independence of specialization on the canonical residue kernel,
+and canonical unit-prefix/repeated-uniformizer normalizations. Existing source
+modules are reused rather than copied into a second model. Tests include four
+independent universes, the empty prefix, repeated signs, and the residue kernel.
+See `migration/milnor-dvr-normalization.json` for source and review evidence.
+
+This milestone does not assert completion or norm compatibility. Completion
+still needs the actual completion field map and residue-field identification.
+Norm/transfer still needs the native transfer construction and its residue
+comparison with the exact finite-extension hypotheses. These are separate
+mathematical obligations, not consequences of the ramified restriction square.

@@ -15,7 +15,7 @@
     "result": "For every n and every native homogeneous class x of degree n+1, residue_\u03c1(map f x) = (e:\u2124) \u2022 map(residueField.map j)(residue_\u03c0 x).",
     "retained_correction": "On all list symbols, main(target) = map(main(source)) + map(shift(source)) * symbol(residue(u)).",
     "exclusions": [
-      "Canonical chosen-uniformizer formulation is not asserted. It still needs the native independence interface.",
+      "This item itself has specified uniformizers. The later COL-0150 canonical endpoint closes the earlier canonical-identification obligation; see milnor-canonical-ramified-map.json.",
       "No new residue, valuation, involution, tensor quotient, or shift model.",
       "No norm or high-level Stacks dependency closure."
     ],
@@ -206,5 +206,11 @@
     "tag": "0EAY",
     "relation": "background",
     "scope": "DVR tame-symbol background only; not a verbatim general-e comparison or webpage shift construction."
+  },
+  "canonical_obligation": {
+    "status": "closed by subsequent native consequence",
+    "ledger": "milnor-canonical-ramified-map.json",
+    "item": "COL-0150",
+    "method": "Identity-map exponent-one consequence, no duplicate upstream twist proof."
   }
 }

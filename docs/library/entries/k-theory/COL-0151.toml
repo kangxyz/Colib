@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0151"
+title = "Ramified specialization and residue-kernel independence"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 290
+statement = "For a local map of DVRs with j(pi)=u*rho^e, normalized specialization of every homogeneous class equals transported specialization plus the right product of transported canonical residue with the residue symbol of u. On the canonical residue kernel, specialization is independent of the uniformizer."
+scope = "Four independent DVR and fraction-field universes; compatible field map and actual local ring map, irreducible uniformizers, arbitrary natural e and degree n+1. The correction is on the right and has a plus sign. Independence is only asserted on the canonical residue kernel, not on all classes. Native Stacks Milnor K-theory throughout; no comparison with a separate old model is asserted. Stacks 0EAY is background, not a verbatim source."
+review = "author_checked"
+provenance = "aglib"
+proof = "Promote the native shift main-component comparison by homogeneous symbol generation and specialize to identity maps for kernel independence."

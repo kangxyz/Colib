@@ -19,8 +19,9 @@ This adapts the actual DVR theorem `MilnorK.DVR.residue_ramified_restrict` from
 `Aglib.KTheory.MilnorK.Residue.RamifiedRestriction`, revision
 `101dbb8564fb0e29f28cfcb79168d878b5ab489f`, lines 161–172. The native shift components
 are compared simultaneously, retaining the angular-component correction. No second residue
-model is introduced. The statement uses specified uniformizers; converting it to the canonical
-chosen-uniformizer maps still requires the upstream independence interface.
+model is introduced. The statement here uses specified uniformizers.
+`Colib.KTheory.MilnorK.Residue.CanonicalRamifiedMap` derives independence from its
+identity-map case and supplies the canonical chosen-uniformizer comparison.
 -/
 
 @[expose] public noncomputable section

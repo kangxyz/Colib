@@ -1,0 +1,11 @@
+[entry]
+id = "COL-0150"
+title = "Canonical ramified residue in all degrees"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 280
+statement = "The canonical native DVR residue commutes with field restriction up to the integer ramification factor in every homogeneous degree, from the actual equation j(pi)=u*rho^e."
+scope = "Four independent DVR/fraction-field universes, actual local ring map and compatible field map, irreducible pi and rho, unit u and natural e with the literal ramification equation. No extra positivity, characteristic, separability or finiteness assumptions. The low-dependency uniformizer bridges have existing upstream conclusions and are consequences of the general-e identity case, not new twist proofs or residue models. No formal comparison between old and native Milnor models is asserted. Stacks 0EAY is tame-symbol background only."
+review = "author_checked"
+provenance = "aglib"
+proof = "Associate two irreducible uniformizers and specialize the existing ramified theorem to identity maps and exponent one. Identify the native chosen residue with any specified uniformizer, then rewrite the general-e square."

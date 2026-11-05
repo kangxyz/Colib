@@ -622,3 +622,15 @@ over the polynomial PID. The single-fibre product only requires finiteness.
 No new fibre, norm or prime-filtration model is introduced. This remains an
 algebraic norm statement, not a Milnor transfer or geometric cycle comparison.
 See migration/motivic-finite-algebra-norm.json for source and validation evidence.
+
+### Actual completion CRT and completed local branches
+
+COL-0185--COL-0189 complete the finite-algebra completion comparison, canonical
+CRT/positive-power/localization maps, explicit semilocal factorization and
+Dedekind branch decomposition. Quotient evaluations identify the actual maps;
+the completed-base scalar action precedes the tensor equivalence. Branches
+are finite over the completed base. No second completion or inverse-limit
+model is introduced. Arbitrary-module scalar extension, general monotone
+reindexing, fraction-field decomposition and Milnor norms are not claimed.
+See migration/motivic-completion-branches.json for hypotheses, provenance and
+component versus registered-tree validation.

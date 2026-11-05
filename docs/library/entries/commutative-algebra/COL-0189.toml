@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0189"
+title = "Completed-base tensor products and finite Dedekind branches"
+kind = "comparison"
+section = "adic-completion"
+order = 50
+statement = "A finite algebra with Dedekind target identifies its completed-base tensor product with actual completed local branches, over both the original and completed base; each branch is module-finite over the completed base."
+scope = "Noetherian base, finite algebra and nonzero actual extended ideal. No flatness, torsion-freeness, fraction-field or Milnor-norm assertion."
+review = "author_checked"

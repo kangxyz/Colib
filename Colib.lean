@@ -149,6 +149,11 @@ public import Colib.Library.Upstream
 public import Colib.LinearAlgebra.Determinant.FiniteLength
 public import Colib.LinearAlgebra.TensorAlgebra.HomogeneousLift
 public import Colib.LinearAlgebra.TensorAlgebra.IdealVanishing
+public import Colib.RingTheory.AdicCompletion.ChineseRemainder
+public import Colib.RingTheory.AdicCompletion.DedekindBranches
+public import Colib.RingTheory.AdicCompletion.FiniteAlgebra
+public import Colib.RingTheory.AdicCompletion.FiniteDedekindBranches
+public import Colib.RingTheory.AdicCompletion.SemilocalBranches
 public import Colib.RingTheory.Koszul.CoefficientAugmentation
 public import Colib.RingTheory.Koszul.CoefficientFunctor
 public import Colib.RingTheory.Koszul.CoefficientRegularity

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0186"
+title = "Canonical completion CRT, positive powers and localization"
+kind = "comparison"
+section = "adic-completion"
+order = 20
+statement = "Completion at a product of pairwise comaximal ideals is the product of their completions. Positive powers and localization at a maximal ideal preserve the actual completion via canonical maps."
+scope = "Finite ideal families; positive exponents for cofinal comparison; maximality for localization. Forward maps, quotient evaluation and original algebra maps are identified."
+review = "author_checked"

@@ -84,6 +84,20 @@ class LibraryTests(unittest.TestCase):
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
             self.assertIn("ColibTest.FiniteAlgebraNorm", (root / path).read_text())
 
+    def test_completion_branches_chain_registration(self):
+        root = catalog.ROOT
+        leaves = ("FiniteAlgebra", "ChineseRemainder", "SemilocalBranches",
+                  "DedekindBranches", "FiniteDedekindBranches")
+        for number, leaf in zip(range(185, 190), leaves):
+            identifier = f"COL-{number:04d}"
+            self.assertEqual(self.library["entries"][identifier]["section"], "adic-completion")
+            module = f"Colib.RingTheory.AdicCompletion.{leaf}"
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn(module, (root / "Colib.lean").read_text())
+        for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
+            self.assertIn("ColibTest.CompletionBranches", (root / path).read_text())
+
     def native_fixture(self):
         native = {
             "bindings": [],
@@ -111,6 +125,7 @@ class LibraryTests(unittest.TestCase):
             "quillen-k-theory": "Colib.KTheory.Quillen.Basic",
             "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
             "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
+            "adic-completion": "Colib.RingTheory.AdicCompletion.FiniteAlgebra",
             "principal-euler": "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic",
             "finite-algebra-coefficients": "Colib.RingTheory.Length.FiniteAlgebra",
         }

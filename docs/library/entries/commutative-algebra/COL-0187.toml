@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0187"
+title = "Completion along a factored semilocal ideal"
+kind = "comparison"
+section = "adic-completion"
+order = 30
+statement = "A finite factorization into positive powers of distinct maximal ideals identifies the original completion with the product of actual completed localizations."
+scope = "The ideal factorization and positive exponents are explicit. No new inverse-limit or local-completion object is introduced."
+review = "author_checked"

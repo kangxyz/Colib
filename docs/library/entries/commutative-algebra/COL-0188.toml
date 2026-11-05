@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0188"
+title = "Actual completed branches of a Dedekind ideal"
+kind = "comparison"
+section = "adic-completion"
+order = 40
+statement = "A nonzero ideal of a Dedekind domain decomposes its completion into actual completed local rings indexed by its normalized prime factors."
+scope = "The index is the native normalized-factor subtype, including the empty family for the unit ideal. Quotient evaluation and original algebra maps are preserved."
+review = "author_checked"

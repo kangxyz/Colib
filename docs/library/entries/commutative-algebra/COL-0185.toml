@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0185"
+title = "Completion of a finite algebra as an actual tensor product"
+kind = "comparison"
+section = "adic-completion"
+order = 10
+statement = "The canonical completed-base tensor map to completion along the extended ideal is an algebra equivalence, including its completed-base action and evaluation formulas."
+scope = "The map and evaluation exist for arbitrary algebras. Bijectivity requires a Noetherian base and module-finite algebra, with independent universes."
+review = "author_checked"

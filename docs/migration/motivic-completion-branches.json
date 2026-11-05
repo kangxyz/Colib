@@ -1,0 +1,1510 @@
+{
+  "title": "Canonical finite-algebra completion and actual CRT/Dedekind local branches",
+  "component_status": "Five production leaves and 35 examples compiled; six declaration lint checks, style and standard-three-axiom production audit passed. Final registration and aggregate registered-tree checks remain integrator work.",
+  "component_worktree": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+  "evidence_directory": "/workspace/scratch/ab4c8cd79b02/completion-branches-validation-20261105-2029",
+  "baseline": "8108da000851f51abe3beaa5b739594fb5323b02",
+  "pinned_stacks": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "pinned_mathlib": "16edf57de7933555826307a3d81b4391a3657a09",
+  "lean_toolchain": "leanprover/lean4:v4.34.0-rc2",
+  "source_aglib_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_motivic": {
+    "repository": "https://github.com/kangxyz/motivic",
+    "revision": "b368f6965228e63643380033ec224335bcd24a2c"
+  },
+  "source_provider_base": "383abca15be0cb6da1f49acb2bc892365d382a98",
+  "source_scope": "Nine source leaves are manifest-confirmed original-301 members. The endpoint chain is migrated; arbitrary-module ScalarExtension and general monotone reindexing are not claimed. Their ring/positive-power specializations use native suppliers. Old inverse-limit helper implementations are not copied.",
+  "selected_source_files": [
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.ScalarExtension",
+      "source_sha256": "10eb7ca7c7b4e4a4842605c4e92765ed868c22ef58e5c86c6fe63afaf072ec98",
+      "module": "Aglib.RingTheory.AdicCompletion.ScalarExtension",
+      "sha256": "10eb7ca7c7b4e4a4842605c4e92765ed868c22ef58e5c86c6fe63afaf072ec98",
+      "path": "Aglib/RingTheory/AdicCompletion/ScalarExtension.lean",
+      "actual_sha256": "10eb7ca7c7b4e4a4842605c4e92765ed868c22ef58e5c86c6fe63afaf072ec98",
+      "lines": 67,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    },
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.FiniteAlgebra",
+      "source_sha256": "5fcb92415951d292b85e3d2bbb8e5422b4389f45580edba62955fbd0d8d95649",
+      "module": "Aglib.RingTheory.AdicCompletion.FiniteAlgebra",
+      "sha256": "26e77744fd7d6f7f851523806a90df335c94bc7db607680bfbd73c684b1641df",
+      "path": "Aglib/RingTheory/AdicCompletion/FiniteAlgebra.lean",
+      "actual_sha256": "26e77744fd7d6f7f851523806a90df335c94bc7db607680bfbd73c684b1641df",
+      "lines": 105,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    },
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.Powers",
+      "source_sha256": "996f07147ced098284ff0e2add7e6fb3f8cfb1f998195ff649ea677f4465dc97",
+      "module": "Aglib.RingTheory.AdicCompletion.Powers",
+      "sha256": "78ae51adee49543112554627f5ac1bfe3b97d2786291be59e70a384bbe7e5ffc",
+      "path": "Aglib/RingTheory/AdicCompletion/Powers.lean",
+      "actual_sha256": "78ae51adee49543112554627f5ac1bfe3b97d2786291be59e70a384bbe7e5ffc",
+      "lines": 87,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    },
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.ChineseRemainder",
+      "source_sha256": "3b3d966cde1519af3bd3d141c9935baf3bdb3940c6c84ed9e9c5744bcbe3b82e",
+      "module": "Aglib.RingTheory.AdicCompletion.ChineseRemainder",
+      "sha256": "2629f20c4fc645f9015b33d6250ea2fc94160b1bd4edc8ae5fc25464110863ce",
+      "path": "Aglib/RingTheory/AdicCompletion/ChineseRemainder.lean",
+      "actual_sha256": "2629f20c4fc645f9015b33d6250ea2fc94160b1bd4edc8ae5fc25464110863ce",
+      "lines": 142,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    },
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.Localization",
+      "source_sha256": "542db96b480a30c3341ce6009439ee9d40a56291eb19d8f7a09f7b0e1c53fb55",
+      "module": "Aglib.RingTheory.AdicCompletion.Localization",
+      "sha256": "bff6bf846cd127d9cdfabac82fadb44f28f2ddcabe5e9e36ea59538781764308",
+      "path": "Aglib/RingTheory/AdicCompletion/Localization.lean",
+      "actual_sha256": "bff6bf846cd127d9cdfabac82fadb44f28f2ddcabe5e9e36ea59538781764308",
+      "lines": 101,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    },
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.SemilocalBranches",
+      "source_sha256": "0e0df0d16dc4453219c137115ead3794fd17aa13895d0ed97093d82ebd5fd6a2",
+      "module": "Aglib.RingTheory.AdicCompletion.SemilocalBranches",
+      "sha256": "98eaa0bef5552a8af6b1a130cf38d77d2ccbe5511631daad9975f0442eb5418c",
+      "path": "Aglib/RingTheory/AdicCompletion/SemilocalBranches.lean",
+      "actual_sha256": "98eaa0bef5552a8af6b1a130cf38d77d2ccbe5511631daad9975f0442eb5418c",
+      "lines": 50,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    },
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.DedekindBranches",
+      "source_sha256": "cb369643a5e2f6c454d5bbfd89e499a72b92bbae59ecc8be86fa7bd5d30ff3c4",
+      "module": "Aglib.RingTheory.AdicCompletion.DedekindBranches",
+      "sha256": "d84493fd64a5ab0a3a371a7f0c1964851338fec4f0186dede325fa516d081f16",
+      "path": "Aglib/RingTheory/AdicCompletion/DedekindBranches.lean",
+      "actual_sha256": "d84493fd64a5ab0a3a371a7f0c1964851338fec4f0186dede325fa516d081f16",
+      "lines": 68,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    },
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.FiniteDedekindBranches",
+      "source_sha256": "bbb4994ad41ec4d3bc03ec0315a62073aae7f461fa73b8b4cb2cb418e716ee7f",
+      "module": "Aglib.RingTheory.AdicCompletion.FiniteDedekindBranches",
+      "sha256": "c982c2ae6ede2920de9e72a39af2ba80718918ff97aab5328a3fa84488b0cbb6",
+      "path": "Aglib/RingTheory/AdicCompletion/FiniteDedekindBranches.lean",
+      "actual_sha256": "c982c2ae6ede2920de9e72a39af2ba80718918ff97aab5328a3fa84488b0cbb6",
+      "lines": 54,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    },
+    {
+      "source_module": "Motivic.Aglib.RingTheory.AdicCompletion.LocalCompletionsBase",
+      "source_sha256": "84680746a510749b23d1765ef75c79b01c78d07c30b01e3e0d19abbb43136a20",
+      "module": "Aglib.RingTheory.AdicCompletion.LocalCompletionsBase",
+      "sha256": "1ce6ec3e62cbbe68029d2a5c942012212e44b35f815b814fa11e1b23a75e52c1",
+      "path": "Aglib/RingTheory/AdicCompletion/LocalCompletionsBase.lean",
+      "actual_sha256": "1ce6ec3e62cbbe68029d2a5c942012212e44b35f815b814fa11e1b23a75e52c1",
+      "lines": 77,
+      "matches_adapted_manifest_hash": true,
+      "in_original_301_inventory": true
+    }
+  ],
+  "native_suppliers": [
+    "Mathlib.RingTheory.TensorProduct.Maps",
+    "StacksFrontier.RingTheory.AdicCompletion.CompletionMap",
+    "StacksFrontier.RingTheory.AdicCompletion.QuotEquivMapPow",
+    "StacksFrontier.RingTheory.AdicCompletion.OfTensorProductBijective",
+    "StacksFrontier.RingTheory.AdicCompletion.Comparison",
+    "StacksFrontier.RingTheory.AdicCompletion.IntersectionOfMaximalIdeals",
+    "StacksFrontier.RingTheory.Rig.AdicCompletionMap",
+    "Mathlib.RingTheory.DedekindDomain.Ideal.Lemmas"
+  ],
+  "excluded_claims": [
+    "General arbitrary-module ScalarExtension equivalence",
+    "Arbitrary monotone reindexing API",
+    "Original helper-name and exact-type compatibility",
+    "Fraction-field, Milnor norm or residue theorem",
+    "Formal smoothness, henselization or Nisnevich theorem"
+  ],
+  "counts": {
+    "production_leaves": 5,
+    "public_theorem_definition_abbreviation_count": 66,
+    "public_instance_count": 1,
+    "examples": 35,
+    "lean_lines": 1222
+  },
+  "draft_manifest_sha256": "b31af6eab70f8e9d80b865decf40811551c82831ce1b4d4c15d0f9daa5ee5ba3",
+  "component_source_snapshot": {
+    "Colib/RingTheory/AdicCompletion/ChineseRemainder.lean": {
+      "sha256": "83ca5da17c0c0e043e064456d1ed2fcaed06ee85e1e13e8fa35242e89829ad6f",
+      "lines": 236,
+      "olean_sha256": "a99ee165e6528a060595872e83ec191991bd48e36e33923ee3fdc09634cb55ff",
+      "trace": "completion-branches-validation-20261105-2029/build-traces/Colib/RingTheory/AdicCompletion/ChineseRemainder.trace",
+      "trace_sha256": "c5cd384bcb9f6fc23664c86919b400c0afe2f319d9556895225af2ef4e75fae9",
+      "source_mtime_ns": 1793911101161271079,
+      "olean_mtime_ns": 1793911117498097942,
+      "trace_dep_hash": "69682eb672732aef",
+      "trace_source_hash": "04e5fcf210d63d33"
+    },
+    "Colib/RingTheory/AdicCompletion/DedekindBranches.lean": {
+      "sha256": "da1575d32acd3186cc34974230faf1096c63ec3a760fb409c7056b91a0b3b744",
+      "lines": 107,
+      "olean_sha256": "32e2a56d25c55d8d90c6ff73f80e1678501424297f7ee4b109da1496fe4a1c48",
+      "trace": "completion-branches-validation-20261105-2029/build-traces/Colib/RingTheory/AdicCompletion/DedekindBranches.trace",
+      "trace_sha256": "11aec72f38b2d1445717068b7bfe37bce2953dde384f661a1f45b2b466bd6d25",
+      "source_mtime_ns": 1793910568364689475,
+      "olean_mtime_ns": 1793911125754279192,
+      "trace_dep_hash": "de6bc1e24d6f27a0",
+      "trace_source_hash": "975f9be24697fa44"
+    },
+    "Colib/RingTheory/AdicCompletion/FiniteAlgebra.lean": {
+      "sha256": "4580b78fed2e27ebf327aa7d1370ae6a3bb84c028e330ddaaad59ac7f53b65dc",
+      "lines": 260,
+      "olean_sha256": "419ff9fbc731eb67096223f7664b0eb257a503c3a1008895efcd39e99675f03a",
+      "trace": "completion-branches-validation-20261105-2029/build-traces/Colib/RingTheory/AdicCompletion/FiniteAlgebra.trace",
+      "trace_sha256": "b1d9f9f9bcacceb3167b2de9ec033b029032d4154793753b4d258dfffd60d39d",
+      "source_mtime_ns": 1793911101160822744,
+      "olean_mtime_ns": 1793911109573926054,
+      "trace_dep_hash": "c3e7f30d05f9ce15",
+      "trace_source_hash": "c399cd16623a05d7"
+    },
+    "Colib/RingTheory/AdicCompletion/FiniteDedekindBranches.lean": {
+      "sha256": "65bb36b45b74a95d3bfa75ac9a3679947aaf81d08420af3c766f9386fd899342",
+      "lines": 186,
+      "olean_sha256": "34c7240c1cae53b1d8174326a20880a4fef70449d1492f59baa074d4f7fc10d0",
+      "trace": "completion-branches-validation-20261105-2029/build-traces/Colib/RingTheory/AdicCompletion/FiniteDedekindBranches.trace",
+      "trace_sha256": "0bbf75a6afff7cb0ea4b63d3a49caada2d338644e7698520832e633daf635c09",
+      "source_mtime_ns": 1793910861015697264,
+      "olean_mtime_ns": 1793911134282463973,
+      "trace_dep_hash": "7def71da99b8ba47",
+      "trace_source_hash": "04511c6d1883204c"
+    },
+    "Colib/RingTheory/AdicCompletion/SemilocalBranches.lean": {
+      "sha256": "af641c8d2d5e4a855f1fff8eaa8a00c14f76c1848f0385bfa6adecfbd6edde08",
+      "lines": 113,
+      "olean_sha256": "a7b52794709150d035d92261b1c11e885bfc5dadd08193f1ac4457ac9646510c",
+      "trace": "completion-branches-validation-20261105-2029/build-traces/Colib/RingTheory/AdicCompletion/SemilocalBranches.trace",
+      "trace_sha256": "ffeb731a2a404a66053967c1f2bac151ef0288b23b45f45373eb27560e93e11a",
+      "source_mtime_ns": 1793910568364797077,
+      "olean_mtime_ns": 1793911121442183779,
+      "trace_dep_hash": "83102d41f1eb9fd1",
+      "trace_source_hash": "824a86a5d013f90e"
+    },
+    "ColibTest/CompletionBranches.lean": {
+      "sha256": "1046c227d304a79f524144026660f0d84aebf4ce64b9138800c8ce4c0bb8afa6",
+      "lines": 320,
+      "olean_sha256": "450521d952fa1618c59ef913c979fbb9f96516224724d0c19e5f1328394433a1",
+      "trace": "completion-branches-validation-20261105-2029/build-traces/ColibTest/CompletionBranches.trace",
+      "trace_sha256": "b89ca07729ec8f0177e328b5465823ac7a0b751abd763d0c0f56164a7291cac0",
+      "source_mtime_ns": 1793910984540693479,
+      "olean_mtime_ns": 1793911140113134994,
+      "trace_dep_hash": "4354d087d4b51d0e",
+      "trace_source_hash": "8a2b22fc8fd15e99"
+    }
+  },
+  "snapshot_method": "Actual final compiled source copies, native traces and olean hashes captured before integrator handoff; no reconstruction by removing registration annotations. Source timestamps precede successful olean timestamps. Trace source hash and full dependency trace preserved.",
+  "scope": [
+    "R : Type u and S : Type v are commutative rings with Algebra R S; the canonical tensor map exists for every ideal without finiteness, Noetherianity, flatness or torsion-freeness. It is an equivalence for Noetherian R and Module.Finite R S, also over completion I R with the action from completionMap itself.",
+    "Finite pairwise comaximal ideal families over arbitrary commutative rings have actual CRT completion products. Positive-power comparison requires e > 0. Maximal localization may use any selected localization in an independent universe; no Noetherian or domain assumption.",
+    "Semilocal branches require the displayed product of positive powers of pairwise comaximal maximal ideals. All forward coordinates equal the original canonical completion maps and retain same-level quotient evaluations, including n = 0.",
+    "Dedekind branches are the actual normalized-factor support and multiplicities. Only I != 0 is required; I = top and the empty branch product remain valid.",
+    "For finite Dedekind S over Noetherian R, the tensor product is the full actual branch product when I.map(algebraMap R S) != 0. Canonical completed-base action, scalar tower and every-branch finiteness are proved. The action itself does not need Noetherianity, finiteness or a nonzero-ideal assumption."
+  ],
+  "tests": "35 examples: independent universes, canonical map/generator laws, five explicit level-zero checks, positive powers, an empty-index unit-ideal product, singleton exponent two, actual non-domain Z x Z coordinate CRT, arbitrary quotient algebras, canonical base action without finiteness/Noetherianity/nonzero-ideal assumptions.",
+  "independent_static_review": {
+    "role": "Fresh read-only mathematical/API reviewer, not involved in design or authorship.",
+    "scope": "All declarations and proofs in the five final production files, all 35 test examples, all nine source leaves and the exact native suppliers. Every compiled repair and final file hash checked.",
+    "finding": "No remaining mathematical or static blocker. Canonical maps, same-level positive-power comparison, full normalized-factor support, independent universes, actual base action and finite-branch argument preserved.",
+    "reviewed_sha256": {
+      "Colib/RingTheory/AdicCompletion/FiniteAlgebra.lean": "4580b78fed2e27ebf327aa7d1370ae6a3bb84c028e330ddaaad59ac7f53b65dc",
+      "Colib/RingTheory/AdicCompletion/ChineseRemainder.lean": "83ca5da17c0c0e043e064456d1ed2fcaed06ee85e1e13e8fa35242e89829ad6f",
+      "Colib/RingTheory/AdicCompletion/SemilocalBranches.lean": "af641c8d2d5e4a855f1fff8eaa8a00c14f76c1848f0385bfa6adecfbd6edde08",
+      "Colib/RingTheory/AdicCompletion/DedekindBranches.lean": "da1575d32acd3186cc34974230faf1096c63ec3a760fb409c7056b91a0b3b744",
+      "Colib/RingTheory/AdicCompletion/FiniteDedekindBranches.lean": "65bb36b45b74a95d3bfa75ac9a3679947aaf81d08420af3c766f9386fd899342",
+      "ColibTest/CompletionBranches.lean": "1046c227d304a79f524144026660f0d84aebf4ce64b9138800c8ce4c0bb8afa6"
+    },
+    "limit": "Independent source-level review only; no second compilation, kernel replay or file mutation. Build/audit evidence is recorded separately."
+  },
+  "compiled_repairs": [
+    "Explicit completionMap target parameter/coercion required; proof-local letI style; ext tactic over-expanded completion arguments; EGA clause text exceeded 24 characters.",
+    "Two proof-only section hypotheses hJ needed explicit include; downstream elaboration failures followed.",
+    "Moved include hJ before the docstring; remaining canonical-map coercion mismatch.",
+    "Bundled canonical branch map needed a shared proof-local hmap/f and explicit coercion.",
+    "Required an explicit inclusion proof in the eval lemma and explicit dependent-ideal equality transport for CRT bijectivity.",
+    "Required explicit map-inclusion parameter and explicit AlgHom-to-RingHom coercion before native functoriality.",
+    "Empty-product completion required ideal equality transport; one proof-local letI style error.",
+    "Explicit simplification still did not transport the dependent completion algebra; replaced by a typed hprod equality and substitution.",
+    "Four redundant simp attributes on specialization formulas.",
+    "Two redundant or non-normal-form simp attributes on algebraMap specialization formulas.",
+    "Inherited the same two CRT simp errors; no additional semilocal error.",
+    "Inherited the same two CRT simp errors; no additional Dedekind error.",
+    "Inherited the six tensor/CRT simp errors; no additional finite-branch error."
+  ],
+  "validation": {
+    "final_pass_receipts": [
+      "23-final-build.json",
+      "24-FiniteAlgebra-lint-final.json",
+      "25-ChineseRemainder-lint-final.json",
+      "26-SemilocalBranches-lint-final.json",
+      "27-DedekindBranches-lint-final.json",
+      "28-FiniteDedekindBranches-lint-final.json",
+      "29-test-lint-final.json",
+      "30-style.json",
+      "31-axiom.json"
+    ],
+    "axiom_audit": {
+      "root": "Colib.RingTheory.AdicCompletion",
+      "module": "Colib.RingTheory.AdicCompletion.FiniteDedekindBranches",
+      "declarations": 116,
+      "named_public_declarations": 67,
+      "automatically_generated_declarations": 49,
+      "receipt": "31-axiom.json",
+      "allowlist": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "failed_attempts": {
+      "03-tensor-r1.json": "Explicit completionMap target parameter/coercion required; proof-local letI style; ext tactic over-expanded completion arguments; EGA clause text exceeded 24 characters.",
+      "05-crt-r1.json": "Two proof-only section hypotheses hJ needed explicit include; downstream elaboration failures followed.",
+      "06-crt-r2.json": "Moved include hJ before the docstring; remaining canonical-map coercion mismatch.",
+      "07-crt-r3.json": "Bundled canonical branch map needed a shared proof-local hmap/f and explicit coercion.",
+      "08-crt-r4.json": "Required an explicit inclusion proof in the eval lemma and explicit dependent-ideal equality transport for CRT bijectivity.",
+      "12-finite-branches-r1.json": "Required explicit map-inclusion parameter and explicit AlgHom-to-RingHom coercion before native functoriality.",
+      "14-tests-r1.json": "Empty-product completion required ideal equality transport; one proof-local letI style error.",
+      "15-tests-r2.json": "Explicit simplification still did not transport the dependent completion algebra; replaced by a typed hprod equality and substitution.",
+      "17-FiniteAlgebra-lint.json": "Four redundant simp attributes on specialization formulas.",
+      "18-ChineseRemainder-lint.json": "Two redundant or non-normal-form simp attributes on algebraMap specialization formulas.",
+      "19-SemilocalBranches-lint.json": "Inherited the same two CRT simp errors; no additional semilocal error.",
+      "20-DedekindBranches-lint.json": "Inherited the same two CRT simp errors; no additional Dedekind error.",
+      "21-FiniteDedekindBranches-lint.json": "Inherited the six tensor/CRT simp errors; no additional finite-branch error."
+    },
+    "upstream_builds": [
+      "StacksFrontier.RingTheory.AdicCompletion.IntersectionOfMaximalIdeals",
+      "StacksFrontier.RingTheory.Rig.AdicCompletionMap"
+    ],
+    "upstream_warning_note": "Lake displayed cached and newly built native Stacks show/change style warnings. Pinned upstream sources were not changed. These are compiler-warning log reuse, not kernel replay.",
+    "receipt_count": 31,
+    "all_owned_groups_gone": true,
+    "guard_failures": 0,
+    "max_peak_rss_bytes": 5867872256,
+    "guard_limits": {
+      "lean_memory_mb": 4983,
+      "rss_limit_mb": 7475,
+      "sample_seconds": 0.1,
+      "physical_memory_bytes": 10451427328,
+      "lean_threads": 1,
+      "max_active_lean": 1
+    },
+    "disk_guard": "Prestart reserve 5 GiB; cancel below 4 GiB.",
+    "not_run": [
+      "registered-tree full scripts/check.sh",
+      "kernel replay",
+      "separate downstream/client checks"
+    ],
+    "receipts": [
+      {
+        "receipt": "01-native-crt.json",
+        "log": "01-native-crt.log",
+        "receipt_sha256": "88adcc43450fb102f98b8bd37e4bb0b549da13221d4eb1c0f2179a9f129aa54e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "+StacksFrontier.RingTheory.AdicCompletion.IntersectionOfMaximalIdeals:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 15,
+        "pgid": 15,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3180716032,
+        "duration_seconds": 8.332031451980583,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 15,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "02-native-functoriality.json",
+        "log": "02-native-functoriality.log",
+        "receipt_sha256": "a10f98e6e14936c44b6e83f0b7f8f13e50ccade08e2ae0015e5c7ceacb38d167",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "+StacksFrontier.RingTheory.Rig.AdicCompletionMap:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3135635456,
+        "duration_seconds": 5.1185550059890375,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "03-tensor-r1.json",
+        "log": "03-tensor-r1.log",
+        "receipt_sha256": "6c2da8162203e67ce7819d306c73e14d7942469f72e972fab4cc04b2ca36ffd3",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.FiniteAlgebra:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 144,
+        "pgid": 144,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 2452025344,
+        "duration_seconds": 6.873181926028337,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 144,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "04-tensor-r2.json",
+        "log": "04-tensor-r2.log",
+        "receipt_sha256": "dc0a34b8d4d8aa9e48633c2bc676826cf87e186b91ced0ba8afb63bbfcd124b2",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.FiniteAlgebra:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 2449006592,
+        "duration_seconds": 6.9909311850205995,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "05-crt-r1.json",
+        "log": "05-crt-r1.log",
+        "receipt_sha256": "37a14946c03c596217f634f6e2465eff143585c692f93a905cda41a0b48282c6",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.ChineseRemainder:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3148877824,
+        "duration_seconds": 8.74393767095171,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "06-crt-r2.json",
+        "log": "06-crt-r2.log",
+        "receipt_sha256": "b54049bb0d45ebb5943e0f27a33adbd061fb1e8e85fcfb4e2d285400d19553b9",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.ChineseRemainder:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3153580032,
+        "duration_seconds": 8.549163405026775,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "07-crt-r3.json",
+        "log": "07-crt-r3.log",
+        "receipt_sha256": "ea0916d91529268b1662e95a4ba1a49a5690568ec2ea8192e7e4493c6cdf14f7",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.ChineseRemainder:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3145871360,
+        "duration_seconds": 8.684788097976707,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "08-crt-r4.json",
+        "log": "08-crt-r4.log",
+        "receipt_sha256": "e1f69ed3f8279e6c1ca926b33638172508f8442fd18a325421d77d82bc6822de",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.ChineseRemainder:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3150856192,
+        "duration_seconds": 6.771244946983643,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "09-crt-r5.json",
+        "log": "09-crt-r5.log",
+        "receipt_sha256": "f3f3dbc7660f62832f6d146f92e3becc605810ae77b194d40adb05adbbad55a3",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.ChineseRemainder:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3153350656,
+        "duration_seconds": 7.402702219958883,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "10-semilocal-r1.json",
+        "log": "10-semilocal-r1.log",
+        "receipt_sha256": "453ae780dcbc8daca111f8f67b00b85734a791c5c89c0f6426f3a6680be34256",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.SemilocalBranches:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3144822784,
+        "duration_seconds": 6.268502385006286,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "11-dedekind-r1.json",
+        "log": "11-dedekind-r1.log",
+        "receipt_sha256": "bbfe1ed002acdc26640d029d795136809f055dd20c2863e45f38d88ea035da49",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.DedekindBranches:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3151519744,
+        "duration_seconds": 6.451150324952323,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "12-finite-branches-r1.json",
+        "log": "12-finite-branches-r1.log",
+        "receipt_sha256": "53380649e787172ae8bd47bd6265f9eb0eb4e2820df879e7efa088ea9003a1e0",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.FiniteDedekindBranches:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3225202688,
+        "duration_seconds": 10.50093378603924,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "13-finite-branches-r2.json",
+        "log": "13-finite-branches-r2.log",
+        "receipt_sha256": "de25a3105f79244aef937e683c53a6736376bea2d498aaf5c547e806908f00cc",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "Colib.RingTheory.AdicCompletion.FiniteDedekindBranches:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3222466560,
+        "duration_seconds": 10.180784083029721,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "14-tests-r1.json",
+        "log": "14-tests-r1.log",
+        "receipt_sha256": "0cb88e35edc8f74a22cde259fb74961361ddacf1bbabb088ca3688aa3e7e5064",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.CompletionBranches:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3131723776,
+        "duration_seconds": 7.809584042988718,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "15-tests-r2.json",
+        "log": "15-tests-r2.log",
+        "receipt_sha256": "0950f432bfb18cf5bbbe8e79f094036971f280a63a345e5a2d4a642c4d8bdf0d",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.CompletionBranches:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3129434112,
+        "duration_seconds": 7.911212557984982,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "16-tests-r3.json",
+        "log": "16-tests-r3.log",
+        "receipt_sha256": "97a2ca59ef8ba2d3540e19ef086dd63c2b1b060172ed74e335503e15af3ed03e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.CompletionBranches:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3128172544,
+        "duration_seconds": 8.00076213304419,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "17-FiniteAlgebra-lint.json",
+        "log": "17-FiniteAlgebra-lint.log",
+        "receipt_sha256": "834253a7534119942b8ff0bf54aeb79ab0ac89e0d8d262eef235c7fea20059c2",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.FiniteAlgebra"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 3971825664,
+        "duration_seconds": 6.033285400946625,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "18-ChineseRemainder-lint.json",
+        "log": "18-ChineseRemainder-lint.log",
+        "receipt_sha256": "ccc4f801d9c27103a72d56f006558fe14a3dada367c832f86f021ec55ea53c6b",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.ChineseRemainder"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 5408329728,
+        "duration_seconds": 15.456791962962598,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "19-SemilocalBranches-lint.json",
+        "log": "19-SemilocalBranches-lint.log",
+        "receipt_sha256": "7e1bc711a96cbe99f3086243c72d0ff494ed30da4d91070b49cc61b065cef5bc",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.SemilocalBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 238,
+        "pgid": 238,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 5810266112,
+        "duration_seconds": 5.655646332015749,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 238,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "20-DedekindBranches-lint.json",
+        "log": "20-DedekindBranches-lint.log",
+        "receipt_sha256": "3bb74f86a57dc223ed633760482b048569f0a82c1e77d5aa31fb726cfb09c9bd",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.DedekindBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 379,
+        "pgid": 379,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 5817810944,
+        "duration_seconds": 5.1041996399872005,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 379,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "21-FiniteDedekindBranches-lint.json",
+        "log": "21-FiniteDedekindBranches-lint.log",
+        "receipt_sha256": "6898ac09234d7012427ae9ea06bc2e4c199de15e1e95d8a9c59046601ce3a5c1",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.FiniteDedekindBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 515,
+        "pgid": 515,
+        "exit_code": 1,
+        "guard_failure": null,
+        "peak_rss_bytes": 5816979456,
+        "duration_seconds": 5.628082676033955,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 515,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "22-test-lint.json",
+        "log": "22-test-lint.log",
+        "receipt_sha256": "89a3195cda083ca44ee9efa5dfaa24af4d901a160c76c9fe1b52b725c9d6ff4e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "ColibTest.CompletionBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 656,
+        "pgid": 656,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5812506624,
+        "duration_seconds": 4.825268790998962,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 656,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "23-final-build.json",
+        "log": "23-final-build.log",
+        "receipt_sha256": "88418bc8f19f5a6f7b5d53d75e1ba483b0341e9895fcd3f86422ca1e8483898e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "build",
+          "ColibTest.CompletionBranches:olean"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 8,
+        "pgid": 8,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3200462848,
+        "duration_seconds": 39.44585876597557,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 8,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "24-FiniteAlgebra-lint-final.json",
+        "log": "24-FiniteAlgebra-lint-final.log",
+        "receipt_sha256": "1434507ed7dc958d6d6a36a381b4c435e2e65aa1175ad86429a5b73f6a52a706",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.FiniteAlgebra"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 7,
+        "pgid": 7,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 3940786176,
+        "duration_seconds": 3.856767133984249,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 7,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "25-ChineseRemainder-lint-final.json",
+        "log": "25-ChineseRemainder-lint-final.log",
+        "receipt_sha256": "3b84e3b54e840936e35687fb051a1ee45e79fe209729b0240dbc0fa82979952c",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.ChineseRemainder"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 131,
+        "pgid": 131,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5858521088,
+        "duration_seconds": 4.795744201983325,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 131,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "26-SemilocalBranches-lint-final.json",
+        "log": "26-SemilocalBranches-lint-final.log",
+        "receipt_sha256": "fd11aba6aa8e0dadcf526a7426f5b02519747266eb99d7a0c50cbb31e54d708e",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.SemilocalBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 264,
+        "pgid": 264,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5862920192,
+        "duration_seconds": 4.67463086603675,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 264,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "27-DedekindBranches-lint-final.json",
+        "log": "27-DedekindBranches-lint-final.log",
+        "receipt_sha256": "65e82edc8cbf8f6aa4d587fc722f259edddafd628187be3189c0c3c8c673ae65",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.DedekindBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 396,
+        "pgid": 396,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5867167744,
+        "duration_seconds": 4.792463223973755,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 396,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "28-FiniteDedekindBranches-lint-final.json",
+        "log": "28-FiniteDedekindBranches-lint-final.log",
+        "receipt_sha256": "bb49692675218b62ef01afb5eac5e857716a5da154223a117884e47c540de267",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "Colib.RingTheory.AdicCompletion.FiniteDedekindBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 529,
+        "pgid": 529,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5867872256,
+        "duration_seconds": 5.415736196038779,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 529,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "29-test-lint-final.json",
+        "log": "29-test-lint-final.log",
+        "receipt_sha256": "f91ff011910418487c2eeb3c2be2c2407cea618f574baa565362538d4403910a",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "batteries/runLinter",
+          "--no-build",
+          "ColibTest.CompletionBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 668,
+        "pgid": 668,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5858766848,
+        "duration_seconds": 4.579389471036848,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 668,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "30-style.json",
+        "log": "30-style.log",
+        "receipt_sha256": "38cda3295ebb76a814807eace42506c5583e51615e30c75928653f16f95d4798",
+        "state": "completed",
+        "command": [
+          "lake",
+          "exe",
+          "mathlib/lint-style",
+          "Colib.RingTheory.AdicCompletion.FiniteAlgebra",
+          "Colib.RingTheory.AdicCompletion.ChineseRemainder",
+          "Colib.RingTheory.AdicCompletion.SemilocalBranches",
+          "Colib.RingTheory.AdicCompletion.DedekindBranches",
+          "Colib.RingTheory.AdicCompletion.FiniteDedekindBranches",
+          "ColibTest.CompletionBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 797,
+        "pgid": 797,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 1698295808,
+        "duration_seconds": 1.5870916349813342,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 797,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      },
+      {
+        "receipt": "31-axiom.json",
+        "log": "31-axiom.log",
+        "receipt_sha256": "1ff1338912123113c7c6dd0d77b6f80a253381e146cd38e201e898ddca2e3c83",
+        "state": "completed",
+        "command": [
+          "lake",
+          "env",
+          ".lake/tools/axiom-audit/.lake/build/bin/axiom-audit",
+          "--root",
+          "Colib.RingTheory.AdicCompletion",
+          "--modules",
+          "Colib.RingTheory.AdicCompletion.FiniteDedekindBranches"
+        ],
+        "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+        "pid": 968,
+        "pgid": 968,
+        "exit_code": 0,
+        "guard_failure": null,
+        "peak_rss_bytes": 5316952064,
+        "duration_seconds": 4.385624029964674,
+        "limits": {
+          "lean_memory_mb": 4983,
+          "rss_limit_mb": 7475,
+          "sample_seconds": 0.1,
+          "physical_memory_bytes": 10451427328,
+          "lean_threads": 1,
+          "max_active_lean": 1
+        },
+        "owned_group_gone": true,
+        "last_members": [
+          {
+            "pid": 968,
+            "rss_bytes": 0,
+            "executable": "lake",
+            "command_path": "lake"
+          }
+        ]
+      }
+    ]
+  },
+  "handoff": {
+    "source_frozen": true,
+    "no_branch_commit_push": true,
+    "no_main_or_pinned_source_changes": true,
+    "remaining": "Final integrator owns Library IDs, precise source bibliography, compiled tags, generated root imports, test/check registration and full registered-tree acceptance."
+  },
+  "library_items": [
+    "COL-0185",
+    "COL-0186",
+    "COL-0187",
+    "COL-0188",
+    "COL-0189"
+  ],
+  "registered_tree_validation": {
+    "status": "passed",
+    "baseline": "8108da000851f51abe3beaa5b739594fb5323b02",
+    "command": "bash scripts/check.sh",
+    "receipt_sha256": "83675aadfc0c683cd5e992cdbf49a07b59f2ffaced8c853832cc1dc4942cf306",
+    "log_sha256": "6f3d77915e692921cecf04fcfd35614dee64b8d26e9f90c55501358899dc1984",
+    "guard": {
+      "state": "completed",
+      "command": [
+        "bash",
+        "scripts/check.sh"
+      ],
+      "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-branches-8108da0-20261105-2029",
+      "pid": 8,
+      "pgid": 8,
+      "exit_code": 0,
+      "guard_failure": null,
+      "peak_rss_bytes": 6927822848,
+      "duration_seconds": 138.83651225198992,
+      "limits": {
+        "lean_memory_mb": 4983,
+        "rss_limit_mb": 7475,
+        "sample_seconds": 0.1,
+        "physical_memory_bytes": 10451427328,
+        "lean_threads": 1,
+        "max_active_lean": 1
+      },
+      "owned_group_gone": true,
+      "last_members": [
+        {
+          "pid": 8,
+          "rss_bytes": 0,
+          "executable": "bash",
+          "command_path": "bash"
+        }
+      ]
+    },
+    "kernel_replay": false,
+    "source_sha256": {
+      "Colib/RingTheory/AdicCompletion/ChineseRemainder.lean": "51c1a08ca0e3e504f9b708171c2675e9443c41a939f0a076bdb2c18f0e84d553",
+      "Colib/RingTheory/AdicCompletion/DedekindBranches.lean": "a6c482e2bd6220efd5bf60a0b96f2dde3ba817b1b23c004551196b0f63a5dfed",
+      "Colib/RingTheory/AdicCompletion/FiniteAlgebra.lean": "8ab4757f5b32f618fbf27f876f0c3ed6b8c6aeae2a2728938695c498e08c93d0",
+      "Colib/RingTheory/AdicCompletion/FiniteDedekindBranches.lean": "75c2701f5c2a5051d1eb5731cadc902b6a200451c4e62c035f2daedc6522ad49",
+      "Colib/RingTheory/AdicCompletion/SemilocalBranches.lean": "93e987978dc1039e2b401028dfbea00da13747c6f0b424b6d99c1c842a793424",
+      "ColibTest/CompletionBranches.lean": "1046c227d304a79f524144026660f0d84aebf4ce64b9138800c8ce4c0bb8afa6"
+    },
+    "dependency_sha256": {
+      "lakefile.toml": "b681aa44d657deeaed64537578c53698eb8546fa15fd44c74d949c928d94a6e1",
+      "lake-manifest.json": "305047fed14ab46f9a0d8e23e5cefa5ef5c6ea89ebf0b34f52ec172f0b9d9652",
+      "lean-toolchain": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+    },
+    "results": [
+      "59 Python regression tests",
+      "production build",
+      "in-package tests",
+      "declaration and Mathlib text lint",
+      "generated root imports",
+      "2775 declarations passed allowlisted axiom audit",
+      "186 Library items and 625 declarations exported"
+    ],
+    "registration_changes": "References imports and precise source tags; ChineseRemainder and SemilocalBranches extra copyright notices retained verbatim in separate comments to satisfy header lint. No mathematical proof changes.",
+    "notes": "Final code and registration checked together; subsequent edit only records this validation evidence."
+  }
+}

@@ -61,3 +61,10 @@ check in Test. The production build remains incremental. The pinned Lake
 from per-job log severity, so `--log-level=error` suppresses replayed upstream logs
 without replacing the native completion result. Explicit builtin lint continues
 to target `Colib`, using its defining-module filter.
+
+The first incremental comparison, run 42168962352, took 181 seconds in production
+Build versus 187 seconds with forced rehash. Removing forced hashes alone is not
+the dominant improvement. The next controlled change sets the existing upstream
+`build-lake-threads` input to four on hosted runners (eight on EC2); the observed
+idle workload used approximately one of the hosted runner's four CPUs. Its effect
+must be measured rather than inferred from the setting.

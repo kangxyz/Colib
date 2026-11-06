@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0224"
+title = "Irreducibility over finite extensions of coprime degree"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 80
+statement = "A monic irreducible polynomial remains irreducible after a finite coefficient extension whose degree is coprime to its polynomial degree. Every literal irreducible scalar factor has degree divisible by the original degree."
+scope = "Arbitrary characteristic and arbitrary finite coefficient extensions, including inseparable extensions. No perfectness, separability, normality, prime-degree or linear-disjointness hypothesis is assumed. The original polynomial is monic and irreducible; its scalar factors need not be monic. Native minimal polynomials, actual AdjoinRoot fields and tower degrees are used."
+review = "author_checked"

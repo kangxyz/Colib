@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0225"
+title = "Finite simultaneous splitting of small polynomial families"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 90
+statement = "Over a perfect field, any finite family of nonzero polynomials of degree strictly below a prime p splits over a finite extension of degree coprime to p. The chosen extension is an actual intermediate field of the native splitting field of the literal product of the family."
+scope = "The base field is perfect, p is prime, and each member of the finite family is nonzero with degree strictly less than p. The empty family and repeated factors are allowed. Package tests choose one field before all monic irreducible degree-p polynomials, preserving the irreducibility and degree of every literal coefficient image in that same field. Positive characteristic is included; no characteristic-zero assumption or alternative field model is introduced."
+review = "author_checked"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0241"
+title = "Reversed edgewise subdivision preserves actual realization homotopy type"
+kind = "theorem"
+section = "geometric-realization"
+order = 305
+statement = "For every simplicial set, the second-half endpoint of reversed edgewise subdivision realizes to a homotopy equivalence with exactly that forward map. It is natural and preserves the degenerate chosen vertex. Restriction in either bisimplicial direction, including upper-index restriction with outer subdivision retained, likewise gives an actual diagonal realization homotopy equivalence."
+scope = "The indexing functor is [n] opposite star [n], using SimplexCategory.rev on the first half and the original map on the second. The representable contraction, cellular pushout gluing and sequential invariance include infinite-dimensional simplicial sets. This is distinct from unreversed ordinary subdivision and Mathlib barycentric subdivision. Weibel IV Exercises 3.9(b)-3.10 are background: the displayed face labels in Exercise 3.10 use the opposite degree-index convention, which is not silently identified here. No natural inverse, complete Quillen-Waldhausen comparison, or equality of distinct subdivision models is claimed."
+review = "author_checked"

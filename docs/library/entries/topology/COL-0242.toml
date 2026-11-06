@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0242"
+title = "Rowwise equivalences on diagonal realization"
+kind = "theorem"
+section = "geometric-realization"
+order = 260
+statement = "A map of arbitrary bisimplicial sets whose realized row maps are homotopy equivalences induces an actual homotopy equivalence on diagonal realizations and on the existing iterated coend realizations. Both forward maps are the prescribed canonical maps."
+scope = "No groupoid hypotheses or compatible rowwise inverse choices are assumed. The proof uses finite degeneracy-union latching pushouts, full-row outer skeletal attachments, realization monomorphism HEP, and sequential gluing. The iterated coend result uses the natural diagonal-realization isomorphism."
+review = "author_checked"

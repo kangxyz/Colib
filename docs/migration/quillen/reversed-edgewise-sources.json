@@ -1,0 +1,1067 @@
+{
+  "source_revision": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "base_revision": "439de508",
+  "scope": "Actual reversed indexing functor, second-half endpoint, contractible representables, global realization homotopy equivalence, and bisimplicial upper-index restriction. No Q/S category comparison is asserted.",
+  "declarations": [
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "ε",
+        "kind": "def",
+        "line": 35
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/Edgewise.lean",
+          "sha256": "7ef4c057807efdbd2c8596e28a11ec59edfb801599abc831dab7df3753b0b7a1",
+          "declaration": {
+            "name": "ε",
+            "kind": "def",
+            "line": 111
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "first",
+        "kind": "def",
+        "line": 42
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/Edgewise.lean",
+          "sha256": "7ef4c057807efdbd2c8596e28a11ec59edfb801599abc831dab7df3753b0b7a1",
+          "declaration": {
+            "name": "first",
+            "kind": "def",
+            "line": 118
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "second",
+        "kind": "def",
+        "line": 51
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/Edgewise.lean",
+          "sha256": "7ef4c057807efdbd2c8596e28a11ec59edfb801599abc831dab7df3753b0b7a1",
+          "declaration": {
+            "name": "second",
+            "kind": "def",
+            "line": 127
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "subdivision",
+        "kind": "def",
+        "line": 60
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/Edgewise.lean",
+          "sha256": "7ef4c057807efdbd2c8596e28a11ec59edfb801599abc831dab7df3753b0b7a1",
+          "declaration": {
+            "name": "subdivision",
+            "kind": "def",
+            "line": 136
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "subdivisionFunctor",
+        "kind": "def",
+        "line": 63
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/Edgewise.lean",
+          "sha256": "7ef4c057807efdbd2c8596e28a11ec59edfb801599abc831dab7df3753b0b7a1",
+          "declaration": {
+            "name": "subdivisionFunctor",
+            "kind": "def",
+            "line": 139
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "endpoint",
+        "kind": "def",
+        "line": 67
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/Edgewise.lean",
+          "sha256": "7ef4c057807efdbd2c8596e28a11ec59edfb801599abc831dab7df3753b0b7a1",
+          "declaration": {
+            "name": "endpoint",
+            "kind": "def",
+            "line": 143
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "endpointNatTrans",
+        "kind": "def",
+        "line": 76
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/Edgewise.lean",
+          "sha256": "7ef4c057807efdbd2c8596e28a11ec59edfb801599abc831dab7df3753b0b7a1",
+          "declaration": {
+            "name": "endpointNatTrans",
+            "kind": "def",
+            "line": 152
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "ε_map_left",
+        "kind": "theorem",
+        "line": 82
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "ε_map_left",
+            "kind": "theorem",
+            "line": 116
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "ε_map_right",
+        "kind": "theorem",
+        "line": 88
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "ε_map_right",
+            "kind": "theorem",
+            "line": 122
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "vertex",
+        "kind": "def",
+        "line": 96
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "vertex",
+            "kind": "def",
+            "line": 116
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/AlgebraicTopology/SimplicialSet/EdgewiseSubdivision.lean",
+      "target_sha256": "7a53ec4fdbc63e5d61904aaab3f5537ad2ece6365cb6846f2868b203885e8c13",
+      "target": {
+        "name": "endpoint_vertex",
+        "kind": "theorem",
+        "line": 98
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "endpoint_vertex",
+            "kind": "theorem",
+            "line": 118
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "horizontal",
+        "kind": "def",
+        "line": 41
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "horizontal",
+            "kind": "def",
+            "line": 36
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "vertical",
+        "kind": "def",
+        "line": 45
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "vertical",
+            "kind": "def",
+            "line": 40
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "horizontalEndpoint",
+        "kind": "def",
+        "line": 49
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "horizontalEndpoint",
+            "kind": "def",
+            "line": 44
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "verticalEndpoint",
+        "kind": "def",
+        "line": 58
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "verticalEndpoint",
+            "kind": "def",
+            "line": 53
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "doubleDiagonalIso",
+        "kind": "def",
+        "line": 62
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "doubleDiagonalIso",
+            "kind": "def",
+            "line": 57
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "horizontalEndpoint_verticalEndpoint",
+        "kind": "theorem",
+        "line": 67
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "horizontalEndpoint_verticalEndpoint",
+            "kind": "theorem",
+            "line": 62
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "verticalEndpoint_horizontalEndpoint",
+        "kind": "theorem",
+        "line": 74
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "verticalEndpoint_horizontalEndpoint",
+            "kind": "theorem",
+            "line": 69
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "doubleDiagonalHomotopyEquiv",
+        "kind": "def",
+        "line": 83
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "doubleDiagonalHomotopyEquiv",
+            "kind": "def",
+            "line": 78
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "doubleDiagonalHomotopyEquiv_toFun",
+        "kind": "theorem",
+        "line": 88
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "doubleDiagonalHomotopyEquiv_toFun",
+            "kind": "theorem",
+            "line": 83
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "verticalRealizationHomotopyEquiv",
+        "kind": "def",
+        "line": 95
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "verticalRealizationHomotopyEquiv",
+            "kind": "def",
+            "line": 90
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "verticalRealizationHomotopyEquiv_toFun",
+        "kind": "theorem",
+        "line": 108
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "verticalRealizationHomotopyEquiv_toFun",
+            "kind": "theorem",
+            "line": 103
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "horizontalRealizationHomotopyEquiv",
+        "kind": "def",
+        "line": 113
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "horizontalRealizationHomotopyEquiv",
+            "kind": "def",
+            "line": 108
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "horizontalRealizationHomotopyEquiv_toFun",
+        "kind": "theorem",
+        "line": 126
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "horizontalRealizationHomotopyEquiv_toFun",
+            "kind": "theorem",
+            "line": 121
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "upperIndexRealizationHomotopyEquiv",
+        "kind": "def",
+        "line": 133
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "upperIndexRealizationHomotopyEquiv",
+            "kind": "def",
+            "line": 128
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionBisimplicial.lean",
+      "target_sha256": "f5809c9623302b3539d270f685368feddc95f3fbc4b8f67e7b70a04771c00f98",
+      "target": {
+        "name": "upperIndexRealizationHomotopyEquiv_toFun",
+        "kind": "theorem",
+        "line": 138
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseBisimplicial.lean",
+          "sha256": "f321d401318cd42e01dd3c0ded07d8db7facf52ae2d43d7ee9f82ed3109a2bf0",
+          "declaration": {
+            "name": "upperIndexRealizationHomotopyEquiv_toFun",
+            "kind": "theorem",
+            "line": 133
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "subdivisionFunctor_preservesColimits",
+        "kind": "instance",
+        "line": 44
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "subdivisionFunctor_preservesColimits",
+            "kind": "instance",
+            "line": 35
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "subdivisionFunctor_preservesSequentialColimits",
+        "kind": "instance",
+        "line": 48
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "subdivisionFunctor_preservesSequentialColimits",
+            "kind": "instance",
+            "line": 39
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "subdivisionFunctor_preservesMonomorphisms",
+        "kind": "instance",
+        "line": 53
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "subdivisionFunctor_preservesMonomorphisms",
+            "kind": "instance",
+            "line": 44
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "homotopic_into_contractible",
+        "kind": "theorem",
+        "line": 61
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "homotopic_into_contractible",
+            "kind": "theorem",
+            "line": 52
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "realizesEquiv_endpoint_simplex",
+        "kind": "theorem",
+        "line": 72
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "realizesEquiv_endpoint_simplex",
+            "kind": "theorem",
+            "line": 63
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "realizesEquiv_endpoint",
+        "kind": "theorem",
+        "line": 89
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "realizesEquiv_endpoint",
+            "kind": "theorem",
+            "line": 80
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "realizationHomotopyEquiv",
+        "kind": "def",
+        "line": 94
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "realizationHomotopyEquiv",
+            "kind": "def",
+            "line": 85
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "realizationHomotopyEquiv_toFun",
+        "kind": "theorem",
+        "line": 106
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "realizationHomotopyEquiv_toFun",
+            "kind": "theorem",
+            "line": 97
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "realizationHomotopyEquiv_naturality",
+        "kind": "theorem",
+        "line": 110
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "realizationHomotopyEquiv_naturality",
+            "kind": "theorem",
+            "line": 101
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "realizationHomotopyEquiv_point",
+        "kind": "theorem",
+        "line": 117
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "realizationHomotopyEquiv_point",
+            "kind": "theorem",
+            "line": 108
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionRealization.lean",
+      "target_sha256": "c748bb2bfc8ad5a0bdd4667cf815b97f0761a3df79d4ef65652c3e44ad64db13",
+      "target": {
+        "name": "realizationHomotopyEquiv_vertex",
+        "kind": "theorem",
+        "line": 124
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseRealization.lean",
+          "sha256": "370fe3b6c54038136f303c92cde7390680e805b4e76e01a969f1addeeb794e08",
+          "declaration": {
+            "name": "realizationHomotopyEquiv_vertex",
+            "kind": "theorem",
+            "line": 132
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "contractLeft",
+        "kind": "def",
+        "line": 34
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "contractLeft",
+            "kind": "def",
+            "line": 59
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "contractRight",
+        "kind": "def",
+        "line": 49
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "contractRight",
+            "kind": "def",
+            "line": 74
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "contractOperator",
+        "kind": "def",
+        "line": 65
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "contractOperator",
+            "kind": "def",
+            "line": 90
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "contractOperator_left",
+        "kind": "theorem",
+        "line": 79
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "contractOperator_left",
+            "kind": "theorem",
+            "line": 104
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "contractOperator_right",
+        "kind": "theorem",
+        "line": 85
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "contractOperator_right",
+            "kind": "theorem",
+            "line": 110
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "contractOperator_naturality",
+        "kind": "theorem",
+        "line": 93
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "contractOperator_naturality",
+            "kind": "theorem",
+            "line": 130
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "simplexCylinder",
+        "kind": "def",
+        "line": 104
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "simplexCylinder",
+            "kind": "def",
+            "line": 141
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "simplexVertex",
+        "kind": "def",
+        "line": 112
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "simplexVertex",
+            "kind": "def",
+            "line": 149
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "simplexCylinder_zero",
+        "kind": "theorem",
+        "line": 116
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "simplexCylinder_zero",
+            "kind": "theorem",
+            "line": 153
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "simplexCylinder_one",
+        "kind": "theorem",
+        "line": 125
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "simplexCylinder_one",
+            "kind": "theorem",
+            "line": 162
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "simplexContraction",
+        "kind": "def",
+        "line": 137
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "simplexContraction",
+            "kind": "def",
+            "line": 174
+          }
+        }
+      ]
+    },
+    {
+      "target_path": "Colib/Topology/Realization/EdgewiseSubdivisionSimplex.lean",
+      "target_sha256": "8708aa6d1c4d94e19d9816d160165a91789e4cf80cf4c073f565f45788225bfd",
+      "target": {
+        "name": "contractibleSpace_simplex",
+        "kind": "theorem",
+        "line": 147
+      },
+      "source": [
+        {
+          "path": "Quillen/Topology/Realization/EdgewiseSimplex.lean",
+          "sha256": "1204f2746fa7fea3f54f54bf6616f4d0be98dd9ceca6dae0d458d265d0a667cc",
+          "declaration": {
+            "name": "contractibleSpace_simplex",
+            "kind": "theorem",
+            "line": 184
+          }
+        }
+      ]
+    }
+  ],
+  "shared_native_declarations": [
+    {
+      "source_name": "Quillen.Edgewise.joinObj",
+      "native_name": "SSet.OrdinalJoin.joinObj",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.left",
+      "native_name": "SSet.OrdinalJoin.left",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.right",
+      "native_name": "SSet.OrdinalJoin.right",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.left_val",
+      "native_name": "SSet.OrdinalJoin.left_val",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.right_val",
+      "native_name": "SSet.OrdinalJoin.right_val",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.joinMap",
+      "native_name": "SSet.OrdinalJoin.joinMap",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.joinMap_left",
+      "native_name": "SSet.OrdinalJoin.joinMap_left",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.joinMap_right",
+      "native_name": "SSet.OrdinalJoin.joinMap_right",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.join_cases",
+      "native_name": "SSet.OrdinalJoin.join_cases",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.joinMap_id",
+      "native_name": "SSet.OrdinalJoin.joinMap_id",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.joinMap_comp",
+      "native_name": "SSet.OrdinalJoin.joinMap_comp",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoin"
+    },
+    {
+      "source_name": "Quillen.Edgewise.joinDesc",
+      "native_name": "SSet.OrdinalJoin.joinDesc",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoinDesc"
+    },
+    {
+      "source_name": "Quillen.Edgewise.joinDesc_left",
+      "native_name": "SSet.OrdinalJoin.joinDesc_left",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoinDesc"
+    },
+    {
+      "source_name": "Quillen.Edgewise.joinDesc_right",
+      "native_name": "SSet.OrdinalJoin.joinDesc_right",
+      "native_module": "Colib.AlgebraicTopology.SimplicialSet.OrdinalJoinDesc"
+    }
+  ],
+  "shared_proof_infrastructure": [
+    "SSet.RealizationComparison.realizesEquiv_all",
+    "SSet.homotopyExtensionProperty_realization_mono",
+    "TopCat.sequentialCoconeHomotopyEquiv",
+    "ContinuousMap.HomotopyEquiv.ofAdjacentComposites",
+    "SSet.diagonalSSet",
+    "SSet.diagonalMap"
+  ]
+}

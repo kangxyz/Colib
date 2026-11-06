@@ -1,0 +1,320 @@
+{
+  "status": "source-only-uncompiled",
+  "base": "8a90269409024c63ca7c5203fc8faea01915de0c",
+  "branch": "work/native-simple-norm-base-change",
+  "stacks_pin": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
+  "mathlib_pin": "16edf57de7933555826307a3d81b4391a3657a09",
+  "lean_or_lake_run": false,
+  "shared_cache_written": false,
+  "main_modified": false,
+  "guard_acquired": false,
+  "files": [
+    {
+      "path": "Colib/RingTheory/Polynomial/FactorContraction.lean",
+      "sha256": "e26b8ae821e4b647a68627ab755aad74d72e42de27bb232c3a4c93dec8d85c0f",
+      "lines": 62,
+      "theorems": 2,
+      "public_theorems": 2,
+      "private_theorems": 0,
+      "examples": 0,
+      "imports": [
+        "Mathlib.Algebra.Polynomial.FieldDivision",
+        "Mathlib.RingTheory.PrincipalIdealDomain"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Norm/FiniteReciprocity.lean",
+      "sha256": "015079d1b1b1e99a2c0b2969ea05ab1fe856005e86336c854724a24ba3bb7d4a",
+      "lines": 165,
+      "theorems": 6,
+      "public_theorems": 5,
+      "private_theorems": 1,
+      "examples": 0,
+      "imports": [
+        "StacksFrontier.AlgebraicGeometry.Chow.MilnorNorm.SimpleNorm"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Norm/ScalarFactorReduction.lean",
+      "sha256": "ba1265ac0266ea505ffe67a248da63feea660abef954485e38d028479d64c356",
+      "lines": 95,
+      "theorems": 2,
+      "public_theorems": 2,
+      "private_theorems": 0,
+      "examples": 0,
+      "imports": [
+        "Colib.KTheory.MilnorK.Norm.FiniteReciprocity",
+        "Mathlib.RingTheory.AdjoinRoot"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "ColibTest/PolynomialFactorContraction.lean",
+      "sha256": "050cd72496e9910454600a8ad8c67bd7d466927d13a2b0792fca59e3b8bd3ac0",
+      "lines": 37,
+      "theorems": 0,
+      "public_theorems": 0,
+      "private_theorems": 0,
+      "examples": 3,
+      "imports": [
+        "Colib.RingTheory.Polynomial.FactorContraction"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "ColibTest/MilnorFiniteReciprocity.lean",
+      "sha256": "3e2928065a7560557579a7e3c6d4df19c2cde3acd86c44224b5566a4eab79756",
+      "lines": 129,
+      "theorems": 0,
+      "public_theorems": 0,
+      "private_theorems": 0,
+      "examples": 12,
+      "imports": [
+        "Colib.KTheory.MilnorK.Norm.FiniteReciprocity"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "ColibTest/MilnorScalarFactorReduction.lean",
+      "sha256": "b73cfebd5c3b1f58251982acffeed7503515684303df6f283550e6c478a25161",
+      "lines": 62,
+      "theorems": 0,
+      "public_theorems": 0,
+      "private_theorems": 0,
+      "examples": 2,
+      "imports": [
+        "Colib.KTheory.MilnorK.Norm.ScalarFactorReduction"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "Colib/FieldTheory/RatFunc/CoefficientMap.lean",
+      "sha256": "8c01423e493e65a5b9c26d136f1a8cbf9864416fc23609dafd2e389c63733fb4",
+      "lines": 52,
+      "theorems": 2,
+      "public_theorems": 2,
+      "private_theorems": 0,
+      "examples": 0,
+      "imports": [
+        "Mathlib.FieldTheory.RatFunc.Basic"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "Colib/RingTheory/AdjoinRoot/Map.lean",
+      "sha256": "0af083f6f81e9da56daac765c620df251a2a671c3283db4944ea026468193918",
+      "lines": 39,
+      "theorems": 1,
+      "public_theorems": 1,
+      "private_theorems": 0,
+      "examples": 0,
+      "imports": [
+        "Mathlib.RingTheory.AdjoinRoot"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "Colib/RingTheory/Polynomial/FactorMultiplicity.lean",
+      "sha256": "e6a708ce5cdb54f42284f7174a9fa39f570ed660928c361a2cc8735ec0d6fb17",
+      "lines": 78,
+      "theorems": 3,
+      "public_theorems": 3,
+      "private_theorems": 0,
+      "examples": 0,
+      "imports": [
+        "Mathlib.Algebra.Polynomial.FieldDivision",
+        "Mathlib.RingTheory.Localization.AtPrime.Basic",
+        "Mathlib.RingTheory.UniqueFactorizationDomain.Multiplicity"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "Colib/KTheory/MilnorK/Norm/CoefficientResidueFields.lean",
+      "sha256": "7cbf79a0b5d30c594dd0efa441aa7b4b06f99d7f63fb4e57b3f6e5835268f3f3",
+      "lines": 142,
+      "theorems": 5,
+      "public_theorems": 5,
+      "private_theorems": 0,
+      "examples": 0,
+      "imports": [
+        "Colib.FieldTheory.RatFunc.CoefficientMap",
+        "Colib.RingTheory.AdjoinRoot.Map",
+        "Colib.RingTheory.Polynomial.FactorContraction",
+        "Colib.RingTheory.Polynomial.FactorMultiplicity",
+        "StacksFrontier.AlgebraicGeometry.Chow.MilnorNorm.PolyResidueRing"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "ColibTest/RatFuncCoefficientMap.lean",
+      "sha256": "4a851fa7fe4dffcf567b0204256b94fc317304c7729e455c37de350468dfc2d2",
+      "lines": 50,
+      "theorems": 0,
+      "public_theorems": 0,
+      "private_theorems": 0,
+      "examples": 4,
+      "imports": [
+        "Colib.FieldTheory.RatFunc.CoefficientMap",
+        "Colib.RingTheory.AdjoinRoot.Map"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "ColibTest/PolynomialFactorMultiplicity.lean",
+      "sha256": "896a7b11f663149762df75c035f1fae16ee8a16a21df587bcde548f4b677e28f",
+      "lines": 52,
+      "theorems": 0,
+      "public_theorems": 0,
+      "private_theorems": 0,
+      "examples": 4,
+      "imports": [
+        "Colib.RingTheory.Polynomial.FactorMultiplicity"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    },
+    {
+      "path": "ColibTest/MilnorCoefficientResidueFields.lean",
+      "sha256": "e4f14bd29cabd12604bfbb51241ce0c67f8528cf360b7b0083c28ae104ed4fc0",
+      "lines": 58,
+      "theorems": 0,
+      "public_theorems": 0,
+      "private_theorems": 0,
+      "examples": 3,
+      "imports": [
+        "Colib.KTheory.MilnorK.Norm.CoefficientResidueFields"
+      ],
+      "unresolved_direct_imports": [],
+      "lines_over_100": [],
+      "trailing_whitespace": [],
+      "placeholder_tokens": []
+    }
+  ],
+  "static_checks_only": true,
+  "finite_reciprocity_consolidation": {
+    "pre_consolidation_commit": "e9f2574f11c589e8a92a9ecda0fbfc87eaa5e843",
+    "canonical_production_path": "Colib/KTheory/MilnorK/Norm/FiniteReciprocity.lean",
+    "canonical_test_path": "ColibTest/MilnorFiniteReciprocity.lean",
+    "added_public_theorems": [
+      "sum_simpleMilnorNorm_residue_add_infinity_eq_zero",
+      "exists_finset_sum_simpleMilnorNorm_residue_add_infinity_eq_zero"
+    ],
+    "added_private_helpers": [
+      "finiteReciprocity_point_ext"
+    ],
+    "generic_lift_proof_unchanged": true,
+    "generic_lift_proof_implementation_count": 1,
+    "scalar_factor_consumer_hashes_unchanged": true,
+    "added_examples": 7,
+    "legacy_inputs": [
+      {
+        "path": "norm-finite-reciprocity-20261105T1451/FiniteReciprocity.lean",
+        "sha256": "515075ecb1969e32d8be21583e0475b35bd82e1599024a1671a55683af5d87bb"
+      },
+      {
+        "path": "norm-finite-reciprocity-20261105T1451/FiniteReciprocityTest.lean",
+        "sha256": "cb297404598f7b4afb89a71fbec906fcda21d6450d20df47a5df3419221d070a"
+      },
+      {
+        "path": "norm-finite-reciprocity-20261105T1451/finite-reciprocity-static-review-20261105T2240.md",
+        "sha256": "979d91e01fe05fa2b1f1b148348330a3d8e7c9bec2fa03f177c21bbac0735a5d"
+      }
+    ],
+    "legacy_inputs_modified": false,
+    "validation_owner": "norm worker after the pinned native SimpleNorm closure is ready",
+    "elaboration_or_test_execution_performed": false
+  },
+  "totals": {
+    "theorems": 21,
+    "public_theorems": 20,
+    "private_theorems": 1,
+    "examples": 28
+  },
+  "reports": [
+    {
+      "path": "SCALAR_BASE_CHANGE_SCOPE.md",
+      "sha256": "c4baaa3ef8f3fb9717b8d7c00612232d5df897e4b2330d3708d1e0ae046f242a"
+    },
+    {
+      "path": "SCALAR_BASE_CHANGE_REPORT.md",
+      "sha256": "6d9b3138ae23cea69e42cc8d1d18ba70beff7eb1a09ea34d73547cc8b21ebfd9"
+    }
+  ],
+  "actual_coefficient_maps_and_multiplicity": {
+    "base_commit": "8eeb648756f5c1616c5a4fbe9c0f86c1bbf777e8",
+    "status": "source-written-unvalidated",
+    "production_paths": [
+      "Colib/FieldTheory/RatFunc/CoefficientMap.lean",
+      "Colib/RingTheory/AdjoinRoot/Map.lean",
+      "Colib/RingTheory/Polynomial/FactorMultiplicity.lean",
+      "Colib/KTheory/MilnorK/Norm/CoefficientResidueFields.lean"
+    ],
+    "test_paths": [
+      "ColibTest/RatFuncCoefficientMap.lean",
+      "ColibTest/PolynomialFactorMultiplicity.lean",
+      "ColibTest/MilnorCoefficientResidueFields.lean"
+    ],
+    "added_public_theorems": 11,
+    "added_examples": 11,
+    "new_map_or_model_definitions": 0,
+    "prior_six_lean_files_unchanged": true,
+    "source_and_target_universes": "independent u and v",
+    "characteristic_or_separability_assumptions": false,
+    "implemented_source_obligations": [
+      "A: native rational coefficient map and local fraction square",
+      "B: native quotient/residue-field dictionary for actual coefficient factors",
+      "C: actual local multiplicity and unit-times-uniformizer equation, normalized-factor count"
+    ],
+    "remaining_obligations": [
+      "Elaborate all new source and consumers",
+      "D: polynomial Milnor residue naturality on whole-ring classes",
+      "E: actual finite factor support and vanishing elsewhere",
+      "F: infinity residue naturality",
+      "G: close unconditional native simple-norm scalar-factor formula"
+    ],
+    "static_review": {
+      "scope": "four new implementation files and eleven consumers",
+      "definite_issue_found": "missing Polynomial notation scope in AdjoinRoot/Map.lean",
+      "issue_corrected": true,
+      "additional_definite_errors_found": false,
+      "compiler_evidence": false
+    }
+  }
+}

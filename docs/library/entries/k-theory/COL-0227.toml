@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0227"
+title = "Finite native representative witnesses before all scalar factors"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 152
+statement = "Every class in a monic irreducible polynomial root field admits a finite family of nonzero native reduced polynomial representatives of strictly smaller degree. This family is chosen before every future coefficient field and literal irreducible scalar factor. Whenever the family splits, the actual image of the class has a finite signed mixed-symbol expansion."
+scope = "The original polynomial is monic and irreducible. Each target factor is irreducible and divides the literal coefficient image, but need not be monic or prime-degree. Coefficient fields may have independent universes and need not be finite or separable; no perfectness or characteristic assumption is imposed. Stacks polyRep acts on the same literal quotient as Mathlib AdjoinRoot, and the map is Mathlib AdjoinRoot.map with the existing native-group transport. Positive Milnor degrees include degree one; the supporting finite tuple decomposition also includes degree zero."
+review = "author_checked"

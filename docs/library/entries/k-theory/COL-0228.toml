@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0228"
+title = "Classwise finite coprime mixed-symbol expansions"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 153
+statement = "Over a perfect field, each Milnor class in the root field of a monic irreducible prime-degree polynomial has a finite signed mixed-symbol expansion after one finite separable coefficient extension of coprime degree. That extension is an actual intermediate field of the splitting field of its finite witness product, and the target root field belongs to the whole original coefficient-image polynomial, which stays irreducible."
+scope = "PerfectField and prime polynomial degree are explicit final construction hypotheses. The coefficient field is chosen for the given class, not uniformly for the entire Milnor group. The conclusion retains the same finite witness family, its splitting, the actual intermediate field, the literal coefficient polynomial and native AdjoinRoot.map. Every positive Milnor degree m+1 is covered, including m=0. Characteristic zero is only a perfect-field specialization; positive characteristic is included. No global mixed-generation theorem, norm law, norm independence or reciprocity assertion is made."
+review = "author_checked"

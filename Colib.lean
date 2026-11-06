@@ -146,6 +146,8 @@ public import Colib.KTheory.GrothendieckGroup.SerreLocalization
 public import Colib.KTheory.GrothendieckGroup.SerreQuotient
 public import Colib.KTheory.GrothendieckGroup.SerreSubgroup
 public import Colib.KTheory.MilnorK.DegreeTwo
+public import Colib.KTheory.MilnorK.FiniteMixedGeneration
+public import Colib.KTheory.MilnorK.FiniteMixedWitnesses
 public import Colib.KTheory.MilnorK.Residue.BaseFieldProduct
 public import Colib.KTheory.MilnorK.Residue.CanonicalNormalization
 public import Colib.KTheory.MilnorK.Residue.CanonicalRamifiedMap
@@ -177,6 +179,7 @@ public import Colib.KTheory.MilnorK.Symbols.Involution
 public import Colib.KTheory.MilnorK.Symbols.Product
 public import Colib.KTheory.MilnorK.Symbols.Relations
 public import Colib.KTheory.MilnorK.Symbols.RingTransport
+public import Colib.KTheory.MilnorK.Symbols.SplitMixed
 public import Colib.KTheory.MilnorK.Symbols.Surjectivity
 public import Colib.KTheory.MilnorK.Symbols.SymbolMap
 public import Colib.KTheory.MilnorK.Symbols.Transport

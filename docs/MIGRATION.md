@@ -51,7 +51,7 @@ length-one comma contractions and the actual countable nerve union. Resolution
 lengths need not have a common bound. The resulting Q-space equivalence and
 all-degree K-equivalence retain the original inclusion maps. See the
 [precise native-model and source scope](migration/resolution/README.md).
-General filtered realization, Devissage and Quillen-Waldhausen comparisons remain
+General filtered realization and Quillen-Waldhausen comparisons remain
 separate work; this milestone does not close the entire Quillen migration.
 
 ## Canonical Grothendieck–Quillen K-zero comparison
@@ -62,3 +62,12 @@ The proof establishes faithfulness of the original groupoid-completion functor
 using actual finite-skeleton decoders and compact relative homotopies. See the
 [native proof and source scope](migration/quillen/kzero-comparison.md). This does
 not claim a higher K-group comparison or completion of the Quillen inventory.
+
+## Classical Quillen devissage
+
+Actual finite filtrations now contract the inclusion comma categories through
+the layer poset. The resulting classifying-space and all-degree K-equivalences
+retain the actual inclusion maps and canonical zero basepoint. The full
+subcategory is intrinsically abelian: no extension-closure or uniform-length
+hypothesis is added. See the [native proof and source crosswalk](migration/devissage/README.md).
+This does not assert a Q/S comparison or finish the historical Quillen inventory.

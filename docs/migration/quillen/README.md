@@ -119,3 +119,10 @@ M0 remains open until the compiled declaration census, intended result endpoints
 Stacks-first audits, destination baseline/toolchain checks, and outstanding review
 obligations are reconciled. This directory delivers its reproducible module/import
 inventory component only.
+
+## Classical devissage endpoint
+
+The [bounded devissage crosswalk](../devissage/README.md) records the actual
+finite-filtration, layer/comma and canonical K-map theorem chain. It supplements
+this historical inventory rather than changing its frozen denominator or
+claiming that all source modules have been migrated.

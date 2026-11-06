@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0246"
+title = "Classical Quillen devissage"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 280
+statement = "If every ambient object has an actual finite filtration with factors in the full abelian subcategory, the Q-inclusion induces a homotopy equivalence of classifying spaces and the canonical zero-rebased inclusion KMap is bijective in every nonnegative degree. The K-group equivalence has that same map as its forward homomorphism."
+scope = "A small abelian category and an object property containing zero and closed under subobjects, quotients and finite products. There is no extension-closure assumption, uniform filtration bound or assumed homotopy inverse. Degree zero is the actual pi-one of BQ. Negative K-theory and a Quillen-Waldhausen comparison are not asserted."
+review = "author_checked"

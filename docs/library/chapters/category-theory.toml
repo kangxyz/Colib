@@ -8,7 +8,7 @@ introduction = "Categorical foundations retain their chosen objects, universal p
 id = "exact-categories"
 title = "Exact categories"
 order = 10
-introduction = "A chosen class of kernel-cokernel pairs determines an exact structure. Its admissible maps satisfy the Quillen axioms and the mixed pullback theorem. Abelian categories provide the canonical example using all short exact sequences. Additive Serre localization functors preserve these canonical conflations. Matrix rows extend admissible epimorphisms, and exact functors preserve pullbacks along admissible epimorphisms."
+introduction = "A chosen class of kernel-cokernel pairs determines an exact structure. Its admissible maps satisfy the Quillen axioms and the mixed pullback theorem. Abelian categories provide the canonical example using all short exact sequences. Additive Serre localization functors preserve these canonical conflations. Matrix rows extend admissible epimorphisms, and exact functors preserve pullbacks along admissible epimorphisms. Actual finite conflation towers retain their factors and give additive telescoping formulas."
 
 [[sections]]
 id = "bicategories"
@@ -20,7 +20,7 @@ introduction = "Passing from a bicategory to isomorphism classes of its 1-morphi
 id = "restricted-spans"
 title = "Restricted spans"
 order = 30
-introduction = "Restricted spans compose by mixed pullbacks and become ordinary morphisms after quotienting by apex isomorphisms. Admissible epimorphisms on the left and admissible monomorphisms on the right recover the shape of Quillen's Q-construction once an exact-category adapter supplies the hypotheses."
+introduction = "Restricted spans compose by mixed pullbacks and become ordinary morphisms after quotienting by apex isomorphisms. Admissible epimorphisms on the left and admissible monomorphisms on the right recover the shape of Quillen's Q-construction once the exact-category structure supplies the hypotheses. In the abelian case, quotient spans identify devissage layers with the actual inclusion comma category."
 
 [[sections]]
 id = "functor-constructions"

@@ -16,9 +16,11 @@
 - `test_stacks_cache.py` checks the cache identity, path boundary and round-trip behavior.
 
 - `lint_style.py` discovers all Colib and ColibTest sources and invokes the native Mathlib
-  text linter through temporary source-only import hubs.
+  text linter through temporary source-only import hubs at their actual workspace paths.
+  Hubs are never compiled and are removed on normal completion, native failure or an exception.
 - `test_lint_style.py` checks inclusion of leaf tests, exclusion of dependencies, and propagation
-  of the native linter's exit status.
+  of the native linter's exit status, workspace source lookup, cleanup and existing-file protection.
+- `test_devissage.py` checks the native devissage maps, source crosswalk and public registrations.
 
 - `lean_tools/_lint/` carries the full batched declaration-lint adapter from the pinned
   current Aglib workflow; `.github/lint/run.sh` is its source-checkout entry.

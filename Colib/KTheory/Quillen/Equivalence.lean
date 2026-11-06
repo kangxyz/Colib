@@ -7,7 +7,7 @@ Authors: kangxyz
 module
 
 public import Colib.CategoryTheory.ExactCategory.Basic
-public import Colib.CategoryTheory.ExactCategory.Functor.Basic
+public import Colib.CategoryTheory.ExactCategory.Functor.QFaithful
 public import Colib.CategoryTheory.ExactCategory.Equivalence
 public import Colib.KTheory.Quillen.Map.HomotopyEquivalence
 public import Colib.Topology.ClassifyingSpace.Adjunction
@@ -35,22 +35,6 @@ section Mixed
 variable {C : Type u₁} {D : Type u₂} [Category.{v₁} C] [Category.{v₂} D]
   [Preadditive C] [Preadditive D] [HasFiniteBiproducts C] [HasFiniteBiproducts D]
   {EC : ExactStructure C} {ED : ExactStructure D} (F : ExactFunctor EC ED)
-
-/-- An ordinary fully faithful exact functor induces a faithful Q-functor. -/
-theorem mapQ_faithful_of_fullyFaithful [F.toFunctor.Full] [F.toFunctor.Faithful] :
-    F.mapQ.Faithful where
-  map_injective := by
-    rintro X Y ⟨s⟩ ⟨t⟩ h
-    change QConstruction.mkHom _ _ (F.toQCompatibleFunctor.mapSpan s) =
-      QConstruction.mkHom _ _ (F.toQCompatibleFunctor.mapSpan t) at h
-    obtain ⟨e, hl, hr⟩ := (QConstruction.mkHom_eq_iff_apexIso _ _ _ _).1 h
-    apply QConstruction.mkHom_eq_of_apexIso _ _ s t (F.toFunctor.preimageIso e)
-    · apply F.toFunctor.map_injective
-      simpa only [Functor.map_comp, Functor.preimageIso_hom, Functor.map_preimage] using
-        (show e.hom ≫ F.toFunctor.map t.l = F.toFunctor.map s.l from hl)
-    · apply F.toFunctor.map_injective
-      simpa only [Functor.map_comp, Functor.preimageIso_hom, Functor.map_preimage] using
-        (show e.hom ≫ F.toFunctor.map t.r = F.toFunctor.map s.r from hr)
 
 /-- An exact functor whose underlying functor is essentially surjective has
 an essentially surjective Q-functor. -/

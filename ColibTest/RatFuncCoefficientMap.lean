@@ -32,13 +32,14 @@ example (φ : k →+* K) (p q : k[X]) :
       algebraMap K[X] (RatFunc K) (p.map φ) /
         algebraMap K[X] (RatFunc K) (q.map φ) := by
   rw [map_div₀, RatFunc.mapRingHom_algebraMap, RatFunc.mapRingHom_algebraMap]
+  rfl
 
 example (φ : k →+* K) :
     RatFunc.mapRingHom (Polynomial.mapRingHom φ)
         (Polynomial.nonZeroDivisors_le_comap_mapRingHom φ)
         (algebraMap k[X] (RatFunc k) X) =
       algebraMap K[X] (RatFunc K) X := by
-  simpa only [Polynomial.map_X] using
+  simpa only [Polynomial.coe_mapRingHom, Polynomial.map_X] using
     RatFunc.mapRingHom_algebraMap (Polynomial.mapRingHom φ)
       (Polynomial.nonZeroDivisors_le_comap_mapRingHom φ) X
 

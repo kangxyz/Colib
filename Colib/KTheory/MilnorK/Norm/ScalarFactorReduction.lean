@@ -82,13 +82,23 @@ theorem simpleMilnorNorm_map_eq_weighted_sum_of_lift_residues
     milnorKRingMap φ (simpleMilnorNorm f x) =
       ∑ i ∈ s, (m i : ℤ) • simpleMilnorNorm (q i)
         (milnorKRingMap (AdjoinRoot.map φ (poly f) (poly (q i)) (hq i)) x) := by
-  rw [simpleMilnorNorm_map_eq_sum_of_lift_residues φ Φ f x y hy s e q hinj
-    (fun i => (m i : ℤ) •
-      milnorKRingMap (AdjoinRoot.map φ (poly f) (poly (q i)) (hq i)) x)
-    hresidue hsupport hinfinity]
-  apply Finset.sum_congr rfl
-  intro i _
-  exact map_zsmul (simpleMilnorNorm (q i)) _ _
+  let α : ∀ i, MilnorKRing (Polynomial K ⧸ Ideal.span {poly (q i)}) :=
+    fun i => (m i : ℤ) •
+      milnorKRingMap (AdjoinRoot.map φ (poly f) (poly (q i)) (hq i)) x
+  have hα : ∀ i ∈ s,
+      monicIrreducibleResidue (q i) (milnorKRingMap Φ y) = α i := by
+    intro i hi
+    exact hresidue i hi
+  calc
+    milnorKRingMap φ (simpleMilnorNorm f x) =
+        ∑ i ∈ s, simpleMilnorNorm (q i) (α i) :=
+      simpleMilnorNorm_map_eq_sum_of_lift_residues
+        φ Φ f x y hy s e q hinj α hα hsupport hinfinity
+    _ = _ := by
+      apply Finset.sum_congr rfl
+      intro i _
+      dsimp only [α]
+      exact map_zsmul (simpleMilnorNorm (q i)) _ _
 
 end Stacks.Chow
 

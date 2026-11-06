@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0232"
+title = "Quillen Theorem A with its actual map"
+kind = "theorem"
+section = "classifying-spaces"
+order = 160
+statement = "A functor whose costructured comma categories have contractible classifying spaces induces a homotopy equivalence with exactly the actual realized functor as forward map. The dual structured-comma statement is also proved."
+scope = "Small categories in one universe. Contractibility concerns the actual comma nerves; no replacement equivalence is assumed as input."
+review = "author_checked"

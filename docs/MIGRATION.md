@@ -43,3 +43,13 @@ cofibrations, target binary coproducts and the source universe bounds are retain
 See [the chosen-model and source crosswalk](migration/waldhausen/README.md).
 A strict chosen-zero S-model comparison and broader Quillen-Waldhausen comparison
 remain separate work.
+
+## Objectwise-finite Quillen Resolution
+
+The resolving-subcategory theorem now uses actual finite admissible towers,
+length-one comma contractions and the actual countable nerve union. Resolution
+lengths need not have a common bound. The resulting Q-space equivalence and
+all-degree K-equivalence retain the original inclusion maps. See the
+[precise native-model and source scope](migration/resolution/README.md).
+General filtered realization, Devissage and Quillen-Waldhausen comparisons remain
+separate work; this milestone does not close the entire Quillen migration.

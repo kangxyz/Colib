@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0234"
+title = "Finite admissible resolutions and strata"
+kind = "definition"
+section = "exact-categories"
+order = 180
+statement = "A finite resolution is an actual finite tower of conflations with resolving middle terms and a final resolving syzygy. Objectwise finite resolution is equivalent to membership in the union of finite-length strata. Adjacent strata have genuine length-one resolutions."
+scope = "The existing exact structure on native categories and short complexes. Resolving kernel closure requires both middle and quotient objects in the property. The objectwise hypothesis has no uniform bound."
+review = "author_checked"

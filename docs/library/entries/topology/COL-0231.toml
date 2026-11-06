@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0231"
+title = "Adjunctions and actual classifying spaces"
+kind = "comparison"
+section = "classifying-spaces"
+order = 150
+statement = "An adjunction induces mutually inverse homotopy equivalences of actual classifying spaces, whose forward and inverse maps are the realizations of the adjoint functors."
+scope = "Small categories in one object universe. The equivalence-of-categories specialization uses the same nerve and realization."
+review = "author_checked"

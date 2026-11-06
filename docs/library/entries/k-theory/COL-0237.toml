@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0237"
+title = "Objectwise-finite Quillen Resolution"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 270
+statement = "A resolving full exact subcategory with an actual finite admissible resolution of every ambient object induces a homotopy equivalence of Q-classifying spaces and a multiplicative equivalence of every Quillen K-group. Forward maps are exactly the Q-inclusion and the original canonical inclusion K-map."
+scope = "Small categories with preadditivity and finite biproducts. The object property contains zero, is isomorphism-, extension-, kernel- and finite-product-closed. Resolution lengths may be unbounded. This is not Waldhausen Resolution, a Q/S comparison, or a claim that all Quillen migration is complete."
+review = "author_checked"

@@ -31,6 +31,8 @@ lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest
   ColibTest.GraphAttachmentGeneration ColibTest.NerveGraphData ColibTest.KZeroSurjectivity
 lake exe mathlib/lint-style ColibTest.PerfectWaldhausen ColibTest.PerfectKTheory \
   ColibTest.PerfectRestriction
+lake exe mathlib/lint-style ColibTest.QuillenResolution \
+  ColibTest.QuillenResolutionLengthOne ColibTest.QuillenTheoremA
 lake exe mathlib/mk_all --lib Colib --check
 
 # Pinned independent production auditor, separate from mathematical dependencies.

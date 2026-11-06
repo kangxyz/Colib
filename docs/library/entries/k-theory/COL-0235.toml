@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0235"
+title = "Length-one Q comma contractions"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 240
+statement = "The actual length-one cover contractions prove contractibility for the full ambient Q-subcategory comma construction and the inherited Q-comparison comma construction."
+scope = "The inherited Q-construction and the full ambient Q-subcategory are distinct categories related by a proved functor. The displayed general contractions assume admissible-subobject closure. The separate length-one lemmas derive it from resolving kernel closure and actual length-one resolutions. The contractions use actual covers, opposites, adjunctions and span reflection."
+review = "author_checked"

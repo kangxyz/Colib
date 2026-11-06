@@ -243,7 +243,7 @@ jobs:
             colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-
       - name: Restore optional tools checkpoint
         id: restore-tools
-        if: ${{ steps.handoff-mode.outputs.enabled == 'true' }}
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
         continue-on-error: true
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with: &tools-checkpoint-cache
@@ -344,6 +344,27 @@ jobs:
         if: ${{ inputs.first-ci-cache != '' }}
         working-directory: ${{ inputs.package-directory }}
         run: bash .github/cache-promotion/ready.sh
+      - name: Fetch pinned dependency sources without compilation
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: lake env true
+      - name: Validate materialized layered dependencies
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: python3 .github/ci-cache/checkpoint.py supported --root . --materialized
+      - name: Apply optional compilation checkpoints
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          for layer in dependencies tools stacks root; do
+            archive="$RUNNER_TEMP/layered-cache/$layer.tar.zst"
+            if test -f "$archive"; then
+              if ! python3 .github/ci-cache/checkpoint.py restore --root . --layer "$layer" \
+                  --input "$archive" --native-cache "$LAKE_CACHE_DIR"; then
+                echo "::warning::Optional $layer checkpoint could not be restored; current inputs will be rebuilt or verified."
+              fi
+            fi
+          done
       - name: Get Mathlib cache
         working-directory: ${{ inputs.package-directory }}
         run: &mathlib-cache-get lake exe cache get
@@ -411,23 +432,6 @@ jobs:
             | select(.rev | test("^[0-9a-f]{40}$"))
             | [.name, (.url | sub("^https://github[.]com/"; "") | sub("[.]git/?$"; "") | rtrimstr("/")), .rev]
             | @tsv' lake-manifest.json)
-      - name: Validate materialized layered dependencies
-        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
-        working-directory: ${{ inputs.package-directory }}
-        run: python3 .github/ci-cache/checkpoint.py supported --root . --materialized
-      - name: Apply optional compilation checkpoints
-        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
-        working-directory: ${{ inputs.package-directory }}
-        run: |
-          for layer in tools dependencies stacks root; do
-            archive="$RUNNER_TEMP/layered-cache/$layer.tar.zst"
-            if test -f "$archive"; then
-              if ! python3 .github/ci-cache/checkpoint.py restore --root . --layer "$layer" \
-                  --input "$archive" --native-cache "$LAKE_CACHE_DIR"; then
-                echo "::warning::Optional $layer checkpoint could not be restored; current inputs will be rebuilt or verified."
-              fi
-            fi
-          done
       - name: Refresh archive hash metadata after cache preparation
         working-directory: ${{ inputs.package-directory }}
         run: *restore-writable-archive-hashes

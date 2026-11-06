@@ -1,0 +1,40 @@
+#!/bin/bash
+set -eo pipefail
+exec > >(tee /var/log/user-data.log | logger -t colib-runner -s 2>/dev/console) 2>&1
+set +x
+
+# Launch-template shutdown behavior is terminate, not stop.
+# This also covers a failed bootstrap; the systemd timer covers a hung one.
+trap '/sbin/shutdown -h now || true' EXIT
+${pre_install}
+
+export DEBIAN_FRONTEND=noninteractive
+export AWS_PAGER=""
+apt-get -o DPkg::Lock::Timeout=180 update
+apt-get -o DPkg::Lock::Timeout=180 install -y \
+  ca-certificates curl unzip jq git python3 python3-venv \
+  zstd build-essential gh sudo
+
+curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 \
+  https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o /tmp/awscliv2.zip
+unzip -q /tmp/awscliv2.zip -d /tmp/colib-awscli
+/tmp/colib-awscli/aws/install --update
+rm -rf /tmp/colib-awscli /tmp/awscliv2.zip
+
+curl --fail --location --retry 3 --connect-timeout 20 --max-time 180 \
+  https://amazoncloudwatch-agent.s3.amazonaws.com/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb \
+  -o /tmp/amazon-cloudwatch-agent.deb
+dpkg -i /tmp/amazon-cloudwatch-agent.deb
+rm -f /tmp/amazon-cloudwatch-agent.deb
+ln -sf /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
+  /usr/local/bin/amazon-cloudwatch-agent-ctl
+
+user_name=ubuntu
+${install_runner}
+${post_install}
+
+# Deliberately reuse the pinned upstream JIT/SSM/CloudWatch implementation.
+${replace(start_runner, "  ./svc.sh start\n", "  install -o root -g root -m 0644 /dev/null /etc/colib-ci-runner-mode\n  printf '%s\\n' colib-ci-runner-v1 > /etc/colib-ci-runner-mode\n  ./svc.sh start\n")}
+
+# Give the logging agent a brief opportunity to flush before the EXIT trap.
+sleep 5

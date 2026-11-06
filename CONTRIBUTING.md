@@ -61,6 +61,9 @@ scripts/check.sh. Reuse categories whose inputs are unchanged after a repair. Do
 changes use the compatible native export with their changed source/tooling checks. See
 scripts/README.md and docs/DEVELOPMENT.md for commands.
 
+New `ColibTest` modules are discovered automatically by the Lake test driver and text
+linters. Do not add handwritten test-module lists to the workflow or check script.
+
 A change reports its source revision, exact mathematical scope, literature correspondence,
 commands and retained evidence. Independent review records its actual scope. Kernel replay and
 separate downstream/client checks require an explicit user request. Push authorization belongs

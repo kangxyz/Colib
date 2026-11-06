@@ -14,3 +14,8 @@
 - `site.py` renders the static, searchable Library from compatible native declarations.
 - `stacks_cache.py` selects independent cache paths and exports/imports pinned Stacks artifacts.
 - `test_stacks_cache.py` checks the cache identity, path boundary and round-trip behavior.
+
+- `lint_style.py` discovers all Colib and ColibTest sources and invokes the native Mathlib
+  text linter through temporary source-only import hubs.
+- `test_lint_style.py` checks inclusion of leaf tests, exclusion of dependencies, and propagation
+  of the native linter's exit status.

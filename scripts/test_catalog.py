@@ -10,9 +10,14 @@ import tempfile
 import unittest
 
 import catalog
+import lint_style
 
 
 class LibraryTests(unittest.TestCase):
+    def assert_test_in_checks(self, module, check_path):
+        self.assertIn(module, lint_style.source_modules(catalog.ROOT, "ColibTest"))
+        self.assertIn("python3 scripts/lint_style.py", (catalog.ROOT / check_path).read_text())
+
     def setUp(self):
         self.library = catalog.load_library()
         self.directory = tempfile.TemporaryDirectory()
@@ -37,7 +42,7 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("dvrMilnorTameSymbol'_completion_eq_zero_iff", source)
         self.assertIn('colib_tag "COL-0168"', source)
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.MilnorCompletion", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.MilnorCompletion", path)
         self.assertIn("Colib.KTheory.MilnorK.Residue.Completion",
                       (root / "Colib.lean").read_text())
 
@@ -52,7 +57,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(f'colib_tag "{identifier}"', source)
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.PrincipalEuler", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.PrincipalEuler", path)
         source = (root / "Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean").read_text()
         self.assertIn("principalEuler_quotient_closedPoint_eq_zero", source)
         self.assertIn("principalCokernel_associativity", source)
@@ -68,7 +73,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(f'colib_tag "{identifier}"', source)
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.FiniteAlgebraLocal", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.FiniteAlgebraLocal", path)
         self.assertIn("specialization", self.library["entries"]["COL-0181"]["scope"])
 
     def test_finite_algebra_norm_chain_registration(self):
@@ -83,7 +88,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(f'colib_tag "{identifier}"', source)
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.FiniteAlgebraNorm", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.FiniteAlgebraNorm", path)
 
     def test_completion_branches_chain_registration(self):
         root = catalog.ROOT
@@ -97,7 +102,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(f'colib_tag "{identifier}"', source)
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.CompletionBranches", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.CompletionBranches", path)
 
     def test_fraction_residue_chain_registration(self):
         root = catalog.ROOT
@@ -117,7 +122,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
             for module in ("ColibTest.FractionBranches", "ColibTest.DVRResidueNorm"):
-                self.assertIn(module, (root / path).read_text())
+                self.assert_test_in_checks(module, path)
 
     def test_uniformizer_norm_complete_chain_registration(self):
         root = catalog.ROOT
@@ -139,7 +144,7 @@ class LibraryTests(unittest.TestCase):
             for test in ("HenselianPrincipalRoots", "HenselianUniformizerNormalization",
                          "DVRRamificationDegree", "DVRUniformizerBinomial",
                          "DVRUniformizerNorm", "DVRPrimeUniformizerNorm"):
-                self.assertIn("ColibTest." + test, (root / path).read_text())
+                self.assert_test_in_checks("ColibTest." + test, path)
         self.assertIn("ordinary norm-order", self.library["entries"]["COL-0199"]["scope"])
 
     def test_native_dvr_norm_order_registration(self):
@@ -154,7 +159,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
             for test in ("DVRFractionOrder", "DVRNormOrder"):
-                self.assertIn("ColibTest." + test, (root / path).read_text())
+                self.assert_test_in_checks("ColibTest." + test, path)
         source = (root / "Colib/RingTheory/Norm/DVROrder.lean").read_text()
         self.assertIn("theorem neg_log_valuation_norm", source)
         self.assertIn("theorem dvrFracOrd_norm_mk0", source)
@@ -186,7 +191,7 @@ class LibraryTests(unittest.TestCase):
                     "ColibTest.PolynomialPowerFactorCount",
                     "ColibTest.DVRCharpolyBranchCount",
             ):
-                self.assertIn(module, (root / path).read_text())
+                self.assert_test_in_checks(module, path)
         self.assertIn("infinite base field", self.library["entries"]["COL-0202"]["scope"])
         self.assertIn("power basis", self.library["entries"]["COL-0204"]["scope"])
         self.assertIn("Characteristic-zero", self.library["entries"]["COL-0207"]["scope"])
@@ -214,7 +219,7 @@ class LibraryTests(unittest.TestCase):
                     "ColibTest.PGroupNormalSubfield",
                     "ColibTest.PGroupNormalSubfieldEmbedding",
             ):
-                self.assertIn(module, (root / path).read_text())
+                self.assert_test_in_checks(module, path)
         self.assertIn("Zero polynomials", self.library["entries"]["COL-0208"]["scope"])
         self.assertIn("No monicity", self.library["entries"]["COL-0209"]["scope"])
         self.assertIn("original field", self.library["entries"]["COL-0211"]["scope"])
@@ -249,7 +254,7 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("independent", self.library["entries"]["COL-0051"]["scope"])
         for test in ledger["tests"]:
             for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-                self.assertIn(test, (catalog.ROOT / path).read_text())
+                self.assert_test_in_checks(test, path)
 
     def native_fixture(self):
         native = {
@@ -386,13 +391,13 @@ class LibraryTests(unittest.TestCase):
             self.assertNotIn(stem, (root / "Colib.lean").read_text())
         for stem in ("PerfectLocalComparison", "PerfectLocalEquivalence", "PerfectKEquivalence"):
             self.assertFalse((root / "ColibTest" / (stem + ".lean")).exists())
-            self.assertNotIn("ColibTest." + stem, (root / "scripts/check.sh").read_text())
+            self.assertNotIn("ColibTest." + stem, lint_style.source_modules(root, "ColibTest"))
         for stem in ("PerfectWaldhausen", "PerfectKTheory"):
             source = (root / "ColibTest" / (stem + ".lean")).read_text()
             self.assertIn("RingedSpace.perfectComplexesWaldhausen", source)
             self.assertNotIn("import all", source)
             self.assertNotIn("private def source", source)
-            self.assertIn("ColibTest." + stem, (root / "scripts/check.sh").read_text())
+            self.assert_test_in_checks("ColibTest." + stem, "scripts/check.sh")
 
     def test_waldhausen_homotopy_chain_keeps_model_and_owners(self):
         self.assertEqual(self.library["entries"]["COL-0154"]["section"], "waldhausen-categories")

@@ -5,6 +5,12 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      runner-profile:
+        description: Runner profile (EC2 also requires COLIB_SELF_HOSTED_ENABLED)
+        type: choice
+        options: [hosted, ec2]
+        default: hosted
 
 permissions:
   contents: read
@@ -21,3 +27,5 @@ jobs:
     with:
       package-directory: .
       build-targets: Colib
+      # PRs and non-main revisions always use GitHub-hosted runners.
+      ec2: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) }}

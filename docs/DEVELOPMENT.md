@@ -54,3 +54,31 @@ The website generator consumes that exact native export and checks its source ha
 writes independent contents, chapter, section, permanent-item, bibliography and search pages.
 Search loads its compact index on the search page. Ordinary reading pages contain their text
 and links in static HTML.
+
+## Lint scope
+
+`lake --no-build --log-level=error lint Colib` runs both the builtin lint report and
+Batteries' declaration linters. Both select declarations or saved diagnostics by their
+**defining module** under `Colib`, including Colib declarations in native namespaces such
+as `CategoryTheory`. Imported Mathlib and Stacks declarations are outside that scope.
+The [pinned Lean builtin collector](https://github.com/leanprover/lean4/blob/v4.34.0-rc2/src/lake/Lake/CLI/BuiltinLint.lean#L102-L107)
+filters `LintEntry` defining modules by the `Colib` prefix;
+it does not use the full imported environment as its report scope.
+
+Lake also replays cached **build logs** while preparing build targets, tests and tools.
+Those logs can contain Stacks linter warnings even when the lint report itself is limited
+to Colib. The check script and CI use `--log-level=error` for these builds to suppress
+that duplicate warning output. Build errors still fail, Colib keeps `warningAsError = true`,
+and native lint findings remain visible. Required dependencies still load and compile.
+
+`python3 scripts/lint_style.py` passes source-only import hubs to Mathlib's unchanged
+`lint-style` executable. It enumerates every `Colib` and `ColibTest` source file,
+including leaf tests and the production root, without traversing `.lake/packages`.
+New tests need no handwritten CI module list. Prepare the executable with
+`lake build mathlib/lint-style` when running this command separately.
+
+## Self-hosted CI
+
+The [EC2 operating guide](../infra/ci/ec2/README.md) owns the Colib-specific infrastructure,
+its disabled deployment, and future activation. `COLIB_SELF_HOSTED_ENABLED=false` keeps
+normal CI on GitHub-hosted runners. The infrastructure independently disables scale-up.

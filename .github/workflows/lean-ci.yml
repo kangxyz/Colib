@@ -11,6 +11,10 @@ on:
       build-targets:
         type: string
         required: true
+      ec2:
+        description: Use the separately provisioned Colib EC2 runner lane
+        type: boolean
+        default: false
       check-targets:
         type: string
         default: ''
@@ -26,7 +30,8 @@ env:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-24.04
+    timeout-minutes: ${{ inputs.ec2 && 240 || 360 }}
+    runs-on: ${{ inputs.ec2 && vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && fromJSON('["self-hosted","linux","x64","colib-ec2"]') || fromJSON('["ubuntu-24.04"]') }}
     outputs:
       outcome: ${{ steps.build.outcome }}
       cache-key: ${{ steps.restore.outputs.cache-primary-key }}
@@ -36,6 +41,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
+      - name: Check the Colib EC2 host
+        if: ${{ runner.environment == 'self-hosted' }}
+        shell: bash
+        run: |
+          test "$(cat /etc/colib-ci-runner-mode)" = colib-ci-runner-v1
+          echo 'LEAN_NUM_THREADS=8' >> "$GITHUB_ENV"
+          sudo systemctl restart colib-ci-expiry.timer
       - run: echo "LAKE_CACHE_DIR=$RUNNER_TEMP/lake-native-cache" >> "$GITHUB_ENV"
       - name: Select independent cache paths
         id: cache-layout
@@ -99,7 +111,7 @@ jobs:
             echo '::error::build-targets must name at least one production root.'
             exit 1
           fi
-          lake build "${targets[@]}" -o "$RUNNER_TEMP/outputs.jsonl"
+          lake --log-level=error build "${targets[@]}" -o "$RUNNER_TEMP/outputs.jsonl"
       - name: Save compilation independently of Test and lint
         if: ${{ always() }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
@@ -149,13 +161,20 @@ jobs:
 
   test_lint:
     name: Test, lint and axiom audit
+    timeout-minutes: ${{ inputs.ec2 && 90 || 360 }}
     needs: build
     if: ${{ needs.build.result == 'success' }}
-    runs-on: ubuntu-24.04
+    runs-on: ${{ inputs.ec2 && vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && fromJSON('["self-hosted","linux","x64","colib-ec2"]') || fromJSON('["ubuntu-24.04"]') }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
+      - name: Check the Colib EC2 host
+        if: ${{ runner.environment == 'self-hosted' }}
+        shell: bash
+        run: |
+          test "$(cat /etc/colib-ci-runner-mode)" = colib-ci-runner-v1
+          echo 'LEAN_NUM_THREADS=8' >> "$GITHUB_ENV"
       - run: echo "LAKE_CACHE_DIR=$RUNNER_TEMP/lake-native-cache" >> "$GITHUB_ENV"
       - name: Select independent cache paths
         id: cache-layout
@@ -224,7 +243,7 @@ jobs:
             echo '::error::build-targets must name at least one production root.'
             exit 1
           fi
-          LAKE_RESTORE_ARTIFACTS=true lake build --no-build --rehash "${targets[@]}"
+          LAKE_RESTORE_ARTIFACTS=true lake --log-level=error build --no-build --rehash "${targets[@]}"
       - name: Prepare check tools
         id: tools
         continue-on-error: true
@@ -233,7 +252,7 @@ jobs:
           CHECK_TARGETS: ${{ inputs.check-targets }}
         run: |
           read -r -a targets <<< "$CHECK_TARGETS"
-          lake build batteries/runLinter mathlib/lint-style mathlib/mk_all "${targets[@]}"
+          lake --log-level=error build batteries/runLinter mathlib/lint-style mathlib/mk_all "${targets[@]}"
       - name: Check generated library entries
         id: imports
         if: ${{ !cancelled() && steps.tools.outcome == 'success' }}
@@ -261,13 +280,13 @@ jobs:
             echo '::error::build-targets must name at least one production root.'
             exit 1
           fi
-          lake --no-build exe mathlib/lint-style "${roots[@]}" ColibTest.Pilot ColibTest.References ColibTest.FiniteAlgebraImport ColibTest.FiniteAlgebraLocal ColibTest.FiniteAlgebraNorm ColibTest.CompletionBranches ColibTest.FractionBranches ColibTest.DVRResidueNorm ColibTest.HenselianPrincipalRoots ColibTest.HenselianUniformizerNormalization ColibTest.DVRRamificationDegree ColibTest.DVRUniformizerBinomial ColibTest.DVRUniformizerNorm ColibTest.DVRPrimeUniformizerNorm ColibTest.DVRFractionOrder ColibTest.DVRNormOrder ColibTest.FieldCharpolyPower ColibTest.TensorCharpolyProduct ColibTest.DVRCharpolyResidue ColibTest.IntegralTensorCharpolyProduct ColibTest.PolynomialPowerFactorCount ColibTest.DVRCharpolyBranchCount ColibTest.SylowFixedField ColibTest.AdjoinRootSplitBranchEmbedding ColibTest.PGroupNormalSubfield ColibTest.PGroupNormalSubfieldEmbedding ColibTest.PGroupNormalPrimePresentation ColibTest.AdjoinRootNormalScalar ColibTest.PrimeNormal ColibTest.CoprimeDegree ColibTest.FiniteCoprimeSplitting ColibTest.FiniteMixedWitnesses ColibTest.FiniteMixedGeneration ColibTest.MilnorSymbols ColibTest.ExactGrothendieckGroup ColibTest.KoszulExt ColibTest.MilnorProduct ColibTest.ExactFunctor ColibTest.SerreSubgroup ColibTest.SerreLocalization ColibTest.MilnorExt ColibTest.KoszulCoefficients ColibTest.ExactPullbacks ColibTest.QConstruction ColibTest.QFunctor ColibTest.QConnected ColibTest.PrincipalExt ColibTest.MilnorDescent ColibTest.QuillenHomotopy ColibTest.QCore ColibTest.QuillenMap ColibTest.NormalizedQ ColibTest.NerveHomotopy ColibTest.FiniteSimplexAdapter ColibTest.CylinderPrerequisites ColibTest.PrismCoordinates ColibTest.PrismGluing ColibTest.RealizationBridge ColibTest.QuillenFunctoriality ColibTest.QObjectClass ColibTest.QGroupoid ColibTest.ObjectLoopsRegression ColibTest.OpenCover ColibTest.SequentialCompactRegression ColibTest.ConstantRealization ColibTest.CompletionNaturality ColibTest.PushoutOpenCover ColibTest.SimplexBoundaryCollarRegression ColibTest.SimplexChartsAnnulusRegression ColibTest.SimplexAttachment ColibTest.SimplexAttachmentGeneration ColibTest.GraphAttachmentAnchors ColibTest.ExtQuotient ColibTest.MappingConeSign ColibTest.MilnorBaseFieldProduct ColibTest.MilnorNaturality ColibTest.MilnorPrincipalUnits ColibTest.MilnorRepeatedUniformizer ColibTest.MilnorResidueSurjectivity ColibTest.MilnorRightBaseFieldProduct ColibTest.MilnorRightUnitProduct ColibTest.MilnorSpecialization ColibTest.MilnorSpecializationProduct ColibTest.MilnorTransport ColibTest.MilnorUnitProduct ColibTest.MilnorUnramifiedMap ColibTest.MilnorUnramifiedMapAcross ColibTest.PrincipalExtOne ColibTest.PrincipalExtOneQuotient ColibTest.PrincipalGeneratorChange ColibTest.PrincipalGeneratorTransport ColibTest.PrincipalSeqGenerator ColibTest.PrincipalSeqGeneratorChange ColibTest.ProjectiveConnecting ColibTest.SingleConeLift ColibTest.TopExtClass ColibTest.TopExtGeneratorChange ColibTest.TopExtRingQuotient ColibTest.TopExtCoefficients ColibTest.ModuleQuasiIsoCriterion ColibTest.MilnorCoefficientRetraction ColibTest.KoszulCoefficientRegularity ColibTest.TopExtAllLengths ColibTest.TopExtAllNaturality ColibTest.MilnorResidueDegreeOne ColibTest.MilnorRamifiedDegreeOne ColibTest.KoszulCoefficientFunctor ColibTest.TopExtLocalization ColibTest.MilnorRamifiedMap ColibTest.MilnorCanonicalRamifiedMap ColibTest.MilnorDvrNormalization ColibTest.MilnorCompletion ColibTest.PrincipalEuler ColibTest.KoszulCoefficientAugmentation ColibTest.TopExtBaseChange ColibTest.TopExtBaseChangeQuotient ColibTest.TopExtBaseChangeNormalization ColibTest.OrdinalSubdivisionRealization ColibTest.HomotopyEquivalencePi ColibTest.WaldhausenSubdivisionMaps ColibTest.WaldhausenAdditivityConditional ColibTest.WaldhausenDeformation ColibTest.WaldhausenAdditivity ColibTest.RealizationProduct ColibTest.WaldhausenProduct ColibTest.WaldhausenMultiplication ColibTest.WaldhausenAdditivityPushout
+          python3 scripts/lint_style.py
       - name: Test
         id: test
         if: ${{ needs.build.result == 'success' && steps.compiled.outcome == 'success' && steps.tools.outcome == 'success' }}
         continue-on-error: true
         working-directory: ${{ inputs.package-directory }}
-        run: lake test
+        run: lake --log-level=error test
       - name: Lint
         id: lint
         timeout-minutes: 25
@@ -281,7 +300,7 @@ jobs:
             exit 1
           fi
           for attempt in 1 2; do
-            if timeout --kill-after=30s 10m env LEAN_ABORT_ON_PANIC=1 lake --no-build lint "${roots[@]}" -- --trace; then
+            if timeout --kill-after=30s 10m env LEAN_ABORT_ON_PANIC=1 lake --no-build --log-level=error lint "${roots[@]}" -- --trace; then
               exit 0
             else
               status=$?

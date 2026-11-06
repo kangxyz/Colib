@@ -4,37 +4,12 @@ cd "$(dirname "$0")/.."
 
 python3 -m unittest discover -s scripts -p 'test_*.py'
 python3 scripts/catalog.py check
-lake build Colib
-lake test
-lake lint
-lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest.FiniteAlgebraImport ColibTest.FiniteAlgebraLocal ColibTest.FiniteAlgebraNorm ColibTest.CompletionBranches ColibTest.FractionBranches ColibTest.DVRResidueNorm ColibTest.HenselianPrincipalRoots ColibTest.HenselianUniformizerNormalization ColibTest.DVRRamificationDegree ColibTest.DVRUniformizerBinomial ColibTest.DVRUniformizerNorm ColibTest.DVRPrimeUniformizerNorm ColibTest.DVRFractionOrder ColibTest.DVRNormOrder ColibTest.FieldCharpolyPower ColibTest.TensorCharpolyProduct ColibTest.DVRCharpolyResidue ColibTest.IntegralTensorCharpolyProduct ColibTest.PolynomialPowerFactorCount ColibTest.DVRCharpolyBranchCount ColibTest.SylowFixedField ColibTest.AdjoinRootSplitBranchEmbedding ColibTest.PGroupNormalSubfield ColibTest.PGroupNormalSubfieldEmbedding ColibTest.PGroupNormalPrimePresentation ColibTest.AdjoinRootNormalScalar ColibTest.PrimeNormal ColibTest.CoprimeDegree ColibTest.FiniteCoprimeSplitting ColibTest.FiniteMixedWitnesses ColibTest.FiniteMixedGeneration \
-  ColibTest.MilnorSymbols ColibTest.ExactGrothendieckGroup ColibTest.KoszulExt \
-  ColibTest.MilnorProduct ColibTest.ExactFunctor ColibTest.SerreSubgroup ColibTest.SerreLocalization \
-  ColibTest.MilnorExt ColibTest.KoszulCoefficients ColibTest.ExactPullbacks ColibTest.QConstruction \
-  ColibTest.QFunctor ColibTest.QConnected ColibTest.PrincipalExt ColibTest.MilnorDescent \
-  ColibTest.QuillenHomotopy ColibTest.QCore ColibTest.QuillenMap \
-  ColibTest.NormalizedQ ColibTest.NerveHomotopy ColibTest.FiniteSimplexAdapter \
-  ColibTest.CylinderPrerequisites ColibTest.PrismCoordinates ColibTest.PrismGluing \
-  ColibTest.RealizationBridge ColibTest.QuillenFunctoriality ColibTest.QObjectClass \
-  ColibTest.QGroupoid ColibTest.ObjectLoopsRegression \
-  ColibTest.OpenCover ColibTest.SequentialCompactRegression \
-  ColibTest.ConstantRealization ColibTest.CompletionNaturality ColibTest.PushoutOpenCover \
-  ColibTest.SimplexBoundaryCollarRegression ColibTest.SimplexChartsAnnulusRegression \
-  ColibTest.SimplexAttachment ColibTest.SimplexAttachmentGeneration \
-  ColibTest.GraphAttachmentAnchors ColibTest.ExtQuotient ColibTest.MappingConeSign ColibTest.MilnorBaseFieldProduct ColibTest.MilnorNaturality ColibTest.MilnorPrincipalUnits ColibTest.MilnorRepeatedUniformizer ColibTest.MilnorResidueSurjectivity ColibTest.MilnorRightBaseFieldProduct ColibTest.MilnorRightUnitProduct ColibTest.MilnorSpecialization ColibTest.MilnorSpecializationProduct ColibTest.MilnorTransport ColibTest.MilnorUnitProduct ColibTest.MilnorUnramifiedMap ColibTest.MilnorUnramifiedMapAcross ColibTest.PrincipalExtOne ColibTest.PrincipalExtOneQuotient ColibTest.PrincipalGeneratorChange ColibTest.PrincipalGeneratorTransport ColibTest.PrincipalSeqGenerator ColibTest.PrincipalSeqGeneratorChange ColibTest.ProjectiveConnecting ColibTest.SingleConeLift ColibTest.TopExtClass ColibTest.TopExtGeneratorChange ColibTest.TopExtRingQuotient ColibTest.TopExtCoefficients ColibTest.ModuleQuasiIsoCriterion ColibTest.MilnorCoefficientRetraction ColibTest.KoszulCoefficientRegularity ColibTest.TopExtAllLengths ColibTest.TopExtAllNaturality ColibTest.MilnorResidueDegreeOne ColibTest.MilnorRamifiedDegreeOne ColibTest.KoszulCoefficientFunctor ColibTest.TopExtLocalization ColibTest.MilnorRamifiedMap \
-  ColibTest.WaldhausenFoundations ColibTest.WaldhausenRegression ColibTest.WaldhausenRealization \
-  ColibTest.WaldhausenRows ColibTest.WaldhausenWeakHomotopy \
-  ColibTest.WaldhausenCanonicalMap ColibTest.WaldhausenKFunctor ColibTest.WaldhausenZeroFunctor \
-  ColibTest.ModuleColimitHomology ColibTest.AffineOpenPair \
-  ColibTest.MilnorCanonicalRamifiedMap ColibTest.MilnorDvrNormalization ColibTest.MilnorCompletion ColibTest.PrincipalEuler ColibTest.KoszulCoefficientAugmentation ColibTest.TopExtBaseChange ColibTest.TopExtBaseChangeQuotient ColibTest.TopExtBaseChangeNormalization ColibTest.OrdinalSubdivisionRealization ColibTest.HomotopyEquivalencePi ColibTest.WaldhausenSubdivisionMaps ColibTest.WaldhausenAdditivityConditional ColibTest.WaldhausenDeformation ColibTest.WaldhausenAdditivity ColibTest.RealizationProduct ColibTest.WaldhausenProduct ColibTest.WaldhausenMultiplication ColibTest.WaldhausenAdditivityPushout \
-  ColibTest.NerveZeroSkeleton ColibTest.RealizationBoundary ColibTest.SkeletalAttachment \
-  ColibTest.GraphAttachmentGeneration ColibTest.NerveGraphData ColibTest.KZeroSurjectivity
-lake exe mathlib/lint-style ColibTest.PerfectWaldhausen ColibTest.PerfectKTheory \
-  ColibTest.PerfectRestriction
-lake exe mathlib/lint-style ColibTest.QuillenResolution \
-  ColibTest.QuillenResolutionLengthOne ColibTest.QuillenTheoremA
-lake exe mathlib/lint-style ColibTest.KZeroComparison ColibTest.CompletionInjectivity \
-  ColibTest.SimplexBoundaryDescent
+# Suppress cached dependency build warnings. Native lint reports remain visible;
+# Colib compilation warnings remain errors through warningAsError in lakefile.toml.
+lake --log-level=error build Colib
+lake --log-level=error test
+lake --no-build --log-level=error lint Colib
+python3 scripts/lint_style.py
 lake exe mathlib/mk_all --lib Colib --check
 
 # Pinned independent production auditor, separate from mathematical dependencies.

@@ -1,0 +1,4 @@
+aws_account_id          = "YOUR_AWS_ACCOUNT_ID"
+github_app_id           = "YOUR_GITHUB_APP_ID"
+github_app_key_ssm_name = "/YOUR_EXISTING_APP/app/key-base64"
+enabled                 = false

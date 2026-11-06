@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0261"
+title = "Prime annihilation of the native DVR norm-residue error"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 310
+statement = "For every homogeneous class x, let delta be the canonical residue of its actual chosen generic norm minus the actual chosen residue-field norm of its canonical residue. The actual ramification index e annihilates the restriction of delta to the residue extension, and the prime generic degree ell annihilates delta itself."
+scope = "A finite torsion-free local algebra R to S between discrete valuation domains, specified fraction fields F to E with the actual scalar towers, and a finite Galois generic extension of prime degree ell. Ring and fraction-field universes remain independent. Canonical residues, field maps and chosen norms retain their native Stacks definitions, including purely inseparable residue extensions. No characteristic-zero, perfectness, Henselianity, tameness, residue power-basis or Milnor torsion-freeness hypothesis is added. No ramification, residue-degree or prime factor is cancelled. This proves two annihilator identities, not delta equals zero, a coprime auxiliary annihilator, the full norm-residue square or a chosen norm tower law."
+review = "author_checked"

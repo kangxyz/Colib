@@ -90,3 +90,34 @@ strict Test verification remains the runtime applicability gate. Source referenc
 `Lake/Config/Monad.lean:192–203`, `Config/Workspace.lean:133–143`,
 `Build/Module.lean:1056–1120`, and `Build/Common.lean:453–505`, at Lean4.34.0-rc2.
 The effect of this policy is measured in the next native run.
+
+## Final measured result
+
+[Run 42171643965](https://github.com/kangxyz/colib/actions/runs/42171643965), source
+`d47c744`, passed Build, all independently reported native checks and both cache
+publications. Its `Colib/` and `ColibTest/` source trees are identical to baseline
+`a36cec7` (run 42163110999); compiler and mathematical pins are unchanged.
+
+| Phase | Full-layered baseline | Final repair |
+|---|---:|---:|
+| Production Build step | 302 s | 61 s |
+| Dependency checkpoint packing | 98 s | 5 s |
+| Current dependency overlay | 137 s | 19 s |
+| Tools checkpoint packing | 99 s | 5 s |
+| Build job | 770 s | 257 s |
+| Test/check job | 472 s | 268 s |
+
+Build plus Test decreased from 1,242 seconds (20m42s) to 525 seconds (8m45s).
+These are individual CI observations, not an unbounded speed guarantee or a
+pure compiler microbenchmark. The cache-scope costs and four-thread comparison
+were measured separately. The native-default-false comparison alone was 53 s
+versus 55 s with four threads: it removed upstream artifact registration by
+source policy but did not establish a material additional timing benefit.
+The final Mathlib acquisition step took 34 s after restoring bootstrap outputs,
+versus 110 s in the preceding bootstrap-order run.
+
+Builtin, text and declaration lint remained scoped to defining Colib modules.
+The final batched run checked 8,382 Colib declarations with all 15 selected
+linters. No dependency declaration-lint targets were added. The EC2 path shares
+the policy/resource changes and retains same-host handoff; admission stayed false,
+so these runtime measurements cover hosted Ubuntu only.

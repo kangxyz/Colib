@@ -113,3 +113,12 @@ ordered symbols, compatibly with field maps and the positive commutator marking.
 This is not a Quillen K₂ equivalence. The remaining stable-fiber comparison,
 Matsumoto injectivity, kernel generation and exact-model comparisons are listed
 in the [precise field-K₂ scope](migration/quillen/field-k2-native-kernel.md).
+
+## Original-map Gillet-Waldhausen
+
+The native bounded-complex proof retains the actual abelian ambient, term bounds,
+cofibrations, quasi-isomorphisms and canonical degree-zero single KMap. Its group
+equivalence includes K-zero and the original object/hom universe bounds. Exact
+filtrations, finite Euler decomposition, filtered-union coverage and the actual
+identity-cone cylinder supply the proof, without a theorem-shaped input.
+See [the exact scope and dependency ownership](migration/gillet-waldhausen.md).

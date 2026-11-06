@@ -20,7 +20,7 @@ introduction = "The canonical graded object is the Steinberg quotient of the ten
 id = "quillen-k-theory"
 title = "Quillen K-theory"
 order = 30
-introduction = "Quillen K-groups are the shifted homotopy groups of the realized Q-category, based at the original zero vertex. The Q-classifying space BQ is distinguished from its loop space. The objectwise-finite Resolution theorem retains the canonical inclusion map in every degree. Comparisons with algebraic K-zero, Devissage and Quillen-Waldhausen comparisons require separate results."
+introduction = "Quillen K-groups are the shifted homotopy groups of the realized Q-category, based at the original zero vertex. The Q-classifying space BQ is distinguished from its loop space. The objectwise-finite Resolution theorem retains the canonical inclusion map in every degree. The canonical Grothendieck-to-Quillen K-zero map is a proved equivalence on the same actual homotopical K-zero. Devissage and Quillen-Waldhausen comparisons remain separate results."
 
 [[sections]]
 id = "waldhausen-k-theory"

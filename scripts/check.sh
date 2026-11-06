@@ -33,6 +33,8 @@ lake exe mathlib/lint-style ColibTest.PerfectWaldhausen ColibTest.PerfectKTheory
   ColibTest.PerfectRestriction
 lake exe mathlib/lint-style ColibTest.QuillenResolution \
   ColibTest.QuillenResolutionLengthOne ColibTest.QuillenTheoremA
+lake exe mathlib/lint-style ColibTest.KZeroComparison ColibTest.CompletionInjectivity \
+  ColibTest.SimplexBoundaryDescent
 lake exe mathlib/mk_all --lib Colib --check
 
 # Pinned independent production auditor, separate from mathematical dependencies.

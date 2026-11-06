@@ -8,7 +8,7 @@ introduction = "Geometric realizations and based homotopy groups retain their ac
 id = "classifying-spaces"
 title = "Classifying spaces"
 order = 10
-introduction = "The realized nerve of a category has a point for every object. Based homotopy groups provide the topological constructions later specialized to Quillen's Q-category."
+introduction = "The realized nerve of a category has a point for every object. Based homotopy groups provide the topological constructions later specialized to Quillen's Q-category. The original groupoid-completion comparison computes the fundamental group, using actual graph representatives and relative homotopies in finite skeleta."
 
 [[sections]]
 id = "homotopy-groups"

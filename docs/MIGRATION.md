@@ -53,3 +53,12 @@ all-degree K-equivalence retain the original inclusion maps. See the
 [precise native-model and source scope](migration/resolution/README.md).
 General filtered realization, Devissage and Quillen-Waldhausen comparisons remain
 separate work; this milestone does not close the entire Quillen migration.
+
+## Canonical Grothendieck–Quillen K-zero comparison
+
+The original Grothendieck-to-Quillen K-zero map is now proved injective and
+bijective on the existing realized Q-category and its original zero basepoint.
+The proof establishes faithfulness of the original groupoid-completion functor
+using actual finite-skeleton decoders and compact relative homotopies. See the
+[native proof and source scope](migration/quillen/kzero-comparison.md). This does
+not claim a higher K-group comparison or completion of the Quillen inventory.

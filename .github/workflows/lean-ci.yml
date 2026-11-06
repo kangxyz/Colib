@@ -457,7 +457,7 @@ jobs:
           compiler_seconds=$((BUILD_COMPILER_MINUTES * 60))
           if test "$remaining" -lt "$compiler_seconds"; then compiler_seconds=$remaining; fi
           echo 'attempted=true' >> "$GITHUB_OUTPUT"
-          if timeout --signal=INT --kill-after=60s "${compiler_seconds}s" lake build --rehash "${targets[@]}" -o "$RUNNER_TEMP/outputs.jsonl"; then
+          if timeout --signal=INT --kill-after=60s "${compiler_seconds}s" lake --log-level=error build "${targets[@]}" -o "$RUNNER_TEMP/outputs.jsonl"; then
             exit 0
           else
             status=$?

@@ -46,3 +46,18 @@ tools archive retains the required checker executable.
 `ci-timings.json` records the original observations. Repaired-path timings will be
 appended after the independent native stages complete. No EC2 trial is performed
 while its admission gate remains false.
+
+## Idle-build diagnosis
+
+Run 42167622185 performed no Lean compilation during its 187-second production
+Build step (05:20:15–05:23:22 UTC). Thirteen process samples recorded zero Lean
+frontends, about 0.99 native CPU cores on average, and under 1 GiB aggregate native
+memory. The log contains no compiled-module action and ends with 5,702 Lake jobs.
+This separates Lake graph/hash/cache work from theorem elaboration.
+
+Remove Build's forced `--rehash`; retain the native `--no-build --rehash` validity
+check in Test. The production build remains incremental. The pinned Lake
+`BuildConfig.showProgress` and `reportResult` control progress/completion separately
+from per-job log severity, so `--log-level=error` suppresses replayed upstream logs
+without replacing the native completion result. Explicit builtin lint continues
+to target `Colib`, using its defining-module filter.

@@ -1268,8 +1268,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
           REVISION: ${{ github.sha }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
         run: |
+          current_head() { gh api "repos/$REPOSITORY/commits/$DEFAULT_BRANCH" --jq .sha; }
+          skip_stale() {
+            echo 'skipped=true' >> "$GITHUB_OUTPUT"
+            echo 'Cache publication skipped: the default branch advanced beyond this producer.'
+          }
+          if test "$(current_head)" != "$REVISION"; then skip_stale; exit 0; fi
           domain=$(tar -xOf lake-native-cache.tar ./producer.json | jq -er \
             --arg repository "$REPOSITORY" --arg revision "$REVISION" \
             'select(.repository == $repository and .revision == $revision).domain')
@@ -1284,13 +1291,28 @@ jobs:
               gh release upload "$tag" "$ASSET" --repo "$REPOSITORY"
             fi
           else
-            gh release create "$tag" "$ASSET" --repo "$REPOSITORY" --target "$REVISION" --prerelease --latest=false --title "Lean compilation $REVISION" --notes 'Compiled artifacts from successful Build, generated-entry, Test, lint, text-style and production-axiom checks.'
+            if gh release create "$tag" "$ASSET" --repo "$REPOSITORY" --target "$REVISION" --prerelease --latest=false --title "Lean compilation $REVISION" --notes 'Compiled artifacts from successful Build, generated-entry, Test, lint, text-style and production-axiom checks.' 2> "$RUNNER_TEMP/release-error"; then
+              :
+            else
+              release_code=$?
+              if grep -q '403' "$RUNNER_TEMP/release-error" && test "$(current_head)" != "$REVISION"; then
+                skip_stale
+                exit 0
+              fi
+              cat "$RUNNER_TEMP/release-error" >&2
+              exit "$release_code"
+            fi
           fi
       - name: Report cache publication
         if: ${{ always() }}
         env:
           RESULT: ${{ steps.publish.outcome }}
+          SKIPPED: ${{ steps.publish.outputs.skipped }}
         run: |
+          if test "$SKIPPED" = true; then
+            printf 'Cache publication skipped: a newer default-branch revision exists.\n' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           printf '## Cache publication\n\n' >> "$GITHUB_STEP_SUMMARY"
           case "$RESULT" in
             success)
@@ -1301,6 +1323,7 @@ jobs:
             *) printf '— Skipped\n' >> "$GITHUB_STEP_SUMMARY" ;;
           esac
       - name: Publish the independent Stacks checkpoint
+        if: ${{ steps.publish.outputs.skipped != 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}

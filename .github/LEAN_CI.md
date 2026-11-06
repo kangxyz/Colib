@@ -117,3 +117,9 @@ custom runner label. Actionlint 1.7.12 needs a narrow ignore for its unrecognize
 actionlint -shellcheck= -ignore 'unexpected key "queue" for "concurrency" section'
 python3 -m unittest discover -s .github/ci-cache -p 'test_*.py'
 ```
+
+Publication checks the live default-branch revision before creating a release.
+If the branch advanced, the optional release is reported as skipped while the
+exact producer artifacts and native check results remain available. Artifacts
+are never retargeted to a newer commit. A 403 race is classified as stale only
+after rechecking the branch; unrelated publication failures remain failures.

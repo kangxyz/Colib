@@ -51,7 +51,8 @@ permissions:
 
 env:
   LAKE_NO_CACHE: 'true'
-  LAKE_ARTIFACT_CACHE: 'true'
+  # Colib explicitly enables native artifacts; dependencies use their upstream caches.
+  LAKE_ARTIFACT_CACHE: 'false'
   BUILD_TARGETS: ${{ inputs.build-targets }}
 
 # Keep compiler failures inside the scope so the runner can save partial caches.

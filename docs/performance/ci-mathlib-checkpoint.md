@@ -68,3 +68,25 @@ the dominant improvement. The next controlled change sets the existing upstream
 `build-lake-threads` input to four on hosted runners (eight on EC2); the observed
 idle workload used approximately one of the hosted runner's four CPUs. Its effect
 must be measured rather than inferred from the setting.
+
+## Native artifact hydration and build concurrency
+
+The four-thread production comparison (run 42169705448) took 55 seconds versus
+181 seconds with one thread, on the same mathematical source and memory limit.
+This is a measured result, not a general scaling guarantee.
+
+Pinned Lake `Module.recBuildLean` calls `cacheOutputArtifacts` after finding
+up-to-date filesystem outputs when the package native artifact cache is writable.
+`Cache.saveArtifact` reads and hashes those contents. Global
+`LAKE_ARTIFACT_CACHE=true` therefore hydrates dependencies into a fresh native
+store despite their existing official/working caches.
+
+Use workspace default `LAKE_ARTIFACT_CACHE=false`, while retaining Colib's explicit
+`enableArtifactCache=true` in its package file. Package settings take precedence;
+all ten pinned dependency configurations lack an explicit enable setting. Colib
+still records root native mappings and LTARs for staging/publication; dependencies
+retain their ordinary generated files and official/independent caches. Native
+strict Test verification remains the runtime applicability gate. Source references:
+`Lake/Config/Monad.lean:192–203`, `Config/Workspace.lean:133–143`,
+`Build/Module.lean:1056–1120`, and `Build/Common.lean:453–505`, at Lean4.34.0-rc2.
+The effect of this policy is measured in the next native run.

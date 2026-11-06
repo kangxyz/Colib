@@ -29,11 +29,10 @@ lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest
   ColibTest.MilnorCanonicalRamifiedMap ColibTest.MilnorDvrNormalization ColibTest.MilnorCompletion ColibTest.PrincipalEuler ColibTest.KoszulCoefficientAugmentation ColibTest.TopExtBaseChange ColibTest.TopExtBaseChangeQuotient ColibTest.TopExtBaseChangeNormalization ColibTest.OrdinalSubdivisionRealization ColibTest.HomotopyEquivalencePi ColibTest.WaldhausenSubdivisionMaps ColibTest.WaldhausenAdditivityConditional ColibTest.WaldhausenDeformation ColibTest.WaldhausenAdditivity ColibTest.RealizationProduct ColibTest.WaldhausenProduct ColibTest.WaldhausenMultiplication ColibTest.WaldhausenAdditivityPushout \
   ColibTest.NerveZeroSkeleton ColibTest.RealizationBoundary ColibTest.SkeletalAttachment \
   ColibTest.GraphAttachmentGeneration ColibTest.NerveGraphData ColibTest.KZeroSurjectivity
-lake exe mathlib/lint-style ColibTest.PerfectLocalComparison ColibTest.PerfectLocalEquivalence \
-  ColibTest.PerfectWaldhausen ColibTest.PerfectKEquivalence
+lake exe mathlib/lint-style ColibTest.PerfectWaldhausen ColibTest.PerfectKTheory
 lake exe mathlib/mk_all --lib Colib --check
 
-# Aglib's pinned production auditor. This tool is separate from mathematical dependencies.
+# Pinned independent production auditor, separate from mathematical dependencies.
 tool_root="${COLIB_TOOLS_DIR:-.lake/tools}"
 auditor="$tool_root/axiom-audit"
 if ! test -d "$auditor/.git"; then

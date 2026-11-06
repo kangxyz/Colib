@@ -2,14 +2,14 @@
   "closed_migration_rows": 0,
   "compiled_declaration_census": "blocked: source environment has not been built and enumerated",
   "cyclic_components": [],
-  "external_aglib_reachable_modules": 606,
-  "external_import_edges": 2010,
+  "external_aglib_import_edges": 2632,
+  "external_import_edges": 3993,
   "generated_import_aggregators_with_marker": 11,
   "inventory_kind": "lexical module/import census; not a complete declaration or result ledger",
   "local_aglib_candidates_including_aggregator": 837,
   "local_aglib_directory_candidates": 836,
   "maximum_dependency_tier": 254,
-  "module_ledger_rows": 6439,
+  "module_ledger_rows": 5833,
   "production_including_generated_root": 5833,
   "quillen_family_including_family_aggregator": {
     "Aglib": 837,
@@ -39,8 +39,8 @@
     "in_package_test": 1281,
     "production": 5832
   },
-  "schema_version": 1,
-  "source_import_edges": 28153,
+  "schema_version": 2,
+  "source_import_edges": 24490,
   "source_package_resolution_evidence": {
     "batteries": {
       "commit": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
@@ -174,12 +174,6 @@
     }
   ],
   "sources": {
-    "aglib": {
-      "commit": "2c34f185fa859e862661f939cd216b07bcccfb26",
-      "lean_toolchain": "leanprover/lean4:v4.34.1",
-      "license_sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
-      "repository": "https://github.com/kangxyz/aglib"
-    },
     "quillen": {
       "commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
       "lean_toolchain": "leanprover/lean4:v4.34.1",
@@ -187,8 +181,8 @@
       "repository": "https://github.com/kangxyz/quillen-k-theory"
     }
   },
-  "strongly_connected_components": 6439,
+  "strongly_connected_components": 5833,
   "unresolved_source_import_edges": 0,
-  "unverified_external_import_edges": 0,
+  "unverified_external_import_edges": 2632,
   "upstream_import_resolution": "file existence only; not Lean import elaboration"
 }

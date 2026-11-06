@@ -3,6 +3,7 @@
 from pathlib import Path
 import shutil
 import json
+import importlib.util
 import subprocess
 import sys
 import tempfile
@@ -264,7 +265,7 @@ class LibraryTests(unittest.TestCase):
             "waldhausen-k-theory": "Colib.KTheory.Waldhausen.Basic",
             "homology-colimits": "Colib.Algebra.Category.ModuleCat.FilteredColimits",
             "affine-open-pairs": "Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Functor",
-            "perfect-complexes": "Colib.AlgebraicGeometry.Modules.LocalRepresentativeEquivalence",
+            "perfect-complexes": "Colib.AlgebraicGeometry.Modules.PerfectWaldhausen",
             "ext-scalars": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
             "projective-dimension": "Colib.RingTheory.Koszul.Ext",
             "koszul-coefficients": "Colib.RingTheory.Koszul.Coefficients",
@@ -325,23 +326,73 @@ class LibraryTests(unittest.TestCase):
         self.assertEqual(self.library["entries"]["COL-0177"]["section"], "waldhausen-categories")
         self.assertEqual(self.library["entries"]["COL-0178"]["section"], "perfect-complexes")
         self.assertIn("every relevant pushout apex", self.library["entries"]["COL-0178"]["statement"])
-        self.assertIn("not identified literally", self.library["entries"]["COL-0178"]["scope"])
+        self.assertIn("No archived perfectness model", self.library["entries"]["COL-0178"]["scope"])
         result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
         for identifier in ("COL-0177", "COL-0178"):
             self.assertTrue(result["entries"][identifier]["references"])
 
-    def test_perfect_local_comparison_keeps_exact_scope(self):
-        item = self.library["entries"]["COL-0176"]
-        self.assertEqual(item["section"], "perfect-complexes")
-        self.assertEqual(item["kind"], "comparison")
-        self.assertIn("arbitrary supplied universe d", item["scope"])
-        self.assertIn("No global strict representative", item["scope"])
+    def test_perfect_local_comparison_is_retired(self):
+        self.assertNotIn("COL-0176", self.library["entries"])
+        self.assertEqual(self.library["retired"]["COL-0176"]["status"], "retired")
         result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
-        self.assertTrue(result["entries"]["COL-0176"]["references"])
-        self.assertEqual(
-            result["sections"]["perfect-complexes"]["modules"],
-            ["Colib.AlgebraicGeometry.Modules.LocalRepresentativeEquivalence"],
-        )
+        self.assertNotIn("COL-0176", result["entries"])
+        self.assertIn("COL-0176", result["retired"])
+        self.assertEqual(result["sections"]["perfect-complexes"]["modules"],
+                         ["Colib.AlgebraicGeometry.Modules.PerfectWaldhausen"])
+
+    def test_retired_id_cannot_be_reused(self):
+        path = self.root / "docs/library/entries/algebraic-geometry/COL-0178.toml"
+        path.write_text(path.read_text().replace('id = "COL-0178"', 'id = "COL-0176"'))
+        with self.assertRaisesRegex(ValueError, "reused retired Library ID"):
+            catalog.load_library(self.root)
+
+    def test_retired_id_rejects_compiled_binding(self):
+        native = self.native_fixture()
+        native["bindings"].append({"id": "COL-0176", "name": native["declarations"][0]["name"]})
+        with self.assertRaisesRegex(ValueError, "Unknown compiled Library binding"):
+            catalog.compile_library(self.library, native, {}, "main")
+
+    def test_retired_record_requires_safe_history(self):
+        path = self.root / "docs/library/retired/COL-0176.toml"
+        path.write_text(path.read_text().replace(
+            'previous_path = "docs/library/entries/algebraic-geometry/COL-0176.toml"',
+            'previous_path = "../../escape.toml"'))
+        with self.assertRaisesRegex(ValueError, "previous Library path"):
+            catalog.load_library(self.root)
+
+    def test_retired_item_keeps_page_and_search_record(self):
+        spec = importlib.util.spec_from_file_location("colib_site", catalog.ROOT / "scripts/site.py")
+        site = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(site)
+        built = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        built["source_hashes"] = catalog.source_hashes()
+        library_path = self.root / "library.json"
+        library_path.write_text(json.dumps(built))
+        output = self.root / "site"
+        site.build(library_path, output)
+        page = (output / "tag/COL-0176/index.html").read_text()
+        self.assertIn("Retired Library item", page)
+        self.assertIn("5c0a7ab9c060b7482a3c49056bb9b3284fc47829", page)
+        self.assertIn("COL-0178", page)
+        records = json.loads((output / "search.json").read_text())
+        retired = next(row for row in records if row.get("id") == "COL-0176")
+        self.assertEqual(retired["kind"], "retired")
+        self.assertEqual(retired["path"], "tag/COL-0176/")
+
+    def test_perfect_regressions_use_only_native_objects(self):
+        root = catalog.ROOT
+        for stem in ("LocalRepresentativeComparison", "LocalRepresentativeEquivalence"):
+            self.assertFalse((root / "Colib/AlgebraicGeometry/Modules" / (stem + ".lean")).exists())
+            self.assertNotIn(stem, (root / "Colib.lean").read_text())
+        for stem in ("PerfectLocalComparison", "PerfectLocalEquivalence", "PerfectKEquivalence"):
+            self.assertFalse((root / "ColibTest" / (stem + ".lean")).exists())
+            self.assertNotIn("ColibTest." + stem, (root / "scripts/check.sh").read_text())
+        for stem in ("PerfectWaldhausen", "PerfectKTheory"):
+            source = (root / "ColibTest" / (stem + ".lean")).read_text()
+            self.assertIn("RingedSpace.perfectComplexesWaldhausen", source)
+            self.assertNotIn("import all", source)
+            self.assertNotIn("private def source", source)
+            self.assertIn("ColibTest." + stem, (root / "scripts/check.sh").read_text())
 
     def test_waldhausen_homotopy_chain_keeps_model_and_owners(self):
         self.assertEqual(self.library["entries"]["COL-0154"]["section"], "waldhausen-categories")

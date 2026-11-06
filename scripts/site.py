@@ -306,6 +306,17 @@ def build(library_path, output):
                 section_id,
                 [*trail, (section["title"], "sections/" + section_id + "/")],
             )
+    for identifier, item in library.get("retired", {}).items():
+        previous_url = ("https://github.com/kangxyz/colib/blob/"
+                        + item["previous_revision"] + "/" + item["previous_path"])
+        body = ("<h1>" + escape(identifier + " · " + item["title"])
+                + '</h1><p class="lede">Retired Library item</p><p>'
+                + escape(item["reason"]) + "</p><p>"
+                + anchor("Previous source record", previous_url) + "</p>")
+        related = item.get("related_items", [])
+        if related:
+            body += "<p>Related maintained items: " + ", ".join(item_link(i) for i in related) + "</p>"
+        render_page("tag/" + identifier + "/index.html", identifier + " · Retired", body)
     modules_index = [
         '<h1>Lean modules</h1><p class="lede">Code ownership and direct imports are read from the compiled Lean module system.</p>'
     ]
@@ -522,6 +533,12 @@ def build(library_path, output):
                 "terms": " ".join(terms).casefold(),
             }
         )
+    for identifier, item in library.get("retired", {}).items():
+        search.append({
+            "id": identifier, "title": item["title"], "kind": "retired",
+            "section": "Retired items", "statement": item["reason"],
+            "terms": " ".join([identifier, item["title"], item["reason"]]).casefold(),
+        })
     for record in search:
         record["path"] = "tag/" + record["id"] + "/"
     for name, module in library["modules"].items():

@@ -15,8 +15,6 @@ public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIsoCriterion
 public import Colib.Algebra.Module.LocalizedModule.IdealQuotient
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
-public import Colib.AlgebraicGeometry.Modules.LocalRepresentativeComparison
-public import Colib.AlgebraicGeometry.Modules.LocalRepresentativeEquivalence
 public import Colib.AlgebraicGeometry.Modules.PerfectWaldhausen
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.AffineBaseChange
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Compactness

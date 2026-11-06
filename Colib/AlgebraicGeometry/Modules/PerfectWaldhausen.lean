@@ -100,6 +100,5 @@ attribute [colib_tag "COL-0178",
   AlgebraicGeometry.RingedSpace.perfectComplexesWaldhausen
 
 attribute [colib_ref "quillen" "Quillen/AlgebraicGeometry/PerfectComplexes/KTheory.lean:53-55"
-  "comparison" "Native-predicate structure; exposed source cofibrations and exactness \
-  checked separately"]
+  "adaptation" "The structure is constructed directly on native Stacks perfect complexes"]
   AlgebraicGeometry.RingedSpace.perfectComplexesWaldhausen

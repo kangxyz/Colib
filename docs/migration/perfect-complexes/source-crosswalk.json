@@ -1,241 +1,58 @@
 {
   "source_pins": {
     "quillen": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
-    "aglib": "2c34f185fa859e862661f939cd216b07bcccfb26",
     "stacks": "f8e70c5dd04bfabcb423d5e325461f527c85a5d6",
     "mathlib": "16edf57de7933555826307a3d81b4391a3657a09"
   },
-  "scope": "Exact exposed local-witness comparison, reconstructed Waldhausen structures on actual chain complexes, and actual canonical KMap inverses in every nonnegative degree for their two-sided exact equivalence. No nominal archived-library, global strict-perfect or alternative S-model comparison is asserted.",
-  "declarations": [
+  "scope": "One native Stacks perfect-complex predicate and full subcategory, with the actual Waldhausen structure and canonical K-maps. No legacy local-model adapter or second perfect-complex model is maintained.",
+  "canonical_interfaces": [
     {
-      "source": "Aglib/AlgebraicGeometry/Modules/LocallyFree/Basic.lean",
-      "line": 34,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.IsFiniteLocallyFree",
-      "hypotheses": "X : Scheme.{u}; M : X.Modules",
-      "conclusion": "Exists q : LocalGeneratorsData.{u} M, q.IsLocallyFreeData and q.IsFiniteType",
-      "target": "AlgebraicGeometry.SheafOfModules.IsFiniteLocallyFree.{u,u,u}",
-      "relation": "Same explicit witness proposition at Scheme universes; field packaging changes from exists_localBasis to exists_isFiniteLocallyFreeData.",
-      "evidence": "ColibTest/PerfectLocalEquivalence.lean old-local-basis probe; no simultaneous old-library import certificate.",
-      "source_sha256": "46c07dbb7b518bc7e9434eee43e4e898de100809a17a18fc11d49d29fb7c4a7c",
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/LocallyFree/Basic.lean#L34"
+      "declaration": "AlgebraicGeometry.RingedSpace.IsPerfectComplex",
+      "module": "StacksFrontier.Topology.Sheaves.Cohomology.PerfectComplexes.BasicProperties",
+      "role": "The maintained complex-level predicate."
     },
     {
-      "source": "Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Strict.lean",
-      "line": 45,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.Complex.IsBounded",
-      "hypotheses": "P : CochainComplex X.Modules Z",
-      "conclusion": "Exists integers a b, every term outside [a,b] is IsZero.",
-      "target": "Explicit term-bound hypothesis; finite nonzero support inside Finset.Icc a b.",
-      "relation": "Equivalent to finite nonzero support over the integers; reverse uses the existing Stacks lower and upper bound lemmas.",
-      "evidence": "Private reverse helper combines LocalNullHomotopy.exists_lower_bound and exists_upper_bound; the forward theorem retains explicit interval bounds.",
-      "source_sha256": "4cfd15796c6de0759e0b370e62b81d300153082084c7a0f0986eb04e6fd08525",
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Strict.lean#L45"
+      "declaration": "AlgebraicGeometry.RingedSpace.IsPerfect",
+      "module": "StacksFrontier.Topology.Sheaves.Cohomology.PerfectComplexes.BasicProperties",
+      "role": "Perfectness of an actual derived object; not a substitute for the chain category."
     },
     {
-      "source": "Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Strict.lean",
-      "line": 49,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.Complex.strictPerfect",
-      "hypotheses": "Global term bounds and finite local freeness in every degree.",
-      "conclusion": "ObjectProperty on actual cochain complexes.",
-      "target": "AlgebraicGeometry.RingedSpace.IsPerfectComplex on the same complex.",
-      "relation": "Global Stacks strictness implies this old strictness on a scheme; the other direction is only locally Stacks strict, not global. No global predicate equivalence asserted.",
-      "evidence": "Reverse helper upgrades local Stacks strict-model terms using 0BCI. The forward helper locally trivializes bounded finite locally free terms.",
-      "source_sha256": "4cfd15796c6de0759e0b370e62b81d300153082084c7a0f0986eb04e6fd08525",
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Strict.lean#L49"
+      "declaration": "AlgebraicGeometry.RingedSpace.perfectComplexesWaldhausen",
+      "module": "Colib.AlgebraicGeometry.Modules.PerfectWaldhausen",
+      "role": "New Waldhausen structure on the native perfect full subcategory; no model translation.",
+      "library_item": "COL-0178"
     },
     {
-      "source": "Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Strict.lean",
-      "line": 53,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.Complex.StrictPerfect",
-      "hypotheses": "Source strictPerfect predicate.",
-      "conclusion": "Full subcategory retaining all chain maps.",
-      "target": null,
-      "relation": "Not replaced or aliased. The comparison does not define a new global strict category.",
-      "evidence": "Source inspection only.",
-      "source_sha256": "4cfd15796c6de0759e0b370e62b81d300153082084c7a0f0986eb04e6fd08525",
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Strict.lean#L53"
+      "declaration": "CategoryTheory.Waldhausen.complexes",
+      "module": "Colib.CategoryTheory.Waldhausen.Complexes",
+      "role": "Generic ambient cochain-complex structure.",
+      "library_item": "COL-0177"
     },
     {
-      "source": "Aglib/AlgebraicGeometry/Modules/Complex/Basic.lean",
-      "line": 70,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.Complex.restrict",
-      "hypotheses": "j : U -> X; IsOpenImmersion j",
-      "conclusion": "Scheme.Modules.restrictFunctor j mapped to cochain complexes.",
-      "target": "The identical scheme mapHomologicalComplex expression in the local comparison hypothesis.",
-      "relation": "Underlying scheme restriction unchanged; native Stacks restrictModulesIsoRestrictFunctor supplies the comparison to ringed-space restriction.",
-      "evidence": "LocalRepresentativeComparison.lean uses Q.mapIso of the native degreewise restriction comparison.",
-      "source_sha256": "87bfd3b272fbed5d33d94cb2fe26046d5f2dadd4ce4ff1373d039ada2f595093",
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/Complex/Basic.lean#L70"
-    },
-    {
-      "source": "Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Local.lean",
-      "line": 48,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.Complex.locallyPerfect",
-      "hypotheses": "At every x, an open U contains x and an old bounded finite locally free P has Q(scheme restriction K) isomorphic to Q(P). Source uses its standard local derived model at u+1.",
-      "conclusion": "ObjectProperty on actual cochain complexes K.",
-      "target": "Scheme.Modules.Complex.isPerfectComplex_iff_local_bounded_finiteLocallyFree_models",
-      "relation": "Two-way comparison with the exact archived bound and local-basis fields exposed. Arbitrary supplied local models are supported; the test specializes to the archived standard models.",
-      "evidence": "ColibTest/PerfectLocalEquivalence.lean source_iff_target and standard_model_comparison.",
-      "source_sha256": "66779970dff3993c0d187aa60f82342e0eeed68ac75c9c337ef2ce35ba8798d8",
-      "target_file": "Colib/AlgebraicGeometry/Modules/LocalRepresentativeEquivalence.lean",
-      "target_line": 86,
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Local.lean#L48"
-    },
-    {
-      "source": "Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Local.lean",
-      "line": 54,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.Complex.Perfect",
-      "hypotheses": "Source locallyPerfect predicate.",
-      "conclusion": "Full category of complexes and chain maps, not derived objects.",
-      "target": "Identity-underlying equivalence of the exposed old witness and native Stacks perfect-complex full subcategories.",
-      "relation": "Both functors retain objects and chain maps. Unit/counit are identity; QuasiIso is preserved and reflected. These are actual chain-complex subcategories, not derived categories.",
-      "evidence": "ColibTest/PerfectLocalEquivalence.lean private comparison and twelve object/map/unit/counit/QuasiIso/equivalence probes.",
-      "source_sha256": "66779970dff3993c0d187aa60f82342e0eeed68ac75c9c337ef2ce35ba8798d8",
-      "target_file": "ColibTest/PerfectLocalEquivalence.lean",
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Local.lean#L54"
-    },
-    {
-      "source": "Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Local.lean",
-      "line": 60,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.Complex.locallyPerfect_of_strictPerfect",
-      "hypotheses": "Source strictPerfect X K.",
-      "conclusion": "Source locallyPerfect X K.",
-      "target": null,
-      "relation": "Not a literal replacement: the bounded adapter concludes native Stacks perfectness instead of the source local-witness predicate.",
-      "evidence": "Source inspection; no migration claimed.",
-      "source_sha256": "66779970dff3993c0d187aa60f82342e0eeed68ac75c9c337ef2ce35ba8798d8",
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Local.lean#L60"
-    },
-    {
-      "source": "Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Local.lean",
-      "line": 98,
-      "declaration": "AlgebraicGeometry.Scheme.Modules.Complex.strictToPerfect",
-      "hypotheses": "Source strict and local full categories.",
-      "conclusion": "Unchanged-complex inclusion StrictPerfect X -> Perfect X.",
-      "target": null,
-      "relation": "Not migrated by this comparison. LocalRegression tests a different comparison: old local-witness category -> native perfect-complex category.",
-      "evidence": "Source inspection; no equivalence or K-map claimed.",
-      "source_sha256": "66779970dff3993c0d187aa60f82342e0eeed68ac75c9c337ef2ce35ba8798d8",
-      "source_url": "https://github.com/kangxyz/aglib/blob/2c34f185fa859e862661f939cd216b07bcccfb26/Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Local.lean#L98"
-    },
-    {
-      "source": "Quillen/AlgebraicGeometry/PerfectComplexes/Strict.lean",
-      "line": 35,
-      "declaration": "Quillen.PerfectComplexes.strictWaldhausen",
-      "hypotheses": "Source StrictPerfect category and closure results.",
-      "conclusion": "Waldhausen.Structure on actual chain complexes.",
-      "target": null,
-      "relation": "Outside this slice; no cofibration/weak-equivalence structure transport or equivalence is supplied.",
-      "evidence": "Not compiled or migrated here.",
-      "source_sha256": "127e134e0ffecfe5b8e56f0d257fed77a64a7befbfd29433bbd0167cbe2df7b9",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/AlgebraicGeometry/PerfectComplexes/Strict.lean#L35"
-    },
-    {
-      "source": "Quillen/AlgebraicGeometry/PerfectComplexes/KTheory.lean",
-      "line": 54,
-      "declaration": "Quillen.PerfectComplexes.perfectWaldhausen",
-      "hypotheses": "Source Perfect category and closure results.",
-      "conclusion": "Waldhausen.Structure on actual local-perfect complexes.",
-      "target": "AlgebraicGeometry.RingedSpace.perfectComplexesWaldhausen",
-      "relation": "Native perfect-complex structure. The exposed archived local predicate and its exact quotient cofibration formula are reconstructed in package tests, identified with ambient Mono, and compared by two-sided IsExact. No nominal equality with the archived named structure or its chosen zero is asserted.",
-      "evidence": "ColibTest/PerfectWaldhausen.lean: sourceCofibrations_eq_inherited, comparison_exact, comparison_inverse_exact, and exact_comparison_exists.",
-      "source_sha256": "b8d2f356e413821026e8f848e41fbdef8323a6588e85682b490965d474ef59ce",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/AlgebraicGeometry/PerfectComplexes/KTheory.lean#L54",
-      "target_file": "Colib/AlgebraicGeometry/Modules/PerfectWaldhausen.lean"
-    },
-    {
-      "source": "Quillen/AlgebraicGeometry/PerfectComplexes/KTheory.lean",
-      "line": 63,
-      "declaration": "Quillen.PerfectComplexes.strictToPerfectKMap",
-      "hypotheses": "Source strict/local Waldhausen structures and literal inclusion.",
-      "conclusion": "Canonical connective S-construction K-group homomorphism.",
-      "target": null,
-      "relation": "Outside this slice; no K-group or K-theory comparison proved.",
-      "evidence": "Not compiled or migrated here.",
-      "source_sha256": "b8d2f356e413821026e8f848e41fbdef8323a6588e85682b490965d474ef59ce",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/AlgebraicGeometry/PerfectComplexes/KTheory.lean#L63"
-    },
-    {
-      "source": "Quillen/Aglib/Algebra/Homology/CochainComplex/QuasiIsoGluing.lean",
-      "line": 76,
-      "declaration": "Quillen.Waldhausen.quasiIso_gluing",
-      "target": "CochainComplex.quasiIso_gluing",
-      "relation": "Lower homological owner; all four maps, both pushout diagrams and mono/quasi-isomorphism hypotheses retained. The biproduct helper is private.",
-      "source_sha256": "af726592c679e11c6b90af2e977749749f3f3338bff48456ac0d8ba95ddb95fb",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Aglib/Algebra/Homology/CochainComplex/QuasiIsoGluing.lean#L76"
-    },
-    {
-      "source": "Quillen/Waldhausen/Complexes.lean",
-      "line": 45,
-      "declaration": "Quillen.Waldhausen.complexes",
-      "target": "CategoryTheory.Waldhausen.complexes",
-      "relation": "Same ambient zero, monomorphisms, quasi-isomorphisms and pushout choices, in the native categorical namespace.",
-      "source_sha256": "fadb1a5af4d66be1feeaa90b2c1ab9579aec6963d5c11dccb7c23b9a1ba51f59",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Waldhausen/Complexes.lean#L45"
-    },
-    {
-      "source": "Quillen/Waldhausen/ComplexSubcategory.lean",
-      "line": 54,
-      "declaration": "Quillen.Waldhausen.subcategoryCofibrations",
-      "target": "Private sourceCofibrations_eq_inherited certificate in ColibTest/PerfectWaldhausen.lean",
-      "relation": "Exposed source inflation/quotient formula equals ambient Mono for local-perfect complexes; not asserted for globally strict-perfect complexes.",
-      "source_sha256": "ebc3f9888f259123db094e989bb68d391b1d4056c0a8f20502c31490bc62fa5d",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Waldhausen/ComplexSubcategory.lean#L54"
-    },
-    {
-      "source": "Quillen/Waldhausen/Functoriality/ExactEquivalence.lean",
-      "line": 32,
-      "declaration": "Quillen.Waldhausen.KMap_exactEquivalence_left_inv",
-      "target": "CategoryTheory.Waldhausen.KMap_inverse_comp_KMap",
-      "target_file": "Colib/KTheory/Waldhausen/ExactEquivalence.lean",
-      "relation": "Original canonical forward and inverse KMap functions and both exactness hypotheses retained. Pointwise inverse laws are presented as homomorphism equalities; source explicit structure arguments become implicit. No new K-invariance hypothesis.",
-      "evidence": "ColibTest/PerfectKEquivalence.lean consumes the reconstructed geometric equivalence, standard local models and actual based homotopies. No literal archived PerfectK equality.",
-      "source_sha256": "8891de0088cec6f82d20bcb45f6e72eb49a9ef1c360c6d08424564eca766ed19",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Waldhausen/Functoriality/ExactEquivalence.lean#L32"
-    },
-    {
-      "source": "Quillen/Waldhausen/Functoriality/ExactEquivalence.lean",
-      "line": 39,
-      "declaration": "Quillen.Waldhausen.KMap_exactEquivalence_right_inv",
-      "target": "CategoryTheory.Waldhausen.KMap_comp_KMap_inverse",
-      "target_file": "Colib/KTheory/Waldhausen/ExactEquivalence.lean",
-      "relation": "Original canonical forward and inverse KMap functions and both exactness hypotheses retained. Pointwise inverse laws are presented as homomorphism equalities; source explicit structure arguments become implicit. No new K-invariance hypothesis.",
-      "evidence": "ColibTest/PerfectKEquivalence.lean consumes the reconstructed geometric equivalence, standard local models and actual based homotopies. No literal archived PerfectK equality.",
-      "source_sha256": "8891de0088cec6f82d20bcb45f6e72eb49a9ef1c360c6d08424564eca766ed19",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Waldhausen/Functoriality/ExactEquivalence.lean#L39"
-    },
-    {
-      "source": "Quillen/Waldhausen/Functoriality/ExactEquivalence.lean",
-      "line": 46,
-      "declaration": "Quillen.Waldhausen.KEquivOfExactEquivalence",
-      "target": "CategoryTheory.Waldhausen.KEquivOfExactEquivalence",
-      "target_file": "Colib/KTheory/Waldhausen/ExactEquivalence.lean",
-      "relation": "Original canonical forward and inverse KMap functions and both exactness hypotheses retained. Pointwise inverse laws are presented as homomorphism equalities; source explicit structure arguments become implicit. No new K-invariance hypothesis.",
-      "evidence": "ColibTest/PerfectKEquivalence.lean consumes the reconstructed geometric equivalence, standard local models and actual based homotopies. No literal archived PerfectK equality.",
-      "source_sha256": "8891de0088cec6f82d20bcb45f6e72eb49a9ef1c360c6d08424564eca766ed19",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Waldhausen/Functoriality/ExactEquivalence.lean#L46"
-    },
-    {
-      "source": "Quillen/Waldhausen/Functoriality/ExactEquivalence.lean",
-      "line": 53,
-      "declaration": "Quillen.Waldhausen.KEquivOfExactEquivalence_coe",
-      "target": "CategoryTheory.Waldhausen.KEquivOfExactEquivalence_toMonoidHom",
-      "target_file": "Colib/KTheory/Waldhausen/ExactEquivalence.lean",
-      "relation": "Original canonical forward and inverse KMap functions and both exactness hypotheses retained. Pointwise inverse laws are presented as homomorphism equalities; source explicit structure arguments become implicit. No new K-invariance hypothesis.",
-      "evidence": "ColibTest/PerfectKEquivalence.lean consumes the reconstructed geometric equivalence, standard local models and actual based homotopies. No literal archived PerfectK equality.",
-      "source_sha256": "8891de0088cec6f82d20bcb45f6e72eb49a9ef1c360c6d08424564eca766ed19",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Waldhausen/Functoriality/ExactEquivalence.lean#L53"
-    },
-    {
-      "source": "Quillen/Waldhausen/Functoriality/ExactEquivalence.lean",
-      "line": 58,
-      "declaration": "Quillen.Waldhausen.KEquivOfExactEquivalence_symm_coe",
-      "target": "CategoryTheory.Waldhausen.KEquivOfExactEquivalence_symm_toMonoidHom",
-      "target_file": "Colib/KTheory/Waldhausen/ExactEquivalence.lean",
-      "relation": "Original canonical forward and inverse KMap functions and both exactness hypotheses retained. Pointwise inverse laws are presented as homomorphism equalities; source explicit structure arguments become implicit. No new K-invariance hypothesis.",
-      "evidence": "ColibTest/PerfectKEquivalence.lean consumes the reconstructed geometric equivalence, standard local models and actual based homotopies. No literal archived PerfectK equality.",
-      "source_sha256": "8891de0088cec6f82d20bcb45f6e72eb49a9ef1c360c6d08424564eca766ed19",
-      "source_url": "https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Waldhausen/Functoriality/ExactEquivalence.lean#L58"
+      "declaration": "CategoryTheory.Waldhausen.KEquivOfExactEquivalence",
+      "module": "Colib.KTheory.Waldhausen.ExactEquivalence",
+      "role": "Generic exact-equivalence theorem; independent of legacy perfectness.",
+      "library_item": "COL-0179"
     }
-  ]
+  ],
+  "regressions": [
+    "ColibTest/PerfectWaldhausen.lean",
+    "ColibTest/PerfectKTheory.lean"
+  ],
+  "removed_layers": [
+    "Colib/AlgebraicGeometry/Modules/LocalRepresentativeComparison.lean",
+    "Colib/AlgebraicGeometry/Modules/LocalRepresentativeEquivalence.lean",
+    "ColibTest/PerfectLocalComparison.lean",
+    "ColibTest/PerfectLocalEquivalence.lean",
+    "ColibTest/PerfectKEquivalence.lean"
+  ],
+  "retired_library_items": [
+    "COL-0176"
+  ],
+  "limits": [
+    "No global strict-perfect identification is asserted.",
+    "No equivalence with archived named PerfectK is asserted.",
+    "The chain category is not replaced by its derived localization."
+  ],
+  "previous_revision": "5c0a7ab9c060b7482a3c49056bb9b3284fc47829"
 }

@@ -13,7 +13,6 @@ remain migration sources at the recorded commits below.
 
 - Quillen c561118b7795eb9780be9ed391c3251d6a4d0afd.
 - Motivic a6805c4a87cdfd7717dd7a94039246a167f15380.
-- Their Aglib dependency 2c34f185fa859e862661f939cd216b07bcccfb26.
 
 Extend the closed pilot one mathematical chain at a time. Exact categories and shared module
 foundations precede scheme K/G-theory and perfect-complex localization. Finite correspondence
@@ -21,9 +20,12 @@ geometry precedes transfers, ordinary Nisnevich hypercohomology and strict invar
 Record cohomological degrees, coefficient universes, signs, canonical maps and actual
 conditions at each endpoint.
 
-Each candidate is classified as direct upstream reuse, a proved model/interface comparison,
-or a minimal Colib-owned prerequisite. Its actual consumers determine the incremental
-validation scope. Source correspondence and mathematical review retain their own status.
+Use the pinned Mathlib and Stacks objects and interfaces directly. Add missing mathematics
+at its native owner; do not maintain legacy models or compatibility layers. Genuine comparisons
+between distinct mathematical constructions retain their precise hypotheses and actual maps.
+Historical implementation attribution is preserved without retaining an Aglib source inventory
+or making Aglib a dependency. Actual consumers determine the incremental validation scope.
+Source correspondence and mathematical review retain their own status.
 
 The first Library release demonstrates this process on twelve entries. The amount of
 further migration is measured by the actual proof and interface repairs for subsequent slices.

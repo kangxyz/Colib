@@ -88,4 +88,28 @@ invariance requires neither monicity nor countability. These are complete
 mathematical results, not replacements for the original objects or conditional
 localization adapters. See the [precise proof and evidence scope](migration/serre/completion.md)
 and [Library integration record](migration/serre/integration.md). Negative
-K-theory and the more general weak-transition form of Theorem B are not claimed.
+K-theory and the more general weak-transition form of Theorem B are not claimed by that Serre item.
+
+## Original-map Waldhausen fibration and approximation
+
+The fibration theorem now proves weak equivalence of the original canonical
+acyclic-to-homotopy-fiber map, including its full reversed nullhomotopy and
+independent object and morphism universes. Coarse two-out-of-three, extension,
+exact base-category joint-cylinder data and its second-endpoint section are
+retained. Actual relative rows and proved weak-cartesian bar assembly discharge
+the global fiber comparison. See the [native scope and review boundary](migration/quillen/waldhausen-fibration.md).
+
+Approximation proves weak equivalence of the unchanged delooping map from
+App1/App2, exactness, target two-out-of-three and genuine source joint-cylinder
+data. Its group equivalence has the original canonical KMap as its forward
+map in every nonnegative degree, including K-zero. It assumes no row-equivalence
+or homotopy-inverse premise. These results do not supply a strict S-model
+comparison, a Quillen-Waldhausen comparison or nonconnective K-theory.
+
+## Native Milnor-to-Steinberg kernel map
+
+The actual native Milnor K₂ object now maps to the stable Steinberg kernel by
+ordered symbols, compatibly with field maps and the positive commutator marking.
+This is not a Quillen K₂ equivalence. The remaining stable-fiber comparison,
+Matsumoto injectivity, kernel generation and exact-model comparisons are listed
+in the [precise field-K₂ scope](migration/quillen/field-k2-native-kernel.md).

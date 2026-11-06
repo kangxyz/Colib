@@ -46,7 +46,7 @@ def completedInitialIsoAt (F : Obj (ofExactCategory E) n) (p : Interval n) :
 @[reassoc (attr := simp)]
 theorem flagQuotient_completedInitialIsoAt (F : Obj (ofExactCategory E) n) (p : Interval n) :
     flagQuotient E (initialFlag E F) (initialFlag_inflation E F) p ≫
-      (completedInitialIsoAt E F p).hom = initialQuotient E F p :=
+      (completedInitialIsoAt E F p).hom = initialQuotient (ofExactCategory E) F p :=
   (flagQuotientIsCokernel E (initialFlag_inflation E F) p).comp_coconePointUniqueUpToIso_hom
     (initialCokernel E F p) WalkingParallelPair.one
 

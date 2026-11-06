@@ -7,6 +7,7 @@ Authors: kangxyz
 module
 
 public import Colib.CategoryTheory.Waldhausen.Rows.Exact
+public import Colib.CategoryTheory.Waldhausen.Rows.InitialIntervals
 
 
 /-! # Recovering quotient-row isomorphisms from initial flags
@@ -29,11 +30,6 @@ universe v u
 
 namespace CategoryTheory.Waldhausen.QuotientRows
 
-/-- The initial intervals [0,i] in a simplex. -/
-def initialIntervals (n : SimplexCategory) : Fin (n.len + 1) ⥤ Interval n :=
-  (show Monotone (fun i : Fin (n.len + 1) ↦ interval 0 i (Fin.zero_le i)) from
-    fun _ _ h ↦ ⟨le_rfl, h⟩).functor
-
 variable {C : Type u} [Category.{v} C] [Preadditive C] [HasFiniteBiproducts C]
 variable (E : CategoryTheory.ExactCategory.ExactStructure C)
 variable {n : SimplexCategory}
@@ -41,15 +37,10 @@ variable {n : SimplexCategory}
 /-- The initial flag underlying an exact quotient row. -/
 def initialFlag (F : Obj (ofExactCategory E) n) : Fin (n.len + 1) ⥤ C := initialIntervals n ⋙ F.obj
 
-/-- The canonical quotient arrow from the initial flag to an interval object. -/
-def initialQuotient (F : Obj (ofExactCategory E) n) (p : Interval n) :
-    (initialFlag E F).obj p.1.2 ⟶ F.obj.obj p :=
-  F.obj.map (homOfLE ⟨Fin.zero_le _, le_rfl⟩)
-
 /-- Every interval of the row is a specified cokernel of an initial-flag arrow. -/
 def initialCofork (F : Obj (ofExactCategory E) n) (p : Interval n) :
     CokernelCofork ((initialFlag E F).map (homOfLE p.2)) :=
-  CokernelCofork.ofπ (initialQuotient E F p) (rowMap_zero E F 0 p.1.1 p.1.2
+  CokernelCofork.ofπ (initialQuotient (ofExactCategory E) F p) (rowMap_zero E F 0 p.1.1 p.1.2
     (Fin.zero_le _) p.2)
 
 /-- Its universal property is a proved consequence of the original S-pushout. -/
@@ -67,8 +58,8 @@ def flagIsoAt {F G : Obj (ofExactCategory E) n} (e : initialFlag E F ≅ initial
 @[reassoc (attr := simp)]
 theorem initialQuotient_flagIsoAt {F G : Obj (ofExactCategory E) n}
     (e : initialFlag E F ≅ initialFlag E G) (p : Interval n) :
-    initialQuotient E F p ≫ (flagIsoAt E e p).hom =
-      e.hom.app p.1.2 ≫ initialQuotient E G p :=
+    initialQuotient (ofExactCategory E) F p ≫ (flagIsoAt E e p).hom =
+      e.hom.app p.1.2 ≫ initialQuotient (ofExactCategory E) G p :=
 by
   dsimp only [flagIsoAt, CokernelCofork.mapIsoOfIsColimit, CokernelCofork.mapOfIsColimit]
   exact (initialCokernel E F p).fac _ WalkingParallelPair.one
@@ -77,25 +68,28 @@ by
 theorem flagIsoAt_naturality {F G : Obj (ofExactCategory E) n}
     (e : initialFlag E F ≅ initialFlag E G) {p q : Interval n} (f : p ⟶ q) :
     F.obj.map f ≫ (flagIsoAt E e q).hom = (flagIsoAt E e p).hom ≫ G.obj.map f := by
-  let : Epi (initialQuotient E F p) := Cofork.IsColimit.epi (initialCokernel E F p)
-  apply (cancel_epi (initialQuotient E F p)).1
-  have hF : initialQuotient E F p ≫ F.obj.map f =
-      (initialFlag E F).map (homOfLE (leOfHom f).2) ≫ initialQuotient E F q := by
+  let : Epi (initialQuotient (ofExactCategory E) F p) :=
+    Cofork.IsColimit.epi (initialCokernel E F p)
+  apply (cancel_epi (initialQuotient (ofExactCategory E) F p)).1
+  have hF : initialQuotient (ofExactCategory E) F p ≫ F.obj.map f =
+      (initialFlag E F).map (homOfLE (leOfHom f).2) ≫ initialQuotient (ofExactCategory E) F q := by
     simp only [initialQuotient, initialFlag, CategoryTheory.Functor.comp_map, ← F.obj.map_comp]
     congr 1
-  have hG : initialQuotient E G p ≫ G.obj.map f =
-      (initialFlag E G).map (homOfLE (leOfHom f).2) ≫ initialQuotient E G q := by
+  have hG : initialQuotient (ofExactCategory E) G p ≫ G.obj.map f =
+      (initialFlag E G).map (homOfLE (leOfHom f).2) ≫ initialQuotient (ofExactCategory E) G q := by
     simp only [initialQuotient, initialFlag, CategoryTheory.Functor.comp_map, ← G.obj.map_comp]
     congr 1
   calc
     _ = (initialFlag E F).map (homOfLE (leOfHom f).2) ≫
-        initialQuotient E F q ≫ (flagIsoAt E e q).hom := by
+        initialQuotient (ofExactCategory E) F q ≫ (flagIsoAt E e q).hom := by
           rw [← Category.assoc, hF, Category.assoc]
     _ = (initialFlag E F).map (homOfLE (leOfHom f).2) ≫
-        e.hom.app q.1.2 ≫ initialQuotient E G q := by rw [initialQuotient_flagIsoAt]
+        e.hom.app q.1.2 ≫ initialQuotient (ofExactCategory E) G q := by
+          rw [initialQuotient_flagIsoAt]
     _ = e.hom.app p.1.2 ≫ (initialFlag E G).map (homOfLE (leOfHom f).2) ≫
-        initialQuotient E G q := by rw [← Category.assoc, e.hom.naturality, Category.assoc]
-    _ = e.hom.app p.1.2 ≫ initialQuotient E G p ≫ G.obj.map f := by rw [hG]
+        initialQuotient (ofExactCategory E) G q := by
+          rw [← Category.assoc, e.hom.naturality, Category.assoc]
+    _ = e.hom.app p.1.2 ≫ initialQuotient (ofExactCategory E) G p ≫ G.obj.map f := by rw [hG]
     _ = _ := by rw [← Category.assoc, ← initialQuotient_flagIsoAt, Category.assoc]
 
 /-- The unique extension of an isomorphism of initial flags to all quotients. -/

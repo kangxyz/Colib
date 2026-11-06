@@ -94,7 +94,7 @@ theorem exists_rowIso_of_covering_spans {I : Type w} {F G : Obj (ofExactCategory
   have hc : e.app (interval 0 (p i).right (Fin.zero_le _)) = c := by
     apply initialIso_ext_top E (p i).right
     exact (he (p i).right).symm.trans hr
-  let q := initialQuotient E F (nestedToInterval (p i))
+  let q := initialQuotient (ofExactCategory E) F (nestedToInterval (p i))
   let : Epi q := Cofork.IsColimit.epi (initialCokernel E F (nestedToInterval (p i)))
   apply (cancel_epi q).1
   have hn := e.hom.naturality
@@ -102,7 +102,7 @@ theorem exists_rowIso_of_covering_spans {I : Type w} {F G : Obj (ofExactCategory
       ⟨Fin.zero_le _, le_rfl⟩))
   change q ≫ e.hom.app (nestedToInterval (p i)) =
     (e.app (interval 0 (p i).right (Fin.zero_le _))).hom ≫
-      initialQuotient E G (nestedToInterval (p i)) at hn
+      initialQuotient (ofExactCategory E) G (nestedToInterval (p i)) at hn
   rw [hc] at hn
   exact hn.trans hl.symm
 

@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0254"
+title = "Waldhausen fibration for the original canonical map"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 100
+statement = "The original canonical map from the realization of the fine acyclic Waldhausen subcategory to the homotopy fiber of change of weak equivalences is a weak homotopy equivalence."
+scope = "Arbitrary and possibly distinct object and morphism universes; nested weak-equivalence classes; coarse two-out-of-three and extension; explicit exact base-category joint-cylinder data and its second-endpoint section. These are structural assumptions, not fiber or realization conclusions. The full original reversed zero-to-inclusion nullhomotopy is retained. Mathlib AsSmall and actual based homeomorphisms transport the proved small-category theorem. This is a precise adaptation of Waldhausen Theorem 1.6.4 for the existing unnormalized IsZero S-construction; no strict-model comparison or connective long exact sequence is asserted here."
+review = "author_checked"
+provenance = "quillen"

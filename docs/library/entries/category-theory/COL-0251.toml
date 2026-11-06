@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0251"
+title = "Acyclic Waldhausen subcategory and cofiber detection"
+kind = "proposition"
+section = "waldhausen-categories"
+order = 1500
+statement = "The objects whose zero-to-object map is a coarse weak equivalence carry the original fine Waldhausen structure, with exact inclusion. A cofibration is weak if and only if its displayed cofiber is acyclic, under the extension axiom."
+scope = "Nested weak-equivalence classes share the specified zero object and cofibrations. The inherited subcategory and exact inclusion require no two-out-of-three or cylinder assumption. Cofiber detection uses the structural extension axiom and actual pushout square, without a realization or fiber-equivalence hypothesis."
+review = "author_checked"
+provenance = "quillen"

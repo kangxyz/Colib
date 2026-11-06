@@ -148,7 +148,7 @@ authors = ["Friedhelm Waldhausen"]
 year = 1985
 volume = "1126"
 pages = "318-419"
-version = "Published LNM article, sections 1.1-1.3 inspected 2026-11-05"
+version = "Published LNM article; sections 1.1-1.3 inspected 2026-11-05; section 1.6, Theorem 1.6.4 and proof (pages 350-352) and Theorem 1.6.7 (page 354) inspected 2026-11-06"
 url = "https://www.math.uni-bielefeld.de/~fw/LNM1126_318-419.pdf"
 
 [sources.mathlib_koszul_pin]

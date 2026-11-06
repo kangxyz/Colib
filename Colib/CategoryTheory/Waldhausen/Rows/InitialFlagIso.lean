@@ -31,7 +31,7 @@ variable {n : SimplexCategory}
 
 @[simp]
 theorem initialQuotient_initial (F : Obj (ofExactCategory E) n) (i : Fin (n.len + 1)) :
-    initialQuotient E F (interval 0 i (Fin.zero_le _)) = 𝟙 _ := F.obj.map_id _
+    initialQuotient (ofExactCategory E) F (interval 0 i (Fin.zero_le _)) = 𝟙 _ := F.obj.map_id _
 
 /-- Cokernel extension agrees with the originally prescribed initial-flag components. -/
 @[simp]
@@ -40,7 +40,8 @@ theorem extendFlagIso_initial {F G : Obj (ofExactCategory E) n} (e : initialFlag
     (i : Fin (n.len + 1)) :
     (extendFlagIso E e).hom.app (interval 0 i (Fin.zero_le _)) = e.hom.app i := by
   have h := initialQuotient_flagIsoAt E e (interval 0 i (Fin.zero_le _))
-  simp only [initialQuotient_initial, Category.id_comp, Category.comp_id] at h
+  change F.obj.map (𝟙 _) ≫ _ = e.hom.app i ≫ G.obj.map (𝟙 _) at h
+  erw [Functor.map_id, Functor.map_id, Category.id_comp, Category.comp_id] at h
   exact h
 
 /-- Cokernel extension is the unique row isomorphism agreeing on the initial flag. -/

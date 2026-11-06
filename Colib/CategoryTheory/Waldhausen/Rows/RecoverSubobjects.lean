@@ -43,7 +43,7 @@ def wholeSpan (F : Obj (ofExactCategory E) n) (p : NestedInterval n) :
     Span E.deflation E.inflation (F.obj.obj (nestedToInterval p))
       ((initialFlag E F).obj (Fin.last n.len)) where
   apex := (initialFlag E F).obj p.right
-  l := initialQuotient E F (nestedToInterval p)
+  l := initialQuotient (ofExactCategory E) F (nestedToInterval p)
   r := (initialFlag E F).map (homOfLE (Fin.le_last p.right))
   wl := row_deflation E F 0 p.left p.right (Fin.zero_le _) p.endpoints
   wr := F.property.cofibration 0 p.right (Fin.last n.len) (Fin.zero_le _) (Fin.le_last _)
@@ -52,7 +52,7 @@ def wholeSpan (F : Obj (ofExactCategory E) n) (p : NestedInterval n) :
 def initialKernel (F : Obj (ofExactCategory E) n) (p : NestedInterval n) :
     IsLimit (KernelFork.ofι ((initialFlag E F).map (homOfLE p.endpoints))
       (show (initialFlag E F).map (homOfLE p.endpoints) ≫
-          initialQuotient E F (nestedToInterval p) = 0 from
+          initialQuotient (ofExactCategory E) F (nestedToInterval p) = 0 from
         rowMap_zero E F 0 p.left p.right (Fin.zero_le _) p.endpoints)) :=
   E.kernel _ (row_conflation E F 0 p.left p.right (Fin.zero_le _) p.endpoints)
 
@@ -61,8 +61,8 @@ initial subobject, by the kernel universal property. -/
 def lowerSubobjectIso {F G : Obj (ofExactCategory E) n} (p : NestedInterval n)
     (a : F.obj.obj (nestedToInterval p) ≅ G.obj.obj (nestedToInterval p))
     (c : (initialFlag E F).obj p.right ≅ (initialFlag E G).obj p.right)
-    (h : initialQuotient E F (nestedToInterval p) ≫ a.hom =
-      c.hom ≫ initialQuotient E G (nestedToInterval p)) :
+    (h : initialQuotient (ofExactCategory E) F (nestedToInterval p) ≫ a.hom =
+      c.hom ≫ initialQuotient (ofExactCategory E) G (nestedToInterval p)) :
     (initialFlag E F).obj p.left ≅ (initialFlag E G).obj p.left :=
   KernelFork.mapIsoOfIsLimit (initialKernel E F p) (initialKernel E G p)
     (Arrow.isoMk c a h.symm)
@@ -71,8 +71,8 @@ def lowerSubobjectIso {F G : Obj (ofExactCategory E) n} (p : NestedInterval n)
 theorem lowerSubobjectIso_inclusion {F G : Obj (ofExactCategory E) n} (p : NestedInterval n)
     (a : F.obj.obj (nestedToInterval p) ≅ G.obj.obj (nestedToInterval p))
     (c : (initialFlag E F).obj p.right ≅ (initialFlag E G).obj p.right)
-    (h : initialQuotient E F (nestedToInterval p) ≫ a.hom =
-      c.hom ≫ initialQuotient E G (nestedToInterval p)) :
+    (h : initialQuotient (ofExactCategory E) F (nestedToInterval p) ≫ a.hom =
+      c.hom ≫ initialQuotient (ofExactCategory E) G (nestedToInterval p)) :
     (lowerSubobjectIso E p a c h).hom ≫ (initialFlag E G).map (homOfLE p.endpoints) =
       (initialFlag E F).map (homOfLE p.endpoints) ≫ c.hom :=
 by

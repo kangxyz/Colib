@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0249"
+title = "The canonical Serre localization fiber equivalence"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 290
+statement = "For a Serre class in a small abelian category, the original based comparison from its Q-classifying space to the actual normalized quotient homotopy fiber is a weak homotopy equivalence. In every nonnegative K-degree it induces a group equivalence whose forward homomorphism is exactly the original comparison."
+scope = "C : Type u with Category.{u} C and Abelian C, and P : ObjectProperty C with P.IsSerreClass. The weak-equivalence conclusion covers all components and all source basepoints; the canonical based theorem includes every finite homotopy degree, including zero. No Noetherian, finite-length, filtration, quotient-comparison or cartesian-square hypothesis is added. No global continuous homotopy inverse is claimed."
+review = "author_checked"
+provenance = "quillen"

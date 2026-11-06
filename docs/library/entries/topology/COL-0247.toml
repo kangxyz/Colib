@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0247"
+title = "Homotopy invariance of arbitrary filtered realization"
+kind = "theorem"
+section = "homotopy-colimits"
+order = 50
+statement = "For a filtered diagram of simplicial sets whose actual realized transition maps are homotopy equivalences, every realized cocone leg into a specified colimit is the forward map of a homotopy equivalence."
+scope = "A small filtered index category and simplicial sets in one common universe, an actual cocone and its colimit proof. Transition equivalences have exactly the realized diagram maps as forward maps; their inverses need not be coherent or based. No monomorphism, injectivity, countability or sequential-index hypothesis is imposed. Compact HELP constructs both inverse homotopies without assuming Whitehead's theorem."
+review = "author_checked"
+provenance = "quillen"

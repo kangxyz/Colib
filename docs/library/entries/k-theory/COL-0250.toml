@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0250"
+title = "Canonical connective Serre localization"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 300
+statement = "The original inclusion and canonical quotient maps form the connective Serre localization long exact sequence. The boundary is the native path-space boundary transported through the inverse of the proved comparison equivalence. All three recurring exactness positions hold, including the K-one to K-zero boundary, and the canonical quotient map is surjective on K-zero."
+scope = "C : Type u with Category.{u} C and Abelian C, and P : ObjectProperty C with P.IsSerreClass. Inclusion is Abelian.Devissage.KMap and quotient is quotientKMap on the original Quillen K-groups. The comparison equation uniquely determines connectingHom. There are no additional comparison, filtration or transition hypotheses. The terminal K-zero surjection reuses the independent Grothendieck-to-Quillen proof, without supplying the higher fiber comparison. Negative K-theory and an independent comparison of boundary-sign conventions are not asserted."
+review = "author_checked"
+provenance = "quillen"

@@ -51,8 +51,9 @@ length-one comma contractions and the actual countable nerve union. Resolution
 lengths need not have a common bound. The resulting Q-space equivalence and
 all-degree K-equivalence retain the original inclusion maps. See the
 [precise native-model and source scope](migration/resolution/README.md).
-General filtered realization and Quillen-Waldhausen comparisons remain
-separate work; this milestone does not close the entire Quillen migration.
+General filtered realization is now available as part of the later Serre
+localization proof below. This Resolution result does not close the entire
+Quillen migration.
 
 ## Canonical Grothendieck–Quillen K-zero comparison
 
@@ -71,3 +72,20 @@ retain the actual inclusion maps and canonical zero basepoint. The full
 subcategory is intrinsically abelian: no extension-closure or uniform-length
 hypothesis is added. See the [native proof and source crosswalk](migration/devissage/README.md).
 This does not assert a Q/S comparison or finish the historical Quillen inventory.
+
+## Canonical connective Serre localization
+
+The original normalized quotient fiber comparison is now a weak homotopy
+equivalence on every component and at every source basepoint. Its actual group
+comparison gives the connective localization long exact sequence, including
+the K-one to K-zero boundary and terminal surjection, under only the original
+small abelian-category and Serre-class hypotheses. Inclusion and quotient are
+the original K-maps; the boundary retains its native path-space convention.
+
+The supporting complete Theorem B retains both actual comma comparisons under
+transition homotopy equivalences. Arbitrary filtered simplicial realization
+invariance requires neither monicity nor countability. These are complete
+mathematical results, not replacements for the original objects or conditional
+localization adapters. See the [precise proof and evidence scope](migration/serre/completion.md)
+and [Library integration record](migration/serre/integration.md). Negative
+K-theory and the more general weak-transition form of Theorem B are not claimed.

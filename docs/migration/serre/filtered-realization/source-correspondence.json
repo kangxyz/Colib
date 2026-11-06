@@ -1,0 +1,225 @@
+{
+  "source_revision": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "files": [
+    {
+      "native_file": "Colib/Topology/FilteredRealization/Compact.lean",
+      "source_file": "Quillen/Topology/FilteredRealization/Compact.lean",
+      "native_sha256": "e32b61e32c62bef6f1f3b1e2567388d39ca19ddbdcd12cf5521c95ae2548306b",
+      "source_sha256": "6cf2d9399e52cc13ed6f162fb6b359334132988c4902b3d6b5bc406164d84130",
+      "source_declared_names": [
+        "compact_factors",
+        "finite_source_compression",
+        "compact_eq_eventually"
+      ],
+      "native_declared_names": [
+        "compact_factors",
+        "finite_source_compression",
+        "compact_eq_eventually"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/FilteredRealization/CompactHELP.lean",
+      "source_file": "Quillen/Topology/FilteredRealization/CompactHELP.lean",
+      "native_sha256": "65ccb78259c9665537f86cfca5a33998419bc2b1ed08abf719d47d186fe1b114",
+      "source_sha256": "0f373bad3b1c7f7d042f3b0ecb676a15230fe4b97d9f78962b6a3e8a8e9c667a",
+      "source_declared_names": [
+        "stage_compactHELP"
+      ],
+      "native_declared_names": [
+        "stage_compactHELP"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/FilteredRealization/HELP.lean",
+      "source_file": "Quillen/Topology/FilteredRealization/HELP.lean",
+      "native_sha256": "9129d7c9a743658ec011bb8f8f2a9a23be70971766a8643814264707acf3b529",
+      "source_sha256": "4a80c5e0d12d558c6f0c364f12b96d25cae39d1376799b1962fe2df25c68fc90",
+      "source_declared_names": [
+        "compact_square_homotopy_factors"
+      ],
+      "native_declared_names": [
+        "compact_square_homotopy_factors"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/FilteredRealization/Homotopy.lean",
+      "source_file": "Quillen/Topology/FilteredRealization/Homotopy.lean",
+      "native_sha256": "6edfaa58db55355a0b900754820b6ebf053944c504bb0cda73204f74a0de9023",
+      "source_sha256": "9daafd34a5c81b7898b8485012459e83601bf4db743abc95bf92262de4e6d6ee",
+      "source_declared_names": [
+        "compact_factors_above",
+        "homotopyRel_factors",
+        "isClosed_cubeBoundary"
+      ],
+      "native_declared_names": [
+        "compact_factors_above",
+        "homotopyRel_factors"
+      ],
+      "source_names_not_selected": [
+        "isClosed_cubeBoundary"
+      ],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/FilteredRealization/HomotopyEquivalence.lean",
+      "source_file": "Quillen/Topology/FilteredRealization/HomotopyEquivalence.lean",
+      "native_sha256": "0fd0e452b6bd5108ac1f2e810172cb2caf74bfe746644e1b08e63569f2110ddb",
+      "source_sha256": "525b72f0aca70b6be668c9dcc4e9a09d2a25efa1fbdfb0a949f10cda71e9b7f0",
+      "source_declared_names": [
+        "stageHomotopyEquiv",
+        "stageHomotopyEquiv_toFun"
+      ],
+      "native_declared_names": [
+        "stageHomotopyEquiv",
+        "stageHomotopyEquiv_toFun"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/HELP/Compact.lean",
+      "source_file": "Quillen/Topology/HELP/Compact.lean",
+      "native_sha256": "5f33b60d88815a64127d214ea6a9a65445cd174dc2182bf145b59f4d0e085ef7",
+      "source_sha256": "697b4d49700c7e29a1e9a2b695e132995fd10c611d9295d008afb43e9e239f08",
+      "source_declared_names": [
+        "CompactHomotopyExtensionLiftingProperty",
+        "endpoint_hasLiftingProperty_of_compactHELP"
+      ],
+      "native_declared_names": [
+        "CompactHomotopyExtensionLiftingProperty",
+        "endpoint_hasLiftingProperty_of_compactHELP"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/HELP/CompactHomotopyEquivalence.lean",
+      "source_file": "Quillen/Topology/HELP/CompactHomotopyEquivalence.lean",
+      "native_sha256": "dd313001dcb622ec1212f05e43f359ce2573076175e8cf360ad280b109dd533a",
+      "source_sha256": "d085a7046b8957807cdd9d72a4e12049d3d48aa1db5d46dcacc4fc12065e3c8d",
+      "source_declared_names": [
+        "simplicialCylinderEndpoints",
+        "simplicialCylinderEndpoints_zero",
+        "simplicialCylinderEndpoints_one",
+        "simplicialCylinderEndpoints_mono",
+        "homotopyOfRealizedEndpointLifting",
+        "homotopyEquivOfCompactHELP",
+        "homotopyEquivOfCompactHELP_toFun"
+      ],
+      "native_declared_names": [
+        "simplicialCylinderEndpoints",
+        "simplicialCylinderEndpoints_zero",
+        "simplicialCylinderEndpoints_one",
+        "simplicialCylinderEndpoints_mono",
+        "homotopyOfRealizedEndpointLifting",
+        "homotopyEquivOfCompactHELP",
+        "homotopyEquivOfCompactHELP_toFun"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/HELP/CompactRealizationLifting.lean",
+      "source_file": "Quillen/Topology/HELP/CompactRealizationLifting.lean",
+      "native_sha256": "dc6377173c48d9e76b8880d2f53fd7dfbda488c904ddd61cf904da87ccb2a321",
+      "source_sha256": "9755796bfe2a31aa61b826b50edc3546b8fc38d3ebcb1617b63b1aab5cb39695",
+      "source_declared_names": [
+        "Realization.homotopyExtensionProperty_realizationBoundary",
+        "endpoint_hasLiftingProperty_realization_mono"
+      ],
+      "native_declared_names": [
+        "endpoint_hasLiftingProperty_realization_mono"
+      ],
+      "source_names_not_selected": [
+        "Realization.homotopyExtensionProperty_realizationBoundary"
+      ],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/HELP/HomotopyEquiv.lean",
+      "source_file": "Quillen/Topology/HELP/HomotopyEquiv.lean",
+      "native_sha256": "45762106958459430e9026ea6c94e42fe2bee029fb77441ebd5ff2806059da53",
+      "source_sha256": "4f3d8ca4e27700230a6fe87ada5854617330f600d1607e70c048d79b1d9ebf15",
+      "source_declared_names": [
+        "homotopyEquiv_HELP",
+        "compactHELP_of_homotopyEquiv"
+      ],
+      "native_declared_names": [
+        "homotopyEquiv_HELP",
+        "compactHELP_of_homotopyEquiv"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/HELP/StrictHomotopyEquiv.lean",
+      "source_file": "Quillen/Topology/HELP/StrictHomotopyEquiv.lean",
+      "native_sha256": "0a34b58d735ee13997cd1fb5ff0190b3cd531668bff343b25024eeff29d988cc",
+      "source_sha256": "19fa5b624793bb0017f28014d168862eb035e3808a665a099ae1085cdf7ed22b",
+      "source_declared_names": [
+        "homotopyEquiv_strictHELP"
+      ],
+      "native_declared_names": [
+        "homotopyEquiv_strictHELP"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/Homotopy/BoundaryCorrection.lean",
+      "source_file": "Quillen/Topology/HomotopyFiber/BoundaryCorrection.lean",
+      "native_sha256": "6c4765acc493fbc87a073f304563d1757a10bcd72332732271472cda09db2ab7",
+      "source_sha256": "98f736f0c2c3e306968ca9c6acd54deff584251f6ef6a14c1479a529ecb3112b",
+      "source_declared_names": [
+        "homotopyExtensionProperty_correct_boundary",
+        "homotopyExtensionProperty_unpad_boundary"
+      ],
+      "native_declared_names": [
+        "homotopyExtensionProperty_correct_boundary",
+        "homotopyExtensionProperty_unpad_boundary"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    },
+    {
+      "native_file": "Colib/Topology/MappingPath/Basic.lean",
+      "source_file": "Quillen/Topology/MappingPath/Basic.lean",
+      "native_sha256": "a2f4e1ca47ed182acaae8724307e79f9f5ccb09cbfe4937f0d08dd2b8081f7d1",
+      "source_sha256": "723cb3add77fbc602cd16afaa11dfc85e69bf96762f90c8eb148ac6ede60676d",
+      "source_declared_names": [
+        "MappingPath",
+        "endpoint",
+        "source",
+        "inclusion",
+        "endpoint_inclusion",
+        "source_inclusion",
+        "contraction",
+        "contraction_inclusion",
+        "inclusionHomotopyEquiv",
+        "endpointFiberHomeomorph",
+        "endpoint_homotopy_lifting"
+      ],
+      "native_declared_names": [
+        "MappingPath",
+        "endpoint",
+        "source",
+        "inclusion",
+        "endpoint_inclusion",
+        "source_inclusion",
+        "contraction",
+        "contraction_inclusion",
+        "inclusionHomotopyEquiv",
+        "endpointFiberHomeomorph",
+        "endpoint_homotopy_lifting"
+      ],
+      "source_names_not_selected": [],
+      "note": "Named source declaration census; namespace ownership and proof correspondence described in README. Anonymous instances are retained but not counted."
+    }
+  ]
+}

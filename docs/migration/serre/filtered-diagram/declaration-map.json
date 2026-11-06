@@ -1,0 +1,446 @@
+{
+  "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "declaration_count": 55,
+  "declarations": [
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryForgetQ",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryForgetQ",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliary_quotient_structure_isIso",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliary_quotient_structure_isIso",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryQuotientObjIso",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryQuotientObjIso",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryQuotientObjIso_naturality",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryQuotientObjIso_naturality",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryToIsoStructured",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryToIsoStructured",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryToIsoStructured_forget",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryToIsoStructured_forget",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryQuotientObjIsoWithBase",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryQuotientObjIsoWithBase",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryQuotientObjIsoWithBase_naturality",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryQuotientObjIsoWithBase_naturality",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryToIsoStructuredWithBase",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryToIsoStructuredWithBase",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryToIsoStructuredWithBase_forget",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryToIsoStructuredWithBase_forget",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryToIsoStructuredWithBasePostcomposeIso",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryToIsoStructuredWithBasePostcomposeIso",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryToIsoStructuredWithBase_postcompose",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryIsoComma.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryToIsoStructuredWithBase_postcompose",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryPostcompose.lean",
+      "source_declaration": "Quillen.SerreLocalization.overPostcomposeKernelQMap",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryPostcompose.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.overPostcomposeKernelQMap",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryPostcompose.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryPostcomposeKernelMap",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryPostcompose.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryPostcomposeKernelMap",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryPostcompose.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryPostcomposeClassifyingHomotopyEquiv",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryPostcompose.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryPostcomposeClassifyingHomotopyEquiv",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryPostcompose.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryPostcomposeClassifyingHomotopyEquiv_toFun",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryPostcompose.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryPostcomposeClassifyingHomotopyEquiv_toFun",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.QCompatibleFunctor.ext_toFunctor",
+      "destination": "Colib/CategoryTheory/QConstruction/FunctorExt.lean",
+      "declaration": "CategoryTheory.QConstruction.CompatibleFunctor.ext_toFunctor",
+      "status": "proved-native",
+      "universes": "independent object/hom universes"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.SerreLocalization.overPostcomposeQ_id",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.overPostcomposeQ_id",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.SerreLocalization.overPostcomposeQ_comp",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.overPostcomposeQ_comp",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryPostcompose_id",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryPostcompose_id",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryPostcompose_comp",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryPostcompose_comp",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryDiagram",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryDiagram",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryCocone",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryCocone",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryTransitionHomotopyEquiv",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryTransitionHomotopyEquiv",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryTransitionHomotopyEquiv_toFun",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryDiagram.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryTransitionHomotopyEquiv_toFun",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryOverMk",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryOverMk",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.span_isoModSerre_of_quotient_isIso",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.span_isoModSerre_of_quotient_isIso",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.spanOverPushout",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.spanOverPushout",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.spanOverPushout_forget",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.spanOverPushout_forget",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliarySpanLift",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliarySpanLift",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliarySpanLift_forget",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliarySpanLift_forget",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.exists_auxiliary_arrow_lift",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.exists_auxiliary_arrow_lift",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.isoStructuredOrdinaryIso",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.isoStructuredOrdinaryIso",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.isoStructuredOrdinaryIso_hom",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.isoStructuredOrdinaryIso_hom",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryArrowLiftBaseIso",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryArrowLiftBaseIso",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryArrowLiftBaseIso_obj",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryArrowLiftBaseIso_obj",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "source_declaration": "Quillen.SerreLocalization.exists_isoStructured_arrow_lift",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryArrowLift.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.exists_isoStructured_arrow_lift",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "source_declaration": "Quillen.Q.inflationArrow_injective",
+      "destination": "Colib/CategoryTheory/QConstruction/Abelian/InflationFaithful.lean",
+      "declaration": "CategoryTheory.QConstruction.inflationArrow_injective",
+      "status": "proved-native",
+      "universes": "independent object/hom universes"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryForgetQ_faithful",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryForgetQ_faithful",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryToIsoStructuredWithBase_faithful",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryToIsoStructuredWithBase_faithful",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliaryOverMk_map_eq_of_comparison_eq",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryOverMk_map_eq_of_comparison_eq",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "source_declaration": "Quillen.SerreLocalization.auxiliary_eventual_obj_eq",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliary_eventual_obj_eq",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryLift_eventual_obj_eq",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryRefinement.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryLift_eventual_obj_eq",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryNerveDiagram",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryNerveDiagram",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryNerveCocone",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryNerveCocone",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryCocone_lift",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryCocone_lift",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryCocone_arrowSurjective",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryCocone_arrowSurjective",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryCocone_objectSurjective",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryCocone_objectSurjective",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryCocone_eventuallyEqualObjects",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryCocone_eventuallyEqualObjects",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryCocone_faithful",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryCocone_faithful",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryNerveCoconeIsColimit",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryNerveCoconeIsColimit",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryNerveTransitionEquiv",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryNerveTransitionEquiv",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryNerveTransitionEquiv_toFun",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryNerveTransitionEquiv_toFun",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.quotientAuxiliaryNerveCocone_map",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientAuxiliaryNerveCocone_map",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    },
+    {
+      "source": "Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "source_declaration": "Quillen.SerreLocalization.asIso_auxiliaryLiftMk",
+      "destination": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryColimit.lean",
+      "declaration": "CategoryTheory.ExactCategory.SerreLocalization.asIso_auxiliaryLiftMk",
+      "status": "proved-native",
+      "universes": "source small-category universe retained"
+    }
+  ]
+}

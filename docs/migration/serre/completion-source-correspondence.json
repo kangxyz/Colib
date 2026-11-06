@@ -1,0 +1,54 @@
+{
+  "source_pin": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "hypotheses": [
+    "C : Type u",
+    "Category.{u} C",
+    "Abelian C",
+    "P : ObjectProperty C",
+    "P.IsSerreClass"
+  ],
+  "native_modules": [
+    {
+      "file": "Colib/KTheory/Quillen/Localization/Serre/FiberEquivalence.lean",
+      "source": [
+        "Quillen/Localization/Serre/LocalizationTheorem.lean:42-64",
+        "Quillen/Localization/Serre/StructuredComparisonWeak.lean:83-118"
+      ],
+      "declarations": [
+        "basedLocalizationFiberComparison_bijective",
+        "localizationFiberComparisonHom_bijective",
+        "localizationFiberEquiv",
+        "basedLocalizationFiberComparison_isWeakHomotopyEquivalence"
+      ]
+    },
+    {
+      "file": "Colib/KTheory/Quillen/Localization/Serre/LocalizationTheorem.lean",
+      "source": [
+        "Quillen/Localization/Serre/LocalizationTheorem.lean:70-142",
+        "Quillen/Localization/Serre/LocalizationEndpoint.lean:34-47,100-111",
+        "Quillen/Localization/Serre/LocalizationLESAdapter.lean:60-125"
+      ],
+      "declarations": [
+        "connectingHom",
+        "comparison_comp_connectingHom",
+        "inclusion_range_eq_quotient_ker",
+        "quotient_range_eq_connecting_ker",
+        "connecting_range_eq_inclusion_ker",
+        "connecting_unique",
+        "KLocalizationSequence",
+        "localizationSequence",
+        "localizationSequence_connecting",
+        "localization_longExact",
+        "localization_KZero_tail"
+      ]
+    }
+  ],
+  "reused_terminal_theorem": "CategoryTheory.ExactCategory.SerreLocalization.quotientKZero_surjective, same original homotopical quotient map and hypotheses",
+  "omitted_conditional_interfaces": [
+    "basedLocalizationFiberComparison_bijective_of_structured",
+    "localizationFiberEquivOfBijective",
+    "connectingHomOfComparison",
+    "localizationSequenceOfComparison"
+  ],
+  "strengthening": "The actual based fiber comparison satisfies native all-component/all-basepoint IsWeakHomotopyEquivalence; no global HomotopyEquiv is asserted."
+}

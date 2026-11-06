@@ -21,6 +21,9 @@
 - `test_lint_style.py` checks inclusion of leaf tests, exclusion of dependencies, and propagation
   of the native linter's exit status, workspace source lookup, cleanup and existing-file protection.
 - `test_devissage.py` checks the native devissage maps, source crosswalk and public registrations.
+- `test_serre_localization.py` checks complete localization entry points, actual comparison and
+  boundary interfaces, reviewed source prefixes, generated-root coverage and unchanged full-check
+  stages. It is discovered by the existing Python test command without a handwritten module list.
 
 - `lean_tools/_lint/` carries the full batched declaration-lint adapter from the pinned
   current Aglib workflow; `.github/lint/run.sh` is its source-checkout entry.

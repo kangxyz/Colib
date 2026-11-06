@@ -39,6 +39,27 @@ and exactness of the inclusion into all cochain complexes.
 the reflexive exact-equivalence application, and the based homotopy-group formula on the
 same native Waldhausen structure. It imports no private test implementation.
 
+## Open restriction on the native objects
+
+`COL-0229` proves that restriction to an open ringed subspace preserves the native
+perfect-complex predicate. For a scheme `X` and `U : X.Opens`, ordinary degreewise
+restriction to `U.toScheme` is Waldhausen-exact: it preserves zero objects,
+monomorphisms, quasi-isomorphisms and displayed pushouts along monomorphisms.
+
+`COL-0230` defines the resulting homomorphism on the existing nonnegative Waldhausen
+K-groups. It is exactly the existing canonical `Waldhausen.KMap` of that restriction
+functor, with no intermediate category or alternative perfectness predicate.
+`ColibTest.PerfectRestriction` checks its literal degreewise objects and maps,
+exactness properties and equality with the canonical K-map.
+
+These results concern literal open subschemes. The pinned Quillen
+`PerfectComplexes/Restriction.lean` uses an archived strict-perfect category and
+arbitrary open immersions; its `Quillen/Aglib/.../PerfectComplexes/Restriction.lean`
+uses an archived locally-perfect category. The new results do not identify either
+model with Stacks perfect complexes or claim equality with archived `StrictK`.
+Arbitrary-open-immersion generality, nested restriction coherence and localization
+remain separate mathematical work.
+
 ## Removed comparison and permanent identifier
 
 The former `LocalRepresentativeComparison` and `LocalRepresentativeEquivalence` modules,

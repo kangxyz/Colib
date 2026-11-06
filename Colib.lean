@@ -15,6 +15,7 @@ public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIsoCriterion
 public import Colib.Algebra.Module.LocalizedModule.IdealQuotient
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
+public import Colib.AlgebraicGeometry.Modules.PerfectRestriction
 public import Colib.AlgebraicGeometry.Modules.PerfectWaldhausen
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.AffineBaseChange
 public import Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Compactness
@@ -206,6 +207,7 @@ public import Colib.KTheory.Waldhausen.Functoriality
 public import Colib.KTheory.Waldhausen.HomotopyMap
 public import Colib.KTheory.Waldhausen.KFunctor
 public import Colib.KTheory.Waldhausen.Map
+public import Colib.KTheory.Waldhausen.PerfectRestriction
 public import Colib.KTheory.Waldhausen.Product.Functoriality
 public import Colib.KTheory.Waldhausen.Product.KEquivalence
 public import Colib.KTheory.Waldhausen.WeakGridBasedHomotopy
@@ -389,5 +391,6 @@ public import Colib.Topology.Realization.SimplicialColimits
 public import Colib.Topology.Realization.SkeletalAttachment
 public import Colib.Topology.Realization.Skeleton
 public import Colib.Topology.Realization.Triangle
+public import Colib.Topology.Sheaves.Cohomology.PerfectComplexes.Restriction
 public import Colib.Topology.UnitInterval
 public import Colib.Util.References

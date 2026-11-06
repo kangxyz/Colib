@@ -33,11 +33,30 @@
       "module": "Colib.KTheory.Waldhausen.ExactEquivalence",
       "role": "Generic exact-equivalence theorem; independent of legacy perfectness.",
       "library_item": "COL-0179"
+    },
+    {
+      "declaration": "AlgebraicGeometry.RingedSpace.IsPerfectComplex.restrict",
+      "module": "Colib.Topology.Sheaves.Cohomology.PerfectComplexes.Restriction",
+      "role": "Open restriction preserves the same native perfectness predicate.",
+      "library_item": "COL-0229"
+    },
+    {
+      "declaration": "AlgebraicGeometry.Scheme.Modules.perfectComplexesRestrictFunctor_isExact",
+      "module": "Colib.AlgebraicGeometry.Modules.PerfectRestriction",
+      "role": "The ordinary degreewise restriction to U.toScheme is exact for the native Waldhausen structures.",
+      "library_item": "COL-0229"
+    },
+    {
+      "declaration": "AlgebraicGeometry.Scheme.Modules.perfectComplexesRestrictKMap",
+      "module": "Colib.KTheory.Waldhausen.PerfectRestriction",
+      "role": "The existing canonical Waldhausen KMap of ordinary exact restriction.",
+      "library_item": "COL-0230"
     }
   ],
   "regressions": [
     "ColibTest/PerfectWaldhausen.lean",
-    "ColibTest/PerfectKTheory.lean"
+    "ColibTest/PerfectKTheory.lean",
+    "ColibTest/PerfectRestriction.lean"
   ],
   "removed_layers": [
     "Colib/AlgebraicGeometry/Modules/LocalRepresentativeComparison.lean",
@@ -52,7 +71,37 @@
   "limits": [
     "No global strict-perfect identification is asserted.",
     "No equivalence with archived named PerfectK is asserted.",
-    "The chain category is not replaced by its derived localization."
+    "The chain category is not replaced by its derived localization.",
+    "Restriction is stated for literal open subschemes, not arbitrary open immersions.",
+    "Nested restriction coherence and localization are not established by the restriction construction."
   ],
-  "previous_revision": "5c0a7ab9c060b7482a3c49056bb9b3284fc47829"
+  "previous_revision": "5c0a7ab9c060b7482a3c49056bb9b3284fc47829",
+  "restriction_scope": {
+    "scheme_morphism": "U.\u03b9 for U : X.Opens",
+    "retained_data": [
+      "actual degreewise restricted objects",
+      "actual restricted chain maps",
+      "zero objects",
+      "ambient monomorphisms",
+      "quasi-isomorphisms",
+      "displayed pushouts along monomorphisms"
+    ],
+    "historical_source_boundary": [
+      {
+        "path": "Quillen/AlgebraicGeometry/PerfectComplexes/Restriction.lean",
+        "declarations": [
+          "Quillen.PerfectComplexes.strictRestrict_waldhausenExact",
+          "Quillen.PerfectComplexes.strictKRestrict"
+        ],
+        "relation": "Historical context only: the source uses archived strict-perfect categories and arbitrary open immersions. No model comparison or identity with StrictK is asserted."
+      },
+      {
+        "path": "Quillen/Aglib/AlgebraicGeometry/Modules/PerfectComplexes/Restriction.lean",
+        "declarations": [
+          "Quillen.PerfectComplexes.perfectExactRestrict"
+        ],
+        "relation": "Historical context only: the source uses the archived locallyPerfect category and arbitrary open immersions. It is not retained or reintroduced."
+      }
+    ]
+  }
 }

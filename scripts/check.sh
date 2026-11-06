@@ -29,7 +29,8 @@ lake exe mathlib/lint-style Colib ColibTest.Pilot ColibTest.References ColibTest
   ColibTest.MilnorCanonicalRamifiedMap ColibTest.MilnorDvrNormalization ColibTest.MilnorCompletion ColibTest.PrincipalEuler ColibTest.KoszulCoefficientAugmentation ColibTest.TopExtBaseChange ColibTest.TopExtBaseChangeQuotient ColibTest.TopExtBaseChangeNormalization ColibTest.OrdinalSubdivisionRealization ColibTest.HomotopyEquivalencePi ColibTest.WaldhausenSubdivisionMaps ColibTest.WaldhausenAdditivityConditional ColibTest.WaldhausenDeformation ColibTest.WaldhausenAdditivity ColibTest.RealizationProduct ColibTest.WaldhausenProduct ColibTest.WaldhausenMultiplication ColibTest.WaldhausenAdditivityPushout \
   ColibTest.NerveZeroSkeleton ColibTest.RealizationBoundary ColibTest.SkeletalAttachment \
   ColibTest.GraphAttachmentGeneration ColibTest.NerveGraphData ColibTest.KZeroSurjectivity
-lake exe mathlib/lint-style ColibTest.PerfectWaldhausen ColibTest.PerfectKTheory
+lake exe mathlib/lint-style ColibTest.PerfectWaldhausen ColibTest.PerfectKTheory \
+  ColibTest.PerfectRestriction
 lake exe mathlib/mk_all --lib Colib --check
 
 # Pinned independent production auditor, separate from mathematical dependencies.

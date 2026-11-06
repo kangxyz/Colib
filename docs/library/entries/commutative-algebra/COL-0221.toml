@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0221"
+title = "Normal prime polynomial presentations in the original field"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 50
+statement = "A nontrivial finite field extension of the base field embedded into a finite Galois p-group extension contains the literal AdjoinRoot field of a monic irreducible polynomial of degree p whose root field is normal. Its algebra embedding lands in the original input field."
+scope = "Characteristic-zero base field, a prime p, finite-dimensional original and ambient fields, a finite Galois ambient extension with p-group automorphism group, and original field degree greater than one. The native primitive-element power basis and its literal minimal polynomial are used. No separate polynomial presentation type is introduced."
+review = "author_checked"

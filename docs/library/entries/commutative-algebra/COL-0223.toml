@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0223"
+title = "Prime normal polynomials stay irreducible or split completely"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 70
+statement = "A monic irreducible polynomial of prime degree with normal root field either remains irreducible or splits completely under any coefficient field extension. Every literal irreducible factor has degree one or exactly the original prime degree."
+scope = "Characteristic-zero base field and arbitrary, possibly infinite, coefficient field extension. Normality concerns the literal original AdjoinRoot field. Scalar factors need not be monic. The exact degree alternative is obtained by restriction of native root-field automorphisms. Package tests construct one polynomial before quantifying over every coefficient field and every scalar factor."
+review = "author_checked"

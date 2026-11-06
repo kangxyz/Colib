@@ -121,9 +121,12 @@ public import Colib.CategoryTheory.Waldhausen.SConstruction.NerveCylinderZero
 public import Colib.CategoryTheory.Waldhausen.SConstruction.WeakGridHomotopy
 public import Colib.CategoryTheory.Waldhausen.SConstruction.WeakNaturalTransformation
 public import Colib.CategoryTheory.Waldhausen.SMap
+public import Colib.FieldTheory.AdjoinRoot.NormalScalar
 public import Colib.FieldTheory.AdjoinRootSplitBranchEmbedding
+public import Colib.FieldTheory.PGroupNormalPrimePresentation
 public import Colib.FieldTheory.PGroupNormalSubfield
 public import Colib.FieldTheory.PGroupNormalSubfieldEmbedding
+public import Colib.FieldTheory.Polynomial.PrimeNormal
 public import Colib.FieldTheory.SylowFixedField
 public import Colib.KTheory.GrothendieckComparison.Factorization
 public import Colib.KTheory.GrothendieckComparison.ObjectLoops

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0222"
+title = "The actual scalar-factor root field is a splitting field"
+kind = "theorem"
+section = "sylow-field-reduction"
+order = 60
+statement = "If a monic irreducible polynomial has a normal root field, the literal AdjoinRoot field of any irreducible factor after scalar extension is a splitting field of the entire mapped polynomial. Native splitting-field normality therefore makes that actual factor root field normal over the new coefficient field."
+scope = "Arbitrary characteristic and arbitrary coefficient field extension, with no finiteness, separability or prime-degree hypothesis. The literal irreducible factor need not be monic. The conclusion uses the existing IsSplittingField and AdjoinRoot objects; normality is supplied by Normal.of_isSplittingField."
+review = "author_checked"

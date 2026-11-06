@@ -6,7 +6,11 @@ python3 -m unittest discover -s scripts -p 'test_*.py'
 python3 scripts/catalog.py check
 # Suppress cached dependency build warnings. Native lint reports remain visible;
 # Colib compilation warnings remain errors through warningAsError in lakefile.toml.
-lake --log-level=error build Colib
+case "${1:-}" in
+  '') lake --log-level=error build Colib ;;
+  --compiled) : ;; # CI has just verified this run's production outputs with native Lake.
+  *) echo 'Usage: scripts/check.sh [--compiled]' >&2; exit 2 ;;
+esac
 lake --log-level=error test
 bash .github/lint/run.sh Colib
 python3 scripts/lint_style.py

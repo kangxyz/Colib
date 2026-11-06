@@ -16,7 +16,12 @@ import lint_style
 class LibraryTests(unittest.TestCase):
     def assert_test_in_checks(self, module, check_path):
         self.assertIn(module, lint_style.source_modules(catalog.ROOT, "ColibTest"))
-        self.assertIn("python3 scripts/lint_style.py", (catalog.ROOT / check_path).read_text())
+        entry = (catalog.ROOT / check_path).read_text()
+        if check_path.endswith('.yml'):
+            self.assertIn('scripts/check.sh', (catalog.ROOT / '.github/ci/test.sh').read_text())
+            self.assertIn('.github/ci/test.sh', entry)
+        else:
+            self.assertIn('python3 scripts/lint_style.py', entry)
 
     def setUp(self):
         self.library = catalog.load_library()

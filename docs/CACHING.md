@@ -1,68 +1,46 @@
 # Compilation caches
 
-The [current Lean CI](../.github/LEAN_CI.md) uses Aglib's optimized checkpoint and
-native staging flow, adapted to Colib's fixed compiler/dependencies and an
-independent Stacks layer.
+The [Lean CI guide](../.github/LEAN_CI.md) owns the three-job execution flow.
+The cache design follows the actual dependency boundary: Mathlib has its official
+cache and Stacks is stored independently.
 
-## Storage boundaries
-
-| Object | Stored content |
+| Object | Contents |
 |---|---|
-| Root checkpoint | `.lake/build` and `.lake/config` for Colib |
-| Dependency checkpoint | Working build/configuration outputs of resolved non-Stacks dependencies |
-| Stacks checkpoint | Working build/configuration outputs of the pinned Stacks package only |
-| Tools checkpoint | Lint/auditor generated outputs and changed non-Stacks dependency outputs |
-| Native publication archive | The verified production stage, with producer repository/revision identity |
+| Colib Actions cache | Colib build/configuration, private lint/auditor builds and small checker-tool output directories |
+| Mathlib upstream cache | Mathlib and its ordinary dependency compilation, acquired through the pinned native cache tool |
+| Independent Stacks checkpoint | Only the pinned Stacks generated build/configuration |
+| Native publication archive | Verified Colib production outputs with producer identity |
 
-Each layer has its own immutable Actions cache key and content generation. Keys
-bind toolchain, platform, resolved manifest and configuration; tool keys also bind
-tool source/pins. Checkpoint archives do not contain dependency sources or Git
-metadata. A mixed `LAKE_CACHE_DIR` content store is never saved as a working
-checkpoint. Native archive validity is checked by Lake against the actual inputs.
+The Colib cache excludes the complete Mathlib build tree, the entire Stacks tree,
+and the mixed native artifact store. Its restore prefixes bind compiler, platform,
+manifest/configuration and the checker implementation. Changed proof sources retain
+compatible incremental output; native `--rehash` decides applicability.
 
-The Stacks checkpoint is excluded from both dependencies and tools. Build saves
-it separately, including useful partial compilation. Cross-runner Test receives
-this run's `build-stacks` independently of `build-dependencies`, then saves any
-additional Stacks outputs in the same independent layer. The Stacks
-acquisition boundary can later fetch an upstream Stacks cache before native
-compilation without changing Colib's root/tool/dependency caches.
+GitHub-hosted Build and Test acquire the official Mathlib cache directly. They do
+not repack a multi-gigabyte Mathlib checkpoint for the next job. Test must consume
+this Build's Colib native archive and independent Stacks archive, verify the
+producer/digests, and pass native `--no-build --rehash` before package checks.
+EC2 retains the same working trees/native store across both jobs and validates the
+handoff identity instead of transferring them. Scope quiescence gates cache saves.
 
-## Reuse and transfer
+Stacks uses its own immutable context/content key and versioned `.tar.zst` integrity
+manifest. A matching compressed checkpoint is reused instead of recompressed.
+Test-only Stacks compilation is saved in the same separate cache. Successful main
+runs publish `stacks-checkpoint-<Stacks revision>-<context>` releases separately
+from `lean-native-<Colib revision>`.
 
-Production sources do not invalidate compatible checkpoint prefixes. Lake's
-native `--rehash` decides applicability. Root and tools restores prefer a
-compatible ref. Dependency and Stacks generations use their content identity.
-The packer checks integrity and coverage, preserves regular generated files,
-and reuses an already validated compressed archive when its content is unchanged.
-
-GitHub-hosted Test must consume the current Build's complete dependency, Stacks
-and root archive overlays, even if optional checkpoint caches hit. EC2 handoff
-retains the working trees/native store and verifies its runner/repository/run
-identity. Both paths verify production outputs before preparing checker tools.
-Checkpoint integrity is a transport check, not a new mathematical proof audit.
-
-The earlier `colib-v2` environment cache contains explicitly selected root and
-non-Stacks package paths. The earlier `stacks-<context>` cache contains only the
-Stacks package. These independent caches can seed the first layered run; the
-optimized workflow does not normally save those source-tree caches.
-
-## Publication and manual exports
-
-After all checks pass, main pushes publish the normal `lean-native-<Colib revision>`
-production archive and a separate `stacks-checkpoint-<Stacks revision>-<context>`
-release. Its `.tar.zst` asset uses the versioned checkpoint manifest and can be
-restored through:
+To import a Stacks checkpoint, materialize the pinned dependency sources first:
 
 ```bash
 python3 .github/ci-cache/checkpoint.py restore --root . --layer stacks \
   --input /path/to/stacks-checkpoint.tar.zst
 ```
 
-Materialize the pinned dependency sources first. A later native build/verification
-checks applicability; a matching archive alone is not a successful compilation.
+A native build/verification still checks applicability. A future upstream Stacks
+provider only needs to replace this acquisition boundary. The existing
+`scripts/stacks_cache.py pack/restore` retains its initial standalone `.tar.gz`
+format for earlier consumers/releases; it is separate from checkpoint archives.
 
-`scripts/stacks_cache.py pack/restore` retains the initial standalone `.tar.gz`
-format for existing consumers and earlier `stacks-native` releases. It verifies
-exact Stacks source revision, dependency/compiler context and artifact digests.
-Those archives are separate from the new checkpoint format. The script's `layout`
-command also owns the independent migration-seed paths and identity.
+The former root checkpoint can seed the first compact run. Former full dependency
+and tools checkpoints are no longer part of the normal pipeline. Their migration
+regression and measured costs are recorded under [performance](PERFORMANCE.md).

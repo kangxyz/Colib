@@ -8,7 +8,7 @@ python3 scripts/catalog.py check
 # Colib compilation warnings remain errors through warningAsError in lakefile.toml.
 lake --log-level=error build Colib
 lake --log-level=error test
-lake --no-build --log-level=error lint Colib
+bash .github/lint/run.sh Colib
 python3 scripts/lint_style.py
 lake exe mathlib/mk_all --lib Colib --check
 

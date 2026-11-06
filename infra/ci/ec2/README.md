@@ -24,6 +24,11 @@ The deployment is deliberately dormant:
 | Scheduled runner binary synchronization | Disabled |
 | EC2 instances and registered Colib runners | None |
 
+`COLIB_EC2_SHARED_HOST=true` prepares the current Aglib-style same-checkout
+Build-to-Test handoff; it cannot admit an EC2 job while the separate self-hosted
+gate is false. [Lean CI](../../../.github/LEAN_CI.md) owns the full optimized
+hosted and self-hosted execution flow.
+
 The repository variable gates both the caller and reusable workflow. Pushes and
 manual dispatches continue to use GitHub-hosted Ubuntu. PRs and non-main revisions
 use GitHub-hosted runners even after activation. The manual profile defaults to
@@ -99,7 +104,9 @@ Activate only when requested. Keep the repository variable false while preparing
    Configure the repository `workflow_job` hook with `terraform output -raw webhook_url`,
    the matching SSM webhook secret, JSON content type and SSL verification, then
    activate the hook. Keep the shared App-wide webhook settings unchanged.
-4. Set `COLIB_SELF_HOSTED_ENABLED=true`, dispatch the main-branch `ec2` profile and
+4. Set `COLIB_SELF_HOSTED_ENABLED=true`. The manual EC2 probe with
+   `verify-handoff=true` checks both jobs see the same runner/workspace. Dispatch
+   the main-branch CI `ec2` profile and
    check the host marker, native checks, separate caches and idle termination.
    Only this trial establishes that the Colib runner actually works.
 

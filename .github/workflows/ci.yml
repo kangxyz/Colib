@@ -2,12 +2,11 @@ name: Colib CI
 
 on:
   push:
-    branches: [main]
   pull_request:
   workflow_dispatch:
     inputs:
       runner-profile:
-        description: Runner profile (EC2 also requires COLIB_SELF_HOSTED_ENABLED)
+        description: Runner profile for this manual CI trial
         type: choice
         options: [hosted, ec2]
         default: hosted
@@ -16,16 +15,26 @@ permissions:
   contents: read
 
 concurrency:
+  # Preserve the existing queue identity when changing the display name.
   group: Colib CI-${{ github.ref }}
   cancel-in-progress: false
+  queue: max
 
 jobs:
   lean:
     permissions:
       contents: write
+      actions: read
     uses: ./.github/workflows/lean-ci.yml
     with:
       package-directory: .
       build-targets: Colib
-      # PRs and non-main revisions always use GitHub-hosted runners.
-      ec2: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) }}
+      # The repo-only autoscaler requires this complete label set.
+      runner-labels: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) && '["self-hosted","linux","x64","colib-ec2"]' || '["ubuntu-24.04"]' }}
+      native-memory-mib: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) && 57344 || 13824 }}
+      lake-threads: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) && 8 || 1 }}
+      lint-workers: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) && 8 || 2 }}
+      job-timeout-minutes: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) && 90 || 360 }}
+      reuse-build-host: ${{ vars.COLIB_EC2_SHARED_HOST == 'true' && vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) }}
+      build-job-timeout-minutes: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) && 240 || 0 }}
+      build-compiler-minutes: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.runner-profile == 'ec2')) && 180 || 0 }}

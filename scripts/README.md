@@ -19,3 +19,6 @@
   text linter through temporary source-only import hubs.
 - `test_lint_style.py` checks inclusion of leaf tests, exclusion of dependencies, and propagation
   of the native linter's exit status.
+
+- `lean_tools/_lint/` carries the full batched declaration-lint adapter from the pinned
+  current Aglib workflow; `.github/lint/run.sh` is its source-checkout entry.

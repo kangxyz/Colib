@@ -19,13 +19,13 @@ class LintScopeTests(unittest.TestCase):
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.touch()
 
-            def native(args, *, cwd, env, check):
+            def native(args, *, cwd, check):
                 self.assertEqual(cwd, root)
-                self.assertEqual(args[-2:], ["Colib.ColibStyleLintInputs",
-                                               "ColibTest.ColibStyleLintInputs"])
-                hubs = Path(env["LEAN_SRC_PATH"].split(":")[0])
-                production = (hubs / "Colib/ColibStyleLintInputs.lean").read_text()
-                tests = (hubs / "ColibTest/ColibStyleLintInputs.lean").read_text()
+                for package, argument in zip(lint_style.PACKAGES, args[-2:]):
+                    self.assertTrue(argument.startswith(package + ".ColibStyleLintInputs"))
+                    self.assertTrue(argument.endswith(".Imports"))
+                production = next((root / "Colib").glob("ColibStyleLintInputs*/Imports.lean")).read_text()
+                tests = next((root / "ColibTest").glob("ColibStyleLintInputs*/Imports.lean")).read_text()
                 self.assertEqual(production, "import Colib\nimport Colib.CategoryTheory.Own\n")
                 self.assertEqual(tests, "import ColibTest.Leaf\n")
                 return subprocess_result
@@ -33,6 +33,7 @@ class LintScopeTests(unittest.TestCase):
             subprocess_result = type("Result", (), {"returncode": 17})()
             with patch.object(lint_style.subprocess, "run", side_effect=native):
                 self.assertEqual(lint_style.main(root), 17)
+            self.assertFalse(list(root.glob("*/ColibStyleLintInputs*")))
 
 
 if __name__ == "__main__":

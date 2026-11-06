@@ -1,49 +1,68 @@
-# Independent Stacks dependency artifacts
+# Compilation caches
 
-Colib keeps three artifact sources with separate identities.
+The [current Lean CI](../.github/LEAN_CI.md) uses Aglib's optimized checkpoint and
+native staging flow, adapted to Colib's fixed compiler/dependencies and an
+independent Stacks layer.
 
-| Layer | Identity and storage |
-| --- | --- |
-| Mathlib | Its exact manifest pin and official module cache, acquired by scripts/cache.sh |
-| Stacks | A dedicated Actions cache for .lake/packages/Stacks, with an exact pinned dependency/toolchain/platform context |
-| Colib and other environment outputs | Explicit root/configuration/tool paths and the non-Stacks packages, selected by scripts/stacks_cache.py layout |
+## Storage boundaries
 
-The common Actions cache includes neither the Stacks package directory nor the mixed native
-content store. The native store remains a build-local working directory. Colib's checked
-native mappings are staged and published through the existing native cache release path.
+| Object | Stored content |
+|---|---|
+| Root checkpoint | `.lake/build` and `.lake/config` for Colib |
+| Dependency checkpoint | Working build/configuration outputs of resolved non-Stacks dependencies |
+| Stacks checkpoint | Working build/configuration outputs of the pinned Stacks package only |
+| Tools checkpoint | Lint/auditor generated outputs and changed non-Stacks dependency outputs |
+| Native publication archive | The verified production stage, with producer repository/revision identity |
 
-Stacks also has an independent artifact-only archive. It contains its selected .lake/build
-files and metadata with the Stacks revision, all resolved dependency pins, toolchain, platform
-and per-file digests. Successful native CI publishes this archive under a separate
-`stacks-native-…` release tag. The archive contains the compiled import closure selected by
-Colib at that producer revision.
+Each layer has its own immutable Actions cache key and content generation. Keys
+bind toolchain, platform, resolved manifest and configuration; tool keys also bind
+tool source/pins. Checkpoint archives do not contain dependency sources or Git
+metadata. A mixed `LAKE_CACHE_DIR` content store is never saved as a working
+checkpoint. Native archive validity is checked by Lake against the actual inputs.
 
-## Export and import
+The Stacks checkpoint is excluded from both dependencies and tools. Build saves
+it separately, including useful partial compilation. Cross-runner Test receives
+this run's `build-stacks` independently of `build-dependencies`, then saves any
+additional Stacks outputs in the same independent layer. The Stacks
+acquisition boundary can later fetch an upstream Stacks cache before native
+compilation without changing Colib's root/tool/dependency caches.
 
-After a selected native build has completed, export its Stacks artifacts.
+## Reuse and transfer
 
-```sh
-python3 scripts/stacks_cache.py pack build/stacks-native-cache.tar.gz
+Production sources do not invalidate compatible checkpoint prefixes. Lake's
+native `--rehash` decides applicability. Root and tools restores prefer a
+compatible ref. Dependency and Stacks generations use their content identity.
+The packer checks integrity and coverage, preserves regular generated files,
+and reuses an already validated compressed archive when its content is unchanged.
+
+GitHub-hosted Test must consume the current Build's complete dependency, Stacks
+and root archive overlays, even if optional checkpoint caches hit. EC2 handoff
+retains the working trees/native store and verifies its runner/repository/run
+identity. Both paths verify production outputs before preparing checker tools.
+Checkpoint integrity is a transport check, not a new mathematical proof audit.
+
+The earlier `colib-v2` environment cache contains explicitly selected root and
+non-Stacks package paths. The earlier `stacks-<context>` cache contains only the
+Stacks package. These independent caches can seed the first layered run; the
+optimized workflow does not normally save those source-tree caches.
+
+## Publication and manual exports
+
+After all checks pass, main pushes publish the normal `lean-native-<Colib revision>`
+production archive and a separate `stacks-checkpoint-<Stacks revision>-<context>`
+release. Its `.tar.zst` asset uses the versioned checkpoint manifest and can be
+restored through:
+
+```bash
+python3 .github/ci-cache/checkpoint.py restore --root . --layer stacks \
+  --input /path/to/stacks-checkpoint.tar.zst
 ```
 
-Restore a downloaded matching archive through the dependency boundary.
+Materialize the pinned dependency sources first. A later native build/verification
+checks applicability; a matching archive alone is not a successful compilation.
 
-```sh
-python3 scripts/stacks_cache.py restore build/stacks-native-cache.tar.gz
-lake build --rehash Colib
-```
-
-Import validates the complete identity and archive before installing files under the Stacks
-build directory. It rejects mismatched pins, platforms, unsafe paths and damaged artifacts.
-The ordinary native build decides artifact applicability against the actual sources and options.
-Archive restoration retains its producer identity and selected scope.
-
-## Future upstream service
-
-An upstream Stacks cache can be acquired at the existing Stacks restore step and installed in
-its own dependency build directory. Its adapter will follow the upstream service's actual
-format and compatibility contract. Mathlib acquisition, Colib caches and the native
-build/test/lint/axiom checks use their existing boundaries.
-
-The initial Actions cache also retains the Stacks source checkout for efficient cold-run
-preparation. The separately published archive contains build artifacts only.
+`scripts/stacks_cache.py pack/restore` retains the initial standalone `.tar.gz`
+format for existing consumers and earlier `stacks-native` releases. It verifies
+exact Stacks source revision, dependency/compiler context and artifact digests.
+Those archives are separate from the new checkpoint format. The script's `layout`
+command also owns the independent migration-seed paths and identity.

@@ -1,4 +1,4 @@
-# Adapted from kangxyz/aglib 2c34f185 portable native CI.
+# Adapted from kangxyz/aglib 1943d6eee4976a2d3a01b55e76d6d5890130ee63.
 # Minimal adaptation of mathlib4 d13f23b7 build_template.yml.
 name: Lean CI
 
@@ -11,61 +11,307 @@ on:
       build-targets:
         type: string
         required: true
-      ec2:
-        description: Use the separately provisioned Colib EC2 runner lane
+      check-targets:
+        type: string
+        default: ''
+      runner-labels:
+        type: string
+        default: '["ubuntu-24.04"]'
+      reuse-build-host:
         type: boolean
         default: false
-      check-targets:
+      native-memory-mib:
+        type: number
+        default: 13824
+      lake-threads:
+        type: number
+        default: 1
+      build-lake-threads:
+        type: number
+        default: 0
+      lint-workers:
+        type: number
+        default: 2
+      job-timeout-minutes:
+        type: number
+        default: 360
+      build-job-timeout-minutes:
+        type: number
+        default: 0
+      build-compiler-minutes:
+        type: number
+        default: 0
+      first-ci-cache:
         type: string
         default: ''
 
 permissions:
   contents: read
+  actions: read
 
 env:
   LAKE_NO_CACHE: 'true'
   LAKE_ARTIFACT_CACHE: 'true'
   BUILD_TARGETS: ${{ inputs.build-targets }}
 
+# Keep compiler failures inside the scope so the runner can save partial caches.
+defaults:
+  run:
+    shell: >-
+      bash --noprofile --norc -e -o pipefail -c
+      "ci_memory_mb=$(( $(getconf _PHYS_PAGES) * $(getconf PAGE_SIZE) / 1048576 - 2048 ));
+      if test \"$ci_memory_mb\" -gt 13824; then ci_memory_mb=13824; fi;
+      printf \"Native resources: group=%s MiB, Lake threads=1, CPUs=%s\n\" \"$ci_memory_mb\" \"$(nproc)\";
+      scope_dir=\"$RUNNER_TEMP/lean-ci-scopes/$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$GITHUB_JOB\";
+      scope=\"lean-ci-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$GITHUB_JOB-$(printf '%s' \"$0\" | sha256sum | cut -c1-20).scope\";
+      mkdir -p \"$scope_dir\"; printf '%s\n' \"$scope\" > \"$scope_dir/$scope\";
+      exec sudo --preserve-env systemd-run --scope --quiet --collect
+      --unit=\"$scope\"
+      --uid=\"$(id -u)\" --gid=\"$(id -g)\"
+      --property=\"MemoryMax=$ci_memory_mb\"M --property=MemorySwapMax=0
+      /usr/bin/env \"PATH=$PATH\" LEAN_NUM_THREADS=1
+      /bin/bash --noprofile --norc -eo pipefail \"$0\"" "{0}"
+
 jobs:
   build:
     name: Build
-    timeout-minutes: ${{ inputs.ec2 && 240 || 360 }}
-    runs-on: ${{ inputs.ec2 && vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && fromJSON('["self-hosted","linux","x64","colib-ec2"]') || fromJSON('["ubuntu-24.04"]') }}
+    runs-on: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && fromJSON(inputs.runner-labels) || fromJSON('["ubuntu-24.04"]') }}
+    timeout-minutes: ${{ inputs.build-job-timeout-minutes != 0 && inputs.build-job-timeout-minutes || inputs.job-timeout-minutes }}
+    env: &native-resource-env
+      CI_NATIVE_MEMORY_MIB: ${{ inputs.native-memory-mib }}
+      CI_LAKE_THREADS: ${{ inputs.lake-threads }}
+      CI_LINT_WORKERS: ${{ inputs.lint-workers }}
+    defaults: &native-resource-defaults
+      run:
+        shell: >-
+          bash --noprofile --norc -e -o pipefail -c
+          "for ci_resource in \"$CI_NATIVE_MEMORY_MIB\" \"$CI_LAKE_THREADS\" \"$CI_LINT_WORKERS\"; do
+          if ! [[ \"$ci_resource\" =~ ^[1-9][0-9]*$ ]]; then
+          echo '::error::native-memory-mib, lake-threads and lint-workers must be positive integers.' >&2; exit 2; fi; done;
+          ci_available_mb=$(( $(getconf _PHYS_PAGES) * $(getconf PAGE_SIZE) / 1048576 - 2048 ));
+          if test \"$ci_available_mb\" -le 0; then
+          echo '::error::Physical RAM must exceed the 2048 MiB runner reserve.' >&2; exit 2; fi;
+          ci_memory_mb=$CI_NATIVE_MEMORY_MIB;
+          ci_memory_digits=$(printf '%s' \"$ci_memory_mb\" | wc -c);
+          ci_available_digits=$(printf '%s' \"$ci_available_mb\" | wc -c);
+          if test \"$ci_memory_digits\" -gt \"$ci_available_digits\" ||
+          test \"$ci_memory_mb\" -gt \"$ci_available_mb\"; then ci_memory_mb=$ci_available_mb; fi;
+          printf \"Native resources: group=%s MiB, Lake threads=%s, lint workers=%s, CPUs=%s\n\" \"$ci_memory_mb\" \"$CI_LAKE_THREADS\" \"$CI_LINT_WORKERS\" \"$(nproc)\";
+          scope_dir=\"$RUNNER_TEMP/lean-ci-scopes/$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$GITHUB_JOB\";
+          scope=\"lean-ci-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$GITHUB_JOB-$(printf '%s' \"$0\" | sha256sum | cut -c1-20).scope\";
+          mkdir -p \"$scope_dir\"; printf '%s\n' \"$scope\" > \"$scope_dir/$scope\";
+          exec sudo --preserve-env systemd-run --scope --quiet --collect
+          --unit=\"$scope\"
+          --uid=\"$(id -u)\" --gid=\"$(id -g)\"
+          --property=\"MemoryMax=$ci_memory_mb\"M --property=MemorySwapMax=0
+          /usr/bin/env \"PATH=$PATH\" \"LEAN_NUM_THREADS=$CI_LAKE_THREADS\" \"CI_LINT_WORKERS=$CI_LINT_WORKERS\"
+          /bin/bash --noprofile --norc -eo pipefail \"$0\"" "{0}"
     outputs:
       outcome: ${{ steps.build.outcome }}
       cache-key: ${{ steps.restore.outputs.cache-primary-key }}
-      stacks-cache-key: ${{ steps.restore-stacks.outputs.cache-primary-key }}
       staged: ${{ steps.stage.outputs.staged }}
+      local-handoff: ${{ steps.handoff-mode.outputs.enabled }}
+      host-runner: ${{ runner.name }}
+      root-generation: ${{ steps.pack-root.outputs.generation }}
+      stage-sha: ${{ steps.seal.outputs.stage-sha }}
     steps:
+      - name: Set Build deadline
+        shell: bash
+        env:
+          JOB_TIMEOUT_MINUTES: ${{ inputs.job-timeout-minutes }}
+          BUILD_JOB_TIMEOUT_MINUTES: ${{ inputs.build-job-timeout-minutes }}
+          REQUESTED_COMPILER_MINUTES: ${{ inputs.build-compiler-minutes }}
+        run: |
+          job_minutes=${BUILD_JOB_TIMEOUT_MINUTES:-0}
+          if test "$job_minutes" = 0; then job_minutes=$JOB_TIMEOUT_MINUTES; fi
+          reserve=30
+          if ! [[ "$job_minutes" =~ ^[1-9][0-9]*$ ]] || ! test "$job_minutes" -gt "$reserve"; then
+            echo "::error::Effective Build job timeout must be an integer greater than $reserve." >&2
+            exit 2
+          fi
+          budget_minutes=$((job_minutes - reserve))
+          compiler_minutes=${REQUESTED_COMPILER_MINUTES:-0}
+          if test "$compiler_minutes" != 0; then
+            if ! [[ "$compiler_minutes" =~ ^[1-9][0-9]*$ ]] || ! test "$compiler_minutes" -le "$budget_minutes"; then
+              echo '::error::build-compiler-minutes must be 0 or a positive integer within the cache-safe Build budget.' >&2
+              exit 2
+            fi
+          else
+            compiler_minutes=$budget_minutes
+          fi
+          echo "BUILD_COMPILER_MINUTES=$compiler_minutes" >> "$GITHUB_ENV"
+          echo "BUILD_DEADLINE=$(( $(date +%s) + budget_minutes * 60 ))" >> "$GITHUB_ENV"
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - name: Check the Colib EC2 host
-        if: ${{ runner.environment == 'self-hosted' }}
+      - name: Start native resource sampler
+        continue-on-error: true
+        timeout-minutes: 1
         shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          JOB_TIMEOUT_MINUTES: ${{ inputs.build-job-timeout-minutes != 0 && inputs.build-job-timeout-minutes || inputs.job-timeout-minutes }}
+          CI_RESOURCE_RUNNER_LABELS: ${{ inputs.runner-labels }}
         run: |
-          test "$(cat /etc/colib-ci-runner-mode)" = colib-ci-runner-v1
-          echo 'LEAN_NUM_THREADS=8' >> "$GITHUB_ENV"
-          sudo systemctl restart colib-ci-expiry.timer
-      - run: echo "LAKE_CACHE_DIR=$RUNNER_TEMP/lake-native-cache" >> "$GITHUB_ENV"
+          if test -f .github/ci-resource-monitor.py; then
+            python3 .github/ci-resource-monitor.py start --minutes "$JOB_TIMEOUT_MINUTES"
+          fi
       - name: Select independent cache paths
         id: cache-layout
         working-directory: ${{ inputs.package-directory }}
         run: python3 scripts/stacks_cache.py layout --github-output "$GITHUB_OUTPUT"
-      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
-        id: restore
+      - name: Select layered cache support
+        id: cache-mode
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
+        run: |
+          test -z "$FIRST_CI_CACHE" || { echo '::error::The Aglib-specific promotion seed is not a Colib cache.'; exit 2; }
+          python3 .github/ci-cache/checkpoint.py supported --root .
+          echo 'layered=true' >> "$GITHUB_OUTPUT"
+          python3 .github/ci-cache/checkpoint.py context --root . --github-output "$GITHUB_OUTPUT"
+      - name: Select native cache directory
+        id: handoff-mode
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          REUSE: ${{ inputs.reuse-build-host }}
+          LAYERED: ${{ steps.cache-mode.outputs.layered }}
+        run: |
+          native="$RUNNER_TEMP/lake-native-cache"
+          if test "$REUSE" = true && test "$LAYERED" = true; then
+            if ! grep -Fxq 'colib-ci-runner-v1' /etc/colib-ci-runner-mode; then
+              echo '::error::Runner has not been provisioned for same-host CI.'
+              exit 1
+            fi
+            sudo systemctl restart colib-ci-expiry.timer
+            if test -L .lake; then
+              echo '::error::Expected a runner-owned .lake directory.'
+              exit 1
+            fi
+            handoff="$PWD/.lake/ci-host-handoff"
+            rm -rf -- "$handoff"
+            mkdir -p "$handoff"
+            native="$handoff/native-cache"
+            echo 'enabled=true' >> "$GITHUB_OUTPUT"
+          fi
+          printf 'LAKE_CACHE_DIR=%s\n' "$native" >> "$GITHUB_ENV"
+      - name: First promoted-main cache/resource/source gate
+        id: first-ci
+        if: ${{ inputs.first-ci-cache != '' }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
+        run: python3 .github/cache-promotion/promotion.py first-ci
+      - name: Restore optional dependencies checkpoint
+        id: restore-dependencies
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        continue-on-error: true
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: ${{ steps.cache-layout.outputs.environment-paths }}
-          key: colib-v2-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles(format('{0}/lean-toolchain', inputs.package-directory), format('{0}/lake-manifest.json', inputs.package-directory)) }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
-          restore-keys: colib-v2-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles(format('{0}/lean-toolchain', inputs.package-directory), format('{0}/lake-manifest.json', inputs.package-directory)) }}-
-      - name: Restore the pinned Stacks dependency
+          path: ${{ runner.temp }}/layered-cache/dependencies.tar.zst
+          key: colib-layered-v2-dependencies-${{ steps.cache-mode.outputs.dependencies_context }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            colib-layered-v2-dependencies-${{ steps.cache-mode.outputs.dependencies_context }}-
+      - name: Restore optional Stacks checkpoint
         id: restore-stacks
+        continue-on-error: true
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          key: colib-layered-v2-stacks-${{ steps.cache-mode.outputs.stacks_context }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: colib-layered-v2-stacks-${{ steps.cache-mode.outputs.stacks_context }}-
+      - name: Restore the earlier independent Stacks seed
+        if: ${{ steps.restore-stacks.outputs.cache-matched-key == '' }}
+        continue-on-error: true
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
           path: ${{ steps.cache-layout.outputs.stacks-path }}
           key: stacks-${{ steps.cache-layout.outputs.stacks-context }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: stacks-${{ steps.cache-layout.outputs.stacks-context }}-
+      - name: Restore optional root checkpoint
+        id: restore-root
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        continue-on-error: true
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/root.tar.zst
+          key: colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}-build
+          restore-keys: |
+            colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-
+            colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-
+      - name: Restore optional tools checkpoint
+        id: restore-tools
+        if: ${{ steps.handoff-mode.outputs.enabled == 'true' }}
+        continue-on-error: true
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with: &tools-checkpoint-cache
+          path: ${{ runner.temp }}/layered-cache/tools.tar.zst
+          key: colib-layered-v2-tools-${{ steps.cache-mode.outputs.tools_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            colib-layered-v2-tools-${{ steps.cache-mode.outputs.tools_context }}-${{ github.ref }}-
+            colib-layered-v2-tools-${{ steps.cache-mode.outputs.tools_context }}-
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        if: ${{ steps.cache-mode.outputs.layered != 'true' || steps.restore-dependencies.outcome != 'success' || steps.restore-root.outcome != 'success' || steps.restore-dependencies.outputs.cache-matched-key == '' || steps.restore-root.outputs.cache-matched-key == '' }}
+        id: restore
+        continue-on-error: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        with:
+          path: ${{ steps.cache-layout.outputs.environment-paths }}
+          key: colib-v2-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles(format('{0}/lean-toolchain', inputs.package-directory), format('{0}/lake-manifest.json', inputs.package-directory)) }}-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          fail-on-cache-miss: ${{ inputs.first-ci-cache != '' }}
+          # Colib's earlier independent cache is a migration seed only.
+          restore-keys: |
+            colib-v2-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles(format('{0}/lean-toolchain', inputs.package-directory), format('{0}/lake-manifest.json', inputs.package-directory)) }}-
+      - name: Revalidate layered support after migration restore
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: python3 .github/ci-cache/checkpoint.py supported --root .
+      - name: Require exact full main seed for first Build
+        if: ${{ inputs.first-ci-cache != '' }}
+        env:
+          HIT: ${{ steps.restore.outputs.cache-hit }}
+          MATCHED: ${{ steps.restore.outputs.cache-matched-key }}
+          EXPECTED: ${{ steps.first-ci.outputs.seed-key }}
+        run: test "$HIT" = true && test "$MATCHED" = "$EXPECTED"
+      - name: Remove read-only restored archive hash sidecars
+        working-directory: ${{ inputs.package-directory }}
+        run: &restore-writable-archive-hashes |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          import stat
+
+          # Lake rewrites these derived hashes, even when the artifact is immutable.
+          # Unlink the sidecar instead of changing permissions on shared cache inodes.
+          def owned_directory(path):
+              metadata = path.lstat()
+              if (not stat.S_ISDIR(metadata.st_mode) or metadata.st_uid != os.getuid()
+                      or not metadata.st_mode & stat.S_IWUSR):
+                  raise SystemExit(f'Unsafe restored build directory: {path}')
+
+          root = Path('.lake/build/ir')
+          for parent in (Path('.lake'), Path('.lake/build'), root):
+              try:
+                  owned_directory(parent)
+              except FileNotFoundError:
+                  raise SystemExit(0)
+          removed = 0
+          for directory, children, files in os.walk(root, followlinks=False):
+              owned_directory(Path(directory))
+              children[:] = [name for name in children
+                             if not (Path(directory) / name).is_symlink()]
+              for name in files:
+                  if not name.endswith('.ltar.hash'):
+                      continue
+                  path = Path(directory) / name
+                  metadata = path.lstat()
+                  if stat.S_ISREG(metadata.st_mode) and not metadata.st_mode & stat.S_IWUSR:
+                      if metadata.st_uid != os.getuid():
+                          raise SystemExit(f'Foreign restored archive hash sidecar: {path}')
+                      path.unlink()
+                      removed += 1
+          print(f'Removed {removed} read-only restored archive hash sidecars; Lake will recompute them.')
+          PY
       - name: Configure Lean
         id: lean-setup
         working-directory: ${{ inputs.package-directory }}
@@ -93,108 +339,501 @@ jobs:
           done
           echo '::error::Lean toolchain acquisition failed after 3 attempts.'
           exit 1
+      - name: First-main native no-build readiness before cache tools or production build
+        if: ${{ inputs.first-ci-cache != '' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: bash .github/cache-promotion/ready.sh
       - name: Get Mathlib cache
         working-directory: ${{ inputs.package-directory }}
-        run: bash scripts/cache.sh
-      - name: Check Library metadata
+        run: &mathlib-cache-get lake exe cache get
+      - name: Restore published native dependency caches
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LAYERED_CACHE: ${{ steps.cache-mode.outputs.layered }}
+        run: |
+          compiler=$(lean --version)
+          domain="$RUNNER_OS-$RUNNER_ARCH-$(sha256sum lean-toolchain | cut -c 1-16)"
+          while IFS=$'\t' read -r package repository pin; do
+            exact=$(gh api "repos/$repository/releases/tags/lean-native-$pin" 2>/dev/null) || exact=null
+            recent=$(gh api "repos/$repository/releases?per_page=20" 2>/dev/null) || recent='[]'
+            candidates=$(printf '%s' "$recent" | jq -r --argjson exact "$exact" --arg domain "$domain" '
+              [([$exact] + (map(select(.id != $exact.id)) | sort_by(.published_at) | reverse))[] | select(.draft == false)
+              | select(.tag_name | test("^lean-native-[0-9a-f]{40}$"))
+              | select(.target_commitish == (.tag_name | ltrimstr("lean-native-")))
+              | .tag_name as $tag | (.assets | sort_by(.created_at) | reverse)[]
+              | select((.name | startswith("lake-native-cache-" + $domain + "-"))
+                  or (.name | test("^lake-native-cache-[0-9]+-[0-9]+[.]tar$")))
+              | [$tag, .name]][:5][] | @tsv') || candidates=''
+            imported=false
+            while IFS=$'\t' read -r tag asset; do
+              test -n "$tag" || continue
+              temporary=$(mktemp -d "$RUNNER_TEMP/native-seed.XXXXXX")
+              if gh release download "$tag" --repo "$repository" --pattern "$asset" --dir "$temporary"; then
+                archive="$temporary/$asset"
+                # Native staging contains flat regular files, never links or nested paths.
+                if tar -tvf "$archive" | awk 'substr($1,1,1)!="-" && !(substr($1,1,1)=="d" && $NF=="./") {exit 1}' &&
+                    tar -tf "$archive" | awk '!/^(\.\/)?$|^(\.\/)?(outputs[.]jsonl|producer[.]json|[0-9a-f]{16}([.][A-Za-z0-9_.+-]+)?)$/ {bad=1} END {exit bad}'; then
+                  mkdir "$temporary/staged"
+                  if tar -xf "$archive" -C "$temporary/staged"; then
+                    compatible=false
+                    if test -f "$temporary/staged/producer.json"; then
+                      if jq -e --arg repository "$repository" --arg revision "${tag#lean-native-}" \
+                          --arg package "${package#«}" --arg domain "$domain" --arg compiler "$compiler" '
+                          .repository == $repository and .revision == $revision
+                          and .package == ($package | rtrimstr("»"))
+                          and .domain == $domain and .compiler == $compiler' \
+                          "$temporary/staged/producer.json" >/dev/null; then compatible=true; fi
+                    elif [[ "$asset" =~ ^lake-native-cache-[0-9]+-[0-9]+[.]tar$ ]]; then
+                      echo "$package: legacy native seed; current Lake inputs decide applicability."
+                      compatible=true
+                    fi
+                    if "$compatible" && test "${LAYERED_CACHE:-}" = true && test -f .github/ci-cache/stage.py; then
+                      if ! python3 .github/ci-cache/stage.py verify --root . --staging "$temporary/staged"; then
+                        echo "$package: invalid native module archive; skipping this optional producer."
+                        compatible=false
+                      fi
+                    fi
+                    if "$compatible" && lake cache unstage "$temporary/staged" "$package"; then
+                      echo "$package: imported $repository producer ${tag#lean-native-} for pin $pin."
+                      imported=true
+                    fi
+                  fi
+                fi
+              fi
+              rm -rf "$temporary"
+              "$imported" && break
+            done <<< "$candidates"
+            "$imported" || echo "$package: no compatible published cache; ordinary incremental build."
+          done < <(jq -r '.packages[] | select(.type == "git")
+            | select(.url | test("^https://github[.]com/kangxyz/[^/]+/?$"))
+            | select(.rev | test("^[0-9a-f]{40}$"))
+            | [.name, (.url | sub("^https://github[.]com/"; "") | sub("[.]git/?$"; "") | rtrimstr("/")), .rev]
+            | @tsv' lake-manifest.json)
+      - name: Validate materialized layered dependencies
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: python3 .github/ci-cache/checkpoint.py supported --root . --materialized
+      - name: Apply optional compilation checkpoints
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          for layer in tools dependencies stacks root; do
+            archive="$RUNNER_TEMP/layered-cache/$layer.tar.zst"
+            if test -f "$archive"; then
+              if ! python3 .github/ci-cache/checkpoint.py restore --root . --layer "$layer" \
+                  --input "$archive" --native-cache "$LAKE_CACHE_DIR"; then
+                echo "::warning::Optional $layer checkpoint could not be restored; current inputs will be rebuilt or verified."
+              fi
+            fi
+          done
+      - name: Refresh archive hash metadata after cache preparation
+        working-directory: ${{ inputs.package-directory }}
+        run: *restore-writable-archive-hashes
+      - name: Check Library and CI metadata
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 -m unittest discover -s scripts -p 'test_*.py'
+          python3 -m unittest discover -s .github/ci-cache -p 'test_*.py'
           python3 scripts/catalog.py check
       - name: Build
         id: build
         continue-on-error: true
         working-directory: ${{ inputs.package-directory }}
+        env:
+          CI_LAKE_THREADS: ${{ inputs.build-lake-threads != 0 && inputs.build-lake-threads || inputs.lake-threads }}
         run: |
           read -r -a targets <<< "$BUILD_TARGETS"
           if test "${#targets[@]}" -eq 0; then
             echo '::error::build-targets must name at least one production root.'
             exit 1
           fi
-          lake --log-level=error build "${targets[@]}" -o "$RUNNER_TEMP/outputs.jsonl"
-      - name: Save compilation independently of Test and lint
+          rm -f "$RUNNER_TEMP/outputs.jsonl"
+          remaining=$((BUILD_DEADLINE - $(date +%s)))
+          if test "$remaining" -le 0; then
+            echo '::warning::Preparation used the safe compilation window. No new compilation checkpoint will be created.'
+            exit 124
+          fi
+          compiler_seconds=$((BUILD_COMPILER_MINUTES * 60))
+          if test "$remaining" -lt "$compiler_seconds"; then compiler_seconds=$remaining; fi
+          echo 'attempted=true' >> "$GITHUB_OUTPUT"
+          if timeout --signal=INT --kill-after=60s "${compiler_seconds}s" lake --log-level=error build --rehash "${targets[@]}" -o "$RUNNER_TEMP/outputs.jsonl"; then
+            exit 0
+          else
+            status=$?
+          fi
+          if test "$status" -eq 124 || test "$status" -eq 137; then
+            echo "::warning::Build stopped with timeout/kill status $status at the job's compiler cutoff. Partial outputs will be saved where possible by the following cache steps; rerun this branch to resume the incremental build."
+          fi
+          exit "$status"
+      - name: Quiesce this job's native scopes before cache saving
+        id: quiesce
         if: ${{ always() }}
+        timeout-minutes: 3
+        shell: bash
+        run: &quiesce-native-scopes |
+          # Cancellation can end systemd-run while Lake/Lean remain in its scope.
+          # Stop only units recorded by this exact run/attempt/job; never scan PIDs.
+          prefix="lean-ci-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$GITHUB_JOB-"
+          directory="$RUNNER_TEMP/lean-ci-scopes/$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$GITHUB_JOB"
+          test ! -L "$directory"
+          shopt -s nullglob
+          for marker in "$directory"/*.scope; do
+            test -f "$marker" && test ! -L "$marker"
+            unit=$(basename "$marker")
+            case "$unit" in
+              "$prefix"*.scope) ;;
+              *) echo "::error::Unexpected native scope marker: $unit"; exit 1 ;;
+            esac
+            test "$(cat "$marker")" = "$unit"
+            load=$(sudo systemctl show --property=LoadState --value -- "$unit")
+            if test "$load" = not-found; then
+              continue  # --collect already removed a scope whose processes exited.
+            fi
+            # No --no-block: cache readers must wait for the scope's processes.
+            if ! sudo systemctl stop -- "$unit"; then
+              # A naturally exiting --collect scope can disappear after show.
+              load=$(sudo systemctl show --property=LoadState --value -- "$unit")
+              if test "$load" = not-found; then continue; fi
+              echo "::error::Could not stop native scope: $unit"
+              exit 1
+            fi
+            state=$(sudo systemctl show --property=ActiveState --value -- "$unit")
+            if test "$state" != inactive; then
+              echo "::error::Native scope did not quiesce: $unit ($state)"
+              exit 1
+            fi
+          done
+      - name: Save compilation independently of Test and lint
+        if: ${{ inputs.first-ci-cache == '' && steps.cache-mode.outputs.layered != 'true' && always() && steps.quiesce.outcome == 'success' && steps.build.outputs.attempted == 'true' }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
           path: ${{ steps.cache-layout.outputs.environment-paths }}
           key: ${{ steps.restore.outputs.cache-primary-key }}
-      - name: Save Stacks independently of Colib compilation
-        if: ${{ always() }}
-        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
-        with:
-          path: ${{ steps.cache-layout.outputs.stacks-path }}
-          key: ${{ steps.restore-stacks.outputs.cache-primary-key }}
-      - name: Pack the selected Stacks artifacts
-        if: ${{ steps.build.outcome == 'success' }}
-        working-directory: ${{ inputs.package-directory }}
-        run: python3 scripts/stacks_cache.py pack "$RUNNER_TEMP/stacks-native-cache.tar.gz"
-      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
-        if: ${{ steps.build.outcome == 'success' }}
-        with:
-          name: stacks-cache-staging
-          path: ${{ runner.temp }}/stacks-native-cache.tar.gz
-          compression-level: 0
       - name: Stage completed native outputs
         id: stage
-        if: ${{ always() && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') }}
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.build.outputs.attempted == 'true' && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') }}
         working-directory: ${{ inputs.package-directory }}
+        env:
+          FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
+          LAYERED_CACHE: ${{ steps.cache-mode.outputs.layered }}
         run: |
           if test -s "$RUNNER_TEMP/outputs.jsonl"; then
-            lake cache stage "$RUNNER_TEMP/outputs.jsonl" "$RUNNER_TEMP/cache-staging"
+            if test -n "$FIRST_CI_CACHE"; then python3 .github/cache-promotion/ci-resources.py stage-copy; fi
+            if test "${LAYERED_CACHE:-}" = true && test -f .github/ci-cache/stage.py; then
+              read -r -a targets <<< "$BUILD_TARGETS"
+              arguments=()
+              for target in "${targets[@]}"; do arguments+=(--build-target "$target"); done
+              python3 .github/ci-cache/stage.py prepare --root . \
+                --mapping "$RUNNER_TEMP/outputs.jsonl" --staging "$RUNNER_TEMP/cache-staging" \
+                --native-cache "$LAKE_CACHE_DIR" "${arguments[@]}" \
+                --report "$RUNNER_TEMP/native-stage-validation.json"
+            else
+              lake cache stage "$RUNNER_TEMP/outputs.jsonl" "$RUNNER_TEMP/cache-staging"
+            fi
+            domain="$RUNNER_OS-$RUNNER_ARCH-$(sha256sum lean-toolchain | cut -c 1-16)"
+            package=$(python3 -c 'import tomllib; print(tomllib.load(open("lakefile.toml", "rb"))["name"])')
+            jq -n --arg repository "$GITHUB_REPOSITORY" --arg revision "$GITHUB_SHA" \
+              --arg package "$package" --arg domain "$domain" --arg compiler "$(lean --version)" \
+              '{repository: $repository, revision: $revision, package: $package, domain: $domain, compiler: $compiler}' \
+              > "$RUNNER_TEMP/cache-staging/producer.json"
+            if test -n "$FIRST_CI_CACHE"; then python3 .github/cache-promotion/ci-resources.py stage-tar; fi
             tar -cf "$RUNNER_TEMP/lake-native-cache.tar" -C "$RUNNER_TEMP/cache-staging" .
             echo 'staged=true' >> "$GITHUB_OUTPUT"
           fi
+      - name: Quiesce native staging before checkpoints
+        id: staging-quiesce
+        if: ${{ always() && steps.cache-mode.outputs.layered == 'true' }}
+        timeout-minutes: 3
+        shell: bash
+        run: *quiesce-native-scopes
+      - name: Upload native staging diagnostics
+        if: ${{ always() && steps.cache-mode.outputs.layered == 'true' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: native-stage-validation
+          overwrite: true
+          path: ${{ runner.temp }}/native-stage-validation.json
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 7
+      - name: Pack completed root checkpoint
+        id: pack-root
+        if: ${{ always() && steps.cache-mode.outputs.layered == 'true' && steps.quiesce.outcome == 'success' && steps.build.outputs.attempted == 'true' && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') && steps.staging-quiesce.outcome == 'success' }}
+        shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          python3 .github/ci-cache/checkpoint.py pack --root . --layer root \
+            --output "$RUNNER_TEMP/layered-cache/root.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --github-output "$GITHUB_OUTPUT"
+      - name: Save completed root checkpoint
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-root.outcome == 'success' && steps.build.outputs.attempted == 'true' && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') && steps.staging-quiesce.outcome == 'success' }}
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/root.tar.zst
+          key: colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}-build
+      - name: Pack completed dependencies checkpoint
+        id: pack-dependencies
+        if: ${{ always() && steps.cache-mode.outputs.layered == 'true' && steps.quiesce.outcome == 'success' && steps.build.outputs.attempted == 'true' && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') && steps.staging-quiesce.outcome == 'success' }}
+        shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          python3 .github/ci-cache/checkpoint.py pack --root . --layer dependencies \
+            --output "$RUNNER_TEMP/layered-cache/dependencies.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --metadata "$PWD/.lake/ci-cache/dependencies.json" \
+            --github-output "$GITHUB_OUTPUT"
+      - name: Save completed dependencies checkpoint
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-dependencies.outcome == 'success' && (steps.pack-dependencies.outputs.changed == 'true' || steps.restore-dependencies.outputs.cache-matched-key == '') && steps.build.outputs.attempted == 'true' && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') && steps.staging-quiesce.outcome == 'success' }}
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/dependencies.tar.zst
+          key: colib-layered-v2-dependencies-${{ steps.cache-mode.outputs.dependencies_context }}-${{ steps.pack-dependencies.outputs.generation }}
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
-        if: ${{ always() && steps.stage.outputs.staged == 'true' }}
+        if: ${{ always() && steps.handoff-mode.outputs.enabled != 'true' && steps.stage.outputs.staged == 'true' }}
         with:
           name: cache-staging
           overwrite: true
           path: ${{ runner.temp }}/lake-native-cache.tar
           compression-level: 0
+      - name: Pack completed Stacks checkpoint
+        id: pack-stacks
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.staging-quiesce.outcome == 'success' && steps.build.outputs.attempted == 'true' }}
+        shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          python3 .github/ci-cache/checkpoint.py pack --root . --layer stacks \
+            --output "$RUNNER_TEMP/layered-cache/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --metadata "$PWD/.lake/ci-cache/stacks.json" --github-output "$GITHUB_OUTPUT"
+      - name: Save completed Stacks checkpoint
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-stacks.outcome == 'success' && (steps.pack-stacks.outputs.changed == 'true' || steps.restore-stacks.outputs.cache-matched-key == '') }}
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          key: colib-layered-v2-stacks-${{ steps.cache-mode.outputs.stacks_context }}-${{ steps.pack-stacks.outputs.generation }}
+      - name: Upload this run's Stacks closure for Test
+        if: ${{ steps.handoff-mode.outputs.enabled != 'true' && steps.build.outcome == 'success' && steps.pack-stacks.outcome == 'success' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: build-stacks
+          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          compression-level: 0
+          if-no-files-found: error
+      - name: Stage native dependencies for Test
+        if: ${{ steps.handoff-mode.outputs.enabled != 'true' && steps.build.outcome == 'success' && steps.quiesce.outcome == 'success' }}
+        env:
+          FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
+          LAYERED_CACHE: ${{ steps.cache-mode.outputs.layered }}
+        run: |
+          if test "$LAYERED_CACHE" = true; then
+            # Reuse the already packed complete closure without another compression pass.
+            ln "$RUNNER_TEMP/layered-cache/dependencies.tar.zst" "$RUNNER_TEMP/build-dependencies.tar.zst"
+          elif test -n "$FIRST_CI_CACHE"; then
+            python3 .github/cache-promotion/ci-resources.py dependencies
+            blocks=$(jq -er .file_blocks "$RUNNER_TEMP/first-ci-dependency-bound.json")
+            (ulimit -f "$blocks"
+             tar -cf - -C "$LAKE_CACHE_DIR" artifacts outputs | \
+               zstd -T2 -1 -o "$RUNNER_TEMP/build-dependencies.tar.zst")
+          else
+            tar -cf - -C "$LAKE_CACHE_DIR" artifacts outputs | \
+              zstd -T0 -1 -o "$RUNNER_TEMP/build-dependencies.tar.zst"
+          fi
+      - name: Upload native dependencies for Test
+        if: ${{ steps.handoff-mode.outputs.enabled != 'true' && steps.build.outcome == 'success' }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: build-dependencies
+          overwrite: true
+          path: ${{ runner.temp }}/build-dependencies.tar.zst
+          if-no-files-found: error
+          compression-level: 0
+      - name: Seal the workspace for same-host Test
+        id: seal
+        if: ${{ steps.handoff-mode.outputs.enabled == 'true' && steps.build.outcome == 'success' }}
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          HOST_RUNNER: ${{ runner.name }}
+        run: |
+          handoff="$PWD/.lake/ci-host-handoff"
+          archive="$handoff/lake-native-cache.tar"
+          mv -- "$RUNNER_TEMP/lake-native-cache.tar" "$archive"
+          digest=$(sha256sum "$archive")
+          printf 'stage-sha=%s\n' "${digest%% *}" >> "$GITHUB_OUTPUT"
+          mv "$RUNNER_TEMP/layered-cache/stacks.tar.zst" "$handoff/stacks.tar.zst"
+          python3 - <<'PYMETA'
+          import hashlib, json
+          from pathlib import Path
+          handoff = Path('.lake/ci-host-handoff')
+          path = Path('.lake/ci-cache/stacks.json')
+          metadata = json.loads(path.read_text())
+          with (handoff / 'stacks.tar.zst').open('rb') as stream:
+              metadata['archive_sha256'] = hashlib.file_digest(stream, 'sha256').hexdigest()
+          path.write_text(json.dumps(metadata) + '\n')
+          PYMETA
+          dirname "$(command -v lake)" > "$handoff/lean-bin"
+          printf '%s\n' "$GITHUB_REPOSITORY" "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" "$HOST_RUNNER" \
+            > "$handoff/identity"
+      - name: Stop native resource sampler
+        if: ${{ always() }}
+        continue-on-error: true
+        timeout-minutes: 1
+        shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          if test -f .github/ci-resource-monitor.py; then
+            python3 .github/ci-resource-monitor.py stop
+          fi
+      - name: Upload native resource observations
+        if: ${{ always() }}
+        continue-on-error: true
+        timeout-minutes: 1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: native-resources-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.job }}
+          path: ${{ runner.temp }}/lean-ci-resources/${{ github.run_id }}-${{ github.run_attempt }}-${{ github.job }}/resources.jsonl
+          if-no-files-found: ignore
+          compression-level: 6
+          retention-days: 7
       - name: Report Build result
         if: ${{ always() }}
         env:
+          STAGED: ${{ steps.stage.outputs.staged }}
           RESULT: ${{ steps.build.outcome }}
         run: |
-          printf 'Build: %s\n' "$RESULT" >> "$GITHUB_STEP_SUMMARY"
+          case "$RESULT" in
+            success) result='✅ Passed' ;;
+            failure) result='❌ Failed' ;;
+            cancelled) result='⏹ Cancelled' ;;
+            *) result='— Skipped' ;;
+          esac
+          stage='— Unavailable'
+          if test "$STAGED" = true; then
+            stage='⚠ Partial'
+            if test "$RESULT" = success; then stage='✅ Ready'; fi
+          fi
+          {
+            printf '## Production build\n\n| Phase | Result |\n| --- | --- |\n'
+            printf '| Compilation | %s |\n| Native publication stage | %s |\n\n' "$result" "$stage"
+          } >> "$GITHUB_STEP_SUMMARY"
           test "$RESULT" = success
-
   test_lint:
     name: Test, lint and axiom audit
-    timeout-minutes: ${{ inputs.ec2 && 90 || 360 }}
     needs: build
     if: ${{ needs.build.result == 'success' }}
-    runs-on: ${{ inputs.ec2 && vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && fromJSON('["self-hosted","linux","x64","colib-ec2"]') || fromJSON('["ubuntu-24.04"]') }}
+    runs-on: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && fromJSON(inputs.runner-labels) || fromJSON('["ubuntu-24.04"]') }}
+    timeout-minutes: ${{ inputs.job-timeout-minutes }}
+    env: *native-resource-env
+    defaults: *native-resource-defaults
     steps:
+      - name: Claim the same-host Build workspace
+        id: lean-setup-local
+        if: ${{ needs.build.outputs.local-handoff == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          HOST_RUNNER: ${{ runner.name }}
+          BUILD_RUNNER: ${{ needs.build.outputs.host-runner }}
+        run: |
+          handoff="$PWD/.lake/ci-host-handoff"
+          if test "$HOST_RUNNER" != "$BUILD_RUNNER" ||
+              ! cmp -s "$handoff/identity" <(printf '%s\n' "$GITHUB_REPOSITORY" "$GITHUB_SHA" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" "$HOST_RUNNER") ||
+              ! test -f "$handoff/lake-native-cache.tar"; then
+            echo '::error::The Build workspace is unavailable on this runner. Re-run all jobs to create a new Build handoff.'
+            exit 1
+          fi
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          read -r lean_bin < "$handoff/lean-bin"
+          case "$lean_bin" in
+            /*) ;;
+            *) exit 1 ;;
+          esac
+          test -x "$lean_bin/lake"
+          test -x "$lean_bin/lean"
+          printf '%s\n' "$lean_bin" >> "$GITHUB_PATH"
+          printf 'LAKE_CACHE_DIR=%s\n' "$handoff/native-cache" >> "$GITHUB_ENV"
+          mkdir -p "$RUNNER_TEMP/layered-cache"
+          ln "$handoff/stacks.tar.zst" "$RUNNER_TEMP/layered-cache/stacks.tar.zst"
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        if: ${{ needs.build.outputs.local-handoff != 'true' }}
         with:
           persist-credentials: false
-      - name: Check the Colib EC2 host
-        if: ${{ runner.environment == 'self-hosted' }}
+      - name: Start native resource sampler
+        continue-on-error: true
+        timeout-minutes: 1
         shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          JOB_TIMEOUT_MINUTES: ${{ inputs.job-timeout-minutes }}
+          CI_RESOURCE_RUNNER_LABELS: ${{ inputs.runner-labels }}
         run: |
-          test "$(cat /etc/colib-ci-runner-mode)" = colib-ci-runner-v1
-          echo 'LEAN_NUM_THREADS=8' >> "$GITHUB_ENV"
-      - run: echo "LAKE_CACHE_DIR=$RUNNER_TEMP/lake-native-cache" >> "$GITHUB_ENV"
+          if test -f .github/ci-resource-monitor.py; then
+            python3 .github/ci-resource-monitor.py start --minutes "$JOB_TIMEOUT_MINUTES"
+          fi
+      - if: ${{ needs.build.outputs.local-handoff != 'true' }}
+        run: echo "LAKE_CACHE_DIR=$RUNNER_TEMP/lake-native-cache" >> "$GITHUB_ENV"
       - name: Select independent cache paths
         id: cache-layout
         working-directory: ${{ inputs.package-directory }}
         run: python3 scripts/stacks_cache.py layout --github-output "$GITHUB_OUTPUT"
+      - name: Select layered cache support
+        id: cache-mode
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
+        run: |
+          test -z "$FIRST_CI_CACHE" || { echo '::error::The Aglib-specific promotion seed is not a Colib cache.'; exit 2; }
+          python3 .github/ci-cache/checkpoint.py supported --root .
+          echo 'layered=true' >> "$GITHUB_OUTPUT"
+          python3 .github/ci-cache/checkpoint.py context --root . --github-output "$GITHUB_OUTPUT"
+      - name: First promoted-main cache/resource/source gate
+        id: first-ci
+        if: ${{ inputs.first-ci-cache != '' }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
+        run: python3 .github/cache-promotion/promotion.py first-ci
+      - name: Restore optional root checkpoint
+        id: restore-root
+        if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered == 'true' }}
+        continue-on-error: true
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/root.tar.zst
+          key: colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}-build
+          restore-keys: |
+            colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-
+            colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-
+      - name: Restore optional tools checkpoint
+        id: restore-tools
+        if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered == 'true' }}
+        continue-on-error: true
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with: *tools-checkpoint-cache
       - name: Warm dependency and native compilation outputs
+        if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered != 'true' }}
+        continue-on-error: ${{ inputs.first-ci-cache == '' }}
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         id: restore-cache
         with:
           path: ${{ steps.cache-layout.outputs.environment-paths }}
-          key: ${{ needs.build.outputs.cache-key }}-tests-${{ github.run_attempt }}
+          key: ${{ inputs.first-ci-cache != '' && needs.build.outputs.cache-key || format('{0}-tests-{1}', needs.build.outputs.cache-key, github.run_attempt) }}
+          fail-on-cache-miss: ${{ inputs.first-ci-cache != '' }}
           restore-keys: |
-            ${{ needs.build.outputs.cache-key }}-tests-
-            ${{ needs.build.outputs.cache-key }}
-      - name: Restore this run's Stacks dependency
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
-        with:
-          path: ${{ steps.cache-layout.outputs.stacks-path }}
-          key: ${{ needs.build.outputs.stacks-cache-key }}
+            ${{ inputs.first-ci-cache == '' && format('{0}-tests-', needs.build.outputs.cache-key) || '' }}
+            ${{ inputs.first-ci-cache == '' && format('{0}', needs.build.outputs.cache-key) || '' }}
+      - name: Require exact full main seed for first Test
+        if: ${{ inputs.first-ci-cache != '' }}
+        env:
+          HIT: ${{ steps.restore-cache.outputs.cache-hit }}
+          MATCHED: ${{ steps.restore-cache.outputs.cache-matched-key }}
+          EXPECTED: ${{ steps.first-ci.outputs.seed-key }}
+        run: test "$HIT" = true && test "$MATCHED" = "$EXPECTED"
+      - name: Remove read-only restored archive hash sidecars
+        if: ${{ needs.build.outputs.local-handoff != 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: *restore-writable-archive-hashes
       - name: Configure Lean
+        if: ${{ needs.build.outputs.local-handoff != 'true' }}
         id: lean-setup
         working-directory: ${{ inputs.package-directory }}
         run: |
@@ -221,21 +860,106 @@ jobs:
           done
           echo '::error::Lean toolchain acquisition failed after 3 attempts.'
           exit 1
+      - name: First-main native no-build readiness before recovery or checker preparation
+        if: ${{ inputs.first-ci-cache != '' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: bash .github/cache-promotion/ready.sh
+      - name: Download this run's dependencies on cache miss
+        if: &dependency-recovery ${{ needs.build.outputs.local-handoff != 'true' && (steps.cache-mode.outputs.layered == 'true' || steps.restore-cache.outcome != 'success' || steps.restore-cache.outputs.cache-matched-key == '') }}
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        with:
+          name: build-dependencies
+          path: ${{ runner.temp }}/build-dependencies
+      - name: Restore this run's dependencies on cache miss
+        if: *dependency-recovery
+        env:
+          LAYERED_CACHE: ${{ steps.cache-mode.outputs.layered }}
+        run: |
+          trap 'rm -rf "$RUNNER_TEMP/build-dependencies"' EXIT
+          mkdir -p "$LAKE_CACHE_DIR"
+          if test "$LAYERED_CACHE" = true; then
+            mv "$RUNNER_TEMP/build-dependencies/build-dependencies.tar.zst" "$RUNNER_TEMP/current-dependencies.tar.zst"
+          else
+            zstd -dc "$RUNNER_TEMP/build-dependencies/build-dependencies.tar.zst" | \
+              tar --unlink-first -xf - -C "$LAKE_CACHE_DIR"
+          fi
+      - name: Recover Mathlib dependencies on cache miss
+        if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered != 'true' && (steps.restore-cache.outcome != 'success' || steps.restore-cache.outputs.cache-matched-key == '') }}
+        working-directory: ${{ inputs.package-directory }}
+        run: *mathlib-cache-get
+      - name: Fetch pinned dependency sources without compilation
+        if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: lake env true
+      - name: Validate materialized layered dependencies
+        if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: python3 .github/ci-cache/checkpoint.py supported --root . --materialized
+      - name: Apply optional Test and tool checkpoints
+        if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          for layer in root tools; do
+            archive="$RUNNER_TEMP/layered-cache/$layer.tar.zst"
+            if test -f "$archive"; then
+              if ! python3 .github/ci-cache/checkpoint.py restore --root . --layer "$layer" \
+                  --input "$archive" --native-cache "$LAKE_CACHE_DIR"; then
+                echo "::warning::Optional $layer checkpoint could not be restored; current inputs will be rebuilt or verified."
+              fi
+            fi
+          done
+      - name: Overlay this run's complete dependency closure
+        if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered == 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          python3 .github/ci-cache/checkpoint.py restore --root . --layer dependencies \
+            --input "$RUNNER_TEMP/current-dependencies.tar.zst" --native-cache "$LAKE_CACHE_DIR"
+          rm -f "$RUNNER_TEMP/current-dependencies.tar.zst"
+      - name: Admit current-run mandatory stage download and unstage resources
+        if: ${{ inputs.first-ci-cache != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/cache-promotion/ci-resources.py test-download
+      - name: Download this run's Stacks closure
+        if: ${{ needs.build.outputs.local-handoff != 'true' }}
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        with:
+          name: build-stacks
+          path: ${{ runner.temp }}/layered-cache
+      - name: Overlay this run's Stacks closure
+        if: ${{ needs.build.outputs.local-handoff != 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          python3 .github/ci-cache/checkpoint.py restore --root . --layer stacks \
+            --input "$RUNNER_TEMP/layered-cache/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --metadata "$PWD/.lake/ci-cache/stacks.json"
       - name: Download this run's Build outputs
+        if: ${{ needs.build.outputs.local-handoff != 'true' }}
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: cache-staging
           path: ${{ runner.temp }}/lake-native-cache
       - name: Restore this run's native Build outputs
+        if: ${{ needs.build.outputs.local-handoff != 'true' }}
         id: current-cache
         working-directory: ${{ inputs.package-directory }}
+        env:
+          FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
         run: |
+          if test -n "$FIRST_CI_CACHE"; then python3 .github/cache-promotion/ci-resources.py test-extract; fi
           trap 'rm -f "$LAKE_CACHE_DIR/lake-native-cache.tar"' EXIT
           mkdir -p "$RUNNER_TEMP/cache-staging"
           tar -xf "$LAKE_CACHE_DIR/lake-native-cache.tar" -C "$RUNNER_TEMP/cache-staging"
           lake cache unstage "$RUNNER_TEMP/cache-staging" --force-overwrite
+      - name: Refresh archive hash metadata after cache preparation
+        if: ${{ needs.build.outputs.local-handoff != 'true' }}
+        working-directory: ${{ inputs.package-directory }}
+        run: *restore-writable-archive-hashes
       - name: Verify Build outputs without compilation
         id: compiled
+        env:
+          SAME_HOST: ${{ needs.build.outputs.local-handoff }}
+          BUILD_STAGE_SHA: ${{ needs.build.outputs.stage-sha }}
         working-directory: ${{ inputs.package-directory }}
         run: |
           read -r -a targets <<< "$BUILD_TARGETS"
@@ -243,7 +967,13 @@ jobs:
             echo '::error::build-targets must name at least one production root.'
             exit 1
           fi
-          LAKE_RESTORE_ARTIFACTS=true lake --log-level=error build --no-build --rehash "${targets[@]}"
+          if test "$SAME_HOST" = true; then
+            archive="$PWD/.lake/ci-host-handoff/lake-native-cache.tar"
+            printf '%s  %s\n' "$BUILD_STAGE_SHA" "$archive" | sha256sum -c -
+            bash .github/ci-cache/verify-root.sh "$archive" "${targets[@]}"
+          else
+            LAKE_RESTORE_ARTIFACTS=true lake --log-level=error build --no-build --rehash "${targets[@]}"
+          fi
       - name: Prepare check tools
         id: tools
         continue-on-error: true
@@ -289,8 +1019,8 @@ jobs:
         run: lake --log-level=error test
       - name: Lint
         id: lint
-        timeout-minutes: 25
-        if: ${{ !cancelled() && needs.build.result == 'success' && steps.restore-cache.outcome == 'success' && steps.lean-setup.outcome == 'success' && steps.compiled.outcome == 'success' && steps.tools.outcome == 'success' }}
+        timeout-minutes: 45
+        if: ${{ !cancelled() && needs.build.result == 'success' && (steps.lean-setup.outcome == 'success' || steps.lean-setup-local.outcome == 'success') && steps.compiled.outcome == 'success' && steps.tools.outcome == 'success' }}
         continue-on-error: true
         working-directory: ${{ inputs.package-directory }}
         run: |
@@ -299,8 +1029,12 @@ jobs:
             echo '::error::build-targets must name at least one production root.'
             exit 1
           fi
+          lint_command=(lake --no-build --log-level=error lint "${roots[@]}" -- --trace)
+          if test -n "${GITHUB_WORKSPACE:-}" && test -f "$GITHUB_WORKSPACE/.github/lint/run.sh"; then
+            lint_command=(bash "$GITHUB_WORKSPACE/.github/lint/run.sh" "${roots[@]}")
+          fi
           for attempt in 1 2; do
-            if timeout --kill-after=30s 10m env LEAN_ABORT_ON_PANIC=1 lake --no-build --log-level=error lint "${roots[@]}" -- --trace; then
+            if timeout --kill-after=30s 20m env LEAN_ABORT_ON_PANIC=1 "${lint_command[@]}"; then
               exit 0
             else
               status=$?
@@ -312,7 +1046,7 @@ jobs:
           done
       - name: Audit production axioms
         id: axioms
-        if: ${{ !cancelled() && needs.build.result == 'success' && steps.restore-cache.outcome == 'success' && steps.lean-setup.outcome == 'success' && steps.compiled.outcome == 'success' }}
+        if: ${{ !cancelled() && needs.build.result == 'success' && (steps.lean-setup.outcome == 'success' || steps.lean-setup-local.outcome == 'success') && steps.compiled.outcome == 'success' }}
         continue-on-error: true
         working-directory: ${{ inputs.package-directory }}
         run: |
@@ -322,10 +1056,15 @@ jobs:
             exit 1
           fi
           # Reuse the pinned source and incremental outputs across Test runs.
-          tool=".lake/tools/axiom-audit"
-          mkdir -p .lake/tools
+          tool="$LAKE_CACHE_DIR/axiom-audit"
           if ! test -d "$tool/.git"; then
-            git clone --depth 1 --branch v0.1.2 https://github.com/leanprover-community/axiom-audit.git "$tool"
+            # A scoped tools checkpoint can restore .lake without source/.git.
+            auditor_source=$(mktemp -d "$RUNNER_TEMP/axiom-audit-source.XXXXXX")
+            trap 'rm -rf "$auditor_source"' EXIT
+            git clone --depth 1 --branch v0.1.2 https://github.com/leanprover-community/axiom-audit.git "$auditor_source/checkout"
+            test "$(git -C "$auditor_source/checkout" rev-parse HEAD)" = 46024e005996495c65ef609368e11ab39c4222e3
+            mkdir -p "$tool"
+            cp -a "$auditor_source/checkout/." "$tool/"
           fi
           test "$(git -C "$tool" rev-parse HEAD)" = 46024e005996495c65ef609368e11ab39c4222e3
           cp lean-toolchain "$tool/lean-toolchain"
@@ -354,12 +1093,84 @@ jobs:
         with:
           name: colib-site
           path: ${{ inputs.package-directory }}/build/site/
-      - name: Save completed Test compilation
+      - name: Quiesce this job's native scopes before cache saving
+        id: quiesce
         if: ${{ always() }}
+        timeout-minutes: 3
+        shell: bash
+        run: *quiesce-native-scopes
+      - name: Save completed Test compilation
+        if: ${{ always() && needs.build.outputs.local-handoff != 'true' && inputs.first-ci-cache == '' && steps.cache-mode.outputs.layered != 'true' && steps.quiesce.outcome == 'success' }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
           path: ${{ steps.cache-layout.outputs.environment-paths }}
           key: ${{ needs.build.outputs.cache-key }}-tests-${{ github.run_attempt }}
+      - name: Pack completed root checkpoint
+        id: pack-root
+        if: ${{ always() && steps.cache-mode.outputs.layered == 'true' && steps.quiesce.outcome == 'success' && steps.compiled.outcome == 'success' }}
+        shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          python3 .github/ci-cache/checkpoint.py pack --root . --layer root \
+            --output "$RUNNER_TEMP/layered-cache/root.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --github-output "$GITHUB_OUTPUT"
+      - name: Save completed root checkpoint
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-root.outcome == 'success' && steps.compiled.outcome == 'success' && (needs.build.outputs.local-handoff != 'true' || steps.pack-root.outputs.generation != needs.build.outputs.root-generation) }}
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/root.tar.zst
+          key: colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}-test
+      - name: Pack completed tools checkpoint
+        id: pack-tools
+        if: ${{ always() && steps.cache-mode.outputs.layered == 'true' && steps.quiesce.outcome == 'success' && steps.compiled.outcome == 'success' }}
+        shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          python3 .github/ci-cache/checkpoint.py pack --root . --layer tools \
+            --output "$RUNNER_TEMP/layered-cache/tools.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --github-output "$GITHUB_OUTPUT"
+      - name: Save completed tools checkpoint
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-tools.outcome == 'success' && (steps.pack-tools.outputs.changed == 'true' || (needs.build.outputs.local-handoff != 'true' && steps.restore-tools.outputs.cache-matched-key == '')) && steps.compiled.outcome == 'success' }}
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/tools.tar.zst
+          key: colib-layered-v2-tools-${{ steps.cache-mode.outputs.tools_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Pack completed Stacks checkpoint
+        id: pack-stacks
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.compiled.outcome == 'success' }}
+        shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          python3 .github/ci-cache/checkpoint.py pack --root . --layer stacks \
+            --output "$RUNNER_TEMP/layered-cache/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --github-output "$GITHUB_OUTPUT"
+      - name: Save completed Stacks checkpoint
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-stacks.outcome == 'success' && steps.pack-stacks.outputs.changed == 'true' }}
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          key: colib-layered-v2-stacks-${{ steps.cache-mode.outputs.stacks_context }}-${{ steps.pack-stacks.outputs.generation }}
+      - name: Stop native resource sampler
+        if: ${{ always() && (needs.build.outputs.local-handoff != 'true' || steps.lean-setup-local.outcome == 'success') }}
+        continue-on-error: true
+        timeout-minutes: 1
+        shell: bash
+        working-directory: ${{ inputs.package-directory }}
+        run: |
+          if test -f .github/ci-resource-monitor.py; then
+            python3 .github/ci-resource-monitor.py stop
+          fi
+      - name: Upload native resource observations
+        if: ${{ always() }}
+        continue-on-error: true
+        timeout-minutes: 1
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: native-resources-${{ github.run_id }}-${{ github.run_attempt }}-${{ github.job }}
+          path: ${{ runner.temp }}/lean-ci-resources/${{ github.run_id }}-${{ github.run_attempt }}-${{ github.job }}/resources.jsonl
+          if-no-files-found: ignore
+          compression-level: 6
+          retention-days: 7
       - name: Report Test, lint and axiom results
         if: ${{ always() }}
         env:
@@ -370,10 +1181,54 @@ jobs:
           TEST: ${{ steps.test.outcome }}
           LINT: ${{ steps.lint.outcome }}
           AXIOMS: ${{ steps.axioms.outcome }}
-          CATALOG: ${{ steps.library.outcome }}
+          LIBRARY: ${{ steps.library.outcome }}
         run: |
-          printf 'Build outputs: %s\nCheck tools: %s\nGenerated entries: %s\nText style: %s\nTest: %s\nLint: %s\nAxioms: %s\n' "$COMPILED" "$TOOLS" "$IMPORTS" "$STYLE" "$TEST" "$LINT" "$AXIOMS" >> "$GITHUB_STEP_SUMMARY"
-          test "$COMPILED" = success && test "$TOOLS" = success && test "$IMPORTS" = success && test "$STYLE" = success && test "$TEST" = success && test "$LINT" = success && test "$AXIOMS" = success && test "$CATALOG" = success
+          row() {
+            case "$2" in
+              success) status='✅ Passed' ;;
+              failure) status='❌ Failed' ;;
+              cancelled) status='⏹ Cancelled' ;;
+              *) status='— Skipped' ;;
+            esac
+            printf '| %s | %s |\n' "$1" "$status"
+          }
+          {
+            printf '## Verification\n\n| Check | Result |\n| --- | --- |\n'
+            row 'Production outputs' "$COMPILED"
+            row 'Checker tools' "$TOOLS"
+            row 'Generated library entries' "$IMPORTS"
+            row 'Mathlib text style' "$STYLE"
+            row 'Package tests' "$TEST"
+            row 'Declaration lint' "$LINT"
+            row 'Production axiom audit' "$AXIOMS"
+            row 'Library export' "$LIBRARY"
+            printf '\n'
+          } >> "$GITHUB_STEP_SUMMARY"
+          test "$COMPILED" = success && test "$TOOLS" = success && test "$IMPORTS" = success && test "$STYLE" = success && test "$TEST" = success && test "$LINT" = success && test "$AXIOMS" = success && test "$LIBRARY" = success
+      - name: Upload the verified independent Stacks checkpoint
+        if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: stacks-cache-staging
+          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          if-no-files-found: error
+          compression-level: 0
+      - name: Check publication archive identity
+        if: &publish-local-stage ${{ needs.build.outputs.local-handoff == 'true' && github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          BUILD_STAGE_SHA: ${{ needs.build.outputs.stage-sha }}
+        run: printf '%s  %s\n' "$BUILD_STAGE_SHA" '.lake/ci-host-handoff/lake-native-cache.tar' | sha256sum -c -
+      - name: Upload verified native outputs for publication
+        if: *publish-local-stage
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: cache-staging
+          overwrite: true
+          path: ${{ inputs.package-directory }}/.lake/ci-host-handoff/lake-native-cache.tar
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 0
 
   upload_cache:
     name: Publish cache
@@ -382,51 +1237,85 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
+      actions: read
     concurrency:
       group: lean-cache-${{ github.repository }}-${{ github.sha }}
       cancel-in-progress: false
     steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Admit mandatory Publish stage download
+        if: ${{ inputs.first-ci-cache != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/cache-promotion/ci-resources.py publish-download
       - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: cache-staging
-      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+      - name: Download the independent Stacks checkpoint
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: stacks-cache-staging
       - name: Publish staged compilation
+        id: publish
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
           REVISION: ${{ github.sha }}
-          ASSET: lake-native-cache-${{ github.run_id }}-${{ github.run_attempt }}.tar
+          FIRST_CI_CACHE: ${{ inputs.first-ci-cache }}
         run: |
+          domain=$(tar -xOf lake-native-cache.tar ./producer.json | jq -er \
+            --arg repository "$REPOSITORY" --arg revision "$REVISION" \
+            'select(.repository == $repository and .revision == $revision).domain')
+          ASSET="lake-native-cache-$domain-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.tar"
           tag="lean-native-$REVISION"
           mv lake-native-cache.tar "$ASSET"
-          if gh release view "$tag" --repo "$REPOSITORY" >/dev/null 2>&1; then
-            gh release upload "$tag" "$ASSET" --repo "$REPOSITORY"
-          else
-            gh release create "$tag" "$ASSET" --repo "$REPOSITORY" --target "$REVISION" --latest=false --title "Lean compilation $REVISION" --notes 'Compiled artifacts from successful Build, generated-entry, Test, lint, text-style and production-axiom checks.'
+          if test -n "$FIRST_CI_CACHE"; then
+            python3 .github/cache-promotion/ci-resources.py publish-upload "$ASSET"
           fi
-
-      - name: Publish the independent Stacks artifact cache
+          if existing=$(gh release view "$tag" --repo "$REPOSITORY" --json assets --jq '.assets[].name'); then
+            if ! printf '%s\n' "$existing" | grep -Fxq "$ASSET"; then
+              gh release upload "$tag" "$ASSET" --repo "$REPOSITORY"
+            fi
+          else
+            gh release create "$tag" "$ASSET" --repo "$REPOSITORY" --target "$REVISION" --prerelease --latest=false --title "Lean compilation $REVISION" --notes 'Compiled artifacts from successful Build, generated-entry, Test, lint, text-style and production-axiom checks.'
+          fi
+      - name: Report cache publication
+        if: ${{ always() }}
+        env:
+          RESULT: ${{ steps.publish.outcome }}
+        run: |
+          printf '## Cache publication\n\n' >> "$GITHUB_STEP_SUMMARY"
+          case "$RESULT" in
+            success)
+              printf '✅ [Native cache for `%.12s`](https://github.com/%s/releases/tag/lean-native-%s)\n' \
+                "$GITHUB_SHA" "$GITHUB_REPOSITORY" "$GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY" ;;
+            failure) printf '❌ Publication failed. See the job log for details.\n' >> "$GITHUB_STEP_SUMMARY" ;;
+            cancelled) printf '⏹ Cancelled\n' >> "$GITHUB_STEP_SUMMARY" ;;
+            *) printf '— Skipped\n' >> "$GITHUB_STEP_SUMMARY" ;;
+          esac
+      - name: Publish the independent Stacks checkpoint
         env:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
           REVISION: ${{ github.sha }}
-          ASSET: stacks-native-cache-${{ github.run_id }}-${{ github.run_attempt }}.tar.gz
+          ASSET: stacks-checkpoint-${{ github.run_id }}-${{ github.run_attempt }}.tar.zst
         run: |
-          python3 - <<'PYMETA' > stacks-cache-tag
-          import hashlib, json, tarfile
-          with tarfile.open("stacks-native-cache.tar.gz", "r:gz") as archive:
-              metadata = json.load(archive.extractfile("metadata.json"))
-          identity = {key: value for key, value in metadata.items() if key != "files"}
-          context = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()[:12]
-          print("stacks-native-" + metadata["stacks_revision"] + "-" + metadata["platform"] + "-" +
-                metadata["toolchain"].rsplit(":", 1)[-1] + "-" + context)
-          PYMETA
-          tag=$(cat stacks-cache-tag)
-          mv stacks-native-cache.tar.gz "$ASSET"
+          tag=$(python3 - <<'PYTAG'
+          import importlib.util, json
+          from pathlib import Path
+          spec = importlib.util.spec_from_file_location('checkpoint', '.github/ci-cache/checkpoint.py')
+          checkpoint = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(checkpoint)
+          root = Path.cwd()
+          package = next(p for p in json.loads((root / 'lake-manifest.json').read_text())['packages'] if p['name'] == 'Stacks')
+          print('stacks-checkpoint-' + package['rev'] + '-' + checkpoint.contexts(root)['stacks_context'][:16])
+          PYTAG
+          )
+          mv stacks.tar.zst "$ASSET"
           if gh release view "$tag" --repo "$REPOSITORY" >/dev/null 2>&1; then
             gh release upload "$tag" "$ASSET" --repo "$REPOSITORY"
           else
-            gh release create "$tag" "$ASSET" --repo "$REPOSITORY" --target "$REVISION"               --latest=false --title "Stacks dependency artifacts"               --notes 'Separate selected Stacks build artifacts with pinned dependency, toolchain and platform metadata. Published after successful Colib native checks.'
+            gh release create "$tag" "$ASSET" --repo "$REPOSITORY" --target "$REVISION" --latest=false               --title "Stacks compilation checkpoint" --notes 'Independent Stacks working-build checkpoint from successful Colib native checks.'
           fi

@@ -1,80 +1,119 @@
 # Lean CI
 
-Colib uses Aglib's current native resource scopes, staging/repair helper, complete
-batched declaration linter and runner-local handoff from
-[1943d6e](https://github.com/kangxyz/aglib/tree/1943d6eee4976a2d3a01b55e76d6d5890130ee63/.github).
-Its dependency transport is specialized to this library's actual dependencies:
-Mathlib already has an official cache; Stacks has its own independent checkpoint.
+Colib adapts the complete current main CI from
+[kangxyz/aglib at 1943d6eee4976a2d3a01b55e76d6d5890130ee63](https://github.com/kangxyz/aglib/tree/1943d6eee4976a2d3a01b55e76d6d5890130ee63/.github),
+including the resource scopes, layered checkpoints, native staging validation,
+parallel declaration linter, and runner-local Build-to-Test handoff. This replaces
+Colib's original portable workflow. The code and operating limits are shared by
+both runner profiles; the mathematical dependency pins are unchanged.
 
-## Main path
-
-The workflow has three jobs: Build, native checks, and publication. Build and Test
-use the same compiler and mathematical pins. Build compiles production with
-`--rehash`, stages the native outputs and preserves completed work even if a later
-check fails. Test verifies this run's outputs before calling the normal local
-entry `scripts/check.sh --compiled`. The option skips the production build that
-CI has just verified; it keeps tests, all native lint/style/generated-entry checks,
-the pinned production axiom audit, metadata tests and Library export.
-
-GitHub-hosted Test downloads only the current Colib and separate Stacks archives.
-It obtains Mathlib directly from its official cache. It does not transport,
-repack or scan the entire Mathlib working build as a dependency/tools checkpoint.
-The Colib Actions cache contains the root build, private checker tools and small
-Mathlib/Batteries tool-output directories. The cache boundary regression test
-rejects the full Mathlib tree, Stacks tree and mixed native artifact store.
-
-On EC2, Test retains Build's checkout, dependency trees and native store. It checks
-runner/repository/revision/run/attempt identity and archive digests. The upstream
-same-checkout cold-root native archive check remains in place. A compressed Stacks
-checkpoint is reused when its content has not changed.
-
-## Resources and routing
+## Profiles and routing
 
 | Setting | GitHub-hosted | EC2 |
 |---|---|---|
 | Labels | `ubuntu-24.04` | `self-hosted,linux,x64,colib-ec2` |
 | Native scope memory request | 13,824 MiB | 57,344 MiB |
-| Lake threads / lint workers | 1 / 2 | 8 / 8 |
-| Build job / compiler cap | 360 / 345 minutes | 240 / 180 minutes |
+| Lake threads / declaration lint workers | 1 / 2 | 8 / 8 |
+| Build job / compiler cap | 360 minutes / remaining safe window | 240 / 180 minutes |
 | Test job limit | 360 minutes | 90 minutes |
+| Build-to-Test transfer | Same-run dependency and root archives | Same checkout and native store |
 
-Each native scope clamps memory to physical RAM minus the 2,048 MiB runner
-reserve and disables swap. Scope termination is an explicit gate before saving
-working outputs. Native commands and cache transport run in the owning scripts
-under `ci/`; moving the orchestration out of YAML does not remove native checks.
+The native scope clamps its request to physical RAM minus a 2,048 MiB runner
+reserve and disables swap. Compiler and staging scopes stop before checkpoints
+are read. A job deadline reserves time for staging and saving completed work after
+compiler failure. Resource samples are retained as workflow artifacts.
 
-`COLIB_SELF_HOSTED_ENABLED=false` keeps both workflows and the reusable runner
-selector on GitHub-hosted Ubuntu. The manual profile defaults to `hosted`. Once
-explicitly enabled, only trusted main pushes/manual EC2 dispatches use EC2.
-`COLIB_EC2_SHARED_HOST=true` prepares handoff but cannot enable admission itself.
-The main CI and manual probe share the ordered `Colib CI-<ref>` queue.
-[EC2 operations](../infra/ci/ec2/README.md) owns the deployed dormant fleet and
-pending GitHub App authorization. No EC2 trial has been performed while disabled.
+`COLIB_SELF_HOSTED_ENABLED=false` keeps every ordinary run on GitHub-hosted
+runners. The manual profile defaults to `hosted`. Once explicitly enabled, only
+main-branch pushes and main-branch manual `ec2` dispatches use EC2. PRs and other
+revisions use GitHub-hosted runners. `COLIB_EC2_SHARED_HOST=true` prepares the
+optimized EC2 handoff; it cannot enable EC2 without the independent admission gate.
+The main workflow and manual EC2 probe share `Colib CI-<ref>` with ordered queuing.
 
-## Cache and check integrity
+The [EC2 operating guide](../infra/ci/ec2/README.md) owns the deployed fleet,
+webhook, GitHub App authorization and future activation. No EC2 trial is performed
+while disabled. The root-owned marker is `colib-ci-runner-v1` in
+`/etc/colib-ci-runner-mode`; Build restarts `colib-ci-expiry.timer`.
 
-Stacks is independently packed, restored, cached and published. Its checkpoint
-binds compiler, platform, resolved pins and configuration, contains regular
-generated files with integrity metadata, and never enters the Colib cache.
-Build validates the clean pinned Stacks source. A future upstream provider can
-replace its acquisition without changing the Colib cache or native checks.
-The first compact run can migrate an existing root checkpoint without importing
-the former full dependency/tools checkpoints. See [cache operations](../docs/CACHING.md).
+## Checkpoints and transport
 
-The declaration adapter binds Batteries 7e23602 and the exact source bytes. It runs
-all selected checks on declarations defined in Colib modules; an unknown linter
-implementation retains native full-lint fallback. Successful lint is never cached.
-Text style discovers every Colib/ColibTest file. Cached upstream build warnings are
-suppressed while native lint findings and Colib's `warningAsError=true` remain.
+The workflow retains independent compilation, staging, verification, Test, text-style,
+declaration-lint, axiom-audit and Library steps. Build uses normal Lake progress and
+completion logs. The performance repair changes cache scope, not check boundaries.
 
-A successful main push publishes the verified production archive and independent
-Stacks checkpoint. Pages consumes the same run's `colib-site` artifact. The compiler,
-Meta tools and upstream dependencies remain pinned; transport checks are not
-additional mathematical proof audits or kernel replay.
+The adapted schema has four independently stored generated-output layers:
 
-`actionlint.yaml` declares the custom label. Actionlint 1.7.12 needs the following
-narrow exception for the upstream workflow's supported ordered-queue field:
+| Layer | Contents |
+|---|---|
+| Root | Colib build/configuration outputs, including in-package tests |
+| Dependencies | Generated outputs for resolved dependencies other than Stacks and official Mathlib |
+| Stacks | Only `.lake/packages/Stacks/.lake/build` and `.lake/config` |
+| Tools | Private lint/auditor builds, non-Stacks dependency changes and small Mathlib checker-tool outputs |
+
+The context binds compiler, platform, resolved pins and package configuration.
+Tools also bind the lint adapter and auditor pin. Archives carry file integrity
+and coverage manifests; immutable cache generations are derived from content.
+Source checkouts, Git data and the mixed native artifact store are not checkpointed.
+The packer reuses a validated compressed archive when content has not changed.
+An earlier compatible `colib-v2` cache and the earlier separate Stacks cache can
+seed the first run of this schema. They are not the normal save path.
+
+Build and cross-runner Test acquire the pinned official Mathlib cache directly.
+Mathlib production outputs are excluded from dependency packing and tools-layer
+scanning. The dependency/tools context binds this scope policy. The performance
+case in `docs/performance/ci-mathlib-checkpoint.md` records the measured regression.
+
+Build overlays optional checkpoints and uses native `lake build --rehash` for
+production roots. Available completed work is checkpointed after a compiler
+failure. On GitHub-hosted runners, Test must overlay this Build's complete non-Mathlib
+`build-dependencies`, separate `build-stacks`, and native `cache-staging`, even
+when optional caches hit. Native `--no-build --rehash` verifies the current inputs
+before checks. Stacks is excluded from the dependency and tools layers, including
+test-only dependency compilation.
+
+On EC2, Build seals runner, repository, revision, run and attempt identity in the
+preserved checkout. Test checks that identity, `HEAD` and archive digest. It uses
+the same native store and dependency trees. The upstream `verify-root.sh` native
+archive check remains in place. The compressed Stacks checkpoint also survives
+per-job temporary-directory cleanup and is reused if Test adds no Stacks outputs.
+
+Successful main pushes publish Colib's native archive and the independently named
+`stacks-checkpoint-<Stacks revision>-<context>` release. A later upstream Stacks
+cache provider can replace Stacks acquisition while retaining this storage
+boundary and the native applicability checks. See [cache operations](../docs/CACHING.md).
+
+## Native checks and Library
+
+Test prepares the native Mathlib/Batteries tools and runs generated-entry checks,
+all Colib/ColibTest text-style inputs, in-package tests, full declaration lint,
+and the pinned production axiom auditor. The declaration adapter batches the same
+selected upstream checks over declarations defined in Colib modules. It retains
+native fallback for unknown linter implementations; successful lint results are
+never cached. Local `scripts/check.sh` uses the same adapter.
+
+Both builtin lint replay and the declaration driver select by defining module,
+not declaration namespace. Stacks is outside the report scope. Lake's cached
+build warning logs are suppressed with `--log-level=error`; native lint reports
+remain visible and Colib retains `warningAsError=true`.
+
+The structured Library export and website are additional Colib checks. The final
+Verification table requires every outcome, including that export, to succeed.
+Pages consumes the resulting `colib-site` artifact from a trusted main push.
+
+## Pin-specific adaptations
+
+The upstream implementation targets Lean 4.34.1. Colib also admits its fixed
+4.34.0-rc2 toolchain and exact Mathlib/ProofWidgets configuration byte hashes.
+The lint adapter binds the exact Batteries 7e23602 sources and matching compiler.
+Unknown layouts fail before compilation instead of silently choosing the old
+combined-cache path. Aglib's historical, repository-specific `first-ci-cache`
+promotion seed is rejected; its recorded producer and cache do not belong to Colib.
+
+Cache integrity tests live in `ci-cache/test_*.py`. `actionlint.yaml` records the
+custom runner label. Actionlint 1.7.12 needs a narrow ignore for its unrecognized
+`concurrency.queue` field, which is present in the working upstream workflow:
 
 ```bash
 actionlint -shellcheck= -ignore 'unexpected key "queue" for "concurrency" section'
+python3 -m unittest discover -s .github/ci-cache -p 'test_*.py'
 ```

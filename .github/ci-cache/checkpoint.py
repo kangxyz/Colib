@@ -233,8 +233,9 @@ def contexts(root):
             for path in sorted(directory.iterdir()):
                 if path.is_file() and not path.is_symlink():
                     tools[path.relative_to(root).as_posix()] = file_hash(path)
-    return {'root_context': common, 'dependencies_context': common, 'stacks_context': common,
-            'tools_context': digest({'base': common, 'tools': tools, 'auditor': AUDITOR_PIN})}
+    dependency_context = digest({'base': common, 'policy': 'official-mathlib-v1'})
+    return {'root_context': common, 'dependencies_context': dependency_context, 'stacks_context': common,
+            'tools_context': digest({'base': dependency_context, 'tools': tools, 'auditor': AUDITOR_PIN})}
 
 
 def tree(path):
@@ -272,6 +273,14 @@ def allowed_scopes(root, layer, native):
     if layer in ('dependencies', 'tools'):
         for package in dependencies(root):
             if package.name == 'Stacks':
+                continue
+            if package.name == 'mathlib':
+                # The pinned official provider supplies production Mathlib outputs.
+                # Only development tools belong in the project tools checkpoint.
+                if layer == 'tools':
+                    scopes += [('workspace', package / '.lake/config')]
+                    for name in ('bin', 'ir/Cache', 'lib/lean/Cache', 'ir/scripts', 'lib/lean/scripts'):
+                        scopes += [('workspace', package / '.lake/build' / name)]
                 continue
             scopes += [('workspace', package / '.lake/build'), ('workspace', package / '.lake/config')]
     if layer == 'stacks':

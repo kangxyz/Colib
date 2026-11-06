@@ -14,8 +14,8 @@ The approved axioms are propext, Classical.choice and Quot.sound.
 
 CI adapts the complete optimized Aglib workflow and tools from commit
 1943d6eee4976a2d3a01b55e76d6d5890130ee63. It uses resource-bounded native scopes,
-a compact Colib/tool cache, direct official Mathlib acquisition, an independent
-Stacks checkpoint and identity-checked same-host handoff on EC2. Both profiles
+separate root/dependency/Stacks/tools checkpoints, complete same-run overlays on
+GitHub-hosted runners and identity-checked same-host handoff on EC2. Both profiles
 run the native package checks. The current self-hosted admission gate is false.
 The [Lean CI guide](../.github/LEAN_CI.md) owns routing, resources, staging,
 publication and the exact adaptations to Colib's 4.34.0-rc2 dependency basis.

@@ -8,7 +8,8 @@ prevent treating whole-run differences as a controlled compiler benchmark.
 
 Colib's ordinary dependencies are supplied by Mathlib's official cache. Do not
 repack the entire Mathlib build into a project dependency or tools checkpoint.
-Keep the Colib/tool outputs compact, preserve the independent Stacks boundary,
+Exclude official Mathlib production outputs from project checkpoints, retain small
+checker outputs, preserve the independent Stacks boundary,
 and retain native input verification and axiom/lint predicates.
 
 The [CI checkpoint case](performance/ci-mathlib-checkpoint.md) records the regression,

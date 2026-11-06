@@ -50,6 +50,25 @@ class CheckpointTests(unittest.TestCase):
     def restore(self, layer, archive, code=0):
         return self.invoke('restore', '--layer', layer, '--input', str(archive), code=code)
 
+    def test_official_mathlib_is_not_repacked_but_checker_tools_are_kept(self):
+        manifest = json.loads((self.root / 'lake-manifest.json').read_text())
+        manifest['packages'].append({'name': 'mathlib', 'type': 'git',
+                                     'rev': 'fixture', 'url': 'https://example/mathlib'})
+        self.write('lake-manifest.json', json.dumps(manifest))
+        self.write('.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Example.olean',
+                   'official production artifact')
+        self.write('.lake/packages/mathlib/.lake/build/bin/lint-style', 'checker executable')
+        archive, _ = self.pack('dependencies')
+        with tarfile.open(archive) as stream:
+            metadata = json.load(stream.extractfile('checkpoint.json'))
+            self.assertFalse(any('/mathlib/' in name for name in stream.getnames()))
+        self.write('.lake/ci-cache/dependencies.json', json.dumps(metadata))
+        tools, _ = self.pack('tools')
+        with tarfile.open(tools) as stream:
+            names = stream.getnames()
+            self.assertTrue(any(name.endswith('/bin/lint-style') for name in names))
+            self.assertFalse(any('/lib/lean/Mathlib/' in name for name in names))
+
     def test_stacks_is_independent_of_dependencies_and_tools(self):
         manifest = json.loads((self.root / 'lake-manifest.json').read_text())
         manifest['packages'].append({'name': 'Stacks', 'type': 'git',

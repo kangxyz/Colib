@@ -23,26 +23,26 @@ step timings directly identify substantial dependency-transport work.
 
 ## Repair
 
-Colib depends on Mathlib and Stacks, rather than Aglib's general collection of
-project-produced dependencies. The compact path acquires the existing official
-Mathlib cache in both hosted jobs and removes full Mathlib dependency/tools
-checkpoint production, transport and scanning. Colib and small development tools
-use a bounded Actions cache. Stacks retains its independent integrity-checked
-checkpoint. EC2 retains the same source/dependency/native-store workspace.
+Retain the verified Aglib workflow and independent functional steps. Compiler
+progress and success logs stay visible. No checks are grouped to hide their status.
 
-Native resource limits, scope quiescence, staging repair, same-run production
-verification, complete native package checks and the pinned axiom audit remain.
-The normal local check script is also the CI check entry. A cache boundary test
-rejects the full Mathlib tree, Stacks tree and mixed native store in the Colib cache.
+The repair excludes official Mathlib production outputs from dependency and tools
+checkpoint scopes, and acquires the pinned official cache in both hosted jobs.
+Only Mathlib's small checker-tool output directories enter the tools checkpoint.
+The dependency/tools context binds the changed scope policy; root and Stacks
+contexts remain compatible. Stacks remains independently stored.
 
-The first compact run can import the previous root checkpoint once; it never
-imports the former full dependency/tools checkpoints. Initial setup still fetches
-pinned source checkouts before restoring generated tool directories. This is
-required because a partial `.lake/packages/<name>` directory must not replace a
-materialized Git dependency.
+Resource limits, scope quiescence, staging repair, same-run production verification,
+complete package checks and the pinned axiom audit remain. The same-host path
+retains Build's Mathlib tree and skips the cross-runner acquisition/transport.
 
-## Evidence and remaining measurement
+The earlier combined-check wrapper change was reverted. It obscured stage status
+without reducing verification work. A regression test now checks the substantive
+boundary: the dependency archive contains no Mathlib production outputs, while the
+tools archive retains the required checker executable.
 
-`ci-timings.json` records the complete measured steps from the original runs.
-Compact-path job timings will be appended after live native CI validation. No
-speedup is claimed before that measurement, and no EC2 machine is started for it.
+## Live validation
+
+`ci-timings.json` records the original observations. Repaired-path timings will be
+appended after the independent native stages complete. No EC2 trial is performed
+while its admission gate remains false.

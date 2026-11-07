@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.DVRPrimeAnnihilation
+import Colib.RingTheory.KTheory.MilnorK.Norm.DVRPrimeAnnihilation
 
 /-! Regression consumers of the weighted restriction and prime annihilator, not equality. -/
 

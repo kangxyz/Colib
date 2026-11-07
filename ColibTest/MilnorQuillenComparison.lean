@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.QuillenComparison
+import Colib.RingTheory.KTheory.MilnorK.QuillenComparison
 
 /-! Regression checks for the original Milnor maps into actual right-module and
 upper finite-module Quillen K₂, including the ordered symbol and inclusion maps. -/

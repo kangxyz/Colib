@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.CoefficientRetraction
+import Colib.RingTheory.KTheory.MilnorK.Residue.CoefficientRetraction
 
 /-! Regression tests for the explicit coefficient-field retraction hypotheses. -/
 

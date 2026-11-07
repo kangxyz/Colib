@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.GTheory.FiniteModules.FractionLocalization
+import Colib.RingTheory.KTheory.GTheory.FiniteModules.FractionLocalization
 
 /-! Regression tests for the native fraction-field G-localization sequence. -/
 

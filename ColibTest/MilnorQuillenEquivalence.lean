@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.QuillenEquivalence
+import Colib.RingTheory.KTheory.MilnorK.QuillenEquivalence
 
 /-!
 # Matsumoto's characteristic-zero equivalences and scalar-extension maps

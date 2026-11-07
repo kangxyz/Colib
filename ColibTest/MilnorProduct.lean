@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Symbols.Product
+import Colib.RingTheory.KTheory.MilnorK.Symbols.Product
 
 universe u
 

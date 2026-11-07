@@ -23,7 +23,7 @@ public import Colib.GroupTheory.MonoidHom.CentralKernel
 public import Colib.GroupTheory.Steinberg.Basic
 public import Colib.GroupTheory.StableGeneralLinear.Basic
 public import Colib.GroupTheory.StableGeneralLinear.Elementary
-public import Colib.KTheory.MilnorK.Steinberg
+public import Colib.RingTheory.KTheory.MilnorK.Steinberg
 
 /-!
 # Injectivity

@@ -35,7 +35,7 @@ Search the pinned Mathlib and Stacks declarations before defining anything. Exte
 mathematical namespace. A source model comparison is allowed only when a specific proof needs
 it; keep that comparison local to its boundary, prove the exact generator/map equations it
 uses, and do not expose a parallel downstream API. Reuse the existing degree-two comparison in
-`Colib.KTheory.MilnorK.DegreeTwo` when relevant rather than recreating it. Its presence does not
+`Colib.RingTheory.KTheory.MilnorK.DegreeTwo` when relevant rather than recreating it. Its presence does not
 require later results to factor through the pair presentation.
 
 For every migrated statement preserve its actual field/ring/scheme assumptions, finiteness and
@@ -107,7 +107,7 @@ Use [ARCHITECTURE.md](ARCHITECTURE.md), [LIBRARY.md](LIBRARY.md) and
 2. **Generic prerequisites.** Own disjoint files under the appropriate `Colib.Algebra`,
    `Colib.RingTheory`, `Colib.CategoryTheory`, or generic sheaf/module owners. Prove reusable
    statements at their weakest valid hypotheses, below Milnor and motivic applications.
-3. **Milnor symbols and operations.** Own new files under `Colib.KTheory.MilnorK`, extending the
+3. **Milnor symbols and operations.** Own new files under `Colib.RingTheory.KTheory.MilnorK`, extending the
    Stacks model with the required tuple-symbol, multilinearity, Steinberg, graded-product,
    functoriality and low-degree results.
 4. **Milnor norms and residues.** Start from the accepted canonical symbol/map interfaces.

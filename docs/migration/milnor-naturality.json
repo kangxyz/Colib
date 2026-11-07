@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
   "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.Naturality",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.Naturality",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -13,20 +13,20 @@
     "license": "Apache-2.0"
   },
   "scope": "Naturality of specified-uniformizer specialization under actual unramified local DVR maps; not arbitrary abstract residue data or ramified maps.",
-  "hypotheses": "Independent R,S,F,E universes; DVRs R,S, their fraction fields F,E; j:R\u2192+*S with IsLocalHom j; f:F\u2192+*E; hf: f(algebraMap R F r)=algebraMap S E(j r) for all r; Irreducible pi and Irreducible(j pi); all n including zero. No unit-part compatibility hypothesis.",
+  "hypotheses": "Independent R,S,F,E universes; DVRs R,S, their fraction fields F,E; j:R→+*S with IsLocalHom j; f:F→+*E; hf: f(algebraMap R F r)=algebraMap S E(j r) for all r; Irreducible pi and Irreducible(j pi); all n including zero. No unit-part compatibility hypothesis.",
   "declarations": [
     {
       "source": "MilnorK.K3.DVR.unitResidue_map / unitPart_map",
       "source_module": "Aglib.KTheory.MilnorK.K3.DVRRestriction",
-      "source_lines": "122\u2013139",
+      "source_lines": "122–139",
       "target": "Stacks.Chow.dvrFracUnitPart_map",
       "disposition": "native multiplicative unit form; reuses Stacks fraction-unit decomposition instead of old normalizedLift model"
     },
     {
       "source": "MilnorK.specialize_restrict",
-      "source_lines": "59\u201370",
+      "source_lines": "59–70",
       "target": "Stacks.Chow.dvrMilnorSpecialization_map",
-      "disposition": "actual-DVR specialization, derives original compatibility condition from actual maps using hypotheses of source DVR section lines 119\u2013139"
+      "disposition": "actual-DVR specialization, derives original compatibility condition from actual maps using hypotheses of source DVR section lines 119–139"
     }
   ],
   "proof": "Map the native exists_eq_unit_mul_zpow decomposition through f; apply dvrFracUnitPart_eq_of_eq to obtain the target unit part, then native ResidueField.map_residue. Extend to all homogeneous classes by the existing tuple extensionality and transport/specialization formulas.",

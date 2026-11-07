@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.QuillenSurjectivity
+import Colib.RingTheory.KTheory.MilnorK.QuillenSurjectivity
 import Colib.Topology.Homotopy.HomotopyGroup.Loop.Reversal
 import Colib.Topology.Homotopy.HomotopyGroup.Loop.LeftComponentTranslation
 

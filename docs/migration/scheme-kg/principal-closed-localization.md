@@ -22,7 +22,7 @@ subobjects, quotients and finite products, without requiring extension closure.
 `Colib/Algebra/Category/FGModuleCat/ScalarFiltration.lean` realizes this natural
 endomorphism as actual scalar multiplication through a fully faithful functor.
 
-The three `Colib/KTheory/GTheory/FiniteModules/Principal*.lean` leaves apply
+The three `Colib/RingTheory/KTheory/GTheory/FiniteModules/Principal*.lean` leaves apply
 these constructions inside the existing supported full subcategory of the
 native SmallModel. They factor the original small-model quotient restriction
 through r-killed supported objects and prove that factor is an equivalence.

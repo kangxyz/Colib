@@ -11,7 +11,7 @@
     "license": "Apache-2.0"
   },
   "scope": "Partial migration of Basic and Symbols; not a completeness claim for these modules or TupleSymbols. Native homogeneous-subgroup symbols, no general comparison with the old quotient.",
-  "hypotheses": "F : Type u, Field F, n : Nat; unit tuples Fin n \u2192 F\u02e3; adjacent means i.val + 1 = j.val; no characteristic restriction. Source universal-property declarations additionally quantify A : Type v, AddCommGroup A.",
+  "hypotheses": "F : Type u, Field F, n : Nat; unit tuples Fin n → Fˣ; adjacent means i.val + 1 = j.val; no characteristic restriction. Source universal-property declarations additionally quantify A : Type v, AddCommGroup A.",
   "modules": [
     {
       "module": "Aglib.KTheory.MilnorK.Basic",
@@ -22,7 +22,7 @@
           "source_line": 41,
           "original_declaration": "abbrev SymbolTuple",
           "disposition": "upstream reuse",
-          "target": "Fin n \u2192 F\u02e3",
+          "target": "Fin n → Fˣ",
           "correspondence_scope": "Use the existing function type directly; no redundant abbreviation."
         },
         {
@@ -46,7 +46,7 @@
         {
           "source": "MilnorK.relationSpan",
           "source_line": 56,
-          "original_declaration": "def relationSpan : Submodule \u2124 (Presentation F n)",
+          "original_declaration": "def relationSpan : Submodule ℤ (Presentation F n)",
           "disposition": "canonical model replacement",
           "target": "not retained",
           "correspondence_scope": "Old presentation machinery is not retained. This is not a declaration equivalence or a completed theorem migration; the selected tuple equations are rewritten on the native Stacks homogeneous group.",
@@ -65,7 +65,7 @@
           "source_line": 65,
           "original_declaration": "def symbol (a : SymbolTuple F n) : K F n",
           "target": "milnorKTupleSymbol",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Basic",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Basic",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same tuple, degree, field and sign conditions; target is the canonical Stacks homogeneous subgroup, not the old free-module quotient.",
           "validation": "passed",
@@ -75,9 +75,9 @@
         {
           "source": "MilnorK.symbol_mul",
           "source_line": 69,
-          "original_declaration": "theorem symbol_mul (a : SymbolTuple F n) (i : Fin n) (b c : F\u02e3) :\n    symbol (Function.update a i (b * c)) =\n      symbol (Function.update a i b) + symbol (Function.update a i c)",
+          "original_declaration": "theorem symbol_mul (a : SymbolTuple F n) (i : Fin n) (b c : Fˣ) :\n    symbol (Function.update a i (b * c)) =\n      symbol (Function.update a i b) + symbol (Function.update a i c)",
           "target": "milnorKTupleSymbol_update_mul",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Basic",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Basic",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same tuple, degree, field and sign conditions; target is the canonical Stacks homogeneous subgroup, not the old free-module quotient.",
           "validation": "passed",
@@ -89,7 +89,7 @@
           "source_line": 84,
           "original_declaration": "theorem steinberg (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (h : (a i : F) + (a j : F) = 1) : symbol a = 0",
           "target": "milnorKTupleSymbol_steinberg",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Relations",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Relations",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same tuple, degree, field and sign conditions; target is the canonical Stacks homogeneous subgroup, not the old free-module quotient.",
           "validation": "passed",
@@ -101,7 +101,7 @@
           "source_line": 91,
           "original_declaration": "@[simp] theorem symbol_update_one (a : SymbolTuple F n) (i : Fin n) :\n    symbol (Function.update a i 1) = 0",
           "target": "milnorKTupleSymbol_update_one",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Basic",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Basic",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same tuple, degree, field and sign conditions; target is the canonical Stacks homogeneous subgroup, not the old free-module quotient.",
           "validation": "passed",
@@ -113,7 +113,7 @@
           "source_line": 98,
           "original_declaration": "theorem symbol_eq_zero_of_eq_one (a : SymbolTuple F n) (i : Fin n) (h : a i = 1) :\n    symbol a = 0",
           "target": "milnorKTupleSymbol_eq_zero_of_eq_one",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Basic",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Basic",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same tuple, degree, field and sign conditions; target is the canonical Stacks homogeneous subgroup, not the old free-module quotient.",
           "validation": "passed",
@@ -123,9 +123,9 @@
         {
           "source": "MilnorK.symbol_update_inv",
           "source_line": 103,
-          "original_declaration": "@[simp] theorem symbol_update_inv (a : SymbolTuple F n) (i : Fin n) (b : F\u02e3) :\n    symbol (Function.update a i b\u207b\u00b9) = -symbol (Function.update a i b)",
+          "original_declaration": "@[simp] theorem symbol_update_inv (a : SymbolTuple F n) (i : Fin n) (b : Fˣ) :\n    symbol (Function.update a i b⁻¹) = -symbol (Function.update a i b)",
           "target": "milnorKTupleSymbol_update_inv",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Basic",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Basic",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same tuple, degree, field and sign conditions; target is the canonical Stacks homogeneous subgroup, not the old free-module quotient.",
           "validation": "passed",
@@ -135,11 +135,11 @@
         {
           "source": "MilnorK.IsSymbolMap",
           "source_line": 113,
-          "original_declaration": "structure IsSymbolMap (s : SymbolTuple F n \u2192 A) : Prop",
+          "original_declaration": "structure IsSymbolMap (s : SymbolTuple F n → A) : Prop",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
           "target": "IsMilnorKSymbolMap",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.SymbolMap",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.SymbolMap",
           "ledger": "docs/migration/milnor-descent.json",
           "validation": "See the dedicated descent ledger for current integration evidence."
         },
@@ -150,62 +150,62 @@
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
           "target": "milnorKTupleSymbol_isSymbolMap",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.SymbolMap",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.SymbolMap",
           "ledger": "docs/migration/milnor-descent.json",
           "validation": "See the dedicated descent ledger for current integration evidence."
         },
         {
           "source": "MilnorK.lift",
           "source_line": 125,
-          "original_declaration": "def lift (s : SymbolTuple F n \u2192 A) (hs : IsSymbolMap s) : K F n \u2192\u2097[\u2124] A",
+          "original_declaration": "def lift (s : SymbolTuple F n → A) (hs : IsSymbolMap s) : K F n →ₗ[ℤ] A",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
           "target": "IsMilnorKSymbolMap.lift",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Descent",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Descent",
           "ledger": "docs/migration/milnor-descent.json",
           "validation": "See the dedicated descent ledger for current integration evidence."
         },
         {
           "source": "MilnorK.lift_symbol",
           "source_line": 136,
-          "original_declaration": "@[simp] theorem lift_symbol (s : SymbolTuple F n \u2192 A) (hs : IsSymbolMap s)\n    (a : SymbolTuple F n) : lift s hs (symbol a) = s a",
+          "original_declaration": "@[simp] theorem lift_symbol (s : SymbolTuple F n → A) (hs : IsSymbolMap s)\n    (a : SymbolTuple F n) : lift s hs (symbol a) = s a",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
           "target": "IsMilnorKSymbolMap.lift_symbol",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Descent",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Descent",
           "ledger": "docs/migration/milnor-descent.json",
           "validation": "See the dedicated descent ledger for current integration evidence."
         },
         {
           "source": "MilnorK.linearMap_ext",
           "source_line": 141,
-          "original_declaration": "@[ext] theorem linearMap_ext (f g : K F n \u2192\u2097[\u2124] A)\n    (h : \u2200 a : SymbolTuple F n, f (symbol a) = g (symbol a)) : f = g",
+          "original_declaration": "@[ext] theorem linearMap_ext (f g : K F n →ₗ[ℤ] A)\n    (h : ∀ a : SymbolTuple F n, f (symbol a) = g (symbol a)) : f = g",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Agreement on every tuple determines the native homogeneous-group map, preserving independent source and codomain universes. Does not establish symbol descent or a general comparison model.",
           "target": "milnorKTheory_linearMap_ext",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Ext",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Ext",
           "ledger": "docs/migration/milnor-ext.json",
           "validation": "See the dedicated extensionality ledger for current integration evidence."
         },
         {
           "source": "MilnorK.addHom_ext",
           "source_line": 151,
-          "original_declaration": "@[ext] theorem addHom_ext (f g : K F n \u2192+ A)\n    (h : \u2200 a : SymbolTuple F n, f (symbol a) = g (symbol a)) : f = g",
+          "original_declaration": "@[ext] theorem addHom_ext (f g : K F n →+ A)\n    (h : ∀ a : SymbolTuple F n, f (symbol a) = g (symbol a)) : f = g",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Agreement on every tuple determines the native homogeneous-group map, preserving independent source and codomain universes. Does not establish symbol descent or a general comparison model.",
           "target": "milnorKTheory_addHom_ext",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Ext",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Ext",
           "ledger": "docs/migration/milnor-ext.json",
           "validation": "See the dedicated extensionality ledger for current integration evidence."
         },
         {
           "source": "MilnorK.existsUnique_lift",
           "source_line": 157,
-          "original_declaration": "theorem existsUnique_lift (s : SymbolTuple F n \u2192 A) (hs : IsSymbolMap s) :\n    \u2203! f : K F n \u2192\u2097[\u2124] A, \u2200 a : SymbolTuple F n, f (symbol a) = s a",
+          "original_declaration": "theorem existsUnique_lift (s : SymbolTuple F n → A) (hs : IsSymbolMap s) :\n    ∃! f : K F n →ₗ[ℤ] A, ∀ a : SymbolTuple F n, f (symbol a) = s a",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same coordinate/adjacent-Steinberg hypotheses and exact evaluation/unique integer-linear lift on the native homogeneous group, all nonnegative degrees and independent universes. Not a general old-model comparison.",
           "target": "IsMilnorKSymbolMap.existsUnique_lift",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Descent",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Descent",
           "ledger": "docs/migration/milnor-descent.json",
           "validation": "See the dedicated descent ledger for current integration evidence."
         }
@@ -218,51 +218,51 @@
         {
           "source": "MilnorK.pairInsertBilinear",
           "source_line": 33,
-          "original_declaration": "def pairInsertBilinear (a : SymbolTuple F n) (i j : Fin n) (hij : i \u2260 j) :\n    Additive F\u02e3 \u2192\u2097[\u2124] Additive F\u02e3 \u2192\u2097[\u2124] K F n",
+          "original_declaration": "def pairInsertBilinear (a : SymbolTuple F n) (i j : Fin n) (hij : i ≠ j) :\n    Additive Fˣ →ₗ[ℤ] Additive Fˣ →ₗ[ℤ] K F n",
           "disposition": "unresolved obligation",
           "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
         },
         {
           "source": "MilnorK.pairInsertBilinear_apply",
           "source_line": 56,
-          "original_declaration": "@[simp] theorem pairInsertBilinear_apply (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i \u2260 j) (b c : F\u02e3) :\n    pairInsertBilinear a i j hij (Additive.ofMul b) (Additive.ofMul c) =\n      symbol (Function.update (Function.update a i b) j c)",
+          "original_declaration": "@[simp] theorem pairInsertBilinear_apply (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i ≠ j) (b c : Fˣ) :\n    pairInsertBilinear a i j hij (Additive.ofMul b) (Additive.ofMul c) =\n      symbol (Function.update (Function.update a i b) j c)",
           "disposition": "unresolved obligation",
           "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
         },
         {
           "source": "MilnorK.adjacentPairMap",
           "source_line": 62,
-          "original_declaration": "def adjacentPairMap (a : SymbolTuple F n) (i j : Fin n) (hij : i.val + 1 = j.val) :\n    MilnorK.K2.Group F \u2192\u2097[\u2124] K F n",
+          "original_declaration": "def adjacentPairMap (a : SymbolTuple F n) (i j : Fin n) (hij : i.val + 1 = j.val) :\n    MilnorK.K2.Group F →ₗ[ℤ] K F n",
           "disposition": "unresolved obligation",
           "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
         },
         {
           "source": "MilnorK.adjacentPairMap_symbol",
           "source_line": 71,
-          "original_declaration": "@[simp] theorem adjacentPairMap_symbol (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (b c : F\u02e3) :\n    adjacentPairMap a i j hij (MilnorK.K2.symbol b c) =\n      symbol (Function.update (Function.update a i b) j c)",
+          "original_declaration": "@[simp] theorem adjacentPairMap_symbol (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (b c : Fˣ) :\n    adjacentPairMap a i j hij (MilnorK.K2.symbol b c) =\n      symbol (Function.update (Function.update a i b) j c)",
           "disposition": "unresolved obligation",
           "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
         },
         {
           "source": "MilnorK.symbol_update_adjacent_self_neg",
           "source_line": 77,
-          "original_declaration": "theorem symbol_update_adjacent_self_neg (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (b : F\u02e3) :\n    symbol (Function.update (Function.update a i b) j (-b)) = 0",
+          "original_declaration": "theorem symbol_update_adjacent_self_neg (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (b : Fˣ) :\n    symbol (Function.update (Function.update a i b) j (-b)) = 0",
           "disposition": "unresolved obligation",
           "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
         },
         {
           "source": "MilnorK.symbol_update_adjacent_self",
           "source_line": 84,
-          "original_declaration": "theorem symbol_update_adjacent_self (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (b : F\u02e3) :\n    symbol (Function.update (Function.update a i b) j b) =\n      symbol (Function.update (Function.update a i b) j (-1))",
+          "original_declaration": "theorem symbol_update_adjacent_self (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (b : Fˣ) :\n    symbol (Function.update (Function.update a i b) j b) =\n      symbol (Function.update (Function.update a i b) j (-1))",
           "disposition": "unresolved obligation",
           "correspondence_scope": "Not migrated in this proof chain. An upstream ring/list lemma is not by itself the original homogeneous tuple statement or universal property."
         },
         {
           "source": "MilnorK.symbol_update_adjacent_skew",
           "source_line": 92,
-          "original_declaration": "theorem symbol_update_adjacent_skew (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (b c : F\u02e3) :\n    symbol (Function.update (Function.update a i b) j c) =\n      -symbol (Function.update (Function.update a i c) j b)",
+          "original_declaration": "theorem symbol_update_adjacent_skew (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) (b c : Fˣ) :\n    symbol (Function.update (Function.update a i b) j c) =\n      -symbol (Function.update (Function.update a i c) j b)",
           "target": "milnorKTupleSymbol_update_adjacent_skew",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Relations",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Relations",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same tuple, degree, field and sign conditions; target is the canonical Stacks homogeneous subgroup, not the old free-module quotient.",
           "validation": "passed",
@@ -274,7 +274,7 @@
           "source_line": 100,
           "original_declaration": "theorem symbol_adjacent_skew (a : SymbolTuple F n) (i j : Fin n)\n    (hij : i.val + 1 = j.val) :\n    symbol a = -symbol (Function.update (Function.update a i (a j)) j (a i))",
           "target": "milnorKTupleSymbol_adjacent_skew",
-          "target_module": "Colib.KTheory.MilnorK.Symbols.Relations",
+          "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Relations",
           "disposition": "direct proof rewrite",
           "correspondence_scope": "Same tuple, degree, field and sign conditions; target is the canonical Stacks homogeneous subgroup, not the old free-module quotient.",
           "validation": "passed",
@@ -378,7 +378,7 @@
   "target_only_declarations": [
     {
       "target": "coe_milnorKTupleSymbol",
-      "target_module": "Colib.KTheory.MilnorK.Symbols.Basic",
+      "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Basic",
       "disposition": "supporting normalization lemma",
       "scope": "Definitional equality with the existing native Stacks list symbol."
     }

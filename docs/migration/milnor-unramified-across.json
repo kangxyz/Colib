@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
   "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMapAcross",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -13,7 +13,7 @@
     "license": "Apache-2.0"
   },
   "scope": "Unramified e=1 residue naturality on the single native model, with four independent universes R,S,F,E and specified uniformizers pi,j pi. The common-DVR-universe restriction is removed; canonical arbitrary-uniformizer independence remains separate.",
-  "hypotheses": "R:Type u and S:Type v are DVRs; F:Type w and E:Type z their fraction fields; j:R\u2192+*S local; f:F\u2192+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); all n, all homogeneous classes. No valuation or unit-part compatibility assumptions.",
+  "hypotheses": "R:Type u and S:Type v are DVRs; F:Type w and E:Type z their fraction fields; j:R→+*S local; f:F→+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); all n, all homogeneous classes. No valuation or unit-part compatibility assumptions.",
   "declarations": [
     {
       "target": "Stacks.Chow.milnorKRingMapLift",
@@ -43,7 +43,7 @@
     {
       "target": "Stacks.Chow.dvrMilnorTameSymbol_map_across",
       "source": "MilnorK.DVR.residue_restrict",
-      "source_lines": "129\u2013139",
+      "source_lines": "129–139",
       "disposition": "all universe parameters and all n/classes retained; specified-uniformizer version rather than canonical source version"
     }
   ],
@@ -58,7 +58,7 @@
     "milnorKTheoryMap_eq_transport",
     "milnorKTheory_addHom_ext"
   ],
-  "upstream_audit": "Pinned milnorKRingMap is constrained by {k1 k2 k3 : Type u}; the Mathlib universal maps used to construct it are not. The extension avoids the excessive Invariance\u2192MilnorNorm.ResidueConstants closure, agrees with native transport where available, and adds no replacement ring/quotient/grading/involution. Existing common-fraction-field upstream naturality remains upstream.",
+  "upstream_audit": "Pinned milnorKRingMap is constrained by {k1 k2 k3 : Type u}; the Mathlib universal maps used to construct it are not. The extension avoids the excessive Invariance→MilnorNorm.ResidueConstants closure, agrees with native transport where available, and adds no replacement ring/quotient/grading/involution. Existing common-fraction-field upstream naturality remains upstream.",
   "validation": {
     "source_comparison": "author_checked: four-universe specified-uniformizer e=1 source specialization",
     "consolidated_check": "Passed full guarded unified check.",

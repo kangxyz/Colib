@@ -6,7 +6,7 @@ Authors: kangxyz
 module
 
 public import Colib.Algebra.Category.ModuleCat.FiniteProjectiveIdentityExtension
-public import Colib.KTheory.Plus.ProjectiveGroupCompletion
+public import Colib.RingTheory.KTheory.Plus.ProjectiveGroupCompletion
 public import Colib.Algebra.Category.ModuleCat.FiniteProjectiveExtensionProjection
 public import Colib.CategoryTheory.GroupCompletion.FullyFaithful
 

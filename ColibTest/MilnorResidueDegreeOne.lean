@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.DegreeOne
+import Colib.RingTheory.KTheory.MilnorK.Residue.DegreeOne
 
 /-! Native degree-one residue regression tests with explicit universe and map hypotheses. -/
 

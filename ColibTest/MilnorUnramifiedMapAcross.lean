@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross
+import Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMapAcross
 
 open Stacks.Chow
 

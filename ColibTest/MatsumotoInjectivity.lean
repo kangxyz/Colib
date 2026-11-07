@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Steinberg.Equivalence
+import Colib.RingTheory.KTheory.MilnorK.Steinberg.Equivalence
 
 /-! Checks on the concrete characteristic-zero detector and canonical kernel equivalence. -/
 

@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Product",
   "source_sha256": "104cd452dba0fb72c64abd46ab500bb6f91f9c02f15d23b38c83b4e3412edcee",
   "target_baseline": "bb11e3ad22069f6cf78b1ff37919cb239dcb4e94",
-  "target_module": "Colib.KTheory.MilnorK.Symbols.Product",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Product",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [

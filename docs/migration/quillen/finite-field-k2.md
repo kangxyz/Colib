@@ -20,14 +20,14 @@ Matsumoto equivalences. Neither item computes all higher Quillen K-groups.
 At Quillen revision `c561118b7795eb9780be9ed391c3251d6a4d0afd`,
 [`Quillen/Aglib/KTheory/MilnorK/K2/FiniteField.lean`](https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Aglib/KTheory/MilnorK/K2/FiniteField.lean)
 proves integral Milnor vanishing for every finite field.
-`Colib.KTheory.MilnorK.FiniteField` adapts that proof directly to the pinned Stacks
+`Colib.RingTheory.KTheory.MilnorK.FiniteField` adapts that proof directly to the pinned Stacks
 `MilnorKRing` and its homogeneous subgroup `MilnorKTheory F 2`.
 No Aglib import, tensor-quotient replacement, or finite-coefficient reduction is used.
 Library item COL-0279 records this native result.
 
 The right-projective and upper finite-module clauses of
 [`Quillen/KTheory/Field/FiniteFieldKTwo.lean`](https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/KTheory/Field/FiniteFieldKTwo.lean)
-are implemented in `Colib.KTheory.Quillen.Field.FiniteFieldKTwo` (COL-0280).
+are implemented in `Colib.RingTheory.KTheory.Quillen.Field.FiniteFieldKTwo` (COL-0280).
 For `F : Type u` with `[Field F] [Finite F]`, the targets remain literally:
 
 - `(ModuleCat.FiniteProjective.exactStructure.{u,u} Fᵐᵒᵖ).K 2`;

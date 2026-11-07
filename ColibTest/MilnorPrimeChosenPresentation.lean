@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.PrimeChosenPresentation
+import Colib.RingTheory.KTheory.MilnorK.Norm.PrimeChosenPresentation
 
 /-!
 Consumers of the selected prime-degree chosen-norm presentation.

@@ -25,6 +25,10 @@ routine choices inside an already authorized assignment.
 - Locate general algebra under Algebra or RingTheory, categorical primitives under CategoryTheory,
   sheaf/module constructions at their generic owner, and scheme specializations under
   AlgebraicGeometry. Applications consume those foundations through precise lower imports.
+- Put general exact-category and Waldhausen K-theory in `Colib.KTheory`, ring and field
+  applications in `Colib.RingTheory.KTheory`, and scheme K-theory in
+  `Colib.AlgebraicGeometry.KTheory`. Keep general scalar operations separate from module
+  instances; general theory must not import the ring or scheme application layers.
 - Use modern module headers and the weakest appropriate public/private imports. Keep generic
   utilities below their applications. Generate the root entry with Mathlib mk_all.
 - Use descriptive Mathlib-style names. Proposition/theorem names describe their conclusion,

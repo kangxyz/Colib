@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
   "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMap",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -13,7 +13,7 @@
     "license": "Apache-2.0"
   },
   "scope": "Compatibility wrappers with original common-DVR-universe signatures; general four-universe specified e=1 proof lives in UnramifiedMapAcross. Canonical and ramified formulations remain pending.",
-  "hypotheses": "R,S : Type u are DVRs; F : Type v and E : Type w are their fraction fields; j:R\u2192+*S with IsLocalHom j; f:F\u2192+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); arbitrary n:Nat and all degree n+1 classes. No compatibility-of-valuations or unit-parts assumed.",
+  "hypotheses": "R,S : Type u are DVRs; F : Type v and E : Type w are their fraction fields; j:R→+*S with IsLocalHom j; f:F→+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); arbitrary n:Nat and all degree n+1 classes. No compatibility-of-valuations or unit-parts assumed.",
   "declarations": [
     {
       "source": "MilnorK.K3.DVR.value_map",
@@ -28,7 +28,7 @@
     },
     {
       "source": "MilnorK.DVR.residue_restrict",
-      "source_lines": "129\u2013139",
+      "source_lines": "129–139",
       "target": "Stacks.Chow.dvrMilnorTameSymbol_map",
       "disposition": "partial migration: specified uniformizers and common DVR universe; field universes independent, arbitrary classes/all n retained"
     }
@@ -44,7 +44,7 @@
     "milnorKTheoryMap_eq_transport",
     "milnorKTheory_addHom_ext"
   ],
-  "upstream_audit": "Pinned Invariance.dvrMilnorTameSymbol'_algebraMap already covers common fraction field; Invariance imports MilnorNorm.ResidueConstants with an excessive closure. The new leaf allows an actual f:F\u2192E and does not define Shift.map or reprove its ring structure. Private list-map normalization is not advertised as a new mathematical theorem.",
+  "upstream_audit": "Pinned Invariance.dvrMilnorTameSymbol'_algebraMap already covers common fraction field; Invariance imports MilnorNorm.ResidueConstants with an excessive closure. The new leaf allows an actual f:F→E and does not define Shift.map or reprove its ring structure. Private list-map normalization is not advertised as a new mathematical theorem.",
   "validation": {
     "source_comparison": "author_checked partial migration; exact e=1 and specified-uniformizer/common-DVR-universe scope",
     "consolidated_check": "Passed full guarded unified check.",

@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.FiniteReciprocity
+import Colib.RingTheory.KTheory.MilnorK.Norm.FiniteReciprocity
 
 /-! Source-only consumers. These examples have not been elaborated. -/
 

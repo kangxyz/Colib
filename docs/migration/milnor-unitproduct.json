@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Product",
   "source_sha256": "6513cc434212c2cf539bdc9f89dd33837d6a1a99fdbfb91be7d6bf71c9b18bf3",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.UnitProduct",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnitProduct",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -13,11 +13,11 @@
     "license": "Apache-2.0"
   },
   "scope": "Canonical actual-DVR residue commutes with left multiplication by a tuple of ring units, with arbitrary homogeneous right factor; also proves specified-uniformizer version.",
-  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; m,n : Nat; a : Fin m \u2192 R\u02e3; z : MilnorKTheory F (n+1). Independent universes; no positivity or characteristic assumptions. Left entries are actual ring units, not arbitrary field units.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; m,n : Nat; a : Fin m → Rˣ; z : MilnorKTheory F (n+1). Independent universes; no positivity or characteristic assumptions. Left entries are actual ring units, not arbitrary field units.",
   "declarations": [
     {
       "source": "MilnorK.DVR.residue_product_ring_units_left",
-      "source_lines": "135\u2013151",
+      "source_lines": "135–151",
       "target": "Stacks.Chow.dvrMilnorTameSymbol'_unitTuple_mul",
       "disposition": "direct native proof rewrite",
       "degree_transport": "Source degreeCongr (Nat.add_assoc m n 1).symm is definitionally the identity on native natural-number grading because m+(n+1) and (m+n)+1 reduce identically."

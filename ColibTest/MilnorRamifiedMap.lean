@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.RamifiedMap
+import Colib.RingTheory.KTheory.MilnorK.Residue.RamifiedMap
 
 /-! Tests retain four independent universes and a genuine ramification unit. The degree-two
 case tests the factor two, not vanishing in a residue field of characteristic two. -/

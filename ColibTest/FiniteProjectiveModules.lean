@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.Quillen.Field.UpperModuleComparison
+import Colib.RingTheory.KTheory.Quillen.Field.UpperModuleComparison
 
 /-!
 # Finite-projective comparison and original forward maps

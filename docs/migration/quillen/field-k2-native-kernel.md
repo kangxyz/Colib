@@ -61,7 +61,7 @@ stable-fiber-to-Quillen map.
 | `Quillen/Algebra/Group/StableSteinbergNaturality.lean` | `Colib.GroupTheory.Steinberg.Map`: coefficient maps, identity/composition and both actual matrix/elementary squares. |
 | `Quillen/Algebra/Group/StableSteinbergCentrality.lean` | `Colib.GroupTheory.Steinberg.Centrality`: finite-stage exhaustion, fresh row/column products, actual matrix actions and centrality of the actual kernel. |
 | `Quillen/Algebra/Group/StableSteinbergTorus.lean` | `Colib.GroupTheory.Steinberg.Torus`: same ordered Weyl/torus words, literal rank-two representatives, kernel-valued defect and coefficient naturality. |
-| `Quillen/Algebra/Group/StableSteinbergSymbols.lean` | Group calculations are in `Colib.GroupTheory.Steinberg.Symbols`; the Milnor boundary is rewritten in `Colib.KTheory.MilnorK.Steinberg`. Source `torusSymbolMap` is replaced by the existing native symbol-map property, and source `twoEquiv`/pair-quotient transport is eliminated. All other source mathematical conclusions are retained, including the positive rank-three commutator marking. |
+| `Quillen/Algebra/Group/StableSteinbergSymbols.lean` | Group calculations are in `Colib.GroupTheory.Steinberg.Symbols`; the Milnor boundary is rewritten in `Colib.RingTheory.KTheory.MilnorK.Steinberg`. Source `torusSymbolMap` is replaced by the existing native symbol-map property, and source `twoEquiv`/pair-quotient transport is eliminated. All other source mathematical conclusions are retained, including the positive rank-three commutator marking. |
 
 This is a bounded source correspondence, not a compiled declaration census of
 the entire historical repository. Public and supporting group calculations are
@@ -90,10 +90,10 @@ construction, including fields of characteristic two and three.
 - The [stable-fiber proof](field-k2-stable-fiber.md) constructs perfectness and
   injectivity and surjectivity of `steinbergKernelToRightProjectiveKTwo`, with
   the original connecting map, basepoint path and exact-category target.
-- `Colib.KTheory.MilnorK.QuillenNaturality` proves both original forward
+- `Colib.RingTheory.KTheory.MilnorK.QuillenNaturality` proves both original forward
   field-extension squares. The finite-module target retains the actual
   projective inclusion, opposite restriction and upper SmallModel comparison.
-- `Colib.KTheory.Quillen.Field.PositiveSymbolMarking` proves the ordered positive
+- `Colib.RingTheory.KTheory.Quillen.Field.PositiveSymbolMarking` proves the ordered positive
   scalar-unit-product formula over every field. The final comparison source
   combines these results into characteristic-zero equivalences with literal
   forward maps, natural inverses and the negative of the positive inverse.

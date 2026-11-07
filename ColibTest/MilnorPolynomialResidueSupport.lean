@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.PolynomialResidueSupport
+import Colib.RingTheory.KTheory.MilnorK.Norm.PolynomialResidueSupport
 
 /-!
 Source-only consumers of native single-lift image support. The coefficient map is arbitrary,

@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.PresentationBaseChange
+import Colib.RingTheory.KTheory.MilnorK.Norm.PresentationBaseChange
 
 /-! Consumer of the actual mapped-mixed-span comparison.-/
 

@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.Surjectivity
+import Colib.RingTheory.KTheory.MilnorK.Residue.Surjectivity
 
 open Stacks.Chow
 

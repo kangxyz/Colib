@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.FiniteMixedGeneration
+import Colib.RingTheory.KTheory.MilnorK.FiniteMixedGeneration
 import Mathlib.Algebra.Field.ZMod
 
 /-!

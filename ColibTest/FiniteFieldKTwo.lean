@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.Quillen.Field.FiniteFieldKTwo
+import Colib.RingTheory.KTheory.Quillen.Field.FiniteFieldKTwo
 import Mathlib.Algebra.Field.ZMod
 
 /-!

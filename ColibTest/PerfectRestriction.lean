@@ -1,6 +1,6 @@
 module
 
-import Colib.KTheory.Waldhausen.PerfectRestriction
+import Colib.AlgebraicGeometry.KTheory.PerfectRestriction
 
 noncomputable section
 

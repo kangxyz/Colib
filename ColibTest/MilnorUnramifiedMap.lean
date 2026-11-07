@@ -1,6 +1,6 @@
 module
 
-import Colib.KTheory.MilnorK.Residue.UnramifiedMap
+import Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMap
 
 open Stacks.Chow
 

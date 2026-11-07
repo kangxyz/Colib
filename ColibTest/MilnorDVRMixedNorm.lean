@@ -5,8 +5,8 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.DVRMixed
-import Colib.KTheory.MilnorK.Norm.DVRDegreeOne
+import Colib.RingTheory.KTheory.MilnorK.Norm.DVRMixed
+import Colib.RingTheory.KTheory.MilnorK.Norm.DVRDegreeOne
 
 /-!
 Consumers of the canonical native square on the existing mixed span.

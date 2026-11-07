@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.NormalPrimeTrace
+import Colib.RingTheory.KTheory.MilnorK.Norm.NormalPrimeTrace
 
 /-!
 Regression consumers of restriction of the actual chosen norm as a Galois trace.

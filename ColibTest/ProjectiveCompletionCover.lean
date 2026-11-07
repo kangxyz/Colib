@@ -5,7 +5,7 @@ Authors: OpenAI
 -/
 module
 
-import Colib.KTheory.Quillen.ProjectiveCompletionCover
+import Colib.RingTheory.KTheory.Quillen.ProjectiveCompletionCover
 import Colib.Topology.Covering.PullbackFiber
 
 /-! Regression checks for the actual zero-component cover and its canonical maps. -/

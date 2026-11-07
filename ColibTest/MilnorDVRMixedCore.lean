@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.DVRMixedCore
+import Colib.RingTheory.KTheory.MilnorK.Norm.DVRMixedCore
 
 /-! Native shift consumers, including even ramification and negative order.-/
 

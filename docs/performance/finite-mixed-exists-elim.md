@@ -3,7 +3,7 @@
 The Lean 4.35.0 upgrade exposed a deterministic `whnf` timeout at 200,000
 heartbeats in `Stacks.Chow.exists_finite_coprime_milnorK_mixed_expansion`.
 The source is
-[FiniteMixedGeneration.lean](../../Colib/KTheory/MilnorK/FiniteMixedGeneration.lean).
+[FiniteMixedGeneration.lean](../../Colib/RingTheory/KTheory/MilnorK/FiniteMixedGeneration.lean).
 The production diagnosis used Linux x86-64, Mathlib
 `56a005855ea17e0b0958f73ec801ae140b0a1679` and Stacks
 `5ed82d14634e8d9576bb844c7bd4e3da66d450e7`.
@@ -49,4 +49,4 @@ the same witness theorems, and the result still refers to the actual
 intermediate field, coefficient image and root-field map.
 
 Validate the maintained module with
-`lake build +Colib.KTheory.MilnorK.FiniteMixedGeneration` on the pinned basis.
+`lake build +Colib.RingTheory.KTheory.MilnorK.FiniteMixedGeneration` on the pinned basis.

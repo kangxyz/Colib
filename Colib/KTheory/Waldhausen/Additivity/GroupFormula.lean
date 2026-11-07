@@ -96,3 +96,9 @@ attribute [colib_tag "COL-0212",
     "Actual coproduct and projection maps yield the existing commutative law, including K-zero"]
   CategoryTheory.Waldhausen.Additivity.K_mul_comm
   CategoryTheory.Waldhausen.Additivity.KCommGroup
+
+attribute [colib_ref "Waldhausen1985"
+    "Proposition 1.3.2(4), pp. 331-332, and Theorem 1.4.2, p. 336" "adaptation"
+    "The induced cofibration-sequence formula in the existing group multiplication, including \
+      K-zero"]
+  CategoryTheory.Waldhausen.Additivity.KMap_additivity_mul

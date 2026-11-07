@@ -125,3 +125,13 @@ attribute [colib_tag "COL-0249"]
   basedLocalizationFiberComparison_isWeakHomotopyEquivalence
 
 end CategoryTheory.ExactCategory.SerreLocalization
+
+namespace CategoryTheory.ExactCategory.SerreLocalization
+
+attribute [colib_ref "Quillen1973"
+    "Section 5, Theorem 5 and proof, pp. 113-116" "adaptation"
+    "The actual Serre-quotient comparison is a weak homotopy equivalence"]
+  basedLocalizationFiberComparison_isWeakHomotopyEquivalence
+  localizationFiberEquiv
+
+end CategoryTheory.ExactCategory.SerreLocalization

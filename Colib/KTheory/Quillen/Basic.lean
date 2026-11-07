@@ -76,3 +76,8 @@ attribute [colib_ref "WeibelKBook" "IV, Definition 6.1 and paragraph preceding P
     "adaptation" "The space BQ and its zero vertex, not the loop space KA used in Definition 6.3"]
   CategoryTheory.ExactCategory.ExactStructure.KSpace
   CategoryTheory.ExactCategory.ExactStructure.kBasepoint
+
+attribute [colib_ref "Quillen1973"
+    "Section 2, definition (5), p. 103" "clause"
+    "Nonnegative K-groups as shifted homotopy groups of BQ at zero"]
+  CategoryTheory.ExactCategory.ExactStructure.K

@@ -45,3 +45,9 @@ attribute [colib_tag "COL-0219",
     "Original KMap equality with the actual quotient-before-subobject coproduct functor"]
   CategoryTheory.Waldhausen.Additivity.diagonalKMap_additivity
   CategoryTheory.Waldhausen.Additivity.KMap_additivity
+
+attribute [colib_ref "Waldhausen1985"
+    "Proposition 1.3.2(4), pp. 331-332, and Theorem 1.4.2, p. 336" "adaptation"
+    "Additivity for the original group maps, with the actual quotient-before-subobject sum functor"]
+  CategoryTheory.Waldhausen.Additivity.KMap_additivity
+  CategoryTheory.Waldhausen.Additivity.diagonalKMap_additivity

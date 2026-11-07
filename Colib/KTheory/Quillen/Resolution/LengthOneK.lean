@@ -98,3 +98,8 @@ attribute [colib_tag "COL-0236",
     "Canonical length-one Resolution equivalence"]
   CategoryTheory.ExactCategory.Resolution.KEquivOfLengthOne
   CategoryTheory.ExactCategory.Resolution.KEquivOfLengthOne_coe
+
+attribute [colib_ref "Quillen1973"
+    "Section 4, Theorem 3 and proof, pp. 108-109" "adaptation"
+    "Length-one resolution for the inherited exact subcategory and actual inclusion K-map"]
+  CategoryTheory.ExactCategory.Resolution.KEquivOfLengthOne

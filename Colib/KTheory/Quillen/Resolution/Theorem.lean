@@ -22,6 +22,10 @@ The proof constructs the length-one comma contractions, proves resolving
 closure of every finite-length stratum, and identifies the ambient Q-nerve
 with their genuine filtered colimit. No homotopy equivalence or comma
 contractibility is part of the input.
+
+The original finite-resolution reference is Quillen, Section 4, Corollary 1.
+Theorem 3 in that section is the length-one step, not by itself the statement
+with arbitrary objectwise finite resolution lengths.
 -/
 @[expose] public section
 
@@ -98,3 +102,11 @@ attribute [colib_tag "COL-0237",
   CategoryTheory.ExactCategory.Resolution.inclusionKMap_bijective
   CategoryTheory.ExactCategory.Resolution.KEquiv
   CategoryTheory.ExactCategory.Resolution.KEquiv_coe
+
+attribute [colib_ref "Quillen1973"
+    "Section 4, Corollary 1 and proof, pp. 109-110" "adaptation"
+    "Objectwise finite admissible resolutions, without a uniform length bound; extension and \
+      kernel closure retained"]
+  CategoryTheory.ExactCategory.Resolution.classifyingHomotopyEquiv
+  CategoryTheory.ExactCategory.Resolution.inclusionKMap_bijective
+  CategoryTheory.ExactCategory.Resolution.KEquiv

@@ -55,8 +55,12 @@
       "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
       "reviewed_prefix_bytes": 4109,
       "reviewed_prefix_sha256": "4325deafb6c6294f1d9d5f475d4d9d926392a72825db4ab73e7cc6611a2233f4",
-      "target_sha256": "f787cbedfa32831702cc8f739b595b9bdcca0f0568fa6c0a4c0ae7b6be23e200",
-      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+      "target_sha256": "a736de7d212e12e21a9e6c38d1f0a63a6cfd604fc1ba956c77df923fc9edb16c",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix.",
+      "reference_metadata_update": {
+        "previous_target_sha256": "f787cbedfa32831702cc8f739b595b9bdcca0f0568fa6c0a4c0ae7b6be23e200",
+        "change": "Append verified original mathematical references; declarations, proof bodies and existing citations unchanged."
+      }
     },
     {
       "target": "Colib/CategoryTheory/TheoremB/StructuredWeakComparison.lean",
@@ -85,8 +89,12 @@
       "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
       "reviewed_prefix_bytes": 6199,
       "reviewed_prefix_sha256": "34549c68c564695fd3fd79228f2b29706a5be770a30e01a0d33bc3b45607c5f0",
-      "target_sha256": "ca07a7046ed34155ade499c846c344979caa6a4fdbd9de9c124b08d2d356f593",
-      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+      "target_sha256": "7c6321063d6a82f56d4ddd9b0312ae9a71384875f8d3cdb3ee8c3c58d7e23b92",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix.",
+      "reference_metadata_update": {
+        "previous_target_sha256": "ca07a7046ed34155ade499c846c344979caa6a4fdbd9de9c124b08d2d356f593",
+        "change": "Append verified original mathematical references; declarations, proof bodies and existing citations unchanged."
+      }
     },
     {
       "target": "Colib/KTheory/Quillen/Localization/Serre/LocalizationTheorem.lean",
@@ -107,8 +115,12 @@
       "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
       "reviewed_prefix_bytes": 8066,
       "reviewed_prefix_sha256": "5dadbd7eb9f97394fd5db22ae77f5947d21f160ad4c1366d2cd0ba4c1440fa81",
-      "target_sha256": "93852dafc86999796e66ac133a54bb3926b27594ae7e5808003af05c7df4ddc8",
-      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+      "target_sha256": "0bfbc9bf3f083e4ba6f996f3e4527f52537a9d5b9c42cde345f55aa99bf891aa",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix.",
+      "reference_metadata_update": {
+        "previous_target_sha256": "93852dafc86999796e66ac133a54bb3926b27594ae7e5808003af05c7df4ddc8",
+        "change": "Append verified original mathematical references; declarations, proof bodies and existing citations unchanged."
+      }
     },
     {
       "target": "Colib/KTheory/Quillen/Localization/Serre/KZero.lean",

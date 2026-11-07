@@ -93,3 +93,10 @@ attribute [colib_tag "COL-0248",
   CategoryTheory.TheoremB.fiberComparison_bijective
   CategoryTheory.TheoremB.fiberComparisonPiEquiv
   CategoryTheory.TheoremB.fiberComparisonPiEquiv_coe
+
+attribute [colib_ref "Quillen1973"
+    "Section 1, Theorem B and its dual formulation, p. 97" "adaptation"
+    "The canonical costructured comma-to-fiber map under the transition homotopy-equivalence \
+      hypothesis"]
+  CategoryTheory.TheoremB.fiberComparison_bijective
+  CategoryTheory.TheoremB.fiberComparisonPiEquiv

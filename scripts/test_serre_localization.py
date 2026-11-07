@@ -34,7 +34,7 @@ class SerreLocalizationTests(unittest.TestCase):
         crosswalk_bytes = (
             ROOT / "docs/migration/serre/integration-source-crosswalk.json").read_bytes()
         self.assertEqual(hashlib.sha256(crosswalk_bytes).hexdigest(),
-                         "0d147375db00977824311e7ec00a494e243fcc0bb5f1624c763dea0849573ff6")
+                         "56a0c1c194d12108ccc503346f1ffce09b62986c039d96976b58b19436a841ae")
         crosswalk = json.loads(crosswalk_bytes)
         self.assertEqual(crosswalk["source_revision"],
                          "c561118b7795eb9780be9ed391c3251d6a4d0afd")
@@ -45,7 +45,7 @@ class SerreLocalizationTests(unittest.TestCase):
         for row in crosswalk["files"]:
             source = (ROOT / row["target"]).read_bytes()
             historical_source = source
-            # The pinned native namespace now matches the frozen reviewed source exactly.
+            # Primary-reference footers update full-file hashes; reviewed proof prefixes stay fixed.
             self.assertEqual(hashlib.sha256(historical_source).hexdigest(), row["target_sha256"])
             prefix = historical_source[:row["reviewed_prefix_bytes"]]
             self.assertEqual(hashlib.sha256(prefix).hexdigest(), row["reviewed_prefix_sha256"])

@@ -113,3 +113,9 @@ attribute [colib_tag "COL-0055",
     "The zero-based induced map and identity law, without composition or invariance"]
   CategoryTheory.ExactCategory.ExactFunctor.KMap
   CategoryTheory.ExactCategory.ExactFunctor.KMap_id
+
+attribute [colib_ref "Quillen1973"
+    "Section 2, equation (6) and following paragraph, p. 103" "adaptation"
+    "Actual zero-based map of an exact functor and its identity law"]
+  CategoryTheory.ExactCategory.ExactFunctor.KMap
+  CategoryTheory.ExactCategory.ExactFunctor.KMap_id

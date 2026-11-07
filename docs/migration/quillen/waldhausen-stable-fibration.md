@@ -89,9 +89,16 @@ tracks, universes and the signed lowest boundary. Its 53 new declarations
 passed the transitive axiom audit using only `propext`, `Classical.choice`
 and `Quot.sound`.
 
-Integration separately rechecks the compiled Library bindings, changed
-source consumers, native declaration and text lint, and production
-axioms before the exact candidate's original whole-library CI. Component
-checks do not certify a later integration tree. No local whole-library
-pass, kernel replay or separate downstream-client check is inferred.
-Detailed internal verification records remain outside the repository.
+The integrated result was published as commit
+`21081f04555a2bd9d5e52f4ad332de81730d1b5e` and advanced to main after its
+[exact original whole-library CI](https://github.com/kangxyz/colib/actions/runs/42397700139)
+passed production build, tests, native declaration/text lint, transitive axiom
+audit and Library export. Its local focused integration checks also passed
+all compiled bindings, applicable source consumers, native lint and the
+11,424-declaration transitive audit with only the three permitted axioms.
+
+That exact CI result does not certify a later integration tree. No local
+whole-library pass, kernel replay or separate downstream-client check is
+inferred. The separate [cone-excision milestone](waldhausen-cone-excision.md)
+extends the scope using genuine finite excision and point HEP. Detailed
+internal verification records remain outside the repository.

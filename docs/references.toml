@@ -84,12 +84,18 @@ kind = "book"
 title = "Algebraic Topology"
 authors = ["Allen Hatcher"]
 year = 2002
-version = "Author's online Chapters 0, 1, 2 and 4, Proposition 0.16 and Sections 1.1, 1.2, 2.1, 2.3 and 4.1 inspected 2026-11-05"
+version = "Author's online Chapters 0, 1, 2 and 4, Proposition 0.16 and Sections 1.1, 1.2, 2.1, 2.3 and 4.1 inspected 2026-11-05; Section 4.2, Theorem 4.23 and proof, pp. 360-363, inspected 2026-11-07"
 url = "https://pi.math.cornell.edu/~hatcher/AT/ATpage.html"
 
 [[sources.HatcherAT.documents]]
 label = "Chapter 4, Homotopy Theory"
 locator_prefix = "Section 4.1,"
+url = "https://pi.math.cornell.edu/~hatcher/AT/ATch4.pdf"
+sha256 = "2406a6d735efabec618e336e351066237f903b8c917a7ddc73034e80ba83b737"
+
+[[sources.HatcherAT.documents]]
+label = "Chapter 4, Homotopy excision"
+locator_prefix = "Section 4.2,"
 url = "https://pi.math.cornell.edu/~hatcher/AT/ATch4.pdf"
 sha256 = "2406a6d735efabec618e336e351066237f903b8c917a7ddc73034e80ba83b737"
 

@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0288"
+title = "Genuine S-model cone excision and the original Waldhausen cone comparison"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 60
+statement = "Every actual map between original iterated-S prespectra has a cone-to-inclusion-fiber comparison that is 2n-connected at level n + 1 and a stable equivalence in every integer degree. The original acyclic null track descends to a stable equivalence from the cone of the acyclic inclusion to the original coarse prespectrum."
+scope = "S-model connectivity, Omega structure and point HEP are proved, not assumed. The Waldhausen cone conclusion retains exactly coarse two-out-of-three, the coarse extension axiom, genuine joint cylinder data and its separate second-endpoint section. The actual target face, entire nullhomotopy, independent cone and loop parameters and signed stable connecting square are retained. This is connective cone excision, not Bass nonconnective K-theory or all-degree cofinality for an arbitrary exact functor."
+review = "author_checked"
+provenance = "quillen"

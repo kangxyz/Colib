@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0287"
+title = "Finite excision for actual double cylinders and reduced cones"
+kind = "theorem"
+section = "homotopy-colimits"
+order = 60
+statement = "For p- and q-connected attaching maps, the actual full-cylinder gap is r-connected whenever r + 1 is at most p + q. The actual reduced-cone-to-inclusion-fiber map has the same range under genuine source and target point homotopy-extension properties."
+scope = "Connectivity includes nonempty fibers over every target point and vanishing at every actual fiber basepoint. No CW type, separation or attaching-map cofibration hypothesis is added to the double-cylinder theorem. The reduced theorem retains its point HEP hypotheses, the original source-to-point bound, quotient cone and entire stored cylinder path. The classical CW-pair theorem is cited only as background."
+review = "author_checked"
+provenance = "quillen"

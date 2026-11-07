@@ -172,7 +172,9 @@ def check_sources(root=ROOT):
         text = "".join(code)
         if re.search(r"\b(sorry|admit|axiom|native_decide)\b", text):
             raise ValueError(f"Production placeholder or added axiom in {path}")
-        for name in re.findall(r"(?m)^(?:(?:public|meta)\s+)*import\s+(\S+)", text):
+        for name in re.findall(
+            r"(?m)^(?:(?:public|meta)\s+)*import\s+(?:all\s+)?(\S+)", text
+        ):
             if name.split(".")[0] not in roots:
                 raise ValueError(
                     f"Production import outside the dependency boundary in {path}"

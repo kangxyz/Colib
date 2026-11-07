@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0266"
+title = "Normalized Ext and right-derived Hom from a supplied resolution"
+kind = "comparison"
+section = "derived-hom-comparisons"
+order = 10
+statement = "A supplied injective resolution of Y gives an additive equivalence from the original Ext group Ext(X,Y,n) to the value at Y of the actual nth right-derived additive Hom(X,-) functor. An actual closed resolution morphism is sent to the literal evaluated homology class. In degree zero the original Ext.mk₀ class of f maps exactly to the original toRightDerivedZero transformation evaluated at f."
+scope = "An abelian category with enough injectives, arbitrary objects X and Y, any natural degree including zero, a supplied native injective resolution of Y, and HasExt in a universe independent of the category's object and morphism universes. The comparison uses the original Ext, Hom complex, resolution augmentation and right-derived functor; no additional derived-category structure is assumed in its statement. The generic cochain supplier retains independent source and target category universes. Ext coefficient naturality, independence of the supplied resolution, and naturality in the additive functor remain separate unproved obligations."
+review = "author_checked"
+proof = "Compose Mathlib's supplied-resolution Ext/cohomology-class equivalence, the native Hom-complex homology equivalence, Stacks' single-source evaluation isomorphism, and the inverse of the supplied integer-cochain right-derived comparison. Evaluation preserves the actual cycle projection. The original augmented zero cocycle equals Ext.mk₀, and the native zero-cycle projection identifies its image with toRightDerivedZero."

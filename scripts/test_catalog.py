@@ -46,6 +46,36 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("Colib.KTheory.MilnorK.Residue.Completion",
                       (root / "Colib.lean").read_text())
 
+    def test_import_all_keeps_native_dependency_boundary(self):
+        source = self.root / "Colib" / "NativeImport.lean"
+        source.parent.mkdir()
+        for prefix in ("import", "public import", "meta import", "public meta import"):
+            with self.subTest(prefix=prefix):
+                source.write_text(f"module\n{prefix} all Mathlib.LinearAlgebra.TensorAlgebra.Basic\n")
+                catalog.check_sources(self.root)
+
+    def test_import_all_rejects_external_dependency(self):
+        source = self.root / "Colib" / "ExternalImport.lean"
+        source.parent.mkdir()
+        for prefix in ("import", "public import", "meta import", "public meta import"):
+            with self.subTest(prefix=prefix):
+                source.write_text(f"module\n{prefix} all External.Module\n")
+                with self.assertRaisesRegex(ValueError, "outside the dependency boundary"):
+                    catalog.check_sources(self.root)
+
+    def test_independent_milestone_ids_keep_their_owners(self):
+        expected = {
+            "COL-0263": "milnor-k-theory",
+            "COL-0264": "milnor-k-theory",
+            "COL-0265": "koszul-coefficients",
+            "COL-0266": "derived-hom-comparisons",
+        }
+        for identifier, section in expected.items():
+            self.assertEqual(self.library["entries"][identifier]["section"], section)
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for identifier in expected:
+            self.assertTrue(result["entries"][identifier]["references"])
+
     def test_principal_euler_complete_chain_registration(self):
         root = catalog.ROOT
         leaves = ("Basic", "Additivity", "Support", "Filtration", "Associativity")
@@ -274,6 +304,7 @@ class LibraryTests(unittest.TestCase):
             "ext-scalars": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
             "projective-dimension": "Colib.RingTheory.Koszul.Ext",
             "koszul-coefficients": "Colib.RingTheory.Koszul.Coefficients",
+            "derived-hom-comparisons": "Colib.Algebra.Homology.DerivedCategory.Ext.RightDerived",
             "exact-categories": "Colib.CategoryTheory.ExactCategory.Basic",
             "bicategories": "Colib.CategoryTheory.Bicategory.IsoQuotient",
             "restricted-spans": "Colib.CategoryTheory.QConstruction.Basic",

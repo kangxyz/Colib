@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0264"
+title = "Finite-stage vanishing and equality of native Milnor classes"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 155
+statement = "A native Milnor-ring element from a finite intermediate field that vanishes after algebraic extension already vanishes in a finite enlargement. In every homogeneous degree, vanishing and equality of prescribed classes have such finite witnesses; classes over the original base field therefore have witnesses over actual finite intermediate fields."
+scope = "The extension is algebraic, with arbitrary characteristic and no separability or perfectness assumption. Every nonnegative homogeneous degree, including zero, is retained. Base and extension universes are independent. The finite-enlargement conclusions retain the prescribed starting field and use the original inclusion maps; the base-field conclusions use the original algebraMap transports. The proof descends the native tensor congruence and two-sided Steinberg ideal without assuming tensor-map or Milnor-map injectivity. No norm, coprime-degree, torsion-detection, full categorical colimit, or comparison with a second Milnor presentation is asserted."
+review = "author_checked"

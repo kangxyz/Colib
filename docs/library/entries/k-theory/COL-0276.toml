@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0276"
+title = "The actual Waldhausen S-prespectrum and original K-groups"
+kind = "comparison"
+section = "waldhausen-k-theory"
+order = 45
+statement = "Finite iteration of the actual quotient-row S-construction gives a loop prespectrum whose zero-space homotopy sets identify with the original Waldhausen K-groups, with the original exact-functor KMap."
+scope = "Strict chosen-zero-preserving exact functors act functorially through the native wide subcategory. Canonical zero rebasing also gives actual prespectrum maps for arbitrary exact functors. Original object and morphism universes remain independent; source and target retain their common universe pair. The zero-space comparison is multiplicative in positive zero-space degree. No Omega-equivalence or nonconnective construction is asserted."
+review = "author_checked"
+provenance = "quillen"

@@ -1,6 +1,22 @@
-# The canonical Milnor–Quillen K₂ comparison
+# Matsumoto's theorem for K₂ in characteristic zero
 
-## Source and status
+## Mathematical attribution
+
+The field K₂ isomorphism is **Matsumoto's theorem**. Its original source is
+[Matsumoto (1969), Section 5, Theorem 5.10 and Corollary 5.11, pp. 30–31](https://numdam.org/item/10.24033/asens.1174.pdf#page=31).
+The original statement treats central extensions over infinite fields, with
+separate symplectic and non-symplectic presentations. Here the non-symplectic
+case specializes to stable type A, with the implementation's `[CharZero F]`
+hypothesis. The familiar field K₂ presentation is also stated in
+[Weibel, III, Theorem 6.1](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf#page=48).
+
+The further identification with Quillen's homotopy-defined K₂ is a separate
+comparison, as in [Weibel, IV, Corollary 1.7.1](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf#page=6).
+Neither the general Milnor-to-Quillen map in arbitrary degree nor its additional
+naturality and sign conventions are renamed Matsumoto's theorem. The software
+references below record implementation provenance, not mathematical priority.
+
+## Implementation source and status
 
 The completed source chain adapts
 [`Quillen/KTheory/Field/MilnorKTwoEquivalence.lean`](https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/KTheory/Field/MilnorKTwoEquivalence.lean)

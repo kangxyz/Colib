@@ -9,7 +9,7 @@ public import Colib.GroupTheory.Steinberg.Matsumoto.Injectivity
 public import Colib.KTheory.MilnorK.Steinberg.Surjectivity
 
 /-!
-# The canonical Milnor–Steinberg kernel equivalence in characteristic zero
+# Matsumoto's theorem for the stable Steinberg kernel in characteristic zero
 
 The forward map is literally `StableSteinberg.milnorToKernel`. Surjectivity uses
 all-rank kernel generation; injectivity uses the actual finite Bruhat actions
@@ -17,7 +17,12 @@ and their faithful native Milnor coefficient translations. The ordered pair
 symbol retains its positive torus-defect normalization. No choice of an
 alternative Milnor group or comparison adapter is involved.
 
-The ingredients adapt the pinned Quillen source at
+The mathematical source is Matsumoto (1969), Section 5, Theorem 5.10 and
+Corollary 5.11, pp. 30–31: specialize the non-symplectic presentation over an
+infinite field to stable type A. The implementation retains `[CharZero F]`.
+Weibel, III, Theorem 6.1 states the classical K₂ form.
+
+The implementation ingredients adapt the pinned Quillen source at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. This identifies the elementary
 Steinberg kernel. Identification with Quillen's homotopy-defined K₂ is separate.
 -/
@@ -35,6 +40,12 @@ theorem milnorToKernel_bijective_charZero : Function.Bijective (milnorToKernel F
   ⟨milnorToKernel_injective_charZero F, KernelGeneration.milnorToKernel_surjective F⟩
 
 /-- Matsumoto's equivalence with the literal native Milnor-to-kernel forward map. -/
+@[colib_ref "Matsumoto1969" "Section 5, Theorem 5.10 and Corollary 5.11, pp. 30-31"
+    "adaptation" "The non-symplectic symbol presentation specialized to stable type A over \
+      characteristic-zero fields; no Quillen homotopy identification is part of this result",
+  colib_ref "WeibelKBook" "III, Theorem 6.1" "adaptation"
+    "The classical field K2 presentation, implemented with the native Milnor group and \
+      stable Steinberg kernel in characteristic zero"]
 def milnorKernelEquiv : MilnorKTheory F 2 ≃+ Additive ((toElementary F).ker) :=
   AddEquiv.ofBijective (milnorToKernel F) (milnorToKernel_bijective_charZero F)
 

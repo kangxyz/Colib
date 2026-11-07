@@ -12,14 +12,21 @@ public import Colib.KTheory.MilnorK.QuillenNaturality
 public import Colib.KTheory.Quillen.Field.PositiveSymbolMarking
 
 /-!
-# The original Milnor–Quillen K-two equivalences in characteristic zero
+# Matsumoto's theorem for Quillen K₂ in characteristic zero
 
 The forward maps are the original right-projective and upper finite-module maps.
 Native Matsumoto injectivity, genuine stable-fiber perfectness and the constructed
 geometric detector supply bijectivity. Both directions retain the original scalar
 extension maps. The negative normalization is minus the same positive inverse.
 
-Source: `Quillen/KTheory/Field/MilnorKTwoEquivalence.lean` at
+The mathematical attribution is Matsumoto (1969), Section 5, Theorem 5.10 and
+Corollary 5.11, pp. 30–31, specialized to stable type A over characteristic-zero
+fields. Weibel, III, Theorem 6.1 gives the familiar K₂ formulation. The separate
+identification with homotopy-defined K₂ is described in Weibel, IV, Corollary 1.7.1.
+The original paper does not define Quillen's later K-groups, and the general
+Milnor-to-Quillen comparison in other degrees is not Matsumoto's theorem.
+
+Implementation source: `Quillen/KTheory/Field/MilnorKTwoEquivalence.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The ordered positive symbol is
 the original scalar identity-action unit product; its negative normalization is
 the negative ordered Milnor symbol. No positive-characteristic equivalence is asserted.
@@ -70,13 +77,15 @@ theorem toUpperModuleKTwo_bijective_charZero :
   exact ⟨toUpperModuleKTwo_injective_charZero F,
     toUpperModuleKTwo_surjective F⟩
 
-/-- The positive right-projective equivalence has the SAME original forward map. -/
+/-- Matsumoto's theorem in characteristic zero, with the original right-projective
+Quillen K₂ map as its forward homomorphism. -/
 def rightProjectiveKTwoEquivCharZero : MilnorKTheory F 2 ≃+
     Additive ((ModuleCat.FiniteProjective.exactStructure.{u, u} Fᵐᵒᵖ).K 2) :=
   AddEquiv.ofBijective (toRightProjectiveKTwo F)
     (toRightProjectiveKTwo_bijective_charZero F)
 
-/-- The positive upper finite-module equivalence has the SAME original forward map. -/
+/-- Matsumoto's theorem in characteristic zero for upper finite-module Quillen K₂,
+with the original forward homomorphism. -/
 def upperModuleKTwoEquivCharZero : MilnorKTheory F 2 ≃+
     Additive ((abelianExactStructure (FGModuleCat.{u} F)).SmallK.{u + 1} 2) :=
   AddEquiv.ofBijective (toUpperModuleKTwo F)
@@ -232,6 +241,16 @@ theorem upperModuleKTwoNegativeEquivCharZero_symm_naturality (m : MilnorKTheory 
 end MilnorKTheory
 
 namespace MilnorKTheory
+
+attribute [colib_ref "Matsumoto1969" "Section 5, Theorem 5.10 and Corollary 5.11, pp. 30-31"
+    "adaptation" "Stable type A specialization over characteristic-zero fields, followed by \
+      the separate identification with Quillen K2",
+  colib_ref "WeibelKBook" "III, Theorem 6.1" "adaptation"
+    "Matsumoto's field K2 presentation, restricted here to characteristic zero",
+  colib_ref "WeibelKBook" "IV, Corollary 1.7.1" "comparison"
+    "Identification of classical Steinberg-kernel K2 with homotopy-defined K2, realized here \
+      in the existing exact-category models"]
+  rightProjectiveKTwoEquivCharZero upperModuleKTwoEquivCharZero
 
 attribute [colib_tag "COL-0262",
   colib_ref "quillen" "Quillen/KTheory/Field/MilnorKTwoEquivalence.lean, lines 73-226"

@@ -111,6 +111,26 @@ def load_library(root=ROOT):
         entry["path"] = str(path.relative_to(root))
         entries[identifier] = entry
         sections[entry["section"]]["entries"].append(identifier)
+    retired = {}
+    for path in sorted((root / "docs/library/retired").glob("*.toml")):
+        item = tomllib.loads(path.read_text())["retired"]
+        identifier = item["id"]
+        if (not re.fullmatch(r"COL-[0-9]{4,}", identifier)
+                or identifier in entries or identifier in retired):
+            raise ValueError(f"Invalid or reused retired Library ID {identifier}")
+        for field in ("title", "reason"):
+            if not isinstance(item.get(field), str) or not item[field].strip():
+                raise ValueError(f"{identifier} needs a retirement {field}")
+        if not re.fullmatch(r"[0-9a-f]{40}", item.get("previous_revision", "")):
+            raise ValueError(f"{identifier} needs an exact previous revision")
+        previous = Path(item.get("previous_path", ""))
+        if (previous.is_absolute() or ".." in previous.parts
+                or not str(previous).startswith("docs/library/entries/")
+                or previous.name != identifier + ".toml"):
+            raise ValueError(f"{identifier} needs its previous Library path")
+        if any(value not in entries for value in item.get("related_items", [])):
+            raise ValueError(f"{identifier} has an unknown related Library item")
+        retired[identifier] = dict(item, status="retired", path=str(path.relative_to(root)))
     if not entries or not chapters:
         raise ValueError("The Library needs occupied mathematical chapters and items")
     for section in sections.values():
@@ -125,6 +145,7 @@ def load_library(root=ROOT):
         "chapters": chapters,
         "sections": sections,
         "entries": entries,
+        "retired": retired,
     }
 
 
@@ -151,7 +172,9 @@ def check_sources(root=ROOT):
         text = "".join(code)
         if re.search(r"\b(sorry|admit|axiom|native_decide)\b", text):
             raise ValueError(f"Production placeholder or added axiom in {path}")
-        for name in re.findall(r"(?m)^(?:(?:public|meta)\s+)*import\s+(\S+)", text):
+        for name in re.findall(
+            r"(?m)^(?:(?:public|meta)\s+)*import\s+(?:all\s+)?(\S+)", text
+        ):
             if name.split(".")[0] not in roots:
                 raise ValueError(
                     f"Production import outside the dependency boundary in {path}"
@@ -404,6 +427,9 @@ def main():
         build_catalog()
     elif args.command == "show":
         library = load_library()
+        if args.identifier in library["retired"]:
+            print(json.dumps(library["retired"][args.identifier], ensure_ascii=False, indent=2))
+            return
         if args.identifier not in library["entries"]:
             raise ValueError("Select an existing permanent Library ID")
         entry = library["entries"][args.identifier]

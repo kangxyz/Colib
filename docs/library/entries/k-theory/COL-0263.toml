@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0263"
+title = "Finite fields of definition for native Milnor classes"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 154
+statement = "Every native homogeneous Milnor class over an algebraic field extension is transported from an actual finite intermediate field. A finite family, with possibly different degrees, has simultaneous lifts over one such field, which can contain a prescribed finite intermediate coefficient field."
+scope = "Fields and finite index types may have independent universes. Every nonnegative homogeneous degree, including zero, is covered. Only algebraicity is assumed; characteristic, separability and perfectness are unrestricted. The witnesses are Mathlib IntermediateFields, and their maps are the existing native homogeneous field transports along actual inclusions. The finite field depends on the given family, not uniformly on the whole Milnor group. This is descent of elements, not injectivity of field transport or a constructed categorical colimit equivalence."
+review = "author_checked"

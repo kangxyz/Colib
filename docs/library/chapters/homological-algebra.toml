@@ -27,3 +27,9 @@ id = "homology-colimits"
 title = "Homology and exact colimits"
 order = 30
 introduction = "Canonical comparisons identify module homology across filtered colimits and coproducts with explicit universe bounds."
+
+[[sections]]
+id = "derived-hom-comparisons"
+title = "Injective resolutions and derived Hom"
+order = 15
+introduction = "Supplied native injective resolutions identify Ext with the actual right-derived additive Hom functor. Comparisons retain independent Ext universes and are normalized on the original cocycles and degree-zero transformation."

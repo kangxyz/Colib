@@ -3,15 +3,21 @@
 from pathlib import Path
 import shutil
 import json
+import importlib.util
 import subprocess
 import sys
 import tempfile
 import unittest
 
 import catalog
+import lint_style
 
 
 class LibraryTests(unittest.TestCase):
+    def assert_test_in_checks(self, module, check_path):
+        self.assertIn(module, lint_style.source_modules(catalog.ROOT, "ColibTest"))
+        self.assertIn("python3 scripts/lint_style.py", (catalog.ROOT / check_path).read_text())
+
     def setUp(self):
         self.library = catalog.load_library()
         self.directory = tempfile.TemporaryDirectory()
@@ -36,9 +42,39 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("dvrMilnorTameSymbol'_completion_eq_zero_iff", source)
         self.assertIn('colib_tag "COL-0168"', source)
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.MilnorCompletion", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.MilnorCompletion", path)
         self.assertIn("Colib.KTheory.MilnorK.Residue.Completion",
                       (root / "Colib.lean").read_text())
+
+    def test_import_all_keeps_native_dependency_boundary(self):
+        source = self.root / "Colib" / "NativeImport.lean"
+        source.parent.mkdir()
+        for prefix in ("import", "public import", "meta import", "public meta import"):
+            with self.subTest(prefix=prefix):
+                source.write_text(f"module\n{prefix} all Mathlib.LinearAlgebra.TensorAlgebra.Basic\n")
+                catalog.check_sources(self.root)
+
+    def test_import_all_rejects_external_dependency(self):
+        source = self.root / "Colib" / "ExternalImport.lean"
+        source.parent.mkdir()
+        for prefix in ("import", "public import", "meta import", "public meta import"):
+            with self.subTest(prefix=prefix):
+                source.write_text(f"module\n{prefix} all External.Module\n")
+                with self.assertRaisesRegex(ValueError, "outside the dependency boundary"):
+                    catalog.check_sources(self.root)
+
+    def test_independent_milestone_ids_keep_their_owners(self):
+        expected = {
+            "COL-0263": "milnor-k-theory",
+            "COL-0264": "milnor-k-theory",
+            "COL-0265": "koszul-coefficients",
+            "COL-0266": "derived-hom-comparisons",
+        }
+        for identifier, section in expected.items():
+            self.assertEqual(self.library["entries"][identifier]["section"], section)
+        result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        for identifier in expected:
+            self.assertTrue(result["entries"][identifier]["references"])
 
     def test_principal_euler_complete_chain_registration(self):
         root = catalog.ROOT
@@ -51,7 +87,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(f'colib_tag "{identifier}"', source)
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.PrincipalEuler", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.PrincipalEuler", path)
         source = (root / "Colib/RingTheory/Multiplicity/PrincipalEuler/Associativity.lean").read_text()
         self.assertIn("principalEuler_quotient_closedPoint_eq_zero", source)
         self.assertIn("principalCokernel_associativity", source)
@@ -67,7 +103,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(f'colib_tag "{identifier}"', source)
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.FiniteAlgebraLocal", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.FiniteAlgebraLocal", path)
         self.assertIn("specialization", self.library["entries"]["COL-0181"]["scope"])
 
     def test_finite_algebra_norm_chain_registration(self):
@@ -82,7 +118,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(f'colib_tag "{identifier}"', source)
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.FiniteAlgebraNorm", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.FiniteAlgebraNorm", path)
 
     def test_completion_branches_chain_registration(self):
         root = catalog.ROOT
@@ -96,7 +132,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(f'colib_tag "{identifier}"', source)
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-            self.assertIn("ColibTest.CompletionBranches", (root / path).read_text())
+            self.assert_test_in_checks("ColibTest.CompletionBranches", path)
 
     def test_fraction_residue_chain_registration(self):
         root = catalog.ROOT
@@ -116,7 +152,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
             for module in ("ColibTest.FractionBranches", "ColibTest.DVRResidueNorm"):
-                self.assertIn(module, (root / path).read_text())
+                self.assert_test_in_checks(module, path)
 
     def test_uniformizer_norm_complete_chain_registration(self):
         root = catalog.ROOT
@@ -138,7 +174,7 @@ class LibraryTests(unittest.TestCase):
             for test in ("HenselianPrincipalRoots", "HenselianUniformizerNormalization",
                          "DVRRamificationDegree", "DVRUniformizerBinomial",
                          "DVRUniformizerNorm", "DVRPrimeUniformizerNorm"):
-                self.assertIn("ColibTest." + test, (root / path).read_text())
+                self.assert_test_in_checks("ColibTest." + test, path)
         self.assertIn("ordinary norm-order", self.library["entries"]["COL-0199"]["scope"])
 
     def test_native_dvr_norm_order_registration(self):
@@ -153,7 +189,7 @@ class LibraryTests(unittest.TestCase):
             self.assertIn(module, (root / "Colib.lean").read_text())
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
             for test in ("DVRFractionOrder", "DVRNormOrder"):
-                self.assertIn("ColibTest." + test, (root / path).read_text())
+                self.assert_test_in_checks("ColibTest." + test, path)
         source = (root / "Colib/RingTheory/Norm/DVROrder.lean").read_text()
         self.assertIn("theorem neg_log_valuation_norm", source)
         self.assertIn("theorem dvrFracOrd_norm_mk0", source)
@@ -185,7 +221,7 @@ class LibraryTests(unittest.TestCase):
                     "ColibTest.PolynomialPowerFactorCount",
                     "ColibTest.DVRCharpolyBranchCount",
             ):
-                self.assertIn(module, (root / path).read_text())
+                self.assert_test_in_checks(module, path)
         self.assertIn("infinite base field", self.library["entries"]["COL-0202"]["scope"])
         self.assertIn("power basis", self.library["entries"]["COL-0204"]["scope"])
         self.assertIn("Characteristic-zero", self.library["entries"]["COL-0207"]["scope"])
@@ -213,7 +249,7 @@ class LibraryTests(unittest.TestCase):
                     "ColibTest.PGroupNormalSubfield",
                     "ColibTest.PGroupNormalSubfieldEmbedding",
             ):
-                self.assertIn(module, (root / path).read_text())
+                self.assert_test_in_checks(module, path)
         self.assertIn("Zero polynomials", self.library["entries"]["COL-0208"]["scope"])
         self.assertIn("No monicity", self.library["entries"]["COL-0209"]["scope"])
         self.assertIn("original field", self.library["entries"]["COL-0211"]["scope"])
@@ -248,7 +284,7 @@ class LibraryTests(unittest.TestCase):
         self.assertIn("independent", self.library["entries"]["COL-0051"]["scope"])
         for test in ledger["tests"]:
             for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
-                self.assertIn(test, (catalog.ROOT / path).read_text())
+                self.assert_test_in_checks(test, path)
 
     def native_fixture(self):
         native = {
@@ -264,10 +300,11 @@ class LibraryTests(unittest.TestCase):
             "waldhausen-k-theory": "Colib.KTheory.Waldhausen.Basic",
             "homology-colimits": "Colib.Algebra.Category.ModuleCat.FilteredColimits",
             "affine-open-pairs": "Colib.AlgebraicGeometry.Morphisms.OpenImmersion.Pair.Functor",
-            "perfect-complexes": "Colib.AlgebraicGeometry.Modules.LocalRepresentativeEquivalence",
+            "perfect-complexes": "Colib.AlgebraicGeometry.Modules.PerfectWaldhausen",
             "ext-scalars": "Colib.Algebra.Homology.DerivedCategory.Ext.Quotient",
             "projective-dimension": "Colib.RingTheory.Koszul.Ext",
             "koszul-coefficients": "Colib.RingTheory.Koszul.Coefficients",
+            "derived-hom-comparisons": "Colib.Algebra.Homology.DerivedCategory.Ext.RightDerived",
             "exact-categories": "Colib.CategoryTheory.ExactCategory.Basic",
             "bicategories": "Colib.CategoryTheory.Bicategory.IsoQuotient",
             "restricted-spans": "Colib.CategoryTheory.QConstruction.Basic",
@@ -325,23 +362,73 @@ class LibraryTests(unittest.TestCase):
         self.assertEqual(self.library["entries"]["COL-0177"]["section"], "waldhausen-categories")
         self.assertEqual(self.library["entries"]["COL-0178"]["section"], "perfect-complexes")
         self.assertIn("every relevant pushout apex", self.library["entries"]["COL-0178"]["statement"])
-        self.assertIn("not identified literally", self.library["entries"]["COL-0178"]["scope"])
+        self.assertIn("No archived perfectness model", self.library["entries"]["COL-0178"]["scope"])
         result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
         for identifier in ("COL-0177", "COL-0178"):
             self.assertTrue(result["entries"][identifier]["references"])
 
-    def test_perfect_local_comparison_keeps_exact_scope(self):
-        item = self.library["entries"]["COL-0176"]
-        self.assertEqual(item["section"], "perfect-complexes")
-        self.assertEqual(item["kind"], "comparison")
-        self.assertIn("arbitrary supplied universe d", item["scope"])
-        self.assertIn("No global strict representative", item["scope"])
+    def test_perfect_local_comparison_is_retired(self):
+        self.assertNotIn("COL-0176", self.library["entries"])
+        self.assertEqual(self.library["retired"]["COL-0176"]["status"], "retired")
         result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
-        self.assertTrue(result["entries"]["COL-0176"]["references"])
-        self.assertEqual(
-            result["sections"]["perfect-complexes"]["modules"],
-            ["Colib.AlgebraicGeometry.Modules.LocalRepresentativeEquivalence"],
-        )
+        self.assertNotIn("COL-0176", result["entries"])
+        self.assertIn("COL-0176", result["retired"])
+        self.assertEqual(result["sections"]["perfect-complexes"]["modules"],
+                         ["Colib.AlgebraicGeometry.Modules.PerfectWaldhausen"])
+
+    def test_retired_id_cannot_be_reused(self):
+        path = self.root / "docs/library/entries/algebraic-geometry/COL-0178.toml"
+        path.write_text(path.read_text().replace('id = "COL-0178"', 'id = "COL-0176"'))
+        with self.assertRaisesRegex(ValueError, "reused retired Library ID"):
+            catalog.load_library(self.root)
+
+    def test_retired_id_rejects_compiled_binding(self):
+        native = self.native_fixture()
+        native["bindings"].append({"id": "COL-0176", "name": native["declarations"][0]["name"]})
+        with self.assertRaisesRegex(ValueError, "Unknown compiled Library binding"):
+            catalog.compile_library(self.library, native, {}, "main")
+
+    def test_retired_record_requires_safe_history(self):
+        path = self.root / "docs/library/retired/COL-0176.toml"
+        path.write_text(path.read_text().replace(
+            'previous_path = "docs/library/entries/algebraic-geometry/COL-0176.toml"',
+            'previous_path = "../../escape.toml"'))
+        with self.assertRaisesRegex(ValueError, "previous Library path"):
+            catalog.load_library(self.root)
+
+    def test_retired_item_keeps_page_and_search_record(self):
+        spec = importlib.util.spec_from_file_location("colib_site", catalog.ROOT / "scripts/site.py")
+        site = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(site)
+        built = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
+        built["source_hashes"] = catalog.source_hashes()
+        library_path = self.root / "library.json"
+        library_path.write_text(json.dumps(built))
+        output = self.root / "site"
+        site.build(library_path, output)
+        page = (output / "tag/COL-0176/index.html").read_text()
+        self.assertIn("Retired Library item", page)
+        self.assertIn("5c0a7ab9c060b7482a3c49056bb9b3284fc47829", page)
+        self.assertIn("COL-0178", page)
+        records = json.loads((output / "search.json").read_text())
+        retired = next(row for row in records if row.get("id") == "COL-0176")
+        self.assertEqual(retired["kind"], "retired")
+        self.assertEqual(retired["path"], "tag/COL-0176/")
+
+    def test_perfect_regressions_use_only_native_objects(self):
+        root = catalog.ROOT
+        for stem in ("LocalRepresentativeComparison", "LocalRepresentativeEquivalence"):
+            self.assertFalse((root / "Colib/AlgebraicGeometry/Modules" / (stem + ".lean")).exists())
+            self.assertNotIn(stem, (root / "Colib.lean").read_text())
+        for stem in ("PerfectLocalComparison", "PerfectLocalEquivalence", "PerfectKEquivalence"):
+            self.assertFalse((root / "ColibTest" / (stem + ".lean")).exists())
+            self.assertNotIn("ColibTest." + stem, lint_style.source_modules(root, "ColibTest"))
+        for stem in ("PerfectWaldhausen", "PerfectKTheory"):
+            source = (root / "ColibTest" / (stem + ".lean")).read_text()
+            self.assertIn("RingedSpace.perfectComplexesWaldhausen", source)
+            self.assertNotIn("import all", source)
+            self.assertNotIn("private def source", source)
+            self.assert_test_in_checks("ColibTest." + stem, "scripts/check.sh")
 
     def test_waldhausen_homotopy_chain_keeps_model_and_owners(self):
         self.assertEqual(self.library["entries"]["COL-0154"]["section"], "waldhausen-categories")

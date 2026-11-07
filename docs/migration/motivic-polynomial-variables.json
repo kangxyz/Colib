@@ -1,0 +1,283 @@
+{
+  "status": "native_leaf_compiled_remote_integration_pending",
+  "source_repository": "kangxyz/aglib",
+  "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
+  "source_module": "Aglib.RingTheory.MvPolynomial.RegularSequence",
+  "source_sha256": "bc6338c46a52bf1f08e15474b2d56f7cf95e4bd74cb13d1e43648376d6e39fc1",
+  "original_archive_provenance": {
+    "member": "Motivic/RingTheory/MvPolynomial/RegularSequence.lean",
+    "member_sha256": "e7c2874e7260e03067827da56d70f854b6db9e243971c1e9106786da4d2fb4dc",
+    "license": "Apache-2.0",
+    "original_archive_opened_this_task": false
+  },
+  "exact_source_surface": [
+    "MvPolynomial.isSMulRegular_quotient_span_X",
+    "MvPolynomial.isWeaklyRegular_X"
+  ],
+  "hypotheses": {
+    "lower": "CommRing R : Type u; arbitrary coordinate I : Type v, no finiteness. A variable i outside s, or a finite Nodup list. Includes empty list and zero ring.",
+    "proper": "Only isRegular_X_of_nodup adds Nontrivial R.",
+    "coefficient": "M : Type w is an additive commutative group and a flat MvPolynomial I R-module; no finite generation or nontriviality.",
+    "flat_algebra": "A flat commutative algebra S over MvPolynomial I R, with its actual algebraMap; no faithful-flatness or proper-quotient claim."
+  },
+  "declarations": [
+    {
+      "source": "MvPolynomial.isSMulRegular_quotient_span_X",
+      "target": "MvPolynomial.isSMulRegular_quotient_span_X",
+      "target_module": "Colib.RingTheory.MvPolynomial.RegularSequence",
+      "disposition": "native proof rewrite preserving exact source statement",
+      "compiled": true
+    },
+    {
+      "source": "MvPolynomial.isWeaklyRegular_X",
+      "target": "MvPolynomial.isWeaklyRegular_X",
+      "target_module": "Colib.RingTheory.MvPolynomial.RegularSequence",
+      "disposition": "native proof rewrite preserving exact source statement",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "MvPolynomial.isRegular_X_of_nodup",
+      "target_module": "Colib.RingTheory.MvPolynomial.RegularSequence",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "MvPolynomial.isWeaklyRegular_ofFn_X_of_injective",
+      "target_module": "Colib.RingTheory.MvPolynomial.RegularSequence",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "MvPolynomial.isWeaklyRegular_X_on_flat",
+      "target_module": "Colib.RingTheory.MvPolynomial.RegularSequence",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "MvPolynomial.isWeaklyRegular_ofFn_X_on_flat",
+      "target_module": "Colib.RingTheory.MvPolynomial.RegularSequence",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "Koszul.isKoszulRegularOn_X_of_injective",
+      "target_module": "Colib.RingTheory.Koszul.PolynomialVariables",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "Koszul.coefficientAugmentation_X_quasiIso",
+      "target_module": "Colib.RingTheory.Koszul.PolynomialVariables",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "Koszul.isKoszulRegular_X_of_injective",
+      "target_module": "Colib.RingTheory.Koszul.PolynomialVariables",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "Koszul.koszulAugmentation_X_quasiIso",
+      "target_module": "Colib.RingTheory.Koszul.PolynomialVariables",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "Koszul.isKoszulRegular_map_X_of_flat",
+      "target_module": "Colib.RingTheory.Koszul.PolynomialVariables",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    },
+    {
+      "source": null,
+      "target": "Koszul.koszulAugmentation_map_X_quasiIso_of_flat",
+      "target_module": "Colib.RingTheory.Koszul.PolynomialVariables",
+      "disposition": "new consequence on the existing native objects; not an additional source declaration",
+      "compiled": true
+    }
+  ],
+  "upstream_reuse": [
+    {
+      "module": "StacksFrontier.RingTheory.MvPolynomial.VariablesRegular",
+      "declarations": [
+        "MvPolynomial.mem_span_X_image_of_X_mul_mem",
+        "MvPolynomial.one_notMem_span_X_image"
+      ],
+      "reason": "Reuses the actual existing monomial cancellation and properness, not copied proof."
+    },
+    {
+      "module": "StacksFrontier.RingTheory.MvPolynomial.VariablesRegular",
+      "declarations": [
+        "MvPolynomial.isWeaklyRegular_ofFn_X",
+        "MvPolynomial.isRegular_ofFn_X",
+        "MvPolynomial.isKoszulRegular_X"
+      ],
+      "scope_difference": "Existing finite full-coordinate family Fin (n+1); target arbitrary injective family in arbitrary coordinate type, all lengths and zero rings."
+    },
+    {
+      "module": "Mathlib.RingTheory.Regular.RegularSequence",
+      "declarations": [
+        "RingTheory.Sequence.IsWeaklyRegular.isWeaklyRegular_rTensor",
+        "LinearEquiv.isWeaklyRegular_congr"
+      ]
+    },
+    {
+      "module": "Mathlib.RingTheory.Regular.Flat",
+      "declarations": [
+        "RingTheory.Sequence.IsWeaklyRegular.of_flat"
+      ]
+    },
+    {
+      "module": "StacksFrontier.RingTheory.Koszul.Regular",
+      "declarations": [
+        "Koszul.isKoszulRegularOn_and_isKoszulRegular_of_regular"
+      ],
+      "scope": "Uses the weak-regular first clause of native tag 062F; does not impose properness."
+    },
+    {
+      "module": "StacksFrontier.RingTheory.Koszul.Augmentation",
+      "declarations": [
+        "Koszul.koszulAugmentation",
+        "Koszul.koszulAugmentation_quasiIso"
+      ]
+    },
+    {
+      "module": "Colib.RingTheory.Koszul.CoefficientAugmentation",
+      "declarations": [
+        "Koszul.coefficientAugmentation",
+        "Koszul.coefficientAugmentation_quasiIso",
+        "Koszul.coefficientAugmentation_f_zero_tmul"
+      ],
+      "main_source_blob": "acbe81abe27ea8454881b473d2a6243560269236"
+    }
+  ],
+  "library_registration": "COL-0265 reserved centrally; entry and exact reference bindings prepared in an isolated integration overlay, pending local compiler and final catalog validation.",
+  "files": [
+    {
+      "path": "Colib/RingTheory/MvPolynomial/RegularSequence.lean",
+      "sha256": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473",
+      "lines": 113,
+      "public_theorems": [
+        "isSMulRegular_quotient_span_X",
+        "isWeaklyRegular_X",
+        "isRegular_X_of_nodup",
+        "isWeaklyRegular_ofFn_X_of_injective",
+        "isWeaklyRegular_X_on_flat",
+        "isWeaklyRegular_ofFn_X_on_flat"
+      ],
+      "examples": 0,
+      "text_problems": []
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/PolynomialVariables.lean",
+      "sha256": "20a64e0fd28631381437c7e85026fe3e6cecd09c64304b5751cde9c8a9f0ef02",
+      "lines": 86,
+      "public_theorems": [
+        "isKoszulRegularOn_X_of_injective",
+        "coefficientAugmentation_X_quasiIso",
+        "isKoszulRegular_X_of_injective",
+        "koszulAugmentation_X_quasiIso",
+        "isKoszulRegular_map_X_of_flat",
+        "koszulAugmentation_map_X_quasiIso_of_flat"
+      ],
+      "examples": 0,
+      "text_problems": []
+    },
+    {
+      "path": "ColibTest/PolynomialVariables.lean",
+      "sha256": "2e235ea0ec010bb8dec040c905c7ae716c4479df1888bd303532f8e39f18c614",
+      "lines": 82,
+      "public_theorems": [],
+      "examples": 10,
+      "text_problems": []
+    }
+  ],
+  "current_main_baseline": "04982087f606dd92713fca25cb04493f8858acee",
+  "current_main_source_correspondence": [
+    {
+      "path": "Colib/Util/References.lean",
+      "git_blob": "4021d02aad02b3061ace7b7e1a27c17cb0a86c43",
+      "sha256": "b4a284af63e677ff4838495bd0ab68466757efb3e19fd89d0b6f52d6f66810a1"
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/CoefficientAugmentation.lean",
+      "git_blob": "acbe81abe27ea8454881b473d2a6243560269236",
+      "sha256": "6e3e2fb2022910ee681499f43e97d7199b3c6302af870b66484630459895ab87"
+    },
+    {
+      "path": "lake-manifest.json",
+      "git_blob": "148ae2b6558871380a90953171f10e6dcadedca9",
+      "sha256": "305047fed14ab46f9a0d8e23e5cefa5ef5c6ea89ebf0b34f52ec172f0b9d9652"
+    },
+    {
+      "path": "lean-toolchain",
+      "git_blob": "b814d987e0c93cb99938be934d9b277778495ba1",
+      "sha256": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+    },
+    {
+      "path": "AGENTS.md",
+      "git_blob": "4a403c5bc81c47d358726bad6e6f293f3151eb07",
+      "sha256": "dd16e881d496cd79bbb5191edd64c08a90af03c4a35679abae50c1ccb85aae38"
+    }
+  ],
+  "native_validation_20261107": {
+    "compiler": "Official pinned Lean 4.34.0-rc2, package options, single thread, existing captured Lake environment; direct leaf commands, not a full Lake root build.",
+    "all_owned_production_and_test_leaves_compiled": true,
+    "style": "Pinned native lint-style passed on all six production and two consumer sources through explicit import lists.",
+    "declaration_lint": "Not accepted as complete: stock runLinter received SIGKILL; bounded run was cancelled on instruction after the Ext root passed. Continue remotely.",
+    "private_and_axiom_audit": "Not run locally; assigned to remote integration.",
+    "source_hashes": {
+      "Colib/RingTheory/MvPolynomial/RegularSequence.lean": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473",
+      "Colib/RingTheory/Koszul/PolynomialVariables.lean": "20a64e0fd28631381437c7e85026fe3e6cecd09c64304b5751cde9c8a9f0ef02",
+      "ColibTest/PolynomialVariables.lean": "4186a17b0947149e381abfef91e0d1804c360b34f9677ea562cf275e3284919e"
+    },
+    "preservation": "Only three owned source files were minimally repaired; no existing contributor source or shared root/catalog/CI changed.",
+    "kernel_replay": false,
+    "published": false,
+    "original_source_only_evidence": "Earlier source-only archives/reports remain unchanged as historical snapshots."
+  },
+  "source_stage_validation": {
+    "compiled": false,
+    "source_comparison": "checked against exact Aglib SHA; original archive not reopened",
+    "independent_static_review": {
+      "status": "no concrete mathematical or static API defect identified",
+      "scope": "Original Aglib source statement comparison, exact native Stacks/mathlib APIs, assumptions, universes, maps, tests, names and imports; no compilation or original archive inspection",
+      "reviewed_files": [
+        {
+          "path": "Colib/RingTheory/MvPolynomial/RegularSequence.lean",
+          "sha256": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473"
+        },
+        {
+          "path": "Colib/RingTheory/Koszul/PolynomialVariables.lean",
+          "sha256": "20a64e0fd28631381437c7e85026fe3e6cecd09c64304b5751cde9c8a9f0ef02"
+        },
+        {
+          "path": "ColibTest/PolynomialVariables.lean",
+          "sha256": "2e235ea0ec010bb8dec040c905c7ae716c4479df1888bd303532f8e39f18c614"
+        }
+      ]
+    },
+    "scope_tests": 10,
+    "native_lint": false,
+    "axiom_audit": false,
+    "kernel_replay": false,
+    "full_acceptance": false,
+    "blocked_by": "Explicit coordinator instruction: only ~30 MiB above 5 GiB startup disk reserve and five missing Stacks prerequisites; no dependency builds at this margin."
+  },
+  "integration": {
+    "library_id": "COL-0265",
+    "required": "Recompile catalog-annotated endpoint leaves and affected consumers locally, integrate on latest main, regenerate and compile the final root locally, then run full native declaration/private lint, production axiom audit and catalog/site validation remotely. No kernel replay.",
+    "publication": "none",
+    "catalog_state": "Entry and compiled-reference bindings prepared in an isolated overlay; not yet compiled or registered in main."
+  }
+}

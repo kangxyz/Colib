@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0265"
+title = "Native Koszul resolutions for selected polynomial variables"
+kind = "theorem"
+section = "koszul-coefficients"
+order = 180
+statement = "For every finite injective family of variables in a polynomial ring, the native exterior Koszul augmentation is a quasi-isomorphism to the actual variable-ideal quotient. The original coefficient augmentation is a quasi-isomorphism for every flat module over that polynomial ring. Under a flat algebra map, the augmentation on the images of the same variables resolves the actual quotient in the target ring."
+scope = "An arbitrary commutative coefficient ring, arbitrary coordinate type, finite family of any length including zero, and independent ring, coordinate and coefficient-module universes. No nontriviality, Noetherianity or finite generation is required; the zero ring and empty family are included. The coefficient quotient uses the existing augmentation's universe lift. Flatness is required only for the coefficient-module and flat-algebra clauses. Proper regularity after a nonfaithful flat map and nontriviality of the quotient are not asserted. No recursive Koszul model or coordinate adapter is introduced."
+review = "author_checked"
+proof = "The native monomial ideal criterion makes every distinct variable regular modulo its predecessors. Native tensor transport gives weak regularity on flat coefficients. The existing weak-regularity-to-Koszul theorem and COL-0163's actual coefficient augmentation give the resolution. Mathlib's flat transport supplies the algebra-image clause."

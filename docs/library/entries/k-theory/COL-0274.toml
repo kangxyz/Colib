@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0274"
+title = "Principal closed/open G-localization"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 340
+statement = "For a commutative Noetherian ring R and any r, actual quotient-ring restriction identifies G(R/(r)) with G-theory supported on powers of r. The equivalence is proved by finite image filtrations and classical devissage. Its forward map followed by supported inclusion is exactly the original quotient-restriction smallKMap. Transporting the original localization boundary through the inverse equivalence gives all three recurring exactness positions and the homotopical G-zero surjection for the principal closed/open sequence."
+scope = "R : Type u, CommRing R, IsNoetherianRing R, r : R and Small.{v,u} R, with actual FGModuleCat.{v}, the native quotient R / Ideal.span {r}, localization at Submonoid.powers r, and Mathlib SmallModel.{u}. All connective degrees n : Nat, including the boundary from open G-one to closed G-zero. No domain, regular-element, proper-ideal, nonunit or nontriviality assumption. The lower quotient equivalence requires neither Noetherianity nor smallness. Objectwise finite image filtrations are constructed; no uniform length, extension closure or devissage conclusion is assumed. The closed boundary has the original transported sign; no boundary-symbol formula, general scheme-open theorem or negative G-theory is asserted."
+review = "author_checked"
+provenance = "quillen"

@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0272"
+title = "Canonical localization at actual targets and small models"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 320
+statement = "An actual additive Serre localization has the connective localization sequence on its original K-map, with the existing path-space boundary transported through the proved target equivalence. An exact Serre localization between essentially small abelian categories has the same sequence on its original smallKMap. All three exactness positions and homotopical K-zero surjectivity hold."
+scope = "The actual-target theorem retains small source and target categories at a common universe. The SmallModel theorem allows independent source/target object and hom universes and one common chosen smallness universe. Its input is an actual exact functor preserving finite limits and colimits, localized at its actual Serre kernel. The target lift, its equivalence, the identity exact-structure comparison, and the canonical map identities are proved. No K-equivalence, exactness conclusion, arbitrary boundary choice, negative K-theory, or independent change of sign convention is assumed."
+review = "author_checked"
+provenance = "quillen"

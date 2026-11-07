@@ -1,6 +1,11 @@
 module  -- shake: keep-all --deprecated_module: ignore
 
+public import Colib.Algebra.Category.FGModuleCat.FractionLocalization
 public import Colib.Algebra.Category.FGModuleCat.IsFG
+public import Colib.Algebra.Category.FGModuleCat.Localization
+public import Colib.Algebra.Category.FGModuleCat.Localization.EssSurj
+public import Colib.Algebra.Category.FGModuleCat.PrincipalClosedSupport
+public import Colib.Algebra.Category.FGModuleCat.ScalarFiltration
 public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Linear
 public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Localization
 public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Quotient
@@ -62,6 +67,7 @@ public import Colib.Algebra.Category.ModuleCat.MatrixImageScalarExtension
 public import Colib.Algebra.Category.ModuleCat.ProjectiveAutomorphismAdditivity
 public import Colib.Algebra.Category.ModuleCat.ProjectiveAutomorphismClass
 public import Colib.Algebra.FreeAlgebra.Map
+public import Colib.Algebra.Group.ExactTransport
 public import Colib.Algebra.Group.FiniteAdjacentComplex
 public import Colib.Algebra.Group.FiniteAdjacentSection
 public import Colib.Algebra.Homology.ChainComplex.DegreeRaisingHomotopy
@@ -139,6 +145,7 @@ public import Colib.Algebra.Homology.OrientedList.SubdivisionTerms
 public import Colib.Algebra.Homology.OrientedList.Support
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIso
 public import Colib.Algebra.Homology.ShortComplex.ModuleQuasiIsoCriterion
+public import Colib.Algebra.Module.LocalizedModule.FiniteTorsion
 public import Colib.Algebra.Module.LocalizedModule.IdealQuotient
 public import Colib.AlgebraicGeometry.Cycles.FiniteAlgebra
 public import Colib.AlgebraicGeometry.Modules.PerfectRestriction
@@ -176,6 +183,7 @@ public import Colib.Analysis.Convex.StdSimplex.BoundaryRetraction
 public import Colib.Analysis.Convex.StdSimplex.FaceCharts
 public import Colib.Analysis.Convex.StdSimplex.PathHomotopy
 public import Colib.Analysis.Convex.StdSimplex.Skeleton
+public import Colib.CategoryTheory.Abelian.Devissage.CentralEndomorphism
 public import Colib.CategoryTheory.Abelian.Devissage.CommaLayers
 public import Colib.CategoryTheory.Abelian.Devissage.Filtration
 public import Colib.CategoryTheory.Abelian.Devissage.LayerFunctors
@@ -285,6 +293,7 @@ public import Colib.CategoryTheory.ExactCategory.QSpanLifting
 public import Colib.CategoryTheory.ExactCategory.QSpanNaturality
 public import Colib.CategoryTheory.ExactCategory.RelativePushout
 public import Colib.CategoryTheory.ExactCategory.RelativeSplitMono
+public import Colib.CategoryTheory.ExactCategory.Resolution.BoundedComplex
 public import Colib.CategoryTheory.ExactCategory.Resolution.BoundedStrata
 public import Colib.CategoryTheory.ExactCategory.Resolution.Closure
 public import Colib.CategoryTheory.ExactCategory.Resolution.CommaContraction
@@ -295,6 +304,7 @@ public import Colib.CategoryTheory.ExactCategory.Resolution.Finite
 public import Colib.CategoryTheory.ExactCategory.Resolution.FullQ
 public import Colib.CategoryTheory.ExactCategory.Resolution.InheritedQ
 public import Colib.CategoryTheory.ExactCategory.Resolution.LengthStrata
+public import Colib.CategoryTheory.ExactCategory.Resolution.LiftSubcategory
 public import Colib.CategoryTheory.ExactCategory.Resolution.Presentation
 public import Colib.CategoryTheory.ExactCategory.Resolution.PresentationIndependence
 public import Colib.CategoryTheory.ExactCategory.Resolution.QCalculus
@@ -460,7 +470,10 @@ public import Colib.CategoryTheory.RankedChain.Resolution
 public import Colib.CategoryTheory.SemisimplexResolution.Append
 public import Colib.CategoryTheory.SemisimplexResolution.Basic
 public import Colib.CategoryTheory.SemisimplexResolution.Contraction
+public import Colib.CategoryTheory.SmallModel.Abelian
 public import Colib.CategoryTheory.SmallModel.Exact
+public import Colib.CategoryTheory.SmallModel.Functoriality
+public import Colib.CategoryTheory.SmallModel.Localization
 public import Colib.CategoryTheory.Subdivision.Action
 public import Colib.CategoryTheory.Subdivision.Basic
 public import Colib.CategoryTheory.Subdivision.Functor
@@ -854,6 +867,11 @@ public import Colib.GroupTheory.Steinberg.RankTwo
 public import Colib.GroupTheory.Steinberg.Symbols
 public import Colib.GroupTheory.Steinberg.Torus
 public import Colib.GroupTheory.Steinberg.Universal
+public import Colib.KTheory.GTheory.FiniteModules.FractionLocalization
+public import Colib.KTheory.GTheory.FiniteModules.Localization
+public import Colib.KTheory.GTheory.FiniteModules.PrincipalClosedFunctor
+public import Colib.KTheory.GTheory.FiniteModules.PrincipalClosedLocalization
+public import Colib.KTheory.GTheory.FiniteModules.PrincipalSupport
 public import Colib.KTheory.GrothendieckComparison.Factorization
 public import Colib.KTheory.GrothendieckComparison.Injectivity
 public import Colib.KTheory.GrothendieckComparison.Naturality
@@ -1008,6 +1026,8 @@ public import Colib.KTheory.Quillen.Localization.Serre.NormalizedComma
 public import Colib.KTheory.Quillen.Localization.Serre.NormalizedStructuredComma
 public import Colib.KTheory.Quillen.Localization.Serre.OverQArrows
 public import Colib.KTheory.Quillen.Localization.Serre.StructuredTransitions
+public import Colib.KTheory.Quillen.Localization.Serre.Target
+public import Colib.KTheory.Quillen.Localization.SmallModel
 public import Colib.KTheory.Quillen.LowDegreeScalarAction.BiproductLoopFamilies
 public import Colib.KTheory.Quillen.LowDegreeScalarAction.ExactNaturality
 public import Colib.KTheory.Quillen.LowDegreeScalarAction.FieldSymbols
@@ -1034,8 +1054,10 @@ public import Colib.KTheory.Quillen.Resolution.SubcategoryComparison
 public import Colib.KTheory.Quillen.Resolution.Theorem
 public import Colib.KTheory.Quillen.Resolution.UnionNerve
 public import Colib.KTheory.Quillen.Resolution.UnionSequential
+public import Colib.KTheory.Quillen.SmallModel.Abelian
 public import Colib.KTheory.Quillen.SmallModel.CommonAmbientNaturality
 public import Colib.KTheory.Quillen.SmallModel.Exact
+public import Colib.KTheory.Quillen.SmallModel.Functoriality
 public import Colib.KTheory.Quillen.StableFiberPerfectness
 public import Colib.KTheory.Quillen.StableZeroFiberGeometry
 public import Colib.KTheory.Quillen.StableZeroFiberHomology

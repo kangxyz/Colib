@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0273"
+title = "Native finite-module G-localization"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 330
+statement = "For a commutative Noetherian ring and any multiplicative set S, the actual native finite-module localization functor induces the connective G-localization sequence. The supported small-model objects represent exactly modules annihilated by one element of S. For powers of r this is annihilation by one uniform natural power, including exponent zero. All three recurring exactness positions include supported degree zero, and the original homotopical G-zero localization map is surjective."
+scope = "R : Type u, CommRing R, IsNoetherianRing R, S : Submonoid R, and Small.{v,u} R, using actual FGModuleCat.{v}, Localization S and native SmallModel.{u}. Equal module and ring universes need no additional smallness premise. No domain, nontriviality or exclusion of zero from S is assumed. The functor is the literal restriction of ModuleCat.localizedModuleFunctor S; its exactness and categorical localization are proved, not theorem inputs. Its K-map is the original exactFunctor.smallKMap. At nonzerodivisors of a domain this is definitionally the existing native fraction-field K-map. Essential surjectivity and the finite-module uniform-annihilator lemma require no Noetherian hypothesis. The supported term is K-theory of the actual torsion subcategory; no identification with G(R/(r)), general scheme-open localization, scheme K/G equivalence, or negative G-theory is claimed."
+review = "author_checked"
+provenance = "quillen"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0271"
+title = "Finite admissible resolutions from bounded native complexes"
+kind = "theorem"
+section = "exact-categories"
+order = 170
+statement = "An actual quasi-isomorphism from a bounded native cochain complex with terms in P to a single object yields a finite tower of actual short exact sequences resolving that object. A tower lifts to a kernel-closed exact full subcategory without changing its ambient objects, arrows, or length."
+scope = "An abelian category with independent object and morphism universes. P contains zero, is replete, and is closed under kernels of short exact sequences whose middle and quotient lie in P. Bounds are objectwise; no uniform dimension, global projectivity, or extension closure of P is assumed. The subcategory lift has the ordinary zero, repleteness, finite-product, extension and kernel closure hypotheses. This is a resolution-construction result, not yet scheme K/G comparison."
+review = "author_checked"

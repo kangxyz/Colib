@@ -1,10 +1,10 @@
 [entry]
 id = "COL-0279"
-title = "Integral Milnor K₂ of finite fields"
+title = "Milnor K₂ of finite fields"
 kind = "theorem"
 section = "milnor-k-theory"
 order = 900
-statement = "Every degree-two symbol over a finite field vanishes in the native Stacks Milnor ring. Consequently the actual integral homogeneous group MilnorKTheory F 2 has one element."
+statement = "Steinberg's finite-field calculation: every degree-two symbol over a finite field vanishes in the native Stacks Milnor ring. Consequently the actual integral homogeneous group MilnorKTheory F 2 has one element."
 scope = "Every field F with Finite F, including F₂ and F₃ and arbitrary universe. The proof uses Mathlib's cyclic finite unit group and the native Steinberg relation and skew symmetry, without a second Milnor model or a characteristic restriction."
 review = "author_checked"
 provenance = "quillen"

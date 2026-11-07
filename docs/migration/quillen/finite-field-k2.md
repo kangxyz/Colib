@@ -1,6 +1,21 @@
-# Finite-field K₂ on the original groups
+# K₂ of finite fields
 
-## Sources and native objects
+## Mathematical attribution
+
+The Milnor calculation is due to Steinberg, as explicitly attributed in
+[Milnor (1970), Section 1, Example 1.5, p. 321](https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnorktheoryforms.pdf#page=4).
+COL-0279 implements the integral degree-two clause. The original example also
+mentions higher Milnor groups, which this item does not assert.
+[Weibel, III, Corollary 6.1.1](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf#page=48)
+gives the corresponding classical K₂ calculation and its elementary symbol proof.
+
+COL-0280 states the result for the existing Quillen models. Their identification
+with classical K₂ is a separate comparison, as in
+[Weibel, IV, Corollary 1.7.1](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf#page=6).
+Here the proof uses the all-field surjective comparison, not the characteristic-zero
+Matsumoto equivalences. Neither item computes all higher Quillen K-groups.
+
+## Implementation sources and native objects
 
 At Quillen revision `c561118b7795eb9780be9ed391c3251d6a4d0afd`,
 [`Quillen/Aglib/KTheory/MilnorK/K2/FiniteField.lean`](https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/Aglib/KTheory/MilnorK/K2/FiniteField.lean)

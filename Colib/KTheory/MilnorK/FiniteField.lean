@@ -9,14 +9,20 @@ public import Colib.KTheory.MilnorK.Symbols.Ext
 public import Mathlib.RingTheory.IntegralDomain
 
 /-!
-# Integral Milnor K₂ of finite fields
+# Milnor K₂ of finite fields
 
 The native Stacks degree-two Milnor group is zero over every finite field,
 including the fields with two and three elements. Cyclicity of the unit group
 reduces the proof to a diagonal symbol. Skew symmetry and the Steinberg relation
 then give a finite-fibre contradiction, with no restriction on characteristic.
 
-This adapts `Quillen/Aglib/KTheory/MilnorK/K2/FiniteField.lean` at revision
+This is Steinberg's finite-field calculation as recorded in Milnor (1970),
+Section 1, Example 1.5, p. 321. Only its degree-two clause is asserted here.
+The cyclic-unit and Steinberg-symbol argument is also given in Weibel,
+III, Corollary 6.1.1. It is independent of higher Quillen K-group computations.
+
+Implementation provenance: this adapts
+`Quillen/Aglib/KTheory/MilnorK/K2/FiniteField.lean` at revision
 `c561118b7795eb9780be9ed391c3251d6a4d0afd` directly to Stacks' actual quotient.
 No auxiliary Milnor model or Aglib dependency is introduced.
 -/
@@ -130,7 +136,12 @@ instance finiteField_two_subsingleton : Subsingleton (MilnorKTheory k 2) :=
 
 end MilnorKTheory
 
-attribute [colib_tag "COL-0279", colib_ref "quillen"
+attribute [colib_tag "COL-0279",
+  colib_ref "Milnor1970" "Section 1, Example 1.5 (Steinberg), p. 321" "clause"
+    "Integral degree-two Milnor vanishing for every finite field; higher degrees are not asserted",
+  colib_ref "WeibelKBook" "III, Corollary 6.1.1, symbol calculation" "adaptation"
+    "The cyclic-unit and Steinberg-relation proof, directly in the native Milnor group",
+  colib_ref "quillen"
   "Quillen/Aglib/KTheory/MilnorK/K2/FiniteField.lean, k2_eq_zero_of_finite"
   "adaptation" "All finite fields, including F2 and F3, on native Stacks Milnor K-theory"]
   milnorKSymbol_mul_eq_zero_of_finite milnorKTupleSymbol_two_eq_zero_of_finite

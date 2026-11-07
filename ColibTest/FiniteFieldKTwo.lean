@@ -54,3 +54,18 @@ example : Subsingleton ((abelianExactStructure (FGModuleCat.{0} (ZMod 2))).Small
 
 example : Subsingleton ((abelianExactStructure (FGModuleCat.{0} (ZMod 3))).SmallK.{1} 2) :=
   Quillen.Field.upperModuleKTwo_subsingleton (ZMod 3)
+
+open Lean Elab Command in
+run_cmd do
+  let env ← getEnv
+  unless (Colib.Library.citations env).any (fun citation =>
+      citation.declName == ``MilnorKTheory.eq_zero_of_finite &&
+      citation.source == "Milnor1970" &&
+      citation.locator == "Section 1, Example 1.5 (Steinberg), p. 321" &&
+      citation.relation == "clause") do
+    throwError "Finite-field Milnor K2 must retain Steinberg's attribution in Milnor's paper"
+  unless (Colib.Library.citations env).any (fun citation =>
+      citation.declName == ``Quillen.Field.upperModuleKTwo_eq_one &&
+      citation.source == "WeibelKBook" && citation.locator == "IV, Corollary 1.7.1" &&
+      citation.relation == "comparison") do
+    throwError "The finite-field Quillen target must retain its separate model comparison"

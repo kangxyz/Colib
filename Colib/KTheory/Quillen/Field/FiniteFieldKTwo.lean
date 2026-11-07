@@ -9,14 +9,21 @@ public import Colib.KTheory.MilnorK.FiniteField
 public import Colib.KTheory.MilnorK.QuillenSurjectivity
 
 /-!
-# Original Quillen K₂ of every finite field
+# Quillen K₂ of finite fields
 
 The canonical native Milnor-to-Quillen maps are surjective over every field.
 Native integral Milnor K₂ vanishing therefore makes the original right-projective
 K₂ and the upper `SmallK.{u+1}` of `FGModuleCat.{u} F` trivial. No replacement
 group, characteristic restriction, or external perfectness premise is used.
 
-This adapts the right-projective and upper finite-module clauses of
+The vanishing is the K₂ case of the classical finite-field calculation, not a
+computation of all higher Quillen K-groups. Milnor (1970), Section 1, Example 1.5
+attributes the symbol calculation to Steinberg; see also Weibel, III,
+Corollary 6.1.1. The identification of classical K₂ with homotopy-defined K₂
+is separate (Weibel, IV, Corollary 1.7.1). This proof uses all-field surjectivity,
+not the characteristic-zero Matsumoto equivalences.
+
+Implementation provenance: this adapts the right-projective and upper finite-module clauses of
 `Quillen/KTheory/Field/FiniteFieldKTwo.lean` at revision
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. Lower-universe G₂ and coherent
 scheme G₂ comparisons are separate consumers of these original targets.
@@ -57,7 +64,14 @@ theorem upperModuleKTwo_subsingleton :
     Subsingleton ((abelianExactStructure (FGModuleCat.{u} F)).SmallK.{u + 1} 2) :=
   ⟨fun a b => (upperModuleKTwo_eq_one F a).trans (upperModuleKTwo_eq_one F b).symm⟩
 
-attribute [colib_tag "COL-0280", colib_ref "quillen"
+attribute [colib_tag "COL-0280",
+  colib_ref "Milnor1970" "Section 1, Example 1.5 (Steinberg), p. 321" "ingredient"
+    "Integral Milnor K2 vanishing, passed through the original surjective comparison maps",
+  colib_ref "WeibelKBook" "III, Corollary 6.1.1" "adaptation"
+    "Finite-field K2 vanishing on the existing right-projective and upper finite-module groups",
+  colib_ref "WeibelKBook" "IV, Corollary 1.7.1" "comparison"
+    "The separate identification of classical K2 with homotopy-defined K2",
+  colib_ref "quillen"
   "Quillen/KTheory/Field/FiniteFieldKTwo.lean, rightProjectiveKTwo and upperModuleKTwo clauses"
   "adaptation" "Original right-projective K2 and upper FGModuleCat SmallK2, for every finite field"]
   rightProjectiveKTwo_eq_one rightProjectiveKTwo_subsingleton

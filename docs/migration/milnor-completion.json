@@ -10,7 +10,7 @@
   "library_item": "COL-0168",
   "historical_component_status": "compiled_and_leaf_tests_lint_style_passed",
   "historical_component_files": {
-    "Colib/RingTheory/KTheory/MilnorK/Residue/Completion.lean": "d24fa1b425e8f3866d33eb264fcf25ea55dff6e2218dba4f8566ed4105b2d97d",
+    "Colib/KTheory/MilnorK/Residue/Completion.lean": "d24fa1b425e8f3866d33eb264fcf25ea55dff6e2218dba4f8566ed4105b2d97d",
     "ColibTest/MilnorCompletion.lean": "fabd8cf49ebeaf134ddf0696e1c5de990bc88fc8eb0fe70361db1317ef65d18c"
   },
   "historical_component_checks": {
@@ -18,7 +18,7 @@
       "command": [
         "lake",
         "build",
-        "Colib.RingTheory.KTheory.MilnorK.Residue.Completion:olean"
+        "Colib.KTheory.MilnorK.Residue.Completion:olean"
       ],
       "exit_code": 0,
       "state": "completed",
@@ -48,7 +48,7 @@
         "exe",
         "batteries/runLinter",
         "--no-build",
-        "Colib.RingTheory.KTheory.MilnorK.Residue.Completion"
+        "Colib.KTheory.MilnorK.Residue.Completion"
       ],
       "exit_code": 0,
       "state": "completed",
@@ -79,7 +79,7 @@
         "lake",
         "exe",
         "mathlib/lint-style",
-        "Colib.RingTheory.KTheory.MilnorK.Residue.Completion",
+        "Colib.KTheory.MilnorK.Residue.Completion",
         "ColibTest.MilnorCompletion"
       ],
       "exit_code": 0,
@@ -143,13 +143,13 @@
       "log_sha256": "6ccdbefdc25723c9830c616f48e7f47a76e080d58aa2792bd9cf9f45f070cd4d",
       "status": "passed",
       "hashes": {
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Completion.lean": "8c793d732ce87b402c0f17580e735d5f0b05af0cda782fc3c92843da508f15ca",
+        "Colib/KTheory/MilnorK/Residue/Completion.lean": "8c793d732ce87b402c0f17580e735d5f0b05af0cda782fc3c92843da508f15ca",
         "ColibTest/MilnorCompletion.lean": "fabd8cf49ebeaf134ddf0696e1c5de990bc88fc8eb0fe70361db1317ef65d18c",
         "Colib.lean": "315979309e2262d8f725c71507aec0c919cc3186ff4e2edf353935f588ccd4e3",
         "scripts/check.sh": "28f2f9d6a09ff616fc4ccb9201f64283922221565216b7eca8f1466d1631b6fc",
         "scripts/test_catalog.py": "47dfeaa90622da469aa3a90fc290f95e48559399d0254f2bf275de51b3d6098f",
         ".github/workflows/lean-ci.yml": "89c726df618b143b46687a93c789adb145da89511cc4b8e0c68752498e3d1863",
-        "docs/library/entries/k-theory-rings-schemes/COL-0168.toml": "c82243bb93d28188921468a1f32d19428047c7468f1774e74badecd62d47480e",
+        "docs/library/entries/k-theory/COL-0168.toml": "c82243bb93d28188921468a1f32d19428047c7468f1774e74badecd62d47480e",
         "docs/library/chapters/k-theory.toml": "2ae89eb11139011e6f1a4c37911ddc2b2ff3e09ac0f10cbfc9bc1c90713385cd",
         "docs/MILNOR_MOTIVIC_MIGRATION.md": "cd20878c2476e96b890a9133a2bc08011c3e7faf7c258a3f920cf661702fffc6",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Completion.olean": "77db946ddecaf8b1b1d3be48092c57da902412bec9a0375fcd8469f8eef74ab1",
@@ -175,7 +175,7 @@
       "command": [
         "bash",
         "-c",
-        "lake exe batteries/runLinter --no-build Colib.RingTheory.KTheory.MilnorK.Residue.Completion && lake exe batteries/runLinter --no-build ColibTest.MilnorCompletion"
+        "lake exe batteries/runLinter --no-build Colib.KTheory.MilnorK.Residue.Completion && lake exe batteries/runLinter --no-build ColibTest.MilnorCompletion"
       ],
       "cwd": "/workspace/scratch/ab4c8cd79b02/colib-completion-milestone-3d27ac0-20261105-1638",
       "pid": 7,

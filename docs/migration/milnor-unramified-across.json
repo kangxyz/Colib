@@ -13,7 +13,7 @@
     "license": "Apache-2.0"
   },
   "scope": "Unramified e=1 residue naturality on the single native model, with four independent universes R,S,F,E and specified uniformizers pi,j pi. The common-DVR-universe restriction is removed; canonical arbitrary-uniformizer independence remains separate.",
-  "hypotheses": "R:Type u and S:Type v are DVRs; F:Type w and E:Type z their fraction fields; j:R\u2192+*S local; f:F\u2192+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); all n, all homogeneous classes. No valuation or unit-part compatibility assumptions.",
+  "hypotheses": "R:Type u and S:Type v are DVRs; F:Type w and E:Type z their fraction fields; j:R→+*S local; f:F→+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); all n, all homogeneous classes. No valuation or unit-part compatibility assumptions.",
   "declarations": [
     {
       "target": "Stacks.Chow.milnorKRingMapLift",
@@ -43,7 +43,7 @@
     {
       "target": "Stacks.Chow.dvrMilnorTameSymbol_map_across",
       "source": "MilnorK.DVR.residue_restrict",
-      "source_lines": "129\u2013139",
+      "source_lines": "129–139",
       "disposition": "all universe parameters and all n/classes retained; specified-uniformizer version rather than canonical source version"
     }
   ],
@@ -58,7 +58,7 @@
     "milnorKTheoryMap_eq_transport",
     "milnorKTheory_addHom_ext"
   ],
-  "upstream_audit": "Pinned milnorKRingMap is constrained by {k1 k2 k3 : Type u}; the Mathlib universal maps used to construct it are not. The extension avoids the excessive Invariance\u2192MilnorNorm.ResidueConstants closure, agrees with native transport where available, and adds no replacement ring/quotient/grading/involution. Existing common-fraction-field upstream naturality remains upstream.",
+  "upstream_audit": "Pinned milnorKRingMap is constrained by {k1 k2 k3 : Type u}; the Mathlib universal maps used to construct it are not. The extension avoids the excessive Invariance→MilnorNorm.ResidueConstants closure, agrees with native transport where available, and adds no replacement ring/quotient/grading/involution. Existing common-fraction-field upstream naturality remains upstream.",
   "validation": {
     "source_comparison": "author_checked: four-universe specified-uniformizer e=1 source specialization",
     "consolidated_check": "Passed full guarded unified check.",
@@ -98,13 +98,13 @@
     },
     "artifacts": [
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+        "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
         "source_sha256": "dd3855f9a8f94f7eb45364ba4b52869c1f632f1d202508088a21ef7c497d9d92",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.olean",
         "olean_sha256": "7369c307097f2997c52184b049dc96e59102c853f0d87138e4b823bc862c29a2"
       },
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/RingTransport.lean",
+        "source": "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
         "source_sha256": "52efe532a783447f2b5c7a895bea8b84b7bc51add0e2acf6df0751fd68e49612",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/RingTransport.olean",
         "olean_sha256": "2911be498b9eb95937c21d5e810886c4245f386795ddad853861556a0c8b099a"

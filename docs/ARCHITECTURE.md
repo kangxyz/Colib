@@ -61,7 +61,9 @@ rings and schemes**. Permanent item IDs, hypotheses, canonical maps, signs and r
 survive a move. The chapter organization is a reading route; the actual Lean import graph
 remains the authority for dependencies. `scripts/test_k_theory_layers.py` checks both the
 chapter separation and the general layer's transitive independence from the application
-layers.
+layers. Historical migration checks, commands, source hashes and artifact paths retain
+their original revision-specific locations. They are evidence about those revisions, not
+compilation evidence for a relocated module; current module ownership comes from Lean.
 
 ## Source provenance
 

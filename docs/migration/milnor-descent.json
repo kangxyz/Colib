@@ -114,13 +114,13 @@
         "olean_sha256": "686846ead0b321f9f994479d690e8ced056a6875763178d4b8bafa9001709b9f"
       },
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/SymbolMap.lean",
+        "source": "Colib/KTheory/MilnorK/Symbols/SymbolMap.lean",
         "source_sha256": "f164f4bcf18243f2a1017817aa21a68f3801f4db471df84b6ddcd87c3c1f443a",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/SymbolMap.olean",
         "olean_sha256": "6989db1a9db69420bdd1a7b80c78ac1b1540b2d3c1efd82af21a7a51d6f4c502"
       },
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/Descent.lean",
+        "source": "Colib/KTheory/MilnorK/Symbols/Descent.lean",
         "source_sha256": "bcb62c20e96ffd3360e6a52c2a669eac6cd4b748fc3dd5aebd1f334edca1fdae",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Descent.olean",
         "olean_sha256": "3316abb2a5a53b8d25255cbd23af7648d73e42dc5ef068fa8dafc48d04b47f04"

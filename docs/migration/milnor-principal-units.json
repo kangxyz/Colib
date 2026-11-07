@@ -13,11 +13,11 @@
     "license": "Apache-2.0"
   },
   "scope": "Only principal-unit vanishing, at an arbitrary tuple position, for the existing native DVR tame residue. Does not claim migration of the full Residue directory.",
-  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; n : Nat, tuple a : Fin (n+1) \u2192 F\u02e3, position i, unit u : R\u02e3 with a i equal to its field image and residue unit equal to 1. Other tuple positions are arbitrary fraction-field units. Universes u/v independent.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; n : Nat, tuple a : Fin (n+1) → Fˣ, position i, unit u : Rˣ with a i equal to its field image and residue unit equal to 1. Other tuple positions are arbitrary fraction-field units. Universes u/v independent.",
   "declarations": [
     {
       "source": "MilnorK.DVR.residue_principal_ring_unit",
-      "source_lines": "89\u2013102",
+      "source_lines": "89–102",
       "target": "Stacks.Chow.dvrMilnorTameSymbol'_tuple_principal_unit",
       "disposition": "direct proof rewrite with canonical native residue; no alternate DVR data or model",
       "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
@@ -77,7 +77,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/PrincipalUnits.lean",
+        "source": "Colib/KTheory/MilnorK/Residue/PrincipalUnits.lean",
         "source_sha256": "43343b7d4c7812667334a1b9367407c5ec0c5b4419196780ecc149a8620a0211",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/PrincipalUnits.olean",
         "olean_sha256": "23d6c034b84295cc1fd2b50be72f31c5bd793db1f20814cf42a46c6e0ac7ffae"

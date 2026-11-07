@@ -116,7 +116,7 @@
       "kernel_replay": false,
       "artifacts": [
         {
-          "path": "Colib/RingTheory/KTheory/MilnorK/Residue/CoefficientRetraction.lean",
+          "path": "Colib/KTheory/MilnorK/Residue/CoefficientRetraction.lean",
           "sha256": "b172bb76d36f3337ebacd7b5d70c177c282edc443ca66c092845f82d9131799f"
         },
         {
@@ -137,7 +137,7 @@
   },
   "artifacts": [
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/CoefficientRetraction.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/CoefficientRetraction.lean",
       "source_sha256": "525aec2b6ce46ad59890f2690d9f3189ddd75825653c42f0eafefed19fb0f6de",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/CoefficientRetraction.olean",
       "olean_sha256": "fb611bdd76f47e7565dc4b556af7c8fefcc822a2541a72d774aaeaa1cb895566"

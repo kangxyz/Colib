@@ -41,7 +41,7 @@
     },
     {
       "source": "MilnorK.mapAdd",
-      "target": "(milnorKTheoryMap \u03c6 n).toAddMonoidHom",
+      "target": "(milnorKTheoryMap φ n).toAddMonoidHom",
       "disposition": "use existing forgetful operation; no duplicate definition",
       "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
     },
@@ -54,7 +54,7 @@
   ],
   "upstream_gap_audit": {
     "module": "StacksFrontier.AlgebraicGeometry.Chow.KeyLemma.MilnorKTransport",
-    "lines": "42\u201344",
+    "lines": "42–44",
     "gap": "Pinned transport and its supporting ring/tensor maps bind all fields in Type u. Its functor laws are already present in that common universe. The source explicitly requires independent u/v/w.",
     "resolution": "Use the already-proved universal lift on the same native objects, and prove literal equality of maps in the overlapping common-universe case. Do not duplicate the native ring or tensor transport implementation.",
     "supporting_declarations": [
@@ -104,7 +104,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+        "source": "Colib/KTheory/MilnorK/Symbols/Transport.lean",
         "source_sha256": "9858482cb1200fdb0b90e37e54d6f53a23c969ae02e9f7e3f9583ee65bccc407",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Transport.olean",
         "olean_sha256": "e46f5ae80d3904d882d95e6f1d9f0b224fa90337ae9a84ed19f434d28513ac46"

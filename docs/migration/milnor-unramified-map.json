@@ -13,7 +13,7 @@
     "license": "Apache-2.0"
   },
   "scope": "Compatibility wrappers with original common-DVR-universe signatures; general four-universe specified e=1 proof lives in UnramifiedMapAcross. Canonical and ramified formulations remain pending.",
-  "hypotheses": "R,S : Type u are DVRs; F : Type v and E : Type w are their fraction fields; j:R\u2192+*S with IsLocalHom j; f:F\u2192+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); arbitrary n:Nat and all degree n+1 classes. No compatibility-of-valuations or unit-parts assumed.",
+  "hypotheses": "R,S : Type u are DVRs; F : Type v and E : Type w are their fraction fields; j:R→+*S with IsLocalHom j; f:F→+*E and hf: f(algebraMap R F r)=algebraMap S E(j r); Irreducible pi and Irreducible(j pi); arbitrary n:Nat and all degree n+1 classes. No compatibility-of-valuations or unit-parts assumed.",
   "declarations": [
     {
       "source": "MilnorK.K3.DVR.value_map",
@@ -28,7 +28,7 @@
     },
     {
       "source": "MilnorK.DVR.residue_restrict",
-      "source_lines": "129\u2013139",
+      "source_lines": "129–139",
       "target": "Stacks.Chow.dvrMilnorTameSymbol_map",
       "disposition": "partial migration: specified uniformizers and common DVR universe; field universes independent, arbitrary classes/all n retained"
     }
@@ -44,7 +44,7 @@
     "milnorKTheoryMap_eq_transport",
     "milnorKTheory_addHom_ext"
   ],
-  "upstream_audit": "Pinned Invariance.dvrMilnorTameSymbol'_algebraMap already covers common fraction field; Invariance imports MilnorNorm.ResidueConstants with an excessive closure. The new leaf allows an actual f:F\u2192E and does not define Shift.map or reprove its ring structure. Private list-map normalization is not advertised as a new mathematical theorem.",
+  "upstream_audit": "Pinned Invariance.dvrMilnorTameSymbol'_algebraMap already covers common fraction field; Invariance imports MilnorNorm.ResidueConstants with an excessive closure. The new leaf allows an actual f:F→E and does not define Shift.map or reprove its ring structure. Private list-map normalization is not advertised as a new mathematical theorem.",
   "validation": {
     "source_comparison": "author_checked partial migration; exact e=1 and specified-uniformizer/common-DVR-universe scope",
     "consolidated_check": "Passed full guarded unified check.",
@@ -84,7 +84,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+        "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
         "source_sha256": "f0d0920558cf6d5dafac0ecfa4bb47aeb31f16c8974ad7d432dda0c3a9668855",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMap.olean",
         "olean_sha256": "66ec8c00083585e066a5e8bcea8544eb0594e028aa664aa9e00b12b0fa292adf"

@@ -17,7 +17,7 @@
   "declarations": [
     {
       "source": "MilnorK.specialize_product",
-      "source_lines": "40\u201355",
+      "source_lines": "40–55",
       "target": "Stacks.Chow.dvrMilnorSpecialization_gmul",
       "disposition": "actual-DVR specialization, replacing abstract residue data by genuine DVR native shift map",
       "preserved_scope": "All m/n and arbitrary homogeneous factors; not only tuple symbols."
@@ -70,7 +70,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/SpecializationProduct.lean",
+        "source": "Colib/KTheory/MilnorK/Residue/SpecializationProduct.lean",
         "source_sha256": "3096ef6f486e399a1db6c6e32d714954833cee2b0564297489df32ce6ba78e25",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/SpecializationProduct.olean",
         "olean_sha256": "00440030008a1426ec1e524b9734c0436612a1c3cbacb65fe71b4f1d067c55cd"

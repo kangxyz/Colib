@@ -46,7 +46,7 @@
   },
   "artifacts": [
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/DegreeOne.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/DegreeOne.lean",
       "source_sha256": "1dce5712bc04b329913e6ba5b5db1c4b9632e3454f1a1a8120b95236efff4b77",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/DegreeOne.olean",
       "olean_sha256": "d001ad8bfd2582eecddd7fadeda9e287b5621bbe3c0d4996a5515c1b244555e1"
@@ -139,13 +139,13 @@
       "log_sha256": "bc89aab27107d27254fe0f813350378c1ef0f8c25aa707e016f0542f66c8fe53",
       "kernel_replay": false,
       "hashes": {
-        "Colib/RingTheory/KTheory/MilnorK/Residue/DegreeOne.lean": "74e6ff6882001fef12866d017d49cdf2975aa3da3906da855621a0a1cca45fb7",
+        "Colib/KTheory/MilnorK/Residue/DegreeOne.lean": "74e6ff6882001fef12866d017d49cdf2975aa3da3906da855621a0a1cca45fb7",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/DegreeOne.olean": "db477cdd184074e010b29b3a13f682ee3323fb17e29300bed1faa01e667bf8fa",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedOrder.lean": "928afd2ec8e267447f2307b4e5020c7fd505aa5ec54549318a9dac21b9fe4620",
+        "Colib/KTheory/MilnorK/Residue/RamifiedOrder.lean": "928afd2ec8e267447f2307b4e5020c7fd505aa5ec54549318a9dac21b9fe4620",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedOrder.olean": "dfaef427a712ceff62a3ecb6a2103a0fe93d090f4e70339ecc407d85e35628d7",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedDegreeOne.lean": "4546a8f78132b451bbb3f2da190fd92c2264eb250dca1b68cdc51d40b88c4934",
+        "Colib/KTheory/MilnorK/Residue/RamifiedDegreeOne.lean": "4546a8f78132b451bbb3f2da190fd92c2264eb250dca1b68cdc51d40b88c4934",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedDegreeOne.olean": "80154cf6b477de119dcd6cf48cbf734b54ed0558da035c37c2784187c2f78ba5",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/DegreeOneTransport.lean": "7bcf2901622df98a4d0ba31ebb5aab4995dfe6baf413d1510d0c6ac70a64cdde",
+        "Colib/KTheory/MilnorK/Symbols/DegreeOneTransport.lean": "7bcf2901622df98a4d0ba31ebb5aab4995dfe6baf413d1510d0c6ac70a64cdde",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/DegreeOneTransport.olean": "004f8e34fc90f608b359b440286f055b3b3ca862c742a748a88f768cf87d5ae5",
         "ColibTest/MilnorResidueDegreeOne.lean": "bec9b6bd1b3372296d89f9d02a0f5ac3add08ae8e0b568418835a2b8d8c5a63f",
         ".lake/build/lib/lean/ColibTest/MilnorResidueDegreeOne.olean": "fcdb10fa3810caeded05a616b703f4b5bc464a2997077103a0f7fe0f2be6fd9a",

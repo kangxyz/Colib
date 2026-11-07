@@ -115,11 +115,11 @@
       "log_sha256": "bac4810202a024b85c5b304e1971ec3d217609177ec4b64204f6bf4953977b55",
       "kernel_replay": false,
       "hashes": {
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedUnitPart.lean": "25c1ba7f56b74ff5b9d925fb465c087601af5df4b4f2291b8b206c4e17cfd0b5",
+        "Colib/KTheory/MilnorK/Residue/RamifiedUnitPart.lean": "25c1ba7f56b74ff5b9d925fb465c087601af5df4b4f2291b8b206c4e17cfd0b5",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedUnitPart.olean": "7795f6d7216fc1b3c9b0b9307b9e61c20a4c205a84a85cf5d588cf4cda2211c3",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedShiftAlgebra.lean": "f006c470c2f293bfdf2b1c44b80c3cf1cc3c0999479823963d48d04ef3def99e",
+        "Colib/KTheory/MilnorK/Residue/RamifiedShiftAlgebra.lean": "f006c470c2f293bfdf2b1c44b80c3cf1cc3c0999479823963d48d04ef3def99e",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedShiftAlgebra.olean": "40f51a5d90f3dfc48a84ac68b65690df1bd2b8dbd7c0e8d63efad4c521b6210e",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedMap.lean": "7f07c968079d86f76193b18cb720fa2da548d5d2ad673995e14b97391950caf1",
+        "Colib/KTheory/MilnorK/Residue/RamifiedMap.lean": "7f07c968079d86f76193b18cb720fa2da548d5d2ad673995e14b97391950caf1",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedMap.olean": "b8d4b048287d6c95bc5fce081b40bdfa6affa331462b8999950cc3c404e4be06",
         "ColibTest/MilnorRamifiedMap.lean": "8649adaaa53cd5e604a9b8bfe0680ce0bc1b145b427f0b0047792e3bc1ab2ea4",
         ".lake/build/lib/lean/ColibTest/MilnorRamifiedMap.olean": "46efe29bbdf282798d9cedc51ab2a94607b3f4f8de487a10552e57cbeed1949b"
@@ -129,17 +129,17 @@
   },
   "files": [
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedUnitPart.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/RamifiedUnitPart.lean",
       "source_sha256": "25c1ba7f56b74ff5b9d925fb465c087601af5df4b4f2291b8b206c4e17cfd0b5",
       "olean_sha256": "7795f6d7216fc1b3c9b0b9307b9e61c20a4c205a84a85cf5d588cf4cda2211c3"
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedShiftAlgebra.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/RamifiedShiftAlgebra.lean",
       "source_sha256": "f006c470c2f293bfdf2b1c44b80c3cf1cc3c0999479823963d48d04ef3def99e",
       "olean_sha256": "40f51a5d90f3dfc48a84ac68b65690df1bd2b8dbd7c0e8d63efad4c521b6210e"
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedMap.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/RamifiedMap.lean",
       "source_sha256": "cf451dfaf5979a268444ec7fc51daead64a6e55520c8255c20fe6fe10fadc8de",
       "olean_sha256": "703b1c6da2687f1dda657af10101739410cdc5cc50f9bcf60e10427bf577eabe"
     },

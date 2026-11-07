@@ -3,6 +3,7 @@
 from collections import deque
 from pathlib import Path
 import re
+import json
 import unittest
 
 import catalog
@@ -97,6 +98,22 @@ class KTheoryLayersTests(unittest.TestCase):
             self.assertIn(name, application)
         self.assertFalse(any("FGModuleCat" in module or "FiniteProjective" in module
                              for module in imports(general)))
+
+    def test_historical_checks_keep_their_recorded_source_paths(self):
+        record = json.loads((ROOT / "docs/migration/milnor-ext.json").read_text())
+        self.assertEqual(record["target_module"],
+                         "Colib.RingTheory.KTheory.MilnorK.Symbols.Ext")
+        artifact = record["validation"]["artifacts"][0]
+        self.assertEqual(artifact["source"], "Colib/KTheory/MilnorK/Symbols/Ext.lean")
+        self.assertEqual(artifact["olean"],
+                         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Ext.olean")
+        self.assertEqual(artifact["source_sha256"],
+                         "1473461c9689b4245c349ccf3fa7deaee3655b3a2914660e31ce20c375603e00")
+        completion = json.loads((ROOT / "docs/migration/milnor-completion.json").read_text())
+        self.assertIn("Colib/KTheory/MilnorK/Residue/Completion.lean",
+                      completion["checks"]["integration"]["hashes"])
+        self.assertNotIn("Colib/RingTheory/KTheory/MilnorK/Residue/Completion.lean",
+                         completion["checks"]["integration"]["hashes"])
 
     def test_import_parser_ignores_nested_comments(self):
         source = "/- import Colib.Fake /- nested -/ -/\npublic import Colib.Actual.Module\n"

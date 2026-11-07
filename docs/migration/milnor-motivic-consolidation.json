@@ -59,9 +59,9 @@
       "source": "right-basefield-surjectivity",
       "worktree": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
       "paths": [
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Surjectivity.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Surjectivity.lean",
+        "Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/Surjectivity.lean",
+        "Colib/KTheory/MilnorK/Symbols/Surjectivity.lean",
         "ColibTest/MilnorRightBaseFieldProduct.lean",
         "ColibTest/MilnorResidueSurjectivity.lean",
         "docs/migration/milnor-right-basefield-product.json",
@@ -243,7 +243,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
       "selected_source": "basefield-connecting",
       "selected_revision": "45178bac37b0c2870840f7d50c31608427b791b0",
       "source_sha256": "0bdab99efc71649d522641ec1d87892c1568d21e00ad0ec199382faa8ef49591",
@@ -256,7 +256,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/Naturality.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/Naturality.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "db85b8ffd454f059febbb8bd9e8fafec221c11519bf012f16e81cb3137416333",
@@ -279,7 +279,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/PrincipalUnits.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/PrincipalUnits.lean",
       "selected_source": "transport-ext-principal-units",
       "selected_revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
       "source_sha256": "f330756edcd484cb3b25d90798d6ab8e80625a320b7e94448c2f1c01492fa17e",
@@ -292,7 +292,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
       "selected_source": "milnor-residue-cone-sign",
       "selected_revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
       "source_sha256": "0b0a1ea0c34a8598a07415ecbd8816998c814ad0733885e6c3637251854c4be7",
@@ -305,7 +305,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
       "selected_source": "right-basefield-surjectivity",
       "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
       "source_sha256": "19e732530bb4ffecc0e8b48b059cc1b577b034627d25e5879276852b4ca61efd",
@@ -318,7 +318,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "fd3c4c150cf86d304addc05b965b6602f2241dfc127117664da14a7ac83e16a1",
@@ -336,7 +336,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/Specialization.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/Specialization.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "bbeb6abd168b19824db3ecebda161ae460a1038fe34b42ad515c3c785cf381de",
@@ -369,7 +369,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/SpecializationProduct.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/SpecializationProduct.lean",
       "selected_source": "native-seq-specialization-product",
       "selected_revision": "9ba05e2ee45eb0decc8978b0dd4944a4ce133a55",
       "source_sha256": "30ab179986a9c86bb5ec9b660caa35fd8a9828076939fcfeef7ba5322af7c7e9",
@@ -382,7 +382,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/Surjectivity.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/Surjectivity.lean",
       "selected_source": "right-basefield-surjectivity",
       "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
       "source_sha256": "6e89c96eccab46e7c44bcac3391005871e6bb34abb756cfa8d921b77ae2d6ccb",
@@ -395,7 +395,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/UnitProduct.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "13f0b0d63952eb6dd637553c98fd7320ed4b3d620268c678950b417aa99ad19d",
@@ -423,7 +423,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "11bf0b5731df9e7f278796f40b3faff2affcba6d786ea8698897840ed48da7bf",
@@ -441,7 +441,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "49e430ae1171ec798850f3581029926026cf1748e94ee8006ef632e1f1cd9dea",
@@ -454,7 +454,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Symbols/Involution.lean",
+      "path": "Colib/KTheory/MilnorK/Symbols/Involution.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "4f124c6e650fbe1aea6491f944fa0fa3bfb55d6a3a4fb3e76c3f568c1b24dd96",
@@ -472,7 +472,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Symbols/RingTransport.lean",
+      "path": "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "dd1bbc97ce64095804c197ce6842bbbec1d50ce158239fa0c6c86c13e16ff5cb",
@@ -485,7 +485,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Symbols/Surjectivity.lean",
+      "path": "Colib/KTheory/MilnorK/Symbols/Surjectivity.lean",
       "selected_source": "right-basefield-surjectivity",
       "selected_revision": "/workspace/scratch/ab4c8cd79b02/colib-right-surjectivity-7acb2f0-20261105-1242",
       "source_sha256": "08ba17f1bb7b97f6a5bb3f9bd1910e0bdc2846e15a8a22dd7b1cb584f43ba2a1",
@@ -498,7 +498,7 @@
       ]
     },
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+      "path": "Colib/KTheory/MilnorK/Symbols/Transport.lean",
       "selected_source": "milnor-unramified-four-universes",
       "selected_revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "source_sha256": "7cf22e19a8368a51052c6a82b398a14c5fc9959d483ba15326153ca46c53b9e9",
@@ -1979,12 +1979,12 @@
   "compiled_declaration_inventory": [
     {
       "name": "milnorKTheoryMap_tupleSymbol",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Transport",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
       "type": "\u2200 {k : Type u} {K : Type v} [inst : Field k] [inst_1 : Field K] {n : \u2115} (\u03c6 : k \u2192+* K) (a : Fin n \u2192 k\u02e3),\n  (milnorKTheoryMap \u03c6 n) (milnorKTupleSymbol a) = milnorKTupleSymbol (\u21d1(Units.map \u2191\u03c6) \u2218 a)"
     },
     {
       "name": "Stacks.Chow.milnorKRingMapLift",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.RingTransport",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
       "type": "{k : Type u} \u2192 {K : Type v} \u2192 [inst : Field k] \u2192 [inst_1 : Field K] \u2192 (k \u2192+* K) \u2192 MilnorKRing k \u2192+* MilnorKRing K"
     },
     {
@@ -1999,12 +1999,12 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorSpecialization_tuple_uniformizer",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.Specialization",
+      "module": "Colib.KTheory.MilnorK.Residue.Specialization",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115)\n  (a : Fin n \u2192 F\u02e3) (i : Fin n),\n  a i = Stacks.Chow.dvrFracUniformizer F h\u03c0 \u2192 (Stacks.Chow.dvrMilnorSpecialization h\u03c0 n) (milnorKTupleSymbol a) = 0"
     },
     {
       "name": "Stacks.Chow.milnorKRingMapLift_coe",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.RingTransport",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
       "type": "\u2200 {k : Type u} {K : Type v} [inst : Field k] [inst_1 : Field K] (f : k \u2192+* K) (n : \u2115) (x : MilnorKTheory k n),\n  (Stacks.Chow.milnorKRingMapLift f) \u2191x = \u2191((milnorKTheoryMap f n) x)"
     },
     {
@@ -2014,7 +2014,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorSpecialization_tupleSymbol",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.Specialization",
+      "module": "Colib.KTheory.MilnorK.Residue.Specialization",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115)\n  (a : Fin n \u2192 F\u02e3),\n  (Stacks.Chow.dvrMilnorSpecialization h\u03c0 n) (milnorKTupleSymbol a) =\n    milnorKTupleSymbol (Stacks.Chow.dvrFracUnitPart h\u03c0 \u2218 a)"
     },
     {
@@ -2024,7 +2024,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol_unitTuple_mul",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnitProduct",
+      "module": "Colib.KTheory.MilnorK.Residue.UnitProduct",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (m n : \u2115)\n  (a : Fin m \u2192 R\u02e3) (z : MilnorKTheory F (n + 1)),\n  (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 (m + n))\n      (GradedMonoid.GMul.mul (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)) z) =\n    GradedMonoid.GMul.mul (milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a))\n      ((Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) z)"
     },
     {
@@ -2039,7 +2039,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol_tuple_uniformizers",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.RepeatedUniformizer",
+      "module": "Colib.KTheory.MilnorK.Residue.RepeatedUniformizer",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115),\n  (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) (milnorKTupleSymbol fun x => Stacks.Chow.dvrFracUniformizer F h\u03c0) =\n    milnorKTupleSymbol fun x => -1"
     },
     {
@@ -2049,7 +2049,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorShiftMap_symbol_principal_unit",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.PrincipalUnits",
+      "module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (u : R\u02e3),\n  (Units.map \u2191(IsLocalRing.residue R)) u = 1 \u2192\n    (Stacks.Chow.dvrMilnorShiftMap h\u03c0) (milnorKSymbol F ((Units.map \u2191(algebraMap R F)) u)) = 0"
     },
     {
@@ -2059,12 +2059,12 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorSpecialization_map",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.Naturality",
+      "module": "Colib.KTheory.MilnorK.Residue.Naturality",
       "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (n : \u2115),\n      milnorKTheoryMap (IsLocalRing.ResidueField.map j) n \u2218\u2097 Stacks.Chow.dvrMilnorSpecialization h\u03c0 n =\n        Stacks.Chow.dvrMilnorSpecialization hj\u03c0 n \u2218\u2097 milnorKTheoryMap f n"
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol_surjective",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.Surjectivity",
+      "module": "Colib.KTheory.MilnorK.Residue.Surjectivity",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115),\n  Function.Surjective \u21d1(Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n)"
     },
     {
@@ -2079,7 +2079,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol_map",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMap",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
       "type": "\u2200 {R S : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] [inst_3 : CommRing S]\n  [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type v} {E : Type w} [inst_6 : Field F]\n  [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (n : \u2115),\n      (milnorKTheoryMap (IsLocalRing.ResidueField.map j) n).toAddMonoidHom.comp (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) =\n        (Stacks.Chow.dvrMilnorTameSymbol hj\u03c0 n).comp (milnorKTheoryMap f (n + 1)).toAddMonoidHom"
     },
     {
@@ -2089,7 +2089,7 @@
     },
     {
       "name": "Stacks.Chow.dvrFracOrd_map",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMap",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
       "type": "\u2200 {R S : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] [inst_3 : CommRing S]\n  [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type v} {E : Type w} [inst_6 : Field F]\n  [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (x : F\u02e3),\n      Stacks.Chow.dvrFracOrd hj\u03c0 ((Units.map \u2191f) x) = Stacks.Chow.dvrFracOrd h\u03c0 x"
     },
     {
@@ -2099,7 +2099,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol'_mul_unitTuple",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.RightUnitProduct",
+      "module": "Colib.KTheory.MilnorK.Residue.RightUnitProduct",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] (n m : \u2115) (z : MilnorKTheory F (n + 1))\n  (a : Fin m \u2192 R\u02e3),\n  (Stacks.Chow.dvrMilnorTameSymbol' R F (n + m))\n      (cast \u22ef (GradedMonoid.GMul.mul z (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)))) =\n    (-1) ^ m \u2022\n      GradedMonoid.GMul.mul ((Stacks.Chow.dvrMilnorTameSymbol' R F n) z)\n        (milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a))"
     },
     {
@@ -2114,7 +2114,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorSpecialization",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.Specialization",
+      "module": "Colib.KTheory.MilnorK.Residue.Specialization",
       "type": "{R : Type u} \u2192\n  [inst : CommRing R] \u2192\n    [inst_1 : IsDomain R] \u2192\n      [inst_2 : IsDiscreteValuationRing R] \u2192\n        {F : Type v} \u2192\n          [inst_3 : Field F] \u2192\n            [inst_4 : Algebra R F] \u2192\n              [IsFractionRing R F] \u2192\n                {\u03c0 : R} \u2192 Irreducible \u03c0 \u2192 (n : \u2115) \u2192 MilnorKTheory F n \u2192\u2097[\u2124] MilnorKTheory (IsLocalRing.ResidueField R) n"
     },
     {
@@ -2129,12 +2129,12 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol'_tuple_principal_unit",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.PrincipalUnits",
+      "module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] (n : \u2115) (a : Fin (n + 1) \u2192 F\u02e3)\n  (i : Fin (n + 1)) (u : R\u02e3),\n  a i = (Units.map \u2191(algebraMap R F)) u \u2192\n    (Units.map \u2191(IsLocalRing.residue R)) u = 1 \u2192 (Stacks.Chow.dvrMilnorTameSymbol' R F n) (milnorKTupleSymbol a) = 0"
     },
     {
       "name": "Stacks.Chow.dvrMilnorSpecialization_ringUnits",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.Specialization",
+      "module": "Colib.KTheory.MilnorK.Residue.Specialization",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115)\n  (a : Fin n \u2192 R\u02e3),\n  (Stacks.Chow.dvrMilnorSpecialization h\u03c0 n) (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)) =\n    milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a)"
     },
     {
@@ -2149,7 +2149,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol'_mul_baseField",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.RightBaseFieldProduct",
+      "module": "Colib.KTheory.MilnorK.Residue.RightBaseFieldProduct",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {k : Type w} [inst_6 : Field k] (f : k \u2192+* R)\n  (n m : \u2115) (z : MilnorKTheory F (n + 1)) (x : MilnorKTheory k m),\n  (Stacks.Chow.dvrMilnorTameSymbol' R F (n + m))\n      (cast \u22ef (GradedMonoid.GMul.mul z ((milnorKTheoryMap ((algebraMap R F).comp f) m) x))) =\n    (-1) ^ m \u2022\n      GradedMonoid.GMul.mul ((Stacks.Chow.dvrMilnorTameSymbol' R F n) z)\n        ((milnorKTheoryMap ((IsLocalRing.residue R).comp f) m) x)"
     },
     {
@@ -2159,17 +2159,17 @@
     },
     {
       "name": "Stacks.Chow.dvrFracOrd_map_across",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
       "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (x : F\u02e3),\n      Stacks.Chow.dvrFracOrd hj\u03c0 ((Units.map \u2191f) x) = Stacks.Chow.dvrFracOrd h\u03c0 x"
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol_mul_unitTuple",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.RightUnitProduct",
+      "module": "Colib.KTheory.MilnorK.Residue.RightUnitProduct",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n m : \u2115)\n  (z : MilnorKTheory F (n + 1)) (a : Fin m \u2192 R\u02e3),\n  (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 (n + m))\n      (cast \u22ef (GradedMonoid.GMul.mul z (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)))) =\n    (-1) ^ m \u2022\n      GradedMonoid.GMul.mul ((Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) z)\n        (milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a))"
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol'_baseField_mul",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.BaseFieldProduct",
+      "module": "Colib.KTheory.MilnorK.Residue.BaseFieldProduct",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {k : Type w} [inst_6 : Field k] (f : k \u2192+* R)\n  (m n : \u2115) (x : MilnorKTheory k m) (z : MilnorKTheory F (n + 1)),\n  (Stacks.Chow.dvrMilnorTameSymbol' R F (m + n))\n      (GradedMonoid.GMul.mul ((milnorKTheoryMap ((algebraMap R F).comp f) m) x) z) =\n    GradedMonoid.GMul.mul ((milnorKTheoryMap ((IsLocalRing.residue R).comp f) m) x)\n      ((Stacks.Chow.dvrMilnorTameSymbol' R F n) z)"
     },
     {
@@ -2189,17 +2189,17 @@
     },
     {
       "name": "Stacks.Chow.milnorKRingMapLift_eq",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.RingTransport",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
       "type": "\u2200 {k : Type u} [inst : Field k] {k' : Type u} [inst_1 : Field k'] (f : k \u2192+* k'),\n  Stacks.Chow.milnorKRingMapLift f = milnorKRingMap f"
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol'_unitTuple_mul",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnitProduct",
+      "module": "Colib.KTheory.MilnorK.Residue.UnitProduct",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] (m n : \u2115) (a : Fin m \u2192 R\u02e3)\n  (z : MilnorKTheory F (n + 1)),\n  (Stacks.Chow.dvrMilnorTameSymbol' R F (m + n))\n      (GradedMonoid.GMul.mul (milnorKTupleSymbol (\u21d1(Units.map \u2191(algebraMap R F)) \u2218 a)) z) =\n    GradedMonoid.GMul.mul (milnorKTupleSymbol (\u21d1(Units.map \u2191(IsLocalRing.residue R)) \u2218 a))\n      ((Stacks.Chow.dvrMilnorTameSymbol' R F n) z)"
     },
     {
       "name": "Stacks.Chow.dvrMilnorShiftMap_shift_symbolProd_map",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMap",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
       "type": "\u2200 {R S : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] [inst_3 : CommRing S]\n  [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type v} {E : Type w} [inst_6 : Field F]\n  [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (l : List F\u02e3),\n      (milnorKRingMap (IsLocalRing.ResidueField.map j))\n          ((Stacks.Chow.dvrMilnorShiftMap h\u03c0) (milnorKSymbolProd F l)).shift =\n        ((Stacks.Chow.dvrMilnorShiftMap hj\u03c0) (milnorKSymbolProd E (List.map (\u21d1(Units.map \u2191f)) l))).shift"
     },
     {
@@ -2209,12 +2209,12 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorSpecialization_gmul",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.SpecializationProduct",
+      "module": "Colib.KTheory.MilnorK.Residue.SpecializationProduct",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (m n : \u2115)\n  (x : MilnorKTheory F m) (y : MilnorKTheory F n),\n  (Stacks.Chow.dvrMilnorSpecialization h\u03c0 (m + n)) (GradedMonoid.GMul.mul x y) =\n    GradedMonoid.GMul.mul ((Stacks.Chow.dvrMilnorSpecialization h\u03c0 m) x) ((Stacks.Chow.dvrMilnorSpecialization h\u03c0 n) y)"
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol_map_across",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
       "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (n : \u2115),\n      (milnorKTheoryMap (IsLocalRing.ResidueField.map j) n).toAddMonoidHom.comp (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) =\n        (Stacks.Chow.dvrMilnorTameSymbol hj\u03c0 n).comp (milnorKTheoryMap f (n + 1)).toAddMonoidHom"
     },
     {
@@ -2234,12 +2234,12 @@
     },
     {
       "name": "Stacks.Chow.milnorKRingMapLift_symbolProd",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.RingTransport",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
       "type": "\u2200 {k : Type u} {K : Type v} [inst : Field k] [inst_1 : Field K] (f : k \u2192+* K) (l : List k\u02e3),\n  (Stacks.Chow.milnorKRingMapLift f) (milnorKSymbolProd k l) = milnorKSymbolProd K (List.map (\u21d1(Units.map \u2191f)) l)"
     },
     {
       "name": "milnorKTheoryMap",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Transport",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
       "type": "{k : Type u} \u2192\n  {K : Type v} \u2192 [inst : Field k] \u2192 [inst_1 : Field K] \u2192 (k \u2192+* K) \u2192 (n : \u2115) \u2192 MilnorKTheory k n \u2192\u2097[\u2124] MilnorKTheory K n"
     },
     {
@@ -2259,17 +2259,17 @@
     },
     {
       "name": "milnorKTheoryMap_eq_transport",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Transport",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
       "type": "\u2200 {k : Type u} [inst : Field k] {n : \u2115} {k' : Type u} [inst_1 : Field k'] (\u03c6 : k \u2192+* k'),\n  milnorKTheoryMap \u03c6 n = (milnorKTransport \u03c6 n).toIntLinearMap"
     },
     {
       "name": "milnorKTheoryMap_id",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Transport",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
       "type": "\u2200 {k : Type u} [inst : Field k] {n : \u2115}, milnorKTheoryMap (RingHom.id k) n = LinearMap.id"
     },
     {
       "name": "Stacks.Chow.dvrFracUnitPart_map",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.Naturality",
+      "module": "Colib.KTheory.MilnorK.Residue.Naturality",
       "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (x : F\u02e3),\n      Stacks.Chow.dvrFracUnitPart hj\u03c0 ((Units.map \u2191f) x) =\n        (Units.map \u2191(IsLocalRing.ResidueField.map j)) (Stacks.Chow.dvrFracUnitPart h\u03c0 x)"
     },
     {
@@ -2279,7 +2279,7 @@
     },
     {
       "name": "milnorKTheoryMap_comp",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Transport",
+      "module": "Colib.KTheory.MilnorK.Symbols.Transport",
       "type": "\u2200 {k : Type u} {K : Type v} {L : Type w} [inst : Field k] [inst_1 : Field K] [inst_2 : Field L] {n : \u2115} (\u03c6 : k \u2192+* K)\n  (\u03c8 : K \u2192+* L), milnorKTheoryMap (\u03c8.comp \u03c6) n = milnorKTheoryMap \u03c8 n \u2218\u2097 milnorKTheoryMap \u03c6 n"
     },
     {
@@ -2294,7 +2294,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorShiftMap_shift_symbolProd_map_across",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+      "module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
       "type": "\u2200 {R : Type u} {S : Type v} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R]\n  [inst_3 : CommRing S] [inst_4 : IsDomain S] [inst_5 : IsDiscreteValuationRing S] {F : Type w} {E : Type z}\n  [inst_6 : Field F] [inst_7 : Field E] [inst_8 : Algebra R F] [inst_9 : IsFractionRing R F] [inst_10 : Algebra S E]\n  [inst_11 : IsFractionRing S E] (j : R \u2192+* S) [inst_12 : IsLocalHom j] (f : F \u2192+* E),\n  (\u2200 (r : R), f ((algebraMap R F) r) = (algebraMap S E) (j r)) \u2192\n    \u2200 {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (hj\u03c0 : Irreducible (j \u03c0)) (l : List F\u02e3),\n      (Stacks.Chow.milnorKRingMapLift (IsLocalRing.ResidueField.map j))\n          ((Stacks.Chow.dvrMilnorShiftMap h\u03c0) (milnorKSymbolProd F l)).shift =\n        ((Stacks.Chow.dvrMilnorShiftMap hj\u03c0) (milnorKSymbolProd E (List.map (\u21d1(Units.map \u2191f)) l))).shift"
     },
     {
@@ -2309,7 +2309,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol_tuple_principal_unit",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.PrincipalUnits",
+      "module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (n : \u2115)\n  (a : Fin (n + 1) \u2192 F\u02e3) (i : Fin (n + 1)) (u : R\u02e3),\n  a i = (Units.map \u2191(algebraMap R F)) u \u2192\n    (Units.map \u2191(IsLocalRing.residue R)) u = 1 \u2192 (Stacks.Chow.dvrMilnorTameSymbol h\u03c0 n) (milnorKTupleSymbol a) = 0"
     },
     {
@@ -2319,12 +2319,12 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorShiftMap_symbolProd_principal_unit",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.PrincipalUnits",
+      "module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] {\u03c0 : R} (h\u03c0 : Irreducible \u03c0) (l : List F\u02e3)\n  (u : R\u02e3),\n  (Units.map \u2191(IsLocalRing.residue R)) u = 1 \u2192\n    (Units.map \u2191(algebraMap R F)) u \u2208 l \u2192 (Stacks.Chow.dvrMilnorShiftMap h\u03c0) (milnorKSymbolProd F l) = 0"
     },
     {
       "name": "Stacks.Chow.milnorKRingMapLift_symbol",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Symbols.RingTransport",
+      "module": "Colib.KTheory.MilnorK.Symbols.RingTransport",
       "type": "\u2200 {k : Type u} {K : Type v} [inst : Field k] [inst_1 : Field K] (f : k \u2192+* K) (a : k\u02e3),\n  (Stacks.Chow.milnorKRingMapLift f) (milnorKSymbol k a) = milnorKSymbol K ((Units.map \u2191f) a)"
     },
     {
@@ -2334,7 +2334,7 @@
     },
     {
       "name": "Stacks.Chow.dvrMilnorTameSymbol'_surjective",
-      "module": "Colib.RingTheory.KTheory.MilnorK.Residue.Surjectivity",
+      "module": "Colib.KTheory.MilnorK.Residue.Surjectivity",
       "type": "\u2200 {R : Type u} [inst : CommRing R] [inst_1 : IsDomain R] [inst_2 : IsDiscreteValuationRing R] {F : Type v}\n  [inst_3 : Field F] [inst_4 : Algebra R F] [inst_5 : IsFractionRing R F] (n : \u2115),\n  Function.Surjective \u21d1(Stacks.Chow.dvrMilnorTameSymbol' R F n)"
     }
   ],
@@ -2376,97 +2376,97 @@
       "olean_sha256": "e9dacc77ef7e91b19fa586ec5f4459bc1cd4bf74c6e95abe12da991c07cc3190"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
       "source_sha256": "5764e33314cb89cf1fae2c58b3af5f896b5d50fc513f3895a20a38f94eb88e77",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/BaseFieldProduct.olean",
       "olean_sha256": "e3f19aa9414c28ee6b5619cd69236c96f107f21135239034221e61c017b24f1d"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/Naturality.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/Naturality.lean",
       "source_sha256": "1fd718b8b93ec03e6677275f21badfb1ebe3dbc75730845373fc87345b277d0a",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Naturality.olean",
       "olean_sha256": "71c11d08f4976a07a22d5d64875186ac9b03c15a8d76bcb7ca65f2c6d5e51dfb"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/PrincipalUnits.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/PrincipalUnits.lean",
       "source_sha256": "43343b7d4c7812667334a1b9367407c5ec0c5b4419196780ecc149a8620a0211",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/PrincipalUnits.olean",
       "olean_sha256": "23d6c034b84295cc1fd2b50be72f31c5bd793db1f20814cf42a46c6e0ac7ffae"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
       "source_sha256": "a0cb3a3acecb54603b9605b4c47da39a733ed8f5ca51037c879b0340e404eb28",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.olean",
       "olean_sha256": "b632500f979817d79fac771e4b5fccfbfcc6794bd435526a5b0174539a20c89a"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
       "source_sha256": "3fef44425ebf9e5d42a7f87c077b3670a02fcc7737da80e4d6c01c222459d971",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.olean",
       "olean_sha256": "05c8ac96bf4c3ea2417fea9260f4809af804606ae33d5ffe432e1b797f807a47"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
       "source_sha256": "e3989853b6d1b0b6d1985853b6858a7088cfdce0d45359d93c684194c29f13a4",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RightUnitProduct.olean",
       "olean_sha256": "6e62ff3b38d874b91ff69d3b9716d386b53f79df28f9d6e2545ca0ef83fa2f47"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/Specialization.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/Specialization.lean",
       "source_sha256": "41da7bd1e231154c4cf769f77e5703af68716aec30dab29e23dfeaab18c47381",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Specialization.olean",
       "olean_sha256": "7477a8c77a6f8f0035144e707cda0518d808fdb35dfd52dac09cbb0a6cc0c49a"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/SpecializationProduct.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/SpecializationProduct.lean",
       "source_sha256": "3096ef6f486e399a1db6c6e32d714954833cee2b0564297489df32ce6ba78e25",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/SpecializationProduct.olean",
       "olean_sha256": "00440030008a1426ec1e524b9734c0436612a1c3cbacb65fe71b4f1d067c55cd"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/Surjectivity.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/Surjectivity.lean",
       "source_sha256": "9d25bd19358e7149fb65bb39a1a0a458348f9f17736278e1c6969a0e2000d5ab",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Surjectivity.olean",
       "olean_sha256": "7108fc8477748c3d0d3ae5a5b112a714a5c09ac57a0b2ccffb55f1210737a931"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/UnitProduct.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
       "source_sha256": "8fbe5baec8a5513b6b700499cc2a355b47a0511780a0ed37eb492bf11908fd71",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnitProduct.olean",
       "olean_sha256": "bfad15126acac8fffa2dea17af6e111d3406bf3851aa9e0096a6946b5a20d19a"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
       "source_sha256": "f0d0920558cf6d5dafac0ecfa4bb47aeb31f16c8974ad7d432dda0c3a9668855",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMap.olean",
       "olean_sha256": "66ec8c00083585e066a5e8bcea8544eb0594e028aa664aa9e00b12b0fa292adf"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+      "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
       "source_sha256": "dd3855f9a8f94f7eb45364ba4b52869c1f632f1d202508088a21ef7c497d9d92",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.olean",
       "olean_sha256": "7369c307097f2997c52184b049dc96e59102c853f0d87138e4b823bc862c29a2"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/Involution.lean",
+      "source": "Colib/KTheory/MilnorK/Symbols/Involution.lean",
       "source_sha256": "4f124c6e650fbe1aea6491f944fa0fa3bfb55d6a3a4fb3e76c3f568c1b24dd96",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Involution.olean",
       "olean_sha256": "27323d10857e9dad552eba73900998fe2ccae6673ee861f88948f6dfdb18cc6f"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/RingTransport.lean",
+      "source": "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
       "source_sha256": "52efe532a783447f2b5c7a895bea8b84b7bc51add0e2acf6df0751fd68e49612",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/RingTransport.olean",
       "olean_sha256": "2911be498b9eb95937c21d5e810886c4245f386795ddad853861556a0c8b099a"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/Surjectivity.lean",
+      "source": "Colib/KTheory/MilnorK/Symbols/Surjectivity.lean",
       "source_sha256": "08ba17f1bb7b97f6a5bb3f9bd1910e0bdc2846e15a8a22dd7b1cb584f43ba2a1",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Surjectivity.olean",
       "olean_sha256": "4817ea1c353cbfc18e2ff36056adc5be065a25095bb440c52e9655c1936e1cc1"
     },
     {
-      "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+      "source": "Colib/KTheory/MilnorK/Symbols/Transport.lean",
       "source_sha256": "9858482cb1200fdb0b90e37e54d6f53a23c969ae02e9f7e3f9583ee65bccc407",
       "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Transport.olean",
       "olean_sha256": "e46f5ae80d3904d882d95e6f1d9f0b224fa90337ae9a84ed19f434d28513ac46"
@@ -2699,7 +2699,7 @@
       "revision": "8eeb5f539ad5a24ccb41d56b3c0fe8f1012611d8",
       "represented_selected_paths": [
         "Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
         "ColibTest/ExtQuotient.lean",
         "ColibTest/MilnorTransport.lean",
         "docs/migration/milnor-transport.json",
@@ -2712,8 +2712,8 @@
       "revision": "0ff0171976c4016ec605fb9de0ff97d4a72afb96",
       "represented_selected_paths": [
         "Colib/Algebra/Homology/DerivedCategory/Ext/Quotient.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/PrincipalUnits.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+        "Colib/KTheory/MilnorK/Residue/PrincipalUnits.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
         "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
         "ColibTest/ExtQuotient.lean",
         "ColibTest/MilnorPrincipalUnits.lean",
@@ -2731,8 +2731,8 @@
       "revision": "45b30227b375e0d8df8ff7bbc20bb59b4dbbcfa4",
       "represented_selected_paths": [
         "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
+        "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
         "ColibTest/MappingConeSign.lean",
         "ColibTest/MilnorRepeatedUniformizer.lean",
         "ColibTest/MilnorUnitProduct.lean",
@@ -2750,9 +2750,9 @@
         "Colib/Algebra/Homology/HomotopyCategory/MappingCone.lean",
         "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
         "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/UnitProduct.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+        "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
         "ColibTest/MappingConeSign.lean",
         "ColibTest/MilnorBaseFieldProduct.lean",
         "ColibTest/MilnorTransport.lean",
@@ -2776,7 +2776,7 @@
         "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
         "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
         "Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
         "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
         "Colib/RingTheory/Koszul/PrincipalGeneratorTransport.lean",
         "ColibTest/MappingConeSign.lean",
@@ -2802,8 +2802,8 @@
         "Colib/Algebra/Homology/HomotopyCategory/SingleConeLift.lean",
         "Colib/CategoryTheory/Abelian/Projective/Connecting.lean",
         "Colib/CategoryTheory/Abelian/Projective/ConnectingTransport.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Specialization.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/SpecializationProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Residue/SpecializationProduct.lean",
         "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
         "Colib/RingTheory/Koszul/PrincipalGeneratorTransport.lean",
         "Colib/RingTheory/Koszul/PrincipalSeqGenerator.lean",
@@ -2829,9 +2829,9 @@
       "branch": "migration/dvr-naturality-generator-change",
       "revision": "71d2f00e525904fd56a00db223a4b5eb9d43c99b",
       "represented_selected_paths": [
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Naturality.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Specialization.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+        "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
         "Colib/RingTheory/Koszul/PrincipalExtOne.lean",
         "Colib/RingTheory/Koszul/PrincipalGeneratorChange.lean",
         "ColibTest/MilnorNaturality.lean",
@@ -2896,13 +2896,13 @@
       "branch": "migration/milnor-right-unramified",
       "revision": "358bd7db616843adcd2ba4e741cc09f4d9ead0be",
       "represented_selected_paths": [
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Naturality.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RightUnitProduct.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Specialization.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/UnitProduct.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMap.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Involution.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+        "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+        "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+        "Colib/KTheory/MilnorK/Symbols/Involution.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
         "ColibTest/MilnorNaturality.lean",
         "ColibTest/MilnorRightUnitProduct.lean",
         "ColibTest/MilnorSpecialization.lean",
@@ -2922,15 +2922,15 @@
       "branch": "migration/milnor-unramified-four-universes",
       "revision": "7acb2f064af889ebbb0daa17b1ccd94f40da050b",
       "represented_selected_paths": [
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Naturality.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RightUnitProduct.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/Specialization.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/UnitProduct.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMap.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Involution.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/RingTransport.lean",
-        "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
+        "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+        "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/Specialization.lean",
+        "Colib/KTheory/MilnorK/Residue/UnitProduct.lean",
+        "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+        "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+        "Colib/KTheory/MilnorK/Symbols/Involution.lean",
+        "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
+        "Colib/KTheory/MilnorK/Symbols/Transport.lean",
         "ColibTest/MilnorNaturality.lean",
         "ColibTest/MilnorRightUnitProduct.lean",
         "ColibTest/MilnorSpecialization.lean",

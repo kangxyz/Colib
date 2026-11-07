@@ -61,7 +61,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
+        "source": "Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.lean",
         "source_sha256": "3fef44425ebf9e5d42a7f87c077b3670a02fcc7737da80e4d6c01c222459d971",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RightBaseFieldProduct.olean",
         "olean_sha256": "05c8ac96bf4c3ea2417fea9260f4809af804606ae33d5ffe432e1b797f807a47"

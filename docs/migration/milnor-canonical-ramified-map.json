@@ -77,16 +77,16 @@
       "log_sha256": "54779a82b8f1417943c7f52efb09b092134e44d0bcfd64a49d767a712a4fafb5",
       "kernel_replay": false,
       "hashes": {
-        "Colib/RingTheory/KTheory/MilnorK/Residue/CanonicalRamifiedMap.lean": "9841a35d2b56220ba1ef5ca483a773d8d5bb126d61f28d5454b73bc2ced59e78",
+        "Colib/KTheory/MilnorK/Residue/CanonicalRamifiedMap.lean": "9841a35d2b56220ba1ef5ca483a773d8d5bb126d61f28d5454b73bc2ced59e78",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/CanonicalRamifiedMap.olean": "37050ef81f847672dc1a2a7774013dd68dd844bdf449fe6155850b5d8ae89d5a",
-        "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedMap.lean": "f50b21fe6fb7da399a530456a77eb18e483dbb36aaffd133e9fcd51351e65ba6",
+        "Colib/KTheory/MilnorK/Residue/RamifiedMap.lean": "f50b21fe6fb7da399a530456a77eb18e483dbb36aaffd133e9fcd51351e65ba6",
         ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RamifiedMap.olean": "b8d4b048287d6c95bc5fce081b40bdfa6affa331462b8999950cc3c404e4be06",
         "ColibTest/MilnorCanonicalRamifiedMap.lean": "ce7442d5a9763e798cf0541874d7ac126e0815b812347c64e0a69dd9bbc7be4d",
         ".lake/build/lib/lean/ColibTest/MilnorCanonicalRamifiedMap.olean": "760413cba54a16dbd29beee740a4d65b36410933faae50ab7a36922af4999acd",
         "Colib.lean": "422a9b1b5719afe8062f016d6b04204070914e5d79491f7721d2b36a166564fd",
         "scripts/check.sh": "026998b76defe44fdab44f3cb510c8fa20b60e1eb41983ed4b01b593ad60fcbe",
         ".github/workflows/lean-ci.yml": "9a9cfb749fe5db594bad6173e97bf5370a45e27d237e4d9239686b3d34137030",
-        "docs/library/entries/k-theory-rings-schemes/COL-0150.toml": "12a2c75539622e1433e47a48a50f410539b7b33ba8592a965012e49b44c3dc06"
+        "docs/library/entries/k-theory/COL-0150.toml": "12a2c75539622e1433e47a48a50f410539b7b33ba8592a965012e49b44c3dc06"
       },
       "cache_recovery": {
         "receipt": {
@@ -172,7 +172,7 @@
   },
   "historical_files": [
     {
-      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/CanonicalRamifiedMap.lean",
+      "path": "Colib/KTheory/MilnorK/Residue/CanonicalRamifiedMap.lean",
       "source_sha256": "eed5403c8d325b44bedf7d94f71dd6f89618de09a2aecd51b2a680c7f1ae58f3",
       "olean_sha256": "738cd7671d6a47070745b287a515ac2c91812927a5f89185f4d9efd7bf256999"
     },

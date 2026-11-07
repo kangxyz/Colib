@@ -13,11 +13,11 @@
     "license": "Apache-2.0"
   },
   "scope": "Canonical native DVR residue respects left multiplication by arbitrary base-field Milnor classes for a field homomorphism into the actual valuation ring.",
-  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; k : Type w, Field k; f : k \u2192+* R; m,n : Nat; x : MilnorKTheory k m; z : MilnorKTheory F (n+1). All three universes independent. No characteristic or positive-degree assumptions. The map lands in R, not just F.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; k : Type w, Field k; f : k →+* R; m,n : Nat; x : MilnorKTheory k m; z : MilnorKTheory F (n+1). All three universes independent. No characteristic or positive-degree assumptions. The map lands in R, not just F.",
   "declarations": [
     {
       "source": "MilnorK.DVR.residue_product_base_field_left",
-      "source_lines": "156\u2013171",
+      "source_lines": "156–171",
       "target": "Stacks.Chow.dvrMilnorTameSymbol'_baseField_mul",
       "disposition": "native-model proof rewrite, exact source field-into-ring and arbitrary homogeneous factors retained",
       "degree_transport": "Source associativity cast disappears by definitional equality of m+(n+1) and (m+n)+1."
@@ -70,7 +70,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+        "source": "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
         "source_sha256": "5764e33314cb89cf1fae2c58b3af5f896b5d50fc513f3895a20a38f94eb88e77",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/BaseFieldProduct.olean",
         "olean_sha256": "e3f19aa9414c28ee6b5619cd69236c96f107f21135239034221e61c017b24f1d"

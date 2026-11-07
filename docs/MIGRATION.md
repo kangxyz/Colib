@@ -1,8 +1,9 @@
 # Quillen and Motivic migration
 
-The initial pilot selects three boundaries from the proposed integration.
+The initial pilot selected three boundaries from the proposed integration. The table
+records that starting scope; the sections below describe subsequent results.
 
-| Boundary | Current Colib surface | Subsequent work |
+| Boundary | Initial pilot surface | Work identified at the pilot |
 | --- | --- | --- |
 | Finite-module K₀ | Categorical dimension equivalence over a field | Compare the original Quillen degree-zero map and its exact-category presentation |
 | Milnor K₂ | Equality of the two Steinberg relation spans and the symbol-preserving tensor comparison | All-degree tuple symbols, norms, residue maps and Quillen field comparisons |
@@ -13,7 +14,6 @@ remain migration sources at the recorded commits below.
 
 - Quillen c561118b7795eb9780be9ed391c3251d6a4d0afd.
 - Motivic a6805c4a87cdfd7717dd7a94039246a167f15380.
-- Their Aglib dependency 2c34f185fa859e862661f939cd216b07bcccfb26.
 
 Extend the closed pilot one mathematical chain at a time. Exact categories and shared module
 foundations precede scheme K/G-theory and perfect-complex localization. Finite correspondence
@@ -21,9 +21,12 @@ geometry precedes transfers, ordinary Nisnevich hypercohomology and strict invar
 Record cohomological degrees, coefficient universes, signs, canonical maps and actual
 conditions at each endpoint.
 
-Each candidate is classified as direct upstream reuse, a proved model/interface comparison,
-or a minimal Colib-owned prerequisite. Its actual consumers determine the incremental
-validation scope. Source correspondence and mathematical review retain their own status.
+Use the pinned Mathlib and Stacks objects and interfaces directly. Add missing mathematics
+at its native owner; do not maintain legacy models or compatibility layers. Genuine comparisons
+between distinct mathematical constructions retain their precise hypotheses and actual maps.
+Historical implementation attribution is preserved without retaining an Aglib source inventory
+or making Aglib a dependency. Actual consumers determine the incremental validation scope.
+Source correspondence and mathematical review retain their own status.
 
 The first Library release demonstrates this process on twelve entries. The amount of
 further migration is measured by the actual proof and interface repairs for subsequent slices.
@@ -41,3 +44,132 @@ cofibrations, target binary coproducts and the source universe bounds are retain
 See [the chosen-model and source crosswalk](migration/waldhausen/README.md).
 A strict chosen-zero S-model comparison and broader Quillen-Waldhausen comparison
 remain separate work.
+
+## Objectwise-finite Quillen Resolution
+
+The resolving-subcategory theorem now uses actual finite admissible towers,
+length-one comma contractions and the actual countable nerve union. Resolution
+lengths need not have a common bound. The resulting Q-space equivalence and
+all-degree K-equivalence retain the original inclusion maps. See the
+[precise native-model and source scope](migration/resolution/README.md).
+General filtered realization is now available as part of the later Serre
+localization proof below. This Resolution result does not close the entire
+Quillen migration.
+
+## Canonical Grothendieck–Quillen K-zero comparison
+
+The original Grothendieck-to-Quillen K-zero map is now proved injective and
+bijective on the existing realized Q-category and its original zero basepoint.
+The proof establishes faithfulness of the original groupoid-completion functor
+using actual finite-skeleton decoders and compact relative homotopies. See the
+[native proof and source scope](migration/quillen/kzero-comparison.md). This does
+not claim a higher K-group comparison or completion of the Quillen inventory.
+
+## Classical Quillen devissage
+
+Actual finite filtrations now contract the inclusion comma categories through
+the layer poset. The resulting classifying-space and all-degree K-equivalences
+retain the actual inclusion maps and canonical zero basepoint. The full
+subcategory is intrinsically abelian: no extension-closure or uniform-length
+hypothesis is added. See the [native proof and source crosswalk](migration/devissage/README.md).
+This does not assert a Q/S comparison or finish the historical Quillen inventory.
+
+## Canonical connective Serre localization
+
+The original normalized quotient fiber comparison is now a weak homotopy
+equivalence on every component and at every source basepoint. Its actual group
+comparison gives the connective localization long exact sequence, including
+the K-one to K-zero boundary and terminal surjection, under only the original
+small abelian-category and Serre-class hypotheses. Inclusion and quotient are
+the original K-maps; the boundary retains its native path-space convention.
+
+The supporting complete Theorem B retains both actual comma comparisons under
+transition homotopy equivalences. Arbitrary filtered simplicial realization
+invariance requires neither monicity nor countability. These are complete
+mathematical results, not replacements for the original objects or conditional
+localization adapters. See the [precise proof and evidence scope](migration/serre/completion.md)
+and [Library integration record](migration/serre/integration.md). Negative
+K-theory and the more general weak-transition form of Theorem B are not claimed by that Serre item.
+
+## Original-map Waldhausen fibration and approximation
+
+The fibration theorem now proves weak equivalence of the original canonical
+acyclic-to-homotopy-fiber map, including its full reversed nullhomotopy and
+independent object and morphism universes. Coarse two-out-of-three, extension,
+exact base-category joint-cylinder data and its second-endpoint section are
+retained. Actual relative rows and proved weak-cartesian bar assembly discharge
+the global fiber comparison. See the [native scope and review boundary](migration/quillen/waldhausen-fibration.md).
+
+Approximation proves weak equivalence of the unchanged delooping map from
+App1/App2, exactness, target two-out-of-three and genuine source joint-cylinder
+data. Its group equivalence has the original canonical KMap as its forward
+map in every nonnegative degree, including K-zero. It assumes no row-equivalence
+or homotopy-inverse premise. These results do not supply a strict S-model
+comparison, a Quillen-Waldhausen comparison or nonconnective K-theory.
+
+## Canonical Milnor–Quillen K₂ comparison
+
+The completed source chain gives characteristic-zero additive equivalences from
+the native Milnor K₂ group to actual right-projective Quillen K₂ and the literal
+upper finite-module `SmallK.{u+1} 2`. Their forward homomorphisms are the original
+Milnor-to-kernel-to-Quillen composites. Fiber perfectness, kernel generation and
+the detector are proved inputs, not additional endpoint hypotheses. Both
+directions commute with the original field-extension maps; the negative
+normalization is minus the positive inverse.
+
+The positive ordered scalar-unit-product marking holds over every field,
+with a `ZMod 5` regression. Bijectivity retains `[CharZero F]`.
+Finite realization geometry now uses native `Convexity.StdSimplex` coordinates directly.
+Earlier candidate endpoints and regressions passed focused strict compilation
+and native QA within their recorded scopes. The Lean 4.35 integration is published
+at `0fd43f0253d6ff441fbc3e82420a0573ad694310`, whose original whole-library
+[CI run](https://github.com/kangxyz/colib/actions/runs/42373233801) passed build,
+tests, native lint, axiom audit and Library checks. This exact-commit result does
+not certify later descendants. See the
+[exact comparison and verification scope](migration/quillen/field-k2-comparison.md),
+[algebraic map](migration/quillen/field-k2-native-kernel.md), and
+[stable-fiber proof](migration/quillen/field-k2-stable-fiber.md).
+
+## Original-map Gillet-Waldhausen
+
+The native bounded-complex proof retains the actual abelian ambient, term bounds,
+cofibrations, quasi-isomorphisms and canonical degree-zero single KMap. Its group
+equivalence includes K-zero and the original object/hom universe bounds. Exact
+filtrations, finite Euler decomposition, filtered-union coverage and the actual
+identity-cone cylinder supply the proof, without a theorem-shaped input.
+See [the exact scope and dependency ownership](migration/gillet-waldhausen.md).
+
+## Dense Waldhausen cofinality
+
+The actual dense full inclusion now has its original positive K-equivalence,
+all-degree injectivity and degree-zero exact tail. A genuine complement grading,
+finite replacement, actual row-grade nerve comparison and the proved original
+fibration supply the proof. Coarse K-zero remains the true homotopical endpoint. The actual value map now
+identifies it with complement classes, retaining object generators and the
+original matching-universe map.
+See [the precise native scope](migration/quillen/waldhausen-cofinality.md).
+
+## General Waldhausen Grothendieck K-zero
+
+The original object-loop comparison is an equivalence from the actual free
+abelian presentation by weak arrows and cofibration pushouts to homotopical
+Waldhausen K-zero, including independent object and morphism universes. No
+cylinder or factorization hypothesis is added to this comparison. Actual
+edge-path generation supplies surjectivity, and the realized universal grading
+is its inverse. Original exact-functor KMaps commute with the comparison.
+
+With genuine target factorization, the actual coarse value map identifies
+K-zero with the quotient by the original exact-functor image. Its composite
+with the unchanged changeWeak KMap is the literal quotient, and its kernel
+and surjectivity give the exact original K-zero tail. No higher-degree
+image-quotient or spectrum conclusion is inferred. See the
+[canonical maps and verification scope](migration/quillen/waldhausen-grothendieck-kzero.md).
+
+## Original S-construction composition triangles
+
+The actual two-transformation simplicial triangle retains the original cylinders
+on all three faces, including the genuine composite. Its full zero-vertex family
+is constant under the three explicit chosen-zero equalities. The sole zero-simplex
+definition has its lower simplicial owner, with existing K-theory clients unchanged.
+See the [exact source and scope](migration/quillen/waldhausen-composition-triangle.md).
+This does not establish iterated-S or spectrum compatibility.

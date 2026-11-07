@@ -11,7 +11,7 @@ public import Mathlib.RingTheory.AdjoinRoot
 # The native coefficient-factor map on polynomial classes
 
 This is an evaluation lemma for the existing `AdjoinRoot.map`, not a new quotient map.
-Source-only draft. No Lean/Lake command has been run on this file.
+
 -/
 
 @[expose] public noncomputable section

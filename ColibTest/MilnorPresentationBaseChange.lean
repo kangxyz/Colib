@@ -7,7 +7,7 @@ module
 
 import Colib.KTheory.MilnorK.Norm.PresentationBaseChange
 
-/-! Uncompiled consumer of the actual mapped-mixed-span comparison. -/
+/-! Consumer of the actual mapped-mixed-span comparison.-/
 
 noncomputable section
 

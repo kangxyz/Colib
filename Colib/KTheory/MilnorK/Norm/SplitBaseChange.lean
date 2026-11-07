@@ -21,7 +21,6 @@ and their degree-one norms are the native evaluation maps.
 No finiteness hypothesis on the coefficient extension is required. The second
 endpoint supplies the finite embedding type from the native quotient power basis.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section
@@ -110,7 +109,9 @@ theorem simpleMilnorNorm_map_eq_sum_algHom
     · apply multiplicity_le_of_emultiplicity_le
       exact emultiplicity_le_one_of_separable
         (irreducible (q σ)).not_isUnit hsep.map
-    · exact Nat.succ_le_of_lt (multiplicity_pos_of_dvd (hq σ))
+    · exact Nat.succ_le_of_lt (multiplicity_pos_of_dvd (hq σ)
+        (FiniteMultiplicity.of_not_isUnit (irreducible (q σ)).not_isUnit
+          (Polynomial.map_ne_zero (ne_zero p))))
   let e (σ : (k[X] ⧸ Ideal.span {poly p}) →ₐ[k] K) :
       (K[X] ⧸ Ideal.span {poly (q σ)}) ≃ₐ[K] K :=
     quotientSpanXSubCAlgEquiv (σ (AdjoinRoot.root (poly p)))

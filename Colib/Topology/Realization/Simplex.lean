@@ -9,6 +9,7 @@ module
 public import Colib.Util.References
 public import Mathlib.AlgebraicTopology.SimplicialSet.TopAdj
 public import Mathlib.CategoryTheory.Limits.ConcreteCategory.Basic
+public import Mathlib.Geometry.Convex.ConvexSpace.CompactSpaceStdSimplex
 
 /-!
 # Simplex representatives of realization points
@@ -34,6 +35,11 @@ open scoped Simplicial
 universe u
 
 namespace SSet
+
+/-- Realizations of representable simplicial sets are compact. -/
+instance realizationStandardSimplex_compactSpace (n : SimplexCategory) :
+    CompactSpace |SSet.stdSimplex.{u}.obj n| :=
+  (SimplexCategory.toTopHomeo n).symm.compactSpace
 
 /-- Every point of geometric realization is represented by a point of a simplex. -/
 theorem realization_exists_simplex {X : SSet.{u}} (x : |X|) :

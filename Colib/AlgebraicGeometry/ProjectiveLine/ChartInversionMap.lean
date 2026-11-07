@@ -15,7 +15,7 @@ The actual rational coefficient map commutes with the native chart change `X` to
 The proof uses its existing computations on constants and the coordinate, followed by
 polynomial and localization extensionality. The field universes are independent.
 
-No rational map or projective-line model is defined. This is an uncompiled source-only draft.
+No rational map or projective-line model is defined.
 -/
 
 @[expose] public noncomputable section

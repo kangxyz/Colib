@@ -100,4 +100,4 @@ example {G : Type w} [Group G] (f g : Multiplicative E.GrothendieckGroup →* G)
 
 example {D T : Type w} [Groupoid.{z} D] [Groupoid.{z} T]
     (F : E.QCategory ⥤ D) (G : D ⥤ T) (X : C) :
-    E.qObjectClass (F ⋙ G) X = G.map (E.qObjectClass F X) := E.qObjectClass_comp F G X
+    E.qObjectClass (F ⋙ G) X = G.mapEnd _ (E.qObjectClass F X) := E.qObjectClass_comp F G X

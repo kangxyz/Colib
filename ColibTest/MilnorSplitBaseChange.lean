@@ -7,7 +7,7 @@ module
 
 import Colib.KTheory.MilnorK.Norm.SplitBaseChange
 
-/-! Uncompiled consumers of the actual separable split embedding-sum formula. -/
+/-! Consumers of the actual separable split embedding-sum formula.-/
 
 noncomputable section
 

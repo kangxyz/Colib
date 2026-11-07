@@ -88,7 +88,7 @@ example {S : ShortComplex C} (hS : E.conflation S) :
 
 variable {D : Type w} [Groupoid.{z} D] (F : E.QCategory ⥤ D)
 
-example (X : C) : E.qObjectClass F X =
+example (X : C) : (E.qObjectClass F X).asHom =
     F.map (E.fromZeroTotal (QConstruction.of E.deflation E.inflation X)) ≫
       inv (F.map (E.fromZero (QConstruction.of E.deflation E.inflation X))) := rfl
 

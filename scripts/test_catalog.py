@@ -310,7 +310,7 @@ class LibraryTests(unittest.TestCase):
             "restricted-spans": "Colib.CategoryTheory.QConstruction.Basic",
             "classifying-spaces": "Colib.Topology.ClassifyingSpace.Basic",
             "functor-constructions": "Colib.CategoryTheory.Functor.Rebase",
-            "geometric-realization": "Colib.Topology.Realization.FiniteSimplexAdapter",
+            "geometric-realization": "Colib.Analysis.Convex.StdSimplex.PathHomotopy",
             "homotopy-groups": "Colib.Topology.Homotopy.HomotopyGroup.Map",
             "homotopy-colimits": "Colib.Topology.Pushout.HomotopyEquivalence",
             "quillen-k-theory": "Colib.KTheory.Quillen.Basic",
@@ -322,8 +322,13 @@ class LibraryTests(unittest.TestCase):
             "henselian-ramification": "Colib.RingTheory.Henselian.UniformizerNormalization",
             "finite-algebra-coefficients": "Colib.RingTheory.Length.FiniteAlgebra",
         }
+        item_modules = {
+            "COL-0058": "Colib.Topology.ClassifyingSpace.NerveHomotopy",
+            "COL-0098": "Colib.Analysis.Convex.StdSimplex.BoundaryRetraction",
+        }
         native["modules"] = [
-            {"name": name, "imports": []} for name in sorted(set(module_names.values()))
+            {"name": name, "imports": []}
+            for name in sorted(set(module_names.values()) | set(item_modules.values()))
         ]
         for identifier in self.library["entries"]:
             name = "CategoryTheory.example_" + identifier.removeprefix("COL-")
@@ -332,9 +337,9 @@ class LibraryTests(unittest.TestCase):
                 {
                     "name": name,
                     "type": "Prop",
-                    "module": module_names[
+                    "module": item_modules.get(identifier, module_names[
                         self.library["entries"][identifier]["section"]
-                    ],
+                    ]),
                     "dependencies": [],
                 }
             )
@@ -454,19 +459,62 @@ class LibraryTests(unittest.TestCase):
             self.assertEqual(self.library["entries"][identifier]["section"], section)
         catalog.compile_library(self.library, self.native_fixture(), {}, "main")
 
-    def test_nerve_cylinder_and_finite_simplex_ids_keep_their_owners(self):
-        for identifier, section in (
-            ("COL-0058", "classifying-spaces"),
-            ("COL-0059", "geometric-realization"),
-        ):
+    def test_nerve_cylinder_and_native_simplex_owners_survive_adapter_retirement(self):
+        owners = {
+            "COL-0058": ("classifying-spaces", "Colib.Topology.ClassifyingSpace.NerveHomotopy"),
+            "COL-0082": ("geometric-realization", "Colib.Analysis.Convex.StdSimplex.PathHomotopy"),
+            "COL-0098": ("geometric-realization",
+                         "Colib.Analysis.Convex.StdSimplex.BoundaryRetraction"),
+        }
+        root = catalog.ROOT
+        root_imports = (root / "Colib.lean").read_text()
+        for identifier, (section, module) in owners.items():
             self.assertEqual(self.library["entries"][identifier]["section"], section)
+            source = (root / (module.replace(".", "/") + ".lean")).read_text()
+            self.assertIn(f'colib_tag "{identifier}"', source)
+            self.assertIn("public import " + module, root_imports)
+            if identifier != "COL-0058":
+                self.assertIn("namespace Convexity.StdSimplex", source)
+                self.assertIn("StdSimplex ℝ", source)
+                self.assertNotIn("_root_.stdSimplex", source)
+
+        self.assertNotIn("COL-0059", self.library["entries"])
+        retired = self.library["retired"]["COL-0059"]
+        self.assertEqual(retired["status"], "retired")
+        self.assertEqual(retired["previous_path"], "docs/library/entries/topology/COL-0059.toml")
+        self.assertEqual(retired["related_items"], ["COL-0082", "COL-0098"])
+        self.assertFalse((root / retired["previous_path"]).exists())
+        obsolete_module = "Colib.Topology.Realization.FiniteSimplexAdapter"
+        self.assertFalse((root / (obsolete_module.replace(".", "/") + ".lean")).exists())
+        self.assertNotIn(obsolete_module, root_imports)
+        for path in (root / "Colib").rglob("*.lean"):
+            source = path.read_text()
+            self.assertNotIn(obsolete_module, source, str(path))
+            self.assertNotIn('colib_tag "COL-0059"', source, str(path))
+
         result = catalog.compile_library(self.library, self.native_fixture(), {}, "main")
         self.assertEqual(
             result["sections"]["geometric-realization"]["modules"],
-            ["Colib.Topology.Realization.FiniteSimplexAdapter"],
+            sorted(owners[identifier][1] for identifier in ("COL-0082", "COL-0098")),
         )
-        for identifier in ("COL-0058", "COL-0059"):
+        for identifier, (_, module) in owners.items():
             self.assertTrue(result["entries"][identifier]["references"])
+            declarations = result["entries"][identifier]["declarations"]
+            self.assertTrue(declarations)
+            self.assertEqual({result["declarations"][name]["module"] for name in declarations},
+                             {module})
+        self.assertNotIn("COL-0059", result["entries"])
+        self.assertIn("COL-0059", result["retired"])
+        self.assertNotIn(obsolete_module, result["modules"])
+
+        native = self.native_fixture()
+        native["bindings"].append({"id": "COL-0059", "name": native["declarations"][0]["name"]})
+        with self.assertRaisesRegex(ValueError, "Unknown compiled Library binding"):
+            catalog.compile_library(self.library, native, {}, "main")
+        entry = self.root / "docs/library/entries/topology/COL-0082.toml"
+        entry.write_text(entry.read_text().replace('id = "COL-0082"', 'id = "COL-0059"'))
+        with self.assertRaisesRegex(ValueError, "reused retired Library ID"):
+            catalog.load_library(self.root)
 
     def test_realization_prerequisite_ids_keep_their_owners(self):
         for index in range(60, 65):

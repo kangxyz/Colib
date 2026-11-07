@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0259"
+title = "Connective change-of-weak long exact sequence"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 110
+statement = "The actual acyclic inclusion, change-of-weak KMap and transported path-space connecting homomorphism form the connective long exact sequence. The change-of-weak map is surjective in K-zero."
+scope = "Nested Waldhausen weak-equivalence classes in independent object and hom universes, coarse two-out-of-three and extension, exact joint-cylinder data and its second-endpoint section. The canonical fiber weak equivalence is proved from those structural inputs. The boundary retains the original reversed zero-to-inclusion nullhomotopy and basepoint convention. The K-zero endpoint is obtained from the genuine pointed-set tail, not from positive-degree exactness alone."
+review = "author_checked"
+provenance = "quillen"

@@ -8,7 +8,7 @@ module
 import Colib.KTheory.MilnorK.Norm.DVRDegreeOne
 
 /-!
-Uncompiled consumers of the actual native K₁-to-K₀ norm–residue square.
+Consumers of the actual native K₁-to-K₀ norm–residue square.
 The ring and fraction-field universes remain independent. No prime or tame hypothesis is used.
 -/
 

@@ -1,0 +1,7 @@
+[retired]
+id = "COL-0176"
+title = "Comparison of local perfect representatives"
+reason = "The archived Aglib local-model comparison and its two-model regressions were removed. Consumers use the pinned Stacks perfect-complex definitions and interfaces directly. This identifier remains reserved and is not reassigned."
+previous_revision = "5c0a7ab9c060b7482a3c49056bb9b3284fc47829"
+previous_path = "docs/library/entries/algebraic-geometry/COL-0176.toml"
+related_items = ["COL-0178"]

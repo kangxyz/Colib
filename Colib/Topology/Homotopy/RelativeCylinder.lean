@@ -21,11 +21,13 @@ Only namespace/import ownership and unnecessary broad imports change.
 -/
 @[expose] public section
 
+open Convexity
+
 
 noncomputable section
 
-open CategoryTheory Limits MonoidalCategory CartesianMonoidalCategory Convexity
-open Convexity.StdSimplex
+open CategoryTheory Limits MonoidalCategory CartesianMonoidalCategory
+open StdSimplex
 open scoped Topology unitInterval BigOperators
 
 universe u
@@ -268,7 +270,7 @@ theorem homotopyExtensionProperty_simplexCylinder_extension
 
 /-- Two independent endpoint homotopies as boundary-simplex data. -/
 def intervalEndpointHomotopies {B Z : TopCat.{u}}
-    (H₀ H₁ : C(B × I, Z)) : C((B × simplexBoundary 1) × I, Z) := by
+    (H₀ H₁ : C(B × I, Z)) : C((B × boundary 1) × I, Z) := by
   let e := ((TopCat.intervalEndpointDomainHomeomorph B).symm.prodCongr
     (Homeomorph.refl I)).trans Homeomorph.sumProdDistrib
   exact ⟨fun p ↦ Sum.elim H₀ H₁ (e p),
@@ -276,14 +278,14 @@ def intervalEndpointHomotopies {B Z : TopCat.{u}}
 
 @[simp] theorem intervalEndpointHomotopies_zero {B Z : TopCat.{u}}
     (H₀ H₁ : C(B × I, Z)) (b : B) (t : I) :
-    TopCat.intervalEndpointHomotopies H₀ H₁ ((b, TopCat.boundaryZero), t) = H₀ (b, t) := by
+    TopCat.intervalEndpointHomotopies H₀ H₁ ((b, StdSimplex.boundaryZero), t) = H₀ (b, t) := by
   simp [TopCat.intervalEndpointHomotopies, TopCat.intervalEndpointDomainHomeomorph]
 
 @[simp] theorem intervalEndpointHomotopies_one {B Z : TopCat.{u}}
     (H₀ H₁ : C(B × I, Z)) (b : B) (t : I) :
-    TopCat.intervalEndpointHomotopies H₀ H₁ ((b, TopCat.boundaryOne), t) = H₁ (b, t) := by
+    TopCat.intervalEndpointHomotopies H₀ H₁ ((b, StdSimplex.boundaryOne), t) = H₁ (b, t) := by
   simp [TopCat.intervalEndpointHomotopies, TopCat.intervalEndpointDomainHomeomorph,
-    TopCat.boundaryZero_ne_one.symm]
+    StdSimplex.boundaryZero_ne_one.symm]
 
 /-- HEP on the first factor extends a square of homotopies with both
 interval endpoints and the initial-time face prescribed. -/
@@ -303,26 +305,26 @@ theorem homotopyExtensionProperty_interval_square_extension
   let f' : C(B × StdSimplex ℝ (Fin 2), Z) :=
     ⟨fun p ↦ f (p.1, StdSimplex.homeomorphI p.2), by fun_prop⟩
   let L := TopCat.intervalEndpointHomotopies H₀ H₁
-  have hL : ∀ b (x : simplexBoundary 1), L ((b, x), 0) = f' (b, x.1) := by
+  have hL : ∀ b (x : boundary 1), L ((b, x), 0) = f' (b, x.1) := by
     intro b x
-    rcases TopCat.boundary_eq_zero_or_one x with rfl | rfl
-    · rw [show L ((b, TopCat.boundaryZero), 0) = H₀ (b, 0) from
+    rcases StdSimplex.boundary_eq_zero_or_one x with rfl | rfl
+    · rw [show L ((b, StdSimplex.boundaryZero), 0) = H₀ (b, 0) from
         TopCat.intervalEndpointHomotopies_zero H₀ H₁ b 0]
-      simpa [f', TopCat.boundaryZero] using h₀ b
-    · rw [show L ((b, TopCat.boundaryOne), 0) = H₁ (b, 0) from
+      simpa [f', StdSimplex.boundaryZero] using h₀ b
+    · rw [show L ((b, StdSimplex.boundaryOne), 0) = H₁ (b, 0) from
         TopCat.intervalEndpointHomotopies_one H₀ H₁ b 0]
-      simpa [f', TopCat.boundaryOne] using h₁ b
-  let F := Convexity.StdSimplex.closedCylinderGlue (simplexBoundary 1)
-    (isClosed_simplexBoundary 1) f' L hL
+      simpa [f', StdSimplex.boundaryOne] using h₁ b
+  let F := StdSimplex.closedCylinderGlue (boundary 1)
+    (isClosed_boundary 1) f' L hL
   let H' : C(A × (StdSimplex ℝ (Fin 2) × I), Z) :=
     ⟨fun p ↦ H ((p.1, StdSimplex.homeomorphI p.2.1), p.2.2), by fun_prop⟩
   have hFH : ∀ a (z : simplexBoundaryCylinder 1), H' (a, z.1) = F (i a, z) := by
     intro a ⟨⟨x, t⟩, hz⟩
     rcases hz with hx | ht
     · have he : F (i a, ⟨(x, t), Or.inl hx⟩) = L ((i a, ⟨x, hx⟩), t) :=
-        Convexity.StdSimplex.closedCylinderGlueFun_side _ f' L (i a) ⟨x, hx⟩ t
+        StdSimplex.closedCylinderGlueFun_side _ f' L (i a) ⟨x, hx⟩ t
       rw [he]
-      rcases TopCat.boundary_eq_zero_or_one ⟨x, hx⟩ with he | he
+      rcases StdSimplex.boundary_eq_zero_or_one ⟨x, hx⟩ with he | he
       · have hx' : x = StdSimplex.single 0 := congrArg Subtype.val he
         change H ((a, StdSimplex.homeomorphI x), t) = _
         rw [he, hx', StdSimplex.homeomorphI_single_zero]
@@ -334,7 +336,7 @@ theorem homotopyExtensionProperty_interval_square_extension
     · change t = 0 at ht
       subst t
       rw [show F (i a, ⟨(x, 0), Or.inr rfl⟩) = f' (i a, x) from
-        Convexity.StdSimplex.closedCylinderGlueFun_bottom _ f' L hL (i a) x]
+        StdSimplex.closedCylinderGlueFun_bottom _ f' L hL (i a) x]
       exact hf a (StdSimplex.homeomorphI x)
   obtain ⟨K', hK'A, hK'F⟩ :=
     TopCat.homotopyExtensionProperty_simplexCylinder_extension hi 1 F H' hFH
@@ -346,7 +348,7 @@ theorem homotopyExtensionProperty_interval_square_extension
     calc
       _ = F (b, ⟨(_, 0), Or.inr rfl⟩) := hK'F b ⟨(_, 0), Or.inr rfl⟩
       _ = f' (b, StdSimplex.homeomorphI.symm t) :=
-        Convexity.StdSimplex.closedCylinderGlueFun_bottom _ f' L hL b _
+        StdSimplex.closedCylinderGlueFun_bottom _ f' L hL b _
       _ = f (b, t) := by simp [f']
   · intro a s t
     change K' (i a, (StdSimplex.homeomorphI.symm s, t)) = H ((a, s), t)
@@ -357,16 +359,16 @@ theorem homotopyExtensionProperty_interval_square_extension
       StdSimplex.homeomorphI.injective (by simp)
     change K' (b, (StdSimplex.homeomorphI.symm 0, t)) = H₀ (b, t)
     rw [hs]
-    exact (hK'F b ⟨(TopCat.boundaryZero.1, t), Or.inl TopCat.boundaryZero.2⟩).trans
-      ((Convexity.StdSimplex.closedCylinderGlueFun_side _ f' L b TopCat.boundaryZero t).trans
+    exact (hK'F b ⟨(StdSimplex.boundaryZero.1, t), Or.inl StdSimplex.boundaryZero.2⟩).trans
+      ((StdSimplex.closedCylinderGlueFun_side _ f' L b StdSimplex.boundaryZero t).trans
         (TopCat.intervalEndpointHomotopies_zero H₀ H₁ b t))
   · intro b t
     have hs : StdSimplex.homeomorphI.symm 1 = StdSimplex.single 1 :=
       StdSimplex.homeomorphI.injective (by simp)
     change K' (b, (StdSimplex.homeomorphI.symm 1, t)) = H₁ (b, t)
     rw [hs]
-    exact (hK'F b ⟨(TopCat.boundaryOne.1, t), Or.inl TopCat.boundaryOne.2⟩).trans
-      ((Convexity.StdSimplex.closedCylinderGlueFun_side _ f' L b TopCat.boundaryOne t).trans
+    exact (hK'F b ⟨(StdSimplex.boundaryOne.1, t), Or.inl StdSimplex.boundaryOne.2⟩).trans
+      ((StdSimplex.closedCylinderGlueFun_side _ f' L b StdSimplex.boundaryOne t).trans
         (TopCat.intervalEndpointHomotopies_one H₀ H₁ b t))
 
 

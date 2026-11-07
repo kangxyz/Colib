@@ -13,12 +13,12 @@ restoreAllArtifacts = true
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"
-rev = "16edf57de7933555826307a3d81b4391a3657a09"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
 
 [[require]]
 name = "Stacks"
 git = "https://github.com/AxiomMath/Stacks"
-rev = "f8e70c5dd04bfabcb423d5e325461f527c85a5d6"
+rev = "5ed82d14634e8d9576bb844c7bd4e3da66d450e7"
 
 [[lean_lib]]
 name = "Colib"

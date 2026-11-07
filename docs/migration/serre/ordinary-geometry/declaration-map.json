@@ -1,0 +1,97 @@
+[
+  {
+    "source": "Quillen/Aglib/CategoryTheory/Abelian/SerreClass/OverKernelBaseChange.lean",
+    "target": "Colib/CategoryTheory/Abelian/SerreClass/OverKernelBaseChange.lean",
+    "declarations": [
+      "overKernel_map_\u03b9",
+      "overBaseChange_map_isPullback",
+      "overBaseChangeKernelObjIso",
+      "overBaseChangeKernelObjIso_hom_\u03b9",
+      "overBaseChangeKernelIso",
+      "overPostcomposeKernelObjIso",
+      "overPostcomposeKernelObjIso_hom_\u03b9",
+      "overPostcomposeKernelIso",
+      "overBaseChangeCounit_mono",
+      "overBaseChangeCounit_kernel",
+      "overBaseChange_isoModSerre"
+    ]
+  },
+  {
+    "source": "Quillen/Aglib/CategoryTheory/Abelian/SerreClass/OverKernel.lean",
+    "target": "Colib/CategoryTheory/Abelian/SerreClass/OverKernel.lean",
+    "declarations": [
+      "overDeflation",
+      "overInflation",
+      "overDeflation_baseChange",
+      "overInflation_baseChange",
+      "overKernel",
+      "overKernel_preservesPullbacks",
+      "overKernel_map_isPullback",
+      "over_isIso_of_mono_of_kernel_isIso",
+      "overKernel_identity_isZero",
+      "overKernel\u03b9",
+      "overKernel_condition",
+      "overKernelIsKernel",
+      "overKernel_mem"
+    ]
+  },
+  {
+    "source": "Quillen/Aglib/CategoryTheory/Abelian/SerreClass/KernelPushoutComparison.lean",
+    "target": "Colib/CategoryTheory/Abelian/SerreClass/KernelPushoutComparison.lean",
+    "declarations": [
+      "overKernel_mono_isPushout",
+      "overKernel_mono_isPushout_of_iso",
+      "kernelPushoutComparisonIso",
+      "kernelPushoutComparisonIso_inl",
+      "kernelPushoutComparisonIso_inr",
+      "kernelPushoutComparisonIso_kernel"
+    ]
+  },
+  {
+    "source": "Quillen/Aglib/CategoryTheory/Abelian/SerreClass/KernelPushout.lean",
+    "target": "Colib/CategoryTheory/Abelian/SerreClass/KernelPushout.lean",
+    "declarations": [
+      "kernelPushoutObj",
+      "kernelPushoutMap",
+      "kernelPushout_inl_map",
+      "kernelPushout_inr_map",
+      "kernelPushoutMap_epi",
+      "kernelPushoutIsCokernel",
+      "kernelPushoutIsKernel",
+      "kernelPushoutIso",
+      "kernelPushoutIso_hom_\u03b9",
+      "kernelPushoutOverHom",
+      "kernelPushoutOverHom_kernel",
+      "kernelPushoutMap_isoModSerre"
+    ]
+  },
+  {
+    "source": "Quillen/Aglib/CategoryTheory/Abelian/SerreClass/OverKernelPostcompose.lean",
+    "target": "Colib/CategoryTheory/Abelian/SerreClass/OverKernelPostcompose.lean",
+    "declarations": [
+      "overPostcomposeKernelMap",
+      "overPostcomposeKernelMap_\u03b9",
+      "overPostcomposeKernelMap_mono",
+      "overPostcomposeKernelMap_naturality",
+      "overPostcomposeKernelMap_isPullback"
+    ]
+  },
+  {
+    "source": "Quillen/Aglib/CategoryTheory/Abelian/SerreClass/KernelPushoutMonomorphism.lean",
+    "target": "Colib/CategoryTheory/Abelian/SerreClass/KernelPushoutMonomorphism.lean",
+    "declarations": [
+      "kernelPushoutOverHom_mono"
+    ]
+  },
+  {
+    "source": "Quillen/Aglib/CategoryTheory/Abelian/SerreClass/ImageSubobjects.lean",
+    "target": "Colib/CategoryTheory/Abelian/SerreClass/ImageSubobjects.lean",
+    "declarations": [
+      "imageSubobject_epi_comp",
+      "imageSubobject_arrow_isoModSerre",
+      "SerreImagePoset",
+      "instOrderTopSerreImagePoset",
+      "pullback_to_image_epi"
+    ]
+  }
+]

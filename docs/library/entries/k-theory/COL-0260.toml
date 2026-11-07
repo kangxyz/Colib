@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0260"
+title = "Gillet-Waldhausen for the original single-complex K-map"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 290
+statement = "The original degree-zero single-complex insertion induces a multiplicative K-group equivalence in every nonnegative degree. Its forward homomorphism is definitionally the original canonical KMap into bounded termwise-P complexes with genuine quasi-isomorphisms."
+scope = "An abelian ambient category A with independent object and hom universe bounds and an object property P containing zero and closed under isomorphisms, extensions and kernels of surjections. Actual term bounds, inherited cofibrations and ambient quasi-isomorphisms are retained. The bounded-complex canonical fiber equivalence needs no kernel closure; kernel closure is used for the acyclic-cycle decomposition. No fibration, cylinder, realization, K-map bijectivity or homotopy-inverse conclusion is an input. This is the connective K-group consequence for the existing unnormalized IsZero S-model; no Q/S comparison, strict-model comparison, scheme specialization, nonconnective spectrum or chosen homotopy inverse is asserted."
+review = "author_checked"
+provenance = "quillen"

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0233"
+title = "Simplicial replacement realization invariance"
+kind = "theorem"
+section = "geometric-realization"
+order = 220
+statement = "An objectwise realization homotopy equivalence between simplicial-set diagrams induces an actual homotopy equivalence on their replacement diagonal realizations. Its forward map is the canonical replacement map."
+scope = "The explicit simplicial replacement construction, using skeletal attachments and sequential HEP invariance. This does not assert an arbitrary bisimplicial realization theorem."
+review = "author_checked"

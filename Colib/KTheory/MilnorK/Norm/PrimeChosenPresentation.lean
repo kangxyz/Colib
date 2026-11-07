@@ -19,7 +19,6 @@ No perfectness, normality, separability, presentation independence, or general
 norm tower law is used. Both fields have the universe required by the native norm.
 There is no new norm, carrier, or comparison structure.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

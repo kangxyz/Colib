@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0269"
+title = "The canonical Waldhausen Grothendieck K-zero comparison"
+kind = "comparison"
+section = "waldhausen-k-theory"
+order = 320
+statement = "The actual object-loop map identifies the free abelian group on objects modulo zero, weak-arrow and cofibration-pushout relations with the original homotopical Waldhausen K-zero."
+scope = "Independent object and morphism universes; no cylinder, factorization, saturation or extension hypothesis beyond the Waldhausen structure. The inverse in matching universes is the actual realized universal grading. The general comparison preserves every object-loop generator, commutes with the original canonical exact-functor KMap, and agrees with the matching-universe comparison. The cofiber presentation of Thomason-Trobaugh 1.5.6 is expressed by the equivalent full pushout relations in the unnormalized IsZero S-construction."
+review = "author_checked"
+provenance = "quillen"

@@ -14,4 +14,4 @@ introduction = "Chosen pullbacks retain the coefficient functor and quasi-compac
 id = "perfect-complexes"
 title = "Perfect complexes"
 order = 20
-introduction = "Local-representative comparisons retain the original chain complexes, restriction functors and local derived models. Native Stacks perfectness remains the chosen predicate."
+introduction = "Native Stacks perfect complexes carry the actual monomorphism/quasi-isomorphism Waldhausen structure. No legacy perfectness predicate or comparison layer is maintained."

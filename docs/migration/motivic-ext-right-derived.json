@@ -1,8 +1,8 @@
 {
-  "status": "native_leaf_compiled_remote_integration_pending",
+  "status": "native_migration_compiled",
   "source_repository": "kangxyz/aglib",
   "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
-  "colib_main_baseline": "04982087f606dd92713fca25cb04493f8858acee",
+  "colib_main_baseline": "3b9dc4d7353365bb921116d6bf901e098ee72391",
   "source_receipts": [
     {
       "path": "Aglib/Algebra/Homology/DerivedCategory/ExtRightDerived.lean",
@@ -44,15 +44,15 @@
     "lower_supplier_note": "Cochain and ExtZero are supplied Aglib prerequisites; this ledger does not infer direct Motivic archive coverage for them."
   },
   "counts": {
-    "production_modules": 4,
-    "regression_modules": 1,
-    "explicit_consumer_examples": 11,
-    "public_source_declarations_migrated": 13,
+    "production_modules": 6,
+    "regression_modules": 2,
+    "explicit_consumer_examples": 21,
+    "public_source_declarations_migrated": 18,
     "private_source_normalization_promoted": 1,
-    "public_declarations_added": 14,
-    "private_helpers_added": 5,
+    "public_declarations_added": 21,
+    "private_helpers_added": 7,
     "original_public_comparison_replaced_by_native_provider": 1,
-    "deferred_original_public_declarations": 5
+    "deferred_original_public_declarations": 0
   },
   "declarations": [
     {
@@ -105,9 +105,9 @@
     },
     {
       "source_module": "Aglib.CategoryTheory.Abelian.Injective.ExtZero",
-      "source": "CategoryTheory.InjectiveResolution.extMk_\u03b9_zero",
+      "source": "CategoryTheory.InjectiveResolution.extMk_ι_zero",
       "target_module": "Colib.CategoryTheory.Abelian.Injective.ExtZero",
-      "target": "CategoryTheory.InjectiveResolution.extMk_\u03b9_zero",
+      "target": "CategoryTheory.InjectiveResolution.extMk_ι_zero",
       "disposition": "migrated_source_public_declaration_on_native_objects",
       "compiled": true
     },
@@ -153,9 +153,9 @@
     },
     {
       "source_module": "Aglib.Algebra.Homology.DerivedCategory.ExtRightDerived",
-      "source": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_mk\u2080",
+      "source": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_mk₀",
       "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.RightDerived",
-      "target": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_mk\u2080",
+      "target": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_mk₀",
       "disposition": "migrated_source_public_declaration_on_native_objects",
       "compiled": true
     },
@@ -166,6 +166,46 @@
       "target_module": "Colib.Algebra.Homology.HomotopyCategory.SingleHomology",
       "target": "CochainComplex.HomComplex.homology_homComplexSingleIsoCoyonedaComplex_fromSingleMk",
       "disposition": "promoted_source_private_normalization_for_existing_native_iso",
+      "compiled": true
+    },
+    {
+      "source_module": "Aglib.Algebra.Homology.DerivedCategory.ExtRightDerived",
+      "source": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_naturality_right",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.RightDerivedNaturality",
+      "target": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_naturality_right",
+      "disposition": "migrated_source_public_declaration_on_native_objects",
+      "compiled": true
+    },
+    {
+      "source_module": "Aglib.Algebra.Homology.DerivedCategory.ExtRightDerived",
+      "source": "CategoryTheory.InjectiveResolution.isoRightDerivedObjCochain_hom_natTrans",
+      "target_module": "Colib.CategoryTheory.Abelian.RightDerived.CochainNaturality",
+      "target": "CategoryTheory.InjectiveResolution.isoRightDerivedObjCochain_hom_natTrans",
+      "disposition": "migrated_source_public_declaration_on_native_objects",
+      "compiled": true
+    },
+    {
+      "source_module": "Aglib.Algebra.Homology.DerivedCategory.ExtRightDerived",
+      "source": "CategoryTheory.InjectiveResolution.rightDerived_app_eq_cochain",
+      "target_module": "Colib.CategoryTheory.Abelian.RightDerived.CochainNaturality",
+      "target": "CategoryTheory.InjectiveResolution.rightDerived_app_eq_cochain",
+      "disposition": "migrated_source_public_declaration_on_native_objects",
+      "compiled": true
+    },
+    {
+      "source_module": "Aglib.Algebra.Homology.DerivedCategory.ExtRightDerived",
+      "source": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_trans_naturality",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.RightDerivedNaturality",
+      "target": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_trans_naturality",
+      "disposition": "migrated_source_public_declaration_on_native_objects",
+      "compiled": true
+    },
+    {
+      "source_module": "Aglib.Algebra.Homology.DerivedCategory.ExtRightDerived",
+      "source": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_trans_eq",
+      "target_module": "Colib.Algebra.Homology.DerivedCategory.Ext.RightDerivedNaturality",
+      "target": "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_trans_eq",
+      "disposition": "migrated_source_public_declaration_on_native_objects",
       "compiled": true
     }
   ],
@@ -209,22 +249,30 @@
     "An actual single-source cocycle maps to the literal homology projection of its evaluated native cycle.",
     "The cochain comparison is the three native factors, retaining the original extension map orientation.",
     "The actual zero-cycle augmentation evaluates to the supplied resolution augmentation.",
-    "The original Ext.mk\u2080 morphism maps to the actual preadditiveCoyoneda.toRightDerivedZero transformation."
+    "The original Ext.mk₀ morphism maps to the actual preadditiveCoyoneda.toRightDerivedZero transformation."
   ],
-  "deferred_original_public_declarations": [
-    "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_naturality_right",
-    "CategoryTheory.InjectiveResolution.isoRightDerivedObjCochain_hom_natTrans",
-    "CategoryTheory.InjectiveResolution.rightDerived_app_eq_cochain",
-    "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_trans_naturality",
-    "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_trans_eq"
-  ],
+  "deferred_original_public_declarations": [],
   "not_claimed": [
-    "No full Ext coefficient naturality, resolution independence, or naturality in additive functors.",
-    "No duplicate homComplex map/class-map/left-homology-data model is copied from the source.",
-    "The four Ext production modules and explicit Ext consumer passed local native leaf compilation. Complete declaration/private lint, production axiom audit, catalog registration and root integration remain pending. No main publication has occurred.",
-    "The whole 546-line original ExtRightDerived module is not classified as migrated."
+    "No left-variable Ext naturality, product compatibility or later geometric/motivic identification.",
+    "No duplicate Hom-complex map, cocycle map, class-map or homology-data model is copied from the source.",
+    "The naturality extension has local native leaf compilation; full-root build, declaration/private lint, production axiom audit and Library export are pending normal branch CI."
   ],
-  "native_validation_20261107": {
+  "source_stage_verification": {
+    "lean_lake_invocations": 0,
+    "kernel_replay": false,
+    "independent_review": "Static review of fixed source, native APIs, maps, hypotheses, universes, all four production files and eleven consumers; no concrete defect found. Not elaborator or kernel verification.",
+    "source_copy_verification": "All three original files matched exact pinned GitHub blobs; local source files have no .git metadata, so this was not inferred from a folder name.",
+    "regression_file": "ColibTest/ExtRightDerived.lean",
+    "disk_constraint": "Approximately 5.03 GiB free; coordinator prohibited missing-dependency compilation at this reserve. One native HomComplexFromSingle artifact is absent; none was built or copied."
+  },
+  "source_stage_integration": {
+    "library_id": "unassigned; coordinate with integration owner, do not reuse retired IDs",
+    "root": "unchanged; regenerate natively after compiler validation",
+    "test_discovery": "automatic on current main; no handwritten list changes",
+    "publication": "none; accumulate with the substantive migration milestone"
+  },
+  "historical_source_stage_note": "source_stage_verification and source_stage_integration are immutable historical source-only status. Historical Lean 4.34 records are superseded by integration and the Lean 4.35 naturality_extension. Earlier source-only archives are not the final repaired source packet.",
+  "historical_native_validation_20261107": {
     "compiler": "Official pinned Lean 4.34.0-rc2, package options, single thread, existing captured Lake environment; direct leaf commands, not a full Lake root build.",
     "all_owned_production_and_test_leaves_compiled": true,
     "style": "Pinned native lint-style passed on all six production and two consumer sources through explicit import lists.",
@@ -242,25 +290,60 @@
     "published": false,
     "original_source_only_evidence": "Earlier source-only archives/reports remain unchanged as historical snapshots."
   },
-  "source_stage_verification": {
-    "lean_lake_invocations": 0,
-    "kernel_replay": false,
-    "independent_review": "Static review of fixed source, native APIs, maps, hypotheses, universes, all four production files and eleven consumers; no concrete defect found. Not elaborator or kernel verification.",
-    "source_copy_verification": "All three original files matched exact pinned GitHub blobs; local source files have no .git metadata, so this was not inferred from a folder name.",
-    "regression_file": "ColibTest/ExtRightDerived.lean",
-    "disk_constraint": "Approximately 5.03 GiB free; coordinator prohibited missing-dependency compilation at this reserve. One native HomComplexFromSingle artifact is absent; none was built or copied."
-  },
-  "source_stage_integration": {
-    "library_id": "unassigned; coordinate with integration owner, do not reuse retired IDs",
-    "root": "unchanged; regenerate natively after compiler validation",
-    "test_discovery": "automatic on current main; no handwritten list changes",
-    "publication": "none; accumulate with the substantive migration milestone"
-  },
-  "integration": {
+  "historical_integration": {
     "library_id": "COL-0266",
     "required": "Recompile catalog-annotated endpoint leaves and affected consumers locally, integrate on latest main, regenerate and compile the final root locally, then run full native declaration/private lint, production axiom audit and catalog/site validation remotely. No kernel replay.",
     "publication": "none",
     "catalog_state": "Entry and compiled-reference bindings prepared in an isolated overlay; not yet compiled or registered in main."
   },
-  "historical_source_stage_note": "source_stage_verification and source_stage_integration are immutable historical source-only status, superseded for compilation by native_validation_20261107. Earlier source-only archives are not the final repaired source packet."
+  "historical_colib_main_baseline": "04982087f606dd92713fca25cb04493f8858acee",
+  "integration": {
+    "baseline": "3b9dc4d7353365bb921116d6bf901e098ee72391",
+    "source_relay": "cc4c4d1134eb5f2eb62b623f3bf1fd900ed510af",
+    "compiler": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+    "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "stacks_revision": "5ed82d14634e8d9576bb844c7bd4e3da66d450e7",
+    "compiled_source_sha256": {
+      "Colib/Algebra/Homology/DerivedCategory/Ext/RightDerived.lean": "9872f529b083b3840e038909641fa951557e4dcfe4a966aeaa9b2f3c95474cca",
+      "Colib/Algebra/Homology/HomotopyCategory/SingleHomology.lean": "3c800b140afa40fca5007f19c3111958d9cbbfad4993b98fbbd67ccc2641cfe8",
+      "Colib/CategoryTheory/Abelian/Injective/ExtZero.lean": "b62a91e2efd20c4e5960d3c5f924e61d220c5280aedb21d1e1bf83fff345fda0",
+      "Colib/CategoryTheory/Abelian/RightDerived/Cochain.lean": "f375943324a67398f725a62a9de4c1d4c311857803d09695c5e15cbd54cc59a7",
+      "ColibTest/ExtRightDerived.lean": "26303ed4e87422985208caeecb4681b8e5a0e84b717ba39533f18e5812e0d8b4"
+    },
+    "aggregate_Colib_build": "passed",
+    "complete_in_package_tests": "passed",
+    "scope": "These facts record stock compilation and tests. Full declaration/private lint, production axiom audit, source style and native catalog/site validation are enforced by scripts/check.sh and the milestone CI.",
+    "historical_scope": "The preserved historical records concern earlier source-only and Lean 4.34.0-rc2 stages; they are not current-version acceptance receipts.",
+    "kernel_replay": false
+  },
+  "additional_native_consequences": [
+    "CategoryTheory.InjectiveResolution.isoRightDerivedObjCochain_inv_naturality",
+    "CategoryTheory.InjectiveResolution.extRightDerivedAddEquiv_eq"
+  ],
+  "naturality_extension": {
+    "status": "locally_compiled_branch_ci_pending",
+    "local_compile_baseline": "0fd43f0253d6ff441fbc3e82420a0573ad694310",
+    "integration_baseline": "b271e6c5ff0c9feac8786a409dd0246e65ce96a6",
+    "source_correspondence": "The Ext prerequisites and dependency pins are unchanged between the local compile baseline and integration baseline. Concurrent Waldhausen, K-zero, documentation and CI changes are preserved.",
+    "compiler": "leanprover/lean4:v4.35.0",
+    "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "stacks_revision": "5ed82d14634e8d9576bb844c7bd4e3da66d450e7",
+    "source_sha256": {
+      "Colib/CategoryTheory/Abelian/RightDerived/CochainNaturality.lean": "0e65b3b814c0716e123d69b16c1538ca700673903f27c907b4cac46ed3230128",
+      "Colib/Algebra/Homology/DerivedCategory/Ext/RightDerivedNaturality.lean": "0c93b3c36fc25ddba660d21cc4eb7d939c31b518c2433cb8ca8f62e2a861dbbc",
+      "ColibTest/ExtRightDerivedNaturality.lean": "a42570f573e56fc35e5e857d75fbf4dbe05a35016daf59dbb81a7110f9697809"
+    },
+    "local_validation": "Two production leaves and the ten-example consumer compiled using stock Lean, package options and native Lake incremental builds.",
+    "source_review": "Independent read-only source/API review checked maps, hypotheses, universes and native proof route. This is distinct from compilation and full declaration/private lint.",
+    "source_locators": {
+      "extRightDerivedAddEquiv_naturality_right": "lines 309-332",
+      "isoRightDerivedObjCochain_hom_natTrans": "lines 446-494",
+      "rightDerived_app_eq_cochain": "lines 496-506",
+      "extRightDerivedAddEquiv_trans_naturality": "lines 516-530",
+      "extRightDerivedAddEquiv_trans_eq": "lines 532-544"
+    },
+    "library_id": "COL-0266",
+    "final_checks": "Full build/test, generated root, text and declaration/private lint, axiom audit and Library validation are assigned to normal branch CI. Main integration follows successful CI.",
+    "kernel_replay": false
+  }
 }

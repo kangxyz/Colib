@@ -8,7 +8,7 @@ module
 import Colib.KTheory.MilnorK.Norm.PresentationSupport
 
 /-!
-Uncompiled consumers of supporting comparisons, not of full presentation independence.
+Consumers of supporting comparisons, not of full presentation independence.
 There are no prime-degree, normality, perfectness or characteristic assumptions here.
 -/
 

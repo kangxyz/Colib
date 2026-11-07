@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0240"
+title = "The canonical Grothendieck–Quillen K-zero equivalence"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 210
+statement = "The existing canonical Grothendieck-to-Quillen K-zero homomorphism is injective and bijective. Its induced group equivalence has that same homomorphism as its forward map and retains the canonical object classes."
+scope = "A preadditive category with finite biproducts and an exact structure, in independent object and morphism universes. The target is the actual homotopical K 0 of the realized Q-category at its original zero vertex. The result concerns K-zero, not higher comparison maps."
+review = "author_checked"

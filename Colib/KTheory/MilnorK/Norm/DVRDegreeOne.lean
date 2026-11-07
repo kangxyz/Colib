@@ -21,7 +21,6 @@ remain independent. No prime degree, normality, perfectness, henselianity, tame 
 or torsion-freeness of a Milnor group is assumed. No higher-degree square or tower law follows
 from this statement. All maps and equivalences are the existing native ones.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

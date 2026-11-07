@@ -11,6 +11,7 @@ The chapter structure and source dependency graph express their respective mathe
 | --- | --- |
 | Chapters, sections and reading introductions | docs/library/chapters/*.toml |
 | Mathematical statements, kinds, conditions and correspondence review state | docs/library/entries/<chapter>/<ID>.toml |
+| Retired permanent IDs and their previous source records | docs/library/retired/<ID>.toml |
 | Declaration membership in a mathematical item | The compiled `@[colib_tag "COL-0004"]` attribute |
 | Stacks correspondence | Mathlib's existing `@[stacks TAG "scope"]` attribute |
 | Book and paper correspondence | `@[colib_ref "key" "locator" "relation" "scope"]` |
@@ -36,6 +37,13 @@ IDs start with COL- and at least four decimal digits. They are independent of ch
 Lean names and file paths. Moving an item preserves its ID. Released IDs are never reused.
 A substantive replacement records the relation to the earlier item explicitly. Reading positions
 can change without changing permanent links.
+
+Removing a maintained item moves its identifier to `docs/library/retired/<ID>.toml`.
+The `[retired]` record contains its `id`, `title`, `reason`, exact `previous_revision`,
+`previous_path` and optional `related_items`. Retired IDs cannot be reused, have no active
+Lean binding, and keep a searchable permanent page linking to the previous source record.
+Related items are reading suggestions, not assertions that the retired theorem is equivalent
+to a replacement. `catalog.py show` also resolves retired IDs.
 
 Only occupied mathematical chapters and source families are created. The migration programme
 in docs/MIGRATION.md identifies upcoming cohomological and homotopical work. A new chapter is

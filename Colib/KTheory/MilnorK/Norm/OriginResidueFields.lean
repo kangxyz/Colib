@@ -16,7 +16,7 @@ localization map preserves the literal uniformizer `X`; its native residue-field
 with the coefficient homomorphism through the existing `residueFieldAtOriginEquiv`.
 
 No new local ring, map, residue-field identification, or norm is defined. The source and
-target field universes are independent. This source-only draft has not been compiled.
+target field universes are independent.
 -/
 
 @[expose] public noncomputable section

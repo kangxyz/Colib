@@ -8,7 +8,7 @@ introduction = "Geometric realizations and based homotopy groups retain their ac
 id = "classifying-spaces"
 title = "Classifying spaces"
 order = 10
-introduction = "The realized nerve of a category has a point for every object. Based homotopy groups provide the topological constructions later specialized to Quillen's Q-category."
+introduction = "The realized nerve of a category has a point for every object. Based homotopy groups provide the topological constructions later specialized to Quillen's Q-category. The original groupoid-completion comparison computes the fundamental group, using actual graph representatives and relative homotopies in finite skeleta. Quillen Theorems A and B retain the actual realized functor and comma-to-fiber comparison. Theorem B covers both comma conventions and all path components under the original transition homotopy-equivalence hypothesis."
 
 [[sections]]
 id = "homotopy-groups"
@@ -26,4 +26,4 @@ introduction = "Coordinate comparisons retain the chosen realization, finite ver
 id = "homotopy-colimits"
 title = "Homotopy invariance of colimits"
 order = 25
-introduction = "Homotopy extension, mapping cylinders and coherent timed deformations retain the actual comparison maps of pushouts and sequential colimits. Chosen stagewise inverses need not be compatible. These generic results support the cellular realization comparison."
+introduction = "Homotopy extension, mapping cylinders and coherent timed deformations retain the actual comparison maps of pushouts and sequential colimits. Chosen stagewise inverses need not be compatible. These generic results support the cellular realization comparison. For arbitrary filtered simplicial diagrams, compact HELP proves that every realized colimit leg is a homotopy equivalence when the actual transitions are, without monicity or countability."

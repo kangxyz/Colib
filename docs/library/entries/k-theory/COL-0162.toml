@@ -5,5 +5,5 @@ kind = "theorem"
 section = "quillen-k-theory"
 order = 200
 statement = "The existing canonical homomorphism from the exact-category Grothendieck group to actual homotopical Quillen K-zero is surjective. The original completed-loop comparison factors through the existing algebraic Grothendieck equivalence and this canonical homomorphism."
-scope = "A preadditive category with finite biproducts and an exact structure, with independent object and morphism universes. The target is the genuine K 0, via its existing based fundamental-group equivalence. This proves surjectivity onto all classes, not merely the object-generated subgroup. No injectivity or comparison equivalence is asserted."
+scope = "A preadditive category with finite biproducts and an exact structure, with independent object and morphism universes. The target is the genuine K 0, via its existing based fundamental-group equivalence. This proves surjectivity onto all classes, not merely the object-generated subgroup. The injectivity and full comparison equivalence are the separate item COL-0240."
 review = "author_checked"

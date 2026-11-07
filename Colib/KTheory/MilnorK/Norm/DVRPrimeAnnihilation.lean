@@ -7,6 +7,7 @@ module
 
 public import Colib.KTheory.MilnorK.Norm.DVRResidueTrace
 public import Colib.KTheory.MilnorK.Residue.Automorphism
+public import Colib.Util.References
 
 /-!
 # Prime annihilation of the actual norm-residue error
@@ -144,5 +145,19 @@ theorem finrank_smul_norm_residue_difference_eq_zero
   exact hnorm
 
 end Stacks.Chow
+
+attribute [colib_tag "COL-0261"]
+  Stacks.Chow.ramification_smul_restrict_norm_residue_difference_eq_zero
+  Stacks.Chow.finrank_smul_norm_residue_difference_eq_zero
+
+attribute [colib_ref "axiom_stacks"
+  "StacksFrontier/RingTheory/DiscreteValuationRing/FundamentalIdentity.lean"
+  "ingredient" "The native local degree identity retains ramification and residue degree"]
+  Stacks.Chow.finrank_smul_norm_residue_difference_eq_zero
+
+attribute [colib_ref "axiom_stacks"
+  "StacksFrontier/AlgebraicGeometry/Chow/MilnorNorm/FieldNorm.lean"
+  "ingredient" "The native chosen norm-restriction projection formula, with the full field degree"]
+  Stacks.Chow.finrank_smul_norm_residue_difference_eq_zero
 
 end

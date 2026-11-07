@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0267"
+title = "The actual graded Waldhausen delooping"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 300
+statement = "The original coarse Waldhausen delooping is weakly equivalent to the nerve of the actual subgroup of realized object grades."
+scope = "An additive object grading, invariant under original weak maps and normalized at zero, and genuine source functorial factorization. The original S-construction and group-grading map are retained. Finite replacement proves grade realizability; surjectivity onto an arbitrary grading group is not assumed. This adapts the graded step of Thomason-Trobaugh 1.10.1, without identifying homotopical K-zero with the grading group or asserting a spectrum fiber sequence."
+review = "author_checked"
+provenance = "quillen"

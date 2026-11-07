@@ -19,7 +19,6 @@ irreducible-factor case it supplies the equality required by Mathlib's `localRin
 The coefficient target may be any commutative ring, and its universe is independent. No
 monicity, separability, finite-extension, localization wrapper, or Milnor theory is used.
 
-Source-only draft. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

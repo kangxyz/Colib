@@ -16,10 +16,8 @@ import re
 import subprocess
 
 QUILLEN_REV = "c561118b7795eb9780be9ed391c3251d6a4d0afd"
-AGLIB_REV = "2c34f185fa859e862661f939cd216b07bcccfb26"
 SOURCES = {
     "quillen": (QUILLEN_REV, "https://github.com/kangxyz/quillen-k-theory"),
-    "aglib": (AGLIB_REV, "https://github.com/kangxyz/aglib"),
 }
 
 
@@ -142,8 +140,8 @@ def imports(text: str) -> list[dict]:
     return rows
 
 
-def category(path: str, source: str) -> str:
-    root = "Quillen" if source == "quillen" else "Aglib"
+def category(path: str) -> str:
+    root = "Quillen"
     if path == f"{root}.lean":
         return "generated_root"
     if path.startswith(f"{root}/") and path.endswith(".lean"):
@@ -198,19 +196,18 @@ def write_jsonl(path: Path, rows: list[dict]) -> None:
     path.write_text("".join(json.dumps(row, sort_keys=True) + "\n" for row in rows))
 
 
-def generate(quillen: Path, aglib: Path, output: Path,
+def generate(quillen: Path, output: Path,
              package_repos: dict[str, Path] | None = None) -> dict:
-    trees = {"quillen": snapshot(quillen, QUILLEN_REV), "aglib": snapshot(aglib, AGLIB_REV)}
+    if "Aglib" in (package_repos or {}):
+        raise ValueError("Aglib is excluded from this inventory; do not supply its repository")
+    trees = {"quillen": snapshot(quillen, QUILLEN_REV)}
     manifest = json.loads(trees["quillen"]["lake-manifest.json"])
-    aglib_pin = next(p["rev"] for p in manifest["packages"] if p["name"] == "Aglib")
-    if aglib_pin != AGLIB_REV:
-        raise ValueError("Quillen manifest Aglib pin differs from the requested inventory pin")
     files, modules = [], {}
     for source, tree in trees.items():
         for path, data in sorted(tree.items()):
             row = {"source": source, "path": path, "sha256": hashlib.sha256(data).hexdigest(),
-                   "category": category(path, source), "bytes": len(data)}
-            # Census all Quillen files and all Aglib files, not only their closure.
+                   "category": category(path), "bytes": len(data)}
+            # Census all Quillen files, including its local Quillen/Aglib/ modules.
             files.append(row)
             if path.endswith(".lean") and row["category"] in {"production", "generated_root"}:
                 module = path[:-5].replace("/", ".")
@@ -238,7 +235,7 @@ def generate(quillen: Path, aglib: Path, output: Path,
                 consumers[dep].append(node)
             else:
                 record = {"consumer": node, **edge}
-                if dep.split(".")[0] in {"Quillen", "Aglib"}:
+                if dep.split(".")[0] == "Quillen":
                     unresolved.append(record)
                 else:
                     external.append(record)
@@ -255,8 +252,13 @@ def generate(quillen: Path, aglib: Path, output: Path,
                 package_modules[path[:-5].replace("/", ".")] = package
         package_evidence[package] = {"commit": pin, "method": "git ls-tree at source manifest pin"}
     for edge in external:
-        edge["source_package"] = package_modules.get(edge["module"])
-        edge["resolution"] = "source_file_verified" if edge["source_package"] else "unverified"
+        if edge["module"].split(".")[0] == "Aglib":
+            # Keep only Quillen's reference, never inspect the historical dependency.
+            edge["source_package"] = "Aglib"
+            edge["resolution"] = "unverified"
+        else:
+            edge["source_package"] = package_modules.get(edge["module"])
+            edge["resolution"] = "source_file_verified" if edge["source_package"] else "unverified"
     # Layers and transitive imported source closure are derived from the SCC DAG.
     group_deps = {i: {scc[d] for n in g for d in graph[n] if scc[d] != i}
                   for i, g in enumerate(groups)}
@@ -283,7 +285,7 @@ def generate(quillen: Path, aglib: Path, output: Path,
                        "assigned_worker": None, "disposition": None, "status": "untriaged",
                        "validation_evidence": [], "stacks_first_audit": "pending"})
     summary = {
-        "schema_version": 1,
+        "schema_version": 2,
         "sources": {name: {"commit": rev, "repository": url,
                            "lean_toolchain": trees[name]["lean-toolchain"].decode().strip(),
                            "license_sha256": hashlib.sha256(trees[name]["LICENSE"]).hexdigest()}
@@ -300,7 +302,7 @@ def generate(quillen: Path, aglib: Path, output: Path,
             n.split(".")[1] for n in seeds if "." in n).items())),
         "local_aglib_candidates_including_aggregator": sum(r["local_aglib_candidate"] for r in ledger),
         "local_aglib_directory_candidates": sum(r["module"].startswith("Quillen.Aglib.") for r in ledger),
-        "external_aglib_reachable_modules": len(reachable - seeds),
+        "external_aglib_import_edges": sum(e["source_package"] == "Aglib" for e in external),
         "module_ledger_rows": len(ledger), "source_import_edges": sum(map(len, graph.values())),
         "external_import_edges": len(external), "unresolved_source_import_edges": len(unresolved),
         "strongly_connected_components": len(groups),
@@ -325,13 +327,12 @@ def generate(quillen: Path, aglib: Path, output: Path,
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--quillen", type=Path, required=True, help="Pinned source Git repository")
-    parser.add_argument("--aglib", type=Path, required=True, help="Historical source Git repository")
     parser.add_argument("--output", type=Path, default=Path("docs/migration/quillen"))
     parser.add_argument("--package", action="append", default=[], metavar="NAME=REPO",
                         help="Verify imports against a Git repo at the source manifest pin")
     args = parser.parse_args()
     packages = {name: Path(path) for name, path in (item.split("=", 1) for item in args.package)}
-    summary = generate(args.quillen, args.aglib, args.output, packages)
+    summary = generate(args.quillen, args.output, packages)
     print(json.dumps({key: value for key, value in summary.items()
                       if key not in {"source_packages", "sources"}}, indent=2, sort_keys=True))
 

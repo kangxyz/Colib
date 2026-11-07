@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0238"
+title = "Filtered nerves and sequential resolution unions"
+kind = "theorem"
+section = "homotopy-colimits"
+order = 40
+statement = "Faithful filtered categorical cocones with arrow surjectivity and eventual object equality induce actual colimit nerve cocones. The resolution strata satisfy these hypotheses using a local maximum of five lengths. Sequential mono realization then identifies stage zero with the ambient realization."
+scope = "The homotopy equivalence uses the actual countable mono diagram and proved HEP invariance. General arbitrary filtered realization invariance and every-stage-to-ambient source statements are not claimed. The book union passage is background for the new formal proof."
+review = "author_checked"

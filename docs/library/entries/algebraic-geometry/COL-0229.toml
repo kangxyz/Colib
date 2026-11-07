@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0229"
+title = "Open restriction of native perfect complexes"
+kind = "theorem"
+section = "perfect-complexes"
+order = 30
+statement = "Restriction to an open ringed subspace preserves the native Stacks perfect-complex predicate. For a scheme and one of its open subschemes, ordinary degreewise restriction is exact for the inherited Waldhausen structures on native perfect complexes."
+scope = "RingedSpace.{u,u} and Scheme.{u}, with module sections in universe u. Scheme restriction is to U.toScheme for U : X.Opens. It retains the actual restricted objects and chain maps and preserves zero objects, ambient monomorphisms, quasi-isomorphisms and displayed pushouts along monomorphisms. No second perfectness predicate, derived model or comparison category is introduced. Arbitrary open immersions, nested-restriction coherence and identifications with archived strict-perfect or locally-perfect categories are outside this statement. Author source comparison was checked on 2026-11-06; independent review and compilation are separate evidence."
+review = "author_checked"

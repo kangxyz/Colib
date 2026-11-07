@@ -23,7 +23,7 @@ in dimensions at least two.
 Adapted from `Quillen/Topology/Realization/EdgePathPresentation/Annulus.lean`
 at commit `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The actual barycentric
 maps, scale 3/4, defect threshold 1/2, and dimension hypotheses are retained.
-Only namespace and import ownership change. Interior simple connectedness is
+Coordinate proofs use native finitely supported weights. Interior simple connectedness is
 outside this slice.
 -/
 @[expose] public section
@@ -39,13 +39,14 @@ namespace Convexity.StdSimplex
 def simplexInnerScale {n : ℕ} (x : StdSimplex ℝ (Fin (n + 1))) :
     StdSimplex ℝ (Fin (n + 1)) :=
   convexCombPair (R := ℝ) (1 / 4) (3 / 4) (by norm_num) (by norm_num) (by norm_num)
-    (simplexInteriorCenter n) x
+    (StdSimplex.barycenter : StdSimplex ℝ (Fin (n + 1))) x
 
 @[simp] theorem simplexInnerScale_weights {n : ℕ}
     (x : StdSimplex ℝ (Fin (n + 1))) (i : Fin (n + 1)) :
     (simplexInnerScale x).weights i =
       (1 / 4 : ℝ) * (1 / (n + 1)) + (3 / 4 : ℝ) * x.weights i := by
-  simp [simplexInnerScale, StdSimplex.weights_convexCombPair]
+  simp [simplexInnerScale, StdSimplex.weights_convexCombPair,
+    StdSimplex.weights_barycenter_apply, Fintype.card_fin, one_div]
 
 @[fun_prop] theorem continuous_simplexInnerScale {n : ℕ} :
     Continuous (simplexInnerScale (n := n)) := by
@@ -99,7 +100,7 @@ theorem isOpen_simplexAnnulus (n : ℕ) : IsOpen (simplexAnnulus n) :=
   (isOpen_simplexBoundaryCollar n).inter (isOpen_simplexInterior n)
 
 /-- The shrunken boundary sits inside the open overlap. -/
-theorem simplexInnerScale_boundary_mem_annulus {n : ℕ} (x : simplexBoundary n) :
+theorem simplexInnerScale_boundary_mem_annulus {n : ℕ} (x : boundary n) :
     simplexInnerScale x.1 ∈ simplexAnnulus n := by
   refine ⟨?_, simplexInnerScale_mem_interior x.1⟩
   change (1 : ℝ) / 2 < simplexBoundaryDefect (simplexInnerScale x.1)
@@ -128,10 +129,10 @@ theorem simplexBoundaryRetractPoint_one_weights_zero {n : ℕ}
 /-- A point of the open overlap joins the shrunken boundary along its own
 radial line, and the entire segment stays in the open overlap. -/
 theorem simplexAnnulus_joinedIn_innerBoundary {n : ℕ} (x : simplexAnnulus n) :
-    ∃ y : simplexBoundary n,
+    ∃ y : boundary n,
       JoinedIn (simplexAnnulus n) x.1 (simplexInnerScale y.1) := by
   let xc : simplexBoundaryCollar n := ⟨x.1, x.2.1⟩
-  let y : simplexBoundary n := ⟨simplexBoundaryRetractPoint (x.1, 1),
+  let y : boundary n := ⟨simplexBoundaryRetractPoint (x.1, 1),
     simplexBoundaryRetractPoint_one_mem_boundary xc⟩
   obtain ⟨i, hi⟩ := exists_simplexBoundaryDefect_eq x.1
   have hy0 : y.1.weights i = 0 := simplexBoundaryRetractPoint_one_weights_zero xc i hi
@@ -141,7 +142,7 @@ theorem simplexAnnulus_joinedIn_innerBoundary {n : ℕ} (x : simplexAnnulus n) :
   refine ⟨y, simplexSegment x.1 (simplexInnerScale y.1), fun t ↦ ⟨?_, ?_⟩⟩
   · change (1 : ℝ) / 2 < simplexBoundaryDefect (simplexSegment x.1 (simplexInnerScale y.1) t)
     apply lt_of_lt_of_le _ (le_simplexBoundaryDefect _ i)
-    rw [simplexSegment_weights]
+    rw [simplexSegment_apply]
     have hlin : 1 - (n + 1 : ℝ) *
         ((1 - (t : ℝ)) * x.1.weights i + t * (simplexInnerScale y.1).weights i) =
         (1 - (t : ℝ)) * simplexBoundaryDefect x.1 + t * (3 / 4 : ℝ) := by
@@ -166,7 +167,7 @@ theorem simplexAnnulus_joinedIn_innerBoundary {n : ℕ} (x : simplexAnnulus n) :
 theorem isPathConnected_simplexAnnulus {n : ℕ} (hn : 2 ≤ n) :
     IsPathConnected (simplexAnnulus n) := by
   have hs := (isPathConnected_simplexBoundary hn).image continuous_simplexInnerScale
-  have hsub : simplexInnerScale '' simplexBoundary n ⊆ simplexAnnulus n := by
+  have hsub : simplexInnerScale '' boundary n ⊆ simplexAnnulus n := by
     rintro _ ⟨x, hx, rfl⟩
     exact simplexInnerScale_boundary_mem_annulus ⟨x, hx⟩
   obtain ⟨b, hb, hpaths⟩ := hs

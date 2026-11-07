@@ -8,7 +8,7 @@ module
 import Colib.KTheory.MilnorK.Norm.ScalarFactorBaseChange
 
 /-!
-Uncompiled consumers of unconditional native simple-norm scalar-factor base change.
+Consumers of unconditional native simple-norm scalar-factor base change.
 The D/E/F dependencies and this G module are source-only. The degree-zero and repeated-factor
 consumers retain the infinity sign and the full multiplicity respectively.
 -/

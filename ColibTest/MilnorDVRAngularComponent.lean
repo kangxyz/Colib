@@ -7,7 +7,7 @@ module
 
 import Colib.KTheory.MilnorK.Norm.DVRAngularComponent
 
-/-! Uncompiled consumers of the actual norm angular component, retaining negative orders. -/
+/-! Consumers of the actual norm angular component, retaining negative orders.-/
 
 noncomputable section
 

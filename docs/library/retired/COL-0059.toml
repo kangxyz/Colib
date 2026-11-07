@@ -1,0 +1,7 @@
+[retired]
+id = "COL-0059"
+title = "Finite barycentric simplex coordinate comparison"
+reason = "The version-specific comparison layer and its parallel finite-coordinate model were removed. Consumers now use the pinned native standard-simplex coordinates and realization interfaces directly. This identifier remains reserved and is not reassigned."
+previous_revision = "04982087f606dd92713fca25cb04493f8858acee"
+previous_path = "docs/library/entries/topology/COL-0059.toml"
+related_items = ["COL-0082", "COL-0098"]

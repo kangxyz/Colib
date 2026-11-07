@@ -13,7 +13,6 @@ public import Mathlib.FieldTheory.RatFunc.Basic
 These statements use Mathlib's `RatFunc.mapRingHom` directly. No rational-function map or
 field model is introduced. Source and target fields have independent universes.
 
-Source-only draft. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

@@ -160,3 +160,13 @@ Library export/site validation. Only the three standard axioms are allowed.
 A successful build, literature correspondence and independent mathematical
 review remain separate claims; no kernel replay or extra downstream test is
 implied.
+
+## Canonical Quillen-Waldhausen comparison equivalence
+
+[The native comparison theorem](quillen-comparison.md) identifies the original
+exact-category S-delooping and Q-space by the prescribed reversed-edgewise
+zigzag, giving the canonical K-group isomorphism in every nonnegative degree.
+It acts directly on the existing quotient-row categories, proves actual
+Q-chain reconstruction, and commutes with both original canonical exact-functor
+K-map APIs without a strict-zero hypothesis. COL-0243 records the completed
+comparison equivalence and its unconditional naturality.

@@ -1,0 +1,185 @@
+{
+  "source_commit": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "native_baseline": "a36cec736ab800767dde9eb0895d8afd18807931",
+  "scope": "Actual abelian Q-arrow geometry and unconditional Serre structured-transition theorem. No Theorem B fiber theorem or full localization sequence is claimed.",
+  "items": [
+    {
+      "native_module": "Colib/CategoryTheory/QConstruction/Abelian/ArrowLayers.lean",
+      "source": [
+        "Quillen/Localization/Serre/LocalizationComma.lean:96-420"
+      ],
+      "native_declarations": [
+        "isIso_legs_of_isIso",
+        "mkHom_eq_qIsoOfIso",
+        "exists_iso_of_isIso",
+        "spanLower_eq_of_iso",
+        "spanUpper_eq_of_iso",
+        "arrowLower",
+        "arrowUpper",
+        "arrowLower_le_upper",
+        "arrowLower_comp_iso",
+        "arrowUpper_comp_iso",
+        "arrowLower_comp_of_isIso",
+        "arrowUpper_comp_of_isIso",
+        "allSpanComma",
+        "allSpanLayerCommaIso",
+        "exists_qIso_of_endpoints_eq",
+        "endpoints_order_of_fac",
+        "exists_factor_of_endpoints_order",
+        "spanLayer_span",
+        "arrowLower_layerSpan",
+        "arrowUpper_layerSpan",
+        "zeroArrowSubobject",
+        "zeroArrowOfSubobject",
+        "zeroArrowSubobject_ofSubobject",
+        "zeroArrowSubobject_injective",
+        "zeroArrowSubobjectEquiv",
+        "zeroArrowSubobject_comp_iso"
+      ]
+    },
+    {
+      "native_module": "Colib/CategoryTheory/QConstruction/Abelian/Surjections.lean",
+      "source": [
+        "Quillen/CategoryTheory/QConstruction/Abelian/Surjections.lean"
+      ],
+      "native_declarations": [
+        "IsSurjection",
+        "isSurjection_mkHom_iff",
+        "surjectionArrow",
+        "isSurjection_surjectionArrow",
+        "inflationArrow",
+        "isSurjection_iff_exists_epi",
+        "IsSurjection.comp",
+        "IsSurjection.of_comp",
+        "arrowUpper_injective_of_isZero",
+        "IsSurjection.mapQ",
+        "isSurjection_mapQ_iff",
+        "span_cospan_factorization"
+      ]
+    },
+    {
+      "native_module": "Colib/CategoryTheory/QConstruction/Abelian/Cospans.lean",
+      "source": [
+        "Quillen/CategoryTheory/QConstruction/Abelian/Cospans.lean"
+      ],
+      "native_declarations": [
+        "cospanSpan",
+        "mkHom_cospanSpan",
+        "exists_cospanIso_of_eq",
+        "cospan_eq_of_iso",
+        "cospan_eq_iff_iso",
+        "exists_cospan"
+      ]
+    },
+    {
+      "native_module": "Colib/CategoryTheory/QConstruction/Abelian/CospanComposition.lean",
+      "source": [
+        "Quillen/CategoryTheory/QConstruction/Abelian/CospanComposition.lean"
+      ],
+      "native_declarations": [
+        "surjectionArrow_comp",
+        "inflationArrow_comp",
+        "inflationArrow_id",
+        "surjectionArrow_id",
+        "surjectionArrow_injective",
+        "mapQ_surjectionArrow",
+        "mapQ_inflationArrow"
+      ]
+    },
+    {
+      "native_module": "Colib/CategoryTheory/QConstruction/Abelian/SpanFactorization.lean",
+      "source": [
+        "Quillen/CategoryTheory/QConstruction/Abelian/SpanFactorization.lean"
+      ],
+      "native_declarations": [
+        "span_factorization"
+      ]
+    },
+    {
+      "native_module": "Colib/CategoryTheory/QConstruction/Abelian/SpanNaturality.lean",
+      "source": [
+        "Quillen/Localization/Serre/AuxiliaryBaseChange.lean:34",
+        "Quillen/Localization/Serre/AuxiliaryStructuredTransition.lean:29-55"
+      ],
+      "native_declarations": [
+        "span_naturality_of_pullback",
+        "surjectionArrow_eq_qIsoOfIso_inv",
+        "span_naturality_of_surjection_pullback"
+      ]
+    },
+    {
+      "native_module": "Colib/CategoryTheory/TheoremB/StructuredTransitionCalculus.lean",
+      "source": [
+        "Quillen/CategoryTheory/TheoremB/StructuredTransitionCalculus.lean"
+      ],
+      "native_declarations": [
+        "StructuredTransitionIsHE",
+        "structuredTransitionMap_comp",
+        "StructuredTransitionIsHE.comp",
+        "structuredTransitionIsHE_of_isIso",
+        "structuredTransitions_of_pointwise"
+      ]
+    },
+    {
+      "native_module": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryStructuredTransition.lean",
+      "source": [
+        "Quillen/Localization/Serre/AuxiliaryStructuredTransition.lean:58-188"
+      ],
+      "native_declarations": [
+        "overBaseChangeForgetInflation",
+        "overBaseChangeForgetSurjection",
+        "auxiliaryToIsoStructured_eq_withBaseRefl",
+        "auxiliaryBaseChange_inflation_square",
+        "auxiliaryStructuredInflationSquare",
+        "auxiliaryQuotientObjIso_inv_eq_surjection",
+        "auxiliaryBaseChange_surjection_square",
+        "auxiliaryStructuredSurjectionSquare"
+      ]
+    },
+    {
+      "native_module": "Colib/KTheory/Quillen/Localization/Serre/StructuredTransitions.lean",
+      "source": [
+        "Quillen/Localization/Serre/StructuredTransitions.lean",
+        "Quillen/Localization/Serre/FilteredComparisonAssembly.lean",
+        "Quillen/Localization/Serre/StructuredTransitionAssembly.lean",
+        "Quillen/Localization/Serre/StructuredTransitionReduction.lean"
+      ],
+      "native_declarations": [
+        "quotientAuxiliaryNerveStageHomotopyEquiv",
+        "quotientAuxiliaryNerveStageHomotopyEquiv_toFun",
+        "auxiliaryToIsoStructuredWithBaseClassifyingHomotopyEquiv",
+        "auxiliaryToIsoStructuredWithBaseClassifyingHomotopyEquiv_toFun",
+        "auxiliaryToIsoStructuredClassifyingHomotopyEquiv",
+        "auxiliaryToIsoStructuredClassifyingHomotopyEquiv_toFun",
+        "fullAuxiliaryStructuredEquiv",
+        "fullAuxiliaryStructuredEquiv_toFun",
+        "structuredInflationTransitionIsHE",
+        "structuredSurjectionTransitionIsHE",
+        "structuredTransitionIsHE_mapQ",
+        "quotientStructuredTransitionHomotopyEquivalences"
+      ]
+    }
+  ],
+  "upstream_reuse": {
+    "bicartesian_squares": [
+      "CategoryTheory.CommSq.IsPushout.mono_to_isPullback",
+      "CategoryTheory.CommSq.IsPullback.epi_to_isPushout"
+    ],
+    "closed_subcategory_exact_structure": "CategoryTheory.ObjectProperty.subcategoryExactStructure",
+    "actual_quotient": "ObjectProperty.isoModSerre.Q"
+  },
+  "eliminated_interfaces": [
+    {
+      "source": "FilteredComparisonAssembly",
+      "reason": "Conditional arbitrary E/hE stage interfaces are replaced by direct construction from quotientAuxiliaryNerveStageHomotopyEquiv."
+    },
+    {
+      "source": "StructuredTransitionAssembly",
+      "reason": "Every concrete mono/epi proof uses the actual proved auxiliaryToIsoStructuredClassifyingHomotopyEquiv. No comparison equivalences occur as inputs."
+    },
+    {
+      "source": "StructuredTransitionReduction",
+      "reason": "The factorization argument is retained with actual proved mono/epi transitions, not hypothetical hm/hp inputs."
+    }
+  ]
+}

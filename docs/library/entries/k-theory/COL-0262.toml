@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0262"
+title = "The canonical Milnor–Quillen K₂ comparison"
+kind = "comparison"
+section = "quillen-k-theory"
+order = 310
+statement = "Over a characteristic-zero field, the original maps from native Milnor K₂ to right-projective Quillen K₂ and upper finite-module Quillen K₂ are additive equivalences. They retain their literal forward homomorphisms, commute with the original field-extension maps in both directions, and send ordered symbols to the positive scalar unit product. The negative normalization is minus the positive inverse."
+scope = "The right-projective target is the existing exact-category K 2; the upper target is literally SmallK.{u+1} of FGModuleCat.{u} F. No fiber-perfectness, generation, detector-law or comparison premise is added. The ordered scalar-product marking holds for every field, including the ZMod 5 regression. Bijectivity retains the pinned source's characteristic-zero hypothesis; no positive-characteristic Milnor equivalence is claimed. Field-change statements retain the original common-universe scope."
+review = "author_checked"
+provenance = "quillen"

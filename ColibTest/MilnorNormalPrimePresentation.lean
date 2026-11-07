@@ -8,7 +8,7 @@ module
 import Colib.KTheory.MilnorK.Norm.NormalPrimePresentation
 
 /-!
-Uncompiled consumers of the full normal-prime polynomial-presentation draft.
+Consumers of the full normal-prime polynomial presentation.
 They do not assert an identification with the chosen FieldNorm or its tower law.
 -/
 

@@ -134,8 +134,8 @@ lemma conflation_q_relation {S : ShortComplex C} (hS : E.conflation S) :
 The application of interest is the actual realized fundamental groupoid. -/
 def qObjectClass {D : Type*} [Groupoid D] (F : E.QCategory ⥤ D) (X : C) :
     End (F.obj E.qZero) :=
-  F.map (E.fromZeroTotal (QConstruction.of E.deflation E.inflation X)) ≫
-    inv (F.map (E.fromZero (QConstruction.of E.deflation E.inflation X)))
+  End.of (F.map (E.fromZeroTotal (QConstruction.of E.deflation E.inflation X)) ≫
+    inv (F.map (E.fromZero (QConstruction.of E.deflation E.inflation X))))
 
 /-- Exact sequences impose the genuine object-loop relation in every
 Q-groupoid target, without commutativity being assumed. -/
@@ -146,8 +146,8 @@ lemma qObjectClass_conflation {D : Type*} [Groupoid D] (F : E.QCategory ⥤ D)
   have h₂ := congrArg F.map (E.fromZeroTotal_qDeflation S.g (E.deflation_of_conflation hS))
   have h₃ := congrArg F.map (E.conflation_q_relation hS)
   simp only [Functor.map_comp] at h₁ h₂ h₃
-  change _ = (_ ≫ _) ≫ (_ ≫ _)
-  dsimp only [qObjectClass]
+  apply End.ext
+  simp only [End.mul_asHom, qObjectClass]
   apply (cancel_mono (F.map (E.fromZero (QConstruction.of E.deflation E.inflation S.X₂)))).1
   simp only [Category.assoc, IsIso.inv_hom_id, Category.comp_id]
   rw [← h₁]

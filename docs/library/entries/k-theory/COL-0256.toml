@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0256"
+title = "Approximation for the original Waldhausen K-map"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 270
+statement = "An exact functor satisfying App1 and the cofibration form of App2 induces a weak homotopy equivalence on the original Waldhausen delooping and a group equivalence in every nonnegative K-degree, whose forward homomorphism is exactly the original canonical KMap."
+scope = "Source and target categories share object and morphism universe bounds, which remain independent. The target weak equivalences satisfy two-out-of-three, and the source has the stated genuine exact joint-cylinder data. App1/App2 does not silently supply cylinder data. Actual relative flags, quotient-row lifting and finite-poset comma cones prove the row hypotheses; complete weak Theorem A and weak bisimplicial realization retain the original maps. Native AsSmall transports only universe bounds and returns to the unchanged original delooping. K-zero is included. This is the weak-equivalence and connective K-map conclusion, not a chosen homotopy inverse or a nonconnective theorem. Author source comparison checked against pinned Quillen c561118b and Waldhausen 1985 Theorem 1.6.7 on 2026-11-06; compilation and independent mathematical review are separate evidence."
+review = "author_checked"

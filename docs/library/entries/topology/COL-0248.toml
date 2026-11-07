@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0248"
+title = "Quillen Theorem B with its actual fiber comparison"
+kind = "theorem"
+section = "classifying-spaces"
+order = 170
+statement = "If every actual comma transition induces a homotopy equivalence, the canonical comma-to-homotopy-fiber comparison is a weak homotopy equivalence at every target object. Both costructured and structured comma conventions are proved, with the canonical identity-arrow based maps and their positive-degree group equivalences."
+scope = "Small source and target categories in one common universe. The conclusion separately includes surjectivity on path components and bijectivity on every finite based homotopy set at every source point, including degree zero and empty-source cases. Fibers are the actual compact-open path-space fibers. The hypotheses require transition homotopy equivalences; the more general weak-transition variant and a chosen global continuous inverse of the final comparison are not asserted."
+review = "author_checked"
+provenance = "quillen"

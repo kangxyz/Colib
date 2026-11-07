@@ -5,6 +5,7 @@ Authors: kangxyz
 -/
 module
 
+public import Colib.Analysis.Convex.StdSimplex.PathHomotopy
 public import Colib.KTheory.GrothendieckComparison.ObjectLoops
 
 /-!
@@ -32,7 +33,7 @@ example (X : C) : E.kZeroObjectLoop X =
         (E.fromZero (CategoryTheory.QConstruction.of E.deflation E.inflation X))).symm := rfl
 
 example (X : C) : E.kZeroFundamentalGroupEquiv (E.kZeroObjectClass X) =
-    (⟦E.kZeroObjectLoop X⟧ : FundamentalGroup E.KSpace E.kBasepoint) :=
+    FundamentalGroup.fromPath ⟦E.kZeroObjectLoop X⟧ :=
   E.kZeroFundamentalGroupEquiv_objectClass X
 
 example (X : C) : E.grothendieckToKZero
@@ -89,8 +90,12 @@ example : SSet.yonedaEquiv.symm (simplexEdge.{u} 2 1 2 (by decide)).edge =
 example : SSet.yonedaEquiv.symm (simplexEdge.{u} 2 0 2 (by decide)).edge =
     SSet.stdSimplex.δ 1 := simplexEdge_02_yoneda
 
-example {M : Type u} [Finite M] {x y : Convexity.StdSimplex ℝ M} (p q : Path x y) :
-    p.Homotopy q := Convexity.StdSimplex.pathHomotopy p q
+example {M : Type u} [Finite M] :
+    letI := Fintype.ofFinite M
+    ∀ {x y : Convexity.StdSimplex ℝ M} (p q : Path x y), p.Homotopy q := by
+  letI := Fintype.ofFinite M
+  intro x y p q
+  exact Convexity.StdSimplex.pathHomotopy p q
 
 example {C D : Type u} [Category.{v} C] [Category.{v} D]
     (F : C ⥤ D) {c d : C} (f : c ⟶ d) (t : unitInterval) :
@@ -109,7 +114,7 @@ variable {C : Type u} [Category.{v} C] [Preadditive C] [HasFiniteBiproducts C]
 example : E.kZeroFundamentalGroupEquiv = HomotopyGroup.pi1MulEquivFundamentalGroup := rfl
 
 example (X : C) :
-    (⟦E.kZeroObjectLoop X⟧ : FundamentalGroup E.KSpace E.kBasepoint) =
+    FundamentalGroup.fromPath ⟦E.kZeroObjectLoop X⟧ =
       E.qObjectClass (classifyingFundamentalGroupoidFunctor E.QCategory) X :=
   E.kZeroObjectLoop_eq_qObjectClass X
 

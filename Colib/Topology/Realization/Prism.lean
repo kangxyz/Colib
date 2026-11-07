@@ -8,7 +8,6 @@ module
 
 public import Colib.Util.References
 public import Colib.Topology.Realization.PrismCoordinates
-public import Colib.Topology.Realization.FiniteSimplexAdapter
 public import Colib.Topology.Realization.Simplex
 public import Mathlib.AlgebraicTopology.SimplicialSet.ProdStdSimplexOne
 
@@ -21,7 +20,7 @@ adjacent cells agree on their common simplicial face.
 -/
 /-!
 Adapted from Quillen commit `c561118b7795eb9780be9ed391c3251d6a4d0afd`.
-The target uses the pinned finite-simplex adapter and actual Mathlib prism cells.
+The target uses the pinned native standard simplex and actual Mathlib prism cells.
 The implementation retains the source maps, coordinates and universe parameters.
 -/
 @[expose] public section
@@ -64,14 +63,14 @@ theorem realizationCylinderComparison_naturality {X Y : SSet.{u}} (f : X ⟶ Y) 
 def realizationPrismCell {n : ℕ} (i : Fin (n + 1)) :
     |(Δ[n + 1] : SSet.{u})| ⟶ |(Δ[n] ⊗ Δ[1] : SSet.{u})| :=
   SSet.toTop.map (SSet.yonedaEquiv.symm
-    (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val)
+    (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val)
 
 /-- The prism comparison in ordinary barycentric simplex and interval coordinates. -/
 def realizationPrismCoordinates (n : ℕ) :
-    C(|(Δ[n] ⊗ Δ[1] : SSet.{u})|, Convexity.StdSimplex ℝ (Fin (n + 1)) × unitInterval) where
-  toFun x := (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ (SSet.toTop.map (fst Δ[n] Δ[1]) x),
-    Convexity.StdSimplex.homeomorphI
-      (FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌ (SSet.toTop.map (snd Δ[n] Δ[1]) x)))
+    C(|(Δ[n] ⊗ Δ[1] : SSet.{u})|, StdSimplex ℝ (Fin (n + 1)) × unitInterval) where
+  toFun x := (SimplexCategory.toTopHomeo ⦋n⦌ (SSet.toTop.map (fst Δ[n] Δ[1]) x),
+    StdSimplex.homeomorphI
+      (SimplexCategory.toTopHomeo ⦋1⦌ (SSet.toTop.map (snd Δ[n] Δ[1]) x)))
   continuous_toFun := by fun_prop
 
 @[simp]
@@ -95,23 +94,23 @@ theorem realizationPrismCell_snd {n : ℕ} (i : Fin (n + 1)) :
 theorem realizationPrismCoordinates_cell_fst {n : ℕ} (i : Fin (n + 1))
     (v : StdSimplex ℝ (Fin (n + 2))) :
     (realizationPrismCoordinates n (realizationPrismCell.{u} i
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm v))).1 = v.map i.predAbove := by
-  change FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ ((realizationPrismCell i ≫
+      ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm v))).1 = StdSimplex.map i.predAbove v := by
+  change SimplexCategory.toTopHomeo ⦋n⦌ ((realizationPrismCell i ≫
     SSet.toTop.map (fst Δ[n] Δ[1])) _) = _
   rw [realizationPrismCell_fst]
-  change FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ (SSet.toTop.map
+  change SimplexCategory.toTopHomeo ⦋n⦌ (SSet.toTop.map
     (SSet.stdSimplex.map (SimplexCategory.σ i)) _) = _
-  rw [FiniteSimplexAdapter.toTopHomeomorph_naturality_apply, Homeomorph.apply_symm_apply]
+  rw [SimplexCategory.toTopHomeo_naturality_apply, Homeomorph.apply_symm_apply]
   rfl
 
 /-- The second prism coordinate is the total mass above the cut. -/
 theorem realizationPrismCoordinates_cell_snd {n : ℕ} (i : Fin (n + 1))
     (v : StdSimplex ℝ (Fin (n + 2))) :
     ((realizationPrismCoordinates n (realizationPrismCell.{u} i
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm v))).2 : ℝ) = prismHeight i v := by
-  change (StdSimplex.homeomorphI (FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌
+      ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm v))).2 : ℝ) = prismHeight i v := by
+  change (StdSimplex.homeomorphI (SimplexCategory.toTopHomeo ⦋1⦌
     ((realizationPrismCell i ≫ SSet.toTop.map (snd Δ[n] Δ[1])) _)) : ℝ) = _
-  rw [realizationPrismCell_snd, FiniteSimplexAdapter.toTopHomeomorph_naturality_apply,
+  rw [realizationPrismCell_snd, SimplexCategory.toTopHomeo_naturality_apply,
     Homeomorph.apply_symm_apply]
   rw [StdSimplex.homeomorphI_apply_coe]
   change (v.map (SSet.stdSimplex.objMk₁.{u} i.succ.castSucc)).weights 1 = _
@@ -130,10 +129,10 @@ theorem realizationPrismCoordinates_cell_snd {n : ℕ} (i : Fin (n + 1))
 theorem prism_simplex_factors {n : ℕ} {m : SimplexCategoryᵒᵖ}
     (s : (Δ[n] ⊗ Δ[1] : SSet.{u}).obj m) :
     ∃ (i : Fin (n + 1)) (f : m.unop ⟶ ⦋n + 1⦌),
-      (Δ[n] ⊗ Δ[1]).map f.op (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val = s := by
+      (Δ[n] ⊗ Δ[1]).map f.op (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val = s := by
   obtain ⟨d, f, _, y, hy⟩ := (Δ[n] ⊗ Δ[1] : SSet.{u}).exists_nonDegenerate s
   obtain ⟨z, hz⟩ := SSet.prodStdSimplex.exists_nonDegenerate_max_dim y rfl
-  obtain ⟨i, rfl⟩ := SSet.prodStdSimplex.nonDegenerateEquiv₁.surjective z
+  obtain ⟨i, rfl⟩ := SSet.prodStdSimplex₁.nonDegenerateEquiv.surjective z
   obtain ⟨g, hg⟩ := (SSet.Subcomplex.mem_ofSimplex_obj_iff _ _).mp hz
   refine ⟨i, f ≫ g, ?_⟩
   rw [op_comp, Functor.map_comp]
@@ -152,18 +151,10 @@ theorem realizationPrismCell_jointly_surjective {n : ℕ}
     SSet.toTop.map (SSet.yonedaEquiv.symm _)) t = _
   rw [← Functor.map_comp]
   have heq : SSet.stdSimplex.map g ≫ SSet.yonedaEquiv.symm
-      (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val = f := by
+      (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val = f := by
     apply SSet.yonedaEquiv.injective
     exact hg
   rw [heq]
-
-/- The source finiteStdSimplex_compactSpace instance is supplied directly by
-Mathlib's Convexity.StdSimplex.compactSpace, imported through PrismCoordinates. -/
-
-/-- Realizations of representable simplicial sets are compact. -/
-instance realizationStandardSimplex_compactSpace (n : SimplexCategory) :
-    CompactSpace |SSet.stdSimplex.{u}.obj n| :=
-  (FiniteSimplexAdapter.toTopHomeomorph n).symm.compactSpace
 
 /-- The realized standard prism is compact, as a finite union of compact maximal cells. -/
 instance realizationPrism_compactSpace (n : ℕ) :
@@ -182,9 +173,9 @@ instance realizationPrism_compactSpace (n : ℕ) :
 This replaces the two face formulas unavailable in the pinned Mathlib. -/
 theorem prism_adjacent_simplex_face {n : ℕ} (i : Fin n) :
     (Δ[n] ⊗ Δ[1] : SSet.{u}).δ i.castSucc.succ
-        (SSet.prodStdSimplex.nonDegenerateEquiv₁ i.castSucc).val =
+        (SSet.prodStdSimplex₁.nonDegenerateEquiv i.castSucc).val =
       (Δ[n] ⊗ Δ[1] : SSet.{u}).δ i.succ.castSucc
-        (SSet.prodStdSimplex.nonDegenerateEquiv₁ i.succ).val := by
+        (SSet.prodStdSimplex₁.nonDegenerateEquiv i.succ).val := by
   apply Prod.ext
   · change (Δ[n] : SSet.{u}).δ i.castSucc.succ
         (SSet.stdSimplex.objEquiv.symm (SimplexCategory.σ i.castSucc)) =

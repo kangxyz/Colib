@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0236"
+title = "Canonical length-one Resolution equivalence"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 250
+statement = "Length-one admissible resolutions give a multiplicative equivalence on Quillen K-groups in every nonnegative degree, whose forward homomorphism is the original canonical inclusion K-map."
+scope = "Small exact categories, the stated extension and resolving kernel closure, chosen zero normalization, and an actual length-one resolution for each ambient object. Admissible-subobject closure is derived from the length-one hypothesis, not assumed separately. The all-degree conclusion includes K-zero."
+review = "author_checked"

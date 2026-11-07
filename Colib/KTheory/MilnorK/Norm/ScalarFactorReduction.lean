@@ -20,7 +20,6 @@ The weighted reduction uses Mathlib's literal `AdjoinRoot.map` and the existing 
 No norm, presentation wrapper, residue map, or rational-function map is defined here. Source
 and target fields share the universe required by the pinned native `milnorKRingMap`.
 
-Source-only draft. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

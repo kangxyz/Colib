@@ -56,7 +56,7 @@ theorem abelianGrothendieckEquiv_naturality :
   apply (abelianExactStructure C).grothendieck_hom_ext
   intro X
   simp only [AddEquiv.toAddMonoidHom_eq_coe, AddMonoidHom.coe_comp,
-    AddMonoidHom.coe_coe, Function.comp_apply, grothendieckMap_class,
+    AddMonoidHom.coe_ofClass, Function.comp_apply, grothendieckMap_class,
     abelianGrothendieckEquiv_class]
   exact (CategoryTheory.GrothendieckGroup.map_of F.toFunctor
     (fun S hS => F.map_conflation S hS) X).symm
@@ -70,7 +70,7 @@ theorem abelianGrothendieckEquiv_symm_naturality :
   apply CategoryTheory.GrothendieckGroup.hom_ext
   intro X
   simp only [AddEquiv.toAddMonoidHom_eq_coe, AddMonoidHom.coe_comp,
-    AddMonoidHom.coe_coe, Function.comp_apply, abelianGrothendieckEquiv_symm_of,
+    AddMonoidHom.coe_ofClass, Function.comp_apply, abelianGrothendieckEquiv_symm_of,
     grothendieckMap_class]
   rw [CategoryTheory.GrothendieckGroup.map_of F.toFunctor
     (fun S hS => F.map_conflation S hS) X, abelianGrothendieckEquiv_symm_of]

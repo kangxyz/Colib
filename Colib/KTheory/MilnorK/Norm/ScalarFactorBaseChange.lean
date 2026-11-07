@@ -26,7 +26,7 @@ there are no characteristic, separability, algebraicity, or finiteness assumptio
 share the universe required by the native Milnor ring map. A finite-family index may have
 an independent universe. The normalized-factor spelling additionally uses `DecidableEq K`.
 
-This entire G leaf and its D/E/F dependencies are uncompiled source-only drafts. The statements
+The statements
 are unconditional scalar-factor comparisons, not claims of successful elaboration. They do
 not establish presentation independence or an actual field-norm tower law.
 -/

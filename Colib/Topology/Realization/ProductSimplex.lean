@@ -21,7 +21,7 @@ triangulations independently on different simplices.
 
 noncomputable section
 
-open Convexity CategoryTheory MonoidalCategory CartesianMonoidalCategory Opposite
+open CategoryTheory MonoidalCategory CartesianMonoidalCategory Opposite
 open scoped Simplicial Topology
 
 universe u
@@ -94,7 +94,7 @@ def simplexPrismSum (n : ℕ) : (Δ[n] ⊗ Δ[1] : SSet.{u}) ⟶ Δ[n + 1] where
 
 /-- A maximal chain in the prism splits the sum of its grid coordinates. -/
 def simplexPrismRetract (n : ℕ) : Retract (Δ[n + 1] : SSet.{u}) (Δ[n] ⊗ Δ[1]) where
-  i := SSet.yonedaEquiv.symm (SSet.prodStdSimplex.nonDegenerateEquiv₁ (Fin.last n)).val
+  i := SSet.yonedaEquiv.symm (SSet.prodStdSimplex₁.nonDegenerateEquiv (Fin.last n)).val
   r := simplexPrismSum n
   retract := by
     apply SSet.yonedaEquiv.injective
@@ -102,7 +102,7 @@ def simplexPrismRetract (n : ℕ) : Retract (Δ[n + 1] : SSet.{u}) (Δ[n] ⊗ Δ
     apply SSet.stdSimplex.objEquiv.injective
     apply SimplexCategory.Hom.ext
     exact (SSet.prodStdSimplex.nonDegenerate_max_dim_iff _ rfl).mp
-      (SSet.prodStdSimplex.nonDegenerateEquiv₁ (Fin.last n)).property
+      (SSet.prodStdSimplex₁.nonDegenerateEquiv (Fin.last n)).property
 
 /-- The point is a simplicial retract of the interval. -/
 def simplexZeroIntervalRetract : Retract (Δ[0] : SSet.{u}) Δ[1] where
@@ -150,17 +150,17 @@ instance realizationProductComparison_representable_isIso
 barycentric topological simplices. -/
 def realizationProductSimplexHomeomorph (p q : ℕ) :
     |(Δ[p] ⊗ Δ[q] : SSet.{u})| ≃ₜ
-      StdSimplex ℝ (Fin (p + 1)) × StdSimplex ℝ (Fin (q + 1)) :=
+      Convexity.StdSimplex ℝ (Fin (p + 1)) × Convexity.StdSimplex ℝ (Fin (q + 1)) :=
   (TopCat.homeoOfIso (realizationProductSimplexIso Δ[p] q)).trans
-    ((FiniteSimplexAdapter.toTopHomeomorph ⦋p⦌).prodCongr
-      (FiniteSimplexAdapter.toTopHomeomorph ⦋q⦌))
+    ((SimplexCategory.toTopHomeo ⦋p⦌).prodCongr
+      (SimplexCategory.toTopHomeo ⦋q⦌))
 
 @[simp]
 theorem realizationProductSimplexHomeomorph_apply (p q : ℕ)
     (x : |(Δ[p] ⊗ Δ[q] : SSet.{u})|) :
     realizationProductSimplexHomeomorph p q x =
-      (FiniteSimplexAdapter.toTopHomeomorph ⦋p⦌ (SSet.toTop.map (fst Δ[p] Δ[q]) x),
-       FiniteSimplexAdapter.toTopHomeomorph ⦋q⦌ (SSet.toTop.map (snd Δ[p] Δ[q]) x)) := rfl
+      (SimplexCategory.toTopHomeo ⦋p⦌ (SSet.toTop.map (fst Δ[p] Δ[q]) x),
+       SimplexCategory.toTopHomeo ⦋q⦌ (SSet.toTop.map (snd Δ[p] Δ[q]) x)) := rfl
 
 /-- The barycentric comparison is natural under both simplex operators. -/
 theorem realizationProductSimplexHomeomorph_naturality
@@ -168,18 +168,18 @@ theorem realizationProductSimplexHomeomorph_naturality
     (x : |(Δ[p] ⊗ Δ[q] : SSet.{u})|) :
     realizationProductSimplexHomeomorph p' q'
         (SSet.toTop.map (SSet.stdSimplex.map f ⊗ₘ SSet.stdSimplex.map g) x) =
-      ((realizationProductSimplexHomeomorph p q x).1.map f,
-       (realizationProductSimplexHomeomorph p q x).2.map g) := by
+      (Convexity.StdSimplex.map f (realizationProductSimplexHomeomorph p q x).1,
+       Convexity.StdSimplex.map g (realizationProductSimplexHomeomorph p q x).2) := by
   apply Prod.ext
-  · change FiniteSimplexAdapter.toTopHomeomorph ⦋p'⦌
+  · change SimplexCategory.toTopHomeo ⦋p'⦌
       ((SSet.toTop.map (SSet.stdSimplex.map f ⊗ₘ SSet.stdSimplex.map g) ≫
         SSet.toTop.map (fst Δ[p'] Δ[q'])) x) = _
     rw [← Functor.map_comp, tensorHom_fst, Functor.map_comp]
-    exact FiniteSimplexAdapter.toTopHomeomorph_naturality_apply f _
-  · change FiniteSimplexAdapter.toTopHomeomorph ⦋q'⦌
+    exact SimplexCategory.toTopHomeo_naturality_apply f _
+  · change SimplexCategory.toTopHomeo ⦋q'⦌
       ((SSet.toTop.map (SSet.stdSimplex.map f ⊗ₘ SSet.stdSimplex.map g) ≫
         SSet.toTop.map (snd Δ[p'] Δ[q'])) x) = _
     rw [← Functor.map_comp, tensorHom_snd, Functor.map_comp]
-    exact FiniteSimplexAdapter.toTopHomeomorph_naturality_apply g _
+    exact SimplexCategory.toTopHomeo_naturality_apply g _
 
 end SSet

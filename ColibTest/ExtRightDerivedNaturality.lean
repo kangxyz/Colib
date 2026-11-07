@@ -91,12 +91,14 @@ example (J' : InjectiveResolution Y) :
 
 example :
     ((J.extRightDerivedAddEquiv X n).trans
-      ((Iso.refl ((preadditiveCoyoneda.obj (Opposite.op X)).rightDerived n)).app Y')
-        .addCommGroupIsoToAddEquiv) (x.comp (Abelian.Ext.mk₀ g) (add_zero _)) =
+      (((Iso.refl
+        ((preadditiveCoyoneda.obj (Opposite.op X)).rightDerived n)).app
+          Y').addCommGroupIsoToAddEquiv)) (x.comp (Abelian.Ext.mk₀ g) (add_zero _)) =
     ((preadditiveCoyoneda.obj (Opposite.op X)).rightDerived n).map g
       (((I.extRightDerivedAddEquiv X n).trans
-        ((Iso.refl ((preadditiveCoyoneda.obj (Opposite.op X)).rightDerived n)).app Y)
-          .addCommGroupIsoToAddEquiv) x) :=
+        (((Iso.refl
+          ((preadditiveCoyoneda.obj (Opposite.op X)).rightDerived n)).app
+            Y).addCommGroupIsoToAddEquiv)) x) :=
   InjectiveResolution.extRightDerivedAddEquiv_trans_naturality X n (Iso.refl _) φ x
 
 end Ext

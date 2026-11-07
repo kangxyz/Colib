@@ -56,7 +56,7 @@ theorem singleConeLift_comp_desc (π : K ⟶ (singleFunctor C 0).obj S.X₃)
   rw [mappingCone.lift_desc_f _ _ _ _ _ _ _ 0 1 (by decide)]
   simp only [Cochain.zero_v, Limits.comp_zero, zero_add, Cochain.toSingleMk_v]
   rw [hπ]
-  simp [singleFunctor, singleFunctors, Category.assoc, HomologicalComplex.single_map_f_self]
+  simp [singleFunctor, Category.assoc, HomologicalComplex.single_map_f_self]
 
 /-- The third cone arrow is the negative of the specified degree-one cocycle. -/
 theorem singleConeLift_comp_triangle_mor₃ :

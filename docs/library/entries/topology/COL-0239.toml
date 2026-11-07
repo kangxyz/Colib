@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0239"
+title = "The original completion computes the fundamental group"
+kind = "theorem"
+section = "classifying-spaces"
+order = 260
+statement = "The original functor from the category localized at every arrow to the fundamental groupoid of its nerve realization is faithful. Its original based-loop homomorphism is injective and bijective at every object."
+scope = "Independent object and morphism universes are retained. The proof uses joint graph representatives, constructed finite-skeleton decoders and compact relative-homotopy factorization. It neither assumes a global decoder nor constructs a continuous inverse."
+review = "author_checked"

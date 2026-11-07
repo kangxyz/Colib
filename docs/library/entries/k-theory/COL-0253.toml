@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0253"
+title = "Relative-row total-tail homotopy fiber"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 90
+statement = "The unchanged total-tail fiber comparison from the original Waldhausen realization is a weak homotopy equivalence in all finite degrees, including components."
+scope = "A small category with nested Waldhausen weak-equivalence classes. Actual relative quotient rows, split fibers and all ordinal transition comparisons feed the proved two-sided-bar zero-row fiber theorem. The original constant path is retained. No extension, two-out-of-three, cylinder or assumed global cartesianness is needed for this relative-row step."
+review = "author_checked"
+provenance = "quillen"

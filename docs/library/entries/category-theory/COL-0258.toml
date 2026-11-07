@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0258"
+title = "Actual identity-cone cylinder for complex subcategories"
+kind = "theorem"
+section = "waldhausen-categories"
+order = 1510
+statement = "The actual identity-cone factorization supplies exact joint-cylinder data and a second-endpoint section for the inherited fine/coarse Waldhausen structures on a full subcategory of cochain complexes."
+scope = "The replete full complex subcategory contains zero and is closed under extensions, actual mapping cones and the positive unit shift. Its fine weak maps are isomorphisms and coarse weak maps are genuine quasi-isomorphisms. The middle object, endpoint inclusions, quotient maps and cone signs are the original Mathlib maps. Genuine relative cofibrations and exact middle functors are proved; no row factorization or K-equivalence is assumed."
+review = "author_checked"
+provenance = "quillen"

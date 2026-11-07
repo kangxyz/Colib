@@ -28,8 +28,8 @@ theorem homotopyExtensionProperty_realizationBoundary (n : ℕ) :
     TopCat.HomotopyExtensionProperty (SSet.toTop.map (∂Δ[n].ι : _ ⟶ (Δ[n] : SSet.{u}))) := by
   let P := |(Δ[0] : SSet.{u})|
   let a := (realizationBoundaryHomeomorph n).trans
-    (Homeomorph.uniqueProd P (simplexBoundary n)).symm
-  let b := (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).trans
+    (Homeomorph.uniqueProd P (Convexity.StdSimplex.boundary n)).symm
+  let b := (SimplexCategory.toTopHomeo ⦋n⦌).trans
     (Homeomorph.uniqueProd P (Convexity.StdSimplex ℝ (Fin (n + 1)))).symm
   apply TopCat.homotopyExtensionProperty_of_iso_square _
     (TopCat.parameterizedSimplexBoundaryInclusion P n) (TopCat.isoOfHomeo a) (TopCat.isoOfHomeo b)

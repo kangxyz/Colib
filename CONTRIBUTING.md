@@ -42,7 +42,7 @@ routine choices inside an already authorized assignment.
 The normative external guides are
 [Mathlib naming](https://leanprover-community.github.io/contribute/naming.html),
 [Mathlib style](https://leanprover-community.github.io/contribute/style.html), and
-[Stacks conventions](https://github.com/AxiomMath/Stacks/blob/f8e70c5dd04bfabcb423d5e325461f527c85a5d6/CONTRIBUTING.md).
+[Stacks conventions](https://github.com/AxiomMath/Stacks/blob/5ed82d14634e8d9576bb844c7bd4e3da66d450e7/CONTRIBUTING.md).
 
 ## Work and validation
 
@@ -60,6 +60,9 @@ text lint, generated-entry check, production axiom audit and Library validation 
 scripts/check.sh. Reuse categories whose inputs are unchanged after a repair. Doc/website-only
 changes use the compatible native export with their changed source/tooling checks. See
 scripts/README.md and docs/DEVELOPMENT.md for commands.
+
+New `ColibTest` modules are discovered automatically by the Lake test driver and text
+linters. Do not add handwritten test-module lists to the workflow or check script.
 
 A change reports its source revision, exact mathematical scope, literature correspondence,
 commands and retained evidence. Independent review records its actual scope. Kernel replay and

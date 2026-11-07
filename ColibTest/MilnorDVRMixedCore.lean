@@ -7,7 +7,7 @@ module
 
 import Colib.KTheory.MilnorK.Norm.DVRMixedCore
 
-/-! Uncompiled native shift consumers, including even ramification and negative order. -/
+/-! Native shift consumers, including even ramification and negative order.-/
 
 noncomputable section
 

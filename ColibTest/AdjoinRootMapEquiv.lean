@@ -7,7 +7,7 @@ module
 
 import Colib.RingTheory.AdjoinRoot.MapEquiv
 
-/-! Uncompiled consumers of actual coefficient-extension equivalences of root algebras. -/
+/-! Consumers of actual coefficient-extension equivalences of root algebras.-/
 
 noncomputable section
 

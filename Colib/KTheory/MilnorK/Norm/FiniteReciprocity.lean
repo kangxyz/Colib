@@ -19,7 +19,6 @@ support must give distinct polynomials. Degrees may vary. The family index has i
 The sigma-index and finite-support existence statements are corollaries of this same proof.
 They use the literal sigma type, avoiding the higher `MilnorExactSequence` import.
 
-Source-only draft. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

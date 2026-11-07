@@ -31,7 +31,7 @@ separation axiom or compactness of the parameter space is assumed.
 
 noncomputable section
 
-open CategoryTheory CategoryTheory.Limits MonoidalCategory Convexity Topology Set
+open CategoryTheory CategoryTheory.Limits MonoidalCategory Topology Set
 open Convexity.StdSimplex
 open scoped Topology unitInterval
 
@@ -44,15 +44,15 @@ namespace TopCat
 section SimplexAttachment
 
 variable (X : TopCat.{u}) (n : ℕ) {C D : TopCat.{u}}
-    {f : TopCat.of (X × simplexBoundary n) ⟶ C}
-    {g : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⟶ D}
+    {f : TopCat.of (X × Convexity.StdSimplex.boundary n) ⟶ C}
+    {g : TopCat.of (X × Convexity.StdSimplex ℝ (Fin (n + 1))) ⟶ D}
     {j : C ⟶ D}
     (sq : IsPushout (TopCat.parameterizedSimplexBoundaryInclusion X n) f g j)
 
 /-- The radial deformation on the attached cells, glued to the constant
 homotopy on the previous space using preservation of pushouts by cylinders. -/
 def simplexAttachmentRadialCylinder : D ⊗ TopCat.I ⟶ D := by
-  let b : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⊗ TopCat.I ⟶ D :=
+  let b : TopCat.of (X × Convexity.StdSimplex ℝ (Fin (n + 1))) ⊗ TopCat.I ⟶ D :=
     TopCat.ofHom ⟨fun z ↦ g (z.1.1, simplexBoundaryRetractPoint (z.1.2, z.2.down)), by fun_prop⟩
   let c : C ⊗ TopCat.I ⟶ D :=
     TopCat.ofHom ⟨fun z ↦ j z.1, by fun_prop⟩
@@ -72,7 +72,7 @@ def simplexAttachmentRadial : C(unitInterval × D, D) where
     (continuous_snd.prodMk (continuous_uliftUp.comp continuous_fst))
 
 @[simp] theorem simplexAttachmentRadial_cell (t : unitInterval)
-    (z : X × StdSimplex ℝ (Fin (n + 1))) :
+    (z : X × Convexity.StdSimplex ℝ (Fin (n + 1))) :
     simplexAttachmentRadial X n sq (t, g z) =
       g (z.1, simplexBoundaryRetractPoint (z.2, t)) := by
   change simplexAttachmentRadialCylinder X n sq ((g ▷ TopCat.I) (z, ULift.up t)) = _
@@ -119,7 +119,7 @@ theorem simplexAttachmentRadial_one_mem_range
   · change g b = z.1 at hb
     have hz : b.2 ∈ simplexBoundaryCollar n :=
       (simplexAttachmentCollar_cell_iff X n sq b).mp (hb.symm ▸ z.2)
-    let a : X × simplexBoundary n :=
+    let a : X × Convexity.StdSimplex.boundary n :=
       (b.1, ⟨simplexBoundaryRetractPoint (b.2, 1),
         simplexBoundaryRetractPoint_one_mem_boundary ⟨b.2, hz⟩⟩)
     refine ⟨f a, ?_⟩

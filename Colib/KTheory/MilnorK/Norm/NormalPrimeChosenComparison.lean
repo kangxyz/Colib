@@ -22,7 +22,6 @@ base. All fields share one universe. Only the native `Ideal.Quotient.field` is
 used on polynomial quotients. No norm, carrier, comparison structure, general
 tower law, or assumed norm-invariance statement is introduced.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

@@ -24,7 +24,6 @@ No tower law, chosen-norm/simple-norm comparison, or detection model is used.
 The hypotheses in the final endpoint are prime degree, normality, perfectness,
 and an actual algebra equivalence between the two native polynomial quotients.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

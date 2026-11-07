@@ -50,7 +50,7 @@ its continuous realized counterpart. -/
   apply E.kZeroFundamentalGroupEquiv.injective
   change E.kZeroFundamentalGroupEquiv
     (E.kZeroFundamentalGroupEquiv.symm
-      ((classifyingGroupoidCompletionFunctor E.QCategory).map
+      ((classifyingGroupoidCompletionFunctor E.QCategory).mapEnd _
         (E.qObjectClass E.toQGroupoid X))) = _
   erw [MulEquiv.apply_symm_apply, ← E.qObjectClass_comp]
   rw [E.kZeroFundamentalGroupEquiv_objectClass, E.kZeroObjectLoop_eq_qObjectClass]

@@ -22,7 +22,7 @@ No injectivity, retraction or bijectivity assertion is imported or included.
 Adapted from `Quillen/Topology/ClassifyingSpace/CompletionSurjectivity.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. Actual maps, endpoint equalities,
 path classes and independent universe parameters are retained. Native namespace
-ownership and the established finite-simplex adapter replace source ownership.
+ownership and the pinned native simplex maps replace source ownership.
 Only the first two source declarations are included.
 -/
 @[expose] public section
@@ -58,8 +58,10 @@ theorem classifyingGroupoidCompletionFunctor_map_surjective (c d : C) :
 /-- The original completed-loop comparison is surjective onto the actual
 fundamental group of the nerve realization at every original object. -/
 theorem classifyingGroupoidCompletionMap_surjective (c : C) :
-    Function.Surjective (classifyingGroupoidCompletionMap C c) :=
-  classifyingGroupoidCompletionFunctor_map_surjective C c c
+    Function.Surjective (classifyingGroupoidCompletionMap C c) := by
+  intro g
+  obtain ⟨f, hf⟩ := classifyingGroupoidCompletionFunctor_map_surjective C c c g.asHom
+  exact ⟨End.of f, End.ext hf⟩
 
 end CategoryTheory
 

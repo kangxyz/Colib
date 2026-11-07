@@ -1,0 +1,1718 @@
+{
+  "scope": "All explicit named declarations in the eight listed production files; not a census of generated declarations or source project completion.",
+  "normalization": "Comments, whitespace and imports removed. Quillen.Q becomes CategoryTheory.QConstruction; Quillen.Devissage becomes CategoryTheory.Abelian.Devissage; Subcategory P and subcategoryExactStructure P are unfolded to native P.FullSubcategory and its standard abelian exact structure. Q-map declarations move from Setup to QInclusion. homotopyEquivPiEquiv is namespace-qualified. Four listed declarations reuse existing native helpers. In KEquiv the chosen inverse may differ; the forward KMap is retained by rfl. Actual statements and all remaining proof bodies otherwise match.",
+  "named_production_declarations": 64,
+  "files": [
+    {
+      "source": "Quillen/Aglib/CategoryTheory/ExactCategory/Filtration/Hypothesis.lean",
+      "source_sha256": "75427f1df73a2bd0a1e24c8716aedd2fbe0625f75cdfbdf555d51a065bc0b079",
+      "target": "Colib/CategoryTheory/Abelian/Devissage/Filtration.lean",
+      "target_sha256": "509c1781f871cac805e1ace5fcabd51d29fb0054b2af863592fa1ac2ad878930",
+      "native_reuses": [],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.FiltrationHypothesis",
+          "short_name": "FiltrationHypothesis",
+          "line": 35
+        }
+      ],
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+    },
+    {
+      "source": "Quillen/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "source_sha256": "97c0ff9703e8a3200f1062f13bd722f5ab6cfdb819cddbbcb6bb2d921317e121",
+      "target": "Colib/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "target_sha256": "6075719b5665de8d40c5f1cc79cdda8832423d77327e371088bcbc6c3c58eeef",
+      "native_reuses": [],
+      "declarations": [
+        {
+          "kind": "abbrev",
+          "name": "CategoryTheory.QConstruction.AbelianSpan",
+          "short_name": "AbelianSpan",
+          "line": 44
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.QConstruction.abelianSpan_epi",
+          "short_name": "abelianSpan_epi",
+          "line": 47
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.QConstruction.abelianSpan_mono",
+          "short_name": "abelianSpan_mono",
+          "line": 50
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.QConstruction.cancelSpanIso",
+          "short_name": "cancelSpanIso",
+          "line": 54
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.QConstruction.fst_cancelSpanIso_hom",
+          "short_name": "fst_cancelSpanIso_hom",
+          "line": 98
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.QConstruction.mkHom_right_cancel",
+          "short_name": "mkHom_right_cancel",
+          "line": 107
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.QConstruction.abelianQ_mono",
+          "short_name": "abelianQ_mono",
+          "line": 122
+        }
+      ],
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+    },
+    {
+      "source": "Quillen/Devissage/FullyFaithful.lean",
+      "source_sha256": "515aaea8aac0d706194a05d5f3d1ff618282b6a0c552b9e636db8e108c291cb1",
+      "target": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_sha256": "d575198a3a30b7794671e75ca3ad0c28783b068dba74a209a10180bd7c49b289",
+      "native_reuses": [
+        {
+          "declaration": "mapQ_faithful",
+          "change": "Replace specialized span-isomorphism proof by the existing generic ExactFunctor.mapQ_faithful_of_fullyFaithful, extracted to the lower QFaithful owner; ordinary full/faithful instances are the native P.ι instances."
+        }
+      ],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.mapQ",
+          "short_name": "mapQ",
+          "line": 56
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.mapQ_obj_of",
+          "short_name": "mapQ_obj_of",
+          "line": 63
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.span_apex_mem",
+          "short_name": "span_apex_mem",
+          "line": 73
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.liftSpan",
+          "short_name": "liftSpan",
+          "line": 82
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.mapSpan_liftSpan",
+          "short_name": "mapSpan_liftSpan",
+          "line": 97
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.Abelian.Devissage.mapQ_full",
+          "short_name": "mapQ_full",
+          "line": 104
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.Abelian.Devissage.mapQ_faithful",
+          "short_name": "mapQ_faithful",
+          "line": 112
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.mapQFullyFaithful",
+          "short_name": "mapQFullyFaithful",
+          "line": 123
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.mapQHomEquiv",
+          "short_name": "mapQHomEquiv",
+          "line": 127
+        }
+      ],
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+    },
+    {
+      "source": "Quillen/Devissage/SpanLayers.lean",
+      "source_sha256": "9d5e3b192642f416d34e2e96e0dbceae13ece7691e4d2661e1892f08a31f6cf4",
+      "target": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_sha256": "5043961936c37279515af1998a0505dc83f5aa56c34cb8e80f4f7f7984a351e1",
+      "native_reuses": [],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanLower",
+          "short_name": "spanLower",
+          "line": 41
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanUpper",
+          "short_name": "spanUpper",
+          "line": 45
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.spanLower_le_upper",
+          "short_name": "spanLower_le_upper",
+          "line": 49
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanQuotientIsoKernel",
+          "short_name": "spanQuotientIsoKernel",
+          "line": 53
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanKernelQuotientIso",
+          "short_name": "spanKernelQuotientIso",
+          "line": 62
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.cokernel_π_spanKernelQuotientIso_hom",
+          "short_name": "cokernel_π_spanKernelQuotientIso_hom",
+          "line": 68
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanQuotientIso",
+          "short_name": "spanQuotientIso",
+          "line": 75
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.cokernel_π_spanQuotientIso_hom",
+          "short_name": "cokernel_π_spanQuotientIso_hom",
+          "line": 81
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanLayer",
+          "short_name": "spanLayer",
+          "line": 89
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanLayerQuotientIso",
+          "short_name": "spanLayerQuotientIso",
+          "line": 96
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.cokernel_π_spanLayerQuotientIso_hom",
+          "short_name": "cokernel_π_spanLayerQuotientIso_hom",
+          "line": 100
+        }
+      ],
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+    },
+    {
+      "source": "Quillen/Devissage/CommaLayers.lean",
+      "source_sha256": "9cd1b447cead623b70a5307aec994e01a7682bdc5678fc8a4f0f2c490c946dbe",
+      "target": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_sha256": "871a1e11e6fb30c0d1c6c7071f923e6c250481f139f5c30ae20ef32344dac9d8",
+      "native_reuses": [],
+      "declarations": [
+        {
+          "kind": "abbrev",
+          "name": "CategoryTheory.Abelian.Devissage.QComma",
+          "short_name": "QComma",
+          "line": 54
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.Abelian.Devissage.qComma_thin",
+          "short_name": "qComma_thin",
+          "line": 57
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanComma",
+          "short_name": "spanComma",
+          "line": 67
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanCommaHomOfIso",
+          "short_name": "spanCommaHomOfIso",
+          "line": 72
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.spanCommaIsoOfIso",
+          "short_name": "spanCommaIsoOfIso",
+          "line": 94
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.span",
+          "short_name": "span",
+          "line": 110
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.comma",
+          "short_name": "comma",
+          "line": 118
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.mapSpan",
+          "short_name": "mapSpan",
+          "line": 124
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.mapSpan_comp",
+          "short_name": "mapSpan_comp",
+          "line": 134
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.commaMap",
+          "short_name": "commaMap",
+          "line": 149
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.le_of_comma_hom",
+          "short_name": "le_of_comma_hom",
+          "line": 156
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.layerToComma",
+          "short_name": "layerToComma",
+          "line": 191
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.Abelian.Devissage.layerToComma_faithful",
+          "short_name": "layerToComma_faithful",
+          "line": 197
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.Abelian.Devissage.layerToComma_full",
+          "short_name": "layerToComma_full",
+          "line": 200
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.Abelian.Devissage.layerToComma_essSurj",
+          "short_name": "layerToComma_essSurj",
+          "line": 204
+        },
+        {
+          "kind": "instance",
+          "name": "CategoryTheory.Abelian.Devissage.layerToComma_isEquivalence",
+          "short_name": "layerToComma_isEquivalence",
+          "line": 216
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.layerCommaEquivalence",
+          "short_name": "layerCommaEquivalence",
+          "line": 220
+        }
+      ],
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+    },
+    {
+      "source": "Quillen/Devissage/LayerContraction.lean",
+      "source_sha256": "33fa2b210c230a665875bcecbf4c0ca15dd9755d021a96582860fae3e6aeecad",
+      "target": "Colib/Topology/ClassifyingSpace/Devissage.lean",
+      "target_sha256": "f0d149223fea5589293b7904aaaee02a6577ea15d5ff65fbe5e764355f1d5732",
+      "native_reuses": [],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.supportedStepHomotopyEquiv",
+          "short_name": "supportedStepHomotopyEquiv",
+          "line": 51
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.supportedBottom_contractible",
+          "short_name": "supportedBottom_contractible",
+          "line": 76
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.supported_contractible_of_filtration",
+          "short_name": "supported_contractible_of_filtration",
+          "line": 82
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.Layer.contractible_of_filtration",
+          "short_name": "contractible_of_filtration",
+          "line": 110
+        }
+      ],
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+    },
+    {
+      "source": "Quillen/Devissage/Setup.lean",
+      "source_sha256": "85e7c54247d97242c6f8e52f0225d0a5dd0199bc68902912857ba4c2db417a46",
+      "target": "Colib/KTheory/Quillen/Devissage/Basic.lean",
+      "target_sha256": "1753d01357daeebe6bff60938754fbcc12db1648d38cc224a911b8df7db78c4a",
+      "native_reuses": [],
+      "declarations": [
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.KMap",
+          "short_name": "KMap",
+          "line": 72
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.grothendieckMap",
+          "short_name": "grothendieckMap",
+          "line": 77
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.grothendieckMap_class",
+          "short_name": "grothendieckMap_class",
+          "line": 83
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.class_mem_range",
+          "short_name": "class_mem_range",
+          "line": 90
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.grothendieckMap_surjective",
+          "short_name": "grothendieckMap_surjective",
+          "line": 99
+        }
+      ],
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+    },
+    {
+      "source": "Quillen/Devissage/Homotopical.lean",
+      "source_sha256": "d10ab4491d7d9ff08a4d792b70c495df12f806e10fa8abb6e0a4abd7472006d5",
+      "target": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_sha256": "b7b17acda4cad8878824f0f40cc328fe9304b465307207f182ccfddcd485b2f7",
+      "native_reuses": [
+        {
+          "declaration": "pointedClassifyingMap",
+          "change": "Reuse normalizedQ; same actual rebased Q-functor by rfl."
+        },
+        {
+          "declaration": "pointedClassifyingMap_basepoint",
+          "change": "Reuse normalizedQ_map_point."
+        },
+        {
+          "declaration": "KEquiv",
+          "change": "Reuse KEquivOfHomotopyEquiv; its inverse is selected from bijectivity, while its forward homomorphism is still the actual KMap by rfl. No assertion equates this chosen inverse with the source choice."
+        }
+      ],
+      "declarations": [
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.qComma_contractible",
+          "short_name": "qComma_contractible",
+          "line": 59
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.classifyingHomotopyEquiv",
+          "short_name": "classifyingHomotopyEquiv",
+          "line": 67
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.classifyingHomotopyEquiv_toFun",
+          "short_name": "classifyingHomotopyEquiv_toFun",
+          "line": 77
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.pointedClassifyingMap",
+          "short_name": "pointedClassifyingMap",
+          "line": 82
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.pointedClassifyingHomotopyEquiv",
+          "short_name": "pointedClassifyingHomotopyEquiv",
+          "line": 87
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.pointedClassifyingHomotopyEquiv_toFun",
+          "short_name": "pointedClassifyingHomotopyEquiv_toFun",
+          "line": 104
+        },
+        {
+          "kind": "lemma",
+          "name": "CategoryTheory.Abelian.Devissage.pointedClassifyingMap_basepoint",
+          "short_name": "pointedClassifyingMap_basepoint",
+          "line": 108
+        },
+        {
+          "kind": "def",
+          "name": "CategoryTheory.Abelian.Devissage.KEquiv",
+          "short_name": "KEquiv",
+          "line": 115
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.KEquiv_coe",
+          "short_name": "KEquiv_coe",
+          "line": 121
+        },
+        {
+          "kind": "theorem",
+          "name": "CategoryTheory.Abelian.Devissage.KMap_bijective",
+          "short_name": "KMap_bijective",
+          "line": 128
+        }
+      ],
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+    }
+  ],
+  "declarations": [
+    {
+      "source_file": "Quillen/Aglib/CategoryTheory/ExactCategory/Filtration/Hypothesis.lean",
+      "source_declaration": "Quillen.Devissage.FiltrationHypothesis",
+      "source_line": 26,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/Filtration.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.FiltrationHypothesis",
+      "target_line": 35,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "source_declaration": "Quillen.Q.AbelianSpan",
+      "source_line": 37,
+      "target_file": "Colib/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "target_declaration": "CategoryTheory.QConstruction.AbelianSpan",
+      "target_line": 44,
+      "kind": "abbrev",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "source_declaration": "Quillen.Q.abelianSpan_epi",
+      "source_line": 40,
+      "target_file": "Colib/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "target_declaration": "CategoryTheory.QConstruction.abelianSpan_epi",
+      "target_line": 47,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "source_declaration": "Quillen.Q.abelianSpan_mono",
+      "source_line": 43,
+      "target_file": "Colib/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "target_declaration": "CategoryTheory.QConstruction.abelianSpan_mono",
+      "target_line": 50,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "source_declaration": "Quillen.Q.cancelSpanIso",
+      "source_line": 47,
+      "target_file": "Colib/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "target_declaration": "CategoryTheory.QConstruction.cancelSpanIso",
+      "target_line": 54,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "source_declaration": "Quillen.Q.fst_cancelSpanIso_hom",
+      "source_line": 91,
+      "target_file": "Colib/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "target_declaration": "CategoryTheory.QConstruction.fst_cancelSpanIso_hom",
+      "target_line": 98,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "source_declaration": "Quillen.Q.mkHom_right_cancel",
+      "source_line": 100,
+      "target_file": "Colib/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "target_declaration": "CategoryTheory.QConstruction.mkHom_right_cancel",
+      "target_line": 107,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "source_declaration": "Quillen.Q.abelianQ_mono",
+      "source_line": 115,
+      "target_file": "Colib/CategoryTheory/QConstruction/Abelian/Cancellation.lean",
+      "target_declaration": "CategoryTheory.QConstruction.abelianQ_mono",
+      "target_line": 122,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Setup.lean",
+      "source_declaration": "Quillen.Devissage.mapQ",
+      "source_line": 66,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.mapQ",
+      "target_line": 56,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Setup.lean",
+      "source_declaration": "Quillen.Devissage.mapQ_obj_of",
+      "source_line": 72,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.mapQ_obj_of",
+      "target_line": 63,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/FullyFaithful.lean",
+      "source_declaration": "Quillen.Devissage.span_apex_mem",
+      "source_line": 49,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.span_apex_mem",
+      "target_line": 73,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/FullyFaithful.lean",
+      "source_declaration": "Quillen.Devissage.liftSpan",
+      "source_line": 58,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.liftSpan",
+      "target_line": 82,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/FullyFaithful.lean",
+      "source_declaration": "Quillen.Devissage.mapSpan_liftSpan",
+      "source_line": 73,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.mapSpan_liftSpan",
+      "target_line": 97,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/FullyFaithful.lean",
+      "source_declaration": "Quillen.Devissage.mapQ_full",
+      "source_line": 80,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.mapQ_full",
+      "target_line": 104,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/FullyFaithful.lean",
+      "source_declaration": "Quillen.Devissage.mapQ_faithful",
+      "source_line": 88,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.mapQ_faithful",
+      "target_line": 112,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/FullyFaithful.lean",
+      "source_declaration": "Quillen.Devissage.mapQFullyFaithful",
+      "source_line": 100,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.mapQFullyFaithful",
+      "target_line": 123,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/FullyFaithful.lean",
+      "source_declaration": "Quillen.Devissage.mapQHomEquiv",
+      "source_line": 104,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/QInclusion.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.mapQHomEquiv",
+      "target_line": 127,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanLower",
+      "source_line": 33,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanLower",
+      "target_line": 41,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanUpper",
+      "source_line": 37,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanUpper",
+      "target_line": 45,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanLower_le_upper",
+      "source_line": 41,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanLower_le_upper",
+      "target_line": 49,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanQuotientIsoKernel",
+      "source_line": 45,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanQuotientIsoKernel",
+      "target_line": 53,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanKernelQuotientIso",
+      "source_line": 54,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanKernelQuotientIso",
+      "target_line": 62,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.cokernel_π_spanKernelQuotientIso_hom",
+      "source_line": 60,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.cokernel_π_spanKernelQuotientIso_hom",
+      "target_line": 68,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanQuotientIso",
+      "source_line": 67,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanQuotientIso",
+      "target_line": 75,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.cokernel_π_spanQuotientIso_hom",
+      "source_line": 73,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.cokernel_π_spanQuotientIso_hom",
+      "target_line": 81,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanLayer",
+      "source_line": 81,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanLayer",
+      "target_line": 89,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanLayerQuotientIso",
+      "source_line": 88,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanLayerQuotientIso",
+      "target_line": 96,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/SpanLayers.lean",
+      "source_declaration": "Quillen.Devissage.cokernel_π_spanLayerQuotientIso_hom",
+      "source_line": 92,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/SpanLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.cokernel_π_spanLayerQuotientIso_hom",
+      "target_line": 100,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.QComma",
+      "source_line": 45,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.QComma",
+      "target_line": 54,
+      "kind": "abbrev",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.qComma_thin",
+      "source_line": 48,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.qComma_thin",
+      "target_line": 57,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanComma",
+      "source_line": 58,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanComma",
+      "target_line": 67,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanCommaHomOfIso",
+      "source_line": 63,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanCommaHomOfIso",
+      "target_line": 72,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.spanCommaIsoOfIso",
+      "source_line": 85,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.spanCommaIsoOfIso",
+      "target_line": 94,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.Layer.span",
+      "source_line": 101,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.span",
+      "target_line": 110,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.Layer.comma",
+      "source_line": 109,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.comma",
+      "target_line": 118,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.Layer.mapSpan",
+      "source_line": 115,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.mapSpan",
+      "target_line": 124,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.Layer.mapSpan_comp",
+      "source_line": 125,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.mapSpan_comp",
+      "target_line": 134,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.Layer.commaMap",
+      "source_line": 139,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.commaMap",
+      "target_line": 149,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.Layer.le_of_comma_hom",
+      "source_line": 146,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.le_of_comma_hom",
+      "target_line": 156,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.layerToComma",
+      "source_line": 181,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.layerToComma",
+      "target_line": 191,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.layerToComma_faithful",
+      "source_line": 187,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.layerToComma_faithful",
+      "target_line": 197,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.layerToComma_full",
+      "source_line": 190,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.layerToComma_full",
+      "target_line": 200,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.layerToComma_essSurj",
+      "source_line": 194,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.layerToComma_essSurj",
+      "target_line": 204,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.layerToComma_isEquivalence",
+      "source_line": 206,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.layerToComma_isEquivalence",
+      "target_line": 216,
+      "kind": "instance",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/CommaLayers.lean",
+      "source_declaration": "Quillen.Devissage.layerCommaEquivalence",
+      "source_line": 210,
+      "target_file": "Colib/CategoryTheory/Abelian/Devissage/CommaLayers.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.layerCommaEquivalence",
+      "target_line": 220,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/LayerContraction.lean",
+      "source_declaration": "Quillen.Devissage.Layer.supportedStepHomotopyEquiv",
+      "source_line": 41,
+      "target_file": "Colib/Topology/ClassifyingSpace/Devissage.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.supportedStepHomotopyEquiv",
+      "target_line": 51,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/LayerContraction.lean",
+      "source_declaration": "Quillen.Devissage.Layer.supportedBottom_contractible",
+      "source_line": 66,
+      "target_file": "Colib/Topology/ClassifyingSpace/Devissage.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.supportedBottom_contractible",
+      "target_line": 76,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/LayerContraction.lean",
+      "source_declaration": "Quillen.Devissage.Layer.supported_contractible_of_filtration",
+      "source_line": 73,
+      "target_file": "Colib/Topology/ClassifyingSpace/Devissage.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.supported_contractible_of_filtration",
+      "target_line": 82,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/LayerContraction.lean",
+      "source_declaration": "Quillen.Devissage.Layer.contractible_of_filtration",
+      "source_line": 101,
+      "target_file": "Colib/Topology/ClassifyingSpace/Devissage.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.Layer.contractible_of_filtration",
+      "target_line": 110,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Setup.lean",
+      "source_declaration": "Quillen.Devissage.KMap",
+      "source_line": 80,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Basic.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.KMap",
+      "target_line": 72,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Setup.lean",
+      "source_declaration": "Quillen.Devissage.grothendieckMap",
+      "source_line": 85,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Basic.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.grothendieckMap",
+      "target_line": 77,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Setup.lean",
+      "source_declaration": "Quillen.Devissage.grothendieckMap_class",
+      "source_line": 91,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Basic.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.grothendieckMap_class",
+      "target_line": 83,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Setup.lean",
+      "source_declaration": "Quillen.Devissage.class_mem_range",
+      "source_line": 98,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Basic.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.class_mem_range",
+      "target_line": 90,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Setup.lean",
+      "source_declaration": "Quillen.Devissage.grothendieckMap_surjective",
+      "source_line": 107,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Basic.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.grothendieckMap_surjective",
+      "target_line": 99,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.qComma_contractible",
+      "source_line": 50,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.qComma_contractible",
+      "target_line": 59,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.classifyingHomotopyEquiv",
+      "source_line": 58,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.classifyingHomotopyEquiv",
+      "target_line": 67,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.classifyingHomotopyEquiv_toFun",
+      "source_line": 68,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.classifyingHomotopyEquiv_toFun",
+      "target_line": 77,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.pointedClassifyingMap",
+      "source_line": 73,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.pointedClassifyingMap",
+      "target_line": 82,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.pointedClassifyingHomotopyEquiv",
+      "source_line": 83,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.pointedClassifyingHomotopyEquiv",
+      "target_line": 87,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.pointedClassifyingHomotopyEquiv_toFun",
+      "source_line": 100,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.pointedClassifyingHomotopyEquiv_toFun",
+      "target_line": 104,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.pointedClassifyingMap_basepoint",
+      "source_line": 105,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.pointedClassifyingMap_basepoint",
+      "target_line": 108,
+      "kind": "lemma",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.KEquiv",
+      "source_line": 112,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.KEquiv",
+      "target_line": 115,
+      "kind": "def",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.KEquiv_coe",
+      "source_line": 119,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.KEquiv_coe",
+      "target_line": 121,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    },
+    {
+      "source_file": "Quillen/Devissage/Homotopical.lean",
+      "source_declaration": "Quillen.Devissage.KMap_bijective",
+      "source_line": 126,
+      "target_file": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
+      "target_declaration": "CategoryTheory.Abelian.Devissage.KMap_bijective",
+      "target_line": 128,
+      "kind": "theorem",
+      "status": "native_source_correspondence_checked"
+    }
+  ],
+  "source_revision": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "review_scope": "Source statements, hypotheses, actual maps, native-helper reuse and selected proof chain independently reviewed before integration; imported topology is covered by its own published validation and review scope.",
+  "integration_changes": "Only explicit reference attributes/imports and public Library registrations were added to the independently reviewed production proofs. The generic faithful Q-map proof was moved unchanged from its existing K-theory owner.",
+  "prerequisite_provenance": [
+    {
+      "source": "Quillen/Aglib/CategoryTheory/ExactCategory/Filtration/Basic.lean",
+      "source_sha256": "9913b76fd466bd162f8bc88464d69a3fc24bfef11e3cbdab588a822ab22bb308",
+      "target": "Colib/CategoryTheory/ExactCategory/Filtration/Basic.lean",
+      "target_sha256": "0f765be28abbc1680e100267be35a8a2774322334ca44c0ee47fa3fd59f9189d",
+      "source_declarations": [
+        {
+          "name": "Filtration",
+          "kind": "inductive",
+          "line": 41
+        },
+        {
+          "name": "factors",
+          "kind": "def",
+          "line": 51
+        },
+        {
+          "name": "length",
+          "kind": "def",
+          "line": 56
+        },
+        {
+          "name": "factors_zero",
+          "kind": "lemma",
+          "line": 58
+        },
+        {
+          "name": "factors_step",
+          "kind": "lemma",
+          "line": 61
+        },
+        {
+          "name": "length_zero",
+          "kind": "lemma",
+          "line": 65
+        },
+        {
+          "name": "length_step",
+          "kind": "lemma",
+          "line": 68
+        },
+        {
+          "name": "mem_factors",
+          "kind": "lemma",
+          "line": 74
+        },
+        {
+          "name": "additiveInvariant_eq_sum",
+          "kind": "theorem",
+          "line": 85
+        }
+      ],
+      "target_declarations": [
+        {
+          "name": "Filtration",
+          "kind": "inductive",
+          "line": 46
+        },
+        {
+          "name": "factors",
+          "kind": "def",
+          "line": 56
+        },
+        {
+          "name": "length",
+          "kind": "def",
+          "line": 61
+        },
+        {
+          "name": "factors_zero",
+          "kind": "lemma",
+          "line": 63
+        },
+        {
+          "name": "factors_step",
+          "kind": "lemma",
+          "line": 66
+        },
+        {
+          "name": "length_zero",
+          "kind": "lemma",
+          "line": 70
+        },
+        {
+          "name": "length_step",
+          "kind": "lemma",
+          "line": 73
+        },
+        {
+          "name": "mem_factors",
+          "kind": "lemma",
+          "line": 79
+        },
+        {
+          "name": "additiveInvariant_eq_sum",
+          "kind": "theorem",
+          "line": 90
+        }
+      ],
+      "correspondence": "Same declaration names, actual objects, proof bodies and hypotheses. Import/namespace-open changes and documentation only.",
+      "normalized_body_equal": true,
+      "normalized_body_sha256": "56ae8cee75e1f8ddcfdb4ed8c8fdc2f09c5ec56cee7b3f4c614919734cc14d79"
+    },
+    {
+      "source": "Quillen/Devissage/Filtration.lean",
+      "source_sha256": "65af78164471e33249b5f31e701042b19463bbf69d04b6679312a0fdd98ddfec",
+      "target": "Colib/KTheory/GrothendieckGroup/Filtration.lean",
+      "target_sha256": "4d03bb72997fb093b7d6cc4c1ca898497cbb0e1d74c6c6a4abdb5ef4bd93d004",
+      "source_declarations": [
+        {
+          "name": "class_eq_sum",
+          "kind": "theorem",
+          "line": 51
+        },
+        {
+          "name": "class_mem",
+          "kind": "theorem",
+          "line": 60
+        },
+        {
+          "name": "grothendieckClassesSubgroup",
+          "kind": "def",
+          "line": 72
+        },
+        {
+          "name": "Filtration.class_mem_generated",
+          "kind": "theorem",
+          "line": 77
+        },
+        {
+          "name": "grothendieckSubgroup_eq_top_of_classes",
+          "kind": "lemma",
+          "line": 82
+        },
+        {
+          "name": "grothendieckClassesSubgroup_eq_top_of_filtrations",
+          "kind": "theorem",
+          "line": 97
+        },
+        {
+          "name": "grothendieckMap_surjective_of_filtrations",
+          "kind": "theorem",
+          "line": 119
+        }
+      ],
+      "target_declarations": [
+        {
+          "name": "class_eq_sum",
+          "kind": "theorem",
+          "line": 56
+        },
+        {
+          "name": "class_mem",
+          "kind": "theorem",
+          "line": 65
+        },
+        {
+          "name": "grothendieckClassesSubgroup",
+          "kind": "def",
+          "line": 77
+        },
+        {
+          "name": "Filtration.class_mem_generated",
+          "kind": "theorem",
+          "line": 82
+        },
+        {
+          "name": "grothendieckSubgroup_eq_top_of_classes",
+          "kind": "lemma",
+          "line": 87
+        },
+        {
+          "name": "grothendieckClassesSubgroup_eq_top_of_filtrations",
+          "kind": "theorem",
+          "line": 102
+        },
+        {
+          "name": "grothendieckMap_surjective_of_filtrations",
+          "kind": "theorem",
+          "line": 123
+        }
+      ],
+      "correspondence": "Same declaration names, actual objects, proof bodies and hypotheses. Import/namespace-open changes and documentation only.",
+      "normalized_body_equal": true,
+      "normalized_body_sha256": "5849f8b4cb57fe326d01cad1cc3028a580d6b89ed7bf90067021e6527168f7dc"
+    },
+    {
+      "source": "Aglib/CategoryTheory/Abelian/Subcategory/Exact.lean",
+      "source_sha256": "aff207f63c6b20afc8f2cafabe5f0e87f9362516a59032d038bc7221c5de3dbd",
+      "target": "Colib/CategoryTheory/Abelian/Subcategory/Exact.lean",
+      "target_sha256": "32092c63077b3273758b67e4d617b445863e46d51f3e2f303bf2ebc08b144f12",
+      "target_declarations": [
+        {
+          "kind": "theorem",
+          "name": "containsZero_iff_nonempty",
+          "line": 49
+        },
+        {
+          "kind": "theorem",
+          "name": "inclusion_preservesFiniteLimits",
+          "line": 65
+        },
+        {
+          "kind": "theorem",
+          "name": "inclusion_preservesFiniteColimits",
+          "line": 72
+        },
+        {
+          "kind": "def",
+          "name": "exactInclusion",
+          "line": 78
+        }
+      ],
+      "source_declarations": [
+        {
+          "kind": "theorem",
+          "name": "containsZero_iff_nonempty",
+          "line": 40
+        },
+        {
+          "kind": "abbrev",
+          "name": "Subcategory",
+          "line": 55
+        },
+        {
+          "kind": "def",
+          "name": "subcategoryAbelian",
+          "line": 59
+        },
+        {
+          "kind": "def",
+          "name": "subcategoryExactStructure",
+          "line": 63
+        },
+        {
+          "kind": "theorem",
+          "name": "inclusion_preservesFiniteLimits",
+          "line": 68
+        },
+        {
+          "kind": "theorem",
+          "name": "inclusion_preservesFiniteColimits",
+          "line": 75
+        },
+        {
+          "kind": "def",
+          "name": "exactInclusion",
+          "line": 81
+        },
+        {
+          "kind": "def",
+          "name": "inclusionFullyFaithful",
+          "line": 92
+        }
+      ],
+      "native_replacements": [
+        {
+          "source_name": "Subcategory",
+          "native_replacement": "ObjectProperty.FullSubcategory",
+          "reason": "Definitional alias only."
+        },
+        {
+          "source_name": "subcategoryAbelian",
+          "native_replacement": "Mathlib Abelian P.FullSubcategory instance",
+          "reason": "Source reducible inferInstance wrapper, not an alternate installed instance."
+        },
+        {
+          "source_name": "subcategoryExactStructure",
+          "native_replacement": "CategoryTheory.ExactCategory.abelianExactStructure P.FullSubcategory",
+          "reason": "Unfold the source wrapper at exactInclusion; same actual exact structure."
+        },
+        {
+          "source_name": "inclusionFullyFaithful",
+          "native_replacement": "ObjectProperty.fullyFaithfulι",
+          "reason": "Existing native fully faithful structure on the same inclusion."
+        }
+      ],
+      "reviewed_prerequisite_proof_body_equal_after_native_replacements": true
+    },
+    {
+      "source": "Quillen/Aglib/CategoryTheory/ExactCategory/Filtration/Layers.lean",
+      "source_sha256": "2bc7bcc5272a5d7e422d137bd98fa07200dcd3e66a32461886f9f80b6a8cdd80",
+      "target": "Colib/CategoryTheory/Abelian/Devissage/Layers.lean",
+      "target_sha256": "d25344ba9a583472a87fee6babd5bac22eeb01bac123bb6cee7109c6c4f7735e",
+      "target_declarations": [
+        {
+          "kind": "structure",
+          "name": "Layer",
+          "line": 43
+        },
+        {
+          "kind": "abbrev",
+          "name": "quotient",
+          "line": 56
+        },
+        {
+          "kind": "lemma",
+          "name": "le_iff",
+          "line": 69
+        },
+        {
+          "kind": "lemma",
+          "name": "intersection_enlargement_mem",
+          "line": 80
+        },
+        {
+          "kind": "lemma",
+          "name": "intersection_restriction_mem",
+          "line": 133
+        },
+        {
+          "kind": "abbrev",
+          "name": "Supported",
+          "line": 155
+        },
+        {
+          "kind": "def",
+          "name": "restrict",
+          "line": 158
+        },
+        {
+          "kind": "lemma",
+          "name": "restrict_mono",
+          "line": 166
+        },
+        {
+          "kind": "def",
+          "name": "enlarge",
+          "line": 171
+        },
+        {
+          "kind": "lemma",
+          "name": "enlarge_mono",
+          "line": 180
+        }
+      ],
+      "source_declarations": [
+        {
+          "kind": "structure",
+          "name": "Layer",
+          "line": 34
+        },
+        {
+          "kind": "abbrev",
+          "name": "quotient",
+          "line": 48
+        },
+        {
+          "kind": "lemma",
+          "name": "le_iff",
+          "line": 60
+        },
+        {
+          "kind": "lemma",
+          "name": "intersection_enlargement_mem",
+          "line": 72
+        },
+        {
+          "kind": "lemma",
+          "name": "intersection_restriction_mem",
+          "line": 126
+        },
+        {
+          "kind": "abbrev",
+          "name": "Supported",
+          "line": 148
+        },
+        {
+          "kind": "def",
+          "name": "restrict",
+          "line": 151
+        },
+        {
+          "kind": "lemma",
+          "name": "restrict_mono",
+          "line": 159
+        },
+        {
+          "kind": "def",
+          "name": "enlarge",
+          "line": 164
+        },
+        {
+          "kind": "lemma",
+          "name": "enlarge_mono",
+          "line": 173
+        }
+      ],
+      "native_replacements": [],
+      "reviewed_prerequisite_proof_body_equal_after_native_replacements": true
+    },
+    {
+      "source": "Quillen/Aglib/CategoryTheory/ExactCategory/Filtration/LayerQuotients.lean",
+      "source_sha256": "2c85d6c3b86faf7b37c21ff6e3e4d0816a631ad373131b62c7e44b69d569f869",
+      "target": "Colib/CategoryTheory/Abelian/Devissage/LayerQuotients.lean",
+      "target_sha256": "5f20b77602e2095dac5461835c8adb8e809d9b8b601805362211901c740db900",
+      "target_declarations": [
+        {
+          "kind": "lemma",
+          "name": "quotientMap_mono",
+          "line": 41
+        },
+        {
+          "kind": "lemma",
+          "name": "quotientMap_isPullback",
+          "line": 48
+        },
+        {
+          "kind": "abbrev",
+          "name": "middle",
+          "line": 80
+        },
+        {
+          "kind": "def",
+          "name": "rightMap",
+          "line": 84
+        },
+        {
+          "kind": "instance",
+          "name": "rightMap_mono",
+          "line": 89
+        },
+        {
+          "kind": "def",
+          "name": "leftMap",
+          "line": 93
+        },
+        {
+          "kind": "instance",
+          "name": "leftMap_epi",
+          "line": 98
+        }
+      ],
+      "source_declarations": [
+        {
+          "kind": "lemma",
+          "name": "quotientMap_mono",
+          "line": 37
+        },
+        {
+          "kind": "lemma",
+          "name": "quotientMap_isPullback",
+          "line": 44
+        },
+        {
+          "kind": "abbrev",
+          "name": "middle",
+          "line": 76
+        },
+        {
+          "kind": "def",
+          "name": "rightMap",
+          "line": 80
+        },
+        {
+          "kind": "instance",
+          "name": "rightMap_mono",
+          "line": 85
+        },
+        {
+          "kind": "def",
+          "name": "leftMap",
+          "line": 89
+        },
+        {
+          "kind": "instance",
+          "name": "leftMap_epi",
+          "line": 94
+        }
+      ],
+      "native_replacements": [],
+      "reviewed_prerequisite_proof_body_equal_after_native_replacements": true
+    },
+    {
+      "source": "Quillen/Aglib/CategoryTheory/ExactCategory/Filtration/LayerFunctors.lean",
+      "source_sha256": "30c6d0d0a50d2a2b1c4995e0fa369bc3cddbb12e0b92c73dac7807ec6935f046",
+      "target": "Colib/CategoryTheory/Abelian/Devissage/LayerFunctors.lean",
+      "target_sha256": "bc217b90f4306a1e2361446ed281702a4dd646fdf62bb97a7355424724c70535",
+      "target_declarations": [
+        {
+          "kind": "def",
+          "name": "supportedInclusion",
+          "line": 46
+        },
+        {
+          "kind": "def",
+          "name": "supportedRestriction",
+          "line": 53
+        },
+        {
+          "kind": "def",
+          "name": "supportedEnlargement",
+          "line": 60
+        },
+        {
+          "kind": "def",
+          "name": "supportedRestrictionUnit",
+          "line": 66
+        },
+        {
+          "kind": "def",
+          "name": "supportedRestrictionToEnlargement",
+          "line": 76
+        },
+        {
+          "kind": "def",
+          "name": "supportedIdToEnlargement",
+          "line": 83
+        },
+        {
+          "kind": "def",
+          "name": "diagonal",
+          "line": 89
+        },
+        {
+          "kind": "def",
+          "name": "supportedBottomIsTerminal",
+          "line": 99
+        },
+        {
+          "kind": "def",
+          "name": "supportedTopEquivalence",
+          "line": 105
+        }
+      ],
+      "source_declarations": [
+        {
+          "kind": "def",
+          "name": "supportedInclusion",
+          "line": 41
+        },
+        {
+          "kind": "def",
+          "name": "supportedRestriction",
+          "line": 48
+        },
+        {
+          "kind": "def",
+          "name": "supportedEnlargement",
+          "line": 55
+        },
+        {
+          "kind": "def",
+          "name": "supportedRestrictionUnit",
+          "line": 61
+        },
+        {
+          "kind": "def",
+          "name": "supportedRestrictionToEnlargement",
+          "line": 71
+        },
+        {
+          "kind": "def",
+          "name": "supportedIdToEnlargement",
+          "line": 78
+        },
+        {
+          "kind": "def",
+          "name": "diagonal",
+          "line": 84
+        },
+        {
+          "kind": "def",
+          "name": "supportedBottomIsTerminal",
+          "line": 94
+        },
+        {
+          "kind": "def",
+          "name": "supportedTopEquivalence",
+          "line": 100
+        }
+      ],
+      "native_replacements": [],
+      "reviewed_prerequisite_proof_body_equal_after_native_replacements": true
+    }
+  ],
+  "reviewed_snapshot": {
+    "baseline_commit": "439de508c89c315ff8c7ec4d787d032797cef84b",
+    "validation_sha256": "d957243c445bc2fa3e3bdce2a3a735137983d90cbd2010c1fafed3a8729ed01e",
+    "integration_patch_sha256": "805393aa522c44b911817a572fde324f2dadffe09a17141acd5a58ee46d1d371",
+    "mode": "Independent read-only mathematical and retained-evidence review, not a new compiler run.",
+    "excludes": "Subsequent integration metadata, full-library check, kernel replay and independent re-review of all imported topology."
+  }
+}

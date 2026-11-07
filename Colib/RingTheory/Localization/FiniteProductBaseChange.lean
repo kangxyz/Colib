@@ -47,7 +47,7 @@ theorem algHom_ext_of_isFractionRing
     {f g : B ⊗[F] E →ₐ[B] Q}
     (h : ∀ s : S, f (1 ⊗ₜ[F] algebraMap S E s) = g (1 ⊗ₜ[F] algebraMap S E s)) :
     f = g := by
-  apply AlgHom.coe_ringHom_injective
+  apply AlgHom.toRingHom_injective
   apply Algebra.TensorProduct.ringHom_ext
   · apply RingHom.ext
     intro b

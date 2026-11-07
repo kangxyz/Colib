@@ -27,7 +27,7 @@ localization object is defined.
 
 The degree-zero comparison takes the actual `Ext.mk₀` class to the actual
 `toRightDerivedZero` transformation. Coefficient naturality and resolution independence
-remain separate obligations and are not inferred from the existence of this equivalence.
+are proved separately in `Colib.Algebra.Homology.DerivedCategory.Ext.RightDerivedNaturality`.
 -/
 
 @[expose] public noncomputable section

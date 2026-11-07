@@ -19,7 +19,6 @@ not on all Milnor classes. Exponent one is unconditional under the finite local 
 The prime-degree corollary explicitly retains Henselianity and exponent invertibility.
 The ramification unit and {-1} two-torsion are retained. No ramification index is cancelled.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

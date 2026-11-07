@@ -1,0 +1,36 @@
+/-
+Copyright (c) 2026 Colib contributors. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+-/
+module
+
+import Colib.Topology.LocalCoefficients.HomotopyCorrection
+import Colib.Topology.LocalCoefficients.HomologySupport
+import Colib.Topology.LocalCoefficients.AbelianHomotopySplitting
+import Colib.Topology.LocalCoefficients.TelescopeHomologyElements
+import Colib.Topology.LocalCoefficients.TelescopeHomologySupport
+import Colib.Topology.LocalCoefficients.TelescopeHomologyDiagram
+
+open CategoryTheory FundamentalGroupoid.LocalCoefficients
+
+#check finite_track_correction_exists
+#check homology_finite_homotopy_correction
+#check homology_exists_finite_pushforward_test_set
+#print axioms finite_track_correction_exists
+#print axioms homology_finite_homotopy_correction
+#print axioms homology_exists_finite_pushforward_test_set
+
+#check abelian_homotopy_splitting_kernel_zero
+#print axioms abelian_homotopy_splitting_kernel_zero
+
+#check CategoryTheory.Grothendieck.Telescope.localHomology_exists_stage
+#print axioms CategoryTheory.Grothendieck.Telescope.localHomology_exists_stage
+
+#check CategoryTheory.Grothendieck.Telescope.localHomology_stage_eq_zero_iff
+#print axioms CategoryTheory.Grothendieck.Telescope.localHomology_stage_eq_zero_iff
+
+#check CategoryTheory.Grothendieck.Telescope.localHomology_stage_finite_support_stabilizes
+#print axioms CategoryTheory.Grothendieck.Telescope.localHomology_stage_finite_support_stabilizes
+
+#check CategoryTheory.Grothendieck.Telescope.stageHomologyIsColimit
+#print axioms CategoryTheory.Grothendieck.Telescope.stageHomologyIsColimit

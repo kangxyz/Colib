@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0245"
+title = "Devissage layers and the Q-inclusion comma category"
+kind = "comparison"
+section = "restricted-spans"
+order = 50
+statement = "The actual quotient-span functor is an equivalence from the poset of nested subobjects with quotient in the property to the Q-inclusion comma category. The layer order reverses the lower endpoint and preserves the upper endpoint; both inequalities are recovered from actual comma morphisms."
+scope = "An abelian category in independent object and morphism universes. The property contains zero and is closed under subobjects, quotients and finite products. Its full subcategory uses the intrinsic Mathlib abelian structure, not an extension-closed inherited exact structure. No filtration hypothesis is needed for this categorical equivalence."
+review = "author_checked"

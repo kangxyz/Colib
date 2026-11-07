@@ -31,7 +31,7 @@ The actual maps, coordinate formulas and universe parameters are retained.
 
 noncomputable section
 
-open CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex Topology Set
+open CategoryTheory CategoryTheory.Limits Convexity.StdSimplex Topology Set
 open scoped Topology unitInterval
 
 universe u
@@ -43,8 +43,8 @@ namespace TopCat
 
 /-- The actual inclusion of a parametrized simplex boundary. -/
 def parameterizedSimplexBoundaryInclusion (X : TopCat.{u}) (n : ℕ) :
-    TopCat.of (X × simplexBoundary n) ⟶
-      TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) :=
+    TopCat.of (X × Convexity.StdSimplex.boundary n) ⟶
+      TopCat.of (X × Convexity.StdSimplex ℝ (Fin (n + 1))) :=
   TopCat.ofHom ⟨fun p ↦ (p.1, p.2.1), continuous_fst.prodMk
     (continuous_subtype_val.comp continuous_snd)⟩
 
@@ -54,20 +54,20 @@ theorem isClosedEmbedding_parameterizedSimplexBoundary
     (X : TopCat.{u}) (n : ℕ) :
     IsClosedEmbedding (TopCat.parameterizedSimplexBoundaryInclusion X n) := by
   exact (Homeomorph.refl X).isClosedEmbedding.prodMap
-    (isClosed_simplexBoundary n).isClosedEmbedding_subtypeVal
+    (isClosed_boundary n).isClosedEmbedding_subtypeVal
 
 section SimplexAttachment
 
 variable (X : TopCat.{u}) (n : ℕ) {C D : TopCat.{u}}
-    {f : TopCat.of (X × simplexBoundary n) ⟶ C}
-    {g : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⟶ D}
+    {f : TopCat.of (X × Convexity.StdSimplex.boundary n) ⟶ C}
+    {g : TopCat.of (X × Convexity.StdSimplex ℝ (Fin (n + 1))) ⟶ D}
     {j : C ⟶ D}
     (sq : IsPushout (TopCat.parameterizedSimplexBoundaryInclusion X n) f g j)
 
 /-- Extend the simplex's radial boundary coordinate across the old space,
 where it has the constant value one. -/
 def simplexAttachmentDefect : C(D, ℝ) := by
-  let b : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⟶ TopCat.of (ULift.{u} ℝ) :=
+  let b : TopCat.of (X × Convexity.StdSimplex ℝ (Fin (n + 1))) ⟶ TopCat.of (ULift.{u} ℝ) :=
     TopCat.ofHom ⟨fun z ↦ ULift.up (simplexBoundaryDefect z.2), by fun_prop⟩
   let c : C ⟶ TopCat.of (ULift.{u} ℝ) := TopCat.const (ULift.up (1 : ℝ))
   have h : TopCat.parameterizedSimplexBoundaryInclusion X n ≫ b = f ≫ c := by
@@ -77,7 +77,7 @@ def simplexAttachmentDefect : C(D, ℝ) := by
     rw [(simplexBoundaryDefect_eq_one_iff z.2.1).mpr z.2.2]
   exact (⟨ULift.down, continuous_uliftDown⟩ : C(ULift.{u} ℝ, ℝ)).comp (sq.desc b c h).hom
 
-@[simp] theorem simplexAttachmentDefect_cell (z : X × StdSimplex ℝ (Fin (n + 1))) :
+@[simp] theorem simplexAttachmentDefect_cell (z : X × Convexity.StdSimplex ℝ (Fin (n + 1))) :
     simplexAttachmentDefect X n sq (g z) = simplexBoundaryDefect z.2 := by
   simp only [simplexAttachmentDefect, ContinuousMap.comp_apply]
   rw [← ConcreteCategory.comp_apply, sq.inl_desc]
@@ -97,7 +97,7 @@ theorem isOpen_simplexAttachmentCollar : IsOpen (simplexAttachmentCollar X n sq)
   isOpen_lt continuous_const (simplexAttachmentDefect X n sq).continuous
 
 @[simp] theorem simplexAttachmentCollar_cell_iff
-    (z : X × StdSimplex ℝ (Fin (n + 1))) :
+    (z : X × Convexity.StdSimplex ℝ (Fin (n + 1))) :
     g z ∈ simplexAttachmentCollar X n sq ↔ z.2 ∈ simplexBoundaryCollar n := by
   change (1 : ℝ) / 2 < simplexAttachmentDefect X n sq (g z) ↔ _
   rw [simplexAttachmentDefect_cell]

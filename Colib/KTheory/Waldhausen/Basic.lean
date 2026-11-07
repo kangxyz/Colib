@@ -7,7 +7,7 @@ Authors: kangxyz
 module
 
 public import Colib.CategoryTheory.Waldhausen.Basic
-public import Colib.CategoryTheory.Waldhausen.SConstruction
+public import Colib.CategoryTheory.Waldhausen.SConstruction.Zero
 public import Mathlib.AlgebraicTopology.SimplicialSet.TopAdj
 public import Mathlib.Topology.Homotopy.HomotopyGroup
 
@@ -42,16 +42,6 @@ namespace CategoryTheory.Waldhausen
 
 variable {C : Type u} [Category.{v} C]
 variable (cof weq : MorphismProperty C)
-
-/-- The all-zero quotient diagram is a simplex in every degree. -/
-def zeroSimplex [cof.ContainsIdentities] [weq.ContainsIdentities]
-    (Z : C) (hZ : IsZero Z) (n : SimplexCategoryᵒᵖ) :
-    (sSet cof weq).obj n :=
-  ⟨(Functor.const (Grid n.unop)).obj Z, {
-    zero := fun _ _ ↦ hZ
-    cofibration := fun _ _ _ _ _ _ ↦ cof.id_mem Z
-    quotient := fun _ _ _ _ _ _ ↦ IsPushout.id_horiz (𝟙 Z)
-    weak := fun _ _ _ _ _ _ ↦ weq.id_mem Z }⟩
 
 /-- The genuine topological realization of the diagonal S-construction. -/
 def delooping : TopCat.{max u v} := SSet.toTop.obj (sSet cof weq)

@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0268"
+title = "Dense Waldhausen cofinality on the original inclusion"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 310
+statement = "The actual dense full-subcategory inclusion induces an equivalence in every positive K-degree, is injective in every nonnegative degree, and has image the kernel of change of weak equivalences."
+scope = "Independent object and morphism universes; binary coproducts; zero membership, weak repleteness, extension and quotient closure, and actual coproduct complements. Genuine fine joint-cylinder data and its separate second-endpoint section are retained. The degree-zero exact tail is surjective onto actual coarse K-zero, which its original grading identifies with the actual common-complement class group. The dense inclusion is not asserted surjective in degree zero. The generalized class map agrees with the original matching-universe map. Its positive equivalence has the original canonical inclusion KMap as forward map. This is an adaptation of Thomason-Trobaugh 1.10.1 and Exercise 1.10.2 for the unnormalized IsZero S-construction."
+review = "author_checked"
+provenance = "quillen"

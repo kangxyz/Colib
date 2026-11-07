@@ -15,7 +15,6 @@ commutes with Mathlib's actual AdjoinRoot.map. Both directions are built using t
 liftAlgHom and identified by their values on the root. No tensor-product model, new carrier,
 norm, or adapter is introduced. The coefficient rings need not be fields.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

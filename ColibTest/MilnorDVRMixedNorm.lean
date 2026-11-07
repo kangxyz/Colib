@@ -9,7 +9,7 @@ import Colib.KTheory.MilnorK.Norm.DVRMixed
 import Colib.KTheory.MilnorK.Norm.DVRDegreeOne
 
 /-!
-Uncompiled consumers of the canonical native square on the existing mixed span.
+Consumers of the canonical native square on the existing mixed span.
 The coefficient premise, exponent-one case, and Henselian/tame prime case stay distinct.
 The degree-one regression explicitly uses the already compiled unconditional theorem.
 -/

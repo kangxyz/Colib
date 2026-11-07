@@ -23,8 +23,7 @@ universe as required by native `milnorKRingMap`; the preliminary field dictionar
 independent universes. No characteristic, separability, or finite-extension hypothesis occurs.
 
 This does not prove image support at all other points, infinity naturality, a simple-norm
-base-change formula, or norm tower independence. Source-only draft: no Lean/Lake command has
-been run on this file. Earlier compiled supporting files are not modified.
+base-change formula, or norm tower independence.
 -/
 
 @[expose] public noncomputable section

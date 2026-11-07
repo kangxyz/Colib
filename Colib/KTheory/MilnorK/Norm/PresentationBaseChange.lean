@@ -19,7 +19,6 @@ The equivalence and its square are constructed inside the proof rather than assu
 The mixed-span hypothesis is explicit. This supporting theorem alone is not a global
 presentation-independence result. It uses no new norm or map definition.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

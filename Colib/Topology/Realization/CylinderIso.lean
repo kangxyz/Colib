@@ -18,8 +18,8 @@ public import Colib.Topology.Realization.Cylinder
 Adapted from `Quillen/Topology/Realization/CylinderIso.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The canonical maps, equality hypotheses,
 endpoint orientation, independent universes and `ULift` direction are retained.
-The representable comparison uses the established finite-simplex coordinate
-adapter at the pinned Mathlib boundary. The extension to arbitrary simplicial
+The representable comparison uses SimplexCategory.toTopHomeo directly
+with the native interval homeomorphism. The extension to arbitrary simplicial
 sets uses their actual colimit of representables, not general preservation of
 products by geometric realization.
 -/
@@ -27,7 +27,7 @@ products by geometric realization.
 
 noncomputable section
 
-open Convexity CategoryTheory Limits MonoidalCategory CartesianMonoidalCategory Opposite
+open CategoryTheory Limits MonoidalCategory CartesianMonoidalCategory Opposite
 open scoped Simplicial Topology unitInterval
 
 universe u
@@ -39,16 +39,15 @@ instance realizationCylinderComparison_standard_isIso (n : ℕ) :
     IsIso (realizationCylinderComparison (Δ[n] : SSet.{u})) := by
   let e : |(Δ[n] ⊗ Δ[1] : SSet.{u})| ≃ₜ (|(Δ[n] : SSet.{u})| × TopCat.I.{u}) :=
     (realizationPrismHomeomorph n).trans
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm.prodCongr TopCat.I.homeomorph.symm)
+      ((SimplexCategory.toTopHomeo ⦋n⦌).symm.prodCongr TopCat.I.homeomorph.symm)
   have heq : realizationCylinderComparison (Δ[n] : SSet.{u}) =
       (TopCat.isoOfHomeo e).hom := by
     apply TopCat.hom_ext
     apply ContinuousMap.ext
     intro x
     apply Prod.ext
-    · exact ((FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm_apply_apply _).symm
-    · exact (FiniteSimplexAdapter.realization_interval_compat
-        (SSet.toTop.map (snd Δ[n] Δ[1]) x)).symm
+    · exact ((SimplexCategory.toTopHomeo ⦋n⦌).symm_apply_apply _).symm
+    · rfl
   rw [heq]
   infer_instance
 

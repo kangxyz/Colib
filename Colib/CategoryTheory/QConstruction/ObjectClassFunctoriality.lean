@@ -37,7 +37,8 @@ variable {C : Type u} [Category.{v} C] [Preadditive C] [HasFiniteBiproducts C]
 /-- The object-loop construction commutes with functors between groupoids. -/
 lemma qObjectClass_comp {D T : Type*} [Groupoid D] [Groupoid T]
     (F : E.QCategory ⥤ D) (G : D ⥤ T) (X : C) :
-    E.qObjectClass (F ⋙ G) X = G.map (E.qObjectClass F X) := by
+    E.qObjectClass (F ⋙ G) X = G.mapEnd _ (E.qObjectClass F X) := by
+  apply End.ext
   simp [qObjectClass]
 
 

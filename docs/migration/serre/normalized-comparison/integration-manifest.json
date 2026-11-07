@@ -1,0 +1,75 @@
+{
+  "source_revision": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "files": [
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "Colib/CategoryTheory/TheoremB/FunctorIso.lean",
+      "sha256": "133db43b786bf9f2642b5eab11d98afe3ed9cdf0c52039b58ca9ba5ff9016a03"
+    },
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "Colib/CategoryTheory/TheoremB/Naturality.lean",
+      "sha256": "a1a6d7a0647f984e0bfca9a63b5ad1a6a4330d610e0c049928b1b3f0c6aed635"
+    },
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "Colib/CategoryTheory/TheoremB/StructuredFunctorIso.lean",
+      "sha256": "a92080bbe16526dc5e59f859011f3196c99939a3e50a23cefa4ea15742c3cba9"
+    },
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "Colib/CategoryTheory/TheoremB/StructuredIsoHomotopy.lean",
+      "sha256": "b8ecb302a18cc32d4930b74ec7117cee45191c2fa6c83e6036ac00d8a6b363ed"
+    },
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "Colib/Topology/ClassifyingSpace/FunctorChain.lean",
+      "sha256": "20bd7c4d7aedb92ddc75298b901362ab6b592c925c3021b5da913584edbe3f15"
+    },
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "Colib/Topology/ClassifyingSpace/InverseHomotopy.lean",
+      "sha256": "5d7cdf9556a94399c1657ff6ab63f94c33577cb54f6ec0dd8cd9ab84e9600764"
+    },
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "Colib/Topology/ClassifyingSpace/Naturality.lean",
+      "sha256": "947932cd563b3a2833bf5ecf7d8ba142e20412d1008fc20d26359307d269ef73"
+    },
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "Colib/Topology/HomotopyFiber/Nullhomotopy.lean",
+      "sha256": "d7e449e681cb84367039a2c61e50c7825f8be5370a88c6bc411650cd026eab76"
+    },
+    {
+      "draft": "serre-iso-coherence-draft",
+      "relative_path": "ColibTest/Topology/SerreIsoCoherence.lean",
+      "sha256": "a84d7d74eaecdf1376e69e81d573ff4d49640db6f8a0ba4bfe81d26532c4317f"
+    },
+    {
+      "draft": "serre-normalized-comparison-draft",
+      "relative_path": "Colib/CategoryTheory/TheoremB/StructuredBasepoint.lean",
+      "sha256": "5e4836c1553ab9537f1c3f765b74d04e6726123b86b38850b61e324607445963"
+    },
+    {
+      "draft": "serre-normalized-comparison-draft",
+      "relative_path": "Colib/KTheory/Quillen/Localization/Serre/NormalizedBasepoint.lean",
+      "sha256": "a7b4e659fdc7273d6feb500272605948abd0d015289f18be61df0d672ee70e4a"
+    },
+    {
+      "draft": "serre-normalized-comparison-draft",
+      "relative_path": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "sha256": "0d9539cf5d9366c0bdbadd024ebde55679c77d0fefd33a84cffb4efd0ece34e8"
+    },
+    {
+      "draft": "serre-normalized-comparison-draft",
+      "relative_path": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "sha256": "32b24cb3379277c25a40af19712fbcf773643cf5ff29b02b0972f2f1bfc4da9e"
+    },
+    {
+      "draft": "serre-normalized-comparison-draft",
+      "relative_path": "ColibTest/SerreNormalizedComparison.lean",
+      "sha256": "7e696f63b34883dc745860a719dcc18d855e02a67426bc84844147f881056bd9"
+    }
+  ]
+}

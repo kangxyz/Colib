@@ -20,7 +20,7 @@ For an integral coefficient extension, every target point lies over a source clo
 For an arbitrary coefficient homomorphism, this holds at every point of nonzero contraction.
 
 No new point, field, norm, residue, or map model is introduced. The field universes are
-independent. This file is a source-only draft and has not been compiled.
+independent.
 -/
 
 @[expose] public noncomputable section

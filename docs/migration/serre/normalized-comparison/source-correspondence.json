@@ -1,0 +1,281 @@
+{
+  "source_revision": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "declarations": [
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 34,
+      "source_declaration": "quotientNormalizedIso",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientNormalizedIso",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 42,
+      "source_declaration": "inclusionNormalizedIso",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.inclusionNormalizedIso",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 51,
+      "source_declaration": "NormalizedZeroComma",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.NormalizedZeroComma",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 56,
+      "source_declaration": "normalizedSerreToZeroComma",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroComma",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 64,
+      "source_declaration": "normalizedSerreToZeroCommaIso",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroCommaIso",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 76,
+      "source_declaration": "normalizedSerreToZeroComma_isEquivalence",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroComma_isEquivalence",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 81,
+      "source_declaration": "normalizedZeroCommaEquivalence",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedZeroCommaEquivalence",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 86,
+      "source_declaration": "normalizedZeroCommaClassifyingHomotopyEquiv",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedZeroCommaClassifyingHomotopyEquiv",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 91,
+      "source_declaration": "normalizedZeroCommaClassifyingHomotopyEquiv_toFun",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedZeroCommaClassifyingHomotopyEquiv_toFun",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 95,
+      "source_declaration": "normalizedSerreToZeroComma_projection",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroComma_projection",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 99,
+      "source_declaration": "normalizedSerreToZeroComma_transformation",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroComma_transformation",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 107,
+      "source_declaration": "normalizedSerreToZeroComma_nullhomotopy",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroComma_nullhomotopy",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 123,
+      "source_declaration": "normalizedSerreToZeroComma_fiberComparison",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroComma_fiberComparison",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedComma.lean",
+      "source_line": 146,
+      "source_declaration": "normalizedQuotient_transitions",
+      "native_file": null,
+      "native_declaration": null,
+      "status": "omitted conditional wrapper"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 34,
+      "source_declaration": "NormalizedZeroStructuredComma",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.NormalizedZeroStructuredComma",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 40,
+      "source_declaration": "normalizedSerreToZeroStructuredComma",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroStructuredComma",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 49,
+      "source_declaration": "normalizedSerreToZeroStructuredCommaIso",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroStructuredCommaIso",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 67,
+      "source_declaration": "normalizedZeroStructuredCommaClassifyingHomotopyEquiv",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedZeroStructuredCommaClassifyingHomotopyEquiv",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 82,
+      "source_declaration": "normalizedZeroStructuredCommaClassifyingHomotopyEquiv_toFun",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedZeroStructuredCommaClassifyingHomotopyEquiv_toFun",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 86,
+      "source_declaration": "normalizedSerreToZeroStructuredComma_projection",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroStructuredComma_projection",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 92,
+      "source_declaration": "normalizedSerreToZeroStructuredComma_transformation",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroStructuredComma_transformation",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 100,
+      "source_declaration": "normalizedSerreToZeroStructuredComma_nullhomotopy",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroStructuredComma_nullhomotopy",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 118,
+      "source_declaration": "normalizedQuotient_structuredTransitions",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedQuotient_structuredTransitions",
+      "status": "strengthened: actual unconditional structured transition theorem"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 124,
+      "source_declaration": "normalizedStructuredFiberComparison",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedStructuredFiberComparison",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 131,
+      "source_declaration": "normalizedStructuredFiberComparison_eq_lift",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedStructuredFiberComparison_eq_lift",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 155,
+      "source_declaration": "normalizedStructuredFiberComparisonHomotopy",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedStructuredFiberComparisonHomotopy",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "source_line": 165,
+      "source_declaration": "normalizedStructuredFiberComparisonHomotopy_based",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedStructuredComma.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedStructuredFiberComparisonHomotopy_based",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/StructuredComparisonWeak.lean",
+      "source_line": 30,
+      "source_declaration": "structuredFiberComparison_identity_of_eq",
+      "native_file": "Colib/CategoryTheory/TheoremB/StructuredBasepoint.lean",
+      "native_declaration": "CategoryTheory.TheoremB.structuredFiberComparison_identity_of_eq",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/StructuredComparisonWeak.lean",
+      "source_line": 39,
+      "source_declaration": "structuredFiberComparison_bijective_of_eq",
+      "native_file": null,
+      "native_declaration": null,
+      "status": "omitted conditional wrapper"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/StructuredComparisonWeak.lean",
+      "source_line": 54,
+      "source_declaration": "quotientNormalized_obj_zero",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedBasepoint.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.quotientNormalized_obj_zero",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/StructuredComparisonWeak.lean",
+      "source_line": 58,
+      "source_declaration": "normalizedSerreToZeroStructuredComma_obj_zero",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedBasepoint.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroStructuredComma_obj_zero",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/StructuredComparisonWeak.lean",
+      "source_line": 75,
+      "source_declaration": "normalizedSerreToZeroStructuredComma_map_basepoint",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedBasepoint.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedSerreToZeroStructuredComma_map_basepoint",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/StructuredComparisonWeak.lean",
+      "source_line": 83,
+      "source_declaration": "normalizedStructuredFiberComparison_basepoint",
+      "native_file": "Colib/KTheory/Quillen/Localization/Serre/NormalizedBasepoint.lean",
+      "native_declaration": "CategoryTheory.ExactCategory.SerreLocalization.normalizedStructuredFiberComparison_basepoint",
+      "status": "actual maps and hypotheses retained"
+    },
+    {
+      "source_file": "Quillen/Localization/Serre/StructuredComparisonWeak.lean",
+      "source_line": 92,
+      "source_declaration": "basedLocalizationFiberComparison_bijective_of_structured",
+      "native_file": null,
+      "native_declaration": null,
+      "status": "omitted conditional wrapper"
+    }
+  ],
+  "added_exact_coordinate_lemmas": [
+    "CategoryTheory.ExactCategory.SerreLocalization.normalizedStructuredFiberComparisonHomotopy_projection",
+    "CategoryTheory.ExactCategory.SerreLocalization.normalizedStructuredFiberComparisonHomotopy_path"
+  ]
+}

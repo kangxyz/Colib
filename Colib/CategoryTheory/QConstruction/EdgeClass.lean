@@ -50,13 +50,14 @@ lemma qSpan_factor {X Y : C} (s : Span E.deflation E.inflation X Y) :
 using the canonical zero-apex arrows. -/
 def qEdgeClass {D : Type*} [Groupoid D] (F : E.QCategory ⥤ D)
     {X Y : E.QCategory} (f : X ⟶ Y) : End (F.obj E.qZero) :=
-  F.map (E.fromZero X) ≫ F.map f ≫ inv (F.map (E.fromZero Y))
+  End.of (F.map (E.fromZero X) ≫ F.map f ≫ inv (F.map (E.fromZero Y)))
 
 /-- An admissible inclusion contributes a trivial closed edge. -/
 @[simp] lemma qEdgeClass_qInflation {D : Type*} [Groupoid D] (F : E.QCategory ⥤ D)
     {X Y : C} (i : X ⟶ Y) (hi : E.inflation i) :
     E.qEdgeClass F (E.qInflation i hi) = 1 := by
-  dsimp only [qEdgeClass]
+  apply End.ext
+  simp only [qEdgeClass, End.one_asHom]
   rw [← Category.assoc, ← F.map_comp, E.fromZero_qInflation]
   exact IsIso.hom_inv_id _
 
@@ -65,7 +66,7 @@ multiplication convention made explicit. -/
 lemma qEdgeClass_comp {D : Type*} [Groupoid D] (F : E.QCategory ⥤ D)
     {X Y Z : E.QCategory} (f : X ⟶ Y) (g : Y ⟶ Z) :
     E.qEdgeClass F (f ≫ g) = E.qEdgeClass F g * E.qEdgeClass F f := by
-  change _ = (_ ≫ _ ≫ _) ≫ (_ ≫ _ ≫ _)
+  apply End.ext
   simp [qEdgeClass, Category.assoc]
 
 /-- Closing the Q-arrow of an admissible quotient yields its kernel object
@@ -77,6 +78,7 @@ lemma qEdgeClass_qDeflation {D : Type*} [Groupoid D] (F : E.QCategory ⥤ D)
   have h₁ := congrArg F.map (E.fromZero_qInflation S.f (E.inflation_of_conflation hS))
   have h₂ := congrArg F.map (E.conflation_q_relation hS)
   simp only [Functor.map_comp] at h₁ h₂
+  apply End.ext
   dsimp only [qEdgeClass, qObjectClass]
   apply (cancel_mono (F.map (E.fromZero (QConstruction.of E.deflation E.inflation S.X₂)))).1
   simp only [Category.assoc, IsIso.inv_hom_id, Category.comp_id]

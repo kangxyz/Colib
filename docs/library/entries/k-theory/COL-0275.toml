@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0275"
+title = "The actual Waldhausen composition triangle"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 25
+statement = "Two composable pointwise weak natural transformations between three exact functors determine a genuine simplicial triangle whose faces are their original cylinders and the cylinder of their composite."
+scope = "The original unnormalized IsZero S-construction and both transformation components are retained. No invertibility or chosen-zero preservation is required for the triangle. Three explicit chosen-zero equalities make the entire zero-vertex triangle constant. The construction proves both grid reindexing laws and does not assert iterated-S, prespectrum or spectrum compatibility."
+review = "author_checked"
+provenance = "quillen"

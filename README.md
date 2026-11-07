@@ -26,7 +26,7 @@ as the artifact `colib-library`. Release catalog assets are versioned with the c
 
 ## Use and build
 
-The pinned toolchain is Lean 4.34.0-rc2. Add the repository as a Lake dependency
+The pinned toolchain is Lean 4.35.0. Add the repository as a Lake dependency
 using a Git checkout and an exact release commit.
 
 ```lean

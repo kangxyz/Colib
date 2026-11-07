@@ -8,7 +8,7 @@ module
 import Colib.KTheory.MilnorK.Norm.PrimeChosenPresentation
 
 /-!
-Uncompiled consumers of the selected prime-degree chosen-norm presentation.
+Consumers of the selected prime-degree chosen-norm presentation.
 No perfectness, normality, or separability instance is present in these consumers.
 -/
 

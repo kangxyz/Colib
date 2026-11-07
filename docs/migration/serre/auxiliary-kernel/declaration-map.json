@@ -1,0 +1,705 @@
+[
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "ImageKernelComma",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.ImageKernelComma"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelPullback",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelPullback"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelProjection",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelProjection"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelPullbackIso",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelPullbackIso"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelCommaRetraction",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelCommaRetraction"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "epiAuxiliary_postcompose_image",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliary_postcompose_image"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelPostcompose",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelPostcompose"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelPostcomposeIso",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelPostcomposeIso"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelCommaPostcompose",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelCommaPostcompose"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelCommaSection",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelCommaSection"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelCommaCounit",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelCommaCounit"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "imageKernelComma_contractible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.imageKernelComma_contractible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "auxiliaryKernelComma_contractible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryKernelComma_contractible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "auxiliaryKernelClassifyingHomotopyEquiv",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryKernelClassifyingHomotopyEquiv"
+  },
+  {
+    "source": "Quillen/Localization/Serre/ImageKernelComma.lean",
+    "source_declaration": "auxiliaryKernelClassifyingHomotopyEquiv_toFun",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/ImageKernelComma.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryKernelClassifyingHomotopyEquiv_toFun"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "span_naturality_of_pullback",
+    "target": "Colib/CategoryTheory/QConstruction/Abelian/SpanNaturality.lean",
+    "target_declaration": "CategoryTheory.QConstruction.span_naturality_of_pullback",
+    "owner": "parent extraction"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "overBaseChangeCompatible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overBaseChangeCompatible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "overBaseChangeQ",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overBaseChangeQ"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "compatibleKernelQIso",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.compatibleKernelQIso"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "overBaseChangeKernelQIso",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overBaseChangeKernelQIso"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "overPostcomposeCompatible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overPostcomposeCompatible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "overPostcomposeQ",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overPostcomposeQ"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "overPostcomposeKernelQIso",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overPostcomposeKernelQIso"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "overBaseChangeCounitQ",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overBaseChangeCounitQ"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "overBaseChangeCounitQ_kernel",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overBaseChangeCounitQ_kernel"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "auxiliaryBaseChange",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryBaseChange"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "epiAuxiliaryBaseChange",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryBaseChange"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "auxiliaryPostcompose",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryPostcompose"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "auxiliaryBaseChangeCounit",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryBaseChangeCounit"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "auxiliaryBaseChangeKernelIso",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryBaseChangeKernelIso"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "auxiliaryPostcomposeKernelIso",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryPostcomposeKernelIso"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "source_declaration": "auxiliaryBaseChangeCounit_kernel",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChange.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryBaseChangeCounit_kernel"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "OverQ",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.OverQ"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "overForgetCompatible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overForgetCompatible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "overForgetQ",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overForgetQ"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "overForgetQ_faithful",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overForgetQ_faithful"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "overKernelCompatible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overKernelCompatible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "overKernelQ",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overKernelQ"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "auxiliaryKernelProperty",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryKernelProperty"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "AuxiliaryKernel",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.AuxiliaryKernel"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "auxiliaryKernelFunctor",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryKernelFunctor"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "auxiliaryKernelFunctor_inclusion",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryKernelFunctor_inclusion"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "epiAuxiliaryKernelProperty",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryKernelProperty"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "EpiAuxiliaryKernel",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.EpiAuxiliaryKernel"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "epiAuxiliaryInclusion",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryInclusion"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "epiAuxiliaryKernelFunctor",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryKernelFunctor"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "epiAuxiliaryBase",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryBase"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "epiAuxiliaryBase_kernel_isZero",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryBase_kernel_isZero"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "epiAuxiliaryBaseArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryBaseArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "map_epiAuxiliaryKernelFunctor",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.map_epiAuxiliaryKernelFunctor"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "epiAuxiliaryBaseArrow_kernel_surjection",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryBaseArrow_kernel_surjection"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "epiAuxiliaryBaseArrow_unique",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryBaseArrow_unique"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "EpiKernelComma",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.EpiKernelComma"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "surjectiveKernelCommaProperty",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.surjectiveKernelCommaProperty"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "SurjectiveKernelComma",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.SurjectiveKernelComma"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "initialKernelArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.initialKernelArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "initialKernelArrow_surjection",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.initialKernelArrow_surjection"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "surjectiveKernelCommaInitial",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.surjectiveKernelCommaInitial"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "surjectiveKernelCommaInitialTo",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.surjectiveKernelCommaInitialTo"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "surjectiveKernelCommaInitialIsInitial",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.surjectiveKernelCommaInitialIsInitial"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "source_declaration": "surjectiveKernelComma_contractible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryKernel.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.surjectiveKernelComma_contractible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushoutMap",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushoutMap"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushoutInl",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushoutInl"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushoutInr",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushoutInr"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout_hom_epi",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout_hom_epi"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushoutInl_mono",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushoutInl_mono"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushoutInr_epi",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushoutInr_epi"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout_isPullback",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout_isPullback"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout_kernel_isPullback",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout_kernel_isPullback"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout_kernelInl_mono",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout_kernelInl_mono"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout_kernelInr_epi",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout_kernelInr_epi"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout_kernel_isPushout",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout_kernel_isPushout"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushoutInl_kernel_isPushout",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushoutInl_kernel_isPushout"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout_forget_cospan",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout_forget_cospan"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "source_declaration": "overSpanPushout_kernel_cospan",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutComparison.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSpanPushout_kernel_cospan"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "source_declaration": "overQ_image_mono",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overQ_image_mono"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "source_declaration": "auxiliaryImagePoset_contractible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryImagePoset_contractible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "source_declaration": "auxiliaryImageFunctor",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryImageFunctor"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "source_declaration": "AuxiliaryKernelComma",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.AuxiliaryKernelComma"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "source_declaration": "auxiliaryKernelCommaImageFunctor",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryImages.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryKernelCommaImageFunctor"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChangeEquivalence.lean",
+    "source_declaration": "auxiliaryBaseChangeClassifyingHomotopyEquiv",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChangeEquivalence.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryBaseChangeClassifyingHomotopyEquiv"
+  },
+  {
+    "source": "Quillen/Localization/Serre/AuxiliaryBaseChangeEquivalence.lean",
+    "source_declaration": "auxiliaryBaseChangeClassifyingHomotopyEquiv_toFun",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/AuxiliaryBaseChangeEquivalence.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.auxiliaryBaseChangeClassifyingHomotopyEquiv_toFun"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutExistence.lean",
+    "source_declaration": "kernelPushout_factor_exists",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutExistence.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelPushout_factor_exists"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushout.lean",
+    "source_declaration": "kernelPushoutAuxiliary",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushout.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelPushoutAuxiliary"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overInflationArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overInflationArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overSurjectionArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSurjectionArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overForgetQ_inflationArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overForgetQ_inflationArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overForgetQ_surjectionArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overForgetQ_surjectionArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overKernel_map_epi",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overKernel_map_epi"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overKernel_map_mono",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overKernel_map_mono"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overKernelQ_inflationArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overKernelQ_inflationArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overKernelQ_surjectionArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overKernelQ_surjectionArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overQ_exists_epi_of_kernel_surjection",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overQ_exists_epi_of_kernel_surjection"
+  },
+  {
+    "source": "Quillen/Localization/Serre/OverQArrows.lean",
+    "source_declaration": "overSurjectionArrow_injective",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/OverQArrows.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overSurjectionArrow_injective"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "epiAuxiliary_obj_epi",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliary_obj_epi"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "subcategoryQ_surjection_iff",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.subcategoryQ_surjection_iff"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionExtension",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionExtension"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionArrow",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionArrow"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionArrow_map",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionArrow_map"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionArrow_surjection",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionArrow_surjection"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionObject",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionObject"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionUnitLeft",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionUnitLeft"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionUnit",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionUnit"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionStructured",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionStructured"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionStructured_nonempty_hom",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionStructured_nonempty_hom"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionStructured_hom_ext",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionStructured_hom_ext"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionStructuredIsInitial",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionStructuredIsInitial"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "surjectiveKernelComma_inclusion_hasInitial",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.surjectiveKernelComma_inclusion_hasInitial"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflector",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflector"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "kernelCommaReflectionAdjunction",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.kernelCommaReflectionAdjunction"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "epiKernelComma_contractible",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiKernelComma_contractible"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "epiAuxiliaryKernelClassifyingHomotopyEquiv",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryKernelClassifyingHomotopyEquiv"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelReflection.lean",
+    "source_declaration": "epiAuxiliaryKernelClassifyingHomotopyEquiv_toFun",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelReflection.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.epiAuxiliaryKernelClassifyingHomotopyEquiv_toFun"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutUniqueness.lean",
+    "source_declaration": "overQ_hom_ext_of_kernel_and_inflation",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutUniqueness.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overQ_hom_ext_of_kernel_and_inflation"
+  },
+  {
+    "source": "Quillen/Localization/Serre/KernelPushoutUniqueness.lean",
+    "source_declaration": "overQ_hom_ext_of_kernel_triangles",
+    "target": "Colib/KTheory/Quillen/Localization/Serre/KernelPushoutUniqueness.lean",
+    "target_declaration": "CategoryTheory.ExactCategory.SerreLocalization.overQ_hom_ext_of_kernel_triangles"
+  },
+  {
+    "source": "Quillen/Topology/ClassifyingSpace/FactorContraction.lean",
+    "source_declaration": "classifyingSpace_contractible_of_factor_natTrans",
+    "target": "Colib/Topology/ClassifyingSpace/FactorContraction.lean",
+    "target_declaration": "CategoryTheory.classifyingSpace_contractible_of_factor_natTrans"
+  }
+]

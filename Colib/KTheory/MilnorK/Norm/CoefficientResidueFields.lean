@@ -20,7 +20,7 @@ case proves the required contracted ideal equality using irreducibility; it does
 residue-field comparison. No norm, residue, rational-function map, or field model is defined.
 
 These field-level equations do not yet establish Milnor residue naturality or simple-norm
-base change. Source-only draft. No Lean/Lake command has been run on this file.
+base change.
 -/
 
 @[expose] public noncomputable section

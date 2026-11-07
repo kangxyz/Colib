@@ -112,8 +112,7 @@ def seqComplexBaseChangeIso (f : Fin n → R) :
       apply ModuleCat.hom_ext
       apply LinearMap.ext
       intro z
-      induction z using TensorProduct.induction_on with
-      | zero => simp only [map_zero]
+      induction z using TensorProduct.inductionOn with
       | tmul a x => exact (seqExteriorBaseChange_d (R := R) (A := A) f j a x).symm
       | add x y hx hy => simp only [map_add, hx, hy])
 
@@ -147,8 +146,7 @@ theorem seqComplexBaseChangeIso_augmentation (f : Fin n → R) :
   apply ModuleCat.hom_ext
   apply LinearMap.ext
   intro z
-  induction z using TensorProduct.induction_on with
-  | zero => simp only [map_zero]
+  induction z using TensorProduct.inductionOn with
   | add x y hx hy => simp only [map_add, hx, hy]
   | tmul a x =>
     change Ideal.Quotient.mk _ (exteriorPower.zeroEquiv A (Fin n → A)
@@ -171,8 +169,7 @@ theorem seqComplexBaseChangeIso_topCocycle (f : Fin n → R) (N : ModuleCat.{u} 
   apply ModuleCat.hom_ext
   apply LinearMap.ext
   intro z
-  induction z using TensorProduct.induction_on with
-  | zero => simp only [map_zero]
+  induction z using TensorProduct.inductionOn with
   | add x y hx hy => simp only [map_add, hx, hy]
   | tmul a x =>
     change topEquiv A n (seqExteriorBaseChange (R := R) (A := A) n n (a ⊗ₜ[R] x)) •

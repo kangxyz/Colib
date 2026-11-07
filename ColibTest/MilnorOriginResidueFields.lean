@@ -7,7 +7,7 @@ module
 
 import Colib.KTheory.MilnorK.Norm.OriginResidueFields
 
-/-! Uncompiled independent-universe consumers of the actual origin coefficient map. -/
+/-! Independent-universe consumers of the actual origin coefficient map.-/
 
 noncomputable section
 

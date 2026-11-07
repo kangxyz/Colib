@@ -9,7 +9,7 @@ import Colib.KTheory.MilnorK.Norm.InfinityResidueMap
 import StacksFrontier.AlgebraicGeometry.Chow.MilnorNorm.SimpleNorm
 
 /-!
-Uncompiled consumers of native infinity-residue naturality, including its exact degree and sign.
+Consumers of native infinity-residue naturality, including its exact degree and sign.
 These do not establish a simple-norm base-change formula or a field-norm tower law.
 -/
 

@@ -7,7 +7,7 @@ module
 
 import Colib.AlgebraicGeometry.ProjectiveLine.ChartInversionMap
 
-/-! Uncompiled consumers of the existing chart inversion under coefficient extension. -/
+/-! Consumers of the existing chart inversion under coefficient extension.-/
 
 noncomputable section
 

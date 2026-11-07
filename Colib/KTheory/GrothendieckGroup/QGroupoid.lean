@@ -59,7 +59,7 @@ def qGroupoidObjectSubgroup : Subgroup E.qGroupoidZeroGroup :=
 
 instance qGroupoidObjectSubgroup_isMulCommutative : IsMulCommutative E.qGroupoidObjectSubgroup := by
   apply Subgroup.isMulCommutative_closure
-  rintro _ ⟨X, rfl⟩ _ ⟨Y, rfl⟩
+  rintro _ ⟨X, rfl⟩ _ ⟨Y, rfl⟩ _
   exact E.qObjectClass_commute E.toQGroupoid X Y
 
 /-- Every object of the explicit localization has its canonical arrow from zero. -/
@@ -68,16 +68,18 @@ def qGroupoidZeroArrow (X : E.qGroupoid) : E.toQGroupoid.obj E.qZero ⟶ X :=
 
 /-- Normalize a completed Q-arrow into a based endomorphism. -/
 def qGroupoidClosedArrow {X Y : E.qGroupoid} (f : X ⟶ Y) : E.qGroupoidZeroGroup :=
-  E.qGroupoidZeroArrow X ≫ f ≫ inv (E.qGroupoidZeroArrow Y)
+  End.of (E.qGroupoidZeroArrow X ≫ f ≫ inv (E.qGroupoidZeroArrow Y))
 
 lemma qGroupoidClosedArrow_comp {X Y Z : E.qGroupoid} (f : X ⟶ Y) (g : Y ⟶ Z) :
     E.qGroupoidClosedArrow (f ≫ g) = E.qGroupoidClosedArrow g * E.qGroupoidClosedArrow f := by
-  change _ = (_ ≫ _ ≫ _) ≫ (_ ≫ _ ≫ _)
+  apply End.ext
   simp [qGroupoidClosedArrow, Category.assoc]
 
 lemma qGroupoidClosedArrow_inv {X Y : E.qGroupoid} (e : X ≅ Y) :
     E.qGroupoidClosedArrow e.inv = (E.qGroupoidClosedArrow e.hom)⁻¹ := by
-  change _ = CategoryTheory.inv (_ ≫ _ ≫ _)
+  apply End.ext
+  change _ = CategoryTheory.inv
+    (E.qGroupoidZeroArrow X ≫ e.hom ≫ inv (E.qGroupoidZeroArrow Y))
   simp [qGroupoidClosedArrow, Category.assoc]
 
 /-- The morphism property expressing generation by canonical object classes. -/
@@ -115,14 +117,16 @@ theorem qGroupoidGenerated_eq_top : E.qGroupoidGenerated = ⊤ := by
   simp
 
 @[simp] lemma qGroupoidClosedArrow_end (f : E.qGroupoidZeroGroup) :
-    E.qGroupoidClosedArrow f = f := by simp [qGroupoidClosedArrow]
+    E.qGroupoidClosedArrow f.asHom = f := by
+  apply End.ext
+  simp [qGroupoidClosedArrow]
 
 /-- Every element of the zero-based group in the categorical localization is
 a product of canonical object classes and their inverses. -/
 theorem qGroupoidObjectSubgroup_eq_top : E.qGroupoidObjectSubgroup = ⊤ := by
   apply (Subgroup.eq_top_iff' _).2
   intro f
-  have h : E.qGroupoidGenerated f := by rw [E.qGroupoidGenerated_eq_top]; trivial
+  have h : E.qGroupoidGenerated f.asHom := by rw [E.qGroupoidGenerated_eq_top]; trivial
   simpa [qGroupoidGenerated] using h
 
 open scoped IsMulCommutative in
@@ -154,7 +158,7 @@ def qGroupoidToGrothendieck : E.qGroupoidZeroGroup →* Multiplicative E.Grothen
     E.qGroupoidToGrothendieck (E.qObjectClass E.toQGroupoid X) =
       Multiplicative.ofAdd (E.grothendieckClass X) := by
   change (SingleObj.toEnd (Multiplicative E.GrothendieckGroup)).symm
-    (E.qGroupoidGrothendieckFunctor.map (E.qObjectClass E.toQGroupoid X)) = _
+    (E.qGroupoidGrothendieckFunctor.mapEnd _ (E.qObjectClass E.toQGroupoid X)) = _
   rw [← E.qObjectClass_comp, E.toQGroupoid_comp_grothendieckFunctor,
     E.qObjectClass_qGrothendieckFunctor]
   exact MulEquiv.symm_apply_apply _ _

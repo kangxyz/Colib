@@ -18,7 +18,6 @@ symbol, so no ramification index is cancelled and no Milnor-group torsion-freene
 The arithmetic premises are discharged in a separate concrete DVR leaf. No assertion is made
 that mixed classes generate the original Milnor group.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

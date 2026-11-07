@@ -1,0 +1,128 @@
+{
+  "source_revision": "c561118b7795eb9780be9ed391c3251d6a4d0afd",
+  "items": [
+    "COL-0247",
+    "COL-0248",
+    "COL-0249",
+    "COL-0250"
+  ],
+  "files": [
+    {
+      "target": "Colib/Topology/FilteredRealization/HomotopyEquivalence.lean",
+      "item": "COL-0247",
+      "declarations": [
+        "Topology.FilteredRealization.stageHomotopyEquiv",
+        "Topology.FilteredRealization.stageHomotopyEquiv_toFun"
+      ],
+      "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
+      "reviewed_prefix_bytes": 2113,
+      "reviewed_prefix_sha256": "0fd0e452b6bd5108ac1f2e810172cb2caf74bfe746644e1b08e63569f2110ddb",
+      "target_sha256": "f1485ae8f8c8187e1a6ca4b769148a19ef806a1aab4e69c7b5ee24a95a8fb09c",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+    },
+    {
+      "target": "Colib/CategoryTheory/TheoremB/FullWeakComparison.lean",
+      "item": "COL-0248",
+      "declarations": [
+        "CategoryTheory.TheoremB.fiberComparison_isWeakHomotopyEquivalence"
+      ],
+      "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
+      "reviewed_prefix_bytes": 2023,
+      "reviewed_prefix_sha256": "e21ac96fa68ba1261995f6dbb4a8a45cc856204e5dc019e9761227e750e0b150",
+      "target_sha256": "d1db15bf59e3951a52a2c9165bf99c89e27291d0fddcfab2bdc3cd030d327b40",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+    },
+    {
+      "target": "Colib/CategoryTheory/TheoremB/StructuredFullWeakComparison.lean",
+      "item": "COL-0248",
+      "declarations": [
+        "CategoryTheory.TheoremB.structuredFiberComparison_isWeakHomotopyEquivalence"
+      ],
+      "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
+      "reviewed_prefix_bytes": 1800,
+      "reviewed_prefix_sha256": "6734be69e71930951388dee00da4d55e112f0bb6776ded779fc1b396e7ad9677",
+      "target_sha256": "78149ece79e3c9b9fa79c25e9576f8d6b7f991c848c507289324f052ec95f723",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+    },
+    {
+      "target": "Colib/CategoryTheory/TheoremB/WeakComparison.lean",
+      "item": "COL-0248",
+      "declarations": [
+        "CategoryTheory.TheoremB.fiberComparison_bijective",
+        "CategoryTheory.TheoremB.fiberComparisonPiEquiv",
+        "CategoryTheory.TheoremB.fiberComparisonPiEquiv_coe"
+      ],
+      "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
+      "reviewed_prefix_bytes": 4109,
+      "reviewed_prefix_sha256": "4325deafb6c6294f1d9d5f475d4d9d926392a72825db4ab73e7cc6611a2233f4",
+      "target_sha256": "f787cbedfa32831702cc8f739b595b9bdcca0f0568fa6c0a4c0ae7b6be23e200",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+    },
+    {
+      "target": "Colib/CategoryTheory/TheoremB/StructuredWeakComparison.lean",
+      "item": "COL-0248",
+      "declarations": [
+        "CategoryTheory.TheoremB.structuredFiberComparison_bijective",
+        "CategoryTheory.TheoremB.structuredFiberComparisonPiEquiv",
+        "CategoryTheory.TheoremB.structuredFiberComparisonPiEquiv_coe"
+      ],
+      "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
+      "reviewed_prefix_bytes": 2969,
+      "reviewed_prefix_sha256": "6634e8f267b5d1251961901c002a32d926557c3a7981ab3d15e26f2197f06ff6",
+      "target_sha256": "fe936d8685291aec5ee60a53e58d65d07932dd0abc86af91555103af39c2d082",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+    },
+    {
+      "target": "Colib/KTheory/Quillen/Localization/Serre/FiberEquivalence.lean",
+      "item": "COL-0249",
+      "declarations": [
+        "CategoryTheory.ExactCategory.SerreLocalization.basedLocalizationFiberComparison_bijective",
+        "CategoryTheory.ExactCategory.SerreLocalization.localizationFiberComparisonHom_bijective",
+        "CategoryTheory.ExactCategory.SerreLocalization.localizationFiberEquiv",
+        "CategoryTheory.ExactCategory.SerreLocalization.localizationFiberEquiv_coe",
+        "CategoryTheory.ExactCategory.SerreLocalization.basedLocalizationFiberComparison_isWeakHomotopyEquivalence"
+      ],
+      "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
+      "reviewed_prefix_bytes": 6199,
+      "reviewed_prefix_sha256": "34549c68c564695fd3fd79228f2b29706a5be770a30e01a0d33bc3b45607c5f0",
+      "target_sha256": "ca07a7046ed34155ade499c846c344979caa6a4fdbd9de9c124b08d2d356f593",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+    },
+    {
+      "target": "Colib/KTheory/Quillen/Localization/Serre/LocalizationTheorem.lean",
+      "item": "COL-0250",
+      "declarations": [
+        "CategoryTheory.ExactCategory.SerreLocalization.connectingHom",
+        "CategoryTheory.ExactCategory.SerreLocalization.comparison_comp_connectingHom",
+        "CategoryTheory.ExactCategory.SerreLocalization.connecting_unique",
+        "CategoryTheory.ExactCategory.SerreLocalization.inclusion_range_eq_quotient_ker",
+        "CategoryTheory.ExactCategory.SerreLocalization.quotient_range_eq_connecting_ker",
+        "CategoryTheory.ExactCategory.SerreLocalization.connecting_range_eq_inclusion_ker",
+        "CategoryTheory.ExactCategory.SerreLocalization.KLocalizationSequence",
+        "CategoryTheory.ExactCategory.SerreLocalization.localizationSequence",
+        "CategoryTheory.ExactCategory.SerreLocalization.localizationSequence_connecting",
+        "CategoryTheory.ExactCategory.SerreLocalization.localization_longExact",
+        "CategoryTheory.ExactCategory.SerreLocalization.localization_KZero_tail"
+      ],
+      "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
+      "reviewed_prefix_bytes": 8066,
+      "reviewed_prefix_sha256": "5dadbd7eb9f97394fd5db22ae77f5947d21f160ad4c1366d2cd0ba4c1440fa81",
+      "target_sha256": "93852dafc86999796e66ac133a54bb3926b27594ae7e5808003af05c7df4ddc8",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+    },
+    {
+      "target": "Colib/KTheory/Quillen/Localization/Serre/KZero.lean",
+      "item": "COL-0250",
+      "declarations": [
+        "CategoryTheory.ExactCategory.SerreLocalization.quotientKZero_surjective",
+        "CategoryTheory.ExactCategory.SerreLocalization.inclusion_range_eq_quotientKZero_ker"
+      ],
+      "reviewed_snapshot_commit": "9c75c6b1b25c4d3ac3b2c96b997ec41d420f2cb9",
+      "reviewed_prefix_bytes": 6755,
+      "reviewed_prefix_sha256": "a227898ce99033f0a3fa6c41c3c434e2c700306c065c6e50b105da282b1e9fb3",
+      "target_sha256": "0b5d3a40ef04d0720df97e76bf789729835f6bcbf1d53e73b9b4da39cc2a1514",
+      "change": "Append catalog/reference attributes only; original source bytes retained as a prefix."
+    }
+  ],
+  "review_boundary": "Existing bounded proof review and pre-registration build evidence remain at the recorded prefix snapshot. New catalog metadata and full-package integration checks are distinct."
+}

@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0244"
+title = "Finite admissible filtrations and factor sums"
+kind = "theorem"
+section = "exact-categories"
+order = 200
+statement = "An actual finite tower of conflations records its successive factors. Every conflation-additive invariant, and in particular the algebraic Grothendieck class, equals the sum of its values on these factors. Filtrations by essential-image factors make the induced algebraic Grothendieck map surjective."
+scope = "An exact structure on a preadditive category with finite biproducts, in independent object and morphism universes. The factor predicate needs no closure property. The tower starts at any actual zero object. This additive statement alone does not prove Grothendieck-map injectivity or homotopical devissage."
+review = "author_checked"

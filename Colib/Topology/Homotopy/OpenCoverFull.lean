@@ -9,6 +9,7 @@ module
 public import Colib.Util.References
 public import Colib.CategoryTheory.Groupoid.TransportedImage
 public import Colib.Topology.Homotopy.OpenCover
+public import Colib.Topology.Path.InSubset
 
 /-!
 # Fundamental-groupoid fullness from an open cover
@@ -39,21 +40,6 @@ set_option backward.defeqAttrib.useBackward true
 section OpenCover
 
 variable {X : Type u} [TopologicalSpace X] {ι : Type v}
-
-/-- A path whose endpoints and image lie in a subset, regarded as a path in
-that subset with its actual subspace topology. -/
-def Path.inSubset {U : Set X} {x y : U} (p : Path x.1 y.1)
-    (hp : Set.range p ⊆ U) : Path x y where
-  toFun t := ⟨p t, hp (Set.mem_range_self t)⟩
-  continuous_toFun := p.continuous.subtype_mk _
-  source' := Subtype.ext p.source
-  target' := Subtype.ext p.target
-
-@[simp] theorem Path.inSubset_map {U : Set X} {x y : U} (p : Path x.1 y.1)
-    (hp : Set.range p ⊆ U) :
-    (Path.inSubset p hp).map continuous_subtype_val = p := by
-  ext t
-  rfl
 
 /-- A path connecting a point to the base open set, simultaneously remaining
 in every cell chart containing that point. -/

@@ -1,5 +1,5 @@
 {
-  "status": "native_leaf_compiled_remote_integration_pending",
+  "status": "native_migration_compiled",
   "source_repository": "kangxyz/aglib",
   "source_revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f",
   "source_module": "Aglib.RingTheory.MvPolynomial.RegularSequence",
@@ -161,8 +161,154 @@
       "main_source_blob": "acbe81abe27ea8454881b473d2a6243560269236"
     }
   ],
-  "library_registration": "COL-0265 reserved centrally; entry and exact reference bindings prepared in an isolated integration overlay, pending local compiler and final catalog validation.",
+  "library_registration": "COL-0265 entry and native colib_tag/reference bindings are present in the integrated source; the repository final catalog checks govern their publication.",
   "files": [
+    {
+      "path": "Colib/RingTheory/MvPolynomial/RegularSequence.lean",
+      "sha256": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473",
+      "lines": 113,
+      "public_theorems": [
+        "isSMulRegular_quotient_span_X",
+        "isWeaklyRegular_X",
+        "isRegular_X_of_nodup",
+        "isWeaklyRegular_ofFn_X_of_injective",
+        "isWeaklyRegular_X_on_flat",
+        "isWeaklyRegular_ofFn_X_on_flat"
+      ],
+      "examples": 0,
+      "text_problems": []
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/PolynomialVariables.lean",
+      "sha256": "83e021980a14cb9e16ced6f823844c68928638d2ae57174ffdab7e3319850db2",
+      "lines": 136,
+      "public_theorems": [
+        "isKoszulRegularOn_X_of_injective",
+        "coefficientAugmentation_X_quasiIso",
+        "isKoszulRegular_X_of_injective",
+        "koszulAugmentation_X_quasiIso",
+        "isKoszulRegular_map_X_of_flat",
+        "koszulAugmentation_map_X_quasiIso_of_flat"
+      ],
+      "examples": 0,
+      "text_problems": []
+    },
+    {
+      "path": "ColibTest/PolynomialVariables.lean",
+      "sha256": "4186a17b0947149e381abfef91e0d1804c360b34f9677ea562cf275e3284919e",
+      "lines": 84,
+      "public_theorems": [],
+      "examples": 10,
+      "text_problems": []
+    }
+  ],
+  "current_main_baseline": "3b9dc4d7353365bb921116d6bf901e098ee72391",
+  "current_main_source_correspondence": [
+    {
+      "path": "Colib/Util/References.lean",
+      "git_blob": "4021d02aad02b3061ace7b7e1a27c17cb0a86c43",
+      "sha256": "b4a284af63e677ff4838495bd0ab68466757efb3e19fd89d0b6f52d6f66810a1"
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/CoefficientAugmentation.lean",
+      "git_blob": "acbe81abe27ea8454881b473d2a6243560269236",
+      "sha256": "6e3e2fb2022910ee681499f43e97d7199b3c6302af870b66484630459895ab87"
+    },
+    {
+      "path": "lake-manifest.json",
+      "git_blob": "761599c8c5edb241d25ab2bb8acf82bf00d3f278",
+      "sha256": "0a8de7be3d82524c62cb631cb9ceaf89535e5331eb4cd7a43cd5d3100ddfa050"
+    },
+    {
+      "path": "lean-toolchain",
+      "git_blob": "a6aff065db2882c535684f8c5bcd4f16e9a23915",
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    {
+      "path": "AGENTS.md",
+      "git_blob": "4a403c5bc81c47d358726bad6e6f293f3151eb07",
+      "sha256": "dd16e881d496cd79bbb5191edd64c08a90af03c4a35679abae50c1ccb85aae38"
+    }
+  ],
+  "source_stage_validation": {
+    "compiled": false,
+    "source_comparison": "checked against exact Aglib SHA; original archive not reopened",
+    "independent_static_review": {
+      "status": "no concrete mathematical or static API defect identified",
+      "scope": "Original Aglib source statement comparison, exact native Stacks/mathlib APIs, assumptions, universes, maps, tests, names and imports; no compilation or original archive inspection",
+      "reviewed_files": [
+        {
+          "path": "Colib/RingTheory/MvPolynomial/RegularSequence.lean",
+          "sha256": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473"
+        },
+        {
+          "path": "Colib/RingTheory/Koszul/PolynomialVariables.lean",
+          "sha256": "20a64e0fd28631381437c7e85026fe3e6cecd09c64304b5751cde9c8a9f0ef02"
+        },
+        {
+          "path": "ColibTest/PolynomialVariables.lean",
+          "sha256": "2e235ea0ec010bb8dec040c905c7ae716c4479df1888bd303532f8e39f18c614"
+        }
+      ]
+    },
+    "scope_tests": 10,
+    "native_lint": false,
+    "axiom_audit": false,
+    "kernel_replay": false,
+    "full_acceptance": false,
+    "blocked_by": "Explicit coordinator instruction: only ~30 MiB above 5 GiB startup disk reserve and five missing Stacks prerequisites; no dependency builds at this margin."
+  },
+  "historical_native_validation_20261107": {
+    "compiler": "Official pinned Lean 4.34.0-rc2, package options, single thread, existing captured Lake environment; direct leaf commands, not a full Lake root build.",
+    "all_owned_production_and_test_leaves_compiled": true,
+    "style": "Pinned native lint-style passed on all six production and two consumer sources through explicit import lists.",
+    "declaration_lint": "Not accepted as complete: stock runLinter received SIGKILL; bounded run was cancelled on instruction after the Ext root passed. Continue remotely.",
+    "private_and_axiom_audit": "Not run locally; assigned to remote integration.",
+    "source_hashes": {
+      "Colib/RingTheory/MvPolynomial/RegularSequence.lean": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473",
+      "Colib/RingTheory/Koszul/PolynomialVariables.lean": "20a64e0fd28631381437c7e85026fe3e6cecd09c64304b5751cde9c8a9f0ef02",
+      "ColibTest/PolynomialVariables.lean": "4186a17b0947149e381abfef91e0d1804c360b34f9677ea562cf275e3284919e"
+    },
+    "preservation": "Only three owned source files were minimally repaired; no existing contributor source or shared root/catalog/CI changed.",
+    "kernel_replay": false,
+    "published": false,
+    "original_source_only_evidence": "Earlier source-only archives/reports remain unchanged as historical snapshots."
+  },
+  "historical_integration": {
+    "library_id": "COL-0265",
+    "required": "Recompile catalog-annotated endpoint leaves and affected consumers locally, integrate on latest main, regenerate and compile the final root locally, then run full native declaration/private lint, production axiom audit and catalog/site validation remotely. No kernel replay.",
+    "publication": "none",
+    "catalog_state": "Entry and compiled-reference bindings prepared in an isolated overlay; not yet compiled or registered in main."
+  },
+  "historical_current_main_baseline": "04982087f606dd92713fca25cb04493f8858acee",
+  "historical_main_source_correspondence": [
+    {
+      "path": "Colib/Util/References.lean",
+      "git_blob": "4021d02aad02b3061ace7b7e1a27c17cb0a86c43",
+      "sha256": "b4a284af63e677ff4838495bd0ab68466757efb3e19fd89d0b6f52d6f66810a1"
+    },
+    {
+      "path": "Colib/RingTheory/Koszul/CoefficientAugmentation.lean",
+      "git_blob": "acbe81abe27ea8454881b473d2a6243560269236",
+      "sha256": "6e3e2fb2022910ee681499f43e97d7199b3c6302af870b66484630459895ab87"
+    },
+    {
+      "path": "lake-manifest.json",
+      "git_blob": "148ae2b6558871380a90953171f10e6dcadedca9",
+      "sha256": "305047fed14ab46f9a0d8e23e5cefa5ef5c6ea89ebf0b34f52ec172f0b9d9652"
+    },
+    {
+      "path": "lean-toolchain",
+      "git_blob": "b814d987e0c93cb99938be934d9b277778495ba1",
+      "sha256": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
+    },
+    {
+      "path": "AGENTS.md",
+      "git_blob": "4a403c5bc81c47d358726bad6e6f293f3151eb07",
+      "sha256": "dd16e881d496cd79bbb5191edd64c08a90af03c4a35679abae50c1ccb85aae38"
+    }
+  ],
+  "historical_scoped_files": [
     {
       "path": "Colib/RingTheory/MvPolynomial/RegularSequence.lean",
       "sha256": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473",
@@ -202,82 +348,22 @@
       "text_problems": []
     }
   ],
-  "current_main_baseline": "04982087f606dd92713fca25cb04493f8858acee",
-  "current_main_source_correspondence": [
-    {
-      "path": "Colib/Util/References.lean",
-      "git_blob": "4021d02aad02b3061ace7b7e1a27c17cb0a86c43",
-      "sha256": "b4a284af63e677ff4838495bd0ab68466757efb3e19fd89d0b6f52d6f66810a1"
-    },
-    {
-      "path": "Colib/RingTheory/Koszul/CoefficientAugmentation.lean",
-      "git_blob": "acbe81abe27ea8454881b473d2a6243560269236",
-      "sha256": "6e3e2fb2022910ee681499f43e97d7199b3c6302af870b66484630459895ab87"
-    },
-    {
-      "path": "lake-manifest.json",
-      "git_blob": "148ae2b6558871380a90953171f10e6dcadedca9",
-      "sha256": "305047fed14ab46f9a0d8e23e5cefa5ef5c6ea89ebf0b34f52ec172f0b9d9652"
-    },
-    {
-      "path": "lean-toolchain",
-      "git_blob": "b814d987e0c93cb99938be934d9b277778495ba1",
-      "sha256": "8190e75a201741065fe508b28955dd64dd72d090babe5f70ce6848879d68ae88"
-    },
-    {
-      "path": "AGENTS.md",
-      "git_blob": "4a403c5bc81c47d358726bad6e6f293f3151eb07",
-      "sha256": "dd16e881d496cd79bbb5191edd64c08a90af03c4a35679abae50c1ccb85aae38"
-    }
-  ],
-  "native_validation_20261107": {
-    "compiler": "Official pinned Lean 4.34.0-rc2, package options, single thread, existing captured Lake environment; direct leaf commands, not a full Lake root build.",
-    "all_owned_production_and_test_leaves_compiled": true,
-    "style": "Pinned native lint-style passed on all six production and two consumer sources through explicit import lists.",
-    "declaration_lint": "Not accepted as complete: stock runLinter received SIGKILL; bounded run was cancelled on instruction after the Ext root passed. Continue remotely.",
-    "private_and_axiom_audit": "Not run locally; assigned to remote integration.",
-    "source_hashes": {
+  "historical_library_registration": "COL-0265 reserved centrally; entry and exact reference bindings prepared in an isolated integration overlay, pending local compiler and final catalog validation.",
+  "integration": {
+    "baseline": "3b9dc4d7353365bb921116d6bf901e098ee72391",
+    "source_relay": "cc4c4d1134eb5f2eb62b623f3bf1fd900ed510af",
+    "compiler": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+    "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "stacks_revision": "5ed82d14634e8d9576bb844c7bd4e3da66d450e7",
+    "compiled_source_sha256": {
+      "Colib/RingTheory/Koszul/PolynomialVariables.lean": "83e021980a14cb9e16ced6f823844c68928638d2ae57174ffdab7e3319850db2",
       "Colib/RingTheory/MvPolynomial/RegularSequence.lean": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473",
-      "Colib/RingTheory/Koszul/PolynomialVariables.lean": "20a64e0fd28631381437c7e85026fe3e6cecd09c64304b5751cde9c8a9f0ef02",
       "ColibTest/PolynomialVariables.lean": "4186a17b0947149e381abfef91e0d1804c360b34f9677ea562cf275e3284919e"
     },
-    "preservation": "Only three owned source files were minimally repaired; no existing contributor source or shared root/catalog/CI changed.",
-    "kernel_replay": false,
-    "published": false,
-    "original_source_only_evidence": "Earlier source-only archives/reports remain unchanged as historical snapshots."
-  },
-  "source_stage_validation": {
-    "compiled": false,
-    "source_comparison": "checked against exact Aglib SHA; original archive not reopened",
-    "independent_static_review": {
-      "status": "no concrete mathematical or static API defect identified",
-      "scope": "Original Aglib source statement comparison, exact native Stacks/mathlib APIs, assumptions, universes, maps, tests, names and imports; no compilation or original archive inspection",
-      "reviewed_files": [
-        {
-          "path": "Colib/RingTheory/MvPolynomial/RegularSequence.lean",
-          "sha256": "343fa5f97e82e8d3286d6db5de06bf6ae1c12e29334525a195d9936c23a57473"
-        },
-        {
-          "path": "Colib/RingTheory/Koszul/PolynomialVariables.lean",
-          "sha256": "20a64e0fd28631381437c7e85026fe3e6cecd09c64304b5751cde9c8a9f0ef02"
-        },
-        {
-          "path": "ColibTest/PolynomialVariables.lean",
-          "sha256": "2e235ea0ec010bb8dec040c905c7ae716c4479df1888bd303532f8e39f18c614"
-        }
-      ]
-    },
-    "scope_tests": 10,
-    "native_lint": false,
-    "axiom_audit": false,
-    "kernel_replay": false,
-    "full_acceptance": false,
-    "blocked_by": "Explicit coordinator instruction: only ~30 MiB above 5 GiB startup disk reserve and five missing Stacks prerequisites; no dependency builds at this margin."
-  },
-  "integration": {
-    "library_id": "COL-0265",
-    "required": "Recompile catalog-annotated endpoint leaves and affected consumers locally, integrate on latest main, regenerate and compile the final root locally, then run full native declaration/private lint, production axiom audit and catalog/site validation remotely. No kernel replay.",
-    "publication": "none",
-    "catalog_state": "Entry and compiled-reference bindings prepared in an isolated overlay; not yet compiled or registered in main."
+    "aggregate_Colib_build": "passed",
+    "complete_in_package_tests": "passed",
+    "scope": "These facts record stock compilation and tests. Full declaration/private lint, production axiom audit, source style and native catalog/site validation are enforced by scripts/check.sh and the milestone CI.",
+    "historical_scope": "The preserved historical records concern earlier source-only and Lean 4.34.0-rc2 stages; they are not current-version acceptance receipts.",
+    "kernel_replay": false
   }
 }

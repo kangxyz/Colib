@@ -14,7 +14,7 @@ The homeomorphism is asserted only for standard simplices. The general cylinder
 comparison is tested as a natural continuous map, not as an isomorphism.
 -/
 
-open Convexity Convexity.StdSimplex CategoryTheory MonoidalCategory
+open Convexity.StdSimplex CategoryTheory MonoidalCategory
   CartesianMonoidalCategory Opposite
 open scoped Simplicial Topology unitInterval
 
@@ -38,11 +38,11 @@ example {X Y : SSet.{u}} (f : X ⟶ Y) :
 
 example {n : ℕ} (i : Fin (n + 1)) : realizationPrismCell.{u} i =
     SSet.toTop.map (SSet.yonedaEquiv.symm
-      (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val) := rfl
+      (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val) := rfl
 
-example {n : ℕ} (i : Fin (n + 1)) (v : StdSimplex ℝ (Fin (n + 2))) :
+example {n : ℕ} (i : Fin (n + 1)) (v : Convexity.StdSimplex ℝ (Fin (n + 2))) :
     realizationPrismCoordinates n (realizationPrismCell.{u} i
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm v)) = prismProject i v :=
+      ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm v)) = prismProject i v :=
   realizationPrismCoordinates_cell i v
 
 example {n : ℕ} (x : |(Δ[n] ⊗ Δ[1] : SSet.{u})|) :
@@ -51,7 +51,7 @@ example {n : ℕ} (x : |(Δ[n] ⊗ Δ[1] : SSet.{u})|) :
 
 example {n : ℕ} {m : SimplexCategoryᵒᵖ} (s : (Δ[n] ⊗ Δ[1] : SSet.{u}).obj m) :
     ∃ (i : Fin (n + 1)) (f : m.unop ⟶ ⦋n + 1⦌),
-      (Δ[n] ⊗ Δ[1]).map f.op (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val = s :=
+      (Δ[n] ⊗ Δ[1]).map f.op (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val = s :=
   prism_simplex_factors s
 
 example {n : ℕ} (i : Fin n) :
@@ -62,20 +62,20 @@ example {n : ℕ} (i : Fin n) :
 
 example {n : ℕ} (i : Fin (n + 1)) (z : prismCell i) :
     realizationPrismLift.{u} i z = realizationPrismCell i
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm (prismLift i z)) := rfl
+      ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm (prismLift i z)) := rfl
 
 example {n : ℕ} (i : Fin (n + 1)) (z : prismCell i) :
     realizationPrismCoordinates n (realizationPrismLift.{u} i z) = z.1 :=
   realizationPrismCoordinates_lift i z
 
 example {n : ℕ} (i : Fin (n + 1))
-    {z : StdSimplex ℝ (Fin (n + 2)) × unitInterval}
+    {z : Convexity.StdSimplex ℝ (Fin (n + 2)) × unitInterval}
     (hi : z ∈ prismCell i.castSucc) (hj : z ∈ prismCell i.succ) :
     realizationPrismLift.{u} i.castSucc ⟨z, hi⟩ =
       realizationPrismLift.{u} i.succ ⟨z, hj⟩ := realizationPrismLift_adjacent i hi hj
 
 example {n : ℕ} (i j : Fin (n + 1))
-    {z : StdSimplex ℝ (Fin (n + 1)) × unitInterval}
+    {z : Convexity.StdSimplex ℝ (Fin (n + 1)) × unitInterval}
     (hi : z ∈ prismCell i) (hj : z ∈ prismCell j) :
     realizationPrismLift.{u} i ⟨z, hi⟩ = realizationPrismLift.{u} j ⟨z, hj⟩ :=
   realizationPrismLift_overlap i j hi hj
@@ -90,18 +90,17 @@ example (n : ℕ) (x : |(Δ[n] ⊗ Δ[1] : SSet.{u})|) :
     (realizationPrismHomeomorph n).symm (realizationPrismCoordinates n x) = x :=
   (realizationPrismHomeomorph n).symm_apply_apply x
 
-example (n : ℕ) (z : StdSimplex ℝ (Fin (n + 1)) × unitInterval) :
+example (n : ℕ) (z : Convexity.StdSimplex ℝ (Fin (n + 1)) × unitInterval) :
     realizationPrismCoordinates n ((realizationPrismHomeomorph.{u} n).symm z) = z :=
   (realizationPrismHomeomorph n).apply_symm_apply z
 
 example (n : ℕ) (x : |(Δ[n] ⊗ Δ[1] : SSet.{u})|) :
-    (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌
+    (SimplexCategory.toTopHomeo ⦋n⦌
         ((realizationCylinderComparison Δ[n] x).1),
       (realizationCylinderComparison Δ[n] x).2.down) = realizationPrismHomeomorph n x := by
   apply Prod.ext
   · rfl
-  · exact (congrArg ULift.down (FiniteSimplexAdapter.realization_interval_compat
-      (SSet.toTop.map (snd Δ[n] Δ[1]) x))).symm
+  · rfl
 
 example (n : ℕ) : CompactSpace |(Δ[n] ⊗ Δ[1] : SSet.{u})| := inferInstance
 

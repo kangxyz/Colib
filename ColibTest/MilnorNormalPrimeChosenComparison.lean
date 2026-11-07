@@ -8,7 +8,7 @@ module
 import Colib.KTheory.MilnorK.Norm.NormalPrimeChosenComparison
 
 /-!
-UNCOMPILED consumers of the native normal-prime chosen-norm comparison.
+Consumers of the native normal-prime chosen-norm comparison.
 These examples use actual polynomial presentations and algebra equivalences.
 No norm-invariance premise or norm tower law is supplied.
 -/

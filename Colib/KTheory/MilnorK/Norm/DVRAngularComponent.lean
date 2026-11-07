@@ -17,7 +17,6 @@ ramification exponent. The exponent-one corollary is unconditional under the fin
 hypotheses; the prime-degree corollary retains Henselianity and exponent invertibility.
 No Milnor norm or all-degree norm–residue square is claimed in this arithmetic leaf.
 
-UNCOMPILED SOURCE DRAFT. No Lean/Lake command has been run on this file.
 -/
 
 @[expose] public noncomputable section

@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0284"
+title = "The actual Waldhausen spectrum fibration and signed boundary"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 50
+statement = "The original canonical acyclic-to-homotopy-fiber prespectrum map is a stable equivalence in every integer degree. Under the original K-group comparisons, the actual stable fiber boundary equals minus the image of the original change-of-weak K-boundary, including K-one to K-zero."
+scope = "The structural theorem assumes coarse two-out-of-three, the coarse extension axiom, genuine joint cylinder data, and its separate second-endpoint section. It adds no stable-equivalence, K-zero-surjectivity or connectivity premise. The negative-one case derives actual K-zero surjectivity; lower degrees use proved connectivity. The full original acyclic nullhomotopy, independent structure and path parameters, degree casts, canonical maps and explicit single minus sign are retained. This is the connective spectrum fiber theorem, not cone localization or a nonconnective theorem."
+review = "author_checked"
+provenance = "quillen"

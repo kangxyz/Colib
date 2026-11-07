@@ -185,7 +185,7 @@ authors = ["R. W. Thomason", "Thomas Trobaugh"]
 year = 1990
 volume = "88"
 pages = "247-435"
-version = "The Grothendieck Festschrift, Volume III, Progress in Mathematics 88; Sections 1.5.3-1.5.4, pages 260-261; Sections 1.5.6-1.5.7, page 261; Theorem 1.10.1 and Exercise 1.10.2, pages 275-277; Section 1.11.3.1 and Theorem 1.11.7, pages 278-281, inspected 2026-11-07"
+version = "The Grothendieck Festschrift, Volume III, Progress in Mathematics 88; Sections 1.5.3-1.5.4, pages 260-261; Sections 1.5.6-1.5.7, page 261; Sections 1.8.1-1.8.2, page 263; Theorem 1.10.1 and Exercise 1.10.2, pages 275-277; Section 1.11.3.1 and Theorem 1.11.7, pages 278-281, inspected 2026-11-07"
 url = "https://stacks.math.columbia.edu/bibliography/TT"
 
 [[sources.ThomasonTrobaugh1990.documents]]
@@ -195,7 +195,7 @@ url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaug
 sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"
 
 [[sources.ThomasonTrobaugh1990.documents]]
-label = "Published article, Sections 1.5.3-1.5.4 and 1.5.6-1.5.7"
+label = "Published article, Sections 1.5.3-1.5.4, 1.5.6-1.5.7 and 1.8.1-1.8.2"
 locator_prefix = "Section"
 url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaugh%20-%20Higher%20algebraic%20K-theory%20of%20schemes.pdf"
 sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"

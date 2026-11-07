@@ -78,5 +78,8 @@ axiom auditing cover the full included chain. They are distinct from an
 independent mathematical review of every lower-level grid and collar proof.
 
 This review and validation describe the original K-zero contribution. They do
-not certify the later coordinate-rebuilt dependency closure; its final checks
-remain part of the [integrated verification boundary](field-k2-comparison.md#verification-boundary).
+not themselves certify the later coordinate-rebuilt dependency closure. Its
+original whole-library checks passed for published Lean 4.35 commit
+`0fd43f0253d6ff441fbc3e82420a0573ad694310` in
+[CI run 42373233801](https://github.com/kangxyz/colib/actions/runs/42373233801),
+with the scope stated in the [integrated verification boundary](field-k2-comparison.md#verification-boundary).

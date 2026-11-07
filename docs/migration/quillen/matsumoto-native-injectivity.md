@@ -73,5 +73,7 @@ the same forward composite, proves both field-change directions and retains
 the negative of the positive inverse. Its ordered positive scalar-unit-product
 marking holds over every field; its equivalences retain characteristic zero.
 Earlier candidate endpoints passed focused native checks within their recorded
-source scope. Those results do not certify the current integration, whose native
-checks remain pending.
+source scope. The separate original whole-library checks passed for published
+Lean 4.35 commit `0fd43f0253d6ff441fbc3e82420a0573ad694310` in
+[CI run 42373233801](https://github.com/kangxyz/colib/actions/runs/42373233801).
+That exact-commit pass does not certify later descendants.

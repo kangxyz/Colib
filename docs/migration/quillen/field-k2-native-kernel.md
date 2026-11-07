@@ -16,7 +16,8 @@ Library item `COL-0255` records the actual algebraic first map used by that comp
 This item specifies the algebraic map, not the stronger Quillen equivalence.
 The subsequent [complete comparison source](field-k2-comparison.md) supplies
 that endpoint in characteristic zero and records earlier local checks separately
-from the pending native validation of the integrated candidate.
+from the successful whole-library CI for published Lean 4.35 commit
+`0fd43f0253d6ff441fbc3e82420a0573ad694310`.
 The historical baseline and validation below describe this algebraic slice only.
 
 ## Native interfaces audited
@@ -114,6 +115,7 @@ Full default declaration lint and the pinned native text linters pass. The pinne
 462 imported Colib declarations and allows only `propext`, `Classical.choice` and
 `Quot.sound`. Native generated-entry checking and Library metadata checks pass.
 These historical checks do not validate later source changes or the complete
-comparison's rebuilt dependency closure. The original whole-library checks
-remain a separate integration gate. No separate client check or kernel replay
-is claimed.
+comparison's rebuilt dependency closure. That closure passed the original
+whole-library checks in [CI run 42373233801](https://github.com/kangxyz/colib/actions/runs/42373233801)
+at the exact published commit above. This does not certify later descendants.
+No separate client check or kernel replay is claimed.

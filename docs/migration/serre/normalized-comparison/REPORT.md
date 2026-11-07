@@ -105,3 +105,10 @@ The original migration used a finite-coordinate comparison at the barycentric bo
 The later native-coordinate rewrite removes that layer and uses `Convexity.StdSimplex` and
 `SimplexCategory.toTopHomeo` directly, retaining the interval orientation against
 `realizationInterval`. This report records the original validation scope.
+
+The subsequent native-coordinate integration is published at Lean 4.35 commit
+`0fd43f0253d6ff441fbc3e82420a0573ad694310`. Its original whole-library build,
+tests, native lint, axiom audit and Library checks passed in
+[CI run 42373233801](https://github.com/kangxyz/colib/actions/runs/42373233801).
+That later result is distinct from the historical draft checks above and does
+not certify later descendants or constitute an independent mathematical review.

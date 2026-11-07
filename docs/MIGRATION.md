@@ -121,8 +121,11 @@ The positive ordered scalar-unit-product marking holds over every field,
 with a `ZMod 5` regression. Bijectivity retains `[CharZero F]`.
 Finite realization geometry now uses native `Convexity.StdSimplex` coordinates directly.
 Earlier candidate endpoints and regressions passed focused strict compilation
-and native QA within their recorded scopes. Those results do not certify this
-latest-main integration; its native checks remain pending. See the
+and native QA within their recorded scopes. The Lean 4.35 integration is published
+at `0fd43f0253d6ff441fbc3e82420a0573ad694310`, whose original whole-library
+[CI run](https://github.com/kangxyz/colib/actions/runs/42373233801) passed build,
+tests, native lint, axiom audit and Library checks. This exact-commit result does
+not certify later descendants. See the
 [exact comparison and verification scope](migration/quillen/field-k2-comparison.md),
 [algebraic map](migration/quillen/field-k2-native-kernel.md), and
 [stable-fiber proof](migration/quillen/field-k2-stable-fiber.md).
@@ -135,3 +138,38 @@ equivalence includes K-zero and the original object/hom universe bounds. Exact
 filtrations, finite Euler decomposition, filtered-union coverage and the actual
 identity-cone cylinder supply the proof, without a theorem-shaped input.
 See [the exact scope and dependency ownership](migration/gillet-waldhausen.md).
+
+## Dense Waldhausen cofinality
+
+The actual dense full inclusion now has its original positive K-equivalence,
+all-degree injectivity and degree-zero exact tail. A genuine complement grading,
+finite replacement, actual row-grade nerve comparison and the proved original
+fibration supply the proof. Coarse K-zero remains the true homotopical endpoint. The actual value map now
+identifies it with complement classes, retaining object generators and the
+original matching-universe map.
+See [the precise native scope](migration/quillen/waldhausen-cofinality.md).
+
+## General Waldhausen Grothendieck K-zero
+
+The original object-loop comparison is an equivalence from the actual free
+abelian presentation by weak arrows and cofibration pushouts to homotopical
+Waldhausen K-zero, including independent object and morphism universes. No
+cylinder or factorization hypothesis is added to this comparison. Actual
+edge-path generation supplies surjectivity, and the realized universal grading
+is its inverse. Original exact-functor KMaps commute with the comparison.
+
+With genuine target factorization, the actual coarse value map identifies
+K-zero with the quotient by the original exact-functor image. Its composite
+with the unchanged changeWeak KMap is the literal quotient, and its kernel
+and surjectivity give the exact original K-zero tail. No higher-degree
+image-quotient or spectrum conclusion is inferred. See the
+[canonical maps and verification scope](migration/quillen/waldhausen-grothendieck-kzero.md).
+
+## Original S-construction composition triangles
+
+The actual two-transformation simplicial triangle retains the original cylinders
+on all three faces, including the genuine composite. Its full zero-vertex family
+is constant under the three explicit chosen-zero equalities. The sole zero-simplex
+definition has its lower simplicial owner, with existing K-theory clients unchanged.
+See the [exact source and scope](migration/quillen/waldhausen-composition-triangle.md).
+This does not establish iterated-S or spectrum compatibility.

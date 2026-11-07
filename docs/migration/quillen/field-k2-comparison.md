@@ -11,10 +11,12 @@ Original attribution and Apache-2.0 notices are retained in adapted sources.
 Library item COL-0262 records the endpoint in
 `Colib.KTheory.MilnorK.QuillenEquivalence`. The earlier Lean 4.34 candidate passed
 strict endpoint compilation and focused native checks. Those results are
-historical: this integration preserves the new main's Lean 4.35 toolchain and
-ports consumers to its native finite-support simplex. Endpoint revalidation
-and original whole-library verification remain pending for this integrated
-candidate; the earlier local result does not discharge them.
+historical. The Lean 4.35 integration ports consumers to the native finite-support
+simplex and is now published on main at
+[`0fd43f0253d6ff441fbc3e82420a0573ad694310`](https://github.com/kangxyz/colib/commit/0fd43f0253d6ff441fbc3e82420a0573ad694310).
+Its [original candidate CI](https://github.com/kangxyz/colib/actions/runs/42373233801)
+passed the repository-wide build, tests, native lint, axiom audit and Library checks.
+This exact-commit result is separate from the earlier focused checks.
 
 ## Exact hypotheses, objects and maps
 
@@ -106,8 +108,9 @@ arbitrary-index helper has a finite native replacement.
 
 ## Verification boundary
 
-The compilation, lint and axiom-audit results below refer to earlier candidate
-snapshots. They do not certify this latest-main Lean 4.35 integration.
+The first three results below refer to earlier candidate snapshots. The final
+item records the completed whole-library verification of the exact Lean 4.35
+commit; it does not certify later descendants.
 
 - The general-field positive marking and ordinary
   `ColibTest.PositiveSymbolMarking` regression have frozen strict compilation,
@@ -125,10 +128,14 @@ snapshots. They do not certify this latest-main Lean 4.35 integration.
   declarations use only the three standard axioms. The final annotated
   production sources were checked again; compiled metadata contains all
   15 COL-0262 bindings with their precise Quillen references and no COL-0059.
-- For this integrated candidate, the repository-wide build, all tests, native
-  lint, generated-entry, axiom and Library checks remain pending. The unchanged
-  CI workflow runs these checks individually. Local leaf checks, source-graph scans and metadata
-  inspection do not constitute that whole-library pass.
+- For commit `0fd43f0253d6ff441fbc3e82420a0573ad694310`, the
+  [original CI run](https://github.com/kangxyz/colib/actions/runs/42373233801)
+  completed successfully on November 7, 2026. Both Build and Test/lint/axiom
+  jobs passed, including all tests, native text and declaration lint,
+  generated-entry checks, the production axiom audit and structured Library
+  export. The candidate's cache-publication job was skipped as expected.
+  This is a remote whole-library pass, not a claim that the local resource-limited
+  environment completed `scripts/check.sh`.
 
 No separate client build, kernel replay, all-fields Milnor equivalence or
 completion of the entire historical Quillen migration is claimed. The frozen

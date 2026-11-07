@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0270"
+title = "The actual Waldhausen image-quotient K-zero obstruction"
+kind = "comparison"
+section = "waldhausen-k-theory"
+order = 330
+statement = "The coarse K-zero value map is bijective onto the quotient by the exact-functor image, and its composite with the unchanged change-of-weak-equivalences KMap is the canonical quotient after the inverse Grothendieck comparison."
+scope = "Exact functor between original Waldhausen categories with independent object and morphism universes and genuine functorial factorization of the target AsSmall structure. The original exact-functor K-zero image is exactly the kernel of the original changeWeak KMap, which is surjective. No density, localization-fibration or source-factorization hypothesis is added; no higher-degree image-quotient or spectrum statement is asserted. The native quotient, range inclusion and universe lowering remain explicit."
+review = "author_checked"
+provenance = "quillen"

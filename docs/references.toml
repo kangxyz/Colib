@@ -171,3 +171,31 @@ title = "Quillen K-theory"
 authors = ["kangxyz and Quillen K-theory contributors"]
 version = "Git commit c561118b7795eb9780be9ed391c3251d6a4d0afd"
 url = "https://github.com/kangxyz/quillen-k-theory/tree/c561118b7795eb9780be9ed391c3251d6a4d0afd"
+
+[sources.ThomasonTrobaugh1990]
+kind = "article"
+title = "Higher algebraic K-theory of schemes and of derived categories"
+authors = ["R. W. Thomason", "Thomas Trobaugh"]
+year = 1990
+volume = "88"
+pages = "247-435"
+version = "The Grothendieck Festschrift, Volume III, Progress in Mathematics 88; Sections 1.5.3-1.5.4, pages 260-261; Sections 1.5.6-1.5.7, page 261; Theorem 1.10.1 and Exercise 1.10.2, pages 275-277, inspected 2026-11-07"
+url = "https://stacks.math.columbia.edu/bibliography/TT"
+
+[[sources.ThomasonTrobaugh1990.documents]]
+label = "Published article, Sections 1.5.6-1.5.7 and 1.10"
+locator_prefix = "Theorem 1.10.1"
+url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaugh%20-%20Higher%20algebraic%20K-theory%20of%20schemes.pdf"
+sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"
+
+[[sources.ThomasonTrobaugh1990.documents]]
+label = "Published article, Sections 1.5.3-1.5.4 and 1.5.6-1.5.7"
+locator_prefix = "Section"
+url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaugh%20-%20Higher%20algebraic%20K-theory%20of%20schemes.pdf"
+sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"
+
+[[sources.ThomasonTrobaugh1990.documents]]
+label = "Published article, Exercise 1.10.2"
+locator_prefix = "Exercise 1.10.2"
+url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaugh%20-%20Higher%20algebraic%20K-theory%20of%20schemes.pdf"
+sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"

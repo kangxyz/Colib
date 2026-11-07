@@ -68,8 +68,9 @@ namespaces. Every field is allowed, including fields of order two and three.
    general-field positive ordered marking and characteristic-zero negative
    normalization. The negative normalization is minus the positive inverse.
    Earlier candidate endpoints passed focused native checks within their
-   recorded source scope. Those results do not certify the current integration,
-   whose native checks remain pending.
+   recorded source scope. The separate Lean 4.35 whole-library checks passed for
+   published commit `0fd43f0253d6ff441fbc3e82420a0573ad694310` in
+   [the original CI run](https://github.com/kangxyz/colib/actions/runs/42373233801).
 
 ## Historical slice validation
 
@@ -86,7 +87,8 @@ pinned independent axiom auditor checks 892 imported Colib declarations, using
 only `propext`, `Classical.choice` and `Quot.sound`.
 
 These historical focused checks do not validate the later coordinate-rebuilt
-closure. Final endpoint and original whole-library checks are distinct.
+closure. That closure's original whole-library CI passed at the exact published
+commit linked above; it is distinct from these earlier local checks.
 No separate kernel replay, client check or independent mathematical review is
 inferred from compilation. Detailed verification output is kept outside the
 repository.

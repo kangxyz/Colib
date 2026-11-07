@@ -10,7 +10,8 @@ groups. The completed chain proves the needed fiber perfectness, kernel-map
 bijectivity and field-change squares, rather than inferring them from the
 algebraic Milnor–Steinberg kernel equivalence. The
 [final comparison](field-k2-comparison.md) distinguishes these source conclusions
-from historical local endpoint checks and pending validation of the integrated candidate.
+from historical local endpoint checks and the completed Lean 4.35 whole-library
+CI for published commit `0fd43f0253d6ff441fbc3e82420a0573ad694310`.
 
 The constructions in this page apply to arbitrary rings where stated and to
 all fields for Steinberg-to-fiber maps. The characteristic-zero hypothesis
@@ -139,7 +140,8 @@ checks are not validation of the final coordinate-rebuilt source closure.
 Earlier snapshots of the positive-marking leaf and its ordinary regression have
 separate strict compilation and native QA evidence. Earlier characteristic-zero
 endpoints also passed focused native checks within their recorded source scope.
-These results do not certify the current integration. Its native checks remain
-pending, as recorded in the
+Those local results are distinct from the successful original whole-library
+[CI run 42373233801](https://github.com/kangxyz/colib/actions/runs/42373233801)
+for the exact published Lean 4.35 commit above, as recorded in the
 [comparison verification boundary](field-k2-comparison.md#verification-boundary).
 No exhaustive independent review or kernel replay is inferred from compilation.

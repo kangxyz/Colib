@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0285"
+title = "Native scheme K-theory, coherent G-theory and their canonical comparison"
+kind = "definition"
+section = "k-theory-of-schemes"
+order = 20
+statement = "The native category of finite locally free module sheaves and the native abelian category of coherent module sheaves define connective scheme K-theory and coherent G-theory. Their actual exact inclusion induces the original canonical K-to-G map. Actual open restriction induces K- and G-homomorphisms with strict identity and composition laws, and the canonical comparison commutes with those homomorphisms."
+scope = "X : Scheme.{u}, n : Nat, with Mathlib SmallModel.{u+1}. K uses native Scheme.Vect and inherited ambient short exact sequences on every scheme. The coherent exact category is native; the stated G-groups and comparison retain locally Noetherian hypotheses. Restriction uses actual open immersions and the literal Scheme.Modules.restrictFunctor; G statements retain the corresponding locally Noetherian hypotheses on all schemes involved. Every group-level statement includes degree zero. This is vector-bundle Quillen K-theory and coherent G-theory, not an identification with perfect-complex Waldhausen K-theory, a general scheme-localization theorem, or nonconnective K-theory."
+review = "author_checked"
+provenance = "quillen"

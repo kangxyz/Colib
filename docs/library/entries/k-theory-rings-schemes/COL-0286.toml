@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0286"
+title = "The canonical K-to-G equivalence on regular schemes with the resolution property"
+kind = "comparison"
+section = "k-theory-of-schemes"
+order = 30
+statement = "For a quasi-compact regular scheme with the resolution property, the original vector-bundle-to-coherent K-map is bijective in every nonnegative degree, including zero. The resulting multiplicative equivalence has definitionally that same forward homomorphism."
+scope = "X : Scheme.{u}, CompactSpace X, HasResolutionProperty X and IsRegular X. Local Noetherianity is derived from regularity. Native Stacks coherent perfectness and an actual bounded finite locally free replacement give each coherent sheaf a finite admissible resolution; the proved Quillen resolution theorem then applies in the original upper SmallModel.{u+1}. No separatedness, uniform resolution length, finite-dimensionality, or global projectivity of vector bundles is assumed. This is an adaptation of Quillen's canonical regular-scheme comparison: his Section 7 has additional standing Noetherian and separated hypotheses. No general open K-localization sequence or negative-degree comparison is asserted."
+review = "author_checked"
+provenance = "quillen"

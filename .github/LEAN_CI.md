@@ -13,7 +13,7 @@ both runner profiles; the mathematical dependency pins are unchanged.
 |---|---|---|
 | Labels | `ubuntu-24.04` | `self-hosted,linux,x64,colib-ec2` |
 | Native scope memory request | 13,824 MiB | 57,344 MiB |
-| Lake threads / declaration lint workers | 1 / 2 | 8 / 8 |
+| Lake threads / declaration lint workers | 4 / 4 | 8 / 8 |
 | Build job / compiler cap | 360 minutes / remaining safe window | 240 / 180 minutes |
 | Test job limit | 360 minutes | 90 minutes |
 | Build-to-Test transfer | Same-run dependency and root archives | Same checkout and native store |

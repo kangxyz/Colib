@@ -4,8 +4,9 @@ This batch combines actual-target and small-model Serre localization, arbitrary-
 finite-module G-localization, the principal closed/open sequence, and the bounded
 finite-resolution bridge. The bridge is part of this full batch and supports the
 scheme comparison at Quillen commit `c561118b7795eb9780be9ed391c3251d6a4d0afd`.
-This batch does not publish the scheme K/G categories, their comparison, or
-regular-scheme equivalence.
+This document records the COL-0271–0274 foundation batch. The later
+[native scheme comparison](native-scheme-comparison.md) has its own geometric
+assumptions and verification scope.
 
 ## Closed results
 
@@ -42,13 +43,14 @@ the canonical K-to-G map on a regular quasi-compact scheme with the ordinary
 resolution property is an equivalence. No finite Krull-dimension hypothesis is
 to be introduced.
 
-The intended geometric inputs are the existing native `Scheme.Vect` and
+The geometric continuation uses the existing native `Scheme.Vect` and
 `AlgebraicGeometry.SheafOfModules.CoherentModules`, their ambient short exact
 sequences, and literal `Scheme.Modules.restrictFunctor`. Native regular
-coherent-perfectness and Stacks Tag 0F8E provide the required bounded
-finite-locally-free complex and actual map to the coherent single object.
-Geometric instances, their strict comparison consumers, and the canonical
-all-degree K-equivalence remain downstream work.
+coherent-perfectness and Stacks Tag 0F8E provide the bounded finite-locally-free
+complex and actual map to the coherent single object. The separate
+[native scheme slice](native-scheme-comparison.md) records the geometric instances,
+canonical comparison and all-degree restriction functoriality. The regular
+equivalence remains a separate continuation.
 
 ## Validation scope
 
@@ -69,8 +71,8 @@ correspondence. Source, compiler, actual imported artifacts and successful outpu
 families are bound in private local records, not repository deliverables. These
 focused checks do not constitute a local whole-repository `scripts/check.sh`
 pass or an independent kernel replay. The unchanged original CI is the
-whole-repository gate before publication to main. No completed scheme theorem
-is claimed.
+whole-repository gate before publication to main. These earlier checks do not
+cover the later scheme slice.
 
 ## Closed affine G-theory specialization
 

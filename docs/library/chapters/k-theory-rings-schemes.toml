@@ -32,4 +32,4 @@ introduction = "For native finite modules over a commutative Noetherian ring, ac
 id = "k-theory-of-schemes"
 title = "K-theory of schemes"
 order = 50
-introduction = "Scheme constructions use their original geometric categories and consume the general categorical K-theory machinery. Open restriction of native perfect complexes induces the original canonical Waldhausen K-map. Any comparison or localization theorem retains its geometric hypotheses and is registered separately when proved."
+introduction = "Native vector bundles and coherent sheaves define upper small-model connective K-theory and G-theory. Their actual inclusion gives the canonical K-to-G map, compatible with strictly functorial open restriction in every nonnegative degree. Separately, open restriction of native perfect complexes induces its original canonical Waldhausen K-map. Equivalences between these constructions, regular-scheme comparison and localization theorems retain their geometric hypotheses and are registered separately when proved."

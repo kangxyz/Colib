@@ -203,8 +203,9 @@ a finite admissible resolution in any replete kernel-closed class containing
 zero. Lifting the resulting tower into an exact full subcategory retains all
 ambient maps and its length. Arbitrary small-model functoriality also retains
 the canonical K-maps. See the [G-localization and resolution scope](migration/scheme-kg/README.md).
-The scheme-specific comparison and regular K/G equivalence are still separate
-obligations, not conclusions of this foundation slice.
+The native scheme K/G construction and canonical comparison are developed in a
+[separate geometric slice](migration/scheme-kg/native-scheme-comparison.md).
+The regular K/G equivalence remains a further obligation.
 
 ## Actual-target and finite-module G-localization
 
@@ -228,3 +229,14 @@ G-theory, with forward map compatible with the original quotient-restriction
 smallKMap. The transported original boundary gives the full connective
 closed/open sequence, including G-zero. No regularity or nontriviality hypothesis
 is added. See the [precise native scope](migration/scheme-kg/principal-closed-localization.md).
+
+## Native scheme K/G-theory and canonical restriction
+
+Native vector bundles and coherent module sheaves carry the original upper
+small-model connective K-groups. Their literal inclusion gives the canonical
+K-to-G map. Actual open restriction obeys strict identity and composition laws
+and commutes with the comparison in every nonnegative degree, including zero.
+See the [precise scope and literature](migration/scheme-kg/native-scheme-comparison.md).
+The regular-scheme equivalence, perfect-complex comparison, general scheme-open
+K-localization and nonconnective theory are separate statements, not conclusions
+of this construction slice.

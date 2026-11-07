@@ -41,10 +41,11 @@ private theorem extMk_cochain_closed (f : X ⟶ I.cocomplex.X n)
     (hf : f ≫ I.cocomplex.d n (n + 1) = 0) :
     (f ≫ (I.cochainComplexXIso n n rfl).inv) ≫
       I.cochainComplex.d (n : ℤ) ((n : ℤ) + 1) = 0 := by
-  have h : (f ≫ (I.cochainComplexXIso n n rfl).inv) ≫
-      I.cochainComplex.d (n : ℤ) ((n + 1 : ℕ) : ℤ) = 0 := by
-    simp [I.cochainComplex_d _ _ n (n + 1) rfl rfl, reassoc_of% hf]
-  simpa only [Nat.cast_add, Nat.cast_one] using h
+  rw [I.cochainComplex_d (n : ℤ) ((n : ℤ) + 1) n (n + 1) rfl (by omega)]
+  simp only [Category.assoc, Iso.inv_hom_id_assoc]
+  simpa only [Category.assoc, zero_comp] using
+    congrArg (fun k => k ≫
+      (I.cochainComplexXIso ((n : ℤ) + 1) (n + 1) (by omega)).inv) hf
 
 variable [EnoughInjectives C] [HasExt.{w} C]
 

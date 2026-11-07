@@ -16,8 +16,12 @@ in the presence of all production instances and simplification rules.
 -/
 
 open Lean Elab Command in
-set_option trace.Debug.Meta.Tactic.simp true in
 run_cmd do
+  let isSimp ← liftCoreM <|
+    (Batteries.Tactic.Lint.isSimpTheorem
+      ``stdSimplex.PartialSimplexStraightening.mk.injEq).run' mkMetaContext
+  unless isSimp do
+    throwError "The constructor injectivity theorem is absent from the simp set"
   let failure? ← liftCoreM <| Core.withCurrHeartbeats <|
     (Batteries.Tactic.Lint.simpNF.test
       ``stdSimplex.PartialSimplexStraightening.mk.injEq).run' mkMetaContext

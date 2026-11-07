@@ -46,12 +46,27 @@ def mapOnWorkers (jobs : Array α) (numWorkers : Nat) (f : α → CoreM β) :
 /-- Each check gets fresh Core/Meta state, a child name generator and its own heartbeat budget. -/
 def lintDecl (linter : NamedLinter) (decl : Name) (inIO : Bool) :
     CoreM (Option MessageData) := do
+  let diagnose := inIO && linter.name == `simpNF &&
+    decl == `stdSimplex.PartialSimplexStraightening.mk.injEq
   let act : MetaM (Option MessageData) := do
-    let result ← linter.test decl
-    if inIO then
-      printTraces
-      (← IO.getStdout).flush
-    return result
+    if diagnose then
+      withOptions (·.setBool `trace.Debug.Meta.Tactic.simp true) do
+        try
+          linter.test decl
+        finally
+          let isSimp ← isSimpTheorem decl
+          let traces := (← getTraceState).traces.toArray
+          IO.println s!"[target simp diagnostic] isSimp={isSimp}; traces={traces.size}"
+          for {msg, ..} in traces.extract (traces.size - 80) traces.size do
+            let rendered ← msg.toString
+            IO.println <| String.ofList <| rendered.toList.take 800
+          (← IO.getStdout).flush
+    else
+      let result ← linter.test decl
+      if inIO then
+        printTraces
+        (← IO.getStdout).flush
+      return result
   let run ← Core.withCurrHeartbeats <|
     Core.wrapAsync (fun _ => act.run' Lean.Elab.Command.mkMetaContext) (← read).cancelTk?
   match ← (run ()).toBaseIO with

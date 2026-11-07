@@ -199,3 +199,22 @@ label = "Published article, Exercise 1.10.2"
 locator_prefix = "Exercise 1.10.2"
 url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaugh%20-%20Higher%20algebraic%20K-theory%20of%20schemes.pdf"
 sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"
+
+[sources.Matsumoto1969]
+kind = "article"
+title = "Sur les sous-groupes arithmétiques des groupes semi-simples déployés"
+authors = ["Hideya Matsumoto"]
+year = 1969
+journal = "Annales scientifiques de l'École Normale Supérieure"
+volume = "4e série, 2"
+number = "1"
+pages = "1-62"
+doi = "10.24033/asens.1174"
+version = "Published article (1969), Section 5, Theorem 5.10 and Corollary 5.11, pp. 30-31, inspected 2026-11-08"
+url = "https://numdam.org/articles/10.24033/asens.1174/"
+
+[[sources.Matsumoto1969.documents]]
+label = "Published article, Numdam scan"
+locator_prefix = "Section 5,"
+url = "https://numdam.org/item/10.24033/asens.1174.pdf"
+sha256 = "4ac51e1290e2ab3c633d5a55378eb078f88d824bb3d28aac3585fce0595db5ca"

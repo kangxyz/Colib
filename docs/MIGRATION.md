@@ -107,7 +107,7 @@ map in every nonnegative degree, including K-zero. It assumes no row-equivalence
 or homotopy-inverse premise. These results do not supply a strict S-model
 comparison, a Quillen-Waldhausen comparison or nonconnective K-theory.
 
-## Canonical Milnor–Quillen K₂ comparison
+## Matsumoto's theorem for K₂ in characteristic zero
 
 The completed source chain gives characteristic-zero additive equivalences from
 the native Milnor K₂ group to actual right-projective Quillen K₂ and the literal

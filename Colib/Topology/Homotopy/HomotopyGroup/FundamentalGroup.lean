@@ -28,7 +28,8 @@ lemma HomotopyGroup.pi1MulEquivFundamentalGroup_naturality
   induction a using Quotient.inductionOn with
   | h p =>
     rw [FundamentalGroup.mapOfEq_apply]
-    change (⟦genLoopEquivOfUnique (Fin 1) (GenLoop.postcomp f h p)⟧ :
-      FundamentalGroup Y y) =
-      ⟦((genLoopEquivOfUnique (Fin 1) p).map f.continuous).cast h.symm h.symm⟧
-    congr 1
+    change FundamentalGroup.fromPath
+      ⟦genLoopEquivOfUnique (Fin 1) (GenLoop.postcomp f h p)⟧ =
+      FundamentalGroup.fromPath
+        ⟦((genLoopEquivOfUnique (Fin 1) p).map f.continuous).cast h.symm h.symm⟧
+    congr 2

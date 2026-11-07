@@ -120,10 +120,10 @@ def boundedTermsSingleCoarseKEquivOfCanonicalFiberWeakEquivalence
 /-- The underlying monoid homomorphism of this K-equivalence. -/
 @[simp] theorem boundedTermsSingleCoarseKEquivOfCanonicalFiberWeakEquivalence_coe (h :
     IsWeakHomotopyEquivalence (Fibration.canonicalFiberMap (boundedTermsNested P))) (n : ℕ) :
-    (↑(boundedTermsSingleCoarseKEquivOfCanonicalFiberWeakEquivalence P h n) : (ofExactCategory
-        (ExactSubcategory.exactStructure (abelianExactStructure A) P)).K n →*
-        (boundedTermsNested P).coarse.K n) =
-      KMap (boundedTermsSingle_coarseExact P 0) n := rfl
+    @Eq ((ofExactCategory (ExactSubcategory.exactStructure (abelianExactStructure A) P)).K n →*
+      (boundedTermsNested P).coarse.K n)
+      (MonoidHom.ofClass (boundedTermsSingleCoarseKEquivOfCanonicalFiberWeakEquivalence P h n))
+      (KMap (boundedTermsSingle_coarseExact P 0) n) := rfl
 
 
 end CategoryTheory.Waldhausen.GilletWaldhausen

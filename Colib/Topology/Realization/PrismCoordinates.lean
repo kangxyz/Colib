@@ -103,7 +103,7 @@ subtracted at the upper copy of the split vertex. -/
     (z : prismCell i) (j : Fin (n + 1)) :
     (prismLift i z).weights (i.castSucc.succAbove j) =
       z.1.1.weights j - if j = i then prismSplitAmount i z.1 else 0 := by
-  simp [prismLift, Finsupp.mapDomain_apply Fin.succAbove_right_injective,
+  simp [prismLift, Finsupp.mapDomain_apply_of_injective Fin.succAbove_right_injective,
     Finsupp.single_apply, eq_comm]
 
 /-- The affine interval coordinate on the `i`th prism simplex. -/

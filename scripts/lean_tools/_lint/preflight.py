@@ -9,15 +9,15 @@ from pathlib import Path
 import sys
 import tomllib
 
-PIN = "7e23602c91bc04586b2b06de2708a041853e4681"
+PIN = "66e469188fe07963e5cf666c7d4433f45b8131c5"
 SOURCES = {
     "lakefile.toml": "acadcd8beb13a53a4ac9399e6706c829309d2380f338d13b037886666f978015",
-    "scripts/runLinter.lean": "24ee54cb7f38734970b970406ad75baf7aae7a8889b939d13f7b5a8c5f20556a",
+    "scripts/runLinter.lean": "08f57d26bd3226929d221868fae9b0b79c1f8ca0c1ce5583c55da9ffaf210bbf",
     "Batteries/Tactic/Lint.lean": "70cdcc284aaa3b637fecbbdc91316ad0d0c59c4766637f3e8c38d3f686bd30e8",
-    "Batteries/Tactic/Lint/Basic.lean": "a6df6a54285448c19a3a4a721011f36a8735e027707fa3225c718380f14081e3",
-    "Batteries/Tactic/Lint/Frontend.lean": "c220e1431d89e12fbe9ba483e0f1eceebb7f5fe811ffaea9049104266f1a105a",
-    "Batteries/Tactic/Lint/Misc.lean": "ac46c3ae1d9716d6da0c2bd9991dbb30975276c3bfac4fd0c14c72f1f3039fe7",
-    "Batteries/Tactic/Lint/Simp.lean": "9ffde5ad73dc5a72dd09c31f59cbccf648a272250c53597073c9dded7ee5a0f0",
+    "Batteries/Tactic/Lint/Basic.lean": "907aef469ac1dd6e027083bdda94058b473e3081bd8cc4dcba53e6aba4b0582d",
+    "Batteries/Tactic/Lint/Frontend.lean": "21d81a42a41c2df100e892caf7ec75e5c737018660714245d195e133eeb9761f",
+    "Batteries/Tactic/Lint/Misc.lean": "a3f05a0e780fb15659a1fe922486fe75362e80f974441b1aa80dd8e04ee097b4",
+    "Batteries/Tactic/Lint/Simp.lean": "18b9a43f1e452aaa9bb509246f1e3a6cc6f91066810c48ec9e2e3dd6b6a91299",
     "Batteries/Tactic/Lint/TypeClass.lean": "30a23854f7607f887b443101771a6934d5137f581761ed204c8c6e0687a8aa3a"
 }
 

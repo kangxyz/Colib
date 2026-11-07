@@ -9,7 +9,7 @@ if [[ "${1:-}" == --prepare-only ]]; then
   (( $# == 0 )) || { echo '--prepare-only takes no roots' >&2; exit 2; }
 fi
 if ! provider="$(python3 "$helper_dir/preflight.py" --batteries-dir)" ||
-   [[ "$(lake env lean --version)" != "Lean (version 4.34.0-rc2,"* ]]; then
+   [[ "$(lake env lean --version)" != "Lean (version 4.35.0,"* ]]; then
   if "$prepare_only"; then exit 0; fi
   exec lake --no-build --log-level=error lint "$@" -- --trace
 fi
@@ -44,7 +44,7 @@ config = ('name = "ColibCILintRunner"\nenableArtifactCache = false\n'
           '[[lean_exe]]\nname = "batchedLint"\nroot = "BatchedLint"\n'
           'supportInterpreter = true\n')
 for name, content in (("lakefile.toml", config),
-                      ("lean-toolchain", "leanprover/lean4:v4.34.0-rc2\n"),
+                      ("lean-toolchain", "leanprover/lean4:v4.35.0\n"),
                       ("BatchedLint.lean", (helper / "BatchedLint.lean").read_text())):
     target = build / name
     if not target.exists() or target.read_text() != content:

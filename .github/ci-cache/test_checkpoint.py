@@ -209,7 +209,7 @@ class CheckpointTests(unittest.TestCase):
     def test_unsupported_toolchain_rejects_admission_and_all_checkpoint_commands(self):
         artifact = self.write('.lake/build/Root.olean', 'compiled')
         archive, _ = self.pack('root')
-        self.write('lean-toolchain', 'leanprover/lean4:v4.35.0\n')
+        self.write('lean-toolchain', 'leanprover/lean4:unsupported\n')
         artifact.write_text('current compiled bytes')
         self.invoke('supported', code=1)
         self.invoke('context', code=1)

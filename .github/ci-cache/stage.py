@@ -162,7 +162,7 @@ def edit_metadata(path, data):
 
 
 def strip_bad_reference(data, field, bad):
-    """Only Lake4.34.1's optional ModuleOutputDescrs.l field is removed."""
+    """Remove only an affected archive reference, including the optional l field."""
     value = data.get(field)
     if isinstance(value, dict) and value.get('l') in bad:
         cleaned = dict(value); cleaned.pop('l')
@@ -332,8 +332,9 @@ def main(argv=None):
                 args.native_cache.is_relative_to(args.staging):
             raise ValueError('staging must not overlap the native artifact store')
         _, version = runner.run(['lake', 'env', 'lean', '--version'])
-        if not version.startswith(('Lean (version 4.34.1,', 'Lean (version 4.34.0-rc2,')):
-            raise ValueError('stage helper requires a supported pinned Lean4.34 toolchain')
+        if not version.startswith(('Lean (version 4.35.0,', 'Lean (version 4.34.1,',
+                                   'Lean (version 4.34.0-rc2,')):
+            raise ValueError('stage helper requires a supported pinned Lean toolchain')
         _, prefix = runner.run(['lake', 'env', 'lean', '--print-prefix'])
         leantar = str(Path(prefix.strip()) / 'bin/leantar')
         real_lean = os.environ.get('LEAN') or str(Path(prefix.strip()) / 'bin/lean')

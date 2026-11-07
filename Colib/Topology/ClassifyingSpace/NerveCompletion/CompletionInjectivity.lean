@@ -71,7 +71,9 @@ theorem completionFaithful (C : Type u) [Category.{v} C] :
 
 /-- Injectivity of the ORIGINAL based completion-to-fundamental-group comparison. -/
 theorem completionMap_injective (C : Type u) [Category.{v} C] (c : C) :
-    Function.Injective (classifyingGroupoidCompletionMap C c) :=
-  completion_map_injective C _ _
+    Function.Injective (classifyingGroupoidCompletionMap C c) := by
+  intro f g h
+  apply End.ext
+  exact completion_map_injective C _ _ (congrArg End.asHom h)
 
 end CategoryTheory.NerveCompletion

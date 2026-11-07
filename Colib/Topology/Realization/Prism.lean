@@ -64,7 +64,7 @@ theorem realizationCylinderComparison_naturality {X Y : SSet.{u}} (f : X ⟶ Y) 
 def realizationPrismCell {n : ℕ} (i : Fin (n + 1)) :
     |(Δ[n + 1] : SSet.{u})| ⟶ |(Δ[n] ⊗ Δ[1] : SSet.{u})| :=
   SSet.toTop.map (SSet.yonedaEquiv.symm
-    (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val)
+    (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val)
 
 /-- The prism comparison in ordinary barycentric simplex and interval coordinates. -/
 def realizationPrismCoordinates (n : ℕ) :
@@ -130,10 +130,10 @@ theorem realizationPrismCoordinates_cell_snd {n : ℕ} (i : Fin (n + 1))
 theorem prism_simplex_factors {n : ℕ} {m : SimplexCategoryᵒᵖ}
     (s : (Δ[n] ⊗ Δ[1] : SSet.{u}).obj m) :
     ∃ (i : Fin (n + 1)) (f : m.unop ⟶ ⦋n + 1⦌),
-      (Δ[n] ⊗ Δ[1]).map f.op (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val = s := by
+      (Δ[n] ⊗ Δ[1]).map f.op (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val = s := by
   obtain ⟨d, f, _, y, hy⟩ := (Δ[n] ⊗ Δ[1] : SSet.{u}).exists_nonDegenerate s
   obtain ⟨z, hz⟩ := SSet.prodStdSimplex.exists_nonDegenerate_max_dim y rfl
-  obtain ⟨i, rfl⟩ := SSet.prodStdSimplex.nonDegenerateEquiv₁.surjective z
+  obtain ⟨i, rfl⟩ := SSet.prodStdSimplex₁.nonDegenerateEquiv.surjective z
   obtain ⟨g, hg⟩ := (SSet.Subcomplex.mem_ofSimplex_obj_iff _ _).mp hz
   refine ⟨i, f ≫ g, ?_⟩
   rw [op_comp, Functor.map_comp]
@@ -152,7 +152,7 @@ theorem realizationPrismCell_jointly_surjective {n : ℕ}
     SSet.toTop.map (SSet.yonedaEquiv.symm _)) t = _
   rw [← Functor.map_comp]
   have heq : SSet.stdSimplex.map g ≫ SSet.yonedaEquiv.symm
-      (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val = f := by
+      (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val = f := by
     apply SSet.yonedaEquiv.injective
     exact hg
   rw [heq]
@@ -182,9 +182,9 @@ instance realizationPrism_compactSpace (n : ℕ) :
 This replaces the two face formulas unavailable in the pinned Mathlib. -/
 theorem prism_adjacent_simplex_face {n : ℕ} (i : Fin n) :
     (Δ[n] ⊗ Δ[1] : SSet.{u}).δ i.castSucc.succ
-        (SSet.prodStdSimplex.nonDegenerateEquiv₁ i.castSucc).val =
+        (SSet.prodStdSimplex₁.nonDegenerateEquiv i.castSucc).val =
       (Δ[n] ⊗ Δ[1] : SSet.{u}).δ i.succ.castSucc
-        (SSet.prodStdSimplex.nonDegenerateEquiv₁ i.succ).val := by
+        (SSet.prodStdSimplex₁.nonDegenerateEquiv i.succ).val := by
   apply Prod.ext
   · change (Δ[n] : SSet.{u}).δ i.castSucc.succ
         (SSet.stdSimplex.objEquiv.symm (SimplexCategory.σ i.castSucc)) =

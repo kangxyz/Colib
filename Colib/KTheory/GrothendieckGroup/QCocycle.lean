@@ -117,7 +117,9 @@ def qGrothendieckFunctor : E.QCategory ⥤ SingleObj (Multiplicative E.Grothendi
     E.qObjectClass E.qGrothendieckFunctor X =
       SingleObj.toEnd (Multiplicative E.GrothendieckGroup)
         (Multiplicative.ofAdd (E.grothendieckClass X)) := by
-  simp only [qObjectClass, qGrothendieckFunctor, qGrothendieckWeight_fromZeroTotal,
+  apply End.ext
+  simp only [qObjectClass, SingleObj.toEnd_def, qGrothendieckFunctor,
+    qGrothendieckWeight_fromZeroTotal,
     qGrothendieckWeight_fromZero, SingleObj.inv_as_inv, SingleObj.comp_as_mul]
   change (1 : Multiplicative E.GrothendieckGroup)⁻¹ *
       Multiplicative.ofAdd (E.grothendieckClass X) = Multiplicative.ofAdd (E.grothendieckClass X)

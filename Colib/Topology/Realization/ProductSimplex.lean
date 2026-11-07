@@ -94,7 +94,7 @@ def simplexPrismSum (n : ℕ) : (Δ[n] ⊗ Δ[1] : SSet.{u}) ⟶ Δ[n + 1] where
 
 /-- A maximal chain in the prism splits the sum of its grid coordinates. -/
 def simplexPrismRetract (n : ℕ) : Retract (Δ[n + 1] : SSet.{u}) (Δ[n] ⊗ Δ[1]) where
-  i := SSet.yonedaEquiv.symm (SSet.prodStdSimplex.nonDegenerateEquiv₁ (Fin.last n)).val
+  i := SSet.yonedaEquiv.symm (SSet.prodStdSimplex₁.nonDegenerateEquiv (Fin.last n)).val
   r := simplexPrismSum n
   retract := by
     apply SSet.yonedaEquiv.injective
@@ -102,7 +102,7 @@ def simplexPrismRetract (n : ℕ) : Retract (Δ[n + 1] : SSet.{u}) (Δ[n] ⊗ Δ
     apply SSet.stdSimplex.objEquiv.injective
     apply SimplexCategory.Hom.ext
     exact (SSet.prodStdSimplex.nonDegenerate_max_dim_iff _ rfl).mp
-      (SSet.prodStdSimplex.nonDegenerateEquiv₁ (Fin.last n)).property
+      (SSet.prodStdSimplex₁.nonDegenerateEquiv (Fin.last n)).property
 
 /-- The point is a simplicial retract of the interval. -/
 def simplexZeroIntervalRetract : Retract (Δ[0] : SSet.{u}) Δ[1] where

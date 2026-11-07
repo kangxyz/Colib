@@ -14,6 +14,8 @@ public import Colib.Topology.Pushout.HomotopyEquivalence
 public import Colib.Topology.Category.TopCat.SequentialColimit.HomotopyInvariance
 public import Mathlib.CategoryTheory.Limits.Preserves.Shapes.Terminal
 
+import Mathlib.CategoryTheory.MorphismProperty.FunctorCategory
+
 /-! A cellular criterion for natural realization equivalences. -/
 /-! Implementation provenance: adapted from the matching Quillen file at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The actual simplicial relative

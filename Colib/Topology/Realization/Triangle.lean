@@ -19,10 +19,8 @@ Extracted from `Quillen/Topology/ClassifyingSpace/ArrowPaths.lean` at commit
 relative homotopies, universe parameters and multiplication order are retained.
 Only native namespace and import ownership change unless noted below.
 
-The finite-simplex filling uses the existing coordinate-preserving
-`FiniteSimplexAdapter.toTopHomeomorph`, since the pinned realization API has
-ordinary coordinate simplices while the source interpolation uses finite weights.
-No realization functor is replaced.
+The finite-simplex filling uses Mathlib's realization coordinates in the
+finitely supported convex simplex through `FiniteSimplexAdapter.toTopHomeomorph`.
 
 -/
 

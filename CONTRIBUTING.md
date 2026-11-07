@@ -42,7 +42,7 @@ routine choices inside an already authorized assignment.
 The normative external guides are
 [Mathlib naming](https://leanprover-community.github.io/contribute/naming.html),
 [Mathlib style](https://leanprover-community.github.io/contribute/style.html), and
-[Stacks conventions](https://github.com/AxiomMath/Stacks/blob/f8e70c5dd04bfabcb423d5e325461f527c85a5d6/CONTRIBUTING.md).
+[Stacks conventions](https://github.com/AxiomMath/Stacks/blob/5ed82d14634e8d9576bb844c7bd4e3da66d450e7/CONTRIBUTING.md).
 
 ## Work and validation
 

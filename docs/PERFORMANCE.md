@@ -15,3 +15,12 @@ and retain native input verification and axiom/lint predicates.
 The [CI checkpoint case](performance/ci-mathlib-checkpoint.md) records the regression,
 original measurements, exact runs, and the compact-path validation. Its
 [step timings](performance/ci-timings.json) preserve the complete measured phases.
+
+When an elaboration timeout is attributed to a nested `obtain` in a large
+proposition, profile the command and try `Exists.elim` with explicit conjunction
+projections at the same heartbeat budget. See the
+[finite mixed generation case](performance/finite-mixed-exists-elim.md).
+
+If profiling points to `CoeT` while elaborating an equality of K-group
+homomorphisms, provide the equality's native homomorphism type explicitly.
+See the [fine K-product case](performance/fine-k-product-equality-type.md).

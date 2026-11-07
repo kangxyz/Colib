@@ -32,7 +32,7 @@ example (X : C) : E.kZeroObjectLoop X =
         (E.fromZero (CategoryTheory.QConstruction.of E.deflation E.inflation X))).symm := rfl
 
 example (X : C) : E.kZeroFundamentalGroupEquiv (E.kZeroObjectClass X) =
-    (⟦E.kZeroObjectLoop X⟧ : FundamentalGroup E.KSpace E.kBasepoint) :=
+    FundamentalGroup.fromPath ⟦E.kZeroObjectLoop X⟧ :=
   E.kZeroFundamentalGroupEquiv_objectClass X
 
 example (X : C) : E.grothendieckToKZero
@@ -109,7 +109,7 @@ variable {C : Type u} [Category.{v} C] [Preadditive C] [HasFiniteBiproducts C]
 example : E.kZeroFundamentalGroupEquiv = HomotopyGroup.pi1MulEquivFundamentalGroup := rfl
 
 example (X : C) :
-    (⟦E.kZeroObjectLoop X⟧ : FundamentalGroup E.KSpace E.kBasepoint) =
+    FundamentalGroup.fromPath ⟦E.kZeroObjectLoop X⟧ =
       E.qObjectClass (classifyingFundamentalGroupoidFunctor E.QCategory) X :=
   E.kZeroObjectLoop_eq_qObjectClass X
 

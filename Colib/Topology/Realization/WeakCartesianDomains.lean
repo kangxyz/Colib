@@ -192,6 +192,6 @@ theorem finiteCoefficientDomain_weakCartesian (N : ℕ) [K.HasDimensionLT N]
     · apply coefficientDomainMapCoproduct_weakCartesian q r K s t w
         (fun _ : DomainCell K n ↦ (Δ[n] : SSet.{u})) (domainCellsMap K n)
       intro c
-      simpa only [domainCellsMap, Sigma.ι_desc] using h n c.map
+      simpa only [domainCellsMap, Sigma.ι_comp_desc] using h n c.map
 
 end Topology.Realization.CartesianDomains

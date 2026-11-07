@@ -62,11 +62,17 @@ theorem exists_finite_coprime_milnorK_mixed_expansion (p : k[X]) (hp : p.Monic)
                 ab.2)) =
               milnorKTheoryMap (AdjoinRoot.map (algebraMap k S) p
                 (p.map (algebraMap k S)) dvd_rfl) (m + 1) x := by
-  obtain ⟨s, hs, hgen⟩ := exists_finite_milnorK_reduced_mixed_expansion.{u, u} p hp m x
+  refine (exists_finite_milnorK_reduced_mixed_expansion.{u, u} p hp m x).elim ?_
+  intro s hsgen
+  have hs := hsgen.1
+  have hgen := hsgen.2
   let : Fact p.natDegree.Prime := ⟨hprime⟩
-  obtain ⟨S, hfinite, hcop, hsplit⟩ :=
-    exists_coprime_splitting_field_of_finset p.natDegree s
-      (fun r hr => (hs r hr).1) (fun r hr => (hs r hr).2)
+  refine (exists_coprime_splitting_field_of_finset p.natDegree s
+    (fun r hr => (hs r hr).1) (fun r hr => (hs r hr).2)).elim ?_
+  intro S hS
+  have hfinite := hS.1
+  have hcop := hS.2.1
+  have hsplit := hS.2.2
   let : FiniteDimensional k S := hfinite
   have hq : Irreducible (p.map (algebraMap k S)) :=
     hp.irreducible_map_of_natDegree_coprime (Fact.out : Irreducible p) hcop

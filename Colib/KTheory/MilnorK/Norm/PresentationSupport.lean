@@ -171,7 +171,11 @@ theorem simpleMilnorNorm_map_of_poly_eq_map (φ : k →+* K) {d e : ℕ}
   have h := simpleMilnorNorm_map_eq_weighted_sum_of_factors φ p x
     ({PUnit.unit} : Finset PUnit.{1}) (fun _ => e) (fun _ => q)
     (fun i _ j _ _ => Subsingleton.elim i j) (fun _ => hdiv) hcover
-  simpa only [Finset.sum_singleton, hq, multiplicity_self, Nat.cast_one, one_zsmul] using h
+  have hm : multiplicity (poly q) ((poly p).map φ) = 1 := by
+    rw [← hq]
+    exact multiplicity_self
+      (FiniteMultiplicity.of_not_isUnit (irreducible q).not_isUnit (irreducible q).ne_zero)
+  simpa only [Finset.sum_singleton, hm, Nat.cast_one, one_zsmul] using h
 
 end Stacks.Chow
 

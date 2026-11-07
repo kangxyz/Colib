@@ -53,7 +53,8 @@ theorem exists_atPrime_unit_mul_pow_multiplicity_map
       (Localization.AtPrime (Ideal.span ({q} : Set K[X]))) (Ideal.span {q}) r).2
     simpa only [Ideal.mem_primeCompl_iff, Ideal.mem_span_singleton] using hqr
   obtain ⟨u, hu⟩ := hru
-  refine ⟨multiplicity_pos_of_dvd hqp, u, ?_⟩
+  refine ⟨multiplicity_pos_of_dvd hqp
+    (FiniteMultiplicity.of_not_isUnit hq (Polynomial.map_ne_zero hp)), u, ?_⟩
   calc
     algebraMap K[X] (Localization.AtPrime (Ideal.span ({q} : Set K[X]))) (p.map φ) =
         algebraMap K[X] (Localization.AtPrime (Ideal.span ({q} : Set K[X])))

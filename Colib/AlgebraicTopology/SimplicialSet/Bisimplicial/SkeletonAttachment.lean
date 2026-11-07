@@ -146,7 +146,7 @@ lemma rowToStage_injective_off_attachment {q : SimplexCategoryᵒᵖ}
   have hmap : x.2.down = y.2.down :=
     (column X q).unique_nonDegenerate_map _ x.2.down ⟨x.1, hxnd⟩ rfl
       y.2.down ⟨y.1, hynd⟩ he
-  exact Prod.ext hxy (ULift.ext _ _ hmap)
+  exact Prod.ext hxy (ULift.ext hmap)
 
 /-- The genuine enriched successor attachment for every bisimplicial set. -/
 theorem attachment_isPushout : IsPushout (attachmentToStage X n)

@@ -77,8 +77,10 @@ def boundedTermsSingleCoarseKEquivGeneral (n : ℕ) :
 
 /-- The underlying monoid homomorphism of this K-equivalence. -/
 @[simp] theorem boundedTermsSingleCoarseKEquivGeneral_coe (n : ℕ) :
-    MonoidHomClass.toMonoidHom (boundedTermsSingleCoarseKEquivGeneral P n) =
-      KMap (boundedTermsSingle_coarseExact P 0) n := rfl
+    @Eq ((ofExactCategory (ExactSubcategory.exactStructure (abelianExactStructure A) P)).K n →*
+      (boundedTermsNested P).coarse.K n)
+      (MonoidHom.ofClass (boundedTermsSingleCoarseKEquivGeneral P n))
+      (KMap (boundedTermsSingle_coarseExact P 0) n) := rfl
 
 
 end CategoryTheory.Waldhausen.GilletWaldhausen

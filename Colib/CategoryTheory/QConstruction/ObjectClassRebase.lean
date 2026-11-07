@@ -34,7 +34,8 @@ variable {C : Type u} [Category.{v} C] [Preadditive C] [HasFiniteBiproducts C]
 lemma qObjectClass_natIso {D : Type*} [Groupoid D]
     {F G : E.QCategory ⥤ D} (η : F ≅ G) (X : C) :
     E.qObjectClass G X = (η.app E.qZero).conj (E.qObjectClass F X) := by
-  simp only [qObjectClass, Iso.conj_apply, Iso.app_hom, Iso.app_inv]
+  apply End.ext
+  simp only [qObjectClass, Iso.conj_apply_asHom, Iso.app_hom, Iso.app_inv]
   apply (cancel_mono (G.map (E.fromZero (QConstruction.of E.deflation E.inflation X)))).1
   simp only [Category.assoc, IsIso.inv_hom_id, Category.comp_id]
   rw [← η.hom.naturality (E.fromZero (QConstruction.of E.deflation E.inflation X))]

@@ -11,6 +11,8 @@ public import Colib.CategoryTheory.TheoremA.SkeletalNaturality
 public import Colib.Topology.Realization.MonomorphismHEP
 public import Colib.Topology.Realization.Skeleton
 
+import Mathlib.CategoryTheory.MorphismProperty.FunctorCategory
+
 /-!
 # Genuine skeletal attachments for coefficient-product domains
 

@@ -9,7 +9,7 @@ module
 /- Adapted from Quillen c561118b7795eb9780be9ed391c3251d6a4d0afd.
 The ordinary categorical geometry uses native Mathlib maps and independent universes. -/
 
-public import Mathlib.CategoryTheory.Abelian.Basic
+public import Mathlib.CategoryTheory.Abelian.Monomorphisms
 public import Mathlib.CategoryTheory.Comma.Over.Pullback
 public import Mathlib.CategoryTheory.Limits.Constructions.Over.Connected
 public import Mathlib.CategoryTheory.Adjunction.Limits

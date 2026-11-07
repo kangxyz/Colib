@@ -22,6 +22,8 @@ noncomputable section
 
 section Coordinates
 
+set_option linter.deprecated false
+
 variable {M N : Type*} [Fintype M] [Fintype N]
 
 example (x : stdSimplex ℝ M) : toOld (toConvex x) = x := by simp
@@ -46,20 +48,21 @@ example (x : Convexity.StdSimplex ℝ (Fin 2)) :
 example [DecidableEq M] (i : M) :
     toConvex (stdSimplex.vertex i) = Convexity.StdSimplex.single i := by simp
 
-end Coordinates
-
 example (x : stdSimplex ℝ (Fin 2)) :
     Convexity.StdSimplex.homeomorphI (toConvex x) = stdSimplexHomeomorphUnitInterval x :=
   interval_compat x
 
 example (x : stdSimplex ℝ (Fin 2)) :
     (Homeomorph.ulift.symm : unitInterval ≃ₜ TopCat.I)
-      (Convexity.StdSimplex.homeomorphI (toConvex x)) = TopCat.stdSimplexHomeomorphI x :=
+      (Convexity.StdSimplex.homeomorphI (toConvex x)) =
+        (Homeomorph.ulift.symm : unitInterval ≃ₜ TopCat.I) (stdSimplexHomeomorphUnitInterval x) :=
   interval_ulift_compat x
 
 example (x : stdSimplex ℝ (Fin 2)) :
     ((Convexity.StdSimplex.homeomorphI (toConvex x) : unitInterval) : ℝ) = x 1 := by
   rw [Convexity.StdSimplex.homeomorphI_apply_coe, toConvex_weights]
+
+end Coordinates
 
 example {n m : SimplexCategory} (f : n ⟶ m) (x : |SSet.stdSimplex.obj n|) :
     toTopHomeomorph m (SSet.toTop.map (SSet.stdSimplex.map f) x) =

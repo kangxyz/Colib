@@ -58,8 +58,10 @@ theorem classifyingGroupoidCompletionFunctor_map_surjective (c d : C) :
 /-- The original completed-loop comparison is surjective onto the actual
 fundamental group of the nerve realization at every original object. -/
 theorem classifyingGroupoidCompletionMap_surjective (c : C) :
-    Function.Surjective (classifyingGroupoidCompletionMap C c) :=
-  classifyingGroupoidCompletionFunctor_map_surjective C c c
+    Function.Surjective (classifyingGroupoidCompletionMap C c) := by
+  intro g
+  obtain ⟨f, hf⟩ := classifyingGroupoidCompletionFunctor_map_surjective C c c g.asHom
+  exact ⟨End.of f, End.ext hf⟩
 
 end CategoryTheory
 

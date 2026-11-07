@@ -11,6 +11,7 @@ public import Colib.Algebra.Category.ModuleCat.ChangeOfRings.Localization
 public import Colib.CategoryTheory.Abelian.ExtAdjunctionLinear
 public import StacksFrontier.Homology.ExtendScalars.Flat
 public import Mathlib.Algebra.Category.ModuleCat.EnoughInjectives
+public import Mathlib.RingTheory.Flat.Localization
 
 /-!
 # Localization of the base ring on native top Ext

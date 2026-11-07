@@ -113,8 +113,11 @@ def boundedTermsAcyclicSingleKEquiv (k : ℕ) :
 
 /-- The underlying monoid homomorphism of this K-equivalence. -/
 @[simp] theorem boundedTermsAcyclicSingleKEquiv_coe (k : ℕ) :
-    MonoidHomClass.toMonoidHom (boundedTermsAcyclicSingleKEquiv P k) =
-        boundedTermsAcyclicSingleKMap P k := rfl
+    @Eq (((ofExactCategory (boundedAcyclicExactStructure P)).K k ×
+      (ofExactCategory (ExactSubcategory.exactStructure (abelianExactStructure A) P)).K k) →*
+        (ofExactCategory (boundedTermsExactStructure P)).K k)
+      (MonoidHom.ofClass (boundedTermsAcyclicSingleKEquiv P k))
+      (boundedTermsAcyclicSingleKMap P k) := rfl
 
 
 /-- The forward map is literally the product of the two original public KMaps. -/

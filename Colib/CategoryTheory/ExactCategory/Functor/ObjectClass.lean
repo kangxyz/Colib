@@ -77,7 +77,8 @@ lemma qObjectClass_mapQ {T : Type*} [Groupoid T] (F : ExactFunctor EC ED)
     (H.mapIso (ED.qIsoOfIso F.toFunctor.mapZeroObject)).conj
         (EC.qObjectClass (F.mapQ ⋙ H) X) =
       ED.qObjectClass H (F.toFunctor.obj X) := by
-  simp only [Iso.conj_apply, CategoryTheory.ExactCategory.ExactStructure.qObjectClass,
+  apply End.ext
+  simp only [Iso.conj_apply_asHom, CategoryTheory.ExactCategory.ExactStructure.qObjectClass,
     Functor.comp_map,
     Functor.mapIso_inv, Functor.mapIso_hom]
   rw [← F.mapQ_fromZeroTotal X]

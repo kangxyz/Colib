@@ -18,7 +18,7 @@ noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
 set_option backward.defeqAttrib.useBackward true
-open CategoryTheory Opposite
+open CategoryTheory Convexity Opposite
 open scoped Simplicial Topology
 universe u
 namespace SSet
@@ -26,17 +26,16 @@ namespace SSet
 /-- Reverse the barycentric coordinates of a topological simplex. -/
 def simplexReverse (n : SimplexCategory) :
     SimplexCategory.toTop.obj n ⟶ SimplexCategory.toTop.obj n :=
-  TopCat.ofHom ⟨fun x ↦ ULift.up (_root_.stdSimplex.map Fin.rev x.down),
-    continuous_uliftUp.comp ((_root_.stdSimplex.continuous_map Fin.rev).comp continuous_uliftDown)⟩
+  TopCat.ofHom ⟨fun x ↦ ULift.up (StdSimplex.map Fin.rev x.down),
+    continuous_uliftUp.comp ((StdSimplex.continuous_map ℝ Fin.rev).comp continuous_uliftDown)⟩
 
 theorem simplexReverse_involutive (n : SimplexCategory) :
     simplexReverse n ≫ simplexReverse n = 𝟙 _ := by
   ext x
-  change ULift.up (_root_.stdSimplex.map Fin.rev (_root_.stdSimplex.map Fin.rev x.down)) = x
-  rw [_root_.stdSimplex.map_comp_apply]
+  change ULift.up (StdSimplex.map Fin.rev (StdSimplex.map Fin.rev x.down)) = x
   have h : (Fin.rev ∘ Fin.rev : Fin (n.len + 1) → Fin (n.len + 1)) = id := by
     funext i; exact Fin.rev_rev i
-  rw [h, _root_.stdSimplex.map_id_apply]
+  simp only [← StdSimplex.map_comp, h, StdSimplex.map_id]
   rfl
 
 /-- Reversal conjugates every simplicial operator to its order reversal. -/
@@ -44,10 +43,10 @@ theorem simplexReverse_naturality {n m : SimplexCategory} (f : n ⟶ m) :
     SimplexCategory.toTop.map (SimplexCategory.rev.map f) ≫ simplexReverse m =
       simplexReverse n ≫ SimplexCategory.toTop.map f := by
   ext x
-  change ULift.up (_root_.stdSimplex.map Fin.rev
-      (_root_.stdSimplex.map (SimplexCategory.rev.map f).toOrderHom x.down)) =
-    ULift.up (_root_.stdSimplex.map f.toOrderHom (_root_.stdSimplex.map Fin.rev x.down))
-  rw [_root_.stdSimplex.map_comp_apply, _root_.stdSimplex.map_comp_apply]
+  change ULift.up (StdSimplex.map Fin.rev
+      (StdSimplex.map (SimplexCategory.rev.map f).toOrderHom x.down)) =
+    ULift.up (StdSimplex.map f.toOrderHom (StdSimplex.map Fin.rev x.down))
+  rw [← StdSimplex.map_comp, ← StdSimplex.map_comp]
   congr 2
   funext i
   simp [SimplexCategory.rev_map_apply]

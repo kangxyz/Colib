@@ -61,16 +61,17 @@ def kZeroFundamentalGroupEquiv :
 
 /-- The canonical object class in the actual homotopical Quillen K₀. -/
 def kZeroObjectClass (X : C) : E.K 0 :=
-  E.kZeroFundamentalGroupEquiv.symm ⟦E.kZeroObjectLoop X⟧
+  E.kZeroFundamentalGroupEquiv.symm (FundamentalGroup.fromPath ⟦E.kZeroObjectLoop X⟧)
 
 @[simp] lemma kZeroFundamentalGroupEquiv_objectClass (X : C) :
-    E.kZeroFundamentalGroupEquiv (E.kZeroObjectClass X) = ⟦E.kZeroObjectLoop X⟧ :=
+    E.kZeroFundamentalGroupEquiv (E.kZeroObjectClass X) =
+      FundamentalGroup.fromPath ⟦E.kZeroObjectLoop X⟧ :=
   E.kZeroFundamentalGroupEquiv.apply_symm_apply _
 
 /-- The topological object loop is exactly the object endomorphism under the
 canonical realized fundamental-groupoid functor. -/
 lemma kZeroObjectLoop_eq_qObjectClass (X : C) :
-    (⟦E.kZeroObjectLoop X⟧ : FundamentalGroup E.KSpace E.kBasepoint) =
+    FundamentalGroup.fromPath ⟦E.kZeroObjectLoop X⟧ =
       E.qObjectClass (classifyingFundamentalGroupoidFunctor E.QCategory) X := by
   dsimp only [qObjectClass, classifyingFundamentalGroupoidFunctor]
   rw [← Groupoid.inv_eq_inv]
@@ -98,7 +99,7 @@ def kZeroObjectSubgroup : Subgroup (E.K 0) :=
 
 instance kZeroObjectSubgroup_isMulCommutative : IsMulCommutative E.kZeroObjectSubgroup := by
   apply Subgroup.isMulCommutative_closure
-  rintro _ ⟨X, rfl⟩ _ ⟨Y, rfl⟩
+  rintro _ ⟨X, rfl⟩ _ ⟨Y, rfl⟩ _
   exact E.kZeroObjectClass_commute X Y
 
 open scoped IsMulCommutative in

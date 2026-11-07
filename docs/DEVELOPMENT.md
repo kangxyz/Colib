@@ -1,8 +1,9 @@
 # Development and CI
 
-Use the committed toolchain and manifest. The initial dependency basis matches Stacks commit
-f8e70c5dd04bfabcb423d5e325461f527c85a5d6 and Mathlib commit
-16edf57de7933555826307a3d81b4391a3657a09. Lean is 4.34.0-rc2.
+Use the committed toolchain and manifest. Colib uses Lean 4.35.0 and Mathlib
+4.35.0 at commit `56a005855ea17e0b0958f73ec801ae140b0a1679`. Stacks commit
+`5ed82d14634e8d9576bb844c7bd4e3da66d450e7` pins the same compiler, Mathlib release, and
+transitive dependencies.
 
 During proof work build the changed leaf and its required dependencies. Existing completed
 artifacts survive subsequent repairs. Run the final native checks through scripts/check.sh.
@@ -18,7 +19,7 @@ separate root/dependency/Stacks/tools checkpoints, complete same-run overlays on
 GitHub-hosted runners and identity-checked same-host handoff on EC2. Both profiles
 run the native package checks. The current self-hosted admission gate is false.
 The [Lean CI guide](../.github/LEAN_CI.md) owns routing, resources, staging,
-publication and the exact adaptations to Colib's 4.34.0-rc2 dependency basis.
+publication and the exact adaptations to Colib's 4.35.0 dependency basis.
 
 The native auditor is a development executable pinned to
 leanprover-community/axiom-audit commit 46024e005996495c65ef609368e11ab39c4222e3.
@@ -59,7 +60,7 @@ Both retain the builtin lint report and
 Batteries' declaration linters. Both select declarations or saved diagnostics by their
 **defining module** under `Colib`, including Colib declarations in native namespaces such
 as `CategoryTheory`. Imported Mathlib and Stacks declarations are outside that scope.
-The [pinned Lean builtin collector](https://github.com/leanprover/lean4/blob/v4.34.0-rc2/src/lake/Lake/CLI/BuiltinLint.lean#L102-L107)
+The [pinned Lean builtin collector](https://github.com/leanprover/lean4/blob/v4.35.0/src/lake/Lake/CLI/BuiltinLint.lean)
 filters `LintEntry` defining modules by the `Colib` prefix;
 it does not use the full imported environment as its report scope.
 

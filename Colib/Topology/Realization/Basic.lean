@@ -56,11 +56,11 @@ theorem realizationInterval_zero :
     ((SimplexCategory.toTopHomeo ⦋1⦌).symm (TopCat.stdSimplexHomeomorphI.{u}.symm 0)) = _
   rw [Homeomorph.apply_symm_apply]
   rw [TopCat.stdSimplexHomeomorphI_symm_zero]
-  change _root_.stdSimplex.vertex 0 = SimplexCategory.toTopHomeo ⦋1⦌
+  change Convexity.StdSimplex.single 0 = SimplexCategory.toTopHomeo ⦋1⦌
     (SSet.toTop.map (SSet.stdSimplex.map (SimplexCategory.δ 1)) default)
   rw [SimplexCategory.toTopHomeo_naturality_apply]
-  rw [Subsingleton.elim (SimplexCategory.toTopHomeo ⦋0⦌ default) (_root_.stdSimplex.vertex 0),
-    _root_.stdSimplex.map_vertex]
+  rw [Subsingleton.elim (SimplexCategory.toTopHomeo ⦋0⦌ default) (Convexity.StdSimplex.single 0),
+    Convexity.StdSimplex.map_single]
   rfl
 
 @[simp]
@@ -71,11 +71,11 @@ theorem realizationInterval_one :
     ((SimplexCategory.toTopHomeo ⦋1⦌).symm (TopCat.stdSimplexHomeomorphI.{u}.symm 1)) = _
   rw [Homeomorph.apply_symm_apply]
   rw [TopCat.stdSimplexHomeomorphI_symm_one]
-  change _root_.stdSimplex.vertex 1 = SimplexCategory.toTopHomeo ⦋1⦌
+  change Convexity.StdSimplex.single 1 = SimplexCategory.toTopHomeo ⦋1⦌
     (SSet.toTop.map (SSet.stdSimplex.map (SimplexCategory.δ 0)) default)
   rw [SimplexCategory.toTopHomeo_naturality_apply]
-  rw [Subsingleton.elim (SimplexCategory.toTopHomeo ⦋0⦌ default) (_root_.stdSimplex.vertex 0),
-    _root_.stdSimplex.map_vertex]
+  rw [Subsingleton.elim (SimplexCategory.toTopHomeo ⦋0⦌ default) (Convexity.StdSimplex.single 0),
+    Convexity.StdSimplex.map_single]
   rfl
 
 end SSet

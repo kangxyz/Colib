@@ -102,7 +102,7 @@ lemma cochainComparison_comp_π' (a : B ⟶ F.obj A)
     cochainComparison_f_neg F R S h 0]
   simp [π'_f_zero, Functor.mapCochainComplexSingleFunctor,
     Functor.map_comp, Category.assoc, ← F.map_comp_assoc, ha,
-    CochainComplex.singleFunctor, CochainComplex.singleFunctors,
+    CochainComplex.singleFunctor,
     HomologicalComplex.single, HomologicalComplex.singleObjXSelf,
     HomologicalComplex.singleObjXIsoOfEq]
 

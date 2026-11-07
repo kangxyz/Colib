@@ -11,7 +11,8 @@ CI-only full declaration lint with bounded scheduling.
 Backports Batteries PR #2026 (41c46f8a9586f75b6ea12296c05e932cc2707d51),
 Batteries/Tactic/Lint/Frontend.lean, and PR #2028
 (30691c775364967184547c94468bf6b5f25400fb), scripts/runLinter.lean.
-The pinned 7e2360 runner's roots, imports, checks, options and suppressions are retained.
+The pinned 66e4691 runner's full mode (`localDecls := none`) supplies the roots,
+imports, checks, options and suppressions.
 Every invocation runs all selected checks; there is no result cache or module selection.
 -/
 
@@ -105,7 +106,7 @@ def lintCoreBatched (decls : Array Name) (linters : Array NamedLinter)
   if inIO then (← IO.getStdout).flush
   return result
 
-/-- Unknown implementations retain the old full API, including arbitrary custom linters. -/
+/-- Unknown implementations use Batteries's full lint API, including custom linters. -/
 def knownLinter (linter : NamedLinter) : IO Bool := do
   let batteries := #[`checkType, `docBlame, `impossibleInstance, `nonClassInstance,
     `simpComm, `simpNF, `synTaut, `unusedArguments, `unusedHavesSuffices].map
@@ -114,10 +115,10 @@ def knownLinter (linter : NamedLinter) : IO Bool := do
   let providers : Array (Name × UInt64 × Array Name) := #[
     (`Mathlib.Tactic.Linter.Lint, 0x0bcaafd617652033,
       #[`Batteries.Tactic.Lint.structureInType, `Batteries.Tactic.Lint.deprecatedNoSince]),
-    (`Mathlib.Tactic.Linter.Style, 0x82ea161b15e4d33e,
+    (`Mathlib.Tactic.Linter.Style, 0x83873dbf0658cb69,
       #[`Mathlib.Linter.Style.nameCheck.defsWithUnderscore]),
-    (`Mathlib.Tactic.Linter.TacticDocumentation, 0xfd332c6970f219e1, #[`tacticAlt, `tacticDocs]),
-    (`Mathlib.Tactic.SetNotationForOrder, 0xe49bd5b6e9ec760e,
+    (`Mathlib.Tactic.Linter.TacticDocumentation, 0x364d3f51f713e3db, #[`tacticAlt, `tacticDocs]),
+    (`Mathlib.Tactic.SetNotationForOrder, 0xe8cb0c85665ffaef,
       #[`Mathlib.Meta.SetNotationForOrder.subsetDotNotationLinter])]
   for (name, expected, decls) in providers do
     if decls.contains linter.declName then
@@ -153,7 +154,7 @@ unsafe def lintRoot (root : Name) (workers : Nat) (leakEnv : Bool) :
       lintCoreBatched decls linters workers (some root) true
     else
       log s!"[{root}] custom/unrecognized linter: using original full lintCore"
-      lintCore decls linters (inIO := true) (currentModule := root)
+      lintCore decls linters (inIO := true) (currentModule := root) (localDecls := none)
     (← IO.getStdout).flush
     let mut tally : Std.HashMap Name Nat := {}
     for (linter, _) in nolints do

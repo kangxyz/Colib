@@ -8,18 +8,18 @@ module
 
 public import Colib.Util.References
 public import Mathlib.AlgebraicTopology.SimplicialSet.TopAdj
+public import Mathlib.Analysis.Convex.StdSimplex
 public import Mathlib.Geometry.Convex.ConvexSpace.PathConnectedSpaceStdSimplex
 
 /-!
 # Finite barycentric simplex compatibility
 
-The pinned realization functor uses the function-subtype `stdSimplex`, while
-finite convex combinations use `Convexity.StdSimplex` with finitely supported
-weights. This supporting module compares the two actual coordinate models.
+The pinned realization functor uses `Convexity.StdSimplex` with finitely
+supported weights. This module compares it with Mathlib's function-subtype
+`stdSimplex` for finite vertex sets.
 The homeomorphism preserves each coordinate, every map of finite vertex sets,
-vertices, and the orientation of the one-dimensional simplex. Its composite
-with `SimplexCategory.toTopHomeo` supplies realization coordinates in the
-convex-space model without changing the upstream realization functor.
+vertices, and the orientation of the one-dimensional simplex. Realization
+coordinates come directly from `SimplexCategory.toTopHomeo`.
 
 ## Implementation provenance and scope
 
@@ -36,7 +36,8 @@ The intended consumer is the prism-coordinate construction in
 `Quillen/Topology/Realization/Prism.lean` and `PrismGluing.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. Those files use the newer
 convex-space simplex at the realization boundary. This module supplies only
-that boundary comparison; it does not assert a prism gluing or product theorem.
+that coordinate comparison; the realization API now uses Mathlib's homeomorphism
+directly.
 -/
 
 @[expose] public section
@@ -49,6 +50,11 @@ open scoped Simplicial
 namespace FiniteSimplexAdapter
 
 variable {M N : Type*} [Fintype M] [Fintype N]
+
+section LegacyCoordinates
+
+-- These comparisons explicitly refer to Mathlib's legacy coordinate operations.
+set_option linter.deprecated false
 
 /-- Turn finite ordinary barycentric coordinates into finitely supported weights. -/
 def toConvex (x : _root_.stdSimplex ℝ M) : Convexity.StdSimplex ℝ M where
@@ -148,36 +154,32 @@ lemma toOld_map (f : M → N) (x : Convexity.StdSimplex ℝ M) :
 lemma interval_ulift_compat (x : _root_.stdSimplex ℝ (Fin 2)) :
     (Homeomorph.ulift.symm : unitInterval ≃ₜ TopCat.I)
       (Convexity.StdSimplex.homeomorphI (toConvex x)) =
-      TopCat.stdSimplexHomeomorphI x := by
+      (Homeomorph.ulift.symm : unitInterval ≃ₜ TopCat.I) (stdSimplexHomeomorphUnitInterval x) := by
   rw [interval_compat]
-  rfl
 
-/-- A new-coordinate realization homeomorphism without changing the old API. -/
+end LegacyCoordinates
+
+/-- The realization homeomorphism in Mathlib's finitely supported coordinates. -/
 def toTopHomeomorph (n : SimplexCategory) :
     |SSet.stdSimplex.obj n| ≃ₜ Convexity.StdSimplex ℝ (Fin (n.len + 1)) :=
-  (SimplexCategory.toTopHomeo n).trans (homeomorph _)
+  SimplexCategory.toTopHomeo n
 
 lemma toTopHomeomorph_naturality_apply {n m : SimplexCategory} (f : n ⟶ m)
     (x : |SSet.stdSimplex.obj n|) :
     toTopHomeomorph m (SSet.toTop.map (SSet.stdSimplex.map f) x) =
-      Convexity.StdSimplex.map f (toTopHomeomorph n x) := by
-  change toConvex (SimplexCategory.toTopHomeo m _) = _
-  rw [SimplexCategory.toTopHomeo_naturality_apply, toConvex_map]
-  rfl
+      Convexity.StdSimplex.map f (toTopHomeomorph n x) :=
+  SimplexCategory.toTopHomeo_naturality_apply f x
 
 lemma toTopHomeomorph_symm_naturality_apply {n m : SimplexCategory} (f : n ⟶ m)
     (x : Convexity.StdSimplex ℝ (Fin (n.len + 1))) :
     (toTopHomeomorph m).symm (Convexity.StdSimplex.map f x) =
-      SSet.toTop.map (SSet.stdSimplex.map f) ((toTopHomeomorph n).symm x) := by
-  apply (toTopHomeomorph m).injective
-  rw [Homeomorph.apply_symm_apply, toTopHomeomorph_naturality_apply,
-    Homeomorph.apply_symm_apply]
+    SSet.toTop.map (SSet.stdSimplex.map f) ((toTopHomeomorph n).symm x) :=
+  SimplexCategory.toTopHomeo_symm_naturality_apply f x
 
 lemma realization_interval_compat (x : |(Δ[1] : SSet)|) :
     (Homeomorph.ulift.symm : unitInterval ≃ₜ TopCat.I)
       (Convexity.StdSimplex.homeomorphI (toTopHomeomorph ⦋1⦌ x)) =
-      SSet.stdSimplex.toTopObjIsoI.hom x := by
-  exact interval_ulift_compat (SimplexCategory.toTopHomeo ⦋1⦌ x)
+      SSet.stdSimplex.toTopObjIsoI.hom x := rfl
 
 end FiniteSimplexAdapter
 

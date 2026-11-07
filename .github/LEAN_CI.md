@@ -102,9 +102,10 @@ Pages consumes the resulting `colib-site` artifact from a trusted main push.
 
 ## Pin-specific adaptations
 
-The upstream implementation targets Lean 4.34.1. Colib also admits its fixed
-4.34.0-rc2 toolchain and exact Mathlib/ProofWidgets configuration byte hashes.
-The lint adapter binds the exact Batteries 7e23602 sources and matching compiler.
+The checkpoint and staging helpers admit the pinned Lean 4.35.0 toolchain and
+verify the exact Mathlib and ProofWidgets configuration bytes. The lint adapter
+binds Batteries `66e4691` and the known Mathlib linter implementations for that
+compiler. It runs the full set of Colib declarations.
 Unknown layouts fail before compilation instead of silently choosing the old
 combined-cache path. Aglib's historical, repository-specific `first-ci-cache`
 promotion seed is rejected; its recorded producer and cache do not belong to Colib.

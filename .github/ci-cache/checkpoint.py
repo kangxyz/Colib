@@ -23,13 +23,19 @@ import tempfile
 
 SCHEMA = 2
 LAYERS = ('root', 'dependencies', 'stacks', 'tools')
-SUPPORTED_TOOLCHAIN = 'leanprover/lean4:v4.34.1'
-SUPPORTED_TOOLCHAINS = (SUPPORTED_TOOLCHAIN, 'leanprover/lean4:v4.34.0-rc2')
+SUPPORTED_TOOLCHAIN = 'leanprover/lean4:v4.35.0'
+SUPPORTED_TOOLCHAINS = (SUPPORTED_TOOLCHAIN, 'leanprover/lean4:v4.34.1', 'leanprover/lean4:v4.34.0-rc2')
 AUDITOR_PIN = '46024e005996495c65ef609368e11ab39c4222e3'
 # Explicit current public Lean configurations with default native build roots.
 # These are source identities, not a parser for arbitrary executable lakefiles.
 # Primary sources: leanprover-community/{mathlib4,ProofWidgets4}/blob/<rev>/lakefile.lean.
 LEAN_CONFIGS = {
+    ('mathlib', '56a005855ea17e0b0958f73ec801ae140b0a1679'):
+        ('https://github.com/leanprover-community/mathlib4',
+         '6083173bc380adea0cfd26f9a7813637ae0fd2c38c6a0d4536626e82a9538ef6'),
+    ('proofwidgets', 'df72b022e558978a1c50264cfc4d7fec86fa8e04'):
+        ('https://github.com/leanprover-community/ProofWidgets4',
+         '0a319fffbf511dab4c3307dc105f8e8fdb4f6160020995cef5f442061cc0abca'),
     ('mathlib', '16edf57de7933555826307a3d81b4391a3657a09'):
         ('https://github.com/leanprover-community/mathlib4',
          '525c4828509e3d3c5642a7a2e71f6825cc51206d3d6f159dc95c9f1def95436a'),
@@ -256,8 +262,8 @@ def tree(path):
             entry = Path(current) / name
             if not stat.S_ISREG(entry.stat().st_mode):
                 raise ValueError('nonregular generated output: ' + str(entry))
-            # Lake4.34.1 regenerates this compiler input immediately before every
-            # real Lean/leanir invocation (Build/Actions.lean:54–56,99–101).
+            # Lake generates this input before invoking Lean and passes it to
+            # leanir when needed (Build/Actions.lean).
             # It is neither an incremental output nor a native readiness input.
             parts = entry.parts
             if name.endswith('.setup.json') and any(

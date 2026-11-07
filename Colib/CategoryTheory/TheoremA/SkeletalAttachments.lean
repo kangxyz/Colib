@@ -215,7 +215,7 @@ theorem replacementCells_injective_off_boundary (n : ℕ) (p q : SimplexCategory
   obtain rfl : s = t := (nerve D).unique_nonDegenerate_simplex _ a.down s rfl b.down t hb
   have hab : a.down = b.down :=
     (nerve D).unique_nonDegenerate_map _ a.down s rfl b.down s hb
-  obtain rfl : a = b := ULift.ext _ _ hab
+  obtain rfl : a = b := ULift.ext hab
   have hf : (H.map (firstVertexEdge a.down.op s.1)).app q z =
       (H.map (firstVertexEdge a.down.op s.1)).app q w :=
     eq_of_heq (Sigma.ext_iff.mp h).2

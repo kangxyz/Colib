@@ -61,7 +61,9 @@ theorem dvrMilnorShiftMap_shift_mapRingHom_at_origin
   have hqp : poly q ∣ (poly p).map φ := by
     simp only [p, q, poly, Polynomial.map_X, dvd_refl]
   have hm : multiplicity (poly q) ((poly p).map φ) = 1 := by
-    simp only [p, q, poly, Polynomial.map_X, multiplicity_self]
+    simpa only [p, q, poly, Polynomial.map_X] using
+      multiplicity_self (FiniteMultiplicity.of_not_isUnit
+        (irreducible_X : Irreducible (X : K[X])).not_isUnit X_ne_zero)
   let Φ : RatFunc k →+* RatFunc K := RatFunc.mapRingHom (Polynomial.mapRingHom φ)
     (Polynomial.nonZeroDivisors_le_comap_mapRingHom φ)
   let eP := quotientRingEquivResidueField (Ideal.span {poly p})

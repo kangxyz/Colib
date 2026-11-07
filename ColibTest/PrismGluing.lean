@@ -38,7 +38,7 @@ example {X Y : SSet.{u}} (f : X ⟶ Y) :
 
 example {n : ℕ} (i : Fin (n + 1)) : realizationPrismCell.{u} i =
     SSet.toTop.map (SSet.yonedaEquiv.symm
-      (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val) := rfl
+      (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val) := rfl
 
 example {n : ℕ} (i : Fin (n + 1)) (v : StdSimplex ℝ (Fin (n + 2))) :
     realizationPrismCoordinates n (realizationPrismCell.{u} i
@@ -51,7 +51,7 @@ example {n : ℕ} (x : |(Δ[n] ⊗ Δ[1] : SSet.{u})|) :
 
 example {n : ℕ} {m : SimplexCategoryᵒᵖ} (s : (Δ[n] ⊗ Δ[1] : SSet.{u}).obj m) :
     ∃ (i : Fin (n + 1)) (f : m.unop ⟶ ⦋n + 1⦌),
-      (Δ[n] ⊗ Δ[1]).map f.op (SSet.prodStdSimplex.nonDegenerateEquiv₁ i).val = s :=
+      (Δ[n] ⊗ Δ[1]).map f.op (SSet.prodStdSimplex₁.nonDegenerateEquiv i).val = s :=
   prism_simplex_factors s
 
 example {n : ℕ} (i : Fin n) :

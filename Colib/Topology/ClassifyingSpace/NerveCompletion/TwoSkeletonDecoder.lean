@@ -18,10 +18,10 @@ The actual open collar/interior cover of the original two-skeleton attachment.
 @[expose] public section
 
 noncomputable section
-open Set CategoryTheory Convexity.StdSimplex TopCat SSet FundamentalGroupoid.OpenCover
+open Set CategoryTheory stdSimplex TopCat SSet FundamentalGroupoid.OpenCover
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- The actual open collar/interior cover of the original two-skeleton attachment. -/

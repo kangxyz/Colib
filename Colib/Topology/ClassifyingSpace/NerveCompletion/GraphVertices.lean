@@ -19,11 +19,11 @@ The actual graph point of an original categorical object.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory Convexity.StdSimplex SSet TopCat FundamentalGroupoid.OpenCover
+open CategoryTheory stdSimplex SSet TopCat FundamentalGroupoid.OpenCover
 open scoped Simplicial Topology
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- The actual graph point of an original categorical object. -/

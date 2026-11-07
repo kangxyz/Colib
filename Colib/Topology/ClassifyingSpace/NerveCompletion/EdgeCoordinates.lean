@@ -19,7 +19,7 @@ The first interior subdivision point, strictly inside the source collar.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open Set CategoryTheory Convexity Convexity.StdSimplex
+open Set CategoryTheory stdSimplex
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment
 
@@ -30,15 +30,15 @@ def edgeSevenEighths : unitInterval := ⟨7 / 8, by norm_num⟩
 
 /-- The original geometric edge has exactly its interval parameter as weight one. -/
 theorem intervalPath_weight_one (t : unitInterval) :
-    (NerveGraphData.intervalPath t).weights 1 = (t : ℝ) := by
-  change (homeomorphI.symm t).weights 1 = (t : ℝ)
-  rw [← homeomorphI_apply_coe, Homeomorph.apply_symm_apply]
+    (NerveGraphData.intervalPath t) 1 = (t : ℝ) := by
+  rfl
 
 /-- The complementary coordinate of the same actual edge. -/
 theorem intervalPath_weight_zero (t : unitInterval) :
-    (NerveGraphData.intervalPath t).weights 0 = 1 - (t : ℝ) := by
-  have hs : (NerveGraphData.intervalPath t).weights 0 +
-      (NerveGraphData.intervalPath t).weights 1 = 1 := by simp
+    (NerveGraphData.intervalPath t) 0 = 1 - (t : ℝ) := by
+  have hs : (NerveGraphData.intervalPath t) 0 +
+      (NerveGraphData.intervalPath t) 1 = 1 := by
+    simpa only [Fin.sum_univ_two] using stdSimplex.sum_eq_one (NerveGraphData.intervalPath t)
   rw [intervalPath_weight_one] at hs
   linarith
 
@@ -85,10 +85,10 @@ theorem intervalPath_middle_interior :
     simp only [Icc.coe_convexComb, edgeEighth, edgeSevenEighths]
     nlinarith [t.property.2]
   fin_cases i
-  · change 0 < (NerveGraphData.intervalPath _).weights 0
+  · change 0 < (NerveGraphData.intervalPath _) 0
     rw [intervalPath_weight_zero]
     linarith
-  · change 0 < (NerveGraphData.intervalPath _).weights 1
+  · change 0 < (NerveGraphData.intervalPath _) 1
     rw [intervalPath_weight_one]
     exact hlow
 

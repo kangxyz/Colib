@@ -28,7 +28,7 @@ universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover
 open TopCat.SimplexAttachment
-open Convexity.StdSimplex.Boundary
+open stdSimplex.Boundary
 open FundamentalGroupoid.SequentialColimit
 attribute [local instance] Localization.groupoid
 

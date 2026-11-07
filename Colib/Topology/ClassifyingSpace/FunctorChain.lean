@@ -7,7 +7,7 @@ Authors: kangxyz
 module
 
 public import Colib.Topology.Realization.ProductSimplex
-public import Colib.Topology.Realization.SimplexHomotopy
+public import Mathlib.Analysis.Convex.StdSimplex
 public import Colib.Topology.ClassifyingSpace.Naturality
 
 /-!
@@ -20,7 +20,7 @@ path coordinates, and endpoint data are retained under native ownership.
 -/
 @[expose] public section
 noncomputable section
-open Topology CategoryTheory SSet Opposite MonoidalCategory CartesianMonoidalCategory Convexity
+open Topology CategoryTheory SSet Opposite MonoidalCategory CartesianMonoidalCategory
 open scoped Simplicial Topology unitInterval
 universe u
 set_option backward.isDefEq.respectTransparency false
@@ -144,49 +144,50 @@ theorem classifyingHomotopy_id (F : C ⥤ D) (x : ClassifyingSpace C) (t : unitI
   exact congrArg (classifyingSpaceMap F) hp
 /-- The family in ordinary barycentric simplex coordinates. -/
 def functorChainBarycentric {n : ℕ} (A : ComposableArrows (C ⥤ D) n) :
-    C(ClassifyingSpace C × StdSimplex ℝ (Fin (n + 1)), ClassifyingSpace D) where
+    C(ClassifyingSpace C × _root_.stdSimplex ℝ (Fin (n + 1)), ClassifyingSpace D) where
   toFun z := functorChainRealization A
-    (z.1, (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm z.2)
+    (z.1, (SimplexCategory.toTopHomeo ⦋n⦌).symm z.2)
   continuous_toFun := by fun_prop
 
 private theorem simplexRealization_map {m n : ℕ} (f : ⦋m⦌ ⟶ ⦋n⦌)
-    (z : StdSimplex ℝ (Fin (m + 1))) :
-    SSet.toTop.map (SSet.stdSimplex.map f) ((FiniteSimplexAdapter.toTopHomeomorph ⦋m⦌).symm z) =
-      (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm (StdSimplex.map f.toOrderHom z) := by
-  apply (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).injective
-  rw [FiniteSimplexAdapter.toTopHomeomorph_naturality_apply]
-  simp
-  rfl
+    (z : _root_.stdSimplex ℝ (Fin (m + 1))) :
+    SSet.toTop.map (SSet.stdSimplex.map f) ((SimplexCategory.toTopHomeo ⦋m⦌).symm z) =
+      (SimplexCategory.toTopHomeo ⦋n⦌).symm (stdSimplex.map f.toOrderHom z) :=
+  (SimplexCategory.toTopHomeo_symm_naturality_apply f z).symm
 
 /-- The affine edge between two chosen triangle vertices. -/
-def triangleEdge (i j : Fin 3) (t : unitInterval) : StdSimplex ℝ (Fin 3) :=
-  StdSimplex.duple i j (unitInterval.nonneg (unitInterval.symm t))
-    (unitInterval.nonneg t) (by simp)
+def triangleEdge (i j : Fin 3) (t : unitInterval) : _root_.stdSimplex ℝ (Fin 3) :=
+  stdSimplex.map ![i, j] (stdSimplexHomeomorphUnitInterval.symm t)
 
 @[fun_prop] theorem continuous_triangleEdge (i j : Fin 3) : Continuous (triangleEdge i j) :=
-  StdSimplex.continuous_duple i j
+  (stdSimplex.continuous_map ![i, j]).comp stdSimplexHomeomorphUnitInterval.symm.continuous
 
-@[simp] theorem triangleEdge_zero (i j : Fin 3) : triangleEdge i j 0 = StdSimplex.single i := by
-  apply StdSimplex.ext
-  simp [triangleEdge, StdSimplex.duple]
-@[simp] theorem triangleEdge_one (i j : Fin 3) : triangleEdge i j 1 = StdSimplex.single j := by
-  apply StdSimplex.ext
-  simp [triangleEdge, StdSimplex.duple]
+/-- The edge retains the original ordered endpoint weights. -/
+@[simp] theorem triangleEdge_apply (i j k : Fin 3) (t : unitInterval) :
+    triangleEdge i j t k =
+      (if k = i then 1 - (t : ℝ) else 0) + (if k = j then (t : ℝ) else 0) := by
+  change (FunOnFinite.linearMap ℝ ℝ ![i, j]
+    (![1 - (t : ℝ), (t : ℝ)] : Fin 2 → ℝ)) k = _
+  simp [FunOnFinite.linearMap_apply_apply, Finset.sum_filter, Fin.sum_univ_two, eq_comm]
+
+@[simp] theorem triangleEdge_zero (i j : Fin 3) :
+    triangleEdge i j 0 = stdSimplex.vertex i := by
+  ext k
+  simp [stdSimplex.vertex, Pi.single_apply]
+
+@[simp] theorem triangleEdge_one (i j : Fin 3) :
+    triangleEdge i j 1 = stdSimplex.vertex j := by
+  ext k
+  simp [stdSimplex.vertex, Pi.single_apply]
 
 private theorem triangleEdge_face (i : Fin 3) (t : unitInterval) :
     triangleEdge (i.succAbove 0) (i.succAbove 1) t =
-      StdSimplex.map (SimplexCategory.δ i).toOrderHom (StdSimplex.homeomorphI.symm t) := by
-  have ht : StdSimplex.homeomorphI.symm t =
-      StdSimplex.duple 0 1 (unitInterval.nonneg (unitInterval.symm t))
-        (unitInterval.nonneg t) (by simp) := by
-    apply StdSimplex.homeomorphI.injective
-    apply Subtype.ext
-    rw [Homeomorph.apply_symm_apply, StdSimplex.homeomorphI_apply_coe,
-      StdSimplex.weights_duple, Finsupp.add_apply,
-      Finsupp.single_eq_of_ne (by decide : (1 : Fin 2) ≠ 0),
-      Finsupp.single_eq_same, zero_add]
-  rw [ht, StdSimplex.map_duple]
-  rfl
+      stdSimplex.map (SimplexCategory.δ i).toOrderHom
+        (stdSimplexHomeomorphUnitInterval.symm t) := by
+  unfold triangleEdge
+  congr 1
+  funext k
+  fin_cases k <;> rfl
 
 /-- The barycentric family restricts on each edge to its transformation. -/
 theorem functorChainBarycentric_two_face {F G H : C ⥤ D}
@@ -196,48 +197,59 @@ theorem functorChainBarycentric_two_face {F G H : C ⥤ D}
     functorChainRealization ((nerve (C ⥤ D)).δ i (ComposableArrows.mk₂ α β))
       (x, realizationInterval t) := by
   change functorChainRealization _
-    (x, (FiniteSimplexAdapter.toTopHomeomorph ⦋2⦌).symm _) = _
+    (x, (SimplexCategory.toTopHomeo ⦋2⦌).symm _) = _
   rw [triangleEdge_face, ← simplexRealization_map]
-  have hi : (FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌).symm
-      (StdSimplex.homeomorphI.symm t) = realizationInterval t := by
-    apply (TopCat.homeoOfIso SSet.stdSimplex.toTopObjIsoI).injective
-    change SSet.stdSimplex.toTopObjIsoI.hom _ = SSet.stdSimplex.toTopObjIsoI.hom _
-    rw [← FiniteSimplexAdapter.realization_interval_compat]
-    simp only [Homeomorph.apply_symm_apply]
-    exact (ConcreteCategory.congr_hom SSet.stdSimplex.toTopObjIsoI.inv_hom_id _).symm
+  have hi : (SimplexCategory.toTopHomeo ⦋1⦌).symm
+      (stdSimplexHomeomorphUnitInterval.symm t) = realizationInterval t := rfl
   rw [hi]
   exact functorChainRealization_two_face α β i x t
 
 /-- Fill the triangle between the inverse arrow and the reversed original arrow.
-The other endpoint moves only along their composite edge. -/
-def inverseTriangleParameter (s t : unitInterval) : StdSimplex ℝ (Fin 3) :=
-  convexCombPair (R := ℝ) (unitInterval.symm s) s
-    (unitInterval.nonneg _) (unitInterval.nonneg _) (by simp)
-    (triangleEdge 1 2 t) (triangleEdge 0 1 (unitInterval.symm t))
+The other endpoint moves only along their composite edge. The native coordinates
+are the expansion of the original affine interpolation with weights `1 - s` and `s`. -/
+def inverseTriangleParameter (s t : unitInterval) : _root_.stdSimplex ℝ (Fin 3) :=
+  ⟨![(s : ℝ) * t, 1 - (t : ℝ), (1 - (s : ℝ)) * t], by
+    intro i
+    fin_cases i
+    · exact mul_nonneg s.property.1 t.property.1
+    · exact sub_nonneg.mpr t.property.2
+    · exact mul_nonneg (sub_nonneg.mpr s.property.2) t.property.1, by
+    simp only [Fin.sum_univ_succ, Matrix.cons_val_zero,
+      Matrix.cons_val_succ, Finset.univ_eq_empty, Finset.sum_empty, add_zero]
+    ring⟩
+
+/-- The inverse cap retains its three actual barycentric coordinates. -/
+@[simp] theorem inverseTriangleParameter_apply (s t : unitInterval) (i : Fin 3) :
+    inverseTriangleParameter s t i =
+      ![(s : ℝ) * t, 1 - (t : ℝ), (1 - (s : ℝ)) * t] i := rfl
 
 @[fun_prop] theorem continuous_inverseTriangleParameter :
     Continuous (fun z : unitInterval × unitInterval ↦ inverseTriangleParameter z.1 z.2) := by
-  rw [(StdSimplex.isEmbedding_toFun_comp_weights ℝ (Fin 3)).continuous_iff]
-  unfold Function.comp
-  refine continuous_pi (fun i ↦ ?_)
-  simp only [inverseTriangleParameter, StdSimplex.weights_convexCombPair,
-    Finsupp.coe_add, Finsupp.coe_smul, Pi.add_apply, Pi.smul_apply, smul_eq_mul,
-    unitInterval.coe_symm_eq]
-  simp only [triangleEdge, StdSimplex.duple, Finsupp.add_apply, Finsupp.single_apply]
-  split_ifs <;> fun_prop
+  apply Continuous.subtype_mk
+  apply continuous_pi
+  intro i
+  fin_cases i <;> dsimp [inverseTriangleParameter] <;> fun_prop
 
 @[simp] theorem inverseTriangleParameter_zero (t : unitInterval) :
-    inverseTriangleParameter 0 t = triangleEdge 1 2 t := by simp [inverseTriangleParameter]
+    inverseTriangleParameter 0 t = triangleEdge 1 2 t := by
+  ext i
+  fin_cases i <;> simp
+
 @[simp] theorem inverseTriangleParameter_one (t : unitInterval) :
     inverseTriangleParameter 1 t = triangleEdge 0 1 (unitInterval.symm t) := by
-  simp [inverseTriangleParameter]
+  ext i
+  fin_cases i <;> simp [unitInterval.coe_symm_eq]
+
 @[simp] theorem inverseTriangleParameter_source (s : unitInterval) :
-    inverseTriangleParameter s 0 = StdSimplex.single 1 := by simp [inverseTriangleParameter]
+    inverseTriangleParameter s 0 = stdSimplex.vertex 1 := by
+  ext i
+  fin_cases i <;> simp [stdSimplex.vertex]
+
 @[simp] theorem inverseTriangleParameter_target (s : unitInterval) :
     inverseTriangleParameter s 1 = triangleEdge 0 2 (unitInterval.symm s) := by
-  apply StdSimplex.ext
-  simp [inverseTriangleParameter, triangleEdge, StdSimplex.weights_convexCombPair,
-    StdSimplex.duple, add_comm]
+  ext i
+  fin_cases i <;> simp [unitInterval.coe_symm_eq]
+
 theorem functorChainBarycentric_two_first {F G H : C ⥤ D}
     (α : F ⟶ G) (β : G ⟶ H) (x : ClassifyingSpace C) (t : unitInterval) :
     functorChainBarycentric (ComposableArrows.mk₂ α β) (x, triangleEdge 0 1 t) =

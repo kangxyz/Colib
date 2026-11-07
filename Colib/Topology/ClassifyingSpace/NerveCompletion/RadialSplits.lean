@@ -17,7 +17,7 @@ The source split point as an actual geometric annulus point.
 @[expose] public section
 
 noncomputable section
-open Set CategoryTheory Convexity Convexity.StdSimplex
+open Set CategoryTheory stdSimplex
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment
 
@@ -41,8 +41,8 @@ collar, including paths starting or ending on its geometric boundary. -/
 theorem collarBoundary_one_path_constant {a b : simplexBoundaryCollar 1}
     (p : Path a b) (t : unitInterval) :
     simplexBoundaryCollarRetraction 1 (p t) = simplexBoundaryCollarRetraction 1 a := by
-  let : T2Space (StdSimplex ℝ (Fin 2)) := homeomorphI.symm.t2Space
-  let : Finite (simplexBoundary 1) := finite_boundary_one
+  let : T2Space (_root_.stdSimplex ℝ (Fin 2)) := stdSimplexHomeomorphUnitInterval.symm.t2Space
+  let : Finite (boundary 1) := finite_boundary_one
   have he := TotallyDisconnectedSpace.eq_of_continuous
     (fun t => simplexBoundaryCollarRetraction 1 (p t))
     ((simplexBoundaryCollarRetraction 1).continuous.comp p.continuous) t 0

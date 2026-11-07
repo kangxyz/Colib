@@ -8,7 +8,7 @@ module
 
 public import Colib.Util.References
 public import Mathlib.Topology.Homotopy.Equiv
-public import Colib.Topology.Realization.SimplexBoundary
+public import Colib.Analysis.Convex.StdSimplex.BoundaryRetraction
 
 /-!
 # A genuine open collar of the geometric simplex boundary
@@ -25,24 +25,23 @@ closed image of a characteristic simplex, the collar really is open.
 Adapted from `Quillen/Topology/Realization/EdgePathPresentation/Collar.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The coordinate formulae, dimension-zero
 case, actual maps, boundary fixation and endpoint conventions are retained.
-Only namespace and lower import ownership change. No realization or HEP theorem
-is assumed; the finite-weight simplex is the native Mathlib object also used by
-PrismCoordinates. Future realization transport uses FiniteSimplexAdapter.
+The formulas are proved directly on the pinned function-subtype standard simplex.
+No realization or HEP theorem is assumed; no change of coordinate model is used.
 -/
 @[expose] public section
 
 
 noncomputable section
 
-open Convexity Set
+open Set
 open scoped Topology unitInterval
 
-namespace Convexity.StdSimplex
+namespace stdSimplex
 
 /-- A point is on the boundary exactly when its barycentric defect is one. -/
 theorem simplexBoundaryDefect_eq_one_iff {n : ℕ}
-    (x : StdSimplex ℝ (Fin (n + 1))) :
-    simplexBoundaryDefect x = 1 ↔ x ∈ simplexBoundary n := by
+    (x : _root_.stdSimplex ℝ (Fin (n + 1))) :
+    simplexBoundaryDefect x = 1 ↔ x ∈ boundary n := by
   constructor
   · intro h
     obtain ⟨i, hi⟩ := exists_simplexBoundaryDefect_eq x
@@ -55,7 +54,7 @@ theorem simplexBoundaryDefect_eq_one_iff {n : ℕ}
     simpa [hi] using le_simplexBoundaryDefect x i
 
 /-- The outer half of the simplex in barycentric radial coordinates. -/
-def simplexBoundaryCollar (n : ℕ) : Set (StdSimplex ℝ (Fin (n + 1))) :=
+def simplexBoundaryCollar (n : ℕ) : Set (_root_.stdSimplex ℝ (Fin (n + 1))) :=
   {x | (1 : ℝ) / 2 < simplexBoundaryDefect x}
 
 /-- The collar is open in the whole geometric simplex. -/
@@ -64,7 +63,7 @@ theorem isOpen_simplexBoundaryCollar (n : ℕ) : IsOpen (simplexBoundaryCollar n
 
 /-- The entire geometric boundary lies in the open collar. -/
 theorem simplexBoundary_subset_collar (n : ℕ) :
-    simplexBoundary n ⊆ simplexBoundaryCollar n := by
+    boundary n ⊆ simplexBoundaryCollar n := by
   intro x hx
   change (1 : ℝ) / 2 < simplexBoundaryDefect x
   rw [(simplexBoundaryDefect_eq_one_iff x).mpr hx]
@@ -72,7 +71,7 @@ theorem simplexBoundary_subset_collar (n : ℕ) :
 
 /-- Radial expansion cannot decrease a nonnegative barycentric defect. -/
 theorem simplexBoundaryDefect_le_retractPoint {n : ℕ}
-    (x : StdSimplex ℝ (Fin (n + 1))) (t : unitInterval)
+    (x : _root_.stdSimplex ℝ (Fin (n + 1))) (t : unitInterval)
     (hx : 0 ≤ simplexBoundaryDefect x) :
     simplexBoundaryDefect x ≤ simplexBoundaryDefect (simplexBoundaryRetractPoint (x, t)) := by
   obtain ⟨i, hi⟩ := exists_simplexBoundaryDefect_eq x
@@ -80,7 +79,7 @@ theorem simplexBoundaryDefect_le_retractPoint {n : ℕ}
   have hs := simplexBoundaryScale_pos (x, t)
   have hs1 := simplexBoundaryScale_le_one (x, t)
   have hcalc :
-      1 - (n + 1 : ℝ) * (simplexBoundaryRetractPoint (x, t)).weights i =
+      1 - (n + 1 : ℝ) * (simplexBoundaryRetractPoint (x, t)) i =
         simplexBoundaryDefect x / simplexBoundaryScale (x, t) := by
     rw [simplexBoundaryRetractPoint_weights]
     unfold simplexBoundaryRetractWeight
@@ -101,7 +100,7 @@ theorem simplexBoundaryRetractPoint_mem_collar {n : ℕ}
 /-- At time one, every collar point has reached the boundary. -/
 theorem simplexBoundaryRetractPoint_one_mem_boundary {n : ℕ}
     (x : simplexBoundaryCollar n) :
-    simplexBoundaryRetractPoint (x.1, 1) ∈ simplexBoundary n := by
+    simplexBoundaryRetractPoint (x.1, 1) ∈ boundary n := by
   obtain ⟨i, hi⟩ := exists_simplexBoundaryDefect_eq x.1
   refine ⟨i, ?_⟩
   have hs : simplexBoundaryScale (x.1, 1) = simplexBoundaryDefect x.1 := by
@@ -113,38 +112,38 @@ theorem simplexBoundaryRetractPoint_one_mem_boundary {n : ℕ}
   rw [simplexBoundaryRetractPoint_weights]
   unfold simplexBoundaryRetractWeight
   rw [hs, hi]
-  have hnum : (n + 1 : ℝ) * x.1.weights i +
-      (1 - (n + 1 : ℝ) * x.1.weights i) - 1 = 0 := by ring
+  have hnum : (n + 1 : ℝ) * x.1 i +
+      (1 - (n + 1 : ℝ) * x.1 i) - 1 = 0 := by ring
   rw [hnum, zero_div]
 
 /-- The cylinder retraction starts at the original point. -/
 @[simp] theorem simplexBoundaryRetractPoint_zero {n : ℕ}
-    (x : StdSimplex ℝ (Fin (n + 1))) :
+    (x : _root_.stdSimplex ℝ (Fin (n + 1))) :
     simplexBoundaryRetractPoint (x, 0) = x :=
   congrArg Prod.fst (simplexBoundaryRetract_eq_self (x, 0) (Or.inr rfl))
 
 /-- The cylinder retraction fixes every boundary point at all times. -/
 @[simp] theorem simplexBoundaryRetractPoint_boundary {n : ℕ}
-    (x : simplexBoundary n) (t : unitInterval) :
+    (x : boundary n) (t : unitInterval) :
     simplexBoundaryRetractPoint (x.1, t) = x.1 :=
   congrArg Prod.fst (simplexBoundaryRetract_eq_self (x.1, t) (Or.inl x.2))
 
 /-- The boundary inclusion into its open collar. -/
 def simplexBoundaryCollarInclusion (n : ℕ) :
-    C(simplexBoundary n, simplexBoundaryCollar n) where
+    C(boundary n, simplexBoundaryCollar n) where
   toFun x := ⟨x.1, simplexBoundary_subset_collar n x.2⟩
   continuous_toFun := continuous_subtype_val.subtype_mk _
 
 /-- The collar retracts continuously onto the geometric boundary. -/
 def simplexBoundaryCollarRetraction (n : ℕ) :
-    C(simplexBoundaryCollar n, simplexBoundary n) where
+    C(simplexBoundaryCollar n, boundary n) where
   toFun x := ⟨simplexBoundaryRetractPoint (x.1, 1),
     simplexBoundaryRetractPoint_one_mem_boundary x⟩
   continuous_toFun := (continuous_simplexBoundaryRetractPoint.comp
     (continuous_subtype_val.prodMk continuous_const)).subtype_mk _
 
 @[simp] theorem simplexBoundaryCollarRetraction_inclusion (n : ℕ)
-    (x : simplexBoundary n) :
+    (x : boundary n) :
     simplexBoundaryCollarRetraction n (simplexBoundaryCollarInclusion n x) = x := by
   apply Subtype.ext
   exact simplexBoundaryRetractPoint_boundary x 1
@@ -168,7 +167,7 @@ def simplexBoundaryCollarHomotopy (n : ℕ) :
 /-- The open collar is genuinely homotopy equivalent to the boundary, with
 forward map exactly its inclusion. -/
 def simplexBoundaryCollarHomotopyEquiv (n : ℕ) :
-    ContinuousMap.HomotopyEquiv (simplexBoundary n) (simplexBoundaryCollar n) where
+    ContinuousMap.HomotopyEquiv (boundary n) (simplexBoundaryCollar n) where
   toFun := simplexBoundaryCollarInclusion n
   invFun := simplexBoundaryCollarRetraction n
   left_inv := by
@@ -180,14 +179,14 @@ def simplexBoundaryCollarHomotopyEquiv (n : ℕ) :
     rw [h]
   right_inv := ⟨(simplexBoundaryCollarHomotopy n).toHomotopy.symm⟩
 
-end Convexity.StdSimplex
+end stdSimplex
 
 attribute [colib_tag "COL-0099",
   colib_ref "HatcherAT" "Chapter 0, proof of Proposition 0.16, page 15"
     "background"
     "Radial construction for the explicit open collar, fixing the entire boundary"]
-  Convexity.StdSimplex.isOpen_simplexBoundaryCollar
-  Convexity.StdSimplex.simplexBoundary_subset_collar
-  Convexity.StdSimplex.simplexBoundaryCollarRetraction
-  Convexity.StdSimplex.simplexBoundaryCollarHomotopy
-  Convexity.StdSimplex.simplexBoundaryCollarHomotopyEquiv
+  stdSimplex.isOpen_simplexBoundaryCollar
+  stdSimplex.simplexBoundary_subset_collar
+  stdSimplex.simplexBoundaryCollarRetraction
+  stdSimplex.simplexBoundaryCollarHomotopy
+  stdSimplex.simplexBoundaryCollarHomotopyEquiv

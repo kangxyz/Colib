@@ -19,7 +19,7 @@ A parameter equality retains exactly the source object equality transport.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory Convexity.StdSimplex TopCat
+open CategoryTheory stdSimplex TopCat
 universe u v w
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment

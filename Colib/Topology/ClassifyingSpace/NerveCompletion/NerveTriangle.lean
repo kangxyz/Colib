@@ -20,10 +20,10 @@ functor is discharged by the three original face traces and original composition
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory Convexity.StdSimplex FundamentalGroupoid.OpenCover
+open CategoryTheory stdSimplex FundamentalGroupoid.OpenCover
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- The previously explicit triangle hypothesis for the ACTUAL nerve attaching
@@ -41,14 +41,14 @@ boundary attaching functor; no loop-killing or triangle hypothesis is assumed. -
 def nerveTwoCellBoundaryConstantIso (C : Type u) [Category.{v} C]
     (a : NerveTwoCellIndex C) :
     nerveTwoCellBoundaryFunctor C a ≅
-      (Functor.const (FundamentalGroupoid (simplexBoundary 2))).obj
+      (Functor.const (FundamentalGroupoid (boundary 2))).obj
         ((nerveTwoCellBoundaryFunctor C a).obj (FundamentalGroupoid.mk (vertex 0))) :=
   boundaryConstantIsoOfTriangle _ (nerveTwoCell_triangle C a)
 
 /-- Every actual original two-cell boundary loop is killed by the actual graph
 decoder after the original attaching map, including cells with degenerate faces. -/
 theorem nerveTwoCell_boundary_loop (C : Type u) [Category.{v} C]
-    (a : NerveTwoCellIndex C) (x : simplexBoundary 2) (p : Path x x) :
+    (a : NerveTwoCellIndex C) (x : boundary 2) (p : Path x x) :
     (nerveTwoCellBoundaryFunctor C a).map (Path.Homotopic.Quotient.mk p) =
       𝟙 ((nerveTwoCellBoundaryFunctor C a).obj (FundamentalGroupoid.mk x)) :=
   nerveTwoCell_boundary_loop_of_triangle C a (nerveTwoCell_triangle C a) x p

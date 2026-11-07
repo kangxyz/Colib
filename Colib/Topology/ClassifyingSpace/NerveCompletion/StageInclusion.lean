@@ -20,11 +20,11 @@ closed embedding and the exact relative-to-absolute stage isomorphism.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory Convexity Convexity.StdSimplex SSet TopCat
+open CategoryTheory stdSimplex SSet TopCat
 open scoped Simplicial Topology
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 
 /-- The actual graph-stage inclusion is injective, via the published skeletal
 closed embedding and the exact relative-to-absolute stage isomorphism. -/
@@ -40,10 +40,10 @@ theorem nerveGraphInclusion_injective (C : Type u) [Category.{v} C] :
 /-- After the unchanged graph inclusion, the actual two-cell boundary attaching
 map is precisely its original simplex realization in finite barycentric coordinates. -/
 theorem nerveTwoCellBoundary_inclusion (C : Type u) [Category.{v} C]
-    (a : NerveTwoCellIndex C) (x : simplexBoundary 2) :
+    (a : NerveTwoCellIndex C) (x : boundary 2) :
     NerveGraphData.inclusion C (nerveTwoCellBoundaryMap C a x) =
       SSet.toTop.map (SSet.yonedaEquiv.symm a.simplex)
-        ((FiniteSimplexAdapter.toTopHomeomorph ⦋2⦌).symm x.val) := by
+        ((SimplexCategory.toTopHomeo ⦋2⦌).symm x.val) := by
   let i := NerveGraphData.emptyMap C
   have ht : SSet.toTop.map (SSet.relativeCellComplexOfMono.r i 2) ≫
       SSet.toTop.map (SSet.skeletonOfMono i 3).ι =

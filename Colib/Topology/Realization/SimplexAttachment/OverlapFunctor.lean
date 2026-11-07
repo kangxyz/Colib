@@ -22,13 +22,13 @@ every actual overlap path and not just a selected family of generators.
 @[expose] public section
 
 noncomputable section
-open Set CategoryTheory CategoryTheory.Limits TopCat Convexity.StdSimplex
+open Set CategoryTheory CategoryTheory.Limits TopCat _root_.stdSimplex
 universe u v w
 namespace TopCat.SimplexAttachment
 open FundamentalGroupoid.OpenCover
 variable (A : TopCat.{u}) [DiscreteTopology A] (n : ℕ) {O D : TopCat.{u}}
-    {f : TopCat.of (A × simplexBoundary n) ⟶ O}
-    {g : TopCat.of (A × Convexity.StdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : O ⟶ D}
+    {f : TopCat.of (A × _root_.stdSimplex.boundary n) ⟶ O}
+    {g : TopCat.of (A × _root_.stdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : O ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion A n) f g j)
     {C : Type v} [Category.{w} C]
 

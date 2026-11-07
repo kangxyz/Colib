@@ -18,60 +18,66 @@ The actual open vertex star in the geometric simplex boundary.
 @[expose] public section
 
 noncomputable section
-open Set Convexity Convexity.StdSimplex
+open Set stdSimplex
 open scoped unitInterval
-namespace Convexity.StdSimplex.Boundary
+namespace stdSimplex.Boundary
 variable {n : ℕ}
 
 /-- The actual open vertex star in the geometric simplex boundary. -/
-def vertexStar (i : Fin (n + 3)) : Set (simplexBoundary (n + 2)) := {x | 0 < x.val.weights i}
+def vertexStar (i : Fin (n + 3)) : Set (boundary (n + 2)) := {x | 0 < x.val i}
 
 /-- The original simplex vertex, regarded as an actual boundary point. -/
-def vertex (i : Fin (n + 3)) : simplexBoundary (n + 2) := by
-  refine ⟨StdSimplex.single i, ?_⟩
+def vertex (i : Fin (n + 3)) : boundary (n + 2) := by
+  refine ⟨stdSimplex.vertex i, ?_⟩
   obtain ⟨j, hji, _⟩ := Fin.exists_ne_and_ne_of_two_lt i i (by omega)
-  exact ⟨j, by simp [StdSimplex.weights_single, Ne.symm hji]⟩
+  exact ⟨j, by simp [stdSimplex.vertex_coe, Ne.symm hji]⟩
 
 @[simp]
 theorem vertex_mem (i : Fin (n + 3)) : vertex i ∈ vertexStar i := by
-  simp [vertexStar, vertex, StdSimplex.weights_single]
+  simp [vertexStar, vertex, stdSimplex.vertex_coe]
 
 /-- These are genuinely open sets of the boundary, not closed geometric faces. -/
 theorem isOpen_vertexStar (i : Fin (n + 3)) : IsOpen (vertexStar i) :=
-  isOpen_lt continuous_const ((StdSimplex.continuous_weights_apply ℝ i).comp
+  isOpen_lt continuous_const (((continuous_apply i).comp continuous_subtype_val).comp
     continuous_subtype_val)
 
 /-- The open vertex stars cover every actual boundary point. -/
-theorem vertexStars_cover (x : simplexBoundary (n + 2)) : x ∈ ⋃ i, vertexStar i := by
-  obtain ⟨i, hi⟩ := x.val.support_weights_nonempty
-  refine mem_iUnion.mpr ⟨i, ?_⟩
-  exact lt_of_le_of_ne (x.val.weights_nonneg i) (Finsupp.mem_support_iff.mp hi).symm
+theorem vertexStars_cover (x : boundary (n + 2)) : x ∈ ⋃ i, vertexStar i := by
+  have hpos : ∃ i, 0 < x.val i := by
+    by_contra h
+    push Not at h
+    have hz : ∀ i, x.val i = 0 := fun i ↦ le_antisymm (h i) (stdSimplex.zero_le x.val i)
+    have ht := stdSimplex.sum_eq_one x.val
+    simp only [hz, Finset.sum_const_zero] at ht
+    norm_num at ht
+  obtain ⟨i, hi⟩ := hpos
+  exact mem_iUnion.mpr ⟨i, hi⟩
 
 /-- The actual segment to its star vertex stays in the original boundary. -/
 theorem segment_mem_boundary (i : Fin (n + 3)) (x : vertexStar i) (t : I) :
-    simplexSegment x.val.val (vertex i).val t ∈ simplexBoundary (n + 2) := by
+    simplexSegment x.val.val (vertex i).val t ∈ boundary (n + 2) := by
   obtain ⟨j, hj⟩ := x.val.property
   have hji : j ≠ i := by
     intro h
     subst j
     exact (ne_of_gt x.property) hj
   refine ⟨j, ?_⟩
-  rw [simplexSegment_weights]
-  simp [hj, vertex, StdSimplex.weights_single, Ne.symm hji]
+  rw [simplexSegment_apply]
+  simp [hj, vertex, stdSimplex.vertex_coe, Ne.symm hji]
 
 /-- The same segment stays strictly in the chosen open star, including endpoints. -/
 theorem segment_weight_pos (i : Fin (n + 3)) (x : vertexStar i) (t : I) :
-    0 < (simplexSegment x.val.val (vertex i).val t).weights i := by
-  rw [simplexSegment_weights]
-  have hx : 0 < x.val.val.weights i := x.property
-  have hv : (vertex i).val.weights i = 1 := by simp [vertex, StdSimplex.weights_single]
+    0 < (simplexSegment x.val.val (vertex i).val t) i := by
+  rw [simplexSegment_apply]
+  have hx : 0 < x.val.val i := x.property
+  have hv : (vertex i).val i = 1 := by simp [vertex, stdSimplex.vertex_coe]
   rw [hv]
   have ht0 := t.property.1
   have ht1 := t.property.2
   by_cases ht : (t : ℝ) = 0
   · simpa only [ht, sub_zero, one_mul, zero_mul, add_zero] using hx
   · have hp : 0 < (t : ℝ) := lt_of_le_of_ne ht0 (Ne.symm ht)
-    have hn : 0 ≤ (1 - (t : ℝ)) * x.val.val.weights i :=
+    have hn : 0 ≤ (1 - (t : ℝ)) * x.val.val i :=
       mul_nonneg (by linarith) hx.le
     linarith
 
@@ -85,11 +91,16 @@ def vertexStarContraction (i : Fin (n + 3)) :
   continuous_toFun := by
     apply Continuous.subtype_mk
     apply Continuous.subtype_mk
-    rw [(StdSimplex.isEmbedding_toFun_comp_weights ℝ (Fin (n + 3))).continuous_iff]
-    unfold Function.comp
+    apply Continuous.subtype_mk
     refine continuous_pi (fun j => ?_)
-    simp only [simplexSegment_weights]
-    fun_prop
+    change Continuous (fun z : I × vertexStar i ↦
+      (1 - (z.1 : ℝ)) * z.2.val.val.val j + (z.1 : ℝ) * (vertex i).val j)
+    have ht : Continuous (fun z : I × vertexStar i ↦ (z.1 : ℝ)) :=
+      continuous_subtype_val.comp continuous_fst
+    have hx : Continuous (fun z : I × vertexStar i ↦ z.2.val.val.val j) :=
+      (continuous_apply j).comp (continuous_subtype_val.comp
+        (continuous_subtype_val.comp (continuous_subtype_val.comp continuous_snd)))
+    exact ((continuous_const.sub ht).mul hx).add (ht.mul continuous_const)
   map_zero_left x := Subtype.ext (Subtype.ext (simplexSegment _ _).source)
   map_one_left x := Subtype.ext (Subtype.ext (simplexSegment _ _).target)
 
@@ -98,4 +109,4 @@ theorem contractible_vertexStar (i : Fin (n + 3)) : ContractibleSpace (vertexSta
   (contractible_iff_id_nullhomotopic _).mpr ⟨⟨vertex i, vertex_mem i⟩,
     ⟨vertexStarContraction i⟩⟩
 
-end Convexity.StdSimplex.Boundary
+end stdSimplex.Boundary

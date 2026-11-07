@@ -20,12 +20,12 @@ The original realized two-skeleton, with the original relative-stage indexing.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open Set CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex TopCat SSet
+open Set CategoryTheory CategoryTheory.Limits stdSimplex TopCat SSet
 open FundamentalGroupoid.OpenCover
 open scoped Simplicial Topology
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- The original realized two-skeleton, with the original relative-stage indexing. -/

@@ -28,7 +28,7 @@ hypotheses and universes are retained; imports use native lower owners. -/
 open Topology
 
 noncomputable section
-open TopCat Topology SSet Convexity.StdSimplex CategoryTheory Limits MonoidalCategory
+open TopCat Topology SSet _root_.stdSimplex CategoryTheory Limits MonoidalCategory
 open scoped Simplicial
 universe u
 set_option backward.isDefEq.respectTransparency false

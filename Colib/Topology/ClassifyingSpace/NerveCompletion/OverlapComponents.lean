@@ -20,7 +20,7 @@ actual-overlap transition is exactly the specified original geometric transport.
 @[expose] public section
 
 noncomputable section
-open CategoryTheory Convexity.StdSimplex TopCat
+open CategoryTheory stdSimplex TopCat
 universe u v w z
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment

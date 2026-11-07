@@ -23,7 +23,7 @@ open CategoryTheory FundamentalGroupoid.OpenCover SSet
 open scoped Simplicial
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- Exact decoder trace of the actual attached 01 face, including degenerate faces. -/

@@ -15,7 +15,7 @@ Generation uses old-space and entire-cell paths in every dimension. Fullness
 requires dimension at least two and discrete parameters; it is not faithfulness.
 -/
 
-open CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex Topology
+open CategoryTheory CategoryTheory.Limits stdSimplex Topology
 open scoped Topology unitInterval
 
 universe u
@@ -25,8 +25,8 @@ noncomputable section
 namespace TopCat
 
 variable (X : TopCat.{u}) (n : ℕ) {C D : TopCat.{u}}
-  {f : TopCat.of (X × simplexBoundary n) ⟶ C}
-  {g : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : C ⟶ D}
+  {f : TopCat.of (X × boundary n) ⟶ C}
+  {g : TopCat.of (X × _root_.stdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : C ⟶ D}
   (sq : IsPushout (parameterizedSimplexBoundaryInclusion X n) f g j)
 
 example (a : X) (x : simplexInterior n) :
@@ -41,7 +41,7 @@ example : Pairwise (fun a b : X ↦ Disjoint (simplexAttachmentInterior X n (g :
 
 example (a : X) :
     simplexAttachmentCollar X n sq ∩ simplexAttachmentInterior X n (g := g) a =
-      (fun x : StdSimplex ℝ (Fin (n + 1)) ↦ g (a, x)) '' simplexAnnulus n :=
+      (fun x : _root_.stdSimplex ℝ (Fin (n + 1)) ↦ g (a, x)) '' simplexAnnulus n :=
   simplexAttachmentCollar_inter_interior X n sq a
 
 example (hn : 2 ≤ n) (a : X) :
@@ -64,7 +64,7 @@ example (a : X) : IsOpen (simplexAttachmentInterior X n (g := g) a) :=
 example (a : X) : IsSimplyConnected (simplexAttachmentInterior X n (g := g) a) :=
   isSimplyConnected_simplexAttachmentInterior X n sq a
 
-example (a : X) (x : StdSimplex ℝ (Fin (n + 1))) :
+example (a : X) (x : _root_.stdSimplex ℝ (Fin (n + 1))) :
     simplexAttachmentCellMap X n (g := g) a x = g (a, x) := rfl
 
 example (hn : 2 ≤ n) : (FundamentalGroupoid.map j.hom).Full :=
@@ -78,7 +78,7 @@ variable (S : Subgroupoid (FundamentalGroupoid D))
   (hold : ∀ {x y : C} (p : Path x y),
     (⟦p.map j.hom.continuous⟧ : FundamentalGroupoid.mk (j x) ⟶
       FundamentalGroupoid.mk (j y)) ∈ S.arrows _ _)
-  (hcell : ∀ (a : X) {x y : StdSimplex ℝ (Fin (n + 1))} (p : Path x y),
+  (hcell : ∀ (a : X) {x y : _root_.stdSimplex ℝ (Fin (n + 1))} (p : Path x y),
     (⟦p.map (simplexAttachmentCellMap X n (g := g) a).continuous⟧ :
       FundamentalGroupoid.mk (g (a, x)) ⟶ FundamentalGroupoid.mk (g (a, y))) ∈ S.arrows _ _)
 

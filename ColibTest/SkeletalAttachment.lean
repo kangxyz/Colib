@@ -8,7 +8,7 @@ public import Colib.Topology.Realization.Skeleton
 
 /-! Regression: no Mono on single-step attachment. -/
 @[expose] public noncomputable section
-open CategoryTheory Limits Topology Convexity Convexity.StdSimplex
+open CategoryTheory Limits Topology stdSimplex
 open scoped Simplicial Topology
 universe u
 namespace SSet

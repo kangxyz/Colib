@@ -18,7 +18,7 @@ The actual characteristic edge path with its exact attached old-stage endpoints.
 @[expose] public section
 
 noncomputable section
-open Set CategoryTheory TopCat Convexity.StdSimplex
+open Set CategoryTheory TopCat stdSimplex
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment

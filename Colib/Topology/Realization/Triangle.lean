@@ -8,8 +8,7 @@ module
 
 public import Colib.Util.References
 public import Colib.Topology.Realization.EdgePath
-public import Colib.Topology.Realization.SimplexHomotopy
-public import Colib.Topology.Realization.FiniteSimplexAdapter
+public import Colib.Analysis.Convex.StdSimplex.PathHomotopy
 
 /-!
 # Triangle relations for actual realized edge paths
@@ -19,10 +18,9 @@ Extracted from `Quillen/Topology/ClassifyingSpace/ArrowPaths.lean` at commit
 relative homotopies, universe parameters and multiplication order are retained.
 Only native namespace and import ownership change unless noted below.
 
-The finite-simplex filling uses the existing coordinate-preserving
-`FiniteSimplexAdapter.toTopHomeomorph`, since the pinned realization API has
-ordinary coordinate simplices while the source interpolation uses finite weights.
-No realization functor is replaced.
+The finite-simplex filling uses native coordinate interpolation and
+`SimplexCategory.toTopHomeo` directly. The pinned realization functor, path
+parameters and fixed endpoints are unchanged.
 
 -/
 
@@ -38,9 +36,10 @@ namespace SSet
 /-- All paths with the same endpoints in a realized finite simplex are homotopic. -/
 theorem realizationStdSimplex_paths_homotopic {n : ℕ}
     {x y : |(Δ[n] : SSet.{u})|} (p q : Path x y) : p.Homotopic q := by
-  let e := FiniteSimplexAdapter.toTopHomeomorph (SimplexCategory.mk n)
-  have H := (Convexity.StdSimplex.paths_homotopic (p.map e.continuous)
-    (q.map e.continuous)).map ⟨e.symm, e.symm.continuous⟩
+  let e := SimplexCategory.toTopHomeo (SimplexCategory.mk n)
+  have h : (p.map e.continuous).Homotopic (q.map e.continuous) :=
+    ⟨stdSimplex.pathHomotopy _ _⟩
+  have H := h.map ⟨e.symm, e.symm.continuous⟩
   have H' := H.pathCast (e.symm_apply_apply x).symm (e.symm_apply_apply y).symm
   convert H' using 1 <;> ext t <;> exact (e.symm_apply_apply _).symm
 

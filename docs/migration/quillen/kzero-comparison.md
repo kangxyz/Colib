@@ -13,11 +13,15 @@ unchanged. Library items COL-0239 and COL-0240 record the two public endpoints.
    squares. Generic finite categorical pasting lives under
    `CategoryTheory.ComposableArrows`; equality transport and joint
    representatives have their own category-theoretic owners.
-2. `Topology.Realization.SimplexBoundary` has one dimension-parametric family
-   of vertices, open stars, edges, midpoint spokes and contractions for the
-   actual finite barycentric simplex boundary. The two-dimensional case needs
-   its triangle relation. In dimensions at least three, a fourth coordinate
-   gives a genuine zero-coordinate face filling every edge triangle.
+2. The `Colib.Topology.Realization.SimplexBoundary` directory family, including
+   `VertexStars`, `StarTrivializations`, `BoundaryEdges` and `FilledTriangles`,
+   directly uses native `stdSimplex` for vertices, open stars, edges, midpoint
+   spokes and contractions. The actual `stdSimplex.boundary` is owned by
+   `Colib.Analysis.Convex.StdSimplex.Boundary`. The old same-named
+   `Colib/Topology/Realization/SimplexBoundary.lean` finite-model owner is retired,
+   not this directory family. The two-dimensional case needs its triangle
+   relation. In dimensions at least three, a fourth coordinate gives a genuine
+   zero-coordinate face filling every edge triangle.
 3. `Topology.Realization.SimplexAttachment` constructs overlap identifications
    and groupoid functor extensions along actual simplex attachments. Generic
    constructions do not depend on nerve applications. The original subtype
@@ -72,3 +76,7 @@ argument, relative finite-stage reflection, sequential compact-factorization
 hypotheses, and the central higher-cell argument. Compilation and transitive
 axiom auditing cover the full included chain. They are distinct from an
 independent mathematical review of every lower-level grid and collar proof.
+
+This review and validation describe the original K-zero contribution. They do
+not certify the later coordinate-rebuilt dependency closure; its final checks
+remain part of the [integrated verification boundary](field-k2-comparison.md#verification-boundary).

@@ -19,9 +19,9 @@ path coordinates, and endpoint data are retained under native ownership.
 -/
 @[expose] public section
 noncomputable section
-open Topology CategoryTheory SSet Opposite MonoidalCategory CartesianMonoidalCategory Convexity
+open Topology CategoryTheory SSet Opposite MonoidalCategory CartesianMonoidalCategory
 open scoped Simplicial Topology unitInterval
-universe u
+universe u v
 set_option backward.isDefEq.respectTransparency false
 set_option backward.defeqAttrib.useBackward true
 namespace CategoryTheory
@@ -98,12 +98,12 @@ theorem classifyingSpaceNaturalTransformationHomotopy_whiskerRight
 
 /-- The realized natural-transformation homotopy traverses its component edge
 at every object vertex. -/
-theorem classifyingSpaceNaturalTransformationHomotopy_vertex
-    {C D : Type u} [SmallCategory C] [SmallCategory D]
+theorem classifyingSpaceNaturalTransformationHomotopy_vertex_general
+    {C D : Type u} [Category.{v} C] [Category.{v} D]
     {F G : C ⥤ D} (α : F ⟶ G) (c : C) (t : unitInterval) :
     classifyingSpaceNaturalTransformationHomotopy α (t, classifyingSpacePoint c) =
       classifyingSpacePath (α.app c) t := by
-  let q := (realizationCylinderIso (Δ[0] : SSet.{u})).inv (default, ULift.up t)
+  let q := (realizationCylinderIso (Δ[0] : SSet.{max u v})).inv (default, ULift.up t)
   have hn := ConcreteCategory.congr_hom
     (realizationCylinderIso_inv_naturality (nerveVertexMap c)) (default, ULift.up t)
   change SSet.toTop.map (nerveVertexMap c ▷ Δ[1]) q =
@@ -115,14 +115,22 @@ theorem classifyingSpaceNaturalTransformationHomotopy_vertex
     SSet.toTop.map (naturalTransformationNerveCylinder α)) q = _
   rw [← Functor.map_comp, naturalTransformationNerveCylinder_vertex, Functor.map_comp,
     TopCat.comp_app]
-  have hs : SSet.toTop.map (snd (Δ[0] : SSet.{u}) Δ[1]) q = realizationInterval t := by
+  have hs : SSet.toTop.map (snd (Δ[0] : SSet.{max u v}) Δ[1]) q = realizationInterval t := by
     have hh := congrArg _root_.Prod.snd (ConcreteCategory.congr_hom
-      (realizationCylinderIso (Δ[0] : SSet.{u})).inv_hom_id (default, ULift.up t))
+      (realizationCylinderIso (Δ[0] : SSet.{max u v})).inv_hom_id (default, ULift.up t))
     change SSet.stdSimplex.toTopObjIsoI.hom
-      (SSet.toTop.map (snd (Δ[0] : SSet.{u}) Δ[1]) q) = ULift.up t at hh
+      (SSet.toTop.map (snd (Δ[0] : SSet.{max u v}) Δ[1]) q) = ULift.up t at hh
     apply (TopCat.homeoOfIso SSet.stdSimplex.toTopObjIsoI).injective
     exact hh.trans (ConcreteCategory.congr_hom SSet.stdSimplex.toTopObjIsoI.inv_hom_id _).symm
   rw [hs]
   rfl
+
+/-- The original common-universe vertex-track interface is retained. -/
+theorem classifyingSpaceNaturalTransformationHomotopy_vertex
+    {C D : Type u} [SmallCategory C] [SmallCategory D]
+    {F G : C ⥤ D} (α : F ⟶ G) (c : C) (t : unitInterval) :
+    classifyingSpaceNaturalTransformationHomotopy α (t, classifyingSpacePoint c) =
+      classifyingSpacePath (α.app c) t :=
+  classifyingSpaceNaturalTransformationHomotopy_vertex_general α c t
 
 end CategoryTheory

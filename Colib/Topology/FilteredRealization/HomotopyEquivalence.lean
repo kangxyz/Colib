@@ -25,7 +25,7 @@ hypotheses and universes are retained; imports use native lower owners. -/
 @[expose] public section
 
 noncomputable section
-open TopCat Topology SSet Convexity.StdSimplex CategoryTheory Limits
+open TopCat Topology SSet _root_.stdSimplex CategoryTheory Limits
 open scoped Simplicial
 universe u
 

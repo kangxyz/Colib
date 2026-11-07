@@ -31,7 +31,7 @@ assumption is added to the parameter or vertex spaces.
 
 noncomputable section
 universe u v w
-open CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex Topology Set
+open CategoryTheory CategoryTheory.Limits _root_.stdSimplex Topology Set
 open scoped Topology unitInterval
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
@@ -40,73 +40,74 @@ namespace TopCat
 namespace GraphAttachment
 
 variable (X : TopCat.{u}) {V D Y : TopCat.{u}}
-    {f : TopCat.of (X × simplexBoundary 1) ⟶ V}
-    {g : TopCat.of (X × StdSimplex ℝ (Fin 2)) ⟶ D} {j : V ⟶ D}
+    {f : TopCat.of (X × _root_.stdSimplex.boundary 1) ⟶ V}
+    {g : TopCat.of (X × _root_.stdSimplex ℝ (Fin 2)) ⟶ D} {j : V ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion X 1) f g j)
     (h : C(D, Y)) {A : Type v} [Groupoid.{w} A]
     (F : A ⥤ FundamentalGroupoid Y) (vertex : V → A)
     (ε : ∀ c : V, F.obj (vertex c) ≅ FundamentalGroupoid.mk (h (j c)))
 
 /-- Identify a specified original vertex with its equal cell-boundary point. -/
-def vertexIso (a : X) (b : simplexBoundary 1) :
+def vertexIso (a : X) (b : _root_.stdSimplex.boundary 1) :
     F.obj (vertex (f (a, b))) ≅ FundamentalGroupoid.mk (h (g (a, b.1))) :=
   ε (f (a, b)) ≪≫ eqToIso (congrArg FundamentalGroupoid.mk
     (congrArg h (ConcreteCategory.congr_hom sq.w (a, b)).symm))
 
 /-- The actual source-to-point path in an attached one-simplex, preceded by
 the specified original vertex identification. -/
-def spoke (a : X) (x : StdSimplex ℝ (Fin 2)) :
+def spoke (a : X) (x : _root_.stdSimplex ℝ (Fin 2)) :
     F.obj (vertex (f (a, boundaryZero))) ⟶ FundamentalGroupoid.mk (h (g (a, x))) :=
   (vertexIso X sq h F vertex ε a boundaryZero).hom ≫
-    ⟦(PathConnectedSpace.somePath (StdSimplex.single 0) x).map
+    ⟦(PathConnectedSpace.somePath (_root_.stdSimplex.vertex 0) x).map
       (h.comp (simplexAttachmentCellMap X 1 (g := g) a)).continuous⟧
 
 /-- All genuine paths in one geometric edge satisfy the source-spoke relation. -/
-lemma spoke_comp (a : X) {x y : StdSimplex ℝ (Fin 2)} (p : Path x y) :
+lemma spoke_comp (a : X) {x y : _root_.stdSimplex ℝ (Fin 2)} (p : Path x y) :
     spoke X sq h F vertex ε a x ≫
         (⟦p.map (h.comp (simplexAttachmentCellMap X 1 (g := g) a)).continuous⟧ :
           FundamentalGroupoid.mk (h (g (a, x))) ⟶
             FundamentalGroupoid.mk (h (g (a, y)))) =
       spoke X sq h F vertex ε a y := by
   let k := h.comp (simplexAttachmentCellMap X 1 (g := g) a)
-  have H := (Convexity.StdSimplex.paths_homotopic
-    ((PathConnectedSpace.somePath (StdSimplex.single 0) x).trans p)
-      (PathConnectedSpace.somePath (StdSimplex.single 0) y)).map k
+  have H := (_root_.stdSimplex.paths_homotopic
+    ((PathConnectedSpace.somePath (_root_.stdSimplex.vertex 0) x).trans p)
+      (PathConnectedSpace.somePath (_root_.stdSimplex.vertex 0) y)).map k
   have he : Path.Homotopic.Quotient.mk
-      (((PathConnectedSpace.somePath (StdSimplex.single 0) x).trans p).map k.continuous) =
+      (((PathConnectedSpace.somePath (_root_.stdSimplex.vertex 0) x).trans p).map k.continuous) =
       Path.Homotopic.Quotient.mk
-        ((PathConnectedSpace.somePath (StdSimplex.single 0) y).map k.continuous) :=
+        ((PathConnectedSpace.somePath (_root_.stdSimplex.vertex 0) y).map k.continuous) :=
     Quotient.sound H
   dsimp only [spoke]
   rw [Category.assoc]
   apply congrArg ((vertexIso X sq h F vertex ε a boundaryZero).hom ≫ ·)
   change (Path.Homotopic.Quotient.mk
-    ((PathConnectedSpace.somePath (StdSimplex.single 0) x).map k.continuous)).trans
+    ((PathConnectedSpace.somePath (_root_.stdSimplex.vertex 0) x).map k.continuous)).trans
       (Path.Homotopic.Quotient.mk (p.map k.continuous)) =
     Path.Homotopic.Quotient.mk
-      ((PathConnectedSpace.somePath (StdSimplex.single 0) y).map k.continuous)
+      ((PathConnectedSpace.somePath (_root_.stdSimplex.vertex 0) y).map k.continuous)
   simpa only [Path.map_trans, Path.Homotopic.Quotient.mk_trans] using he
 
 @[simp] lemma spoke_source (a : X) :
-    spoke X sq h F vertex ε a (StdSimplex.single 0) =
+    spoke X sq h F vertex ε a (_root_.stdSimplex.vertex 0) =
       (vertexIso X sq h F vertex ε a boundaryZero).hom := by
   let k := h.comp (simplexAttachmentCellMap X 1 (g := g) a)
-  have H := (Convexity.StdSimplex.paths_homotopic
-    (PathConnectedSpace.somePath (StdSimplex.single (0 : Fin 2)) (StdSimplex.single 0))
-      (Path.refl (StdSimplex.single 0))).map k
+  have H := (_root_.stdSimplex.paths_homotopic
+    (PathConnectedSpace.somePath (_root_.stdSimplex.vertex (0 : Fin 2))
+      (_root_.stdSimplex.vertex 0))
+      (Path.refl (_root_.stdSimplex.vertex 0))).map k
   have he : Path.Homotopic.Quotient.mk
-      ((PathConnectedSpace.somePath (StdSimplex.single (0 : Fin 2))
-        (StdSimplex.single 0)).map k.continuous) =
-      Path.Homotopic.Quotient.mk ((Path.refl (StdSimplex.single 0)).map k.continuous) :=
+      ((PathConnectedSpace.somePath (_root_.stdSimplex.vertex (0 : Fin 2))
+        (_root_.stdSimplex.vertex 0)).map k.continuous) =
+      Path.Homotopic.Quotient.mk ((Path.refl (_root_.stdSimplex.vertex 0)).map k.continuous) :=
     Quotient.sound H
   dsimp only [spoke]
-  have he' : (⟦(PathConnectedSpace.somePath (StdSimplex.single (0 : Fin 2))
-      (StdSimplex.single 0)).map k.continuous⟧ :
-      FundamentalGroupoid.mk (k (StdSimplex.single 0)) ⟶
-        FundamentalGroupoid.mk (k (StdSimplex.single 0))) =
-      𝟙 (FundamentalGroupoid.mk (k (StdSimplex.single 0))) := by
+  have he' : (⟦(PathConnectedSpace.somePath (_root_.stdSimplex.vertex (0 : Fin 2))
+      (_root_.stdSimplex.vertex 0)).map k.continuous⟧ :
+      FundamentalGroupoid.mk (k (_root_.stdSimplex.vertex 0)) ⟶
+        FundamentalGroupoid.mk (k (_root_.stdSimplex.vertex 0))) =
+      𝟙 (FundamentalGroupoid.mk (k (_root_.stdSimplex.vertex 0))) := by
     change Path.Homotopic.Quotient.mk _ =
-      Path.Homotopic.Quotient.mk (Path.refl (k (StdSimplex.single 0)))
+      Path.Homotopic.Quotient.mk (Path.refl (k (_root_.stdSimplex.vertex 0)))
     exact he.trans (congrArg Path.Homotopic.Quotient.mk (by ext t; rfl))
   erw [he']
   exact Category.comp_id _
@@ -123,13 +124,13 @@ structure Anchor (z : D) where
     hom = F.map q ≫ (ε c).hom ≫
       eqToHom (congrArg FundamentalGroupoid.mk (congrArg h hc))
   /-- On an edge chart, the anchor differs from its source spoke by an original arrow. -/
-  cell : ∀ (a : X) (x : StdSimplex ℝ (Fin 2)) (hx : g (a, x) = z),
+  cell : ∀ (a : X) (x : _root_.stdSimplex ℝ (Fin 2)) (hx : g (a, x) = z),
     ∃ q : obj ⟶ vertex (f (a, boundaryZero)),
       hom = F.map q ≫ spoke X sq h F vertex ε a x ≫
         eqToHom (congrArg FundamentalGroupoid.mk (congrArg h hx))
 
 variable (edge : ∀ a : X, vertex (f (a, boundaryZero)) ⟶ vertex (f (a, boundaryOne)))
-    (hedge : ∀ a : X, spoke X sq h F vertex ε a (StdSimplex.single 1) =
+    (hedge : ∀ a : X, spoke X sq h F vertex ε a (_root_.stdSimplex.vertex 1) =
       F.map (edge a) ≫ (vertexIso X sq h F vertex ε a boundaryOne).hom)
 
 include hedge in
@@ -163,12 +164,12 @@ theorem anchor_nonempty (z : D) : Nonempty (Anchor X sq h F vertex ε z) := by
       subst c
       rcases boundary_eq_zero_or_one b with rfl | rfl
       · refine ⟨𝟙 _, ?_⟩
-        change _ = F.map (𝟙 _) ≫ spoke X sq h F vertex ε a (StdSimplex.single 0) ≫ _
+        change _ = F.map (𝟙 _) ≫ spoke X sq h F vertex ε a (_root_.stdSimplex.vertex 0) ≫ _
         rw [spoke_source]
         simp [vertexIso, Category.assoc]
       · refine ⟨inv (edge a), ?_⟩
         change _ = F.map (inv (edge a)) ≫
-          spoke X sq h F vertex ε a (StdSimplex.single 1) ≫ _
+          spoke X sq h F vertex ε a (_root_.stdSimplex.vertex 1) ≫ _
         rw [hedge]
         simp [vertexIso, Category.assoc]
   · obtain ⟨b, hb⟩ := Set.mem_range.mp

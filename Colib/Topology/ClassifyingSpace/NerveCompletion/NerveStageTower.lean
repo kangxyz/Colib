@@ -18,11 +18,11 @@ The original relative skeletal stage, retaining the original empty-to-nerve map.
 @[expose] public section
 
 noncomputable section
-open CategoryTheory SSet TopCat FundamentalGroupoid.OpenCover Convexity.StdSimplex.Boundary
+open CategoryTheory SSet TopCat FundamentalGroupoid.OpenCover stdSimplex.Boundary
 open scoped Simplicial
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- The original relative skeletal stage, retaining the original empty-to-nerve map. -/

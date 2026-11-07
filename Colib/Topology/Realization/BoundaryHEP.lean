@@ -17,7 +17,7 @@ and boundary comparison transport the explicit geometric HEP to the actual map.
 No compact HELP or mapping-path theorem is imported.
 -/
 @[expose] public noncomputable section
-open CategoryTheory Convexity.StdSimplex
+open CategoryTheory _root_.stdSimplex
 open scoped Simplicial Topology
 universe u
 namespace SSet
@@ -28,9 +28,9 @@ theorem homotopyExtensionProperty_realizationBoundary (n : ℕ) :
     TopCat.HomotopyExtensionProperty (SSet.toTop.map (∂Δ[n].ι : _ ⟶ (Δ[n] : SSet.{u}))) := by
   let P := |(Δ[0] : SSet.{u})|
   let a := (realizationBoundaryHomeomorph n).trans
-    (Homeomorph.uniqueProd P (simplexBoundary n)).symm
-  let b := (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).trans
-    (Homeomorph.uniqueProd P (Convexity.StdSimplex ℝ (Fin (n + 1)))).symm
+    (Homeomorph.uniqueProd P (_root_.stdSimplex.boundary n)).symm
+  let b := (SimplexCategory.toTopHomeo ⦋n⦌).trans
+    (Homeomorph.uniqueProd P (_root_.stdSimplex ℝ (Fin (n + 1)))).symm
   apply TopCat.homotopyExtensionProperty_of_iso_square _
     (TopCat.parameterizedSimplexBoundaryInclusion P n) (TopCat.isoOfHomeo a) (TopCat.isoOfHomeo b)
     _ (TopCat.homotopyExtensionProperty_simplexBoundary P n)

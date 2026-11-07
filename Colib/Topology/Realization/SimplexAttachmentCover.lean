@@ -32,8 +32,8 @@ not assumed discrete. The deformation import is reduced to its collar input.
 
 
 noncomputable section
-open CategoryTheory CategoryTheory.Limits Convexity Topology Set
-open Convexity.StdSimplex
+open CategoryTheory CategoryTheory.Limits Topology Set
+open _root_.stdSimplex
 open scoped Topology unitInterval
 
 universe u
@@ -44,9 +44,9 @@ namespace TopCat
 
 /-- The attaching locus is exactly the parametrized geometric boundary. -/
 theorem mem_range_parameterizedSimplexBoundary_iff (X : TopCat.{u}) (n : ℕ)
-    (z : X × StdSimplex ℝ (Fin (n + 1))) :
+    (z : X × _root_.stdSimplex ℝ (Fin (n + 1))) :
     z ∈ Set.range (TopCat.parameterizedSimplexBoundaryInclusion X n) ↔
-      z.2 ∈ simplexBoundary n := by
+      z.2 ∈ _root_.stdSimplex.boundary n := by
   constructor
   · rintro ⟨⟨a, b⟩, rfl⟩
     exact b.2
@@ -56,8 +56,8 @@ theorem mem_range_parameterizedSimplexBoundary_iff (X : TopCat.{u}) (n : ℕ)
 section SimplexAttachment
 
 variable (X : TopCat.{u}) [DiscreteTopology X] (n : ℕ) {C D : TopCat.{u}}
-    {f : TopCat.of (X × simplexBoundary n) ⟶ C}
-    {g : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⟶ D}
+    {f : TopCat.of (X × _root_.stdSimplex.boundary n) ⟶ C}
+    {g : TopCat.of (X × _root_.stdSimplex ℝ (Fin (n + 1))) ⟶ D}
     {j : C ⟶ D}
     (sq : IsPushout (TopCat.parameterizedSimplexBoundaryInclusion X n) f g j)
 
@@ -84,10 +84,10 @@ theorem isOpenEmbedding_simplexAttachmentInteriorMap (a : X) :
       exact (ne_of_gt (x.2 i)) hi
     exact Subtype.ext (congrArg Prod.snd (pushout_cell_eq_of_not_mem_range sq hx h))
   · intro W hW
-    have hW' : IsOpen (((↑) : simplexInterior n → StdSimplex ℝ (Fin (n + 1))) '' W) :=
+    have hW' : IsOpen (((↑) : simplexInterior n → _root_.stdSimplex ℝ (Fin (n + 1))) '' W) :=
       (isOpen_simplexInterior n).isOpenEmbedding_subtypeVal.isOpenMap W hW
-    let B' : Set (X × StdSimplex ℝ (Fin (n + 1))) :=
-      {a} ×ˢ (((↑) : simplexInterior n → StdSimplex ℝ (Fin (n + 1))) '' W)
+    let B' : Set (X × _root_.stdSimplex ℝ (Fin (n + 1))) :=
+      {a} ×ˢ (((↑) : simplexInterior n → _root_.stdSimplex ℝ (Fin (n + 1))) '' W)
     have hB' : IsOpen B' := (isOpen_discrete _).prod hW'
     have hdisj : B' ⊆ (Set.range (TopCat.parameterizedSimplexBoundaryInclusion X n))ᶜ := by
       rintro ⟨a', x⟩ ⟨ha', y, hy, rfl⟩
@@ -143,7 +143,7 @@ omit [DiscreteTopology X] in
 open annulus, with no approximation or lifting hypothesis. -/
 theorem simplexAttachmentCollar_inter_interior (a : X) :
     simplexAttachmentCollar X n sq ∩ simplexAttachmentInterior X n (g := g) a =
-      (fun x : StdSimplex ℝ (Fin (n + 1)) ↦ g (a, x)) '' simplexAnnulus n := by
+      (fun x : _root_.stdSimplex ℝ (Fin (n + 1)) ↦ g (a, x)) '' simplexAnnulus n := by
   ext z
   constructor
   · rintro ⟨hz, x, rfl⟩
@@ -177,7 +177,7 @@ theorem simplexAttachmentCollar_union_interiors :
       rw [← hb]
       exact Set.mem_iUnion.mpr ⟨b.1, ⟨⟨b.2, hbi⟩, rfl⟩⟩
     · left
-      have hbd : b.2 ∈ simplexBoundary n := by
+      have hbd : b.2 ∈ _root_.stdSimplex.boundary n := by
         rw [simplexInterior_eq_compl_boundary] at hbi
         simpa only [Set.mem_compl_iff, not_not] using hbi
       rw [← hb]

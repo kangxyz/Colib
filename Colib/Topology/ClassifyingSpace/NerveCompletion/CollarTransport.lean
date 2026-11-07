@@ -18,7 +18,7 @@ old vertex, the collar decoder is exactly the resulting equality transport.
 @[expose] public section
 
 noncomputable section
-open CategoryTheory Convexity.StdSimplex TopCat
+open CategoryTheory stdSimplex TopCat
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment

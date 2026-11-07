@@ -18,10 +18,10 @@ The original nondegenerate two-cell indices, with independent category universes
 @[expose] public section
 
 noncomputable section
-open CategoryTheory Convexity.StdSimplex FundamentalGroupoid.OpenCover SSet TopCat
+open CategoryTheory stdSimplex FundamentalGroupoid.OpenCover SSet TopCat
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- The original nondegenerate two-cell indices, with independent category universes. -/
@@ -30,7 +30,7 @@ abbrev NerveTwoCellIndex (C : Type u) [Category.{v} C] :=
 
 /-- The actual original two-cell attaching map into the actual nerve graph stage. -/
 def nerveTwoCellBoundaryMap (C : Type u) [Category.{v} C] (a : NerveTwoCellIndex C) :
-    C(simplexBoundary 2, NerveGraphData.Stage C) where
+    C(boundary 2, NerveGraphData.Stage C) where
   toFun x := realizedSkeletalAttaching (NerveGraphData.emptyMap C) 2 (a, x)
   continuous_toFun := (realizedSkeletalAttaching (NerveGraphData.emptyMap C) 2).hom.continuous.comp
     (continuous_const.prodMk continuous_id)
@@ -38,7 +38,7 @@ def nerveTwoCellBoundaryMap (C : Type u) [Category.{v} C] (a : NerveTwoCellIndex
 /-- Pull back the already constructed actual graph decoder along that unchanged
 attaching map. This definition does not assume any boundary loop equation. -/
 def nerveTwoCellBoundaryFunctor (C : Type u) [Category.{v} C] (a : NerveTwoCellIndex C) :
-    FundamentalGroupoid (simplexBoundary 2) ⥤ (⊤ : MorphismProperty C).Localization :=
+    FundamentalGroupoid (boundary 2) ⥤ (⊤ : MorphismProperty C).Localization :=
   FundamentalGroupoid.map (nerveTwoCellBoundaryMap C a) ⋙ nerveGraphDecoder C
 
 /-- The remaining nerve-specific hypothesis is explicitly the triangle relation
@@ -49,7 +49,7 @@ theorem nerveTwoCell_boundary_loop_of_triangle (C : Type u) [Category.{v} C]
     (h : edgeMap (nerveTwoCellBoundaryFunctor C a) 0 1 ≫
         edgeMap (nerveTwoCellBoundaryFunctor C a) 1 2 =
       edgeMap (nerveTwoCellBoundaryFunctor C a) 0 2)
-    (x : simplexBoundary 2) (p : Path x x) :
+    (x : boundary 2) (p : Path x x) :
     (nerveTwoCellBoundaryFunctor C a).map (Path.Homotopic.Quotient.mk p) =
       𝟙 ((nerveTwoCellBoundaryFunctor C a).obj (FundamentalGroupoid.mk x)) :=
   boundary_loop_eq_id_of_triangle _ h x p

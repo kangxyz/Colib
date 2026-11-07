@@ -30,7 +30,7 @@ The source path, endpoint and dimension hypotheses are retained.
 
 
 noncomputable section
-open CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex Topology Set
+open CategoryTheory CategoryTheory.Limits _root_.stdSimplex Topology Set
 open scoped Topology unitInterval
 
 universe u
@@ -42,8 +42,8 @@ namespace TopCat
 section SimplexAttachment
 
 variable (X : TopCat.{u}) [DiscreteTopology X] (n : ℕ) {C D : TopCat.{u}}
-    {f : TopCat.of (X × simplexBoundary n) ⟶ C}
-    {g : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⟶ D}
+    {f : TopCat.of (X × _root_.stdSimplex.boundary n) ⟶ C}
+    {g : TopCat.of (X × _root_.stdSimplex ℝ (Fin (n + 1))) ⟶ D}
     {j : C ⟶ D}
     (sq : IsPushout (TopCat.parameterizedSimplexBoundaryInclusion X n) f g j)
 

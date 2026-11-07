@@ -25,7 +25,7 @@ mapping-cylinder construction in the homotopy-cartesian gluing argument.
 noncomputable section
 
 open Topology
-open CategoryTheory Limits MonoidalCategory Convexity Convexity.StdSimplex
+open CategoryTheory Limits MonoidalCategory _root_.stdSimplex
 open scoped Topology unitInterval
 open unitInterval
 
@@ -40,15 +40,15 @@ namespace TopCat
 shared by its initial and boundary data. -/
 theorem simplexBoundaryHomotopyExtension_invariant
     {X Y W : Type u} [TopologicalSpace X] [TopologicalSpace Y]
-    (n : ℕ) (f : C(X × StdSimplex ℝ (Fin (n + 1)), Y))
-    (H : C((X × simplexBoundary n) × I, Y))
+    (n : ℕ) (f : C(X × _root_.stdSimplex ℝ (Fin (n + 1)), Y))
+    (H : C((X × _root_.stdSimplex.boundary n) × I, Y))
     (h : ∀ x b, H ((x, b), 0) = f (x, b.1))
     (q : Y → W) (base : X → W)
     (hf : ∀ x b, q (f (x, b)) = base x)
     (hH : ∀ x b t, q (H ((x, b), t)) = base x)
-    (x : X) (b : StdSimplex ℝ (Fin (n + 1))) (t : I) :
+    (x : X) (b : _root_.stdSimplex ℝ (Fin (n + 1))) (t : I) :
     q (simplexBoundaryHomotopyExtension n f H h ((x, b), t)) = base x := by
-  change q (closedCylinderGlueFun (simplexBoundary n) f H
+  change q (closedCylinderGlueFun (_root_.stdSimplex.boundary n) f H
     (x, simplexBoundaryCylinderRetraction n (b, t))) = base x
   unfold closedCylinderGlueFun
   split_ifs
@@ -57,20 +57,20 @@ theorem simplexBoundaryHomotopyExtension_invariant
 
 /-- The endpoint-pair coordinate homeomorphism retains the external parameter. -/
 theorem intervalEndpointDomainHomeomorph_symm_parameter
-    (X : Type u) [TopologicalSpace X] (x : X) (b : simplexBoundary 1) :
+    (X : Type u) [TopologicalSpace X] (x : X) (b : _root_.stdSimplex.boundary 1) :
     Sum.elim id id ((TopCat.intervalEndpointDomainHomeomorph X).symm (x, b)) = x := by
   classical
-  change Sum.elim id id (if b = TopCat.boundaryZero then Sum.inl x else Sum.inr x) = x
+  change Sum.elim id id (if b = stdSimplex.boundaryZero then Sum.inl x else Sum.inr x) = x
   split_ifs <;> rfl
 
 /-- Initial interval data in one-simplex coordinates. -/
 def intervalEndpointInitial {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
-    (f : C(X × I, Y)) : C(X × StdSimplex ℝ (Fin 2), Y) :=
-  ⟨fun z ↦ f (z.1, StdSimplex.homeomorphI z.2), by fun_prop⟩
+    (f : C(X × I, Y)) : C(X × _root_.stdSimplex ℝ (Fin 2), Y) :=
+  ⟨fun z ↦ f (z.1, stdSimplexHomeomorphUnitInterval z.2), by fun_prop⟩
 
 /-- Endpoint homotopies in one-simplex-boundary coordinates. -/
 def intervalEndpointSide {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
-    (H : C((X ⊕ X) × I, Y)) : C((X × simplexBoundary 1) × I, Y) :=
+    (H : C((X ⊕ X) × I, Y)) : C((X × _root_.stdSimplex.boundary 1) × I, Y) :=
   ⟨fun z ↦ H ((TopCat.intervalEndpointDomainHomeomorph X).symm z.1, z.2), by fun_prop⟩
 
 theorem intervalEndpoint_compatible
@@ -80,16 +80,16 @@ theorem intervalEndpoint_compatible
     (h₁ : ∀ x, H (Sum.inr x, 0) = f (x, 1)) :
     ∀ x b, intervalEndpointSide H ((x, b), 0) = intervalEndpointInitial f (x, b.1) := by
   intro x b
-  rcases TopCat.boundary_eq_zero_or_one b with rfl | rfl
+  rcases stdSimplex.boundary_eq_zero_or_one b with rfl | rfl
   · change H ((TopCat.intervalEndpointDomainHomeomorph X).symm
       ((TopCat.intervalEndpointDomainHomeomorph X) (Sum.inl x)), 0) =
-      f (x, StdSimplex.homeomorphI (StdSimplex.single 0))
-    rw [Homeomorph.symm_apply_apply, StdSimplex.homeomorphI_single_zero]
+      f (x, stdSimplexHomeomorphUnitInterval (_root_.stdSimplex.vertex 0))
+    rw [Homeomorph.symm_apply_apply, stdSimplexHomeomorphUnitInterval_zero]
     exact h₀ x
   · change H ((TopCat.intervalEndpointDomainHomeomorph X).symm
       ((TopCat.intervalEndpointDomainHomeomorph X) (Sum.inr x)), 0) =
-      f (x, StdSimplex.homeomorphI (StdSimplex.single 1))
-    rw [Homeomorph.symm_apply_apply, StdSimplex.homeomorphI_single_one]
+      f (x, stdSimplexHomeomorphUnitInterval (_root_.stdSimplex.vertex 1))
+    rw [Homeomorph.symm_apply_apply, stdSimplexHomeomorphUnitInterval_one]
     exact h₁ x
 
 /-- The exact interval endpoint extension operator obtained from the
@@ -101,7 +101,7 @@ def intervalEndpointExtension
     (h₁ : ∀ x, H (Sum.inr x, 0) = f (x, 1)) : C((X × I) × I, Y) :=
   (simplexBoundaryHomotopyExtension 1 (intervalEndpointInitial f) (intervalEndpointSide H)
     (intervalEndpoint_compatible f H h₀ h₁)).comp
-      ⟨fun z ↦ ((z.1.1, StdSimplex.homeomorphI.symm z.1.2), z.2), by fun_prop⟩
+      ⟨fun z ↦ ((z.1.1, stdSimplexHomeomorphUnitInterval.symm z.1.2), z.2), by fun_prop⟩
 
 variable {X Y W : Type u} [TopologicalSpace X] [TopologicalSpace Y]
   (f : C(X × I, Y)) (H : C((X ⊕ X) × I, Y))
@@ -112,20 +112,20 @@ variable {X Y W : Type u} [TopologicalSpace X] [TopologicalSpace Y]
 theorem intervalEndpointExtension_zero (x : X) (s : I) :
     intervalEndpointExtension f H h₀ h₁ ((x, s), 0) = f (x, s) := by
   change simplexBoundaryHomotopyExtension 1 (intervalEndpointInitial f) (intervalEndpointSide H)
-    (intervalEndpoint_compatible f H h₀ h₁) ((x, StdSimplex.homeomorphI.symm s), 0) = _
+    (intervalEndpoint_compatible f H h₀ h₁) ((x, stdSimplexHomeomorphUnitInterval.symm s), 0) = _
   rw [simplexBoundaryHomotopyExtension_zero]
-  change f (x, StdSimplex.homeomorphI (StdSimplex.homeomorphI.symm s)) = _
+  change f (x, stdSimplexHomeomorphUnitInterval (stdSimplexHomeomorphUnitInterval.symm s)) = _
   rw [Homeomorph.apply_symm_apply]
 
 @[simp]
 theorem intervalEndpointExtension_left (x : X) (t : I) :
     intervalEndpointExtension f H h₀ h₁ ((x, 0), t) = H (Sum.inl x, t) := by
   change simplexBoundaryHomotopyExtension 1 (intervalEndpointInitial f) (intervalEndpointSide H)
-    (intervalEndpoint_compatible f H h₀ h₁) ((x, StdSimplex.homeomorphI.symm 0), t) = _
-  have he : StdSimplex.homeomorphI.symm 0 = (TopCat.boundaryZero).1 := by
-    apply StdSimplex.homeomorphI.injective
+    (intervalEndpoint_compatible f H h₀ h₁) ((x, stdSimplexHomeomorphUnitInterval.symm 0), t) = _
+  have he : stdSimplexHomeomorphUnitInterval.symm 0 = (stdSimplex.boundaryZero).1 := by
+    apply stdSimplexHomeomorphUnitInterval.injective
     rw [Homeomorph.apply_symm_apply]
-    exact StdSimplex.homeomorphI_single_zero.symm
+    exact stdSimplexHomeomorphUnitInterval_zero.symm
   rw [he, simplexBoundaryHomotopyExtension_side]
   change H ((TopCat.intervalEndpointDomainHomeomorph X).symm
     ((TopCat.intervalEndpointDomainHomeomorph X) (Sum.inl x)), t) = _
@@ -135,11 +135,11 @@ theorem intervalEndpointExtension_left (x : X) (t : I) :
 theorem intervalEndpointExtension_right (x : X) (t : I) :
     intervalEndpointExtension f H h₀ h₁ ((x, 1), t) = H (Sum.inr x, t) := by
   change simplexBoundaryHomotopyExtension 1 (intervalEndpointInitial f) (intervalEndpointSide H)
-    (intervalEndpoint_compatible f H h₀ h₁) ((x, StdSimplex.homeomorphI.symm 1), t) = _
-  have he : StdSimplex.homeomorphI.symm 1 = (TopCat.boundaryOne).1 := by
-    apply StdSimplex.homeomorphI.injective
+    (intervalEndpoint_compatible f H h₀ h₁) ((x, stdSimplexHomeomorphUnitInterval.symm 1), t) = _
+  have he : stdSimplexHomeomorphUnitInterval.symm 1 = (stdSimplex.boundaryOne).1 := by
+    apply stdSimplexHomeomorphUnitInterval.injective
     rw [Homeomorph.apply_symm_apply]
-    exact StdSimplex.homeomorphI_single_one.symm
+    exact stdSimplexHomeomorphUnitInterval_one.symm
   rw [he, simplexBoundaryHomotopyExtension_side]
   change H ((TopCat.intervalEndpointDomainHomeomorph X).symm
     ((TopCat.intervalEndpointDomainHomeomorph X) (Sum.inr x)), t) = _
@@ -151,8 +151,9 @@ theorem intervalEndpointExtension_invariant (q : Y → W) (base : X → W)
     (hf : ∀ x s, q (f (x, s)) = base x)
     (hH : ∀ a t, q (H (a, t)) = base (Sum.elim id id a)) (x : X) (s t : I) :
     q (intervalEndpointExtension f H h₀ h₁ ((x, s), t)) = base x := by
-  change q (simplexBoundaryHomotopyExtension 1 (intervalEndpointInitial f) (intervalEndpointSide
-    H) (intervalEndpoint_compatible f H h₀ h₁) ((x, StdSimplex.homeomorphI.symm s), t)) = _
+  change q (simplexBoundaryHomotopyExtension 1 (intervalEndpointInitial f)
+    (intervalEndpointSide H) (intervalEndpoint_compatible f H h₀ h₁)
+    ((x, stdSimplexHomeomorphUnitInterval.symm s), t)) = _
   apply simplexBoundaryHomotopyExtension_invariant
   · intro x b
     exact hf x _

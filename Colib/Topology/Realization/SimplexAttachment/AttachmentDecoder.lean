@@ -21,14 +21,14 @@ The genuine open collar/interior cover of the original higher attachment.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open Set CategoryTheory CategoryTheory.Limits Convexity.StdSimplex TopCat
+open Set CategoryTheory CategoryTheory.Limits _root_.stdSimplex TopCat
 open FundamentalGroupoid.OpenCover
 universe u v w
 namespace TopCat.SimplexAttachment
 open FundamentalGroupoid.OpenCover
 variable (A : TopCat.{u}) [DiscreteTopology A] (n : ℕ) {O D : TopCat.{u}}
-    {f : TopCat.of (A × simplexBoundary (n + 3)) ⟶ O}
-    {g : TopCat.of (A × Convexity.StdSimplex ℝ (Fin (n + 4))) ⟶ D} {j : O ⟶ D}
+    {f : TopCat.of (A × _root_.stdSimplex.boundary (n + 3)) ⟶ O}
+    {g : TopCat.of (A × _root_.stdSimplex ℝ (Fin (n + 4))) ⟶ D} {j : O ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion A (n + 3)) f g j)
     {C : Type v} [Groupoid.{w} C] (F : FundamentalGroupoid O ⥤ C)
 
@@ -67,7 +67,7 @@ def attachmentTransitionData :
     (simplexAttachmentInterior A (n + 3) (g := g)) (interior_eq_of_mem A n sq)
     (collarFunctor A n sq F)
     (fun a => F.obj (FundamentalGroupoid.mk
-      (f (a, Convexity.StdSimplex.Boundary.vertex (0 : Fin (n + 4))))))
+      (f (a, _root_.stdSimplex.Boundary.vertex (0 : Fin (n + 4))))))
     (overlapTransition A n sq F)
 
 /-- A constructed extension across an arbitrary genuine higher-simplex attachment.

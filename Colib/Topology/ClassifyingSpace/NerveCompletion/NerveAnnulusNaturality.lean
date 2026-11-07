@@ -18,7 +18,7 @@ parameter agrees. Both endpoint equalities are retained in the formula.
 @[expose] public section
 
 noncomputable section
-open CategoryTheory Convexity.StdSimplex TopCat
+open CategoryTheory stdSimplex TopCat
 universe u v w z
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment

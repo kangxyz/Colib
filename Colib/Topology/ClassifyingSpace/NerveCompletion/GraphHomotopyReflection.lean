@@ -22,12 +22,12 @@ noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
 open CategoryTheory CategoryTheory.Limits TopCat SSet
-open TopCat.SimplexAttachment Convexity.StdSimplex.Boundary FundamentalGroupoid.OpenCover
+open TopCat.SimplexAttachment stdSimplex.Boundary FundamentalGroupoid.OpenCover
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover
 open TopCat.SimplexAttachment
-open Convexity.StdSimplex.Boundary
+open stdSimplex.Boundary
 open FundamentalGroupoid.SequentialColimit
 open Path
 attribute [local instance] Localization.groupoid

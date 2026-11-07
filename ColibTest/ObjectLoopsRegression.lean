@@ -5,6 +5,7 @@ Authors: kangxyz
 -/
 module
 
+public import Colib.Analysis.Convex.StdSimplex.PathHomotopy
 public import Colib.KTheory.GrothendieckComparison.ObjectLoops
 
 /-!
@@ -89,8 +90,12 @@ example : SSet.yonedaEquiv.symm (simplexEdge.{u} 2 1 2 (by decide)).edge =
 example : SSet.yonedaEquiv.symm (simplexEdge.{u} 2 0 2 (by decide)).edge =
     SSet.stdSimplex.δ 1 := simplexEdge_02_yoneda
 
-example {M : Type u} [Finite M] {x y : Convexity.StdSimplex ℝ M} (p q : Path x y) :
-    p.Homotopy q := Convexity.StdSimplex.pathHomotopy p q
+example {M : Type u} [Finite M] :
+    letI := Fintype.ofFinite M
+    ∀ {x y : _root_.stdSimplex ℝ M} (p q : Path x y), p.Homotopy q := by
+  letI := Fintype.ofFinite M
+  intro x y p q
+  exact stdSimplex.pathHomotopy p q
 
 example {C D : Type u} [Category.{v} C] [Category.{v} D]
     (F : C ⥤ D) {c d : C} (f : c ⟶ d) (t : unitInterval) :

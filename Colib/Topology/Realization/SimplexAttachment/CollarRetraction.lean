@@ -18,12 +18,12 @@ The actual geometric annulus of one cell maps into its attachment collar.
 @[expose] public section
 
 noncomputable section
-open Set CategoryTheory CategoryTheory.Limits TopCat Convexity.StdSimplex
+open Set CategoryTheory CategoryTheory.Limits TopCat _root_.stdSimplex
 universe u
 namespace TopCat.SimplexAttachment
 variable (A : TopCat.{u}) (n : ℕ) {O D : TopCat.{u}}
-    {f : TopCat.of (A × simplexBoundary n) ⟶ O}
-    {g : TopCat.of (A × Convexity.StdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : O ⟶ D}
+    {f : TopCat.of (A × _root_.stdSimplex.boundary n) ⟶ O}
+    {g : TopCat.of (A × _root_.stdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : O ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion A n) f g j)
 
 /-- The actual geometric annulus of one cell maps into its attachment collar. -/

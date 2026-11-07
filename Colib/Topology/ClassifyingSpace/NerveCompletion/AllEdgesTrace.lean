@@ -20,11 +20,11 @@ from the empty simplicial subcomplex is proved rather than assumed.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open Set CategoryTheory Convexity.StdSimplex FundamentalGroupoid.OpenCover SSet
+open Set CategoryTheory stdSimplex FundamentalGroupoid.OpenCover SSet
 open scoped Simplicial
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- A nondegenerate original one-simplex is an actual first-stage cell; exclusion

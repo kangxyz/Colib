@@ -8,7 +8,6 @@ module
 
 public import Colib.Util.References
 public import Colib.Topology.Realization.PrismCoordinates
-public import Colib.Topology.Realization.FiniteSimplexAdapter
 public import Colib.Topology.Realization.Simplex
 public import Mathlib.AlgebraicTopology.SimplicialSet.ProdStdSimplexOne
 
@@ -21,14 +20,14 @@ adjacent cells agree on their common simplicial face.
 -/
 /-!
 Adapted from Quillen commit `c561118b7795eb9780be9ed391c3251d6a4d0afd`.
-The target uses the pinned finite-simplex adapter and actual Mathlib prism cells.
+The target uses the pinned native standard simplex and actual Mathlib prism cells.
 The implementation retains the source maps, coordinates and universe parameters.
 -/
 @[expose] public section
 
 noncomputable section
 
-open Convexity Convexity.StdSimplex CategoryTheory Limits MonoidalCategory
+open stdSimplex CategoryTheory Limits MonoidalCategory
   CartesianMonoidalCategory Opposite
 open scoped Simplicial Topology unitInterval
 
@@ -68,10 +67,10 @@ def realizationPrismCell {n : ℕ} (i : Fin (n + 1)) :
 
 /-- The prism comparison in ordinary barycentric simplex and interval coordinates. -/
 def realizationPrismCoordinates (n : ℕ) :
-    C(|(Δ[n] ⊗ Δ[1] : SSet.{u})|, Convexity.StdSimplex ℝ (Fin (n + 1)) × unitInterval) where
-  toFun x := (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ (SSet.toTop.map (fst Δ[n] Δ[1]) x),
-    Convexity.StdSimplex.homeomorphI
-      (FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌ (SSet.toTop.map (snd Δ[n] Δ[1]) x)))
+    C(|(Δ[n] ⊗ Δ[1] : SSet.{u})|, _root_.stdSimplex ℝ (Fin (n + 1)) × unitInterval) where
+  toFun x := (SimplexCategory.toTopHomeo ⦋n⦌ (SSet.toTop.map (fst Δ[n] Δ[1]) x),
+    stdSimplexHomeomorphUnitInterval
+      (SimplexCategory.toTopHomeo ⦋1⦌ (SSet.toTop.map (snd Δ[n] Δ[1]) x)))
   continuous_toFun := by fun_prop
 
 @[simp]
@@ -93,34 +92,33 @@ theorem realizationPrismCell_snd {n : ℕ} (i : Fin (n + 1)) :
 
 /-- The first prism coordinate collapses the two copies of the split vertex. -/
 theorem realizationPrismCoordinates_cell_fst {n : ℕ} (i : Fin (n + 1))
-    (v : StdSimplex ℝ (Fin (n + 2))) :
+    (v : _root_.stdSimplex ℝ (Fin (n + 2))) :
     (realizationPrismCoordinates n (realizationPrismCell.{u} i
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm v))).1 = v.map i.predAbove := by
-  change FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ ((realizationPrismCell i ≫
+      ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm v))).1 = _root_.stdSimplex.map i.predAbove v := by
+  change SimplexCategory.toTopHomeo ⦋n⦌ ((realizationPrismCell i ≫
     SSet.toTop.map (fst Δ[n] Δ[1])) _) = _
   rw [realizationPrismCell_fst]
-  change FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ (SSet.toTop.map
+  change SimplexCategory.toTopHomeo ⦋n⦌ (SSet.toTop.map
     (SSet.stdSimplex.map (SimplexCategory.σ i)) _) = _
-  rw [FiniteSimplexAdapter.toTopHomeomorph_naturality_apply, Homeomorph.apply_symm_apply]
+  rw [SimplexCategory.toTopHomeo_naturality_apply, Homeomorph.apply_symm_apply]
   rfl
 
 /-- The second prism coordinate is the total mass above the cut. -/
 theorem realizationPrismCoordinates_cell_snd {n : ℕ} (i : Fin (n + 1))
-    (v : StdSimplex ℝ (Fin (n + 2))) :
+    (v : _root_.stdSimplex ℝ (Fin (n + 2))) :
     ((realizationPrismCoordinates n (realizationPrismCell.{u} i
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm v))).2 : ℝ) = prismHeight i v := by
-  change (StdSimplex.homeomorphI (FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌
+      ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm v))).2 : ℝ) = prismHeight i v := by
+  change (stdSimplexHomeomorphUnitInterval (SimplexCategory.toTopHomeo ⦋1⦌
     ((realizationPrismCell i ≫ SSet.toTop.map (snd Δ[n] Δ[1])) _)) : ℝ) = _
-  rw [realizationPrismCell_snd, FiniteSimplexAdapter.toTopHomeomorph_naturality_apply,
+  rw [realizationPrismCell_snd, SimplexCategory.toTopHomeo_naturality_apply,
     Homeomorph.apply_symm_apply]
-  rw [StdSimplex.homeomorphI_apply_coe]
-  change (v.map (SSet.stdSimplex.objMk₁.{u} i.succ.castSucc)).weights 1 = _
+  change (FunOnFinite.linearMap ℝ ℝ
+    (SSet.stdSimplex.objMk₁.{u} i.succ.castSucc) (v : Fin (n + 2) → ℝ)) 1 = _
   classical
-  rw [StdSimplex.weights_map, Finsupp.mapDomain_fintype]
-  simp only [Finsupp.coe_finsetSum, Finset.sum_apply, prismHeight]
+  rw [FunOnFinite.linearMap_apply_apply, Finset.sum_filter]
+  unfold prismHeight
   apply Finset.sum_congr rfl
   intro j _
-  rw [Finsupp.single_apply]
   congr 1
   rw [SSet.stdSimplex.objMk₁_apply_eq_one_iff]
   simp only [Fin.castSucc_le_castSucc_iff]
@@ -156,14 +154,6 @@ theorem realizationPrismCell_jointly_surjective {n : ℕ}
     apply SSet.yonedaEquiv.injective
     exact hg
   rw [heq]
-
-/- The source finiteStdSimplex_compactSpace instance is supplied directly by
-Mathlib's Convexity.StdSimplex.compactSpace, imported through PrismCoordinates. -/
-
-/-- Realizations of representable simplicial sets are compact. -/
-instance realizationStandardSimplex_compactSpace (n : SimplexCategory) :
-    CompactSpace |SSet.stdSimplex.{u}.obj n| :=
-  (FiniteSimplexAdapter.toTopHomeomorph n).symm.compactSpace
 
 /-- The realized standard prism is compact, as a finite union of compact maximal cells. -/
 instance realizationPrism_compactSpace (n : ℕ) :

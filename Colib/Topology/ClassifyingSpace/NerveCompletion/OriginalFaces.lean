@@ -20,11 +20,11 @@ including degenerate one-simplices.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory Convexity Convexity.StdSimplex SSet TopCat
+open CategoryTheory stdSimplex SSet TopCat
 open scoped Simplicial Topology
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 
 /-- Every original nerve one-simplex realizes its actual categorical arrow,
 including degenerate one-simplices. -/

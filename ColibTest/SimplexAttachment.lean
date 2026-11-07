@@ -14,7 +14,7 @@ The homotopy equivalence concerns the open collar and the old space only.
 No deformation retraction of the entire attachment or general HEP is asserted.
 -/
 
-open CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex Topology
+open CategoryTheory CategoryTheory.Limits stdSimplex Topology
 open scoped Topology unitInterval
 
 universe u
@@ -24,17 +24,17 @@ noncomputable section
 namespace TopCat
 
 variable (X : TopCat.{u}) (n : ℕ) {C D : TopCat.{u}}
-  {f : TopCat.of (X × simplexBoundary n) ⟶ C}
-  {g : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : C ⟶ D}
+  {f : TopCat.of (X × boundary n) ⟶ C}
+  {g : TopCat.of (X × _root_.stdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : C ⟶ D}
   (sq : IsPushout (parameterizedSimplexBoundaryInclusion X n) f g j)
 
-example (p : X × simplexBoundary n) :
+example (p : X × boundary n) :
     parameterizedSimplexBoundaryInclusion X n p = (p.1, p.2.1) := rfl
 
 example : IsClosedEmbedding (parameterizedSimplexBoundaryInclusion X n) :=
   isClosedEmbedding_parameterizedSimplexBoundary X n
 
-example (z : X × StdSimplex ℝ (Fin (n + 1))) :
+example (z : X × _root_.stdSimplex ℝ (Fin (n + 1))) :
     simplexAttachmentDefect X n sq (g z) = simplexBoundaryDefect z.2 :=
   simplexAttachmentDefect_cell X n sq z
 
@@ -49,7 +49,7 @@ example : IsOpen (simplexAttachmentCollar X n sq) :=
 
 example : IsClosedEmbedding j := simplexAttachment_old_isClosedEmbedding X n sq
 
-example (z : X × StdSimplex ℝ (Fin (n + 1))) :
+example (z : X × _root_.stdSimplex ℝ (Fin (n + 1))) :
     g z ∈ simplexAttachmentCollar X n sq ↔ z.2 ∈ simplexBoundaryCollar n :=
   simplexAttachmentCollar_cell_iff X n sq z
 
@@ -59,7 +59,7 @@ example : Set.range j ⊆ simplexAttachmentCollar X n sq :=
 example (t : unitInterval) (z : D) : simplexAttachmentRadial X n sq (t, z) =
     simplexAttachmentRadialCylinder X n sq (z, ULift.up t) := rfl
 
-example (t : unitInterval) (z : X × StdSimplex ℝ (Fin (n + 1))) :
+example (t : unitInterval) (z : X × _root_.stdSimplex ℝ (Fin (n + 1))) :
     simplexAttachmentRadial X n sq (t, g z) =
       g (z.1, simplexBoundaryRetractPoint (z.2, t)) :=
   simplexAttachmentRadial_cell X n sq t z

@@ -22,7 +22,7 @@ nerve, their one-cells give exactly the original classifying-space paths.
 Adapted from `Quillen/Topology/ClassifyingSpace/CharacteristicPoints.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. Actual maps, endpoint equalities,
 path classes and independent universe parameters are retained. Native namespace
-ownership and the established finite-simplex adapter replace source ownership.
+ownership and the pinned native standard simplex replace source ownership.
 -/
 @[expose] public section
 
@@ -39,18 +39,18 @@ namespace SSet
 theorem realizedSkeletalCharacteristic_inclusion {A X : SSet.{u}} (i : A ⟶ X)
     (n : ℕ) (a : SSet.relativeCellComplexOfMono.Cell i n) (x : |(Δ[n] : SSet.{u})|) :
     SSet.toTop.map (SSet.skeletonOfMono i (n + 1)).ι
-      (realizedSkeletalCharacteristic i n (a, FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ x)) =
+      (realizedSkeletalCharacteristic i n (a, SimplexCategory.toTopHomeo ⦋n⦌ x)) =
         SSet.toTop.map (SSet.yonedaEquiv.symm a.simplex) x := by
   have he := ConcreteCategory.congr_hom (realizedSkeletalCellsIso_ι i n a) x
   change (realizedSkeletalCellsIso i n).hom (SSet.toTop.map a.ιSigmaStdSimplex x) =
-    (a, FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ x) at he
-  have hi : (realizedSkeletalCellsIso i n).inv (a, FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ x) =
+    (a, SimplexCategory.toTopHomeo ⦋n⦌ x) at he
+  have hi : (realizedSkeletalCellsIso i n).inv (a, SimplexCategory.toTopHomeo ⦋n⦌ x) =
       SSet.toTop.map a.ιSigmaStdSimplex x := by
     rw [← he]
     exact (TopCat.homeoOfIso (realizedSkeletalCellsIso i n)).symm_apply_apply _
   change SSet.toTop.map (SSet.skeletonOfMono i (n + 1)).ι
     (SSet.toTop.map (SSet.relativeCellComplexOfMono.b i n)
-      ((realizedSkeletalCellsIso i n).inv (a, FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ x))) = _
+      ((realizedSkeletalCellsIso i n).inv (a, SimplexCategory.toTopHomeo ⦋n⦌ x))) = _
   rw [hi]
   change (SSet.toTop.map a.ιSigmaStdSimplex ≫
     SSet.toTop.map (SSet.relativeCellComplexOfMono.b i n) ≫
@@ -60,14 +60,14 @@ theorem realizedSkeletalCharacteristic_inclusion {A X : SSet.{u}} (i : A ⟶ X)
 /-- The same original-simplex formula in the geometric coordinates of the cell. -/
 theorem realizedSkeletalCharacteristic_inclusion_geometric {A X : SSet.{u}} (i : A ⟶ X)
     (n : ℕ) (a : SSet.relativeCellComplexOfMono.Cell i n)
-    (t : Convexity.StdSimplex ℝ (Fin (n + 1))) :
+    (t : _root_.stdSimplex ℝ (Fin (n + 1))) :
     SSet.toTop.map (SSet.skeletonOfMono i (n + 1)).ι
       (realizedSkeletalCharacteristic i n (a, t)) =
         SSet.toTop.map (SSet.yonedaEquiv.symm a.simplex)
-          ((FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm t) := by
+          ((SimplexCategory.toTopHomeo ⦋n⦌).symm t) := by
   simpa only [Homeomorph.apply_symm_apply] using
     realizedSkeletalCharacteristic_inclusion i n a
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm t)
+      ((SimplexCategory.toTopHomeo ⦋n⦌).symm t)
 
 end SSet
 
@@ -92,7 +92,7 @@ theorem realizedNerveOneCell_original_path
     (t : unitInterval) :
     SSet.toTop.map (SSet.skeletonOfMono ((⊥ : (nerve C).Subcomplex).ι) 2).ι
       (realizedSkeletalCharacteristic ((⊥ : (nerve C).Subcomplex).ι) 1
-        (a, FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌ (realizationInterval.{max u v} t))) =
+        (a, SimplexCategory.toTopHomeo ⦋1⦌ (realizationInterval.{max u v} t))) =
           classifyingSpacePath (a.simplex.map' 0 1) t := by
   refine (realizedSkeletalCharacteristic_inclusion
     ((⊥ : (nerve C).Subcomplex).ι) 1 a (realizationInterval.{max u v} t)).trans ?_
@@ -109,7 +109,7 @@ theorem realizedNerveOneCell_original_source
     (a : SSet.relativeCellComplexOfMono.Cell ((⊥ : (nerve C).Subcomplex).ι) 1) :
     SSet.toTop.map (SSet.skeletonOfMono ((⊥ : (nerve C).Subcomplex).ι) 2).ι
       (realizedSkeletalCharacteristic ((⊥ : (nerve C).Subcomplex).ι) 1
-        (a, FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌ (realizationInterval.{max u v} 0))) =
+        (a, SimplexCategory.toTopHomeo ⦋1⦌ (realizationInterval.{max u v} 0))) =
           classifyingSpacePoint (a.simplex.obj 0) := by
   exact (realizedNerveOneCell_original_path a 0).trans
     (classifyingSpacePath (a.simplex.map' 0 1)).source
@@ -119,7 +119,7 @@ theorem realizedNerveOneCell_original_target
     (a : SSet.relativeCellComplexOfMono.Cell ((⊥ : (nerve C).Subcomplex).ι) 1) :
     SSet.toTop.map (SSet.skeletonOfMono ((⊥ : (nerve C).Subcomplex).ι) 2).ι
       (realizedSkeletalCharacteristic ((⊥ : (nerve C).Subcomplex).ι) 1
-        (a, FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌ (realizationInterval.{max u v} 1))) =
+        (a, SimplexCategory.toTopHomeo ⦋1⦌ (realizationInterval.{max u v} 1))) =
           classifyingSpacePoint (a.simplex.obj 1) := by
   exact (realizedNerveOneCell_original_path a 1).trans
     (classifyingSpacePath (a.simplex.map' 0 1)).target

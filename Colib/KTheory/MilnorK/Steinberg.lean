@@ -22,7 +22,9 @@ The canonical coefficient maps commute, including across independent universes.
 This rewrites the final Milnor-map portion of
 `Quillen/Algebra/Group/StableSteinbergSymbols.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd` against the pinned Stacks model.
-Surjectivity, Matsumoto injectivity and comparison with Quillen K₂ remain open.
+Surjectivity and characteristic-zero Matsumoto injectivity are proved in later leaves.
+The later `QuillenEquivalence` leaf identifies the original Quillen K₂ maps in characteristic zero;
+the scalar-action product marking is a separate comparison.
 -/
 @[expose] public noncomputable section
 

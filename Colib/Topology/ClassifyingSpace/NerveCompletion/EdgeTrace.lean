@@ -21,7 +21,7 @@ The inverse transition has the same exact actual-image component convention.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open Set CategoryTheory Convexity.StdSimplex TopCat
+open Set CategoryTheory stdSimplex TopCat
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment

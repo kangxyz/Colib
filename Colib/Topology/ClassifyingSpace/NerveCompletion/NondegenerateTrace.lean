@@ -23,10 +23,10 @@ of the graph inclusion is used, not faithfulness on homotopy classes.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory Convexity.StdSimplex FundamentalGroupoid.OpenCover
+open CategoryTheory stdSimplex FundamentalGroupoid.OpenCover
 universe u v
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- Any graph-stage path whose actual included points are the original

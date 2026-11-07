@@ -5,5 +5,5 @@ kind = "definition"
 section = "milnor-k-theory"
 order = 700
 statement = "The canonical native Milnor K₂ map sends each ordered symbol {a,b} to the literal stable Steinberg kernel word h(a) h(b) h(ab)⁻¹. It commutes with actual field change and retains the positive rank-three commutator marking."
-scope = "Every field, including characteristics two and three. The target is the central kernel of the proved surjective stable Steinberg-to-elementary map on native PresentedGroup and DirectLimit constructions. This is not yet a Quillen K₂ comparison or an assertion of bijectivity."
+scope = "Every field, including characteristics two and three. The target is the central kernel of the proved surjective stable Steinberg-to-elementary map on native PresentedGroup and DirectLimit constructions. This item records the canonical kernel map. Characteristic-zero bijectivity and the actual Quillen K₂ comparison use this same map and are registered separately."
 review = "author_checked"

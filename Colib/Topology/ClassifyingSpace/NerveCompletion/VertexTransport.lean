@@ -23,7 +23,7 @@ set_option backward.isDefEq.respectTransparency.types false
 open CategoryTheory FundamentalGroupoid.OpenCover
 universe u v w z
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 attribute [local instance] Localization.groupoid
 
 /-- Equality transport for a family of original vertex isomorphisms with a

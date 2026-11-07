@@ -17,7 +17,7 @@ The actual old-space collar chart of the original nerve one-skeleton attachment.
 @[expose] public section
 
 noncomputable section
-open CategoryTheory TopCat Convexity.StdSimplex
+open CategoryTheory TopCat stdSimplex
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover

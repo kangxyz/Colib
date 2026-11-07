@@ -19,7 +19,7 @@ path coordinates, and endpoint data are retained under native ownership.
 -/
 @[expose] public section
 noncomputable section
-open Topology CategoryTheory SSet Opposite MonoidalCategory CartesianMonoidalCategory Convexity
+open Topology CategoryTheory SSet Opposite MonoidalCategory CartesianMonoidalCategory
 open scoped Simplicial Topology unitInterval
 universe u
 set_option backward.isDefEq.respectTransparency false

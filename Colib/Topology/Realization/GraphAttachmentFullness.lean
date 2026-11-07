@@ -30,7 +30,7 @@ open Topology
 
 noncomputable section
 universe u v w
-open CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex Set
+open CategoryTheory CategoryTheory.Limits _root_.stdSimplex Set
 open scoped Topology unitInterval
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
@@ -39,14 +39,14 @@ namespace TopCat.GraphAttachment
 
 variable (X : TopCat.{u}) [DiscreteTopology X] {V D Y : TopCat.{u}}
     [DiscreteTopology V]
-    {f : TopCat.of (X × simplexBoundary 1) ⟶ V}
-    {g : TopCat.of (X × StdSimplex ℝ (Fin 2)) ⟶ D} {j : V ⟶ D}
+    {f : TopCat.of (X × _root_.stdSimplex.boundary 1) ⟶ V}
+    {g : TopCat.of (X × _root_.stdSimplex ℝ (Fin 2)) ⟶ D} {j : V ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion X 1) f g j)
     (h : C(D, Y)) {A : Type v} [Groupoid.{w} A]
     (F : A ⥤ FundamentalGroupoid Y) (vertex : V → A)
     (ε : ∀ c : V, F.obj (vertex c) ≅ FundamentalGroupoid.mk (h (j c)))
     (edge : ∀ a : X, vertex (f (a, boundaryZero)) ⟶ vertex (f (a, boundaryOne)))
-    (hedge : ∀ a : X, spoke X sq h F vertex ε a (StdSimplex.single 1) =
+    (hedge : ∀ a : X, spoke X sq h F vertex ε a (_root_.stdSimplex.vertex 1) =
       F.map (edge a) ≫ (vertexIso X sq h F vertex ε a boundaryOne).hom)
 
 include hedge in

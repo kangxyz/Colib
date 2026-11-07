@@ -1,8 +1,9 @@
 # Quillen and Motivic migration
 
-The initial pilot selects three boundaries from the proposed integration.
+The initial pilot selected three boundaries from the proposed integration. The table
+records that starting scope; the sections below describe subsequent results.
 
-| Boundary | Current Colib surface | Subsequent work |
+| Boundary | Initial pilot surface | Work identified at the pilot |
 | --- | --- | --- |
 | Finite-module K₀ | Categorical dimension equivalence over a field | Compare the original Quillen degree-zero map and its exact-category presentation |
 | Milnor K₂ | Equality of the two Steinberg relation spans and the symbol-preserving tensor comparison | All-degree tuple symbols, norms, residue maps and Quillen field comparisons |
@@ -106,13 +107,25 @@ map in every nonnegative degree, including K-zero. It assumes no row-equivalence
 or homotopy-inverse premise. These results do not supply a strict S-model
 comparison, a Quillen-Waldhausen comparison or nonconnective K-theory.
 
-## Native Milnor-to-Steinberg kernel map
+## Canonical Milnor–Quillen K₂ comparison
 
-The actual native Milnor K₂ object now maps to the stable Steinberg kernel by
-ordered symbols, compatibly with field maps and the positive commutator marking.
-This is not a Quillen K₂ equivalence. The remaining stable-fiber comparison,
-Matsumoto injectivity, kernel generation and exact-model comparisons are listed
-in the [precise field-K₂ scope](migration/quillen/field-k2-native-kernel.md).
+The completed source chain gives characteristic-zero additive equivalences from
+the native Milnor K₂ group to actual right-projective Quillen K₂ and the literal
+upper finite-module `SmallK.{u+1} 2`. Their forward homomorphisms are the original
+Milnor-to-kernel-to-Quillen composites. Fiber perfectness, kernel generation and
+the detector are proved inputs, not additional endpoint hypotheses. Both
+directions commute with the original field-extension maps; the negative
+normalization is minus the positive inverse.
+
+The positive ordered scalar-unit-product marking holds over every field,
+including the checked `ZMod 5` regression. Bijectivity retains `[CharZero F]`.
+Finite realization geometry now uses native `stdSimplex` coordinates directly.
+The final endpoints and regressions have passed focused strict compilation
+and native QA on the rebuilt dependency closure. The original whole-library
+verification remains pending for this integrated candidate. See the
+[exact comparison and verification scope](migration/quillen/field-k2-comparison.md),
+[algebraic map](migration/quillen/field-k2-native-kernel.md), and
+[stable-fiber proof](migration/quillen/field-k2-stable-fiber.md).
 
 ## Original-map Gillet-Waldhausen
 

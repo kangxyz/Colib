@@ -23,7 +23,7 @@ set_option backward.isDefEq.respectTransparency.types false
 open CategoryTheory
 universe u v w
 namespace CategoryTheory.NerveCompletion
-open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
+open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment stdSimplex.Boundary
 
 /-- Transport a path trace using its exact original endpoint equalities. The
 endpoint isomorphisms acquire those precise equality transports. -/

@@ -20,14 +20,14 @@ stage whose included points are EXACTLY its original realized-arrow path.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open Set CategoryTheory Convexity.StdSimplex FundamentalGroupoid.OpenCover SSet
-open Convexity.StdSimplex.Boundary
+open Set CategoryTheory stdSimplex FundamentalGroupoid.OpenCover SSet
+open stdSimplex.Boundary
 open scoped Simplicial
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover
 open TopCat.SimplexAttachment
-open Convexity.StdSimplex.Boundary
+open stdSimplex.Boundary
 open FundamentalGroupoid.SequentialColimit
 attribute [local instance] Localization.groupoid
 

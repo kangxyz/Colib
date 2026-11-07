@@ -20,12 +20,12 @@ The specified original graph vertex of each actual localization object.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory FundamentalGroupoid.OpenCover Convexity.StdSimplex.Boundary
+open CategoryTheory FundamentalGroupoid.OpenCover stdSimplex.Boundary
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover
 open TopCat.SimplexAttachment
-open Convexity.StdSimplex.Boundary
+open stdSimplex.Boundary
 open FundamentalGroupoid.SequentialColimit
 open CategoryTheory.Groupoid.JointRepresentation
 attribute [local instance] Localization.groupoid

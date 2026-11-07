@@ -19,7 +19,7 @@ relative skeleta, inclusions and hypotheses are retained. Namespace/import
 ownership and the finite-simplex coordinate adapter are the only changes.
 -/
 @[expose] public noncomputable section
-open CategoryTheory Limits Topology Convexity Convexity.StdSimplex TopCat
+open CategoryTheory Limits Topology _root_.stdSimplex TopCat
 open scoped Simplicial Topology
 universe u
 set_option backward.isDefEq.respectTransparency false
@@ -75,22 +75,22 @@ abbrev skeletalCellIndex : TopCat.{u} :=
 /-- Actual realized categorical simplex coproduct in geometric coordinates. -/
 def realizedSkeletalCellsIso :
     |SSet.relativeCellComplexOfMono.sigmaStdSimplex i n| ≅
-      TopCat.of (skeletalCellIndex i n × StdSimplex ℝ (Fin (n + 1))) :=
+      TopCat.of (skeletalCellIndex i n × _root_.stdSimplex ℝ (Fin (n + 1))) :=
   realizationCoproductDiscreteProductIso _ (Δ[n] : SSet.{u}) ≪≫
-    TopCat.isoOfHomeo ((Homeomorph.refl _).prodCongr (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌))
+    TopCat.isoOfHomeo ((Homeomorph.refl _).prodCongr (SimplexCategory.toTopHomeo ⦋n⦌))
 
 /-- Actual realized categorical boundary coproduct in geometric coordinates. -/
 def realizedSkeletalBoundariesIso :
     |SSet.relativeCellComplexOfMono.sigmaBoundary i n| ≅
-      TopCat.of (skeletalCellIndex i n × simplexBoundary n) :=
+      TopCat.of (skeletalCellIndex i n × _root_.stdSimplex.boundary n) :=
   realizationCoproductDiscreteProductIso _ (∂Δ[n] : SSet.{u}) ≪≫
     TopCat.isoOfHomeo ((Homeomorph.refl _).prodCongr (realizationBoundaryHomeomorph n))
 
 @[reassoc (attr := simp)]
 theorem realizedSkeletalCellsIso_ι (a : SSet.relativeCellComplexOfMono.Cell i n) :
     SSet.toTop.map a.ιSigmaStdSimplex ≫ (realizedSkeletalCellsIso i n).hom =
-      TopCat.ofHom (Y := TopCat.of (skeletalCellIndex i n × StdSimplex ℝ (Fin (n + 1))))
-        ⟨fun x ↦ (a, FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ x), by fun_prop⟩ := by
+      TopCat.ofHom (Y := TopCat.of (skeletalCellIndex i n × _root_.stdSimplex ℝ (Fin (n + 1))))
+        ⟨fun x ↦ (a, SimplexCategory.toTopHomeo ⦋n⦌ x), by fun_prop⟩ := by
   dsimp only [realizedSkeletalCellsIso, Iso.trans_hom]
   rw [← Category.assoc, realizationCoproductDiscreteProductIso_ι]
   rfl
@@ -98,7 +98,7 @@ theorem realizedSkeletalCellsIso_ι (a : SSet.relativeCellComplexOfMono.Cell i n
 @[reassoc (attr := simp)]
 theorem realizedSkeletalBoundariesIso_ι (a : SSet.relativeCellComplexOfMono.Cell i n) :
     SSet.toTop.map a.ιSigmaBoundary ≫ (realizedSkeletalBoundariesIso i n).hom =
-      TopCat.ofHom (Y := TopCat.of (skeletalCellIndex i n × simplexBoundary n))
+      TopCat.ofHom (Y := TopCat.of (skeletalCellIndex i n × _root_.stdSimplex.boundary n))
         ⟨fun x ↦ (a, realizationBoundaryHomeomorph n x), by fun_prop⟩ := by
   dsimp only [realizedSkeletalBoundariesIso, Iso.trans_hom]
   rw [← Category.assoc, realizationCoproductDiscreteProductIso_ι]
@@ -122,14 +122,14 @@ theorem realizedSkeletalBoundary_square :
 
 /-- The attaching map on actual geometric boundaries. -/
 def realizedSkeletalAttaching :
-    TopCat.of (skeletalCellIndex i n × simplexBoundary n) ⟶
+    TopCat.of (skeletalCellIndex i n × _root_.stdSimplex.boundary n) ⟶
       |(SSet.skeletonOfMono i n : SSet.{u})| :=
   (realizedSkeletalBoundariesIso i n).inv ≫
     SSet.toTop.map (SSet.relativeCellComplexOfMono.t i n)
 
 /-- The characteristic map on actual geometric simplices. -/
 def realizedSkeletalCharacteristic :
-    TopCat.of (skeletalCellIndex i n × StdSimplex ℝ (Fin (n + 1))) ⟶
+    TopCat.of (skeletalCellIndex i n × _root_.stdSimplex ℝ (Fin (n + 1))) ⟶
       |(SSet.skeletonOfMono i (n + 1) : SSet.{u})| :=
   (realizedSkeletalCellsIso i n).inv ≫
     SSet.toTop.map (SSet.relativeCellComplexOfMono.b i n)

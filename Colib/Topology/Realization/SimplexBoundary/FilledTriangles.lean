@@ -17,10 +17,10 @@ Any three vertex indices omit a coordinate in a simplex of dimension at least th
 @[expose] public section
 
 noncomputable section
-open Set CategoryTheory Convexity Convexity.StdSimplex
+open Set CategoryTheory stdSimplex
 open scoped unitInterval
 universe u v
-namespace Convexity.StdSimplex.Boundary
+namespace stdSimplex.Boundary
 variable {n : ℕ}
 
 /-- Any three vertex indices omit a coordinate in a simplex of dimension at least three. -/
@@ -42,13 +42,13 @@ def boundaryTriangleHomotopy (i j k : Fin (n + 4)) :
   let l := Classical.choose (exists_coordinate_outside i j k)
   have hl := Classical.choose_spec (exists_coordinate_outside i j k)
   have he (a b : Fin (n + 4)) (ha : l ≠ a) (hb : l ≠ b) :
-      range (boundaryEdge a b) ⊆ {x | x.val.weights l = 0} := by
+      range (boundaryEdge a b) ⊆ {x | x.val l = 0} := by
     rintro _ ⟨t, rfl⟩
-    change (simplexSegment (vertex a).val (vertex b).val t).weights l = 0
-    rw [simplexSegment_weights]
-    simp [vertex, StdSimplex.weights_single, Ne.symm ha, Ne.symm hb]
+    change (simplexSegment (vertex a).val (vertex b).val t) l = 0
+    rw [simplexSegment_apply]
+    simp [vertex, stdSimplex.vertex_coe, Ne.symm ha, Ne.symm hb]
   have hp : range ((boundaryEdge i j).trans (boundaryEdge j k)) ⊆
-      {x | x.val.weights l = 0} := by
+      {x | x.val l = 0} := by
     rw [Path.trans_range]
     exact union_subset (he i j hl.1 hl.2.1) (he j k hl.2.1 hl.2.2)
   exact facePathHomotopy _ _ l (fun t => hp (mem_range_self t))
@@ -56,7 +56,7 @@ def boundaryTriangleHomotopy (i j k : Fin (n + 4)) :
 
 /-- Every functor respects every actual filled triangular face, including repeated vertices. -/
 theorem boundaryEdge_triangle {C : Type u} [Category.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 3)) ⥤ C) (i j k : Fin (n + 4)) :
+    (F : FundamentalGroupoid (boundary (n + 3)) ⥤ C) (i j k : Fin (n + 4)) :
     F.map (Path.Homotopic.Quotient.mk (boundaryEdge i j)) ≫
       F.map (Path.Homotopic.Quotient.mk (boundaryEdge j k)) =
       F.map (Path.Homotopic.Quotient.mk (boundaryEdge i k)) := by
@@ -64,4 +64,4 @@ theorem boundaryEdge_triangle {C : Type u} [Category.{v} C]
   apply congrArg F.map
   exact Path.Homotopic.Quotient.eq.mpr ⟨boundaryTriangleHomotopy i j k⟩
 
-end Convexity.StdSimplex.Boundary
+end stdSimplex.Boundary

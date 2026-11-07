@@ -19,7 +19,7 @@ hypotheses and universes are retained; imports use native lower owners. -/
 
 noncomputable section
 universe u
-open TopCat Topology SSet Convexity.StdSimplex CategoryTheory Limits
+open TopCat Topology SSet _root_.stdSimplex CategoryTheory Limits
 open scoped Simplicial Topology unitInterval
 set_option backward.isDefEq.respectTransparency false
 namespace Topology.FilteredRealization

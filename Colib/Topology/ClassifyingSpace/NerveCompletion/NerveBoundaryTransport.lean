@@ -19,7 +19,7 @@ At the target it is the inverse of the actual original localized edge.
 @[expose] public section
 
 noncomputable section
-open CategoryTheory Convexity.StdSimplex
+open CategoryTheory stdSimplex
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment
@@ -28,7 +28,7 @@ attribute [local instance] Localization.groupoid
 /-- Transport from either actual edge endpoint to the specified source object.
 At the target it is the inverse of the actual original localized edge. -/
 def nerveBoundaryTransport (C : Type u) [Category.{v} C]
-    (a : NerveGraphData.Index C) (b : simplexBoundary 1) :
+    (a : NerveGraphData.Index C) (b : boundary 1) :
     NerveGraphData.vertex C (NerveGraphData.attaching C (a, b)) ≅
       NerveGraphData.vertex C (NerveGraphData.attaching C (a, boundaryZero)) := by
   classical

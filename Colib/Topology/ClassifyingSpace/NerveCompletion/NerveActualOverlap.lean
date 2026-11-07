@@ -19,7 +19,7 @@ The actual overlap, not its geometric parameter space.
 @[expose] public section
 
 noncomputable section
-open Set CategoryTheory Convexity.StdSimplex TopCat
+open Set CategoryTheory stdSimplex TopCat
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment

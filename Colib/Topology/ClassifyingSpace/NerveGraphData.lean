@@ -5,6 +5,7 @@ Authors: kangxyz
 -/
 module
 
+public import Colib.Analysis.Convex.StdSimplex.PathHomotopy
 public import Colib.Topology.ClassifyingSpace.CharacteristicPoints
 public import Colib.Topology.ClassifyingSpace.GroupoidCompletion
 public import Colib.Topology.Realization.GraphAttachmentAnchors
@@ -23,7 +24,7 @@ or presentation assumption.
 Adapted from `Quillen/Topology/ClassifyingSpace/NerveGraphData.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. Actual maps, endpoint equalities,
 path classes and independent universe parameters are retained. Native namespace
-ownership and the established finite-simplex adapter replace source ownership.
+ownership and the pinned native standard simplex replace source ownership.
 -/
 @[expose] public section
 
@@ -33,7 +34,7 @@ noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
 set_option backward.defeqAttrib.useBackward true
-open CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex SSet TopCat
+open CategoryTheory CategoryTheory.Limits stdSimplex SSet TopCat
 open scoped Simplicial Topology unitInterval
 universe u v w
 namespace CategoryTheory.NerveGraphData
@@ -126,18 +127,17 @@ def vertexIdentification (x : Old C) :
 
 /-- The geometric coordinate of the original realized interval parameter. -/
 lemma realizationInterval_geometric (t : unitInterval) :
-    FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌ (realizationInterval.{w} t) =
-      StdSimplex.homeomorphI.symm t := by
-  apply StdSimplex.homeomorphI.injective
+    SimplexCategory.toTopHomeo ⦋1⦌ (realizationInterval.{w} t) =
+      stdSimplexHomeomorphUnitInterval.symm t := by
+  apply stdSimplexHomeomorphUnitInterval.injective
   rw [Homeomorph.apply_symm_apply]
-  have h := FiniteSimplexAdapter.realization_interval_compat (realizationInterval.{w} t)
   have hi : SSet.stdSimplex.toTopObjIsoI.hom (realizationInterval.{w} t) = ULift.up t :=
     ConcreteCategory.congr_hom SSet.stdSimplex.toTopObjIsoI.inv_hom_id _
-  exact congrArg ULift.down (h.trans hi)
+  exact congrArg ULift.down hi
 
 /-- Each full characteristic map is the original arrow path at every parameter. -/
 theorem characteristic_path (a : Index C) (t : unitInterval) :
-    inclusion C (characteristic C (a, StdSimplex.homeomorphI.symm t)) =
+    inclusion C (characteristic C (a, stdSimplexHomeomorphUnitInterval.symm t)) =
       classifyingSpacePath (a.simplex.map' 0 1) t := by
   have h := realizedNerveOneCell_original_path a t
   rw [realizationInterval_geometric.{max u v}] at h
@@ -150,12 +150,13 @@ theorem oldObject_source (a : Index C) :
   rw [oldObject_point]
   have hw := congrArg (inclusion C) (ConcreteCategory.congr_hom (pushout C).w
     (a, boundaryZero))
-  have hs : inclusion C (characteristic C (a, StdSimplex.single 0)) =
+  have hs : inclusion C (characteristic C (a, _root_.stdSimplex.vertex 0)) =
       classifyingSpacePoint (a.simplex.obj 0) := by
     have h := realizedNerveOneCell_original_source a
-    rw [realizationInterval_geometric.{max u v}, StdSimplex.homeomorphI_symm_zero] at h
+    rw [realizationInterval_geometric.{max u v}, (stdSimplexHomeomorphUnitInterval.symm_apply_eq.mpr
+      (stdSimplexHomeomorphUnitInterval_zero).symm)] at h
     exact h
-  change inclusion C (characteristic C (a, StdSimplex.single 0)) =
+  change inclusion C (characteristic C (a, _root_.stdSimplex.vertex 0)) =
     inclusion C (transition C (attaching C (a, boundaryZero))) at hw
   exact hw.symm.trans hs
 
@@ -166,12 +167,13 @@ theorem oldObject_target (a : Index C) :
   rw [oldObject_point]
   have hw := congrArg (inclusion C) (ConcreteCategory.congr_hom (pushout C).w
     (a, boundaryOne))
-  have hs : inclusion C (characteristic C (a, StdSimplex.single 1)) =
+  have hs : inclusion C (characteristic C (a, _root_.stdSimplex.vertex 1)) =
       classifyingSpacePoint (a.simplex.obj 1) := by
     have h := realizedNerveOneCell_original_target a
-    rw [realizationInterval_geometric.{max u v}, StdSimplex.homeomorphI_symm_one] at h
+    rw [realizationInterval_geometric.{max u v}, (stdSimplexHomeomorphUnitInterval.symm_apply_eq.mpr
+      (stdSimplexHomeomorphUnitInterval_one).symm)] at h
     exact h
-  change inclusion C (characteristic C (a, StdSimplex.single 1)) =
+  change inclusion C (characteristic C (a, _root_.stdSimplex.vertex 1)) =
     inclusion C (transition C (attaching C (a, boundaryOne))) at hw
   exact hw.symm.trans hs
 
@@ -187,22 +189,24 @@ def edge (a : Index C) :
   (⊤ : MorphismProperty C).Q.map (originalEdge C a)
 
 /-- The canonical traversal of the geometric one-simplex. -/
-def intervalPath : Path (StdSimplex.single (0 : Fin 2) : StdSimplex ℝ (Fin 2))
-    (StdSimplex.single 1) where
-  toFun t := StdSimplex.homeomorphI.symm t
-  continuous_toFun := StdSimplex.homeomorphI.symm.continuous
-  source' := StdSimplex.homeomorphI_symm_zero
-  target' := StdSimplex.homeomorphI_symm_one
+def intervalPath : Path (_root_.stdSimplex.vertex (0 : Fin 2) : _root_.stdSimplex ℝ (Fin 2))
+    (_root_.stdSimplex.vertex 1) where
+  toFun t := stdSimplexHomeomorphUnitInterval.symm t
+  continuous_toFun := stdSimplexHomeomorphUnitInterval.symm.continuous
+  source' := (stdSimplexHomeomorphUnitInterval.symm_apply_eq.mpr
+      (stdSimplexHomeomorphUnitInterval_zero).symm)
+  target' := (stdSimplexHomeomorphUnitInterval.symm_apply_eq.mpr
+      (stdSimplexHomeomorphUnitInterval_one).symm)
 
 /-- The actual boundary point equality underlying the graph vertex isomorphism. -/
-theorem vertexPoint (a : Index C) (b : simplexBoundary 1) :
+theorem vertexPoint (a : Index C) (b : boundary 1) :
     classifyingSpacePoint (oldObject C (attaching C (a, b))) =
       inclusion C (characteristic C (a, b.1)) :=
   (oldObject_point C (attaching C (a, b))).trans
     (congrArg (inclusion C) (ConcreteCategory.congr_hom (pushout C).w (a, b))).symm
 
 /-- The graph vertex isomorphism is the equality of the actual original points. -/
-theorem vertexIso_hom (a : Index C) (b : simplexBoundary 1) :
+theorem vertexIso_hom (a : Index C) (b : boundary 1) :
     (GraphAttachment.vertexIso (Index C) (pushout C) (inclusion C)
       (classifyingGroupoidCompletionFunctor C) (vertex C) (vertexIdentification C) a b).hom =
         eqToHom (congrArg FundamentalGroupoid.mk (vertexPoint C a b)) := by
@@ -231,25 +235,25 @@ theorem originalEdge_image (a : Index C) :
 is the original categorical edge class. -/
 theorem cell_path_class (a : Index C) :
     eqToHom (congrArg FundamentalGroupoid.mk (vertexPoint C a boundaryZero)) ≫
-      (⟦(PathConnectedSpace.somePath (StdSimplex.single (0 : Fin 2))
-          (StdSimplex.single 1)).map
+      (⟦(PathConnectedSpace.somePath (_root_.stdSimplex.vertex (0 : Fin 2))
+          (_root_.stdSimplex.vertex 1)).map
         ((inclusion C).comp (simplexAttachmentCellMap (Index C) 1
           (g := characteristic C) a)).continuous⟧ :
-        FundamentalGroupoid.mk (inclusion C (characteristic C (a, StdSimplex.single 0))) ⟶
-          FundamentalGroupoid.mk (inclusion C (characteristic C (a, StdSimplex.single 1)))) ≫
+        FundamentalGroupoid.mk (inclusion C (characteristic C (a, _root_.stdSimplex.vertex 0))) ⟶
+          FundamentalGroupoid.mk (inclusion C (characteristic C (a, _root_.stdSimplex.vertex 1)))) ≫
       eqToHom (congrArg FundamentalGroupoid.mk (vertexPoint C a boundaryOne).symm) =
         (classifyingFundamentalGroupoidFunctor C).map (originalEdge C a) := by
   let k := (inclusion C).comp (simplexAttachmentCellMap (Index C) 1
     (g := characteristic C) a)
   have hq : Path.Homotopic.Quotient.mk
-      ((PathConnectedSpace.somePath (StdSimplex.single (0 : Fin 2))
-        (StdSimplex.single 1)).map k.continuous) =
+      ((PathConnectedSpace.somePath (_root_.stdSimplex.vertex (0 : Fin 2))
+        (_root_.stdSimplex.vertex 1)).map k.continuous) =
       Path.Homotopic.Quotient.mk (intervalPath.map k.continuous) :=
-    _root_.Quotient.sound ((Convexity.StdSimplex.paths_homotopic _ intervalPath).map k)
+    _root_.Quotient.sound ⟨(stdSimplex.pathHomotopy _ intervalPath).map k⟩
   change eqToHom (congrArg FundamentalGroupoid.mk (vertexPoint C a boundaryZero)) ≫
     Path.Homotopic.Quotient.mk
-      ((PathConnectedSpace.somePath (StdSimplex.single (0 : Fin 2))
-        (StdSimplex.single 1)).map k.continuous) ≫
+      ((PathConnectedSpace.somePath (_root_.stdSimplex.vertex (0 : Fin 2))
+        (_root_.stdSimplex.vertex 1)).map k.continuous) ≫
     eqToHom (congrArg FundamentalGroupoid.mk (vertexPoint C a boundaryOne).symm) = _
   rw [hq, FundamentalGroupoid.conj_eqToHom
     (vertexPoint C a boundaryZero) (vertexPoint C a boundaryOne), originalEdge_image]
@@ -267,7 +271,7 @@ localization arrow, with the actual target vertex isomorphism. -/
 theorem edge_spoke (a : Index C) :
     GraphAttachment.spoke (Index C) (pushout C) (inclusion C)
       (classifyingGroupoidCompletionFunctor C) (vertex C) (vertexIdentification C) a
-        (StdSimplex.single 1) =
+        (_root_.stdSimplex.vertex 1) =
       (classifyingGroupoidCompletionFunctor C).map (edge C a) ≫
         (GraphAttachment.vertexIso (Index C) (pushout C) (inclusion C)
           (classifyingGroupoidCompletionFunctor C) (vertex C) (vertexIdentification C) a
@@ -275,12 +279,12 @@ theorem edge_spoke (a : Index C) :
   dsimp only [GraphAttachment.spoke]
   rw [vertexIso_hom, vertexIso_hom, edge_image]
   change eqToHom (congrArg FundamentalGroupoid.mk (vertexPoint C a boundaryZero)) ≫
-    (⟦(PathConnectedSpace.somePath (StdSimplex.single (0 : Fin 2))
-        (StdSimplex.single 1)).map
+    (⟦(PathConnectedSpace.somePath (_root_.stdSimplex.vertex (0 : Fin 2))
+        (_root_.stdSimplex.vertex 1)).map
       ((inclusion C).comp (simplexAttachmentCellMap (Index C) 1
         (g := characteristic C) a)).continuous⟧ :
-      FundamentalGroupoid.mk (inclusion C (characteristic C (a, StdSimplex.single 0))) ⟶
-        FundamentalGroupoid.mk (inclusion C (characteristic C (a, StdSimplex.single 1)))) =
+      FundamentalGroupoid.mk (inclusion C (characteristic C (a, _root_.stdSimplex.vertex 0))) ⟶
+        FundamentalGroupoid.mk (inclusion C (characteristic C (a, _root_.stdSimplex.vertex 1)))) =
     (classifyingFundamentalGroupoidFunctor C).map (originalEdge C a) ≫
       eqToHom (congrArg FundamentalGroupoid.mk (vertexPoint C a boundaryOne))
   apply (cancel_mono (eqToHom

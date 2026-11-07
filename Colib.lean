@@ -119,6 +119,7 @@ public import Colib.Algebra.Homology.CochainComplex.SplitFactorization.ZeroEndpo
 public import Colib.Algebra.Homology.DerivedCategory.Ext.Quotient
 public import Colib.Algebra.Homology.DerivedCategory.Ext.Regular
 public import Colib.Algebra.Homology.DerivedCategory.Ext.RightDerived
+public import Colib.Algebra.Homology.DerivedCategory.Ext.RightDerivedNaturality
 public import Colib.Algebra.Homology.DerivedCategory.SingleCocycle
 public import Colib.Algebra.Homology.Embedding.StupidTrunc.Layer
 public import Colib.Algebra.Homology.Embedding.StupidTrunc.Maps
@@ -191,6 +192,7 @@ public import Colib.CategoryTheory.Abelian.Projective.ExactFunctor
 public import Colib.CategoryTheory.Abelian.Projective.Ext
 public import Colib.CategoryTheory.Abelian.Projective.ExtZero
 public import Colib.CategoryTheory.Abelian.RightDerived.Cochain
+public import Colib.CategoryTheory.Abelian.RightDerived.CochainNaturality
 public import Colib.CategoryTheory.Abelian.SerreClass.ImageSubobjects
 public import Colib.CategoryTheory.Abelian.SerreClass.KernelPushout
 public import Colib.CategoryTheory.Abelian.SerreClass.KernelPushoutComparison

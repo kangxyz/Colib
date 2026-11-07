@@ -173,3 +173,14 @@ is constant under the three explicit chosen-zero equalities. The sole zero-simpl
 definition has its lower simplicial owner, with existing K-theory clients unchanged.
 See the [exact source and scope](migration/quillen/waldhausen-composition-triangle.md).
 This does not establish iterated-S or spectrum compatibility.
+
+## Coherent Waldhausen endotransformation tracks
+
+The actual finite S-prespectrum, whole structure-compatible weak-transformation
+homotopies and relative composition retain the original KMap, basepoints and
+independent parameters. The genuine zero endotransformation contracts the
+original normalized self-track in a grading-coarse target; the null-loop
+endpoint retains both supplied null legs. Native category and path objects
+have one owner. COL-0276--COL-0278 record the complete contribution and its
+explicit prespectrum-only scope. See the
+[source and verification boundary](migration/quillen/waldhausen-coherent-endotransformations.md).

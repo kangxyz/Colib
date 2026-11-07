@@ -5,6 +5,7 @@ Authors: kangxyz
 -/
 module
 
+public import Colib.Topology.Path.DoubleLoopTranspose
 public import Colib.Topology.HomotopyFiber.LoopComponentTransport
 public import Colib.Topology.HomotopyFiber.ConnectingLoopTranspose
 
@@ -59,34 +60,6 @@ theorem joined_of_equiv {Y : Type u} [TopologicalSpace Y]
   obtain ⟨q⟩ := p
   exact ⟨(H.evalAt z).symm.trans ((q.map e.invFun.continuous).trans (H.evalAt w))⟩
 
-/-- The two original loop parameters are interchanged, with all boundary values retained. -/
-def doubleLoopTranspose (x : X) :
-    C(Path (Path.refl x) (Path.refl x), Path (Path.refl x) (Path.refl x)) where
-  toFun β := {
-    toFun s := {
-      toFun t := β t s
-      continuous_toFun := by fun_prop
-      source' := by rw [β.source]; rfl
-      target' := by rw [β.target]; rfl }
-    continuous_toFun := by
-      apply Path.continuous_uncurry_iff.mp
-      change Continuous (fun a : unitInterval × unitInterval ↦ β a.2 a.1)
-      fun_prop
-    source' := by ext t; exact (β t).source
-    target' := by ext t; exact (β t).target }
-  continuous_toFun := by
-    apply Path.continuous_uncurry_iff.mp
-    apply Path.continuous_uncurry_iff.mp
-    change Continuous (fun a : ((Path (Path.refl x) (Path.refl x) × unitInterval) ×
-      unitInterval) ↦ a.1.1 a.2 a.1.2)
-    fun_prop
-
-/-- The original transpose preserves the specified constant double loop. -/
-theorem doubleLoopTranspose_refl (x : X) :
-    doubleLoopTranspose x (Path.refl (Path.refl x)) = Path.refl (Path.refl x) := by
-  ext s t
-  rfl
-
 /-- The original connecting map has the proved negative transpose sign on each displayed loop. -/
 theorem connectingHom_loop_path {Y : Type u} [TopologicalSpace Y]
     (f : C(X, Y)) {x : X} {y : Y} (h : f x = y)
@@ -98,7 +71,7 @@ theorem connectingHom_loop_path {Y : Type u} [TopologicalSpace Y]
         (((loopShiftMulEquiv 0).symm
           (HomotopyGroup.pi1MulEquivFundamentalGroup.symm (FundamentalGroup.fromPath ⟦β⟧)))⁻¹) := by
   exact HomotopyFiber.connectingHom_loopConnectingMap_sign f h
-    (doubleLoopTranspose y) (doubleLoopTranspose_refl y) (fun _ _ _ ↦ rfl)
+    (Path.doubleLoopTranspose y) (Path.doubleLoopTranspose_refl y) (fun _ _ _ ↦ rfl)
     (zeroPointClass (Path.refl (Path.refl y)) β)
 
 end Topology.HomotopyFiber.LoopComponentTransport

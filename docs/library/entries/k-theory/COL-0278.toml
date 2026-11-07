@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0278"
+title = "Actual coarse endotransformation tracks and their null-conjugates"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 340
+statement = "Every original endotransformation into the actual grading-coarse Waldhausen target has its canonically normalized prespectrum self-track contracted relative to both endpoints and the whole basepoint line. Its prescribed null-conjugate gives an actual homotopy to zero in the parameter-looped target."
+scope = "The original exact functor and coarse weak class are retained. The genuine zero endotransformation absorbs before realization, and the actual composition triangle and continuous reverse-track cancellation prove the contraction. The null-loop conclusion retains both occurrences of the separately supplied nullhomotopy and the original target map. Object, morphism and grade universes are independent. No nullhomotopy of the underlying map or target contractibility is inferred from the self-track contraction."
+review = "author_checked"
+provenance = "quillen"

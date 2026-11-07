@@ -1,5 +1,6 @@
 module
 
+public import Colib.Algebra.Homology.CochainComplex.Cycles
 public import Colib.CategoryTheory.ExactCategory.Resolution.BoundedComplex
 public import Colib.CategoryTheory.ExactCategory.Resolution.LiftSubcategory
 
@@ -17,6 +18,14 @@ variable {C : Type u} [Category.{v} C] [Abelian C]
   (K : CochainComplex C ℤ) (M : C)
   (f : K ⟶ (HomologicalComplex.single C (ComplexShape.up ℤ) 0).obj M) [QuasiIso f]
   (hterms : ∀ i, P (K.X i))
+
+-- Coimport the native cycle owner and retain its actual inclusion and differential lift.
+example (i : ℤ) : K.cycleSequence i =
+    ShortComplex.mk (K.iCycles i) (K.toCycles i (i + 1)) (K.iCycles_toCycles i) := rfl
+
+-- The native epi theorem keeps its original signature after importing bounded resolutions.
+example (i : ℤ) (h : K.ExactAt (i + 1)) : Epi (K.toCycles i (i + 1)) :=
+  K.epi_toCycles_of_exactAt i h
 
 -- Arbitrary ambient object/hom universes and separate bounds are retained.
 example (a b : ℤ) [K.IsStrictlyGE a] [K.IsStrictlyLE b] :

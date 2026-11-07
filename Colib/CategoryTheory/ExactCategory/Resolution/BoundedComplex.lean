@@ -5,6 +5,7 @@ Authors: kangxyz
 -/
 module
 
+public import Colib.Algebra.Homology.CochainComplex.Cycles
 public import Colib.CategoryTheory.ExactCategory.Abelian
 public import Colib.CategoryTheory.ExactCategory.KernelClosed
 public import Colib.CategoryTheory.ExactCategory.Resolution.Transport
@@ -27,9 +28,10 @@ the class. The negative exact tail supplies the successive syzygies. All rows
 are short exact sequences in the ambient abelian category, built from the
 native cycles and homology maps of the given complex.
 
-The elementary consecutive-cycle row follows the construction in the pinned
-Stacks file `Algebra/Homology/DerivedCategory/RightDerivedBoundedCohomologicalDimension.lean`,
-where it is a private helper; here it is placed below derived-category applications.
+The elementary consecutive-cycle row is reused from
+`Colib.Algebra.Homology.CochainComplex.Cycles`. It is the same construction as
+the private helper in the pinned Stacks file
+`Algebra/Homology/DerivedCategory/RightDerivedBoundedCohomologicalDimension.lean`.
 -/
 
 @[expose] public noncomputable section
@@ -46,37 +48,6 @@ variable {C : Type u} [Category.{v} C] [Abelian C]
 attribute [local instance] Abelian.hasFiniteBiproducts
 
 variable (K : CochainComplex C ℤ)
-
-/-- The kernel row relating two consecutive cycle objects. -/
-@[implicit_reducible]
-def cyclesSequence (i : ℤ) : ShortComplex C :=
-  ShortComplex.mk (K.iCycles i) (K.toCycles i (i + 1)) (by
-    rw [← cancel_mono (K.iCycles (i + 1)), Category.assoc, K.toCycles_i,
-      K.iCycles_d, zero_comp])
-
-/-- The first map of the cycle row is its actual kernel. -/
-def cyclesSequenceIsKernel (i : ℤ) :
-    IsLimit (KernelFork.ofι (K.cyclesSequence i).f (K.cyclesSequence i).zero) :=
-  isKernelOfComp (K.iCycles (i + 1)) (K.d i (i + 1))
-    (K.cyclesIsKernel i (i + 1) (by simp)) (K.cyclesSequence i).zero
-    (K.toCycles_i i (i + 1))
-
-/-- Exactness in the next degree makes the differential onto the cycles an epimorphism. -/
-lemma epi_toCycles_of_exactAt (i j : ℤ)
-    (hij : (ComplexShape.up ℤ).prev j = i) (h : K.ExactAt j) :
-    Epi (K.toCycles i j) := by
-  subst i
-  exact h.epi_toCycles
-
-/-- Consecutive cycles form a short exact row whenever the next degree is exact. -/
-lemma cyclesSequence_shortExact (i : ℤ) (h : K.ExactAt (i + 1)) :
-    (K.cyclesSequence i).ShortExact := by
-  have : Epi (K.toCycles i (i + 1)) :=
-    K.epi_toCycles_of_exactAt i (i + 1) (by simp) h
-  exact
-    { exact := (K.cyclesSequence i).exact_of_f_is_kernel (K.cyclesSequenceIsKernel i)
-      mono_f := inferInstanceAs (Mono (K.iCycles i))
-      epi_g := inferInstanceAs (Epi (K.toCycles i (i + 1))) }
 
 variable (P : ObjectProperty C) [P.IsClosedUnderIsomorphisms] [P.ContainsZero]
   [(abelianExactStructure C).IsKernelClosed P]
@@ -96,7 +67,7 @@ lemma prop_cycles_of_exact_positive (hterms : ∀ i, P (K.X i))
       omega)
     exact ExactStructure.IsKernelClosed.prop_kernel
       (E := abelianExactStructure C) (P := P)
-      (K.cyclesSequence_shortExact i (hexact (i + 1) (by omega))) (hterms i) hn
+      (K.cycleSequence_shortExact i (hexact (i + 1) (by omega))) (hterms i) hn
 
 /-- A bounded-above positive exact tail places the degree-zero cycles in `P`. -/
 lemma prop_cycles_zero_of_boundedAbove (hterms : ∀ i, P (K.X i))
@@ -117,10 +88,10 @@ def finiteResolutionCycles (hterms : ∀ i, P (K.X i)) (a : ℤ)
     exact P.prop_of_isZero (IsZero.of_mono (K.iCycles _) (by simpa using hz))
   | succ n ih =>
     have R := ih (fun i hi hi' => hexact i hi (by omega))
-    have hs := K.cyclesSequence_shortExact (a + n)
+    have hs := K.cycleSequence_shortExact (a + n)
       (hexact (a + n + 1) (by omega) (by omega))
     have R' := ExactStructure.FiniteResolution.step
-      (E := abelianExactStructure C) (P := P) (K.cyclesSequence (a + n))
+      (E := abelianExactStructure C) (P := P) (K.cycleSequence (a + n))
       hs (hterms _) R
     convert R' using 1
     congr 1

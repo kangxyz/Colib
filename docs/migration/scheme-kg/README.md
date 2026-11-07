@@ -53,7 +53,7 @@ all-degree K-equivalence remain downstream work.
 ## Validation scope
 
 The complete batch comprises twenty-two production modules and five regression
-modules with forty-one examples. It passed strict native Lean 4.35 compilation
+modules with forty-three examples. It passed strict native Lean 4.35 compilation
 with its actual dependency closure. The focused final checks use all fifteen
 native declaration linters and the official standard-three-axiom auditor at four
 endpoint roots covering every new production module. Compiled checks verify all

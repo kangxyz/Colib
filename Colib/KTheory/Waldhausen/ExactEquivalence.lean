@@ -19,6 +19,9 @@ the original forward and inverse canonical K-maps.
 The maps are exactly the existing canonical `KMap` of the forward and inverse functors.
 Their composites are identity by the already proved composition law, natural-isomorphism
 invariance applied to the actual unit and counit, and the identity law.
+Mathematically this is the formal consequence of Waldhausen's functoriality and
+weak-natural-transformation homotopy invariance in Proposition 1.3.1, not an
+application of the Approximation theorem.
 
 No strict preservation of the chosen zero is required: the canonical maps already use the
 proved zero rebasing and based homotopy comparison. These are the connective groups of the
@@ -80,3 +83,11 @@ attribute [colib_tag "COL-0179",
   CategoryTheory.Waldhausen.KEquivOfExactEquivalence
   CategoryTheory.Waldhausen.KEquivOfExactEquivalence_toMonoidHom
   CategoryTheory.Waldhausen.KEquivOfExactEquivalence_symm_toMonoidHom
+
+attribute [colib_ref "Waldhausen1985" "Section 1.3, Proposition 1.3.1, pp. 330-331"
+  "ingredient"
+  "Formal consequence of functoriality and weak-natural-transformation homotopy \
+  invariance, applied to the unit and counit of an equivalence exact in both directions"]
+  CategoryTheory.Waldhausen.KMap_inverse_comp_KMap
+  CategoryTheory.Waldhausen.KMap_comp_KMap_inverse
+  CategoryTheory.Waldhausen.KEquivOfExactEquivalence

@@ -23,7 +23,11 @@ The proof uses the actual finite-stage Q-nerve colimit and the finite-product
 theorem. No support or inverse equations are assumed. Arbitrary zero objects
 outside a stage and the empty stage are covered by the categorical stage
 equivalence. The index may lie in `u` while the object and morphism universes
-are `u + 1`.
+are `max u v`.
+
+The mathematical ingredients are Quillen's preservation of finite products and
+filtered colimits, Section 2, equations (8)-(9), pp. 103-104. The finite-support
+comparison is a consequence of those properties, specialized here to positive degrees.
 
 Implementation provenance: `Quillen/KTheory/FiniteSupport/Decomposition.lean` at Quillen commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. Actual objects, maps, degrees
@@ -362,6 +366,19 @@ end CategoryTheory.Pi.FiniteSupport
 attribute [colib_tag "COL-0281",
   colib_ref "quillen" "Quillen/KTheory/FiniteSupport/Decomposition.lean" "adaptation"
     "Positive direct-sum equivalence with original evaluation and singleton inclusion KMaps"]
+  CategoryTheory.Pi.FiniteSupport.decompositionKEquiv
+  CategoryTheory.Pi.FiniteSupport.decompositionKEquiv_apply
+  CategoryTheory.Pi.FiniteSupport.decompositionKEquiv_singleton
+  CategoryTheory.Pi.FiniteSupport.decompositionKEquiv_symm_apply
+  CategoryTheory.Pi.FiniteSupport.decompositionKEquiv_symm_of
+  CategoryTheory.Pi.FiniteSupport.K1DecompositionEquiv
+  CategoryTheory.Pi.FiniteSupport.K2DecompositionEquiv
+
+attribute [colib_ref "Quillen1973" "Section 2, equations (8)-(9), pp. 103-104"
+  "ingredient"
+  "Finite-support decomposition is a consequence of finite-product preservation \
+  and filtered-colimit continuity; this endpoint retains the original coordinate \
+  and singleton maps for abelian families in positive degrees"]
   CategoryTheory.Pi.FiniteSupport.decompositionKEquiv
   CategoryTheory.Pi.FiniteSupport.decompositionKEquiv_apply
   CategoryTheory.Pi.FiniteSupport.decompositionKEquiv_singleton

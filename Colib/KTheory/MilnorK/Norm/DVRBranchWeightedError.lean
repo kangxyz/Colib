@@ -65,7 +65,8 @@ private theorem canonical_residue_map_eq_ramification_smul
   have h := DFunLike.congr_fun
     (dvrMilnorTameSymbol'_map_ramified (algebraMap R S) (algebraMap F E) hf
       hπ hρ u e he n) x
-  simpa only [AddMonoidHom.comp_apply, AddMonoidHom.smul_apply, hidx] using h
+  simp only [AddMonoidHom.comp_apply, AddMonoidHom.smul_apply, hidx] at h
+  exact h
 
 variable (R S T : Type u)
   [CommRing R] [IsDomain R] [IsDiscreteValuationRing R]
@@ -81,7 +82,7 @@ variable (R S T : Type u)
   [FiniteDimensional F E] [IsGalois F E]
   [Field K] [Algebra T K] [IsFractionRing T K] [Algebra F K]
   [Algebra R K] [IsScalarTower R T K] [IsScalarTower R F K]
-  {ι : Type w} [Fintype ι] (U : ι → Type u) (D : ι → Type v)
+  {ι : Type w} [Finite ι] (U : ι → Type u) (D : ι → Type v)
   [∀ i, CommRing (U i)] [∀ i, IsDomain (U i)] [∀ i, IsDiscreteValuationRing (U i)]
   [∀ i, Algebra R (U i)] [∀ i, Algebra S (U i)] [∀ i, Algebra T (U i)]
   [∀ i, IsScalarTower R S (U i)] [∀ i, IsScalarTower R T (U i)]
@@ -92,13 +93,13 @@ variable (R S T : Type u)
   [∀ i, Algebra T (D i)] [∀ i, Algebra K (D i)]
   [∀ i, IsScalarTower T (U i) (D i)] [∀ i, IsScalarTower T K (D i)]
   [∀ i, FiniteDimensional K (D i)]
-
   [∀ i, Algebra E (D i)] [∀ i, Algebra S (D i)]
   [∀ i, IsScalarTower S E (D i)] [∀ i, IsScalarTower S (U i) (D i)]
   [∀ i, HenselianLocalRing (U i)]
   [CharZero (ResidueField R)]
 
 
+include U in
 /-- If the original class is mixed in every actual tensor factor, the actual base-change
 ramification index kills the restriction of its original norm-residue error. -/
 theorem ramification_smul_restrict_norm_residue_difference_eq_zero_of_mixed_branches
@@ -113,6 +114,7 @@ theorem ramification_smul_restrict_norm_residue_difference_eq_zero_of_mixed_bran
           milnorKNorm (ResidueField R) (ResidueField S) n
             (dvrMilnorTameSymbol' S E n x)) = 0 := by
   classical
+  let : Fintype ι := Fintype.ofFinite ι
   let : CharZero R := RingHom.charZero (residue R)
   let : CharZero F := IsFractionRing.charZero_of_isFractionRing R
   let : CharZero (ResidueField T) := charZero_of_injective_algebraMap

@@ -59,6 +59,8 @@ theorem sum_localCompletionFraction_finrank :
   let := fun q => localCompletionBaseAlgebra (S := S) (maximalIdeal R) q
   let := fun q => localCompletionFractionAlgebra R S q
   let := fun q => localCompletionFractionFinite R S q
+  let : ∀ q : IdealBranch J, Module.Free Fhat (C q) :=
+    fun q => Module.Free.of_divisionRing Fhat (C q)
   calc
     (∑ q : IdealBranch J, Module.finrank Fhat (C q)) =
         Module.finrank Fhat (∀ q : IdealBranch J, C q) :=

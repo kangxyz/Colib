@@ -68,11 +68,12 @@ variable (R S T : Type u) (F E L : Type v)
   [∀ i, FaithfulSMul S (U i)]
   [∀ i, IsScalarTower R S (U i)] [∀ i, IsScalarTower R T (U i)]
   [∀ i, IsLocalHom (algebraMap S (U i))]
-  [CharZero (ResidueField R)] [DecidableEq (ResidueField T)]
+  [CharZero (ResidueField R)]
   [Normal (ResidueField R) (ResidueField S)]
 
 
 
+set_option backward.isDefEq.respectTransparency.types false in
 /-- The whole-ring lower weighted residue norm identity when the original ramification
 exponent is one and the original residue extension has normal prime degree. -/
 theorem sum_ramification_smul_residue_norm_map_of_ramification_eq_one

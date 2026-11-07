@@ -45,12 +45,14 @@ variable {F K E : Type u} [Field F] [Field K] [Field E]
   {ι : Type v} [Fintype ι] {D : ι → Type u}
   [∀ j, Field (D j)] [∀ j, Algebra K (D j)]
 
+omit [FiniteDimensional F E] [CharZero F] [Fintype ι] in
 /-- Every actual tensor-product field factor of the normal simple extension is normal.
 The conclusion refers to its given algebra structure, not an isomorphic replacement field. -/
-theorem normal_of_tensorProductPiEquiv
+theorem normal_of_tensorProductPiEquiv [Finite ι]
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j)) (j : ι) :
     Normal K (D j) := by
   classical
+  let : Fintype ι := Fintype.ofFinite ι
   obtain ⟨b, hb⟩ := pb.exists_powerBasis_of_tensorProductPiEquiv ε j
   have hint : IsIntegral K (ε (1 ⊗ₜ[F] pb.gen) j) := hb ▸ b.isIntegral_gen
   let p : MonicIrreducibleOfDegree F (minpoly F pb.gen).natDegree :=
@@ -65,19 +67,21 @@ theorem normal_of_tensorProductPiEquiv
   let e₀ : (K[X] ⧸ Ideal.span {poly q}) ≃ₐ[K] D j :=
     { toRingEquiv := (e j).toRingEquiv
       commutes' := (e j).commutes }
-  letI : Normal F (F[X] ⧸ Ideal.span {poly p}) := Normal.of_algEquiv g₀.symm
-  letI : Normal K (K[X] ⧸ Ideal.span {poly q}) :=
+  let : Normal F (F[X] ⧸ Ideal.span {poly p}) := Normal.of_algEquiv g₀.symm
+  let : Normal K (K[X] ⧸ Ideal.span {poly q}) :=
     normal_quotient_of_dvd_map_of_normal (algebraMap F K) p q
       (pb.minpoly_tensorProductPiEquiv_gen_dvd ε j)
   exact Normal.of_algEquiv e₀
 
+omit [FiniteDimensional F E] [Fintype ι] in
 /-- The actual degree of each tensor-product field factor is one or the original prime
 degree. This supplies the degree alternative needed by the completed-branch mixed theorem. -/
-theorem finrank_eq_one_or_eq_of_tensorProductPiEquiv_of_normal_prime
+theorem finrank_eq_one_or_eq_of_tensorProductPiEquiv_of_normal_prime [Finite ι]
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j))
     (hp : Nat.Prime (finrank F E)) (j : ι) :
     finrank K (D j) = 1 ∨ finrank K (D j) = finrank F E := by
   classical
+  let : Fintype ι := Fintype.ofFinite ι
   obtain ⟨b, hb⟩ := pb.exists_powerBasis_of_tensorProductPiEquiv ε j
   have hint : IsIntegral K (ε (1 ⊗ₜ[F] pb.gen) j) := hb ▸ b.isIntegral_gen
   let p : MonicIrreducibleOfDegree F (minpoly F pb.gen).natDegree :=
@@ -95,7 +99,7 @@ theorem finrank_eq_one_or_eq_of_tensorProductPiEquiv_of_normal_prime
   let g₀ : (F[X] ⧸ Ideal.span {poly p}) ≃ₐ[F] E :=
     { toRingEquiv := g.toRingEquiv
       commutes' := g.commutes }
-  letI : Normal F (F[X] ⧸ Ideal.span {poly p}) := Normal.of_algEquiv g₀.symm
+  let : Normal F (F[X] ⧸ Ideal.span {poly p}) := Normal.of_algEquiv g₀.symm
   have h := degree_eq_one_or_eq_of_dvd_map_of_normal_prime (algebraMap F K) p hp' q
     (pb.minpoly_tensorProductPiEquiv_gen_dvd ε j)
   simpa only [htarget, hsource] using h
@@ -105,7 +109,7 @@ full specified tensor decomposition. Every actual factor occurs once. -/
 theorem milnorKNormRing_map_eq_sum_tensorProductPiEquiv_of_normal_prime
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j))
     (hp : Nat.Prime (finrank F E)) (x : MilnorKRing E) :
-    letI : ∀ j, FiniteDimensional K (D j) :=
+    let : ∀ j, FiniteDimensional K (D j) :=
       fun j => (Classical.choose (pb.exists_powerBasis_of_tensorProductPiEquiv ε j)).finite
     milnorKRingMap (algebraMap F K) (milnorKNormRing F E x) =
       ∑ j, milnorKNormRing K (D j)
@@ -116,7 +120,7 @@ theorem milnorKNormRing_map_eq_sum_tensorProductPiEquiv_of_normal_prime
     Classical.choose (pb.exists_powerBasis_of_tensorProductPiEquiv ε j)
   have hb (j : ι) : (b j).gen = ε (1 ⊗ₜ[F] pb.gen) j :=
     Classical.choose_spec (pb.exists_powerBasis_of_tensorProductPiEquiv ε j)
-  letI : ∀ j, FiniteDimensional K (D j) := fun j => (b j).finite
+  let : ∀ j, FiniteDimensional K (D j) := fun j => (b j).finite
   change milnorKRingMap (algebraMap F K) (milnorKNormRing F E x) = _
   have hint (j : ι) : IsIntegral K (ε (1 ⊗ₜ[F] pb.gen) j) :=
     hb j ▸ (b j).isIntegral_gen
@@ -184,32 +188,32 @@ theorem milnorKNormRing_map_eq_sum_tensorProductPiEquiv_of_normal_prime
 theorem milnorKNormRing_comp_map_eq_sum_tensorProductPiEquiv_of_normal_prime
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j))
     (hp : Nat.Prime (finrank F E)) :
-    letI : ∀ j, FiniteDimensional K (D j) :=
+    let : ∀ j, FiniteDimensional K (D j) :=
       fun j => (Classical.choose (pb.exists_powerBasis_of_tensorProductPiEquiv ε j)).finite
     (milnorKRingMap (algebraMap F K)).toAddMonoidHom.comp (milnorKNormRing F E) =
       ∑ j, (milnorKNormRing K (D j)).comp
         (milnorKRingMap ((Pi.evalRingHom D j).comp
           (ε.toRingHom.comp Algebra.TensorProduct.includeRight.toRingHom))).toAddMonoidHom := by
   classical
-  letI : ∀ j, FiniteDimensional K (D j) :=
+  let : ∀ j, FiniteDimensional K (D j) :=
     fun j => (Classical.choose (pb.exists_powerBasis_of_tensorProductPiEquiv ε j)).finite
   apply AddMonoidHom.ext
   intro x
-  simpa only [AddMonoidHom.comp_apply, AddMonoidHom.finsetSum_apply] using
-    milnorKNormRing_map_eq_sum_tensorProductPiEquiv_of_normal_prime pb ε hp x
+  simp only [AddMonoidHom.comp_apply, AddMonoidHom.finsetSum_apply]
+  exact milnorKNormRing_map_eq_sum_tensorProductPiEquiv_of_normal_prime pb ε hp x
 
 /-- The full tensor-product norm formula in every homogeneous degree, including zero. -/
 theorem milnorKNorm_map_eq_sum_tensorProductPiEquiv_of_normal_prime
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j))
     (hp : Nat.Prime (finrank F E)) (n : ℕ) (x : MilnorKTheory E n) :
-    letI : ∀ j, FiniteDimensional K (D j) :=
+    let : ∀ j, FiniteDimensional K (D j) :=
       fun j => (Classical.choose (pb.exists_powerBasis_of_tensorProductPiEquiv ε j)).finite
     milnorKTheoryMap (algebraMap F K) n (milnorKNorm F E n x) =
       ∑ j, milnorKNorm K (D j) n
         (milnorKTheoryMap ((Pi.evalRingHom D j).comp
           (ε.toRingHom.comp Algebra.TensorProduct.includeRight.toRingHom)) n x) := by
   classical
-  letI : ∀ j, FiniteDimensional K (D j) :=
+  let : ∀ j, FiniteDimensional K (D j) :=
     fun j => (Classical.choose (pb.exists_powerBasis_of_tensorProductPiEquiv ε j)).finite
   change milnorKTheoryMap (algebraMap F K) n (milnorKNorm F E n x) = _
   simp only [milnorKTheoryMap_eq_transport]

@@ -27,8 +27,6 @@ All rings and fields share one universe in this first endpoint. No replacement c
 ULift, norm, map definition, or package is introduced. No original localization over R is
 claimed finite. The conclusion retains its ramification factor; it is not cancelled.
 
-SOURCE ONLY. This scratch module has not been elaborated, compiled, or linted. Its two
-source-stage imports must first be staged at their already assigned mathematical owners.
 -/
 
 @[expose] public noncomputable section
@@ -40,8 +38,14 @@ universe u
 
 namespace Stacks.Chow
 
-open DiscreteValuationRing.Ramification AdicCompletion
+open DiscreteValuationRing.Ramification _root_.AdicCompletion
 
+-- Keep the native branch-index factorization opaque during instance synthesis.
+attribute [local irreducible] UniqueFactorizationMonoid.normalizedFactors
+  UniqueFactorizationMonoid.factors
+
+set_option maxHeartbeats 400000 in
+-- Specializing the full native iterated branch construction checks a large dependent proof.
 /-- One actual finite auxiliary mixed witness makes the ramification weight kill the
 restricted original norm-residue error at every actual completed base branch. The full
 upper branch family and every mixed membership are constructed inside the proof. -/
@@ -66,12 +70,14 @@ theorem ramification_smul_restrict_norm_residue_difference_eq_zero_of_auxiliary_
     (hp : Nat.Prime (Module.finrank F E)) (n : ℕ) (x : MilnorKTheory E (n + 1))
     (hmixed : milnorKTheoryMap (algebraMap E M) (n + 1) x ∈
       milnorKMixedSpan (algebraMap K M) n) :
-    let A := integralClosure R K
-    letI : IsDedekindDomain A := integralClosure.isDedekindDomain R F K
-    letI : DecidableEq (Ideal A) := Classical.decEq _
+    let A : Type u := integralClosure R K
+    let _ : CommRing A := inferInstance
+    let _ : CommSemiring A := CommRing.toCommSemiring
+    let _ : IsDedekindDomain A := integralClosure.isDedekindDomain R F K
+    let _ : DecidableEq (Ideal A) := Classical.decEq _
     ∀ i : IdealBranch ((maximalIdeal R).map (algebraMap R A)),
     let T := BranchCompletion ((maximalIdeal R).map (algebraMap R A)) i
-    letI : IsLocalHom (algebraMap R T) := by
+    let _ : IsLocalHom (algebraMap R T) := by
       rw [IsScalarTower.algebraMap_eq R (Localization.AtPrime i.val) T]
       infer_instance
     (ramificationIdx R T : ℤ) •
@@ -80,96 +86,110 @@ theorem ramification_smul_restrict_norm_residue_difference_eq_zero_of_auxiliary_
           milnorKNorm (ResidueField R) (ResidueField S) n
             (dvrMilnorTameSymbol' S E n x)) = 0 := by
   classical
-  letI : IsDiscreteValuationRing.IsExtension R S := ⟨⟩
+  intro A _ _ _ _ i T _
+  let : IsDiscreteValuationRing.IsExtension R S := ⟨⟩
   have hbranches := exists_auxiliaryBranchTensorEquiv R S F E K M eta heta
-  let A := integralClosure R K
-  letI : IsDedekindDomain A := integralClosure.isDedekindDomain R F K
-  letI : IsFractionRing A K := integralClosure.isFractionRing_of_finite_extension F K
-  letI : DecidableEq (Ideal A) := Classical.decEq _
-  haveI : Module.IsTorsionFree R K := Module.IsTorsionFree.trans_faithfulSMul R F K
-  haveI : Module.IsTorsionFree R A := IsIntegralClosure.isTorsionFree R K
-  change ∀ i : IdealBranch ((maximalIdeal R).map (algebraMap R A)), _
-  intro i
+  let : IsFractionRing A K := integralClosure.isFractionRing_of_finite_extension F K
+  have : Module.IsTorsionFree R K := Module.IsTorsionFree.trans_faithfulSMul R F K
+  have : Module.IsTorsionFree R A := IsIntegralClosure.isTorsionFree R K
   let B := Localization.AtPrime i.val
-  let T := BranchCompletion ((maximalIdeal R).map (algebraMap R A)) i
+  let _ : CommRing B := inferInstance
+  let _ : CommSemiring B := CommRing.toCommSemiring
   let L := FractionRing T
-  letI : IsLocalHom (algebraMap R T) := by
-    rw [IsScalarTower.algebraMap_eq R B T]
-    infer_instance
-  haveI : FaithfulSMul R T := (faithfulSMul_iff_algebraMap_injective R T).mpr (by
+  have : FaithfulSMul R T := (faithfulSMul_iff_algebraMap_injective R T).mpr (by
     rw [IsScalarTower.algebraMap_eq R A T]
     exact (branchCompletion_algebraMap_injective _ i).comp
       (FaithfulSMul.algebraMap_injective R A))
-  letI := originalBranchFractionAlgebra A K i
-  haveI := originalBranchFractionTower A K i
-  letI := originalBranchIsFractionRing A K i
-  haveI : IsScalarTower R B K := IsScalarTower.of_algebraMap_eq fun r => by
+  let := originalBranchFractionAlgebra A K i
+  have := originalBranchFractionTower A K i
+  let := originalBranchIsFractionRing A K i
+  have : FaithfulSMul B K :=
+    (faithfulSMul_iff_algebraMap_injective B K).mpr (IsFractionRing.injective B K)
+  have : IsScalarTower R B K := IsScalarTower.of_algebraMap_eq fun r => by
     rw [IsScalarTower.algebraMap_apply R A K,
       IsScalarTower.algebraMap_apply R A B,
       ← IsScalarTower.algebraMap_apply A B K]
-  letI : Algebra B M := ((algebraMap K M).comp (algebraMap B K)).toAlgebra
-  haveI : IsScalarTower B K M := IsScalarTower.of_algebraMap_eq' rfl
-  haveI : IsScalarTower R B M := IsScalarTower.of_algebraMap_eq fun r => by
+  let : Algebra B M := ((algebraMap K M).comp (algebraMap B K)).toAlgebra
+  have : IsScalarTower B K M := IsScalarTower.of_algebraMap_eq' rfl
+  have : IsScalarTower R B M := IsScalarTower.of_algebraMap_eq fun r => by
     rw [IsScalarTower.algebraMap_apply R K M,
       IsScalarTower.algebraMap_apply R B K,
       ← IsScalarTower.algebraMap_apply B K M]
-  let C := integralClosure B M
-  letI : IsDedekindDomain C := integralClosure.isDedekindDomain B K M
-  haveI : Module.Finite B C := IsIntegralClosure.finite B K M C
-  haveI : Module.IsTorsionFree B M := Module.IsTorsionFree.trans_faithfulSMul B K M
-  haveI : Module.IsTorsionFree B C := IsIntegralClosure.isTorsionFree B M
-  letI : IsFractionRing C M := integralClosure.isFractionRing_of_finite_extension K M
-  letI : DecidableEq (Ideal C) := Classical.decEq _
+  let C : Type u := integralClosure B M
+  let _ : CommRing C := inferInstance
+  let _ : CommSemiring C := CommRing.toCommSemiring
+  let : IsDedekindDomain C := integralClosure.isDedekindDomain B K M
+  have : Module.Finite B C := IsIntegralClosure.finite B K M C
+  have : Module.IsTorsionFree B M := Module.IsTorsionFree.trans_faithfulSMul B K M
+  have : Module.IsTorsionFree B C := IsIntegralClosure.isTorsionFree B M
+  let : IsFractionRing C M := integralClosure.isFractionRing_of_finite_extension K M
+  let : DecidableEq (Ideal C) := Classical.decEq _
   let J := (maximalIdeal B).map (algebraMap B C)
   let U := fun j : IdealBranch J => BranchCompletion J j
   let D := fun j : IdealBranch J => FractionRing (U j)
-  letI := fractionCompletionAlgebra B K
-  haveI := fractionCompletionIsScalarTower B K
-  letI : Algebra F L := ((algebraMap K L).comp (algebraMap F K)).toAlgebra
-  haveI : IsScalarTower F K L := IsScalarTower.of_algebraMap_eq' rfl
-  letI := fun j : IdealBranch J => localCompletionBaseAlgebra (S := C) (maximalIdeal B) j
-  letI := fun j : IdealBranch J => localCompletionFractionAlgebra B C j
-  letI : Algebra R C := ((algebraMap B C).comp (algebraMap R B)).toAlgebra
-  haveI : IsScalarTower R B C := IsScalarTower.of_algebraMap_eq' rfl
-  letI : Algebra S C := Stacks.EppTheorem.algebraIntegralClosureBase R B S M
+  let delta := fractionTensorEquivLocalFractionFields B C K M
+  let _ : Algebra K L := fractionCompletionAlgebra B K
+  let _ : SMul K L := Algebra.toSMul
+  let _ : Module K L := Algebra.toModule
+  have := fractionCompletionIsScalarTower B K
+  let : Algebra F L := ((algebraMap K L).comp (algebraMap F K)).toAlgebra
+  let _ : SMul F L := Algebra.toSMul
+  let _ : Module F L := Algebra.toModule
+  have : IsScalarTower F K L := IsScalarTower.of_algebraMap_eq' rfl
+  let aTU : (j : IdealBranch J) → Algebra T (U j) := fun j =>
+    localCompletionBaseAlgebra (S := C) (maximalIdeal B) j
+  let _ : (j : IdealBranch J) → SMul T (U j) := fun j => (aTU j).toSMul
+  let _ : (j : IdealBranch J) → Module T (U j) := fun j =>
+    @Algebra.toModule T (U j) _ _ (aTU j)
+  let aLD : (j : IdealBranch J) → Algebra L (D j) := fun j =>
+    localCompletionFractionAlgebra B C j
+  let _ : (j : IdealBranch J) → SMul L (D j) := fun j => (aLD j).toSMul
+  let _ : (j : IdealBranch J) → Module L (D j) := fun j =>
+    @Algebra.toModule L (D j) _ _ (aLD j)
+  let deltaRing := @RingEquiv.toRingHom _ _ _ _
+    (@AlgEquiv.toRingEquiv _ _ _ _ _ _ _ _ delta)
+  let : Algebra R C := ((algebraMap B C).comp (algebraMap R B)).toAlgebra
+  have : IsScalarTower R B C := IsScalarTower.of_algebraMap_eq' rfl
+  let : Algebra S C := Stacks.EppTheorem.algebraIntegralClosureBase R B S M
   obtain ⟨epsilon, hRFL, hright, hauxiliary, _, htowers,
     hcomplete, _, hinj, hfraction⟩ := hbranches i
-  letI : IsScalarTower R F L := hRFL
-  letI : ∀ j : IdealBranch J, IsScalarTower R S (U j) := fun j => (htowers j).1
-  letI : ∀ j : IdealBranch J, IsScalarTower R T (U j) := fun j => (htowers j).2.1
-  letI : ∀ j : IdealBranch J, IsLocalHom (algebraMap S (U j)) :=
+  let : IsScalarTower R F L := hRFL
+  let : ∀ j : IdealBranch J, IsScalarTower R S (U j) := fun j => (htowers j).1
+  let : ∀ j : IdealBranch J, IsScalarTower R T (U j) := fun j => (htowers j).2.1
+  let : ∀ j : IdealBranch J, IsLocalHom (algebraMap S (U j)) :=
     fun j => (htowers j).2.2
-  letI : ∀ j : IdealBranch J, Module.Finite T (U j) := fun j => (hcomplete.2 j).1
-  letI : ∀ j : IdealBranch J, HenselianLocalRing (U j) := fun j => (hcomplete.2 j).2
-  letI : ∀ j : IdealBranch J, IsLocalHom (algebraMap T (U j)) :=
+  let : ∀ j : IdealBranch J, Module.Finite T (U j) := fun j => (hcomplete.2 j).1
+  let : ∀ j : IdealBranch J, HenselianLocalRing (U j) := fun j => (hcomplete.2 j).2
+  let : ∀ j : IdealBranch J, IsLocalHom (algebraMap T (U j)) :=
     fun j => localCompletionBase_isLocalHom B C j
-  letI : ∀ j : IdealBranch J, FaithfulSMul T (U j) :=
+  let : ∀ j : IdealBranch J, FaithfulSMul T (U j) :=
     fun j => localCompletionBaseFaithfulSMul B C j
-  letI : ∀ j : IdealBranch J, Module.IsTorsionFree T (U j) := fun j =>
+  let : ∀ j : IdealBranch J, Module.IsTorsionFree T (U j) := fun j =>
     Module.isTorsionFree_iff_algebraMap_injective.mpr
       (FaithfulSMul.algebraMap_injective T (U j))
-  letI : ∀ j : IdealBranch J, IsScalarTower T L (D j) :=
+  let : ∀ j : IdealBranch J, IsScalarTower T L (D j) :=
     fun j => localCompletionFractionIsScalarTower B C j
-  letI : ∀ j : IdealBranch J, FiniteDimensional L (D j) :=
+  let : ∀ j : IdealBranch J, FiniteDimensional L (D j) :=
     fun j => localCompletionFractionFinite B C j
-  letI : ∀ j : IdealBranch J, Algebra E (D j) :=
+  let aED : ∀ j : IdealBranch J, Algebra E (D j) :=
     fun j => (IsFractionRing.lift (K := E) (hinj j)).toAlgebra
-  letI : ∀ j : IdealBranch J, IsScalarTower S E (D j) := fun j => (hfraction j).2
+  let _ : (j : IdealBranch J) → SMul E (D j) := fun j => (aED j).toSMul
+  let : ∀ j : IdealBranch J, IsScalarTower S E (D j) := fun j => (hfraction j).2
   have hinjSU (j : IdealBranch J) : Function.Injective (algebraMap S (U j)) := by
     intro s t h
     apply hinj j
     simpa only [← IsScalarTower.algebraMap_apply S (U j) (D j)] using
       congrArg (algebraMap (U j) (D j)) h
-  letI : ∀ j : IdealBranch J, FaithfulSMul S (U j) := fun j =>
+  let : ∀ j : IdealBranch J, FaithfulSMul S (U j) := fun j =>
     (faithfulSMul_iff_algebraMap_injective S (U j)).mpr (hinjSU j)
   have hcoordinate (e : E) (j : IdealBranch J) :
-      epsilon (1 ⊗ₜ[F] e) j = algebraMap E (D j) e :=
-    RingHom.congr_fun (hfraction j).1 e
-  let delta : L ⊗[K] M ≃ₐ[L] ∀ j : IdealBranch J, D j :=
-    fractionTensorEquivLocalFractionFields B C K M
-  let rho (j : IdealBranch J) : M →+* D j := (Pi.evalRingHom D j).comp
-    (delta.toRingHom.comp
-      (Algebra.TensorProduct.includeRight : M →ₐ[K] L ⊗[K] M).toRingHom)
+      epsilon.toFun ((1 : L) ⊗ₜ[F] e) j = algebraMap E (D j) e := by
+    exact RingHom.congr_fun (hfraction j).1 e
+  let rightRing :=
+    (Algebra.TensorProduct.includeRight : M →ₐ[K] L ⊗[K] M).toRingHom
+  let rhoBase := deltaRing.comp rightRing
+  let evalD (j : IdealBranch J) := (Pi.evalAlgHom L D j).toRingHom
+  let rho (j : IdealBranch J) : M →+* D j := (evalD j).comp rhoBase
   have hsquare (j : IdealBranch J) : (rho j).comp (algebraMap K M) =
       (algebraMap L (D j)).comp (algebraMap K L) := by
     ext k

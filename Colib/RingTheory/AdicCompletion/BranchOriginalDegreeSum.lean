@@ -50,16 +50,16 @@ theorem branchCompletionBase_isLocalHom (q : IdealBranch J) :
 /-- Completion of the base leaves each actual branch ramification index unchanged. -/
 theorem branchCompletion_ramificationIdx_eq [Module.IsTorsionFree R S]
     (q : IdealBranch J) :
-    letI := localCompletionBaseAlgebra (S := S) (maximalIdeal R) q
+    let := localCompletionBaseAlgebra (S := S) (maximalIdeal R) q
     Stacks.DiscreteValuationRing.Ramification.ramificationIdx R (D q) =
       Stacks.DiscreteValuationRing.Ramification.ramificationIdx Rhat (D q) := by
   let := localCompletionBaseAlgebra (S := S) (maximalIdeal R) q
   let := localCompletionBaseIsScalarTower (S := S) (maximalIdeal R) q
   let := localCompletionBaseFaithfulSMul R S q
-  letI : FaithfulSMul R Rhat :=
+  let : FaithfulSMul R Rhat :=
     (faithfulSMul_iff_algebraMap_injective _ _).mpr
       (of_injective (maximalIdeal R) R)
-  letI : FaithfulSMul R (D q) :=
+  let : FaithfulSMul R (D q) :=
     (faithfulSMul_iff_algebraMap_injective _ _).mpr (by
       rw [IsScalarTower.algebraMap_eq R Rhat (D q)]
       exact (localCompletionBase_injective R S q).comp
@@ -85,9 +85,9 @@ theorem branchCompletion_ramificationIdx_eq [Module.IsTorsionFree R S]
 
 /-- The actual branch residue degree is unchanged by completion of the base. -/
 theorem branchCompletion_residue_finrank_eq (q : IdealBranch J) :
-    letI := localCompletionBaseAlgebra (S := S) (maximalIdeal R) q
-    letI := localCompletionBase_isLocalHom R S q
-    letI := branchCompletionBase_isLocalHom R S q
+    let := localCompletionBaseAlgebra (S := S) (maximalIdeal R) q
+    let := localCompletionBase_isLocalHom R S q
+    let := branchCompletionBase_isLocalHom R S q
     Module.finrank (ResidueField R) (ResidueField (D q)) =
       Module.finrank (ResidueField Rhat) (ResidueField (D q)) := by
   let := localCompletionBaseAlgebra (S := S) (maximalIdeal R) q
@@ -116,7 +116,7 @@ variable (F : Type w) (E : Type z)
 /-- The ramification indices and residue degrees over the original base, summed over every
 actual completed branch, have total weight equal to the original fraction-field degree. -/
 theorem sum_branchCompletion_original_ramification_mul_residue_finrank :
-    letI := fun q => branchCompletionBase_isLocalHom R S q
+    let := fun q => branchCompletionBase_isLocalHom R S q
     (∑ q : IdealBranch J,
       Stacks.DiscreteValuationRing.Ramification.ramificationIdx R (D q) *
         Module.finrank (ResidueField R) (ResidueField (D q))) = Module.finrank F E := by

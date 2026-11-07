@@ -35,7 +35,7 @@ All proof bodies below are proposed complete proofs, not validation claims.
 @[expose] public noncomputable section
 
 open Polynomial UniqueFactorizationMonoid
-open scoped Classical TensorProduct
+open scoped TensorProduct
 
 namespace PowerBasis
 
@@ -48,10 +48,11 @@ Neither finiteness of the index type nor separability is needed for this asserti
 theorem exists_powerBasis_of_tensorProductPiEquiv
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j)) (j : ι) :
     ∃ b : PowerBasis K (D j), b.gen = ε (1 ⊗ₜ[F] pb.gen) j := by
+  classical
   let f : (K ⊗[F] E) →ₐ[K] D j := (Pi.evalAlgHom K D j).comp ε.toAlgHom
   have hf : Function.Surjective f := (Function.surjective_eval j).comp ε.surjective
-  letI : Module.Finite K (K ⊗[F] E) := Module.Finite.of_basis (pb.basis.baseChange K)
-  letI : Module.Finite K (D j) := Module.Finite.of_surjective f.toLinearMap hf
+  let : Module.Finite K (K ⊗[F] E) := Module.Finite.of_basis (pb.basis.baseChange K)
+  let : Module.Finite K (D j) := Module.Finite.of_surjective f.toLinearMap hf
   have hgen : Algebra.adjoin K {f (1 ⊗ₜ[F] pb.gen)} = ⊤ :=
     IsDiscreteValuationRing.adjoin_eq_top_of_surjective_tensorProduct_factor
       F K E (D j) pb.gen pb.adjoin_gen_eq_top f hf
@@ -65,9 +66,10 @@ theorem map_minpoly_eq_prod_tensorProductPiEquiv
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j)) :
     (minpoly F pb.gen).map (algebraMap F K) =
       ∏ j, minpoly K (ε (1 ⊗ₜ[F] pb.gen) j) := by
+  classical
   choose b hb using exists_powerBasis_of_tensorProductPiEquiv pb ε
-  letI : Module.Finite F E := pb.finite
-  letI : ∀ j, Module.Finite K (D j) := fun j => (b j).finite
+  let : Module.Finite F E := pb.finite
+  let : ∀ j, Module.Finite K (D j) := fun j => (b j).finite
   have hp : (Algebra.lmul F E pb.gen).charpoly = minpoly F pb.gen := by
     rw [← LinearMap.charpoly_toMatrix _ pb.basis]
     exact charpoly_leftMulMatrix pb
@@ -79,20 +81,25 @@ theorem map_minpoly_eq_prod_tensorProductPiEquiv
   rw [← hp, Algebra.map_charpoly_lmul_eq_prod_tensor D ε pb.gen]
   exact Finset.prod_congr rfl fun j _ => hq j
 
+omit [Fintype ι] in
 /-- The actual coordinate minimal polynomial divides the mapped original polynomial. -/
-theorem minpoly_tensorProductPiEquiv_gen_dvd
+theorem minpoly_tensorProductPiEquiv_gen_dvd [Finite ι]
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j)) (j : ι) :
     minpoly K (ε (1 ⊗ₜ[F] pb.gen) j) ∣
       (minpoly F pb.gen).map (algebraMap F K) := by
+  classical
+  let : Fintype ι := Fintype.ofFinite ι
   rw [map_minpoly_eq_prod_tensorProductPiEquiv pb ε]
   exact Finset.dvd_prod_of_mem _ (Finset.mem_univ j)
 
+open Classical in
 /-- The full normalized-factor multiset consists literally of the coordinate minimal
 polynomials, including their occurrences. Monicity removes associatedness ambiguity. -/
 theorem normalizedFactors_map_minpoly_tensorProductPiEquiv
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j)) :
     normalizedFactors ((minpoly F pb.gen).map (algebraMap F K)) =
       Finset.univ.val.map (fun j => minpoly K (ε (1 ⊗ₜ[F] pb.gen) j)) := by
+  classical
   choose b hb using exists_powerBasis_of_tensorProductPiEquiv pb ε
   have hint (j : ι) : IsIntegral K (ε (1 ⊗ₜ[F] pb.gen) j) :=
     hb j ▸ (b j).isIntegral_gen
@@ -106,20 +113,27 @@ theorem normalizedFactors_map_minpoly_tensorProductPiEquiv
     obtain ⟨j, _, rfl⟩ := Multiset.mem_map.mp hq
     exact minpoly.irreducible (hint j)
 
+open Classical in
+omit [Fintype ι] in
 /-- Every literal monic irreducible divisor occurs as an actual coordinate minimal
 polynomial. This statement preserves occurrence information and needs no separability. -/
-theorem mem_normalizedFactors_map_minpoly_iff_tensorProductPiEquiv
+theorem mem_normalizedFactors_map_minpoly_iff_tensorProductPiEquiv [Finite ι]
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j)) (q : K[X]) :
     q ∈ normalizedFactors ((minpoly F pb.gen).map (algebraMap F K)) ↔
       ∃ j, minpoly K (ε (1 ⊗ₜ[F] pb.gen) j) = q := by
+  classical
+  let : Fintype ι := Fintype.ofFinite ι
   rw [normalizedFactors_map_minpoly_tensorProductPiEquiv pb ε]
   simp
 
+omit [Fintype ι] in
 /-- Separability makes the literal coordinate-factor assignment injective. -/
-theorem minpoly_tensorProductPiEquiv_gen_injective
+theorem minpoly_tensorProductPiEquiv_gen_injective [Finite ι]
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j))
     (hsep : (minpoly F pb.gen).Separable) :
     Function.Injective (fun j => minpoly K (ε (1 ⊗ₜ[F] pb.gen) j)) := by
+  classical
+  let : Fintype ι := Fintype.ofFinite ι
   have hnonzero : (minpoly F pb.gen).map (algebraMap F K) ≠ 0 :=
     ((minpoly.monic pb.isIntegral_gen).map _).ne_zero
   have hnodup := (squarefree_iff_nodup_normalizedFactors hnonzero).mp hsep.map.squarefree
@@ -128,14 +142,18 @@ theorem minpoly_tensorProductPiEquiv_gen_injective
   exact Multiset.inj_on_of_nodup_map hnodup i (Finset.mem_univ i) j
     (Finset.mem_univ j) hij
 
+open Classical in
+omit [Fintype ι] in
 /-- The actual product indices identify with the existing subtype of literal normalized
 factors. The equality specifying the bijection is part of the conclusion. -/
-theorem exists_normalizedFactors_equiv_tensorProductPiEquiv
+theorem exists_normalizedFactors_equiv_tensorProductPiEquiv [Finite ι]
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j))
     (hsep : (minpoly F pb.gen).Separable) :
     ∃ e : ι ≃ {q : K[X] //
         q ∈ normalizedFactors ((minpoly F pb.gen).map (algebraMap F K))},
       ∀ j, (e j).val = minpoly K (ε (1 ⊗ₜ[F] pb.gen) j) := by
+  classical
+  let : Fintype ι := Fintype.ofFinite ι
   let f : ι → {q : K[X] //
       q ∈ normalizedFactors ((minpoly F pb.gen).map (algebraMap F K))} :=
     fun j => ⟨minpoly K (ε (1 ⊗ₜ[F] pb.gen) j),
@@ -150,12 +168,15 @@ theorem exists_normalizedFactors_equiv_tensorProductPiEquiv
       exact ⟨j, Subtype.ext hj⟩
   exact ⟨Equiv.ofBijective f hf, fun _ => rfl⟩
 
+omit [Fintype ι] in
 /-- Every actual coordinate factor occurs with multiplicity one in the separable case. -/
-theorem emultiplicity_minpoly_tensorProductPiEquiv_gen
+theorem emultiplicity_minpoly_tensorProductPiEquiv_gen [Finite ι]
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j))
     (hsep : (minpoly F pb.gen).Separable) (j : ι) :
     emultiplicity (minpoly K (ε (1 ⊗ₜ[F] pb.gen) j))
       ((minpoly F pb.gen).map (algebraMap F K)) = 1 := by
+  classical
+  let : Fintype ι := Fintype.ofFinite ι
   obtain ⟨b, hb⟩ := exists_powerBasis_of_tensorProductPiEquiv pb ε j
   have hint : IsIntegral K (ε (1 ⊗ₜ[F] pb.gen) j) := hb ▸ b.isIntegral_gen
   have hnonzero : (minpoly F pb.gen).map (algebraMap F K) ≠ 0 :=
@@ -168,10 +189,11 @@ theorem emultiplicity_minpoly_tensorProductPiEquiv_gen
     (minpoly.monic hint).normalize_eq_self, Multiset.count_eq_one_of_mem hnodup hmem,
     Nat.cast_one]
 
+omit [Fintype ι] in
 /-- The original quotient and every literal factor quotient identify with the existing
 fields at the specified roots. The whole ring-map square identifies the literal
 `AdjoinRoot.map` with the actual tensor coordinate on every original field element. -/
-theorem exists_adjoinRoot_equiv_tensorProductPiEquiv_map
+theorem exists_adjoinRoot_equiv_tensorProductPiEquiv_map [Finite ι]
     (pb : PowerBasis F E) (ε : (K ⊗[F] E) ≃ₐ[K] (∀ j, D j)) :
     ∃ (g : AdjoinRoot (minpoly F pb.gen) ≃ₐ[F] E)
       (e : ∀ j, AdjoinRoot (minpoly K (ε (1 ⊗ₜ[F] pb.gen) j)) ≃ₐ[K] D j),
@@ -184,6 +206,8 @@ theorem exists_adjoinRoot_equiv_tensorProductPiEquiv_map
             (minpoly_tensorProductPiEquiv_gen_dvd pb ε j)) =
         ((Pi.evalRingHom D j).comp
           (ε.toRingHom.comp Algebra.TensorProduct.includeRight.toRingHom)).comp g.toRingHom := by
+  classical
+  let : Fintype ι := Fintype.ofFinite ι
   let p : F[X] := minpoly F pb.gen
   let q : ι → K[X] := fun j => minpoly K (ε (1 ⊗ₜ[F] pb.gen) j)
   have hp : aeval (AdjoinRoot.root p) (minpoly F pb.gen) = 0 :=
@@ -216,10 +240,12 @@ theorem exists_adjoinRoot_equiv_tensorProductPiEquiv_map
     rw [(e j).commutes, g.commutes]
     have ht : (1 : K) ⊗ₜ[F] algebraMap F E c =
         algebraMap K (K ⊗[F] E) (algebraMap F K c) := by
-      simpa using (RingHom.congr_fun
+      change (1 : K) ⊗ₜ[F] algebraMap F E c = algebraMap F K c ⊗ₜ[F] (1 : E)
+      exact (RingHom.congr_fun
         (Algebra.TensorProduct.includeLeftRingHom_comp_algebraMap
           (R := F) (A := K) (B := E)) c).symm
     rw [ht, ε.commutes]
+    rfl
   · change e j (AdjoinRoot.map (algebraMap F K) p (q j)
         (minpoly_tensorProductPiEquiv_gen_dvd pb ε j) (AdjoinRoot.root p)) =
       ε (1 ⊗ₜ[F] g (AdjoinRoot.root p)) j

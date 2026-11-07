@@ -15,8 +15,6 @@ public import Mathlib.RingTheory.TensorProduct.Maps
 /-!
 # The actual iterated auxiliary normalization branches
 
-SOURCE ONLY: this scratch source has not been elaborated, compiled, or linted.
-
 The normalization carriers are literally `integralClosure R K` and
 `integralClosure (Localization.AtPrime i.val) M`. Both completions are the existing
 `AdicCompletion.BranchCompletion`; both fraction fields are `FractionRing` of those
@@ -76,6 +74,12 @@ namespace AdicCompletion
 
 open IsLocalRing
 
+-- Keep actual branch-index factorization data opaque during instance synthesis.
+attribute [local irreducible] UniqueFactorizationMonoid.normalizedFactors
+  UniqueFactorizationMonoid.factors
+
+set_option maxHeartbeats 800000 in
+-- The two native normalization stages require checking a large dependent branch statement.
 /-- The actual auxiliary branches have the full tensor decomposition with the native
 horizontal integral maps, both field-coordinate squares, localness, and the whole
 original-fraction triangle. The final equality identifies the right coordinate with
@@ -101,52 +105,68 @@ theorem exists_auxiliaryBranchTensorEquiv
     [FiniteDimensional K M] [Algebra.IsSeparable K M]
     (eta : K ⊗[F] E ≃ₐ[K] M)
     (heta : ∀ e : E, eta (1 ⊗ₜ[F] e) = algebraMap E M e) :
-    let A := integralClosure R K
-    letI : IsDedekindDomain A := integralClosure.isDedekindDomain R F K
-    letI : IsFractionRing A K := integralClosure.isFractionRing_of_finite_extension F K
-    letI : DecidableEq (Ideal A) := Classical.decEq _
+    let A : Type uK := integralClosure R K
+    -- Share each native ring's semiring parent before forming dependent branch types.
+    let _ : CommRing A := inferInstance
+    let _ : CommSemiring A := CommRing.toCommSemiring
+    let _ : IsDedekindDomain A := integralClosure.isDedekindDomain R F K
+    let _ : IsFractionRing A K := integralClosure.isFractionRing_of_finite_extension F K
+    let _ : DecidableEq (Ideal A) := Classical.decEq _
     ∀ i : IdealBranch ((maximalIdeal R).map (algebraMap R A)),
     let B := Localization.AtPrime i.val
-    letI := originalBranchFractionAlgebra A K i
-    letI := originalBranchFractionTower A K i
-    letI := originalBranchIsFractionRing A K i
-    letI : IsScalarTower R B K := IsScalarTower.of_algebraMap_eq fun r => by
+    let _ : CommRing B := inferInstance
+    let _ : CommSemiring B := CommRing.toCommSemiring
+    let _ : Algebra B K := originalBranchFractionAlgebra A K i
+    let _ : IsScalarTower A B K := originalBranchFractionTower A K i
+    let _ : IsFractionRing B K := originalBranchIsFractionRing A K i
+    let _ : FaithfulSMul B K :=
+      (faithfulSMul_iff_algebraMap_injective B K).mpr (IsFractionRing.injective B K)
+    let _ : IsScalarTower R B K := IsScalarTower.of_algebraMap_eq fun r => by
       rw [IsScalarTower.algebraMap_apply R A K,
         IsScalarTower.algebraMap_apply R A B,
         ← IsScalarTower.algebraMap_apply A B K]
-    letI : Algebra B M := ((algebraMap K M).comp (algebraMap B K)).toAlgebra
-    letI : IsScalarTower B K M := IsScalarTower.of_algebraMap_eq' rfl
-    letI : IsScalarTower R B M := IsScalarTower.of_algebraMap_eq fun r => by
+    let _ : Algebra B M := ((algebraMap K M).comp (algebraMap B K)).toAlgebra
+    let _ : IsScalarTower B K M := IsScalarTower.of_algebraMap_eq' rfl
+    let _ : IsScalarTower R B M := IsScalarTower.of_algebraMap_eq fun r => by
       rw [IsScalarTower.algebraMap_apply R K M,
         IsScalarTower.algebraMap_apply R B K,
         ← IsScalarTower.algebraMap_apply B K M]
-    let C := integralClosure B M
-    letI : IsDedekindDomain C := integralClosure.isDedekindDomain B K M
-    letI : Module.Finite B C := IsIntegralClosure.finite B K M C
-    letI : Module.IsTorsionFree B M := Module.IsTorsionFree.trans_faithfulSMul B K M
-    letI : Module.IsTorsionFree B C := IsIntegralClosure.isTorsionFree B M
-    letI : IsFractionRing C M := integralClosure.isFractionRing_of_finite_extension K M
-    letI : DecidableEq (Ideal C) := Classical.decEq _
+    let C : Type uM := integralClosure B M
+    let _ : CommRing C := inferInstance
+    let _ : CommSemiring C := CommRing.toCommSemiring
+    let _ : IsDedekindDomain C := integralClosure.isDedekindDomain B K M
+    let _ : Module.Finite B C := IsIntegralClosure.finite B K M C
+    let _ : Module.IsTorsionFree B M := Module.IsTorsionFree.trans_faithfulSMul B K M
+    let _ : Module.IsTorsionFree B C := IsIntegralClosure.isTorsionFree B M
+    let _ : IsFractionRing C M := integralClosure.isFractionRing_of_finite_extension K M
+    let _ : DecidableEq (Ideal C) := Classical.decEq _
     let J := (maximalIdeal B).map (algebraMap B C)
-    let T := BranchCompletion ((maximalIdeal R).map (algebraMap R A)) i
+    let T := AdicCompletion (maximalIdeal B) B
     let L := FractionRing T
     let U := fun j : IdealBranch J => BranchCompletion J j
     let D := fun j : IdealBranch J => FractionRing (U j)
-    letI := fractionCompletionAlgebra B K
-    letI : Algebra F L := ((algebraMap K L).comp (algebraMap F K)).toAlgebra
-    letI : IsScalarTower F K L := IsScalarTower.of_algebraMap_eq' rfl
-    letI := fun j : IdealBranch J => localCompletionBaseAlgebra (S := C) (maximalIdeal B) j
-    letI := fun j : IdealBranch J => localCompletionFractionAlgebra B C j
-    letI : Algebra R C := ((algebraMap B C).comp (algebraMap R B)).toAlgebra
-    letI : Algebra S C := Stacks.EppTheorem.algebraIntegralClosureBase R B S M
+    let delta := fractionTensorEquivLocalFractionFields B C K M
+    let _ : Algebra K L := fractionCompletionAlgebra B K
+    let _ : SMul K L := Algebra.toSMul
+    let _ : Module K L := Algebra.toModule
+    let _ : Algebra F L := ((algebraMap K L).comp (algebraMap F K)).toAlgebra
+    let _ : SMul F L := Algebra.toSMul
+    let _ : Module F L := Algebra.toModule
+    let _ : IsScalarTower F K L := IsScalarTower.of_algebraMap_eq' rfl
+    let aTU : (j : IdealBranch J) → Algebra T (U j) := fun j =>
+      localCompletionBaseAlgebra (R := B) (S := C) (maximalIdeal B) j
+    let _ : (j : IdealBranch J) → SMul T (U j) := fun j => (aTU j).toSMul
+    let _ : (j : IdealBranch J) → Module T (U j) := fun j =>
+      @Algebra.toModule T (U j) _ _ (aTU j)
+    let _ := fun j : IdealBranch J => localCompletionFractionAlgebra B C j
+    let _ : Algebra R C := ((algebraMap B C).comp (algebraMap R B)).toAlgebra
+    let _ : Algebra S C := Stacks.EppTheorem.algebraIntegralClosureBase R B S M
     ∃ epsilon : L ⊗[F] E ≃ₐ[L] ∀ j : IdealBranch J, D j,
       IsScalarTower R F L ∧
       (∀ (e : E) (j : IdealBranch J), epsilon (1 ⊗ₜ[F] e) j =
-        fractionTensorEquivLocalFractionFields B C K M
-          (1 ⊗ₜ[K] algebraMap E M e) j) ∧
+        delta.toFun ((1 : L) ⊗ₜ[K] algebraMap E M e) j) ∧
       (∀ (k : K) (j : IdealBranch J),
-        fractionTensorEquivLocalFractionFields B C K M
-            (1 ⊗ₜ[K] algebraMap K M k) j =
+        delta.toFun ((1 : L) ⊗ₜ[K] algebraMap K M k) j =
           algebraMap L (D j) (algebraMap K L k)) ∧
       (∀ (s : S) (j : IdealBranch J),
         epsilon (1 ⊗ₜ[F] algebraMap S E s) j =
@@ -164,53 +184,17 @@ theorem exists_auxiliaryBranchTensorEquiv
               (epsilon.toRingHom.comp
                 (Algebra.TensorProduct.includeRight : E →ₐ[F] L ⊗[F] E).toRingHom) =
             IsFractionRing.lift (K := E) (hinj j)) ∧
-          (letI : Algebra E (D j) := (IsFractionRing.lift (K := E) (hinj j)).toAlgebra
+          (let _ : Algebra E (D j) := (IsFractionRing.lift (K := E) (hinj j)).toAlgebra
+           let _ : SMul E (D j) := Algebra.toSMul
            IsScalarTower S E (D j)) := by
   classical
-  let A := integralClosure R K
-  letI : IsDedekindDomain A := integralClosure.isDedekindDomain R F K
-  letI : IsFractionRing A K := integralClosure.isFractionRing_of_finite_extension F K
-  letI : DecidableEq (Ideal A) := Classical.decEq _
-  change ∀ i : IdealBranch ((maximalIdeal R).map (algebraMap R A)), _
-  intro i
-  let B := Localization.AtPrime i.val
-  letI := originalBranchFractionAlgebra A K i
-  letI := originalBranchFractionTower A K i
-  letI := originalBranchIsFractionRing A K i
-  haveI : IsScalarTower R B K := IsScalarTower.of_algebraMap_eq fun r => by
-    rw [IsScalarTower.algebraMap_apply R A K,
-      IsScalarTower.algebraMap_apply R A B,
-      ← IsScalarTower.algebraMap_apply A B K]
-  letI : Algebra B M := ((algebraMap K M).comp (algebraMap B K)).toAlgebra
-  haveI : IsScalarTower B K M := IsScalarTower.of_algebraMap_eq' rfl
-  haveI : IsScalarTower R B M := IsScalarTower.of_algebraMap_eq fun r => by
-    rw [IsScalarTower.algebraMap_apply R K M,
-      IsScalarTower.algebraMap_apply R B K,
-      ← IsScalarTower.algebraMap_apply B K M]
-  let C := integralClosure B M
-  letI : IsDedekindDomain C := integralClosure.isDedekindDomain B K M
-  haveI : Module.Finite B C := IsIntegralClosure.finite B K M C
-  haveI : Module.IsTorsionFree B M := Module.IsTorsionFree.trans_faithfulSMul B K M
-  haveI : Module.IsTorsionFree B C := IsIntegralClosure.isTorsionFree B M
-  letI : IsFractionRing C M := integralClosure.isFractionRing_of_finite_extension K M
-  letI : DecidableEq (Ideal C) := Classical.decEq _
-  let J := (maximalIdeal B).map (algebraMap B C)
-  let T := BranchCompletion ((maximalIdeal R).map (algebraMap R A)) i
-  let L := FractionRing T
-  let U := fun j : IdealBranch J => BranchCompletion J j
-  let D := fun j : IdealBranch J => FractionRing (U j)
-  letI := fractionCompletionAlgebra B K
-  haveI := fractionCompletionIsScalarTower B K
-  letI : Algebra F L := ((algebraMap K L).comp (algebraMap F K)).toAlgebra
-  haveI : IsScalarTower F K L := IsScalarTower.of_algebraMap_eq' rfl
-  letI := fun j : IdealBranch J => localCompletionBaseAlgebra (S := C) (maximalIdeal B) j
-  letI := fun j : IdealBranch J => localCompletionFractionAlgebra B C j
-  letI : Algebra R C := ((algebraMap B C).comp (algebraMap R B)).toAlgebra
-  haveI : IsScalarTower R B C := IsScalarTower.of_algebraMap_eq' rfl
-  letI : Algebra S C := Stacks.EppTheorem.algebraIntegralClosureBase R B S M
-  haveI : IsScalarTower S C M :=
+  intro A _ _ _ _ _ i B _ _ _ _ _ _ _ _ _ _ C _ _ _ _ _ _ _ _
+    J T L U D delta _ _ _ _ _ _ _ _ _ _ _ _ _
+  have : IsScalarTower B K L := fractionCompletionIsScalarTower B K
+  have : IsScalarTower R B C := IsScalarTower.of_algebraMap_eq' rfl
+  have : IsScalarTower S C M :=
     Stacks.EppTheorem.isScalarTower_base_integralClosure_factor R B S M
-  haveI : IsScalarTower R K L := IsScalarTower.of_algebraMap_eq fun r => by
+  have : IsScalarTower R K L := IsScalarTower.of_algebraMap_eq fun r => by
     rw [IsScalarTower.algebraMap_apply R B L,
       IsScalarTower.algebraMap_apply B K L,
       ← IsScalarTower.algebraMap_apply R B K]
@@ -218,8 +202,6 @@ theorem exists_auxiliaryBranchTensorEquiv
     rw [IsScalarTower.algebraMap_apply R K L,
       IsScalarTower.algebraMap_apply R F K,
       ← IsScalarTower.algebraMap_apply F K L]
-  let delta : L ⊗[K] M ≃ₐ[L] ∀ j : IdealBranch J, D j :=
-    fractionTensorEquivLocalFractionFields B C K M
   let epsilon : L ⊗[F] E ≃ₐ[L] ∀ j : IdealBranch J, D j :=
     (Algebra.TensorProduct.cancelBaseChange F K L L E).symm.trans
       ((Algebra.TensorProduct.congr (AlgEquiv.refl : L ≃ₐ[L] L) eta).trans delta)
@@ -255,19 +237,19 @@ theorem exists_auxiliaryBranchTensorEquiv
         Stacks.EppTheorem.algebraMap_integralClosureBase_eq R B S M r,
         ← IsScalarTower.algebraMap_apply S C (U j)]
   have hcompletedTower (j : IdealBranch J) : IsScalarTower R T (U j) := by
-    haveI := localCompletionBaseIsScalarTower (S := C) (maximalIdeal B) j
+    have := localCompletionBaseIsScalarTower (S := C) (maximalIdeal B) j
     exact IsScalarTower.of_algebraMap_eq fun r => by
       rw [IsScalarTower.algebraMap_apply R B (U j),
         IsScalarTower.algebraMap_apply B T (U j),
         ← IsScalarTower.algebraMap_apply R B T]
   have hlocal (j : IdealBranch J) : IsLocalHom (algebraMap S (U j)) := by
-    haveI : IsLocalHom (algebraMap B (U j)) := by
+    have : IsLocalHom (algebraMap B (U j)) := by
       rw [IsScalarTower.algebraMap_eq B (Localization.AtPrime j.val) (U j)]
       infer_instance
-    haveI : IsLocalHom (algebraMap R (U j)) := by
+    have : IsLocalHom (algebraMap R (U j)) := by
       rw [IsScalarTower.algebraMap_eq R B (U j)]
       infer_instance
-    haveI := hsourceTower j
+    have := hsourceTower j
     exact Stacks.EppTheorem.isLocalHom_algebraMap_of_tower R S (U j)
   have hcomplete : HenselianLocalRing T ∧ ∀ j : IdealBranch J,
       Module.Finite T (U j) ∧ HenselianLocalRing (U j) := by
@@ -279,20 +261,20 @@ theorem exists_auxiliaryBranchTensorEquiv
   have hchar (hκ : CharZero (ResidueField R)) : CharZero (ResidueField T) ∧
       ∀ j : IdealBranch J, CharZero (ResidueField (U j)) ∧
         ∀ n : ℕ, 0 < n → IsUnit (n : U j) := by
-    letI := hκ
-    haveI : IsLocalHom (algebraMap R T) := by
+    let := hκ
+    have : IsLocalHom (algebraMap R T) := by
       rw [IsScalarTower.algebraMap_eq R B T]
       infer_instance
     have hT : CharZero (ResidueField T) :=
       charZero_of_injective_ringHom (ResidueField.map (algebraMap R T)).injective
     refine ⟨hT, fun j => ?_⟩
-    haveI : IsLocalHom (algebraMap B (U j)) := by
+    have : IsLocalHom (algebraMap B (U j)) := by
       rw [IsScalarTower.algebraMap_eq B (Localization.AtPrime j.val) (U j)]
       infer_instance
-    haveI : IsLocalHom (algebraMap R (U j)) := by
+    have : IsLocalHom (algebraMap R (U j)) := by
       rw [IsScalarTower.algebraMap_eq R B (U j)]
       infer_instance
-    letI : CharZero (ResidueField (U j)) :=
+    let : CharZero (ResidueField (U j)) :=
       charZero_of_injective_ringHom (ResidueField.map (algebraMap R (U j))).injective
     exact ⟨inferInstance, fun n hn =>
       HenselianLocalRing.PrincipalRoots.isUnit_natCast_of_residue_charZero n hn⟩
@@ -321,8 +303,8 @@ theorem exists_auxiliaryBranchTensorEquiv
       IsFractionRing.lift (K := E) (hinjSD j) (algebraMap S E s)
     rw [hintegral, IsFractionRing.lift_algebraMap,
       ← IsScalarTower.algebraMap_apply S (U j) (D j)]
-  · letI : Algebra E (D j) := (IsFractionRing.lift (K := E) (hinjSD j)).toAlgebra
-    exact IsScalarTower.of_algebraMap_eq fun s =>
-      (IsFractionRing.lift_algebraMap (hinjSD j) s).symm
+  · intro _ _
+    exact IsScalarTower.of_algebraMap_eq (R := S) (S := E) (A := D j) fun s =>
+      (IsFractionRing.lift_algebraMap (K := E) (hinjSD j) s).symm
 
 end AdicCompletion

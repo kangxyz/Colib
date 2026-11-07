@@ -62,12 +62,12 @@ theorem exists_coprime_smul_norm_residue_difference_eq_zero_of_charZero
           milnorKNorm (ResidueField R) (ResidueField S) n
             (dvrMilnorTameSymbol' S E n x)) = 0 := by
   classical
-  letI : CharZero R := RingHom.charZero (residue R)
-  letI : CharZero F := IsFractionRing.charZero_of_isFractionRing R
+  let : CharZero R := RingHom.charZero (residue R)
+  let : CharZero F := IsFractionRing.charZero_of_isFractionRing R
   let pb := Field.powerBasisOfFiniteOfSeparable F E
   let p : F[X] := minpoly F pb.gen
   have hpmonic : p.Monic := minpoly.monic pb.isIntegral_gen
-  letI : Fact (Irreducible p) := ⟨minpoly.irreducible pb.isIntegral_gen⟩
+  let : Fact (Irreducible p) := ⟨minpoly.irreducible pb.isIntegral_gen⟩
   have hdegree : p.natDegree = finrank F E := pb.natDegree_minpoly.trans pb.finrank.symm
   have hroot : aeval (AdjoinRoot.root p) (minpoly F pb.gen) = 0 :=
     (AdjoinRoot.aeval_eq (f := p) p).trans (AdjoinRoot.mk_self (f := p))
@@ -77,32 +77,32 @@ theorem exists_coprime_smul_norm_residue_difference_eq_zero_of_charZero
     milnorKTheoryMap g.symm.toRingHom (n + 1) x
   obtain ⟨s, _hs, K, hfinite, hseparable, hcoprime, _hsplit, hq, hgen⟩ :=
     exists_finite_coprime_milnorK_mixed_expansion p hpmonic (hdegree.symm ▸ hp) n y
-  letI : FiniteDimensional F K := hfinite
-  letI : Algebra.IsSeparable F K := hseparable
-  letI : CharZero K := charZero_of_injective_algebraMap (algebraMap F K).injective
-  letI : Fact (Irreducible (p.map (algebraMap F K))) := ⟨hq⟩
+  let : FiniteDimensional F K := hfinite
+  let : Algebra.IsSeparable F K := hseparable
+  let : CharZero K := charZero_of_injective_algebraMap (algebraMap F K).injective
+  let : Fact (Irreducible (p.map (algebraMap F K))) := ⟨hq⟩
   dsimp only at hgen
   obtain ⟨c, hc⟩ := hgen
   let M := AdjoinRoot (p.map (algebraMap F K))
   let jroot : AdjoinRoot p →+* M :=
     AdjoinRoot.map (algebraMap F K) p (p.map (algebraMap F K)) dvd_rfl
   let j : E →+* M := jroot.comp g.symm.toRingHom
-  letI : Algebra E M := j.toAlgebra
-  letI : FiniteDimensional K M :=
+  let : Algebra E M := j.toAlgebra
+  let : FiniteDimensional K M :=
     (AdjoinRoot.powerBasis' (hpmonic.map (algebraMap F K))).finite
-  letI : Algebra.IsSeparable K M := inferInstance
-  letI : Algebra R K := ((algebraMap F K).comp (algebraMap R F)).toAlgebra
-  haveI : IsScalarTower R F K := IsScalarTower.of_algebraMap_eq' rfl
-  letI : Algebra R M := ((algebraMap K M).comp (algebraMap R K)).toAlgebra
-  haveI : IsScalarTower R K M := IsScalarTower.of_algebraMap_eq' rfl
-  letI : Algebra S M := (j.comp (algebraMap S E)).toAlgebra
-  haveI : IsScalarTower S E M := IsScalarTower.of_algebraMap_eq' rfl
+  let : Algebra.IsSeparable K M := inferInstance
+  let : Algebra R K := ((algebraMap F K).comp (algebraMap R F)).toAlgebra
+  have : IsScalarTower R F K := IsScalarTower.of_algebraMap_eq' rfl
+  let : Algebra R M := ((algebraMap K M).comp (algebraMap R K)).toAlgebra
+  have : IsScalarTower R K M := IsScalarTower.of_algebraMap_eq' rfl
+  let : Algebra S M := (j.comp (algebraMap S E)).toAlgebra
+  have : IsScalarTower S E M := IsScalarTower.of_algebraMap_eq' rfl
   have hcoefficient (a : F) :
       j (algebraMap F E a) = algebraMap K M (algebraMap F K a) := by
     change jroot (g.symm (algebraMap F E a)) = _
     rw [g.symm.commutes]
     exact AdjoinRoot.map_of (algebraMap F K) p (p.map (algebraMap F K)) dvd_rfl a
-  haveI : IsScalarTower R S M := IsScalarTower.of_algebraMap_eq fun r => by
+  have : IsScalarTower R S M := IsScalarTower.of_algebraMap_eq fun r => by
     change algebraMap K M (algebraMap F K (algebraMap R F r)) =
       j (algebraMap S E (algebraMap R S r))
     rw [IsScalarTower.algebraMap_apply R S E,
@@ -122,7 +122,7 @@ theorem exists_coprime_smul_norm_residue_difference_eq_zero_of_charZero
       milnorKMixedSpan (algebraMap K M) n := by
     change milnorKTheoryMap (algebraMap E M) (n + 1) x ∈ Submodule.span ℤ _
     exact Finsupp.mem_span_range_iff_exists_finsupp.mpr ⟨c, hc.trans hmap.symm⟩
-  letI : DecidableEq (Ideal (integralClosure R K)) := Classical.decEq _
+  let : DecidableEq (Ideal (integralClosure R K)) := Classical.decEq _
   have hbranch :=
     ramification_smul_restrict_norm_residue_difference_eq_zero_of_auxiliary_mixed
       R S F E K M eta heta hp n x hmixed

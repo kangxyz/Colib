@@ -49,7 +49,7 @@ variable (R S : Type u)
   [CommRing S] [IsDedekindDomain S] [Algebra R S]
   [Module.Finite R S] [Module.IsTorsionFree R S] [DecidableEq (Ideal S)]
 
-local notation "J" => (maximalIdeal R).map (algebraMap R S)
+local notation "J" => Ideal.map (algebraMap R S) (maximalIdeal R)
 local notation "Rhat" => AdicCompletion (maximalIdeal R) R
 local notation "D" => fun q : IdealBranch J => BranchCompletion J q
 
@@ -93,7 +93,7 @@ variable (R S F E : Type u)
   [Field E] [Algebra R E] [Algebra S E] [IsScalarTower R S E] [IsFractionRing S E]
   [Algebra F E] [IsScalarTower R F E]
 
-local notation "J" => (maximalIdeal R).map (algebraMap R S)
+local notation "J" => Ideal.map (algebraMap R S) (maximalIdeal R)
 local notation "D" => fun q : AdicCompletion.IdealBranch J =>
   AdicCompletion.BranchCompletion J q
 

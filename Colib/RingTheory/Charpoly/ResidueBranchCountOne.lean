@@ -45,7 +45,7 @@ variable (R F S E T L : Type*)
   [Algebra R T] [IsLocalHom (algebraMap R T)] [Algebra T L]
   [IsFractionRing T L] [Algebra F L] [Algebra R L]
   [IsScalarTower R T L] [IsScalarTower R F L]
-  {ι : Type*} [Fintype ι] (D U : ι → Type*)
+  {ι : Type*} [Finite ι] (D U : ι → Type*)
   [∀ i, Field (D i)] [∀ i, CommRing (U i)] [∀ i, IsDomain (U i)]
   [∀ i, IsDiscreteValuationRing (U i)]
   [∀ i, Algebra L (D i)] [∀ i, Algebra T (U i)]
@@ -57,7 +57,7 @@ variable (R F S E T L : Type*)
   [∀ i, Algebra R (U i)] [∀ i, Algebra S (U i)]
   [∀ i, IsScalarTower R S (U i)] [∀ i, IsScalarTower R T (U i)]
   [∀ i, IsLocalHom (algebraMap S (U i))]
-  [CharZero (ResidueField R)] [DecidableEq (ResidueField T)]
+  [CharZero (ResidueField R)]
 
 
 /-- With original ramification one, the actual reduced integral generators yield all
@@ -83,6 +83,7 @@ theorem residue_branches_of_ramification_eq_one
         (algebraMap (ResidueField R) (ResidueField T)) →
       ∃! i, minpoly (ResidueField T) (residue (U i) (algebraMap S (U i) b)) = q) := by
   classical
+  let : Fintype ι := Fintype.ofFinite ι
   let : ∀ i, IsLocalHom (algebraMap R (U i)) := fun i => by
     rw [IsScalarTower.algebraMap_eq R S (U i)]
     infer_instance
@@ -118,7 +119,7 @@ theorem residue_branches_of_ramification_eq_one
     have hle := Finset.single_le_sum
       (f := fun j => if p j = p i then d j * f j else 0)
       (fun j (_ : j ∈ Finset.univ) => Nat.zero_le _) (Finset.mem_univ i)
-    rw [if_pos rfl, hcount (p i) (hp i).1 (hp i).2 (hpdvd i)] at hle
+    rw [ite_eq_left rfl, hcount (p i) (hp i).1 (hp i).2 (hpdvd i)] at hle
     exact Nat.le_antisymm hle (Nat.mul_pos (hdpos i) (hfpos i))
   have hinj : Function.Injective p := by
     intro i j hij
@@ -127,7 +128,7 @@ theorem residue_branches_of_ramification_eq_one
       (f := fun k => if p k = p i then d k * f k else 0)
       (fun k (_ : k ∈ Finset.univ) => Nat.zero_le _)
       (Finset.mem_univ i) (Finset.mem_univ j) hne
-    rw [if_pos rfl, if_pos hij.symm, hw i, hw j,
+    rw [ite_eq_left rfl, ite_eq_left hij.symm, hw i, hw j,
       hcount (p i) (hp i).1 (hp i).2 (hpdvd i)] at hle
     exact (by decide : ¬ (1 + 1 ≤ (1 : ℕ))) hle
   refine ⟨fun i => ⟨Nat.eq_one_of_mul_eq_one_right (hw i),
@@ -137,7 +138,7 @@ theorem residue_branches_of_ramification_eq_one
     by_contra hn
     have hnone : ∀ i, p i ≠ q := fun i hi => hn ⟨i, hi⟩
     have h := hcount q hq hqirr hqdvd
-    simp only [if_neg (hnone _), Finset.sum_const_zero] at h
+    simp only [ite_eq_right (hnone _), Finset.sum_const_zero] at h
     exact Nat.zero_ne_one h
   obtain ⟨i, hi⟩ := hex
   exact ⟨i, hi, fun j hj => hinj (hj.trans hi.symm)⟩

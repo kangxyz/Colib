@@ -63,7 +63,6 @@ variable (R S T : Type u)
   [∀ i, Algebra T (D i)] [∀ i, Algebra K (D i)]
   [∀ i, IsScalarTower T (U i) (D i)] [∀ i, IsScalarTower T K (D i)]
   [∀ i, FiniteDimensional K (D i)]
-
   [CharZero (ResidueField R)]
 
 /-- All actual upper residue branches satisfy the lower weighted chosen-norm identity.

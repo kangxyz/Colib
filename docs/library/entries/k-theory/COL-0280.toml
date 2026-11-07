@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0280"
+title = "Original Quillen K₂ of finite fields"
+kind = "theorem"
+section = "quillen-k-theory"
+order = 320
+statement = "The original right-projective Quillen K₂ group and upper finite-module Quillen K₂ group have one element over every finite field. Every class is the identity."
+scope = "The actual exact-category K 2 of right finite projective modules and SmallK.{u+1} of the abelian exact structure on FGModuleCat.{u} F. Surjectivity of the original native Milnor comparison and integral Milnor K₂ vanishing supply the proof. Includes F₂ and F₃, with no external perfectness or generation premise. Lower-universe G₂ and coherent scheme G₂ are separate comparisons."
+review = "author_checked"
+provenance = "quillen"

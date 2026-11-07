@@ -15,6 +15,8 @@ open CategoryTheory CategoryTheory.ExactCategory
 
 noncomputable section
 
+attribute [local instance] Abelian.hasFiniteBiproducts
+
 namespace AlgebraicGeometry.Scheme.Tests
 
 -- The categorical comparisons retain the native module components without Noetherian premises.

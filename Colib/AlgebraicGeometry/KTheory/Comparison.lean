@@ -28,6 +28,8 @@ universe u
 
 open CategoryTheory CategoryTheory.ExactCategory
 
+attribute [local instance] Abelian.hasFiniteBiproducts
+
 namespace AlgebraicGeometry.Scheme
 
 /-- The canonical comparison induced by the actual exact inclusion. -/

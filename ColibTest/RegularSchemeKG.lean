@@ -15,6 +15,8 @@ open CategoryTheory CategoryTheory.ExactCategory
 
 noncomputable section
 
+attribute [local instance] Abelian.hasFiniteBiproducts
+
 namespace AlgebraicGeometry.Scheme.Tests
 
 variable (X : Scheme.{u}) [CompactSpace X]

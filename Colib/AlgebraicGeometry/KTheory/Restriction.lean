@@ -29,6 +29,8 @@ universe u
 
 open CategoryTheory CategoryTheory.ExactCategory
 
+attribute [local instance] Abelian.hasFiniteBiproducts
+
 namespace AlgebraicGeometry.Scheme
 
 /-- The canonical K-map of actual geometric open restriction. -/

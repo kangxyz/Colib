@@ -31,6 +31,8 @@ universe u
 
 open CategoryTheory CategoryTheory.ExactCategory
 
+attribute [local instance] Abelian.hasFiniteBiproducts
+
 namespace AlgebraicGeometry.Scheme
 
 /-- Scheme K-theory of actual finite locally free module sheaves, in the

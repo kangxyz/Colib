@@ -29,6 +29,8 @@ universe u
 
 open CategoryTheory CategoryTheory.ExactCategory
 
+attribute [local instance] Abelian.hasFiniteBiproducts
+
 namespace AlgebraicGeometry.Scheme.Modules
 
 /-- Actual finite coherent resolutions imply bijectivity of the original canonical map. -/

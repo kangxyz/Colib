@@ -362,6 +362,43 @@ jobs:
         if: ${{ steps.cache-mode.outputs.layered == 'true' }}
         working-directory: ${{ inputs.package-directory }}
         run: python3 .github/ci-cache/checkpoint.py supported --root . --materialized
+      - name: Restore verified Stacks baseline
+        if: ${{ steps.cache-mode.outputs.layered == 'true' }}
+        continue-on-error: true
+        timeout-minutes: 8
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STACKS_REVISION: ${{ steps.cache-layout.outputs.stacks-revision }}
+          STACKS_CONTEXT: ${{ steps.cache-mode.outputs.stacks_context }}
+        run: |
+          tag="stacks-checkpoint-$STACKS_REVISION-${STACKS_CONTEXT:0:16}"
+          asset=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$tag" --jq '
+            select(.draft == false)
+            | [.assets[] | select(.state == "uploaded" and
+                (.name | test("^stacks-checkpoint-[0-9]+-[0-9]+[.]tar[.]zst$")))]
+            | max_by([.size, .created_at])
+            | select(. != null)
+            | [.name, .size] | @tsv' 2>/dev/null) || exit 0
+          test -n "$asset" || exit 0
+          IFS=$'\t' read -r asset_name asset_size <<< "$asset"
+          checkpoint="$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/stacks.tar.zst"
+          if test -f "$checkpoint" && test "$(stat -c %s "$checkpoint")" -ge "$asset_size"; then
+            exit 0
+          fi
+          directory=$(mktemp -d "$RUNNER_TEMP/stacks-baseline.XXXXXX")
+          trap 'rm -rf -- "$directory"' EXIT
+          baseline="$directory/stacks.tar.zst"
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --pattern "$asset_name" --output "$baseline"
+          test "$(stat -c %s "$baseline")" = "$asset_size"
+          printf 'Using verified Stacks baseline %s (%s bytes).\n' "$asset_name" "$asset_size"
+          if test -f "$checkpoint"; then
+            # Restore the verified baseline before overlaying newer partial output.
+            python3 .github/ci-cache/checkpoint.py restore --root . --layer stacks \
+                --input "$baseline" --native-cache "$LAKE_CACHE_DIR"
+          else
+            mv -- "$baseline" "$checkpoint"
+          fi
       - name: Apply optional compilation checkpoints
         if: ${{ steps.cache-mode.outputs.layered == 'true' }}
         working-directory: ${{ inputs.package-directory }}

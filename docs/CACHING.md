@@ -34,6 +34,12 @@ compilation without changing Colib's root/tool/dependency caches.
 
 ## Reuse and transfer
 
+When a matching published Stacks checkpoint is larger than the optional warm
+archive, Build restores the published checkpoint as a baseline. It then overlays
+any warm archive to keep newer completed outputs. The release tag binds the
+Stacks revision and checkpoint context, and the restore helper validates the
+archive against the full context before applying it.
+
 The standard Actions cache directory is `.lake/ci-checkpoints/`, relative to
 the repository checkout. Its four archives are `root.tar.zst`,
 `dependencies.tar.zst`, `stacks.tar.zst` and `tools.tar.zst`. The workflow

@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.Quillen.Field.SteinbergFiberComparison
+import Colib.RingTheory.KTheory.Quillen.Field.SteinbergFiberComparison
 
 /-! Regression checks for the actual stable fiber and original right-module Q.K₂.
 No perfectness, Matsumoto conclusion or supplied comparison is a hypothesis. -/

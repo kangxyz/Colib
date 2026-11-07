@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.DVR",
   "source_sha256": "75ae5f7cceeab0d9e00d53d121cf396bc7707642eab18b2c28e2ca12b5f06e3b",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.PrincipalUnits",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.PrincipalUnits",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -13,11 +13,11 @@
     "license": "Apache-2.0"
   },
   "scope": "Only principal-unit vanishing, at an arbitrary tuple position, for the existing native DVR tame residue. Does not claim migration of the full Residue directory.",
-  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; n : Nat, tuple a : Fin (n+1) \u2192 F\u02e3, position i, unit u : R\u02e3 with a i equal to its field image and residue unit equal to 1. Other tuple positions are arbitrary fraction-field units. Universes u/v independent.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; n : Nat, tuple a : Fin (n+1) → Fˣ, position i, unit u : Rˣ with a i equal to its field image and residue unit equal to 1. Other tuple positions are arbitrary fraction-field units. Universes u/v independent.",
   "declarations": [
     {
       "source": "MilnorK.DVR.residue_principal_ring_unit",
-      "source_lines": "89\u2013102",
+      "source_lines": "89–102",
       "target": "Stacks.Chow.dvrMilnorTameSymbol'_tuple_principal_unit",
       "disposition": "direct proof rewrite with canonical native residue; no alternate DVR data or model",
       "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."

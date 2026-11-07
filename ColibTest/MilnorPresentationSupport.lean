@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.PresentationSupport
+import Colib.RingTheory.KTheory.MilnorK.Norm.PresentationSupport
 
 /-!
 Consumers of supporting comparisons, not of full presentation independence.

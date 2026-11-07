@@ -97,3 +97,8 @@ attribute [colib_tag "COL-0072",
     "background" "Explicit normalized Q-functor and pi-map identification used for composition"]
   CategoryTheory.ExactCategory.ExactFunctor.normalizedQ_map_point
   CategoryTheory.ExactCategory.ExactFunctor.KMap_eq_piMap
+
+attribute [colib_ref "Quillen1973"
+    "Section 2, equation (6) and following paragraph, p. 103" "adaptation"
+    "Composition of the original zero-based maps, with the explicit rebasing retained"]
+  CategoryTheory.ExactCategory.ExactFunctor.KMap_comp

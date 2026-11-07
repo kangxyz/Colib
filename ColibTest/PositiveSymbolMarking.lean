@@ -5,7 +5,7 @@ Authors: OpenAI
 -/
 module
 
-import Colib.KTheory.Quillen.Field.PositiveSymbolMarking
+import Colib.RingTheory.KTheory.Quillen.Field.PositiveSymbolMarking
 import Colib.Topology.Homotopy.HomotopyGroup.PeriodicLoopFamilies
 import Mathlib.Algebra.Field.ZMod
 

@@ -58,3 +58,9 @@ attribute [colib_tag "COL-0240",
   CategoryTheory.ExactCategory.ExactStructure.grothendieckToKZero_injective
   CategoryTheory.ExactCategory.ExactStructure.grothendieckToKZero_bijective
   CategoryTheory.ExactCategory.ExactStructure.grothendieckKZeroEquiv
+
+attribute [colib_ref "Quillen1973"
+    "Section 2, Theorem 1 and proof, pp. 102-103" "adaptation"
+    "The canonical Grothendieck-group identification with fundamental-group K-zero"]
+  CategoryTheory.ExactCategory.ExactStructure.grothendieckToKZero_bijective
+  CategoryTheory.ExactCategory.ExactStructure.grothendieckKZeroEquiv

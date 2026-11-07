@@ -1,0 +1,203 @@
+{
+  "status": "complete_mathematical_endpoint_native_owner_compiled_branch_ci_pending",
+  "library_id": "COL-0289",
+  "integration_baseline": "a7135ed3c370d02a1b7c67aacc538ae81e206115",
+  "original_local_compile_baseline": "0fd43f0253d6ff441fbc3e82420a0573ad694310",
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "stacks_revision": "5ed82d14634e8d9576bb844c7bd4e3da66d450e7",
+  "scope": {
+    "rings_and_fields": "R, S, F and E in one Type universe; R and S commutative-domain DVRs, with the specified native fraction fields and scalar towers.",
+    "extension": "Module.Finite R S, Module.IsTorsionFree R S, IsLocalHom (algebraMap R S), FiniteDimensional F E, IsGalois F E and Nat.Prime (Module.finrank F E).",
+    "characteristic": "CharZero of the actual residue field of R, not merely CharZero F.",
+    "degrees": "Every natural n, including n=0, and every class in MilnorKTheory E (n+1).",
+    "maps": "The unchanged Stacks chosen milnorKNorm and canonical dvrMilnorTameSymbol' on the actual generic and residue fields.",
+    "auxiliary_witness": "A classwise actual finite coefficient-field degree coprime to the prime generic degree; no uniform field or degree is asserted."
+  },
+  "endpoint_declarations": [
+    "Stacks.Chow.exists_coprime_smul_norm_residue_difference_eq_zero_of_charZero",
+    "Stacks.Chow.dvrMilnorTameSymbol'_milnorKNorm_of_prime_galois_of_charZero",
+    "Stacks.Chow.dvrMilnorTameSymbol'_comp_milnorKNorm_of_prime_galois_of_charZero"
+  ],
+  "proof_chain": [
+    "The existing finite coprime mixed-generation theorem chooses one actual coefficient field for each class.",
+    "Native tensor and integral-closure maps transport the expansion to every actual completed normalization branch.",
+    "The actual branch mixed square and lower residue square annihilate each ramification-weighted restricted error.",
+    "Native residue-field norms retract every branch error, and the complete original-base weight sum gives the auxiliary fraction-field degree.",
+    "The previously published prime annihilator and the classwise coprime annihilator give equality by the native integer gcd lemma. Additive-hom extensionality gives the composite equality."
+  ],
+  "not_claimed": [
+    "No arbitrary finite-degree or arbitrary Galois-degree compatibility.",
+    "No positive or mixed residue characteristic; no independent endpoint ring/fraction-field universes.",
+    "No general chosen-norm tower law or presentation independence.",
+    "No Henselianity or completeness premise on the original rings, supplied branch-coordinate square, auxiliary mixed witness, or Milnor-group torsion-freeness premise.",
+    "No replacement mathematical carrier, norm, residue map or adapter model."
+  ],
+  "source_correspondence": {
+    "relation": "Native assembly of source-mapped ingredients, not attribution of the whole endpoint to one upstream theorem.",
+    "finite_generation": {
+      "existing_item": "COL-0228",
+      "source": "Aglib/KTheory/MilnorK/FiniteMixedGeneration.lean:38-59",
+      "revision": "101dbb8564fb0e29f28cfcb79168d878b5ab489f"
+    },
+    "prime_annihilation": {
+      "existing_item": "COL-0261",
+      "target": "Colib/RingTheory/KTheory/MilnorK/Norm/DVRPrimeAnnihilation.lean",
+      "retained_scope": "The broader existing annihilation theorem remains unchanged; equality here has narrower residue-characteristic-zero and same-universe hypotheses."
+    },
+    "stacks_ingredients": [
+      {
+        "path": "StacksFrontier/AlgebraicGeometry/Chow/MilnorNorm/FieldNorm.lean",
+        "blob": "be00b83c50824ae3ea4016c22d543f5f20355428"
+      },
+      {
+        "path": "StacksFrontier/RingTheory/DiscreteValuationRing/FundamentalIdentity.lean",
+        "blob": "1da382dbfccafd3f3ed3938b667af1af38bcf720"
+      }
+    ],
+    "stacks_reference_identity": "The cited files at the current Stacks pin are byte-identical to their existing axiom_stacks bibliography revision; no shared reference revision is changed.",
+    "native_gcd": {
+      "path": "Mathlib/Data/Int/GCD.lean",
+      "blob": "e2239dfb342b56af6e72068cc0cad1d5707f60d4",
+      "declaration": "intGCD_nsmul_eq_zero"
+    },
+    "author_review": "The final source author checked unchanged public hypotheses/maps, all three bindings, actual native coordinate transport, original-base branch degree and precise ingredient provenance. This is source correspondence, distinct from compilation and independent mathematical review."
+  },
+  "counts": {
+    "production_modules": 17,
+    "consumer_modules": 7,
+    "explicit_consumer_examples": 30,
+    "pinned_stacks_prerequisites_compiled": 44
+  },
+  "existing_dependency_correspondence": {
+    "colib_dependencies": 84,
+    "unchanged_source_blobs": 45,
+    "native_path_moves_with_import_changes_only": 38,
+    "native_path_move_with_import_and_module_doc_link_changes": 1,
+    "mathematical_bodies_and_public_namespaces_unchanged": true,
+    "toolchain_and_package_pins_unchanged": true,
+    "candidate_paths": "All24 new paths are additions on the integration baseline. Eleven candidates move to RingTheory.KTheory with the current native source ownership. No old-path aliases or adapters are retained."
+  },
+  "sources": [
+    {
+      "path": "Colib/RingTheory/AdicCompletion/AuxiliaryBranchMaps.lean",
+      "sha256": "65234386c903cc6107b572dc17e352138b3ce4b534d31d476abe5d57e635a3e3"
+    },
+    {
+      "path": "Colib/RingTheory/DiscreteValuationRing/BranchDegree.lean",
+      "sha256": "296c4f164f9524403c24ccc306f6ea303aa1e11f0e1ee8992ef31e99afe59a8c"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/DVRResidueDegreeOne.lean",
+      "sha256": "c983797b932c4dacd1671dab4b9ab634af2f1bd5dbc8f398fc2421783cc762de"
+    },
+    {
+      "path": "Colib/RingTheory/Charpoly/ResidueBranchCountOne.lean",
+      "sha256": "b82ca663a5761dd2c8f929b5803843a9d5c75dfd37c9de5ec006bc8eebeb35b7"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/NormalPrimeScalarBaseChange.lean",
+      "sha256": "b52fe36fa5ebfbc77b9fdab3b5e7de93e6247ab3fa227362cdca9506579aa683"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/DVRResidueRamificationOne.lean",
+      "sha256": "8c42e43313e39d1d713d22a8727c927abd39106fdd393ba15260ad08deab81ba"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/DVRResiduePrimeBranches.lean",
+      "sha256": "c9f368b4e698da5a7ddf4423cdc9039c45b87c9eeb59b5f4874403a955e1a5cd"
+    },
+    {
+      "path": "Colib/FieldTheory/PowerBasis/TensorFactors.lean",
+      "sha256": "25ee66b236d692f00660dcd935e2f651a8aea45849ca06b85c147d2596377816"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/NormalPrimeTensorBaseChange.lean",
+      "sha256": "982038d6bbebe5e36f0fc3613f02954746bda999f2c825f4e0921b3d92dc3033"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/DVRMixedCharZero.lean",
+      "sha256": "aa31ca546d812fd823c15cd8e609aadf32ff3d6bee998488f4fef1014ac34bae"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/DVRBranchWeightedError.lean",
+      "sha256": "7ec5d8ba7159fd328c77cb27fbfcd12eaea142d0125703614cf462a7845b9db2"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Symbols/MixedMap.lean",
+      "sha256": "40c6ac077fff4d070214b5f7ae8764d6e217755c85f5010a93a3a0b044454ec1"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/AuxiliaryMixedBranchError.lean",
+      "sha256": "ba00fea4cabfa45fa09a5484f5665b2fda3159a9174c2f693f350f55af6b3f76"
+    },
+    {
+      "path": "Colib/RingTheory/AdicCompletion/BranchDegreeSum.lean",
+      "sha256": "30d412c9acd5b3c76c543ad9695046b0c7466eb39c31543c44ffb5141545d187"
+    },
+    {
+      "path": "Colib/RingTheory/AdicCompletion/BranchOriginalDegreeSum.lean",
+      "sha256": "58f4dc46b8c6497765fc3609f3f61aa5d354fdca6eb70319973644a2de1aba0b"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/BranchNormRetraction.lean",
+      "sha256": "34030707ade6bfb4847eb8924bd34170aeccbaade052de111111ddba6554e8de"
+    },
+    {
+      "path": "Colib/RingTheory/KTheory/MilnorK/Norm/DVRPrimeCharZero.lean",
+      "sha256": "609660379d3738d752205a75edcd91f867734733bfe39fedc45a7d9fa81e0eba"
+    },
+    {
+      "path": "ColibTest/AdicCompletionBranchDegreeSum.lean",
+      "sha256": "304c1c6f458de53706143459f92c21a100d5926964f41f2de95c7395707f9990"
+    },
+    {
+      "path": "ColibTest/DVRBranchDegree.lean",
+      "sha256": "ada70297923a47bb1ffb2f94b2daa59ad507bc076ba430744c89297aaf2afafd"
+    },
+    {
+      "path": "ColibTest/MilnorDVRMixedCharZero.lean",
+      "sha256": "08fb047cf12413b6761143e18bcd664ec330e33775f160ab1076144915342ec9"
+    },
+    {
+      "path": "ColibTest/MilnorDVRPrimeCharZero.lean",
+      "sha256": "d43106e2528ef2f6791d5ffe737bb709498db07574ce13170265d2e29918676e"
+    },
+    {
+      "path": "ColibTest/MilnorDVRResidueDegreeOne.lean",
+      "sha256": "38ddff3ecf7ac7e5cb5a312032f29ba5ad0096ef83556fb01146d621755250e7"
+    },
+    {
+      "path": "ColibTest/MilnorMixedMap.lean",
+      "sha256": "d07e8a872e8c0392d4d6e1d760120fa680cb34e6d47695d4b1e090d05b6f3065"
+    },
+    {
+      "path": "ColibTest/MilnorNormalPrimeScalarBaseChange.lean",
+      "sha256": "71eb53a0764c089c0813952dff2181b3128a5a562b8a6532cb67056960ffa486"
+    }
+  ],
+  "validation": {
+    "initial_local_pass": "All17 production and7 consumer modules passed stock Lean4.35 with native Lake and package options; all source and artifact hashes were checked.",
+    "final_changes": "Only historical draft prose cleanup and the endpoint References import, three COL-0285 bindings and precise ingredient references. Proof bodies and public theorem assumptions are retained. The main source-ownership reorganization subsequently moved eleven candidate modules and updated import paths, without changing mathematical bodies, statements or public namespaces.",
+    "full_project_checks": "Normal branch CI will perform full production build, tests, generated-root check, source and declaration lint, production axiom audit and Library export; main integration follows successful CI.",
+    "private_helper": "The actual AuxMixed tensor-coordinate helper is part of the production import closure and must remain within the normal lint and transitive axiom audit. Diagnostic/preflight modules are excluded.",
+    "kernel_replay": false,
+    "historical_before_owner_reorganization": {
+      "final_local_pass": "All24 final source files, including the consolidated comment/reference/tag changes, passed native Lake with stock Lean4.35 and package options. Source, command receipt and artifact hashes were frozen and verified.",
+      "final_source_manifest_sha256": "391c5d180a85328a2fd2cb3020d8f8d0fdc7b8163ad4b371c84c17d1a8bc2d02",
+      "final_acceptance_manifest_sha256": "d64727b71dc61f29b1548d42fdaeb8f3d8b6edefb586ce5a6ec70737061b1a80"
+    },
+    "final_local_pass": "All24 final sources passed stock Lean4.35 with native Lake on the exact current source-ownership baseline:16 changed module identities/imports rebuilt and8 unchanged identities reused natively. All84 main dependencies were validated by native no-build/rehash with exact pinned sources and official matching cache.",
+    "current_final_source_manifest_sha256": "ebc28ed019e5727fa691d2fd6a57746ae32d20f77b6871c284e937f2e4be1b33",
+    "final_acceptance_manifest_sha256": "8ca8f176b6bd6f1ee523dd27ed870f50149e6e7cd2ec09a9d88a425a59c60a26",
+    "official_cache_producer": "a7135ed3c370d02a1b7c67aacc538ae81e206115",
+    "final_elapsed_seconds": 527.9982583939563,
+    "id_collision_revalidation": "The sole endpoint tag was moved toCOL-0289 after concurrent branches allocated0285-0288. The endpoint and direct consumer passed native rebuilding, and all24 targets then passed native no-build/rehash applicability with final source and artifact hashes verified."
+  },
+  "excluded": [
+    "Uncompiled rational-function packet",
+    "Standalone helper diagnostic/preflight modules",
+    "Already-published Ext batch",
+    "Unrelated concurrent K-theory and Waldhausen work"
+  ]
+}

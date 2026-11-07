@@ -34,8 +34,8 @@ import Colib
 ```
 
 Focused imports are available at
-`Colib.KTheory.GrothendieckGroup.Field`,
-`Colib.KTheory.MilnorK.DegreeTwo`, and
+`Colib.RingTheory.KTheory.GrothendieckGroup.Field`,
+`Colib.RingTheory.KTheory.MilnorK.DegreeTwo`, and
 `Colib.RingTheory.Length.FiniteAlgebra`.
 
 ```sh

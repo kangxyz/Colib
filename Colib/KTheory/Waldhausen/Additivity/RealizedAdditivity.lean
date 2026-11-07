@@ -107,3 +107,9 @@ attribute [colib_tag "COL-0219",
   deloopingMap_additivity
 
 end CategoryTheory.Waldhausen.Additivity
+
+attribute [colib_ref "Waldhausen1985"
+    "Proposition 1.3.2(4), pp. 331-332, and Theorem 1.4.2, p. 336" "adaptation"
+    "The actual realized middle map is homotopic to the coproduct map; no basedness of this \
+      homotopy is asserted"]
+  CategoryTheory.Waldhausen.Additivity.deloopingMap_additivity

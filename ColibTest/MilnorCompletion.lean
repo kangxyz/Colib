@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.Completion
+import Colib.RingTheory.KTheory.MilnorK.Residue.Completion
 
 /-! Tests of the actual adic completion, its fraction lift, and canonical residue.
 The ring and its selected fraction field have independent universes. -/

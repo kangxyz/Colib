@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.NormalPrimeChosenComparison
+import Colib.RingTheory.KTheory.MilnorK.Norm.NormalPrimeChosenComparison
 
 /-!
 Consumers of the native normal-prime chosen-norm comparison.

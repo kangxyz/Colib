@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.FiniteTensorDescent
+import Colib.RingTheory.KTheory.MilnorK.FiniteTensorDescent
 
 universe u v
 

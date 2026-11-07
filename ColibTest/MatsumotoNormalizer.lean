@@ -6,7 +6,7 @@ Authors: kangxyz
 module
 
 import Colib.GroupTheory.Steinberg.Matsumoto.NormalizerMatrix
-import Colib.KTheory.MilnorK.Steinberg
+import Colib.RingTheory.KTheory.MilnorK.Steinberg
 
 /-! Regression checks on the native Milnor coefficient and its positive marking.
 These do not assert injectivity of the stable Steinberg kernel map. -/

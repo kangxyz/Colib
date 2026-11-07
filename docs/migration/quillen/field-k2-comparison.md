@@ -1,6 +1,22 @@
-# The canonical Milnor–Quillen K₂ comparison
+# Matsumoto's theorem for K₂ in characteristic zero
 
-## Source and status
+## Mathematical attribution
+
+The field K₂ isomorphism is **Matsumoto's theorem**. Its original source is
+[Matsumoto (1969), Section 5, Theorem 5.10 and Corollary 5.11, pp. 30–31](https://numdam.org/item/10.24033/asens.1174.pdf#page=31).
+The original statement treats central extensions over infinite fields, with
+separate symplectic and non-symplectic presentations. Here the non-symplectic
+case specializes to stable type A, with the implementation's `[CharZero F]`
+hypothesis. The familiar field K₂ presentation is also stated in
+[Weibel, III, Theorem 6.1](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf#page=48).
+
+The further identification with Quillen's homotopy-defined K₂ is a separate
+comparison, as in [Weibel, IV, Corollary 1.7.1](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf#page=6).
+Neither the general Milnor-to-Quillen map in arbitrary degree nor its additional
+naturality and sign conventions are renamed Matsumoto's theorem. The software
+references below record implementation provenance, not mathematical priority.
+
+## Implementation source and status
 
 The completed source chain adapts
 [`Quillen/KTheory/Field/MilnorKTwoEquivalence.lean`](https://github.com/kangxyz/quillen-k-theory/blob/c561118b7795eb9780be9ed391c3251d6a4d0afd/Quillen/KTheory/Field/MilnorKTwoEquivalence.lean)
@@ -9,7 +25,7 @@ at Quillen revision `c561118b7795eb9780be9ed391c3251d6a4d0afd`.
 Original attribution and Apache-2.0 notices are retained in adapted sources.
 
 Library item COL-0262 records the endpoint in
-`Colib.KTheory.MilnorK.QuillenEquivalence`. The earlier Lean 4.34 candidate passed
+`Colib.RingTheory.KTheory.MilnorK.QuillenEquivalence`. The earlier Lean 4.34 candidate passed
 strict endpoint compilation and focused native checks. Those results are
 historical. The Lean 4.35 integration ports consumers to the native finite-support
 simplex and is now published on main at
@@ -73,7 +89,7 @@ For `F L : Type u` and `f : F →+* L`, the original forward squares use
 `(ModuleCat.FiniteProjective.rightBaseChangeExact f).KMap 2` and
 `(FGModuleCat.finiteModuleExtensionExact f).smallKMap.{u+1} 2`.
 They are proved for arbitrary fields in
-`Colib.KTheory.MilnorK.QuillenNaturality`. In this common universe, the native
+`Colib.RingTheory.KTheory.MilnorK.QuillenNaturality`. In this common universe, the native
 Milnor map agrees with the existing Stacks transport.
 
 When both fields have characteristic zero, the final comparison proves these

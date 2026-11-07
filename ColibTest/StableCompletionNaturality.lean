@@ -5,7 +5,7 @@ Authors: OpenAI
 -/
 module
 
-import Colib.KTheory.Quillen.Field.SteinbergFiberNaturality
+import Colib.RingTheory.KTheory.Quillen.Field.SteinbergFiberNaturality
 
 /-! # Regression examples for the actual scalar-change comparison squares -/
 

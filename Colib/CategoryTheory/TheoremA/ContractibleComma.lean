@@ -166,3 +166,8 @@ attribute [colib_tag "COL-0232",
   colib_ref "WeibelKBook" "IV, 3.7, page 30" "clause"
     "Quillen Theorem A with its actual map"]
   CategoryTheory.TheoremA.contractibleCommaClassifyingHomotopyEquiv
+
+attribute [colib_ref "Quillen1973"
+    "Section 1, Theorem A and its dual formulation, p. 93" "clause"
+    "The actual classifying-space map under contractibility of every costructured comma category"]
+  CategoryTheory.TheoremA.contractibleCommaClassifyingHomotopyEquiv

@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Product",
   "source_sha256": "6513cc434212c2cf539bdc9f89dd33837d6a1a99fdbfb91be7d6bf71c9b18bf3",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.SpecializationProduct",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.SpecializationProduct",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -17,7 +17,7 @@
   "declarations": [
     {
       "source": "MilnorK.specialize_product",
-      "source_lines": "40\u201355",
+      "source_lines": "40–55",
       "target": "Stacks.Chow.dvrMilnorSpecialization_gmul",
       "disposition": "actual-DVR specialization, replacing abstract residue data by genuine DVR native shift map",
       "preserved_scope": "All m/n and arbitrary homogeneous factors; not only tuple symbols."

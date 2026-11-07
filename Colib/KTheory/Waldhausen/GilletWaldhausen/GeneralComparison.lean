@@ -21,6 +21,11 @@ every degree, including zero. The term property contains zero and is closed
 under isomorphisms, extensions and kernels. The precise abelian ambient
 category and all actual maps remain unchanged.
 
+Thomason-Trobaugh Theorem 1.11.7 supplies the precise classical comparison.
+Its additional embedding hypothesis 1.11.3.1 is retained here by kernel
+closure in the specified abelian ambient. The present endpoint concerns
+connective K-groups, not a new spectrum-level comparison.
+
 
 Implementation provenance:
 `Quillen/Waldhausen/GilletWaldhausen/GeneralComparison.lean` at Quillen commit
@@ -99,3 +104,10 @@ attribute [colib_tag "COL-0260"]
   boundedTerms_canonicalFiberMap_isWeakHomotopyEquivalence_general
 
 end CategoryTheory.Waldhausen.GilletWaldhausen
+
+attribute [colib_ref "ThomasonTrobaugh1990"
+    "Theorem 1.11.7, pp. 279-281, with Section 1.11.3.1, p. 278" "adaptation"
+    "Connective groups of the original degree-zero inclusion; inherited exact structure and \
+      kernel closure in the specified abelian ambient"]
+  CategoryTheory.Waldhausen.GilletWaldhausen.boundedTermsSingle_coarse_KMap_bijective_general
+  CategoryTheory.Waldhausen.GilletWaldhausen.boundedTermsSingleCoarseKEquivGeneral

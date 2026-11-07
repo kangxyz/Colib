@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Map",
   "source_sha256": "50b66c05062b5d9fc512fe7d63be4aa09a5a7d2455d8fdfbc3d1135648bbd0d2",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Symbols.Transport",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Transport",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -41,7 +41,7 @@
     },
     {
       "source": "MilnorK.mapAdd",
-      "target": "(milnorKTheoryMap \u03c6 n).toAddMonoidHom",
+      "target": "(milnorKTheoryMap φ n).toAddMonoidHom",
       "disposition": "use existing forgetful operation; no duplicate definition",
       "validation": "Passed complete guarded integration; source correspondence and independent read-only review recorded separately."
     },
@@ -54,7 +54,7 @@
   ],
   "upstream_gap_audit": {
     "module": "StacksFrontier.AlgebraicGeometry.Chow.KeyLemma.MilnorKTransport",
-    "lines": "42\u201344",
+    "lines": "42–44",
     "gap": "Pinned transport and its supporting ring/tensor maps bind all fields in Type u. Its functor laws are already present in that common universe. The source explicitly requires independent u/v/w.",
     "resolution": "Use the already-proved universal lift on the same native objects, and prove literal equality of maps in the overlapping common-universe case. Do not duplicate the native ring or tensor transport implementation.",
     "supporting_declarations": [

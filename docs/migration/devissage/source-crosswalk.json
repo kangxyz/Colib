@@ -406,7 +406,7 @@
       "source": "Quillen/Devissage/Homotopical.lean",
       "source_sha256": "d10ab4491d7d9ff08a4d792b70c495df12f806e10fa8abb6e0a4abd7472006d5",
       "target": "Colib/KTheory/Quillen/Devissage/Theorem.lean",
-      "target_sha256": "b7b17acda4cad8878824f0f40cc328fe9304b465307207f182ccfddcd485b2f7",
+      "target_sha256": "e61acfe10c0aade2db85da2cbbeec8a2b8a576a77d3f6b408f5ad155692f30a9",
       "native_reuses": [
         {
           "declaration": "pointedClassifyingMap",
@@ -483,7 +483,11 @@
           "line": 128
         }
       ],
-      "reviewed_proof_body_matches_source_after_listed_native_reuses": true
+      "reviewed_proof_body_matches_source_after_listed_native_reuses": true,
+      "reference_metadata_update": {
+        "previous_target_sha256": "b7b17acda4cad8878824f0f40cc328fe9304b465307207f182ccfddcd485b2f7",
+        "change": "Append verified original mathematical references; declarations, proof bodies and existing citations unchanged."
+      }
     }
   ],
   "declarations": [

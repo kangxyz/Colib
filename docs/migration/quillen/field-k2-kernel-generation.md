@@ -38,7 +38,7 @@ Milnor–Quillen endpoint retains its characteristic-zero hypothesis.
   last-row matrix detection gives one-step stage descent; finite-stage
   induction proves `defectSubgroup_eq_kernel` and `kernel_le_stage_two`.
 - The native range argument and final surjectivity consequence are in
-  `Colib.KTheory.MilnorK.Steinberg.Surjectivity`. Native tuple-symbol
+  `Colib.RingTheory.KTheory.MilnorK.Steinberg.Surjectivity`. Native tuple-symbol
   generation replaces the former Milnor model's extension API. The forward
   homomorphism and value `h(a) * h(b) * h(a*b)⁻¹` are unchanged.
 - `StableSteinbergUniversal.lean` becomes

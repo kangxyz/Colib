@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.ScalarFactorBaseChange
+import Colib.RingTheory.KTheory.MilnorK.Norm.ScalarFactorBaseChange
 
 /-!
 Consumers of unconditional native simple-norm scalar-factor base change.

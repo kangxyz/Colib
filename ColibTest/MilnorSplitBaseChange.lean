@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.SplitBaseChange
+import Colib.RingTheory.KTheory.MilnorK.Norm.SplitBaseChange
 
 /-! Consumers of the actual separable split embedding-sum formula.-/
 

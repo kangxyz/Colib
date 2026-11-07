@@ -139,3 +139,10 @@ attribute [colib_tag "COL-0246",
   CategoryTheory.Abelian.Devissage.KEquiv
   CategoryTheory.Abelian.Devissage.KEquiv_coe
   CategoryTheory.Abelian.Devissage.KMap_bijective
+
+attribute [colib_ref "Quillen1973"
+    "Section 5, Theorem 4, p. 112" "adaptation"
+    "Abelian devissage with subobject, quotient and finite-product closure and finite filtrations"]
+  CategoryTheory.Abelian.Devissage.classifyingHomotopyEquiv
+  CategoryTheory.Abelian.Devissage.KEquiv
+  CategoryTheory.Abelian.Devissage.KMap_bijective

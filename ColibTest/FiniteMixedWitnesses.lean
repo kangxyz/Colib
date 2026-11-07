@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.FiniteMixedWitnesses
+import Colib.RingTheory.KTheory.MilnorK.FiniteMixedWitnesses
 
 /-!
 # Native representatives, split evaluation and classwise finite witnesses

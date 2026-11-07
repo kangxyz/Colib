@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.CoefficientResidueFields
+import Colib.RingTheory.KTheory.MilnorK.Norm.CoefficientResidueFields
 
 /-! Source-only actual-map consumers. These do not test an unproved Milnor base-change formula. -/
 

@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.NormalPrimePresentation
+import Colib.RingTheory.KTheory.MilnorK.Norm.NormalPrimePresentation
 
 /-!
 Consumers of the full normal-prime polynomial presentation.

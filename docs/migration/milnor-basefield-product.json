@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Product",
   "source_sha256": "6513cc434212c2cf539bdc9f89dd33837d6a1a99fdbfb91be7d6bf71c9b18bf3",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.BaseFieldProduct",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.BaseFieldProduct",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -13,11 +13,11 @@
     "license": "Apache-2.0"
   },
   "scope": "Canonical native DVR residue respects left multiplication by arbitrary base-field Milnor classes for a field homomorphism into the actual valuation ring.",
-  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; k : Type w, Field k; f : k \u2192+* R; m,n : Nat; x : MilnorKTheory k m; z : MilnorKTheory F (n+1). All three universes independent. No characteristic or positive-degree assumptions. The map lands in R, not just F.",
+  "hypotheses": "R : Type u, CommRing R, IsDomain R, IsDiscreteValuationRing R; F : Type v, Field F, Algebra R F, IsFractionRing R F; k : Type w, Field k; f : k →+* R; m,n : Nat; x : MilnorKTheory k m; z : MilnorKTheory F (n+1). All three universes independent. No characteristic or positive-degree assumptions. The map lands in R, not just F.",
   "declarations": [
     {
       "source": "MilnorK.DVR.residue_product_base_field_left",
-      "source_lines": "156\u2013171",
+      "source_lines": "156–171",
       "target": "Stacks.Chow.dvrMilnorTameSymbol'_baseField_mul",
       "disposition": "native-model proof rewrite, exact source field-into-ring and arbitrary homogeneous factors retained",
       "degree_transport": "Source associativity cast disappears by definitional equality of m+(n+1) and (m+n)+1."

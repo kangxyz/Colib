@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.SpecializationProduct
+import Colib.RingTheory.KTheory.MilnorK.Residue.SpecializationProduct
 
 universe u v
 

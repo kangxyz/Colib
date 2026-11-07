@@ -5,8 +5,8 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.RamifiedSpecialization
-import Colib.KTheory.MilnorK.Residue.CanonicalNormalization
+import Colib.RingTheory.KTheory.MilnorK.Residue.RamifiedSpecialization
+import Colib.RingTheory.KTheory.MilnorK.Residue.CanonicalNormalization
 
 noncomputable section
 

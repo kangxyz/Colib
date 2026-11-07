@@ -5,10 +5,10 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.QuillenEquivalence
+import Colib.RingTheory.KTheory.MilnorK.QuillenEquivalence
 
 /-!
-# Original Milnor–Quillen equivalences and scalar-extension maps
+# Matsumoto's characteristic-zero equivalences and scalar-extension maps
 
 The forward map is literal, both inverse squares retain the actual K and SmallK
 maps, and the negative normalization is the negative of that same inverse.
@@ -58,3 +58,20 @@ example (a b : Fˣ) :
         (Additive.ofMul (FGModuleCat.FieldSymbols.unitProduct F a b)) =
       -milnorKTupleSymbol ![a, b] :=
   MilnorKTheory.upperModuleKTwoNegativeEquivCharZero_unitProduct F a b
+
+open Lean Elab Command in
+run_cmd do
+  let env ← getEnv
+  for decl in #[``StableSteinberg.milnorKernelEquiv,
+      ``MilnorKTheory.rightProjectiveKTwoEquivCharZero,
+      ``MilnorKTheory.upperModuleKTwoEquivCharZero] do
+    unless (Colib.Library.citations env).any (fun citation =>
+        citation.declName == decl && citation.source == "Matsumoto1969" &&
+        citation.locator == "Section 5, Theorem 5.10 and Corollary 5.11, pp. 30-31" &&
+        citation.relation == "adaptation") do
+      throwError "Matsumoto's original theorem must be cited on {decl}"
+  unless (Colib.Library.citations env).any (fun citation =>
+      citation.declName == ``MilnorKTheory.upperModuleKTwoEquivCharZero &&
+      citation.source == "WeibelKBook" && citation.locator == "IV, Corollary 1.7.1" &&
+      citation.relation == "comparison") do
+    throwError "The Quillen K2 model identification must retain its separate reference"

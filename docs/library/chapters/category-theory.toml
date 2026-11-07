@@ -8,7 +8,7 @@ introduction = "Categorical foundations retain their chosen objects, universal p
 id = "exact-categories"
 title = "Exact categories"
 order = 10
-introduction = "A chosen class of kernel-cokernel pairs determines an exact structure. Its admissible maps satisfy the Quillen axioms and the mixed pullback theorem. Abelian categories provide the canonical example using all short exact sequences. Additive Serre localization functors preserve these canonical conflations. Matrix rows extend admissible epimorphisms, and exact functors preserve pullbacks along admissible epimorphisms. Actual finite conflation towers retain their factors and give additive telescoping formulas."
+introduction = "A chosen class of kernel-cokernel pairs determines an exact structure. Its admissible maps satisfy the Quillen axioms and the mixed pullback theorem. Abelian categories provide the canonical example using all short exact sequences. Additive Serre localization functors preserve these canonical conflations. Matrix rows extend admissible epimorphisms, and exact functors preserve pullbacks along admissible epimorphisms. Actual finite conflation towers retain their factors and give additive telescoping formulas. Bounded native complexes quasi-isomorphic to a single object supply actual finite towers for replete kernel-closed classes containing zero; lifting to an exact full subcategory retains every arrow and the tower length."
 
 [[sections]]
 id = "bicategories"

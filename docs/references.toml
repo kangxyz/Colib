@@ -62,7 +62,7 @@ journal = "Inventiones mathematicae"
 volume = "9"
 pages = "318-344"
 doi = "10.1007/BF01425486"
-version = "Published article (1970), section 1 inspected 2026-11-05"
+version = "Published article (1970), section 1 inspected 2026-11-05; Example 1.5, p. 321, inspected 2026-11-07"
 url = "https://doi.org/10.1007/BF01425486"
 
 [[sources.Milnor1970.documents]]
@@ -148,8 +148,14 @@ authors = ["Friedhelm Waldhausen"]
 year = 1985
 volume = "1126"
 pages = "318-419"
-version = "Published LNM article; sections 1.1-1.3 inspected 2026-11-05; section 1.6, Theorem 1.6.4 and proof (pages 350-352) and Theorem 1.6.7 (page 354) inspected 2026-11-06"
+version = "Published LNM article; sections 1.1-1.3 inspected 2026-11-05; section 1.6, Theorem 1.6.4 and proof (pages 350-352) and Theorem 1.6.7 (page 354) inspected 2026-11-06; Propositions 1.3.1-1.3.2 (pages 330-332), Theorem 1.4.2 (page 336), and Section 1.9 (pages 375-376) inspected 2026-11-07"
 url = "https://www.math.uni-bielefeld.de/~fw/LNM1126_318-419.pdf"
+
+[[sources.Waldhausen1985.documents]]
+label = "Published article, Q/S comparison appendix"
+locator_prefix = "Section 1.9,"
+url = "https://www.math.uni-bielefeld.de/~fw/LNM1126_318-419.pdf"
+sha256 = "09d6ad8705f8987e8f4a7667a60a3ba14c55d859f4ec6a66af07f7ad57ced2b2"
 
 [sources.mathlib_koszul_pin]
 kind = "software"
@@ -179,7 +185,7 @@ authors = ["R. W. Thomason", "Thomas Trobaugh"]
 year = 1990
 volume = "88"
 pages = "247-435"
-version = "The Grothendieck Festschrift, Volume III, Progress in Mathematics 88; Sections 1.5.3-1.5.4, pages 260-261; Sections 1.5.6-1.5.7, page 261; Theorem 1.10.1 and Exercise 1.10.2, pages 275-277, inspected 2026-11-07"
+version = "The Grothendieck Festschrift, Volume III, Progress in Mathematics 88; Sections 1.5.3-1.5.4, pages 260-261; Sections 1.5.6-1.5.7, page 261; Sections 1.8.1-1.8.2, page 263; Theorem 1.10.1 and Exercise 1.10.2, pages 275-277; Section 1.11.3.1 and Theorem 1.11.7, pages 278-281, inspected 2026-11-07"
 url = "https://stacks.math.columbia.edu/bibliography/TT"
 
 [[sources.ThomasonTrobaugh1990.documents]]
@@ -189,7 +195,7 @@ url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaug
 sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"
 
 [[sources.ThomasonTrobaugh1990.documents]]
-label = "Published article, Sections 1.5.3-1.5.4 and 1.5.6-1.5.7"
+label = "Published article, Sections 1.5.3-1.5.4, 1.5.6-1.5.7 and 1.8.1-1.8.2"
 locator_prefix = "Section"
 url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaugh%20-%20Higher%20algebraic%20K-theory%20of%20schemes.pdf"
 sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"
@@ -197,5 +203,53 @@ sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"
 [[sources.ThomasonTrobaugh1990.documents]]
 label = "Published article, Exercise 1.10.2"
 locator_prefix = "Exercise 1.10.2"
+url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaugh%20-%20Higher%20algebraic%20K-theory%20of%20schemes.pdf"
+sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"
+
+[sources.Matsumoto1969]
+kind = "article"
+title = "Sur les sous-groupes arithmétiques des groupes semi-simples déployés"
+authors = ["Hideya Matsumoto"]
+year = 1969
+journal = "Annales scientifiques de l'École Normale Supérieure"
+volume = "4e série, 2"
+number = "1"
+pages = "1-62"
+doi = "10.24033/asens.1174"
+version = "Published article (1969), Section 5, Theorem 5.10 and Corollary 5.11, pp. 30-31, inspected 2026-11-07"
+url = "https://numdam.org/articles/10.24033/asens.1174/"
+
+[[sources.Matsumoto1969.documents]]
+label = "Published article, Numdam scan"
+locator_prefix = "Section 5,"
+url = "https://numdam.org/item/10.24033/asens.1174.pdf"
+sha256 = "4ac51e1290e2ab3c633d5a55378eb078f88d824bb3d28aac3585fce0595db5ca"
+
+[sources.Quillen1973]
+kind = "article"
+title = "Higher algebraic K-theory: I"
+authors = ["Daniel Quillen"]
+year = 1973
+volume = "341"
+pages = "85-147"
+doi = "10.1007/BFb0067053"
+version = "Algebraic K-theory I: Higher K-theories, Lecture Notes in Mathematics 341; Sections 1-5: Theorems A and B, K-group definition and functoriality, Theorem 1, equations (8)-(9), Theorem 3 and Corollary 1, Theorems 4-5, inspected 2026-11-07; locators use final publisher pagination"
+url = "https://doi.org/10.1007/BFb0067053"
+
+[[sources.Quillen1973.documents]]
+label = "Published article scan with final publisher pagination at the bottom"
+locator_prefix = "Section"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Quillen-Higher-I.pdf"
+sha256 = "5d2db42d3fec06156da4e6f6d5a85fb9a04358df59141d3abe74a57b815bae04"
+
+[[sources.Waldhausen1985.documents]]
+label = "Published article, equivalent additivity formulations and additivity theorem"
+locator_prefix = "Proposition 1.3.2"
+url = "https://www.math.uni-bielefeld.de/~fw/LNM1126_318-419.pdf"
+sha256 = "09d6ad8705f8987e8f4a7667a60a3ba14c55d859f4ec6a66af07f7ad57ced2b2"
+
+[[sources.ThomasonTrobaugh1990.documents]]
+label = "Published article, Gillet-Waldhausen theorem with its embedding hypothesis"
+locator_prefix = "Theorem 1.11.7"
 url = "https://www.preschema.com/teaching/2020-ss/kdescent/refs/Thomason-Trobaugh%20-%20Higher%20algebraic%20K-theory%20of%20schemes.pdf"
 sha256 = "47910d78a698ce225204ac78eca559e7959a79887e20c089c8049118394c1856"

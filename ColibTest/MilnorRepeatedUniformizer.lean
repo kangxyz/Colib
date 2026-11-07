@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.RepeatedUniformizer
+import Colib.RingTheory.KTheory.MilnorK.Residue.RepeatedUniformizer
 
 universe u v
 

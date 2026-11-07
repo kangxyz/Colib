@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.ScalarFactorReduction
+import Colib.RingTheory.KTheory.MilnorK.Norm.ScalarFactorReduction
 
 /-! Source-only consumers of conditional reductions, not verified base-change examples. -/
 

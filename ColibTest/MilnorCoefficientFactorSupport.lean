@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.CoefficientFactorSupport
+import Colib.RingTheory.KTheory.MilnorK.Norm.CoefficientFactorSupport
 
 /-!
 Source-only consumers of actual coefficient-factor support, with independent field universes.

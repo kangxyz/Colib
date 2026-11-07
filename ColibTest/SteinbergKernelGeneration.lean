@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Steinberg.Surjectivity
+import Colib.RingTheory.KTheory.MilnorK.Steinberg.Surjectivity
 import Colib.GroupTheory.Steinberg.Universal
 
 noncomputable section

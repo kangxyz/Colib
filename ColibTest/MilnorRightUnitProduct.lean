@@ -1,6 +1,6 @@
 module
 
-import Colib.KTheory.MilnorK.Residue.RightUnitProduct
+import Colib.RingTheory.KTheory.MilnorK.Residue.RightUnitProduct
 
 open Stacks.Chow
 

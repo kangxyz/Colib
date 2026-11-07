@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Specialization",
   "source_sha256": "66b82775d5a8fb931b13293d337dd2c82df616d78fa92e937b89e582fb57e751",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.Specialization",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.Specialization",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [

@@ -5,7 +5,7 @@ Authors: OpenAI, kangxyz
 -/
 module
 
-public import Colib.KTheory.MilnorK.Symbols.Relations
+public import Colib.RingTheory.KTheory.MilnorK.Symbols.Relations
 public import Mathlib.GroupTheory.Subgroup.Center
 
 /-!

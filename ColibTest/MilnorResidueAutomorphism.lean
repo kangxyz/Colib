@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.Automorphism
+import Colib.RingTheory.KTheory.MilnorK.Residue.Automorphism
 
 /-!
 Regression consumers of canonical residue equivariance. No Galois-extension or prime-degree

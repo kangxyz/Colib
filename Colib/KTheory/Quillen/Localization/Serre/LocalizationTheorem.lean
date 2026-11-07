@@ -176,3 +176,11 @@ attribute [colib_tag "COL-0250"]
   CategoryTheory.ExactCategory.SerreLocalization.localizationSequence_connecting
   CategoryTheory.ExactCategory.SerreLocalization.localization_longExact
   CategoryTheory.ExactCategory.SerreLocalization.localization_KZero_tail
+
+attribute [colib_ref "Quillen1973"
+    "Section 5, Theorem 5, p. 113" "adaptation"
+    "Connective Serre localization through the surjective K-zero endpoint, retaining the actual \
+      maps and boundary"]
+  CategoryTheory.ExactCategory.SerreLocalization.localizationSequence
+  CategoryTheory.ExactCategory.SerreLocalization.localization_longExact
+  CategoryTheory.ExactCategory.SerreLocalization.localization_KZero_tail

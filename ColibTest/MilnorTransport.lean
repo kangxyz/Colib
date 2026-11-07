@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Symbols.Transport
+import Colib.RingTheory.KTheory.MilnorK.Symbols.Transport
 
 universe u v w
 

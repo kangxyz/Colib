@@ -60,7 +60,7 @@ existing canonical map, not of a newly chosen map or an abstract detector.
 - The equivalence commutes with the existing field-change maps, including
   independent source and target universes.
 
-These endpoints live in `Colib/KTheory/MilnorK/Steinberg/Equivalence.lean`.
+These endpoints live in `Colib/RingTheory/KTheory/MilnorK/Steinberg/Equivalence.lean`.
 
 ## Relation to the Quillen comparison
 

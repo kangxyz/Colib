@@ -21,6 +21,10 @@ realization equivalence, partial edgewise subdivision and classification
 diagonal contraction then prove that the prescribed Q/S map realizes to a
 homotopy equivalence. Both sides of its based zigzag retain the chosen zero
 vertices, giving the canonical isomorphism on the already-defined K-groups.
+
+The mathematical comparison is due to Waldhausen, Section 1.9, pp. 375-376.
+The construction here retains the prescribed map in the unnormalized
+IsZero-diagonal model; the earlier Lean implementation is credited separately.
 -/
 /- Implementation provenance: adapted from
    Quillen/Waldhausen/QuillenComparison/Equivalence.lean at
@@ -156,3 +160,10 @@ attribute [colib_tag "COL-0243",
   colib_ref "quillen" "Quillen/Waldhausen/QuillenComparison/RowEssentialSurjective.lean"
     "adaptation" "The native weak-row comparison is an actual categorical equivalence"]
   CategoryTheory.Waldhausen.QuillenComparison.rowChainEquivalence
+
+attribute [colib_ref "Waldhausen1985" "Section 1.9, pp. 375-376" "adaptation"
+  "Waldhausen's edgewise-subdivision Q/S comparison, adapted to the unnormalized \
+  IsZero-diagonal model and retaining the prescribed comparison map"]
+  CategoryTheory.Waldhausen.QuillenComparison.realizationComparisonHomotopyEquiv
+  CategoryTheory.Waldhausen.QuillenComparison.deloopingHomotopyEquiv
+  CategoryTheory.Waldhausen.QuillenComparison.comparisonKEquiv

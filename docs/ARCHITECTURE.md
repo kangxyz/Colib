@@ -32,6 +32,39 @@ Bibliographic identity and editorial statements each have one maintained owner. 
 defining modules and implementation references are generated from the compiled environment.
 [CONTRIBUTING.md](../CONTRIBUTING.md) owns Mathlib/Stacks-aligned code style and agent assignments.
 
+## General K-theory and ring or scheme applications
+
+`Colib.KTheory` owns the general theory of exact and Waldhausen categories:
+Grothendieck groups, Quillen K-groups, comparisons, resolution, devissage, Serre
+localization, finite-support decompositions, additivity, approximation, fibration,
+Gillet-Waldhausen and cofinality. A theorem about an arbitrary exact or Waldhausen
+category stays here even when a later application uses modules or perfect complexes.
+
+`Colib.RingTheory.KTheory` owns ring and field applications: finite-module dimension,
+Milnor K-theory, finite-projective group completion, ring and field Quillen comparisons,
+finite-field computations, finite-module G-localization, and scalar operations specialized
+to module categories.
+`Colib.AlgebraicGeometry.KTheory` owns K-theory of schemes and their perfect complexes.
+Ring and scheme layers import the general theory, never the other way around.
+Geometric categories and their exact structures keep their existing geometric owners.
+General linear-category scalar operations stay in the general layer; their finite-module
+specializations have a separate ring-owned module.
+
+These are source owners, not replacement mathematical models or declaration namespaces.
+Declarations continue to extend `CategoryTheory.ExactCategory`, `CategoryTheory.Waldhausen`,
+`MilnorKTheory`, `ModuleCat.FiniteProjective`, `FGModuleCat` and
+`AlgebraicGeometry.Scheme.Modules`, as appropriate. Moving a file does not introduce an
+alias, an adapter or a compatibility reexport. Consumers import the new defining module.
+
+The Library keeps **General algebraic K-theory** separate from **Algebraic K-theory of
+rings and schemes**. Permanent item IDs, hypotheses, canonical maps, signs and references
+survive a move. The chapter organization is a reading route; the actual Lean import graph
+remains the authority for dependencies. `scripts/test_k_theory_layers.py` checks both the
+chapter separation and the general layer's transitive independence from the application
+layers. Historical migration checks, commands, source hashes and artifact paths retain
+their original revision-specific locations. They are evidence about those revisions, not
+compilation evidence for a relocated module; current module ownership comes from Lean.
+
 ## Source provenance
 
 The architectural principles are adapted from

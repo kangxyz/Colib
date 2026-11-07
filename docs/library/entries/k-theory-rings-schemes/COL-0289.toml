@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0289"
+title = "Prime Galois DVR norm-residue compatibility in residue characteristic zero"
+kind = "theorem"
+section = "milnor-k-theory"
+order = 320
+statement = "For every n >= 0 and every native Milnor class x of degree n+1, the canonical DVR residue of the actual chosen generic-field norm of x equals the actual chosen residue-field norm of its canonical residue. The two additive norm-residue composites are equal in every homogeneous degree. For each class, an actual auxiliary coefficient-field degree coprime to the prime generic degree annihilates the original error; this combines with prime annihilation to prove equality."
+scope = "A finite torsion-free local algebra R to S between discrete valuation domains, specified fraction fields F to E with the actual scalar towers, a finite Galois generic extension of prime degree, and characteristic zero of the actual base residue field. R, S, F and E share one universe. The auxiliary field may depend on the class; every actual normalization and iterated completion branch is retained. No Henselianity or completeness of the original rings, supplied branch-coordinate squares, mixed-span membership, norm-compatibility premise, chosen-norm tower law or Milnor torsion-freeness assumption is added. This is not a result for positive residue characteristic, mixed-characteristic DVRs, arbitrary finite generic extensions or independent ring/field universes. The native chosen norm and canonical residue maps are unchanged; no ramification factor is cancelled separately and no general norm-independence claim is made."
+review = "author_checked"
+proof = "The published prime annihilator is combined with an actual classwise coprime finite extension. Native auxiliary tensor maps transport the mixed expansion to every completed normalization branch. Residue norms retract all ramification-weighted branch errors, and the original-base degree sum supplies the second annihilator. The native integer gcd theorem gives equality and additive-hom extensionality gives the composite statement."

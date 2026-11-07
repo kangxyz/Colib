@@ -35,7 +35,7 @@ Search the pinned Mathlib and Stacks declarations before defining anything. Exte
 mathematical namespace. A source model comparison is allowed only when a specific proof needs
 it; keep that comparison local to its boundary, prove the exact generator/map equations it
 uses, and do not expose a parallel downstream API. Reuse the existing degree-two comparison in
-`Colib.KTheory.MilnorK.DegreeTwo` when relevant rather than recreating it. Its presence does not
+`Colib.RingTheory.KTheory.MilnorK.DegreeTwo` when relevant rather than recreating it. Its presence does not
 require later results to factor through the pair presentation.
 
 For every migrated statement preserve its actual field/ring/scheme assumptions, finiteness and
@@ -107,7 +107,7 @@ Use [ARCHITECTURE.md](ARCHITECTURE.md), [LIBRARY.md](LIBRARY.md) and
 2. **Generic prerequisites.** Own disjoint files under the appropriate `Colib.Algebra`,
    `Colib.RingTheory`, `Colib.CategoryTheory`, or generic sheaf/module owners. Prove reusable
    statements at their weakest valid hypotheses, below Milnor and motivic applications.
-3. **Milnor symbols and operations.** Own new files under `Colib.KTheory.MilnorK`, extending the
+3. **Milnor symbols and operations.** Own new files under `Colib.RingTheory.KTheory.MilnorK`, extending the
    Stacks model with the required tuple-symbol, multilinearity, Steinberg, graded-product,
    functoriality and low-degree results.
 4. **Milnor norms and residues.** Start from the accepted canonical symbol/map interfaces.
@@ -711,3 +711,27 @@ coprimality, not for the original-branch normal-subfield consumer. This is a
 finite field-theoretic reduction, not an infinite special-field construction
 or a Milnor norm, reciprocity or transfer theorem.
 See migration/motivic-sylow-branches.json for source comparison and checks.
+
+### Prime Galois Milnor norm-residue compatibility
+
+COL-0289 closes the actual chosen-norm/canonical-DVR-residue square for a finite
+torsion-free local DVR extension whose fraction-field extension is Galois of prime
+degree and whose actual base residue field has characteristic zero. The rings and fraction
+fields share one universe. Every natural degree, including the degree-one to
+residue-degree-zero case, is covered by both pointwise and additive-hom equality.
+
+The proof uses one actual finite coprime coefficient field for each class, its
+native tensor coordinates and every completed normalization branch. Residue norms
+retract the ramification-weighted branch errors; the original-base weight sum
+supplies the second annihilator. Together with the broader prime annihilation
+result COL-0261, native integer gcd cancellation gives equality. No Henselianity
+of the original rings, supplied auxiliary square or mixed witness, separate
+integer cancellation, or torsion-freeness of a Milnor group is assumed.
+
+This complete chain comprises 17 production modules and seven consumer modules
+with 30 examples. The field-specific sources use the native
+`Colib.RingTheory.KTheory.MilnorK` owner. Positive or mixed residue characteristic,
+arbitrary finite generic degree, independent endpoint universes and a general
+chosen-norm tower/independence theorem remain outside this milestone. Precise
+source correspondence, final-byte compilation and project-check scope are
+recorded in `migration/milnor-prime-galois-dvr-norm-residue.json`.

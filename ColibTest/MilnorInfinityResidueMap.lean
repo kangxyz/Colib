@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.InfinityResidueMap
+import Colib.RingTheory.KTheory.MilnorK.Norm.InfinityResidueMap
 import StacksFrontier.AlgebraicGeometry.Chow.MilnorNorm.SimpleNorm
 
 /-!

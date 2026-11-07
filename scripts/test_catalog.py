@@ -34,7 +34,7 @@ class LibraryTests(unittest.TestCase):
         self.assertEqual(ledger["library_item"], "COL-0168")
         self.assertEqual(ledger["source_file"],
                          "Aglib/KTheory/MilnorK/Residue/AdicCompletion.lean")
-        source = (root / "Colib/KTheory/MilnorK/Residue/Completion.lean").read_text()
+        source = (root / "Colib/RingTheory/KTheory/MilnorK/Residue/Completion.lean").read_text()
         for declaration in ledger["source_declarations"].values():
             self.assertIn(declaration.removeprefix("Stacks.Chow."), source)
         self.assertIn("IsFractionRing.lift", source)
@@ -43,7 +43,7 @@ class LibraryTests(unittest.TestCase):
         self.assertIn('colib_tag "COL-0168"', source)
         for path in ("scripts/check.sh", ".github/workflows/lean-ci.yml"):
             self.assert_test_in_checks("ColibTest.MilnorCompletion", path)
-        self.assertIn("Colib.KTheory.MilnorK.Residue.Completion",
+        self.assertIn("Colib.RingTheory.KTheory.MilnorK.Residue.Completion",
                       (root / "Colib.lean").read_text())
 
     def test_import_all_keeps_native_dependency_boundary(self):
@@ -314,8 +314,12 @@ class LibraryTests(unittest.TestCase):
             "homotopy-groups": "Colib.Topology.Homotopy.HomotopyGroup.Map",
             "homotopy-colimits": "Colib.Topology.Pushout.HomotopyEquivalence",
             "quillen-k-theory": "Colib.KTheory.Quillen.Basic",
-            "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Field",
-            "milnor-k-theory": "Colib.KTheory.MilnorK.DegreeTwo",
+            "grothendieck-groups": "Colib.KTheory.GrothendieckGroup.Basic",
+            "k-zero-of-fields": "Colib.RingTheory.KTheory.GrothendieckGroup.Field",
+            "quillen-k-theory-of-rings": "Colib.RingTheory.KTheory.Quillen.Field.FiniteFieldKTwo",
+            "g-theory-of-rings": "Colib.RingTheory.KTheory.GTheory.FiniteModules.Localization",
+            "k-theory-of-schemes": "Colib.AlgebraicGeometry.KTheory.PerfectRestriction",
+            "milnor-k-theory": "Colib.RingTheory.KTheory.MilnorK.DegreeTwo",
             "adic-completion": "Colib.RingTheory.AdicCompletion.FiniteAlgebra",
             "principal-euler": "Colib.RingTheory.Multiplicity.PrincipalEuler.Basic",
             "charpoly-branches": "Colib.RingTheory.Charpoly.DVRBranchCount",
@@ -673,7 +677,7 @@ class LibraryTests(unittest.TestCase):
             <= self.library["entries"].keys()
         )
         self.assertEqual(
-            self.library["entries"]["COL-0004"]["section"], "grothendieck-groups"
+            self.library["entries"]["COL-0004"]["section"], "k-zero-of-fields"
         )
 
     def test_exact_foundations_and_k0_ids_keep_their_owners(self):
@@ -682,11 +686,12 @@ class LibraryTests(unittest.TestCase):
                 self.library["entries"][f"COL-{index:04d}"]["section"],
                 "exact-categories",
             )
-        for index in range(18, 21):
+        for index in range(18, 20):
             self.assertEqual(
                 self.library["entries"][f"COL-{index:04d}"]["section"],
                 "grothendieck-groups",
             )
+        self.assertEqual(self.library["entries"]["COL-0020"]["section"], "k-zero-of-fields")
         native = self.native_fixture()
         result = catalog.compile_library(self.library, native, {}, "main")
         self.assertEqual(
@@ -821,7 +826,7 @@ class LibraryTests(unittest.TestCase):
             {
                 "name": "CategoryTheory.helper",
                 "type": "Prop",
-                "module": "Colib.KTheory.GrothendieckGroup.Field",
+                "module": "Colib.RingTheory.KTheory.GrothendieckGroup.Field",
                 "dependencies": [],
             }
         )
@@ -867,8 +872,8 @@ class LibraryTests(unittest.TestCase):
         native = self.native_fixture()
         result = catalog.compile_library(self.library, native, {}, "main")
         self.assertIn(
-            "Colib.KTheory.GrothendieckGroup.Field",
-            result["sections"]["grothendieck-groups"]["modules"],
+            "Colib.RingTheory.KTheory.GrothendieckGroup.Field",
+            result["sections"]["k-zero-of-fields"]["modules"],
         )
 
     def test_declaration_lists_are_owned_by_lean(self):
@@ -893,10 +898,10 @@ class LibraryTests(unittest.TestCase):
         directory = self.root / "build/library"
         directory.mkdir(parents=True)
         (directory / "library.json").write_text(json.dumps(built))
-        entry = self.root / "docs/library/entries/k-theory/COL-0004.toml"
+        entry = self.root / "docs/library/entries/k-theory-rings-schemes/COL-0004.toml"
         entry.write_text(
             entry.read_text().replace(
-                'section = "grothendieck-groups"', 'section = "milnor-k-theory"'
+                'section = "k-zero-of-fields"', 'section = "milnor-k-theory"'
             )
         )
         scripts = self.root / "scripts"
@@ -910,7 +915,7 @@ class LibraryTests(unittest.TestCase):
         )
         item = json.loads(result.stdout)
         self.assertEqual(item["section"], "milnor-k-theory")
-        self.assertEqual(item["modules"], ["Colib.KTheory.GrothendieckGroup.Field"])
+        self.assertEqual(item["modules"], ["Colib.RingTheory.KTheory.GrothendieckGroup.Field"])
 
     def test_unsafe_bibliographic_path_is_rejected(self):
         path = self.root / "docs/references.toml"

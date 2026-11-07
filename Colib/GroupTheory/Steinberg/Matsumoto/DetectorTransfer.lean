@@ -5,7 +5,7 @@ Authors: OpenAI, kangxyz
 -/
 module
 
-public import Colib.KTheory.MilnorK.Steinberg
+public import Colib.RingTheory.KTheory.MilnorK.Steinberg
 public import Mathlib.Order.Filter.AtTopBot.Basic
 public import Colib.GroupTheory.Steinberg.Basic
 public import Colib.GroupTheory.StableGeneralLinear.Basic

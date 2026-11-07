@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 -/
 module
 
-import Colib.KTheory.Quillen.StableZeroFiberHomology
+import Colib.RingTheory.KTheory.Quillen.StableZeroFiberHomology
 
 open CategoryTheory FundamentalGroupoid.LocalCoefficients
 open ModuleCat.FiniteProjective ModuleCat.FiniteProjective.StableCompletion

@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.GrothendieckGroup.FieldExact
+import Colib.RingTheory.KTheory.GrothendieckGroup.FieldExact
 
 /-!
 # Exact-category Grothendieck group regression tests

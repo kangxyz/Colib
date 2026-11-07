@@ -1,6 +1,6 @@
 module
 
-import Colib.KTheory.MilnorK.Residue.Naturality
+import Colib.RingTheory.KTheory.MilnorK.Residue.Naturality
 
 open Stacks.Chow
 

@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
   "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.Naturality",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.Naturality",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -78,7 +78,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/KTheory/MilnorK/Residue/Naturality.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/Naturality.lean",
         "source_sha256": "1fd718b8b93ec03e6677275f21badfb1ebe3dbc75730845373fc87345b277d0a",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Naturality.olean",
         "olean_sha256": "71c11d08f4976a07a22d5d64875186ac9b03c15a8d76bcb7ca65f2c6d5e51dfb"

@@ -74,13 +74,13 @@
     },
     "artifacts": [
       {
-        "source": "Colib/KTheory/MilnorK/Residue/Surjectivity.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/Surjectivity.lean",
         "source_sha256": "9d25bd19358e7149fb65bb39a1a0a458348f9f17736278e1c6969a0e2000d5ab",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/Surjectivity.olean",
         "olean_sha256": "7108fc8477748c3d0d3ae5a5b112a714a5c09ac57a0b2ccffb55f1210737a931"
       },
       {
-        "source": "Colib/KTheory/MilnorK/Symbols/Surjectivity.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/Surjectivity.lean",
         "source_sha256": "08ba17f1bb7b97f6a5bb3f9bd1910e0bdc2846e15a8a22dd7b1cb584f43ba2a1",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Surjectivity.olean",
         "olean_sha256": "4817ea1c353cbfc18e2ff36056adc5be065a25095bb440c52e9655c1936e1cc1"

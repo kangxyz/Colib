@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.DVRDegreeOne
+import Colib.RingTheory.KTheory.MilnorK.Norm.DVRDegreeOne
 
 /-!
 Consumers of the actual native K₁-to-K₀ norm–residue square.

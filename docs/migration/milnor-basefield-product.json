@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Product",
   "source_sha256": "6513cc434212c2cf539bdc9f89dd33837d6a1a99fdbfb91be7d6bf71c9b18bf3",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.BaseFieldProduct",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.BaseFieldProduct",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -70,7 +70,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/BaseFieldProduct.lean",
         "source_sha256": "5764e33314cb89cf1fae2c58b3af5f896b5d50fc513f3895a20a38f94eb88e77",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/BaseFieldProduct.olean",
         "olean_sha256": "e3f19aa9414c28ee6b5619cd69236c96f107f21135239034221e61c017b24f1d"

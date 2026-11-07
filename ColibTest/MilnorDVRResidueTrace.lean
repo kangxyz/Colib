@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.DVRResidueTrace
+import Colib.RingTheory.KTheory.MilnorK.Norm.DVRResidueTrace
 
 /-!
 Regression consumers of the actual finite local DVR residue trace.

@@ -73,13 +73,13 @@
     },
     "artifacts": [
       {
-        "source": "Colib/KTheory/MilnorK/Residue/RightUnitProduct.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/RightUnitProduct.lean",
         "source_sha256": "e3989853b6d1b0b6d1985853b6858a7088cfdce0d45359d93c684194c29f13a4",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RightUnitProduct.olean",
         "olean_sha256": "6e62ff3b38d874b91ff69d3b9716d386b53f79df28f9d6e2545ca0ef83fa2f47"
       },
       {
-        "source": "Colib/KTheory/MilnorK/Symbols/Involution.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/Involution.lean",
         "source_sha256": "4f124c6e650fbe1aea6491f944fa0fa3bfb55d6a3a4fb3e76c3f568c1b24dd96",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Involution.olean",
         "olean_sha256": "27323d10857e9dad552eba73900998fe2ccae6673ee861f88948f6dfdb18cc6f"

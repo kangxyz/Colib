@@ -9,8 +9,6 @@ public import Colib.KTheory.Quillen.LowDegreeScalarAction.IdentityAutomorphism
 public import Colib.KTheory.Quillen.LowDegreeScalarAction.ExactNaturality
 public import Colib.KTheory.Quillen.SmallModel.Exact
 public import Colib.CategoryTheory.Linear.ScalarAutomorphism
-public import Colib.Algebra.Category.ModuleCat.FiniteProjective
-public import Mathlib.Algebra.Category.FGModuleCat.Abelian
 
 /-!
 # Actual scalar units in the original low-degree K-operations
@@ -24,9 +22,8 @@ homomorphisms, and the representative equations retain the original cubes.
 The ordinary linear-functor square preserves the same scalar coefficient.
 For a chosen SmallModel, full faithfulness of its original realization functor
 lifts this same natural automorphism; no additional linear structure on that
-model is assumed. The concrete consumers are finite projectives over a
-commutative ring and finite modules over a noetherian commutative ring,
-including fields, together with the original upper finite-module model.
+model is assumed. Finite-module and finite-projective specializations belong to
+`Colib.RingTheory.KTheory.Quillen.LowDegreeScalarAction.ScalarUnit`.
 
 The identity-automorphism naturality theorem gives the original
 exact-functor K-map squares, including the actual mapped-model small K-maps,
@@ -48,7 +45,6 @@ set_option backward.defeqAttrib.useBackward true
 universe w u v u₁ v₁ u₂ v₂ s
 open CategoryTheory CategoryTheory.Limits CategoryTheory.ExactCategory
 open CategoryTheory.Linear
-attribute [local instance] Abelian.hasFiniteBiproducts
 open scoped ZeroObject Topology
 
 namespace CategoryTheory.ExactCategory.ScalarUnit
@@ -195,41 +191,5 @@ theorem smallModelKOneAction_natural (F : ExactFunctor E ED) [F.toFunctor.Linear
     (smallModelScalarNatAut_map R F r) a
 
 end SmallModelOperations
-
-section Consumers
-universe r
-variable (R : Type r) [CommRing R]
-
-/-- On actual finite modules the component is the same ordinary scalar multiplication. -/
-theorem finiteModule_scalarNatAut_apply (a : Rˣ) (M : FGModuleCat.{r} R) (x : M) :
-    (((scalarNatAut R (FGModuleCat.{r} R) a).asIso).hom.app M).hom x = (a : R) • x := rfl
-
-/-- On actual finite projectives the component is the same ordinary scalar multiplication. -/
-theorem finiteProjective_scalarNatAut_apply (a : Rˣ)
-    (M : ModuleCat.FiniteProjective.Category.{r, r} R) (x : M.obj) :
-    (((scalarNatAut R (ModuleCat.FiniteProjective.Category.{r, r} R) a).asIso).hom.app M).hom x =
-      (a : R) • x := rfl
-
-/-- The original K-one scalar operation on actual finite projective modules. -/
-def finiteProjectiveKOneAction : Rˣ →*
-    ((ModuleCat.FiniteProjective.exactStructure.{r, r} R).K 1 →*
-      (ModuleCat.FiniteProjective.exactStructure.{r, r} R).K 2) :=
-  kOneAction.{r, r + 1, r} R (ModuleCat.FiniteProjective.exactStructure.{r, r} R)
-
-variable [IsNoetherianRing R]
-
-/-- The original K-one scalar operation on finite modules over a noetherian commutative ring. -/
-def finiteModuleKOneAction : Rˣ →*
-    ((abelianExactStructure (FGModuleCat.{r} R)).K 1 →*
-      (abelianExactStructure (FGModuleCat.{r} R)).K 2) :=
-  kOneAction.{r, r + 1, r} R (abelianExactStructure (FGModuleCat.{r} R))
-
-/-- The K-one scalar operation on that actual upper finite-module model. -/
-def upperFiniteModuleKOneAction : Rˣ →*
-    ((abelianExactStructure (FGModuleCat.{r} R)).SmallK.{r + 1} 1 →*
-      (abelianExactStructure (FGModuleCat.{r} R)).SmallK.{r + 1} 2) :=
-  smallModelKOneAction.{r, r + 1, r, r + 1} R (abelianExactStructure (FGModuleCat.{r} R))
-
-end Consumers
 
 end CategoryTheory.ExactCategory.ScalarUnit

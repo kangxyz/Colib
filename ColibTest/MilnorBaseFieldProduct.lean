@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.BaseFieldProduct
+import Colib.RingTheory.KTheory.MilnorK.Residue.BaseFieldProduct
 
 universe u v w
 

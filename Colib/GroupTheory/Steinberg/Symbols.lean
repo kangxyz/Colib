@@ -32,7 +32,7 @@ presentation and finite matrix actions; no symbol relation is assumed.
 The kernel commutative structure copies the existing group operations and is
 activated only locally. No kernel generation, injectivity, Matsumoto equivalence,
 or comparison with Quillen K₂ is asserted. The native Milnor symbol map is built
-separately in `Colib.KTheory.MilnorK.Steinberg`.
+separately in `Colib.RingTheory.KTheory.MilnorK.Steinberg`.
 
 ## Implementation provenance
 

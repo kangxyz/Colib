@@ -48,7 +48,7 @@
     },
     {
       "declaration": "AlgebraicGeometry.Scheme.Modules.perfectComplexesRestrictKMap",
-      "module": "Colib.KTheory.Waldhausen.PerfectRestriction",
+      "module": "Colib.AlgebraicGeometry.KTheory.PerfectRestriction",
       "role": "The existing canonical Waldhausen KMap of ordinary exact restriction.",
       "library_item": "COL-0230"
     }

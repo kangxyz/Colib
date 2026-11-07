@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Map",
   "source_sha256": "50b66c05062b5d9fc512fe7d63be4aa09a5a7d2455d8fdfbc3d1135648bbd0d2",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Symbols.Transport",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Transport",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -104,7 +104,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/KTheory/MilnorK/Symbols/Transport.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/Transport.lean",
         "source_sha256": "9858482cb1200fdb0b90e37e54d6f53a23c969ae02e9f7e3f9583ee65bccc407",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/Transport.olean",
         "olean_sha256": "e46f5ae80d3904d882d95e6f1d9f0b224fa90337ae9a84ed19f434d28513ac46"

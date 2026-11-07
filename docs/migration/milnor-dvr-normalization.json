@@ -90,12 +90,12 @@
   },
   "historical_files": [
     {
-      "path": "Colib/KTheory/MilnorK/Residue/RamifiedSpecialization.lean",
+      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedSpecialization.lean",
       "source_sha256": "b7795b276ffa5ebb91363539911ff6a538879cd6be6782d3cf727d7d9f6a9325",
       "olean_sha256": "3fbf298df4c76515f0ef2e113423c72102e6f6477970f0d88837065d712ba012"
     },
     {
-      "path": "Colib/KTheory/MilnorK/Residue/CanonicalNormalization.lean",
+      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/CanonicalNormalization.lean",
       "source_sha256": "bc0cc16b4151e814d2578d5a5f59a3c9630ca1f77bc1e6354fbe6efa96abf521",
       "olean_sha256": "863d65c172a9bf53ca5a3bb4d40a9079996a91ab5d41465cf565845f594cf0cc"
     },
@@ -189,17 +189,17 @@
   ],
   "files": [
     {
-      "path": "Colib/KTheory/MilnorK/Residue/CanonicalRamifiedMap.lean",
+      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/CanonicalRamifiedMap.lean",
       "source_sha256": "9841a35d2b56220ba1ef5ca483a773d8d5bb126d61f28d5454b73bc2ced59e78",
       "olean_sha256": "37050ef81f847672dc1a2a7774013dd68dd844bdf449fe6155850b5d8ae89d5a"
     },
     {
-      "path": "Colib/KTheory/MilnorK/Residue/CanonicalNormalization.lean",
+      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/CanonicalNormalization.lean",
       "source_sha256": "d58301d5349bd14eaa7eb204a573c66d79947aec973539815acd67f95ade43b5",
       "olean_sha256": "79737a2b913834be345fcadb1979cdcb7db5294b7fb1a8289bc1688e5615e340"
     },
     {
-      "path": "Colib/KTheory/MilnorK/Residue/RamifiedSpecialization.lean",
+      "path": "Colib/RingTheory/KTheory/MilnorK/Residue/RamifiedSpecialization.lean",
       "source_sha256": "dedd8d60342eb120f77f3b2d626780984e16eea05a6f29c11f09f12d0e82577d",
       "olean_sha256": "b4a1f15c02b50e736be9d1051bbfdbd2c4ea2ab9ee9f8a77489c66f6b9a39f34"
     },

@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.PrimeInseparableTrace
+import Colib.RingTheory.KTheory.MilnorK.Norm.PrimeInseparableTrace
 
 /-!
 Regression consumers of restriction of the actual chosen norm in purely

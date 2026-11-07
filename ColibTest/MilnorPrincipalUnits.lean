@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.PrincipalUnits
+import Colib.RingTheory.KTheory.MilnorK.Residue.PrincipalUnits
 
 universe u v
 

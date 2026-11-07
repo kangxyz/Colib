@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
   "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.UnramifiedMap",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMap",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -84,7 +84,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMap.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMap.lean",
         "source_sha256": "f0d0920558cf6d5dafac0ecfa4bb47aeb31f16c8974ad7d432dda0c3a9668855",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMap.olean",
         "olean_sha256": "66ec8c00083585e066a5e8bcea8544eb0594e028aa664aa9e00b12b0fa292adf"

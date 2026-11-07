@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.OriginResidueFields
+import Colib.RingTheory.KTheory.MilnorK.Norm.OriginResidueFields
 
 /-! Independent-universe consumers of the actual origin coefficient map.-/
 

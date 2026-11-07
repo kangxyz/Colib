@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Steinberg
+import Colib.RingTheory.KTheory.MilnorK.Steinberg
 
 noncomputable section
 

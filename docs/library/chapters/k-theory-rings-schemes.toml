@@ -1,0 +1,35 @@
+[chapter]
+id = "k-theory-rings-schemes"
+title = "Algebraic K-theory of rings and schemes"
+order = 12
+introduction = "Ring, field and scheme applications of general algebraic K-theory. Separate sections cover dimension, native Milnor K-theory, Quillen K-theory of module categories, and geometric K-theory. Abstract exact-category and Waldhausen theorems remain in the general chapter."
+
+[[sections]]
+id = "k-zero-of-fields"
+title = "K₀ of fields"
+order = 10
+introduction = "Dimension computes the Grothendieck groups of native finite-dimensional vector spaces. The abelian and exact-structure presentations keep their original object classes and canonical comparison."
+
+[[sections]]
+id = "milnor-k-theory"
+title = "Milnor K-theory"
+order = 20
+introduction = "The canonical graded object is the Steinberg quotient of the tensor algebra on the multiplicative group of a field. We first construct its homogeneous groups, then compare the degree-two component with the ordered-pair presentation. Ordered tuple symbols then expose coordinate additivity and adjacent Steinberg and sign identities directly on those homogeneous groups. Direct split evaluation and native reduced representatives give finite signed mixed-symbol expansions in the same homogeneous group. Finite witnesses precede all coefficient fields and actual factors; over a perfect base, a prime-degree root-field class then acquires its expansion in the root field of the whole coefficient image after one actual finite coprime extension. Native weak degree bounds and the shifted former strict bounds remain distinct. The literature references identify the defining relations and the scope of each comparison. Canonical DVR residues extend to actual completion through the native fraction-field lift and residue-field identification, preserving and reflecting residue vanishing. The native Milnor K₂ map sends ordered symbols directly to actual stable Steinberg kernel words, preserving field maps and the positive commutator marking. Native integral Milnor K₂ vanishes over every finite field, including F₂ and F₃."
+
+[[sections]]
+id = "quillen-k-theory-of-rings"
+title = "Quillen K-theory of rings and fields"
+order = 30
+introduction = "Apply general Quillen K-theory to the actual finite-projective and finite-module categories. The ring and field constructions retain the original scalar-extension maps, stable completion and canonical Milnor comparison. The implemented characteristic-zero case of Matsumoto's theorem identifies Milnor K₂ with the original Quillen K₂. Steinberg's theorem gives vanishing over finite fields, including F₂ and F₃. These are ring and field theorems, not general categorical axioms."
+
+[[sections]]
+id = "g-theory-of-rings"
+title = "G-theory of rings"
+order = 40
+introduction = "For native finite modules over a commutative Noetherian ring, actual localization at any multiplicative set gives the connective G-localization sequence with uniform-annihilator support. Powers of an element give principal closed support, and the original fraction-field K-map is retained definitionally. Actual quotient restriction and finite image devissage identify principal supported G-theory with G of the quotient ring, retaining the canonical closed pushforward and open localization sequence."
+
+[[sections]]
+id = "k-theory-of-schemes"
+title = "K-theory of schemes"
+order = 50
+introduction = "Scheme constructions use their original geometric categories and consume the general categorical K-theory machinery. Open restriction of native perfect complexes induces the original canonical Waldhausen K-map. Any comparison or localization theorem retains its geometric hypotheses and is registered separately when proved."

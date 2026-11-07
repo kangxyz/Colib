@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Product",
   "source_sha256": "104cd452dba0fb72c64abd46ab500bb6f91f9c02f15d23b38c83b4e3412edcee",
   "target_baseline": "bb11e3ad22069f6cf78b1ff37919cb239dcb4e94",
-  "target_module": "Colib.KTheory.MilnorK.Symbols.Product",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Symbols.Product",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -214,17 +214,17 @@
     "lean_version": "leanprover/lean4:v4.34.0-rc2",
     "commands": [
       {
-        "command": "lake build Colib.KTheory.MilnorK.Symbols.Product",
+        "command": "lake build Colib.RingTheory.KTheory.MilnorK.Symbols.Product",
         "result": "Passed, 1335 jobs",
         "resource_receipt": "colib-environment-20261105/milnor-product-build-r3.json"
       },
       {
-        "command": "lake exe batteries/runLinter --no-build Colib.KTheory.MilnorK.Symbols.Product",
+        "command": "lake exe batteries/runLinter --no-build Colib.RingTheory.KTheory.MilnorK.Symbols.Product",
         "result": "Passed",
         "resource_receipt": "colib-environment-20261105/milnor-product-lint.json"
       },
       {
-        "command": "lake exe mathlib/lint-style Colib.KTheory.MilnorK.Symbols.Product",
+        "command": "lake exe mathlib/lint-style Colib.RingTheory.KTheory.MilnorK.Symbols.Product",
         "result": "Passed; absent nolints file treated as empty",
         "resource_receipt": "colib-environment-20261105/milnor-product-style.json"
       }

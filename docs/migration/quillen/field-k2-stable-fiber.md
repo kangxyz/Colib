@@ -74,11 +74,11 @@ equivalence hypotheses.
 - Classifying-space realization, telescope, completion, extension and loop
   comparisons live under `Colib.Topology.ClassifyingSpace`.
 - The source `KTheory/Quillen/ProjectiveCompletionPositiveK` endpoints are in
-  `Colib.KTheory.Quillen.ProjectiveCompletion`.
+  `Colib.RingTheory.KTheory.Quillen.ProjectiveCompletion`.
 - The actual stable-fiber and kernel-to-right-projective maps are in
-  `Colib.KTheory.Quillen.Field.SteinbergFiberComparison`.
+  `Colib.RingTheory.KTheory.Quillen.Field.SteinbergFiberComparison`.
 - The native Milnor composites and ordered-symbol equations are in
-  `Colib.KTheory.MilnorK.QuillenComparison`. Upper finite-module and base-change
+  `Colib.RingTheory.KTheory.MilnorK.QuillenComparison`. Upper finite-module and base-change
   constructions retain their exact-category and native module owners.
 
 The general all-category fundamental-group comparison reuses native groupoid
@@ -103,24 +103,24 @@ structure. These are proof replacements preserving the specified mathematical ma
 
 ## Completed homological and comparison chain
 
-1. `Colib.KTheory.Quillen.StableZeroFiberHomology` and `.StableZeroFiberGeometry`
+1. `Colib.RingTheory.KTheory.Quillen.StableZeroFiberHomology` and `.StableZeroFiberGeometry`
    construct the original simply connected cover and pullback setup, with the
    integral homology theorem for the actual lifted stable map. The proof retains
    local coefficients, covering monodromy and homological descent.
-2. `Colib.KTheory.Quillen.StableFiberPerfectness` proves perfectness of the
+2. `Colib.RingTheory.KTheory.Quillen.StableFiberPerfectness` proves perfectness of the
    literal stable-zero fiber's π₁ for every ring. The low-degree criterion and
    actual endpoint-aware fiber map supply the proof. Perfectness of the stable
    elementary group or pullback group alone is not used as the conclusion.
-3. `Colib.KTheory.Quillen.Field.SteinbergFiberSurjectivity` and
+3. `Colib.RingTheory.KTheory.Quillen.Field.SteinbergFiberSurjectivity` and
    `.SteinbergFiberInjectivity` prove bijectivity of the existing kernel-to-Q.K₂
    map over every field. Constructed square capping and ordered torus calibration
    give the detector's left inverse, using actual kernel generation. Native
    central evaluation replaces the source's Schur-equivalence proof; it does
    not assert literal equality of differently implemented detectors.
-4. `Colib.KTheory.MilnorK.QuillenNaturality` retains the original right-module
+4. `Colib.RingTheory.KTheory.MilnorK.QuillenNaturality` retains the original right-module
    scalar extension and literal upper finite-module tensor extension. The
    general-field positive marking then identifies the actual ordered product.
-   `Colib.KTheory.MilnorK.QuillenEquivalence` combines these inputs with native
+   `Colib.RingTheory.KTheory.MilnorK.QuillenEquivalence` combines these inputs with native
    Matsumoto injectivity in characteristic zero, including inverse field-change
    squares and the negative normalization.
 

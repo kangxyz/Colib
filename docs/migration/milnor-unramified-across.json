@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Restriction",
   "source_sha256": "1f2e563eeddde99d5f849f3b8bb073c7ca7b611f90194a7fc98fe186dc40c542",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.UnramifiedMapAcross",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.UnramifiedMapAcross",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -98,13 +98,13 @@
     },
     "artifacts": [
       {
-        "source": "Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/UnramifiedMapAcross.lean",
         "source_sha256": "dd3855f9a8f94f7eb45364ba4b52869c1f632f1d202508088a21ef7c497d9d92",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/UnramifiedMapAcross.olean",
         "olean_sha256": "7369c307097f2997c52184b049dc96e59102c853f0d87138e4b823bc862c29a2"
       },
       {
-        "source": "Colib/KTheory/MilnorK/Symbols/RingTransport.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Symbols/RingTransport.lean",
         "source_sha256": "52efe532a783447f2b5c7a895bea8b84b7bc51add0e2acf6df0751fd68e49612",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Symbols/RingTransport.olean",
         "olean_sha256": "2911be498b9eb95937c21d5e810886c4245f386795ddad853861556a0c8b099a"

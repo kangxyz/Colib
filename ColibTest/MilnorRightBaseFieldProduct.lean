@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Residue.RightBaseFieldProduct
+import Colib.RingTheory.KTheory.MilnorK.Residue.RightBaseFieldProduct
 
 open Stacks.Chow
 

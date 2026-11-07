@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.GTheory.FiniteModules.Localization
+import Colib.RingTheory.KTheory.GTheory.FiniteModules.Localization
 
 /-! Regression tests for arbitrary-set and principal closed-support G-localization. -/
 

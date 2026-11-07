@@ -28,7 +28,7 @@ Every source word and stabilization is from the original finite-rank presentatio
 No equality of arbitrary source words is inferred from equal matrix images.
 
 The Milnor range reduction is separated into
-`Colib.KTheory.MilnorK.Steinberg.Surjectivity`; the present group-theoretic proof
+`Colib.RingTheory.KTheory.MilnorK.Steinberg.Surjectivity`; the present group-theoretic proof
 has no Milnor-model dependency. No Matsumoto comparison is assumed.
 
 ## Implementation provenance

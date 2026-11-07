@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.Norm.DVRAngularComponent
+import Colib.RingTheory.KTheory.MilnorK.Norm.DVRAngularComponent
 
 /-! Consumers of the actual norm angular component, retaining negative orders.-/
 

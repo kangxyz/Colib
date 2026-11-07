@@ -104,7 +104,7 @@ to that same owner. CONTRIBUTING.md defines assignments, style and incremental v
 ## Item schema and agent lookup
 
 Each file contains one `[entry]` table. A contribution uses an allocated identifier and an
-existing section owner, as in docs/library/entries/k-theory/COL-0004.toml.
+existing section owner, as in docs/library/entries/k-theory-rings-schemes/COL-0004.toml.
 
 ```toml
 [entry]

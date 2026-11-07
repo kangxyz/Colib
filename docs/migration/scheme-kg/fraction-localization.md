@@ -28,7 +28,7 @@ quotient argument of Stacks `FGModulesModuloTorsion.lean`, Tag 0B0L. The separat
 finite base-ring submodule spanned by a generating family. This replaces only
 the field-basis argument used in the native fraction-field specialization.
 
-`Colib/KTheory/GTheory/FiniteModules/Localization.lean` gives COL-0273. For
+`Colib/RingTheory/KTheory/GTheory/FiniteModules/Localization.lean` gives COL-0273. For
 `R : Type u` and module universe `v`, the groups use native `FGModuleCat.{v}` and
 `SmallModel.{u}`. The ordinary hypothesis `Small.{v,u} R` permits the native
 localized-module construction; it is automatic when `v = u`. All three recurring
@@ -52,7 +52,7 @@ require no Noetherian hypothesis.
 
 The previously constructed fraction-field specialization is retained in
 `Colib/Algebra/Category/FGModuleCat/FractionLocalization.lean` and
-`Colib/KTheory/GTheory/FiniteModules/FractionLocalization.lean`. At the
+`Colib/RingTheory/KTheory/GTheory/FiniteModules/FractionLocalization.lean`. At the
 nonzerodivisors of a domain the general functor and torsion property are
 literally the original Stacks constructions, and the G-map is definitionally
 the existing fraction-field G-map. No replacement map or comparison model is

@@ -4,7 +4,7 @@
   "source_module": "Aglib.KTheory.MilnorK.Residue.Basic",
   "source_sha256": "e95f7b23ce0a17d80e05de4c8994b3762874d44f9d0363b342c715d37cf1fa94",
   "target_baseline": "6993f8b112d60c07d713edf4efdb6f923bdb2dc5",
-  "target_module": "Colib.KTheory.MilnorK.Residue.RepeatedUniformizer",
+  "target_module": "Colib.RingTheory.KTheory.MilnorK.Residue.RepeatedUniformizer",
   "original_provenance": {
     "copyright": "2026 Motivic Cohomology contributors",
     "authors": [
@@ -72,7 +72,7 @@
     },
     "artifacts": [
       {
-        "source": "Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
+        "source": "Colib/RingTheory/KTheory/MilnorK/Residue/RepeatedUniformizer.lean",
         "source_sha256": "a0cb3a3acecb54603b9605b4c47da39a733ed8f5ca51037c879b0340e404eb28",
         "olean": ".lake/build/lib/lean/Colib/KTheory/MilnorK/Residue/RepeatedUniformizer.olean",
         "olean_sha256": "b632500f979817d79fac771e4b5fccfbfcc6794bd435526a5b0174539a20c89a"
@@ -115,7 +115,7 @@
   },
   "canonical_endpoint": {
     "library_item": "COL-0152",
-    "module": "Colib.KTheory.MilnorK.Residue.CanonicalNormalization",
+    "module": "Colib.RingTheory.KTheory.MilnorK.Residue.CanonicalNormalization",
     "ledger": "milnor-dvr-normalization.json"
   }
 }

@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.GTheory.FiniteModules.PrincipalClosedLocalization
+import Colib.RingTheory.KTheory.GTheory.FiniteModules.PrincipalClosedLocalization
 
 /-! Regression tests for actual quotient restriction and principal closed/open G-localization. -/
 

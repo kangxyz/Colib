@@ -1,9 +1,0 @@
-[entry]
-id = "COL-0230"
-title = "Canonical K-map of open perfect-complex restriction"
-kind = "definition"
-section = "waldhausen-k-theory"
-order = 180
-statement = "Ordinary exact restriction of native perfect complexes from a scheme to one of its open subschemes induces the existing canonical Waldhausen KMap homomorphism in every nonnegative degree."
-scope = "Scheme.{u}, an open U : X.Opens and n : Nat. The source and target are the existing K n groups of the native perfect-complex Waldhausen structures. The map is definitionally the canonical KMap of the actual degreewise restriction functor, with the existing chosen-zero rebasing. No equivalence with archived StrictK or PerfectK, arbitrary-open-immersion extension, localization theorem, nested-restriction coherence or nonconnective K-theory claim is made. Author source comparison was checked on 2026-11-06; independent review and compilation are separate evidence."
-review = "author_checked"

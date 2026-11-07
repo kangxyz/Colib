@@ -5,7 +5,7 @@ Authors: kangxyz
 -/
 module
 
-import Colib.KTheory.MilnorK.FiniteTensorEquality
+import Colib.RingTheory.KTheory.MilnorK.FiniteTensorEquality
 
 universe u v
 

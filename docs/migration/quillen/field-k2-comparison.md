@@ -25,7 +25,7 @@ at Quillen revision `c561118b7795eb9780be9ed391c3251d6a4d0afd`.
 Original attribution and Apache-2.0 notices are retained in adapted sources.
 
 Library item COL-0262 records the endpoint in
-`Colib.KTheory.MilnorK.QuillenEquivalence`. The earlier Lean 4.34 candidate passed
+`Colib.RingTheory.KTheory.MilnorK.QuillenEquivalence`. The earlier Lean 4.34 candidate passed
 strict endpoint compilation and focused native checks. Those results are
 historical. The Lean 4.35 integration ports consumers to the native finite-support
 simplex and is now published on main at
@@ -89,7 +89,7 @@ For `F L : Type u` and `f : F →+* L`, the original forward squares use
 `(ModuleCat.FiniteProjective.rightBaseChangeExact f).KMap 2` and
 `(FGModuleCat.finiteModuleExtensionExact f).smallKMap.{u+1} 2`.
 They are proved for arbitrary fields in
-`Colib.KTheory.MilnorK.QuillenNaturality`. In this common universe, the native
+`Colib.RingTheory.KTheory.MilnorK.QuillenNaturality`. In this common universe, the native
 Milnor map agrees with the existing Stacks transport.
 
 When both fields have characteristic zero, the final comparison proves these

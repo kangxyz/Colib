@@ -35,7 +35,7 @@ Search the pinned Mathlib and Stacks declarations before defining anything. Exte
 mathematical namespace. A source model comparison is allowed only when a specific proof needs
 it; keep that comparison local to its boundary, prove the exact generator/map equations it
 uses, and do not expose a parallel downstream API. Reuse the existing degree-two comparison in
-`Colib.KTheory.MilnorK.DegreeTwo` when relevant rather than recreating it. Its presence does not
+`Colib.RingTheory.KTheory.MilnorK.DegreeTwo` when relevant rather than recreating it. Its presence does not
 require later results to factor through the pair presentation.
 
 For every migrated statement preserve its actual field/ring/scheme assumptions, finiteness and

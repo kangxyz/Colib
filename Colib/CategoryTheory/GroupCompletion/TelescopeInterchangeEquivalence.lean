@@ -12,7 +12,8 @@ public import Mathlib.CategoryTheory.Equivalence
 /-! # Equivalence for the original localization–Grothendieck interchange -/
 
 /-!
-Implementation provenance: adapted from `Quillen/CategoryTheory/GroupCompletion/TelescopeInterchangeEquivalence.lean` at
+Implementation provenance: adapted from
+`Quillen/CategoryTheory/GroupCompletion/TelescopeInterchangeEquivalence.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The original functors,
 comparison maps, homotopies, hypotheses and universes are retained.
 -/

@@ -10,7 +10,8 @@ public import Colib.CategoryTheory.GroupCompletion.TelescopeIteration
 /-! # The original completed telescope, exposing its actual iterated lineators -/
 
 /-!
-Implementation provenance: adapted from `Quillen/CategoryTheory/GroupCompletion/TelescopeDiagram.lean` at
+Implementation provenance: adapted from
+`Quillen/CategoryTheory/GroupCompletion/TelescopeDiagram.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The original functors,
 comparison maps, homotopies, hypotheses and universes are retained.
 -/

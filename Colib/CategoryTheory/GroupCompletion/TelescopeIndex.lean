@@ -15,7 +15,8 @@ This is the index used in the localization–Grothendieck interchange.
 -/
 
 /-!
-Implementation provenance: adapted from `Quillen/CategoryTheory/GroupCompletion/TelescopeIndex.lean` at
+Implementation provenance: adapted from
+`Quillen/CategoryTheory/GroupCompletion/TelescopeIndex.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The original functors,
 comparison maps, homotopies, hypotheses and universes are retained.
 -/

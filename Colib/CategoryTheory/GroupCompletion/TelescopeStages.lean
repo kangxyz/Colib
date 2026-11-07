@@ -12,7 +12,8 @@ public import Colib.CategoryTheory.GroupCompletion.UnitEntry
 /-! # Original completed-stage maps into localization of the telescope -/
 
 /-!
-Implementation provenance: adapted from `Quillen/CategoryTheory/GroupCompletion/TelescopeStages.lean` at
+Implementation provenance: adapted from
+`Quillen/CategoryTheory/GroupCompletion/TelescopeStages.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The original functors,
 comparison maps, homotopies, hypotheses and universes are retained.
 -/

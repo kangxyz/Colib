@@ -11,7 +11,8 @@ public import Colib.CategoryTheory.Monoidal.Action.LinearComposition
 /-! # Localization retains the specified composition of linear functors -/
 
 /-!
-Implementation provenance: adapted from `Quillen/CategoryTheory/GroupCompletion/ActedFunctorComposition.lean` at
+Implementation provenance: adapted from
+`Quillen/CategoryTheory/GroupCompletion/ActedFunctorComposition.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The original functors,
 comparison maps, homotopies, hypotheses and universes are retained.
 -/

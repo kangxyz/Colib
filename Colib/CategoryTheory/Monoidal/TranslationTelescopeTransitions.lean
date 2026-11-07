@@ -11,7 +11,8 @@ public import Colib.CategoryTheory.Monoidal.Action.RightTensorLinear
 /-! # Original stage transitions retain their actual action compatibility -/
 
 /-!
-Implementation provenance: adapted from `Quillen/CategoryTheory/Monoidal/TranslationTelescopeTransitions.lean` at
+Implementation provenance: adapted from
+`Quillen/CategoryTheory/Monoidal/TranslationTelescopeTransitions.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The original functors,
 comparison maps, homotopies, hypotheses and universes are retained.
 -/

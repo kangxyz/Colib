@@ -9,7 +9,8 @@ public import Colib.CategoryTheory.Grothendieck.EndofunctorTelescopeCocone
 public import Colib.CategoryTheory.Grothendieck.FiberTransitions
 
 /-!
-Adapted from `Quillen/Aglib/CategoryTheory/Grothendieck/EndofunctorTelescopeCoconeNaturality.lean` at
+Adapted from
+`Quillen/Aglib/CategoryTheory/Grothendieck/EndofunctorTelescopeCoconeNaturality.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`; original cocone maps retained.
 
 # Genuine transformations from coherent telescope successors

@@ -10,7 +10,8 @@ public import Mathlib.CategoryTheory.Grothendieck
 /-! # Identity and composition of the original Grothendieck fiber transitions -/
 
 /-!
-Implementation provenance: adapted from `Quillen/Aglib/CategoryTheory/Grothendieck/FiberTransitions.lean` at
+Implementation provenance: adapted from
+`Quillen/Aglib/CategoryTheory/Grothendieck/FiberTransitions.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The original functors,
 comparison maps, homotopies, hypotheses and universes are retained.
 -/

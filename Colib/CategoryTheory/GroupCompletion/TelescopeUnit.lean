@@ -12,7 +12,8 @@ public import Colib.CategoryTheory.Monoidal.TranslationTelescopeFactorization
 /-! # The original unit in the completed telescope model -/
 
 /-!
-Implementation provenance: adapted from `Quillen/CategoryTheory/GroupCompletion/TelescopeUnit.lean` at
+Implementation provenance: adapted from
+`Quillen/CategoryTheory/GroupCompletion/TelescopeUnit.lean` at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The original functors,
 comparison maps, homotopies, hypotheses and universes are retained.
 -/

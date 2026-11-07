@@ -70,6 +70,20 @@ non-Stacks package paths. The earlier `stacks-<context>` cache contains only the
 Stacks package. These independent caches can seed the first layered run; the
 optimized workflow does not normally save those source-tree caches.
 
+### Reuse after merging a branch
+
+A default-branch push can warm Build from a successful earlier push run of the
+same repository's Colib CI. A fast-forward can use a run at the same commit. A
+merge commit or a GitHub-recorded pull request merge can use a branch commit
+whose Git tree exactly matches the target checkout. The workflow verifies the
+run, immutable artifact digests and native producer metadata before importing
+the branch stage. The dependency and Stacks checkpoints are optional overlays.
+
+Build keeps the regular target-branch checkpoints and uses Lake's artifact
+store for the imported native outputs. A successful native import adds
+`--rehash` to that Build invocation. If a matching branch run or usable artifact
+is unavailable, the usual incremental build can proceed.
+
 ## Publication and manual exports
 
 After all checks pass, main pushes publish the normal `lean-native-<Colib revision>`

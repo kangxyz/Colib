@@ -79,6 +79,10 @@ jobs:
     name: Build
     runs-on: ${{ vars.COLIB_SELF_HOSTED_ENABLED == 'true' && github.repository == 'kangxyz/colib' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && fromJSON(inputs.runner-labels) || fromJSON('["ubuntu-24.04"]') }}
     timeout-minutes: ${{ inputs.build-job-timeout-minutes != 0 && inputs.build-job-timeout-minutes || inputs.job-timeout-minutes }}
+    permissions:
+      contents: read
+      actions: read
+      pull-requests: read
     env: &native-resource-env
       CI_NATIVE_MEMORY_MIB: ${{ inputs.native-memory-mib }}
       CI_LAKE_THREADS: ${{ inputs.lake-threads }}
@@ -479,6 +483,15 @@ jobs:
             | select(.rev | test("^[0-9a-f]{40}$"))
             | [.name, (.url | sub("^https://github[.]com/"; "") | sub("[.]git/?$"; "") | rtrimstr("/")), .rev]
             | @tsv' lake-manifest.json)
+      - name: Import checked branch outputs after merge
+        id: merge-seed
+        if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && steps.cache-mode.outputs.layered == 'true' }}
+        continue-on-error: true
+        timeout-minutes: 12
+        working-directory: ${{ inputs.package-directory }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/ci-cache/merge_seed.py
       - name: Refresh archive hash metadata after cache preparation
         working-directory: ${{ inputs.package-directory }}
         run: *restore-writable-archive-hashes
@@ -494,6 +507,7 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         env:
           CI_LAKE_THREADS: ${{ inputs.build-lake-threads != 0 && inputs.build-lake-threads || inputs.lake-threads }}
+          MERGE_SEED_IMPORTED: ${{ steps.merge-seed.outputs.imported }}
         run: |
           read -r -a targets <<< "$BUILD_TARGETS"
           if test "${#targets[@]}" -eq 0; then
@@ -508,8 +522,13 @@ jobs:
           fi
           compiler_seconds=$((BUILD_COMPILER_MINUTES * 60))
           if test "$remaining" -lt "$compiler_seconds"; then compiler_seconds=$remaining; fi
+          build_options=()
+          if test "$MERGE_SEED_IMPORTED" = true; then
+            export LAKE_RESTORE_ARTIFACTS=true
+            build_options+=(--rehash)
+          fi
           echo 'attempted=true' >> "$GITHUB_OUTPUT"
-          if timeout --signal=INT --kill-after=60s "${compiler_seconds}s" lake --log-level=error build "${targets[@]}" -o "$RUNNER_TEMP/outputs.jsonl"; then
+          if timeout --signal=INT --kill-after=60s "${compiler_seconds}s" lake --log-level=error build "${build_options[@]}" "${targets[@]}" -o "$RUNNER_TEMP/outputs.jsonl"; then
             exit 0
           else
             status=$?

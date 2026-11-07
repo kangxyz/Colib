@@ -1,0 +1,9 @@
+[entry]
+id = "COL-0281"
+title = "Positive Quillen K-theory of finite-support families"
+kind = "comparison"
+section = "quillen-k-theory"
+order = 330
+statement = "For an abelian family C, the positive Quillen K-group of the actual full subcategory of families with finite nonzero support is additively equivalent to the direct sum of the coordinate K-groups. Each forward coordinate is the original exact evaluation KMap, and the inverse is the finite sum of the original singleton inclusion KMaps over the support."
+scope = "The index lies in Type u and coordinate object and hom universes are max u v. The exact structures are the standard abelian ones and K_(n+1), n : Nat, is the original shifted homotopy group of the realized Q-nerve at the original chosen zero. Actual finite-stage inclusions have a proved Q-nerve colimit; common-zero stage maps are compared to normalized KMaps along the canonical original zero-isomorphism paths. Restriction and zero extension give genuine stage equivalences, including arbitrary zero objects outside support and the empty stage. Binary products retain the original projection and insertion maps via the proved Q/S comparison. No K-zero direct-sum equivalence or alternate K-model is asserted. Author correspondence with the three FiniteSupport modules at Quillen c561118b7795eb9780be9ed391c3251d6a4d0afd was checked on 2026-11-07; compilation and independent mathematical review are distinct evidence."
+review = "author_checked"

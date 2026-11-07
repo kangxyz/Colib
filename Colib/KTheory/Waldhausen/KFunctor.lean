@@ -5,6 +5,7 @@ Authors: kangxyz
 -/
 module
 
+public import Colib.CategoryTheory.Waldhausen.SmallCategory
 public import Colib.KTheory.Waldhausen.Functoriality
 public import Mathlib.Algebra.Category.Grp.Basic
 
@@ -21,33 +22,7 @@ open CategoryTheory
 universe u
 namespace CategoryTheory.Waldhausen
 
-/-- A small category equipped with its original Waldhausen structure and chosen zero. -/
-structure SmallWaldhausenCategory : Type (u + 1) where
-  /-- The original object type in the selected universe. -/
-  Obj : Type u
-  [category : SmallCategory Obj]
-  /-- The original cofibrations, weak equivalences and zero-object data. -/
-  waldhausen : Structure Obj
-
-attribute [instance] SmallWaldhausenCategory.category
-
 namespace SmallWaldhausenCategory
-
-/-- All actual exact functors are retained, without strict chosen-zero preservation. -/
-@[ext] structure Hom (C D : SmallWaldhausenCategory.{u}) where
-  /-- The original underlying functor. -/
-  toFunctor : C.Obj ⥤ D.Obj
-  /-- The original structural exactness properties. -/
-  isExact : IsExact C.waldhausen.cof C.waldhausen.weq
-    D.waldhausen.cof D.waldhausen.weq toFunctor
-
-instance : Category.{u} SmallWaldhausenCategory.{u} where
-  Hom := Hom
-  id C := ⟨𝟭 C.Obj, IsExact.id _ _⟩
-  comp F G := ⟨F.toFunctor ⋙ G.toFunctor, F.isExact.comp G.isExact⟩
-  id_comp F := by apply Hom.ext; rfl
-  comp_id F := by apply Hom.ext; rfl
-  assoc F G H := by apply Hom.ext; rfl
 
 /-- The existing genuine homotopical K-groups and canonical exact-functor maps. -/
 def KFunctor (n : ℕ) : SmallWaldhausenCategory.{u} ⥤ GrpCat.{u} where

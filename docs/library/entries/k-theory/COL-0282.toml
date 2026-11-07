@@ -1,0 +1,10 @@
+[entry]
+id = "COL-0282"
+title = "The actual Waldhausen S-construction is an Omega-spectrum"
+kind = "theorem"
+section = "waldhausen-k-theory"
+order = 48
+statement = "Every original iterated S-construction loop structure map is a weak homotopy equivalence, including path components and all finite based homotopy sets. The unchanged prespectrum therefore defines an Omega-spectrum, functorially for exact chosen-zero-preserving maps."
+scope = "The actual quotient rows, full path-space comparison and original cylinder are retained. No saturation, cylinder, extension or Omega hypothesis is added. Original object and morphism universes remain independent; source and target exact functors retain their common universe pair. Arbitrary exact functors use the existing canonical zero rebase and retain the original KMap. This is a connective Omega-spectrum result, not a nonconnective or spectrum-localization theorem."
+review = "author_checked"
+provenance = "quillen"

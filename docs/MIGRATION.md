@@ -173,3 +173,25 @@ is constant under the three explicit chosen-zero equalities. The sole zero-simpl
 definition has its lower simplicial owner, with existing K-theory clients unchanged.
 See the [exact source and scope](migration/quillen/waldhausen-composition-triangle.md).
 This does not establish iterated-S or spectrum compatibility.
+
+## Coherent Waldhausen endotransformation tracks
+
+The actual finite S-prespectrum, whole structure-compatible weak-transformation
+homotopies and relative composition retain the original KMap, basepoints and
+independent parameters. The genuine zero endotransformation contracts the
+original normalized self-track in a grading-coarse target; the null-loop
+endpoint retains both supplied null legs. Native category and path objects
+have one owner. COL-0276--COL-0278 record the complete contribution and its
+precise coherent-track scope. See the
+[source and verification boundary](migration/quillen/waldhausen-coherent-endotransformations.md).
+
+## Genuine connective Waldhausen Omega-spectra
+
+Every actual iterated S-construction loop structure map is a complete weak
+homotopy equivalence, including path components and every finite based
+homotopy set. The proof uses the genuine added-initial-row contraction,
+higher first/tail additivity and the full actual path-fiber comparison.
+COL-0282 packages the same prespectrum and exact-functor maps as an
+Omega-spectrum without new structural hypotheses. Original KMaps and
+independent category universes are retained. See the
+[actual maps and verification scope](migration/quillen/waldhausen-omega-spectrum.md).

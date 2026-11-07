@@ -34,6 +34,19 @@ compilation without changing Colib's root/tool/dependency caches.
 
 ## Reuse and transfer
 
+The standard Actions cache directory is `.lake/ci-checkpoints/`, relative to
+the repository checkout. Its four archives are `root.tar.zst`,
+`dependencies.tar.zst`, `stacks.tar.zst` and `tools.tar.zst`. The workflow
+passes these same relative paths to `actions/cache` on GitHub-hosted and
+self-hosted Linux runners so their path-based cache versions agree.
+
+On a portable cache miss, the restore action can read the earlier
+`runner.temp/layered-cache` versions. Both supported layouts stored the old
+files under `../../_temp/layered-cache` relative to the checkout. The action
+checks this layout before looking up either old version, then moves a restored
+archive into the standard directory. Native checkpoint validation still runs
+before application, and the normal save steps publish the portable version.
+
 Production sources do not invalidate compatible checkpoint prefixes. Lake's
 native `--rehash` decides applicability. Root and tools restores prefer a
 compatible ref. Dependency and Stacks generations use their content identity.

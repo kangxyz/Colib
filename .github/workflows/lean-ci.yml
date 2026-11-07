@@ -54,6 +54,7 @@ env:
   # Colib explicitly enables native artifacts; dependencies use their upstream caches.
   LAKE_ARTIFACT_CACHE: 'false'
   BUILD_TARGETS: ${{ inputs.build-targets }}
+  CI_CHECKPOINT_PATH: .lake/ci-checkpoints
 
 # Keep compiler failures inside the scope so the runner can save partial caches.
 defaults:
@@ -114,6 +115,7 @@ jobs:
       local-handoff: ${{ steps.handoff-mode.outputs.enabled }}
       host-runner: ${{ runner.name }}
       root-generation: ${{ steps.pack-root.outputs.generation }}
+      tools-cache-matched-key: ${{ steps.restore-tools.outputs.cache-matched-key }}
       stage-sha: ${{ steps.seal.outputs.stage-sha }}
     steps:
       - name: Set Build deadline
@@ -169,6 +171,10 @@ jobs:
         run: |
           test -z "$FIRST_CI_CACHE" || { echo '::error::The Aglib-specific promotion seed is not a Colib cache.'; exit 2; }
           python3 .github/ci-cache/checkpoint.py supported --root .
+          directory="$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH"
+          test ! -L "$GITHUB_WORKSPACE/.lake"
+          test ! -L "$directory"
+          mkdir -p "$directory"
           echo 'layered=true' >> "$GITHUB_OUTPUT"
           python3 .github/ci-cache/checkpoint.py context --root . --github-output "$GITHUB_OUTPUT"
       - name: Select native cache directory
@@ -208,22 +214,24 @@ jobs:
         id: restore-dependencies
         if: ${{ steps.cache-mode.outputs.layered == 'true' }}
         continue-on-error: true
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        uses: ./.github/actions/restore-checkpoint
         with:
-          path: ${{ runner.temp }}/layered-cache/dependencies.tar.zst
+          directory: ${{ env.CI_CHECKPOINT_PATH }}
+          layer: dependencies
           key: colib-layered-v2-dependencies-${{ steps.cache-mode.outputs.dependencies_context }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             colib-layered-v2-dependencies-${{ steps.cache-mode.outputs.dependencies_context }}-
       - name: Restore optional Stacks checkpoint
         id: restore-stacks
         continue-on-error: true
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        uses: ./.github/actions/restore-checkpoint
         with:
-          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          directory: ${{ env.CI_CHECKPOINT_PATH }}
+          layer: stacks
           key: colib-layered-v2-stacks-${{ steps.cache-mode.outputs.stacks_context }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: colib-layered-v2-stacks-${{ steps.cache-mode.outputs.stacks_context }}-
       - name: Restore the earlier independent Stacks seed
-        if: ${{ steps.restore-stacks.outputs.cache-matched-key == '' }}
+        if: ${{ steps.restore-stacks.outputs.restored != 'true' }}
         continue-on-error: true
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
@@ -234,9 +242,10 @@ jobs:
         id: restore-root
         if: ${{ steps.cache-mode.outputs.layered == 'true' }}
         continue-on-error: true
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        uses: ./.github/actions/restore-checkpoint
         with:
-          path: ${{ runner.temp }}/layered-cache/root.tar.zst
+          directory: ${{ env.CI_CHECKPOINT_PATH }}
+          layer: root
           key: colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}-build
           restore-keys: |
             colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-
@@ -245,15 +254,16 @@ jobs:
         id: restore-tools
         if: ${{ steps.cache-mode.outputs.layered == 'true' }}
         continue-on-error: true
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        uses: ./.github/actions/restore-checkpoint
         with: &tools-checkpoint-cache
-          path: ${{ runner.temp }}/layered-cache/tools.tar.zst
+          directory: ${{ env.CI_CHECKPOINT_PATH }}
+          layer: tools
           key: colib-layered-v2-tools-${{ steps.cache-mode.outputs.tools_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             colib-layered-v2-tools-${{ steps.cache-mode.outputs.tools_context }}-${{ github.ref }}-
             colib-layered-v2-tools-${{ steps.cache-mode.outputs.tools_context }}-
       - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
-        if: ${{ steps.cache-mode.outputs.layered != 'true' || steps.restore-dependencies.outcome != 'success' || steps.restore-root.outcome != 'success' || steps.restore-dependencies.outputs.cache-matched-key == '' || steps.restore-root.outputs.cache-matched-key == '' }}
+        if: ${{ steps.cache-mode.outputs.layered != 'true' || steps.restore-dependencies.outcome != 'success' || steps.restore-root.outcome != 'success' || steps.restore-dependencies.outputs.restored != 'true' || steps.restore-root.outputs.restored != 'true' }}
         id: restore
         continue-on-error: ${{ steps.cache-mode.outputs.layered == 'true' }}
         with:
@@ -357,7 +367,7 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         run: |
           for layer in dependencies tools stacks root; do
-            archive="$RUNNER_TEMP/layered-cache/$layer.tar.zst"
+            archive="$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/$layer.tar.zst"
             if test -f "$archive"; then
               if ! python3 .github/ci-cache/checkpoint.py restore --root . --layer "$layer" \
                   --input "$archive" --native-cache "$LAKE_CACHE_DIR"; then
@@ -570,13 +580,13 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 .github/ci-cache/checkpoint.py pack --root . --layer root \
-            --output "$RUNNER_TEMP/layered-cache/root.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --output "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/root.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
             --github-output "$GITHUB_OUTPUT"
       - name: Save completed root checkpoint
         if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-root.outcome == 'success' && steps.build.outputs.attempted == 'true' && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') && steps.staging-quiesce.outcome == 'success' }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: ${{ runner.temp }}/layered-cache/root.tar.zst
+          path: ${{ env.CI_CHECKPOINT_PATH }}/root.tar.zst
           key: colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}-build
       - name: Pack completed dependencies checkpoint
         id: pack-dependencies
@@ -585,14 +595,14 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 .github/ci-cache/checkpoint.py pack --root . --layer dependencies \
-            --output "$RUNNER_TEMP/layered-cache/dependencies.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --output "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/dependencies.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
             --metadata "$PWD/.lake/ci-cache/dependencies.json" \
             --github-output "$GITHUB_OUTPUT"
       - name: Save completed dependencies checkpoint
         if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-dependencies.outcome == 'success' && (steps.pack-dependencies.outputs.changed == 'true' || steps.restore-dependencies.outputs.cache-matched-key == '') && steps.build.outputs.attempted == 'true' && (steps.build.outcome == 'success' || steps.build.outcome == 'failure') && steps.staging-quiesce.outcome == 'success' }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: ${{ runner.temp }}/layered-cache/dependencies.tar.zst
+          path: ${{ env.CI_CHECKPOINT_PATH }}/dependencies.tar.zst
           key: colib-layered-v2-dependencies-${{ steps.cache-mode.outputs.dependencies_context }}-${{ steps.pack-dependencies.outputs.generation }}
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: ${{ always() && steps.handoff-mode.outputs.enabled != 'true' && steps.stage.outputs.staged == 'true' }}
@@ -608,20 +618,21 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 .github/ci-cache/checkpoint.py pack --root . --layer stacks \
-            --output "$RUNNER_TEMP/layered-cache/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --output "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
             --metadata "$PWD/.lake/ci-cache/stacks.json" --github-output "$GITHUB_OUTPUT"
       - name: Save completed Stacks checkpoint
         if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-stacks.outcome == 'success' && (steps.pack-stacks.outputs.changed == 'true' || steps.restore-stacks.outputs.cache-matched-key == '') }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          path: ${{ env.CI_CHECKPOINT_PATH }}/stacks.tar.zst
           key: colib-layered-v2-stacks-${{ steps.cache-mode.outputs.stacks_context }}-${{ steps.pack-stacks.outputs.generation }}
       - name: Upload this run's Stacks closure for Test
         if: ${{ steps.handoff-mode.outputs.enabled != 'true' && steps.build.outcome == 'success' && steps.pack-stacks.outcome == 'success' }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: build-stacks
-          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          path: ${{ env.CI_CHECKPOINT_PATH }}/stacks.tar.zst
+          include-hidden-files: true
           compression-level: 0
           if-no-files-found: error
       - name: Stage native dependencies for Test
@@ -632,7 +643,9 @@ jobs:
         run: |
           if test "$LAYERED_CACHE" = true; then
             # Reuse the already packed complete closure without another compression pass.
-            ln "$RUNNER_TEMP/layered-cache/dependencies.tar.zst" "$RUNNER_TEMP/build-dependencies.tar.zst"
+            source="$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/dependencies.tar.zst"
+            destination="$RUNNER_TEMP/build-dependencies.tar.zst"
+            ln "$source" "$destination" || cp --reflink=auto -- "$source" "$destination"
           elif test -n "$FIRST_CI_CACHE"; then
             python3 .github/cache-promotion/ci-resources.py dependencies
             blocks=$(jq -er .file_blocks "$RUNNER_TEMP/first-ci-dependency-bound.json")
@@ -664,7 +677,7 @@ jobs:
           mv -- "$RUNNER_TEMP/lake-native-cache.tar" "$archive"
           digest=$(sha256sum "$archive")
           printf 'stage-sha=%s\n' "${digest%% *}" >> "$GITHUB_OUTPUT"
-          mv "$RUNNER_TEMP/layered-cache/stacks.tar.zst" "$handoff/stacks.tar.zst"
+          mv "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/stacks.tar.zst" "$handoff/stacks.tar.zst"
           python3 - <<'PYMETA'
           import hashlib, json
           from pathlib import Path
@@ -755,8 +768,9 @@ jobs:
           test -x "$lean_bin/lean"
           printf '%s\n' "$lean_bin" >> "$GITHUB_PATH"
           printf 'LAKE_CACHE_DIR=%s\n' "$handoff/native-cache" >> "$GITHUB_ENV"
-          mkdir -p "$RUNNER_TEMP/layered-cache"
-          ln "$handoff/stacks.tar.zst" "$RUNNER_TEMP/layered-cache/stacks.tar.zst"
+          mkdir -p "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH"
+          destination="$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/stacks.tar.zst"
+          ln "$handoff/stacks.tar.zst" "$destination" || cp --reflink=auto -- "$handoff/stacks.tar.zst" "$destination"
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         if: ${{ needs.build.outputs.local-handoff != 'true' }}
         with:
@@ -787,6 +801,10 @@ jobs:
         run: |
           test -z "$FIRST_CI_CACHE" || { echo '::error::The Aglib-specific promotion seed is not a Colib cache.'; exit 2; }
           python3 .github/ci-cache/checkpoint.py supported --root .
+          directory="$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH"
+          test ! -L "$GITHUB_WORKSPACE/.lake"
+          test ! -L "$directory"
+          mkdir -p "$directory"
           echo 'layered=true' >> "$GITHUB_OUTPUT"
           python3 .github/ci-cache/checkpoint.py context --root . --github-output "$GITHUB_OUTPUT"
       - name: First promoted-main cache/resource/source gate
@@ -801,9 +819,10 @@ jobs:
         id: restore-root
         if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered == 'true' }}
         continue-on-error: true
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        uses: ./.github/actions/restore-checkpoint
         with:
-          path: ${{ runner.temp }}/layered-cache/root.tar.zst
+          directory: ${{ env.CI_CHECKPOINT_PATH }}
+          layer: root
           key: colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}-build
           restore-keys: |
             colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-
@@ -812,7 +831,7 @@ jobs:
         id: restore-tools
         if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered == 'true' }}
         continue-on-error: true
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        uses: ./.github/actions/restore-checkpoint
         with: *tools-checkpoint-cache
       - name: Warm dependency and native compilation outputs
         if: ${{ needs.build.outputs.local-handoff != 'true' && steps.cache-mode.outputs.layered != 'true' }}
@@ -905,7 +924,7 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         run: |
           for layer in root tools; do
-            archive="$RUNNER_TEMP/layered-cache/$layer.tar.zst"
+            archive="$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/$layer.tar.zst"
             if test -f "$archive"; then
               if ! python3 .github/ci-cache/checkpoint.py restore --root . --layer "$layer" \
                   --input "$archive" --native-cache "$LAKE_CACHE_DIR"; then
@@ -934,13 +953,13 @@ jobs:
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: build-stacks
-          path: ${{ runner.temp }}/layered-cache
+          path: ${{ env.CI_CHECKPOINT_PATH }}
       - name: Overlay this run's Stacks closure
         if: ${{ needs.build.outputs.local-handoff != 'true' }}
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 .github/ci-cache/checkpoint.py restore --root . --layer stacks \
-            --input "$RUNNER_TEMP/layered-cache/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --input "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
             --metadata "$PWD/.lake/ci-cache/stacks.json"
       - name: Download this run's Build outputs
         if: ${{ needs.build.outputs.local-handoff != 'true' }}
@@ -1121,13 +1140,13 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 .github/ci-cache/checkpoint.py pack --root . --layer root \
-            --output "$RUNNER_TEMP/layered-cache/root.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --output "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/root.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
             --github-output "$GITHUB_OUTPUT"
       - name: Save completed root checkpoint
         if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-root.outcome == 'success' && steps.compiled.outcome == 'success' && (needs.build.outputs.local-handoff != 'true' || steps.pack-root.outputs.generation != needs.build.outputs.root-generation) }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: ${{ runner.temp }}/layered-cache/root.tar.zst
+          path: ${{ env.CI_CHECKPOINT_PATH }}/root.tar.zst
           key: colib-layered-v2-root-${{ steps.cache-mode.outputs.root_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}-test
       - name: Pack completed tools checkpoint
         id: pack-tools
@@ -1136,13 +1155,13 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 .github/ci-cache/checkpoint.py pack --root . --layer tools \
-            --output "$RUNNER_TEMP/layered-cache/tools.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --output "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/tools.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
             --github-output "$GITHUB_OUTPUT"
       - name: Save completed tools checkpoint
-        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-tools.outcome == 'success' && (steps.pack-tools.outputs.changed == 'true' || (needs.build.outputs.local-handoff != 'true' && steps.restore-tools.outputs.cache-matched-key == '')) && steps.compiled.outcome == 'success' }}
+        if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-tools.outcome == 'success' && (steps.pack-tools.outputs.changed == 'true' || (needs.build.outputs.local-handoff == 'true' && needs.build.outputs.tools-cache-matched-key == '') || (needs.build.outputs.local-handoff != 'true' && steps.restore-tools.outputs.cache-matched-key == '')) && steps.compiled.outcome == 'success' }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: ${{ runner.temp }}/layered-cache/tools.tar.zst
+          path: ${{ env.CI_CHECKPOINT_PATH }}/tools.tar.zst
           key: colib-layered-v2-tools-${{ steps.cache-mode.outputs.tools_context }}-${{ github.ref }}-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Pack completed Stacks checkpoint
         id: pack-stacks
@@ -1151,13 +1170,13 @@ jobs:
         working-directory: ${{ inputs.package-directory }}
         run: |
           python3 .github/ci-cache/checkpoint.py pack --root . --layer stacks \
-            --output "$RUNNER_TEMP/layered-cache/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
+            --output "$GITHUB_WORKSPACE/$CI_CHECKPOINT_PATH/stacks.tar.zst" --native-cache "$LAKE_CACHE_DIR" \
             --github-output "$GITHUB_OUTPUT"
       - name: Save completed Stacks checkpoint
         if: ${{ always() && steps.quiesce.outcome == 'success' && steps.pack-stacks.outcome == 'success' && steps.pack-stacks.outputs.changed == 'true' }}
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
-          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          path: ${{ env.CI_CHECKPOINT_PATH }}/stacks.tar.zst
           key: colib-layered-v2-stacks-${{ steps.cache-mode.outputs.stacks_context }}-${{ steps.pack-stacks.outputs.generation }}
       - name: Stop native resource sampler
         if: ${{ always() && (needs.build.outputs.local-handoff != 'true' || steps.lean-setup-local.outcome == 'success') }}
@@ -1219,7 +1238,8 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: stacks-cache-staging
-          path: ${{ runner.temp }}/layered-cache/stacks.tar.zst
+          path: ${{ env.CI_CHECKPOINT_PATH }}/stacks.tar.zst
+          include-hidden-files: true
           if-no-files-found: error
           compression-level: 0
       - name: Check publication archive identity

@@ -1,0 +1,77 @@
+name: Restore a Colib checkpoint
+description: Restore a portable checkpoint or migrate an older runner-specific entry
+inputs:
+  directory:
+    description: Repository-relative checkpoint directory
+    required: true
+  layer:
+    description: Checkpoint layer
+    required: true
+  key:
+    description: Cache key
+    required: true
+  restore-keys:
+    description: Compatible key prefixes
+    required: true
+outputs:
+  cache-matched-key:
+    description: Matched key for the portable cache version
+    value: ${{ steps.portable.outputs.cache-matched-key }}
+  restored:
+    description: A portable or legacy archive was restored
+    value: ${{ steps.portable.outputs.cache-matched-key != '' && 'true' || steps.relocate.outputs.restored }}
+runs:
+  using: composite
+  steps:
+    - id: portable
+      uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+      with:
+        path: ${{ inputs.directory }}/${{ inputs.layer }}.tar.zst
+        key: ${{ inputs.key }}
+        restore-keys: ${{ inputs.restore-keys }}
+
+    - id: legacy-layout
+      if: ${{ steps.portable.outputs.cache-matched-key == '' }}
+      shell: bash
+      run: |
+        # Both old cache archives stored ../../_temp relative to the checkout.
+        # Only look up their versions when extraction lands in this job's temp.
+        test "$(realpath -m -- "$GITHUB_WORKSPACE/../../_temp")" = "$(realpath -m -- "$RUNNER_TEMP")" || exit 0
+        case "$RUNNER_TEMP" in
+          /home/runner/work/_temp) peer=/opt/actions-runner/_work/_temp ;;
+          /opt/actions-runner/_work/_temp) peer=/home/runner/work/_temp ;;
+          *) exit 0 ;;
+        esac
+        printf 'local=%s\npeer=%s\n' "$RUNNER_TEMP" "$peer" >> "$GITHUB_OUTPUT"
+
+    - id: legacy-local
+      if: ${{ steps.legacy-layout.outputs.local != '' }}
+      uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+      with:
+        path: ${{ steps.legacy-layout.outputs.local }}/layered-cache/${{ inputs.layer }}.tar.zst
+        key: ${{ inputs.key }}
+        restore-keys: ${{ inputs.restore-keys }}
+
+    - id: legacy-peer
+      if: ${{ steps.legacy-layout.outputs.peer != '' && steps.legacy-local.outputs.cache-matched-key == '' }}
+      uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+      with:
+        path: ${{ steps.legacy-layout.outputs.peer }}/layered-cache/${{ inputs.layer }}.tar.zst
+        key: ${{ inputs.key }}
+        restore-keys: ${{ inputs.restore-keys }}
+
+    - id: relocate
+      if: ${{ steps.legacy-local.outputs.cache-matched-key != '' || steps.legacy-peer.outputs.cache-matched-key != '' }}
+      shell: bash
+      env:
+        CHECKPOINT_DIRECTORY: ${{ inputs.directory }}
+        CHECKPOINT_LAYER: ${{ inputs.layer }}
+      run: |
+        name="$CHECKPOINT_LAYER.tar.zst"
+        source="$RUNNER_TEMP/layered-cache/$name"
+        target="$GITHUB_WORKSPACE/$CHECKPOINT_DIRECTORY/$name"
+        test -f "$source"
+        test ! -L "$source"
+        test ! -L "$target"
+        mv -T -- "$source" "$target"
+        echo 'restored=true' >> "$GITHUB_OUTPUT"

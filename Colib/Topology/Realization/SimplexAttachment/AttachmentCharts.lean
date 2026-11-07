@@ -26,17 +26,17 @@ universe u v w
 namespace TopCat.SimplexAttachment
 open FundamentalGroupoid.OpenCover
 variable (A : TopCat.{u}) [DiscreteTopology A] (n : ℕ) {O D : TopCat.{u}}
-    {f : TopCat.of (A × simplexBoundary (n + 3)) ⟶ O}
+    {f : TopCat.of (A × Convexity.StdSimplex.boundary (n + 3)) ⟶ O}
     {g : TopCat.of (A × Convexity.StdSimplex ℝ (Fin (n + 4))) ⟶ D} {j : O ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion A (n + 3)) f g j)
     {C : Type v} [Groupoid.{w} C] (F : FundamentalGroupoid O ⥤ C)
 
 /-- The original attaching map restricted to one actual higher-cell boundary. -/
-def boundaryMap (a : A) : C(simplexBoundary (n + 3), O) :=
+def boundaryMap (a : A) : C(Convexity.StdSimplex.boundary (n + 3), O) :=
   ⟨fun x => f (a, x), f.hom.continuous.comp (continuous_const.prodMk continuous_id)⟩
 
 /-- Pullback of the given old-space decoder to the original boundary. -/
-def boundaryFunctor (a : A) : FundamentalGroupoid (simplexBoundary (n + 3)) ⥤ C :=
+def boundaryFunctor (a : A) : FundamentalGroupoid (Convexity.StdSimplex.boundary (n + 3)) ⥤ C :=
   FundamentalGroupoid.map (boundaryMap A n (f := f) a) ⋙ F
 
 /-- The old-space decoder pulled back through the actual collar retraction. -/

@@ -22,7 +22,7 @@ No injectivity, retraction or bijectivity assertion is imported or included.
 Adapted from `Quillen/Topology/ClassifyingSpace/CompletionSurjectivity.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. Actual maps, endpoint equalities,
 path classes and independent universe parameters are retained. Native namespace
-ownership and the established finite-simplex adapter replace source ownership.
+ownership and the pinned native simplex maps replace source ownership.
 Only the first two source declarations are included.
 -/
 @[expose] public section

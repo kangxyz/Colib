@@ -41,14 +41,14 @@ boundary attaching functor; no loop-killing or triangle hypothesis is assumed. -
 def nerveTwoCellBoundaryConstantIso (C : Type u) [Category.{v} C]
     (a : NerveTwoCellIndex C) :
     nerveTwoCellBoundaryFunctor C a ≅
-      (Functor.const (FundamentalGroupoid (simplexBoundary 2))).obj
+      (Functor.const (FundamentalGroupoid (Convexity.StdSimplex.boundary 2))).obj
         ((nerveTwoCellBoundaryFunctor C a).obj (FundamentalGroupoid.mk (vertex 0))) :=
   boundaryConstantIsoOfTriangle _ (nerveTwoCell_triangle C a)
 
 /-- Every actual original two-cell boundary loop is killed by the actual graph
 decoder after the original attaching map, including cells with degenerate faces. -/
 theorem nerveTwoCell_boundary_loop (C : Type u) [Category.{v} C]
-    (a : NerveTwoCellIndex C) (x : simplexBoundary 2) (p : Path x x) :
+    (a : NerveTwoCellIndex C) (x : Convexity.StdSimplex.boundary 2) (p : Path x x) :
     (nerveTwoCellBoundaryFunctor C a).map (Path.Homotopic.Quotient.mk p) =
       𝟙 ((nerveTwoCellBoundaryFunctor C a).obj (FundamentalGroupoid.mk x)) :=
   nerveTwoCell_boundary_loop_of_triangle C a (nerveTwoCell_triangle C a) x p

@@ -6,9 +6,7 @@ Authors: kangxyz
 module
 
 public import Colib.Util.References
-public import Colib.Topology.Realization.FiniteSimplexAdapter
-public import Colib.Topology.Realization.SimplexBoundary
-public import Colib.Topology.Realization.PrismGluing
+public import Colib.Analysis.Convex.StdSimplex.FaceCharts
 public import Colib.Topology.Realization.Simplex
 public import Mathlib.AlgebraicTopology.SimplicialSet.Boundary
 
@@ -16,7 +14,7 @@ public import Mathlib.AlgebraicTopology.SimplicialSet.Boundary
 # Realization of a simplicial boundary in actual barycentric coordinates
 
 The comparison is the realized boundary inclusion followed by the existing
-coordinate-preserving finite-simplex adapter. Its finite face charts cover and
+native standard-simplex realization homeomorphism. Its finite face charts cover and
 glue along their actual common faces. No HEP or realization-product theorem is used.
 
 ## Implementation provenance
@@ -25,8 +23,8 @@ The 22 declarations from `realizationBoundaryFace` through
 `realizationBoundary_locallyCompactSpace` in Quillen
 `CategoryTheory/TheoremA/EnrichedBoundaryHEP.lean`, commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`, are retained. The finite-simplex
-homeomorphism and naturality calls use FiniteSimplexAdapter to reconcile the
-pinned coordinate model. Source maps, empty cases, dimension and universes remain.
+homeomorphism and naturality calls use SimplexCategory.toTopHomeo directly.
+Source maps, empty cases, dimension and universes remain.
 -/
 @[expose] public noncomputable section
 
@@ -46,16 +44,16 @@ def realizationBoundaryFace {n : ℕ} (i : Fin (n + 2)) :
 /-- Realizing the boundary inclusion and taking barycentric coordinates. -/
 def realizationBoundaryCoordinates (n : ℕ) :
     C(|(∂Δ[n] : SSet.{u})|, StdSimplex ℝ (Fin (n + 1))) :=
-  ⟨fun x ↦ FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ (SSet.toTop.map ∂Δ[n].ι x), by fun_prop⟩
+  ⟨fun x ↦ SimplexCategory.toTopHomeo ⦋n⦌ (SSet.toTop.map ∂Δ[n].ι x), by fun_prop⟩
 
 @[simp] theorem realizationBoundaryCoordinates_face {n : ℕ} (i : Fin (n + 2))
     (t : |(Δ[n] : SSet.{u})|) :
     realizationBoundaryCoordinates (n + 1) (realizationBoundaryFace i t) =
-      (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌ t).map i.succAbove := by
-  change FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌
+      (SimplexCategory.toTopHomeo ⦋n⦌ t).map i.succAbove := by
+  change SimplexCategory.toTopHomeo ⦋n + 1⦌
     ((SSet.toTop.map (SSet.boundary.ι i) ≫ SSet.toTop.map ∂Δ[n + 1].ι) t) = _
   rw [← Functor.map_comp, SSet.boundary.ι_ι]
-  exact FiniteSimplexAdapter.toTopHomeomorph_naturality_apply (SimplexCategory.δ i) t
+  exact SimplexCategory.toTopHomeo_naturality_apply (SimplexCategory.δ i) t
 
 /-- Every boundary simplex factors through one of its finitely many faces. -/
 theorem boundary_simplex_factors {n : ℕ} {m : SimplexCategoryᵒᵖ}
@@ -105,7 +103,7 @@ instance realizationBoundary_compactSpace (n : ℕ) :
   | zero => infer_instance
   | succ n => infer_instance
 
-instance simplexBoundaryZero_isEmpty : IsEmpty (simplexBoundary 0) := ⟨by
+instance simplexBoundaryZero_isEmpty : IsEmpty (Convexity.StdSimplex.boundary 0) := ⟨by
   rintro ⟨x, i, hi⟩
   have he : i = 0 := Fin.ext (by omega)
   have ht : x.weights 0 = 1 := by simp
@@ -114,7 +112,7 @@ instance simplexBoundaryZero_isEmpty : IsEmpty (simplexBoundary 0) := ⟨by
 
 /-- Boundary coordinates land in the actual zero-coordinate boundary. -/
 theorem realizationBoundaryCoordinates_mem (n : ℕ) (x : |(∂Δ[n] : SSet.{u})|) :
-    realizationBoundaryCoordinates n x ∈ simplexBoundary n := by
+    realizationBoundaryCoordinates n x ∈ Convexity.StdSimplex.boundary n := by
   cases n with
   | zero => exact isEmptyElim x
   | succ n =>
@@ -126,7 +124,7 @@ theorem realizationBoundaryCoordinates_mem (n : ℕ) (x : |(∂Δ[n] : SSet.{u})
 
 /-- The canonical continuous boundary comparison. -/
 def realizationBoundaryComparison (n : ℕ) :
-    C(|(∂Δ[n] : SSet.{u})|, simplexBoundary n) :=
+    C(|(∂Δ[n] : SSet.{u})|, Convexity.StdSimplex.boundary n) :=
   ⟨fun x ↦ ⟨realizationBoundaryCoordinates n x, realizationBoundaryCoordinates_mem n x⟩,
     (realizationBoundaryCoordinates n).continuous.subtype_mk _⟩
 
@@ -137,17 +135,11 @@ theorem realizationBoundaryComparison_surjective (n : ℕ) :
   | zero => exact fun x ↦ isEmptyElim x
   | succ n =>
     rintro ⟨z, i, hi⟩
-    obtain ⟨w, hw⟩ := Convexity.StdSimplex.exists_face_of_weight_zero i z hi
-    refine ⟨realizationBoundaryFace i ((FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm w), ?_⟩
+    obtain ⟨w, hw⟩ := (Convexity.StdSimplex.mem_range_map_succAbove_iff i z).mpr hi
+    refine ⟨realizationBoundaryFace i ((SimplexCategory.toTopHomeo ⦋n⦌).symm w), ?_⟩
     apply Subtype.ext
     change realizationBoundaryCoordinates (n + 1) _ = z
     rw [realizationBoundaryCoordinates_face, Homeomorph.apply_symm_apply, hw]
-
-lemma stdSimplex_map_injective {A B : Type*} {f : A → B} (hf : Function.Injective f) :
-    Function.Injective (StdSimplex.map (R := ℝ) f) := by
-  intro x y h
-  apply StdSimplex.ext
-  exact Finsupp.mapDomain_injective hf (congrArg StdSimplex.weights h)
 
 /-- The two orders of passing to a codimension-two face agree. -/
 lemma boundaryFace_pair_relation {n : ℕ} (i j : Fin (n + 3)) (h : i < j) :
@@ -201,8 +193,8 @@ lemma stdSimplex_exists_pair_face {n : ℕ} (i j : Fin (n + 3)) (h : i < j)
 lemma realizationBoundaryFace_overlap_ordered {n : ℕ} (i j : Fin (n + 3)) (h : i < j)
     (v w : StdSimplex ℝ (Fin (n + 2)))
     (hvw : v.map i.succAbove = w.map j.succAbove) :
-    realizationBoundaryFace.{u} i ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm v) =
-      realizationBoundaryFace j ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm w) := by
+    realizationBoundaryFace.{u} i ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm v) =
+      realizationBoundaryFace j ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm w) := by
   have hi : (v.map i.succAbove).weights i = 0 :=
     (StdSimplex.mem_range_map_iff i.succAbove _).mp ⟨v, rfl⟩ i
       (by simp [Fin.range_succAbove])
@@ -212,16 +204,17 @@ lemma realizationBoundaryFace_overlap_ordered {n : ℕ} (i j : Fin (n + 3)) (h :
       (by simp [Fin.range_succAbove])
   obtain ⟨z, hzi, hzj⟩ := stdSimplex_exists_pair_face i j h _ hi hj
   have hv : z.map (j.pred (Fin.ne_zero_of_lt h)).succAbove = v :=
-    stdSimplex_map_injective (Fin.succAbove_right_injective (p := i)) hzi
+    Convexity.StdSimplex.simplex_map_injective (Fin.succAbove_right_injective (p := i)) hzi
   have hw : z.map (i.castPred (Fin.ne_last_of_lt h)).succAbove = w :=
-    stdSimplex_map_injective (Fin.succAbove_right_injective (p := j)) (hzj.trans hvw)
+    Convexity.StdSimplex.simplex_map_injective
+      (Fin.succAbove_right_injective (p := j)) (hzj.trans hvw)
   rw [← hv, ← hw]
-  change realizationBoundaryFace i ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm
+  change realizationBoundaryFace i ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm
       (z.map (SimplexCategory.δ (j.pred (Fin.ne_zero_of_lt h))))) =
-    realizationBoundaryFace j ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm
+    realizationBoundaryFace j ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm
       (z.map (SimplexCategory.δ (i.castPred (Fin.ne_last_of_lt h)))))
-  rw [FiniteSimplexAdapter.toTopHomeomorph_symm_naturality_apply,
-    FiniteSimplexAdapter.toTopHomeomorph_symm_naturality_apply]
+  rw [SimplexCategory.toTopHomeo_symm_naturality_apply,
+    SimplexCategory.toTopHomeo_symm_naturality_apply]
   change (SSet.toTop.map (SSet.stdSimplex.δ _) ≫ SSet.toTop.map (SSet.boundary.ι i)) _ =
     (SSet.toTop.map (SSet.stdSimplex.δ _) ≫ SSet.toTop.map (SSet.boundary.ι j)) _
   rw [← Functor.map_comp, ← Functor.map_comp, boundaryFace_pair_relation i j h]
@@ -230,11 +223,12 @@ lemma realizationBoundaryFace_overlap_ordered {n : ℕ} (i j : Fin (n + 3)) (h :
 lemma realizationBoundaryFace_overlap {n : ℕ} (i j : Fin (n + 2))
     (v w : StdSimplex ℝ (Fin (n + 1)))
     (hvw : v.map i.succAbove = w.map j.succAbove) :
-    realizationBoundaryFace.{u} i ((FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm v) =
-      realizationBoundaryFace j ((FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm w) := by
+    realizationBoundaryFace.{u} i ((SimplexCategory.toTopHomeo ⦋n⦌).symm v) =
+      realizationBoundaryFace j ((SimplexCategory.toTopHomeo ⦋n⦌).symm w) := by
   by_cases hij : i = j
   · subst j
-    have hvw' := stdSimplex_map_injective (Fin.succAbove_right_injective (p := i)) hvw
+    have hvw' := Convexity.StdSimplex.simplex_map_injective
+      (Fin.succAbove_right_injective (p := i)) hvw
     rw [hvw']
   cases n with
   | zero =>
@@ -265,8 +259,8 @@ theorem realizationBoundaryComparison_injective (n : ℕ) :
   | succ n =>
     obtain ⟨i, s, rfl⟩ := realizationBoundaryFace_jointly_surjective x
     obtain ⟨j, t, rfl⟩ := realizationBoundaryFace_jointly_surjective y
-    obtain ⟨v, rfl⟩ := (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm.surjective s
-    obtain ⟨w, rfl⟩ := (FiniteSimplexAdapter.toTopHomeomorph ⦋n⦌).symm.surjective t
+    obtain ⟨v, rfl⟩ := (SimplexCategory.toTopHomeo ⦋n⦌).symm.surjective s
+    obtain ⟨w, rfl⟩ := (SimplexCategory.toTopHomeo ⦋n⦌).symm.surjective t
     have h' := congrArg Subtype.val h
     change realizationBoundaryCoordinates (n + 1) _ =
       realizationBoundaryCoordinates (n + 1) _ at h'
@@ -275,7 +269,7 @@ theorem realizationBoundaryComparison_injective (n : ℕ) :
 
 /-- Realization of the simplicial boundary is its actual barycentric boundary. -/
 def realizationBoundaryHomeomorph (n : ℕ) :
-    |(∂Δ[n] : SSet.{u})| ≃ₜ simplexBoundary n :=
+    |(∂Δ[n] : SSet.{u})| ≃ₜ Convexity.StdSimplex.boundary n :=
   Continuous.homeoOfEquivCompactToT2
     (f := Equiv.ofBijective (realizationBoundaryComparison n)
       ⟨realizationBoundaryComparison_injective n, realizationBoundaryComparison_surjective n⟩)

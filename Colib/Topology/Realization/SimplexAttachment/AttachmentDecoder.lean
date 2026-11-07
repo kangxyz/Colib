@@ -27,7 +27,7 @@ universe u v w
 namespace TopCat.SimplexAttachment
 open FundamentalGroupoid.OpenCover
 variable (A : TopCat.{u}) [DiscreteTopology A] (n : ℕ) {O D : TopCat.{u}}
-    {f : TopCat.of (A × simplexBoundary (n + 3)) ⟶ O}
+    {f : TopCat.of (A × Convexity.StdSimplex.boundary (n + 3)) ⟶ O}
     {g : TopCat.of (A × Convexity.StdSimplex ℝ (Fin (n + 4))) ⟶ D} {j : O ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion A (n + 3)) f g j)
     {C : Type v} [Groupoid.{w} C] (F : FundamentalGroupoid O ⥤ C)

@@ -8,6 +8,7 @@ module
 
 public import Colib.Topology.Realization.SimplexAnnulus
 public import Colib.Topology.Realization.SimplexBoundaryEndpoints
+public import Colib.Analysis.Convex.StdSimplex.FaceCharts
 
 /-!
 # Annulus Boundary
@@ -22,12 +23,12 @@ open Set CategoryTheory Convexity.StdSimplex
 namespace TopCat.SimplexAttachment
 
 /-- The actual geometric overlap projects radially to its simplex boundary. -/
-def annulusBoundary (n : ℕ) : C(simplexAnnulus n, simplexBoundary n) :=
+def annulusBoundary (n : ℕ) : C(simplexAnnulus n, Convexity.StdSimplex.boundary n) :=
   (simplexBoundaryCollarRetraction n).comp
     ⟨fun x => ⟨x.val, x.property.1⟩, by fun_prop⟩
 
 /-- The one-simplex boundary has precisely its two specified geometric vertices. -/
-theorem finite_boundary_one : Finite (simplexBoundary 1) := by
+theorem finite_boundary_one : Finite (Convexity.StdSimplex.boundary 1) := by
   apply Finite.of_surjective (fun b : Bool => if b then boundaryZero else boundaryOne)
   intro x
   rcases boundary_eq_zero_or_one x with h | h
@@ -39,8 +40,7 @@ boundary side. This distinguishes the two sides even for a loop edge whose
 attaching map identifies its endpoints in the old space. -/
 theorem annulusBoundary_one_path_constant {a b : simplexAnnulus 1}
     (p : Path a b) (t : unitInterval) : annulusBoundary 1 (p t) = annulusBoundary 1 a := by
-  let : T2Space (Convexity.StdSimplex ℝ (Fin 2)) := homeomorphI.symm.t2Space
-  let : Finite (simplexBoundary 1) := finite_boundary_one
+  let : Finite (Convexity.StdSimplex.boundary 1) := finite_boundary_one
   have he := TotallyDisconnectedSpace.eq_of_continuous
     (fun t => annulusBoundary 1 (p t)) ((annulusBoundary 1).continuous.comp p.continuous) t 0
   simpa using he

@@ -7,9 +7,8 @@ Authors: kangxyz
 module
 
 public import Colib.Util.References
-public import Colib.Topology.Realization.SimplexBoundary
+public import Colib.Analysis.Convex.StdSimplex.BoundaryRetraction
 public import Mathlib.Tactic.FinCases
-public import Mathlib.Geometry.Convex.ConvexSpace.PathConnectedSpaceStdSimplex
 
 /-!
 # The two endpoints of the geometric one-simplex boundary
@@ -32,7 +31,7 @@ namespace Convexity.StdSimplex
 attribute [local instance] Classical.propDecidable
 
 /-- The two vertices are all points of the geometric one-simplex boundary. -/
-theorem simplexBoundary_one_cases (b : simplexBoundary 1) :
+theorem simplexBoundary_one_cases (b : boundary 1) :
     b.1 = StdSimplex.single 0 ∨ b.1 = StdSimplex.single 1 := by
   have hs : b.1.weights 0 + b.1.weights 1 = 1 := by
     simp
@@ -52,19 +51,19 @@ theorem simplexBoundary_one_cases (b : simplexBoundary 1) :
     fin_cases j <;> simp [hi, h0]
 
 /-- The first interval endpoint as a simplex-boundary point. -/
-def boundaryZero : simplexBoundary 1 :=
+def boundaryZero : boundary 1 :=
   ⟨StdSimplex.single 0, ⟨1, by simp⟩⟩
 
 /-- The second interval endpoint as a simplex-boundary point. -/
-def boundaryOne : simplexBoundary 1 :=
+def boundaryOne : boundary 1 :=
   ⟨StdSimplex.single 1, ⟨0, by simp⟩⟩
 
 lemma boundaryZero_ne_one : boundaryZero ≠ boundaryOne := by
   intro h
-  have h' := congrArg (fun b : simplexBoundary 1 ↦ StdSimplex.homeomorphI b.1) h
+  have h' := congrArg (fun b : boundary 1 ↦ b.1.weights (0 : Fin 2)) h
   simp [boundaryZero, boundaryOne] at h'
 
-lemma boundary_eq_zero_or_one (b : simplexBoundary 1) : b = boundaryZero ∨ b =
+lemma boundary_eq_zero_or_one (b : boundary 1) : b = boundaryZero ∨ b =
   boundaryOne := by
   rcases simplexBoundary_one_cases b with h | h
   · exact Or.inl (Subtype.ext h)

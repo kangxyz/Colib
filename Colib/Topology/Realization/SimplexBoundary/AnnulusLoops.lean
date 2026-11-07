@@ -27,7 +27,7 @@ open TopCat.SimplexAttachment
 /-- Pull back the constructed boundary trivialization along the actual radial
 projection of the two-simplex annulus. -/
 def annulusConstantIsoOfTriangle {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary 2) ⥤ C)
+    (F : FundamentalGroupoid (boundary 2) ⥤ C)
     (h : edgeMap F 0 1 ≫ edgeMap F 1 2 = edgeMap F 0 2) :
     FundamentalGroupoid.map (annulusBoundary 2) ⋙ F ≅
       (Functor.const (FundamentalGroupoid (simplexAnnulus 2))).obj
@@ -38,7 +38,7 @@ def annulusConstantIsoOfTriangle {C : Type u} [Groupoid.{v} C]
 /-- Every actual annulus loop is killed under the explicit original triangle
 relation; the annulus itself is not claimed to be simply connected. -/
 theorem annulus_loop_eq_id_of_triangle {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary 2) ⥤ C)
+    (F : FundamentalGroupoid (boundary 2) ⥤ C)
     (h : edgeMap F 0 1 ≫ edgeMap F 1 2 = edgeMap F 0 2)
     (x : simplexAnnulus 2) (p : Path x x) :
     (FundamentalGroupoid.map (annulusBoundary 2) ⋙ F).map (Path.Homotopic.Quotient.mk p) =

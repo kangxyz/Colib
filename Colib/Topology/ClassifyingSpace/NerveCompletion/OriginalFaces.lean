@@ -20,7 +20,7 @@ including degenerate one-simplices.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory Convexity Convexity.StdSimplex SSet TopCat
+open CategoryTheory Convexity.StdSimplex SSet TopCat
 open scoped Simplicial Topology
 universe u v
 namespace CategoryTheory.NerveCompletion

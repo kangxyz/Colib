@@ -18,7 +18,7 @@ path coordinates, and endpoint data are retained under native ownership.
 -/
 @[expose] public section
 noncomputable section
-open Topology CategoryTheory SSet Opposite MonoidalCategory CartesianMonoidalCategory Convexity
+open Topology CategoryTheory SSet Opposite MonoidalCategory CartesianMonoidalCategory
 open scoped Simplicial Topology unitInterval
 universe u
 set_option backward.isDefEq.respectTransparency false
@@ -79,7 +79,7 @@ theorem naturalIsoInverseHomotopy_vertex_of_subsingleton {F G : C ⥤ D}
     naturalIsoInverseHomotopy e (s, (t, classifyingSpacePoint c)) = classifyingSpacePoint d := by
   change functorChainRealization (ComposableArrows.mk₂ e.hom e.inv)
     (classifyingSpacePoint c,
-      (FiniteSimplexAdapter.toTopHomeomorph ⦋2⦌).symm (inverseTriangleParameter s t)) = _
+      (SimplexCategory.toTopHomeo ⦋2⦌).symm (inverseTriangleParameter s t)) = _
   apply functorChainRealization_vertex_of_subsingleton _ c d _ hthin
   intro i
   fin_cases i

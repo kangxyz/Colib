@@ -9,11 +9,12 @@ module
 public import Colib.Util.References
 public import Colib.Topology.Realization.Prism
 public import Colib.Topology.Realization.PrismCoordinates
+public import Colib.Analysis.Convex.StdSimplex.FaceCharts
 
 /-! # Topological compatibility of the finite prism charts -/
 /-!
 Adapted from Quillen commit `c561118b7795eb9780be9ed391c3251d6a4d0afd`.
-The target uses the pinned finite-simplex adapter and actual Mathlib prism cells.
+The target uses the pinned native standard simplex and actual Mathlib prism cells.
 The implementation retains the source maps, coordinates and universe parameters.
 -/
 @[expose] public section
@@ -28,38 +29,27 @@ universe u
 
 namespace Convexity.StdSimplex
 
-/-- A zero barycentric coordinate means a point lies on the corresponding face. -/
-theorem exists_face_of_weight_zero {n : ℕ} (k : Fin (n + 2))
-    (v : StdSimplex ℝ (Fin (n + 2))) (hv : v.weights k = 0) :
-    ∃ w : StdSimplex ℝ (Fin (n + 1)), w.map k.succAbove = v := by
-  apply (StdSimplex.mem_range_map_iff k.succAbove v).mpr
-  intro j hj
-  have h : j = k := by simpa using hj
-  simpa [h] using hv
-
 /-- Removing the lower duplicate vertex is inverse to collapsing the duplicate pair. -/
 theorem face_castSucc_predAbove {n : ℕ} (i : Fin (n + 1))
     (v : StdSimplex ℝ (Fin (n + 2))) (hv : v.weights i.castSucc = 0) :
-    (v.map i.predAbove).map i.castSucc.succAbove = v := by
-  obtain ⟨w, rfl⟩ := exists_face_of_weight_zero i.castSucc v hv
-  rw [StdSimplex.map_map w]
-  have h : (fun j ↦ i.predAbove (i.castSucc.succAbove j)) = id := by
+    StdSimplex.map i.castSucc.succAbove (StdSimplex.map i.predAbove v) = v := by
+  obtain ⟨w, rfl⟩ := (mem_range_map_succAbove_iff i.castSucc v).mpr hv
+  rw [← StdSimplex.map_comp w i.castSucc.succAbove i.predAbove]
+  have h : i.predAbove ∘ i.castSucc.succAbove = id := by
     funext j
     exact Fin.predAbove_succAbove i j
-  rw [h, StdSimplex.map_id']
-  rfl
+  rw [h, StdSimplex.map_id]
 
 /-- Removing the upper duplicate vertex is also inverse to collapsing the pair. -/
 theorem face_succ_predAbove {n : ℕ} (i : Fin (n + 1))
     (v : StdSimplex ℝ (Fin (n + 2))) (hv : v.weights i.succ = 0) :
-    (v.map i.predAbove).map i.succ.succAbove = v := by
-  obtain ⟨w, rfl⟩ := exists_face_of_weight_zero i.succ v hv
-  rw [StdSimplex.map_map w]
-  have h : (fun j ↦ i.predAbove (i.succ.succAbove j)) = id := by
+    StdSimplex.map i.succ.succAbove (StdSimplex.map i.predAbove v) = v := by
+  obtain ⟨w, rfl⟩ := (mem_range_map_succAbove_iff i.succ v).mpr hv
+  rw [← StdSimplex.map_comp w i.succ.succAbove i.predAbove]
+  have h : i.predAbove ∘ i.succ.succAbove = id := by
     funext j
     exact ConcreteCategory.congr_hom (SimplexCategory.δ_comp_σ_succ (i := i)) j
-  rw [h, StdSimplex.map_id']
-  rfl
+  rw [h, StdSimplex.map_id]
 
 end Convexity.StdSimplex
 
@@ -69,7 +59,7 @@ namespace SSet
 def realizationPrismLift {n : ℕ} (i : Fin (n + 1)) :
     C(prismCell i, |(Δ[n] ⊗ Δ[1] : SSet.{u})|) where
   toFun z := realizationPrismCell i
-    ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm (prismLift i z))
+    ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm (prismLift i z))
   continuous_toFun := by fun_prop
 
 /-- Each closed-cell chart is a right inverse of the canonical projection. -/
@@ -86,7 +76,7 @@ theorem realizationPrismCoordinates_lift {n : ℕ} (i : Fin (n + 1)) (z : prismC
 theorem realizationPrismCoordinates_cell {n : ℕ} (i : Fin (n + 1))
     (v : StdSimplex ℝ (Fin (n + 2))) :
     realizationPrismCoordinates n (realizationPrismCell.{u} i
-      ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm v)) = prismProject i v := by
+      ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm v)) = prismProject i v := by
   apply Prod.ext
   · exact realizationPrismCoordinates_cell_fst i v
   · apply Subtype.ext
@@ -103,17 +93,17 @@ theorem realizationPrismLift_adjacent {n : ℕ} (i : Fin (n + 1))
   have hr := face_castSucc_predAbove i.succ (prismLift i.succ ⟨z, hj⟩)
     (prismLift_adjacent_right_zero i hi hj)
   rw [prismLift_map_predAbove] at hl hr
-  change realizationPrismCell i.castSucc ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 2⦌).symm
+  change realizationPrismCell i.castSucc ((SimplexCategory.toTopHomeo ⦋n + 2⦌).symm
       (prismLift i.castSucc ⟨z, hi⟩)) =
-    realizationPrismCell i.succ ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 2⦌).symm
+    realizationPrismCell i.succ ((SimplexCategory.toTopHomeo ⦋n + 2⦌).symm
       (prismLift i.succ ⟨z, hj⟩))
   rw [← hl, ← hr]
-  change realizationPrismCell i.castSucc ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 2⦌).symm
+  change realizationPrismCell i.castSucc ((SimplexCategory.toTopHomeo ⦋n + 2⦌).symm
       (StdSimplex.map (SimplexCategory.δ i.castSucc.succ) z.1)) =
-    realizationPrismCell i.succ ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 2⦌).symm
+    realizationPrismCell i.succ ((SimplexCategory.toTopHomeo ⦋n + 2⦌).symm
       (StdSimplex.map (SimplexCategory.δ i.succ.castSucc) z.1))
-  rw [FiniteSimplexAdapter.toTopHomeomorph_symm_naturality_apply,
-    FiniteSimplexAdapter.toTopHomeomorph_symm_naturality_apply]
+  rw [SimplexCategory.toTopHomeo_symm_naturality_apply,
+    SimplexCategory.toTopHomeo_symm_naturality_apply]
   exact ConcreteCategory.congr_hom (realizationPrismCell_adjacent_face i) _
 
 /-- All closed-cell charts agree wherever their domains overlap. -/
@@ -166,14 +156,14 @@ theorem realizationPrismCoordinates_injective (n : ℕ) :
   intro x y hxy
   obtain ⟨i, s, rfl⟩ := realizationPrismCell_jointly_surjective x
   obtain ⟨j, t, rfl⟩ := realizationPrismCell_jointly_surjective y
-  obtain ⟨v, rfl⟩ := (FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm.surjective s
-  obtain ⟨w, rfl⟩ := (FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm.surjective t
+  obtain ⟨v, rfl⟩ := (SimplexCategory.toTopHomeo ⦋n + 1⦌).symm.surjective s
+  obtain ⟨w, rfl⟩ := (SimplexCategory.toTopHomeo ⦋n + 1⦌).symm.surjective t
   rw [realizationPrismCoordinates_cell, realizationPrismCoordinates_cell] at hxy
   have hj : prismProject i v ∈ prismCell j := hxy.symm ▸ prismProject_mem_cell j w
   have hp := realizationPrismLift_overlap i j (prismProject_mem_cell i v) hj
-  change realizationPrismCell i ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm
+  change realizationPrismCell i ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm
       (prismLift i ⟨prismProject i v, prismProject_mem_cell i v⟩)) =
-    realizationPrismCell j ((FiniteSimplexAdapter.toTopHomeomorph ⦋n + 1⦌).symm
+    realizationPrismCell j ((SimplexCategory.toTopHomeo ⦋n + 1⦌).symm
       (prismLift j ⟨prismProject i v, hj⟩)) at hp
   rw [prismLift_prismProject] at hp
   have hw : prismLift j ⟨prismProject i v, hj⟩ = w := by

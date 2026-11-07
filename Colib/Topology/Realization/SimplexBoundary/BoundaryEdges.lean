@@ -24,10 +24,10 @@ variable {n : ℕ}
 
 /-- Every actual geometric edge lies in a zero-coordinate boundary face. -/
 theorem boundaryEdge_mem (i j : Fin (n + 3)) (t : I) :
-    simplexSegment (vertex i).val (vertex j).val t ∈ simplexBoundary (n + 2) := by
+    simplexSegment (vertex i).val (vertex j).val t ∈ boundary (n + 2) := by
   obtain ⟨k, hki, hkj⟩ := Fin.exists_ne_and_ne_of_two_lt i j (by omega)
   refine ⟨k, ?_⟩
-  rw [simplexSegment_weights]
+  rw [simplexSegment_apply]
   simp [vertex, StdSimplex.weights_single, Ne.symm hki, Ne.symm hkj]
 
 /-- The actual original straight edge, with its precise boundary vertices. -/
@@ -39,12 +39,12 @@ def boundaryEdge (i j : Fin (n + 3)) : Path (vertex i) (vertex j) where
 
 /-- Paths in the same actual zero-coordinate face have a relative homotopy
 through that face. No simple connectedness of the whole boundary is assumed. -/
-def facePathHomotopy {x y : simplexBoundary (n + 2)} (p q : Path x y) (k : Fin (n + 3))
+def facePathHomotopy {x y : boundary (n + 2)} (p q : Path x y) (k : Fin (n + 3))
     (hp : ∀ t, (p t).val.weights k = 0) (hq : ∀ t, (q t).val.weights k = 0) :
     p.Homotopy q := by
   let H := Convexity.StdSimplex.pathHomotopy
     (p.map continuous_subtype_val) (q.map continuous_subtype_val)
-  have hH (z : I × I) : H z ∈ simplexBoundary (n + 2) := by
+  have hH (z : I × I) : H z ∈ boundary (n + 2) := by
     refine ⟨k, ?_⟩
     change (convexCombPair (R := ℝ) (unitInterval.symm z.1) z.1 _ _ _
       (p z.2).val (q z.2).val).weights k = 0
@@ -81,17 +81,17 @@ def midpointSpokesHomotopy (i j : Fin (n + 3)) :
     simp [vertex, StdSimplex.weights_single, Ne.symm hkj]
   have hm : (edgeMidpoint i j).val.weights k = 0 := by
     change (simplexSegment (vertex i).val (vertex j).val _).weights k = 0
-    rw [simplexSegment_weights]
+    rw [simplexSegment_apply]
     simp [hvi, hvj]
   have hl : range (midpointSpokeLeft i j) ⊆ {x | x.val.weights k = 0} := by
     rintro _ ⟨t, rfl⟩
     change (simplexSegment (edgeMidpoint i j).val (vertex i).val t).weights k = 0
-    rw [simplexSegment_weights]
+    rw [simplexSegment_apply]
     simp [hm, hvi]
   have hr : range (midpointSpokeRight i j) ⊆ {x | x.val.weights k = 0} := by
     rintro _ ⟨t, rfl⟩
     change (simplexSegment (edgeMidpoint i j).val (vertex j).val t).weights k = 0
-    rw [simplexSegment_weights]
+    rw [simplexSegment_apply]
     simp [hm, hvj]
   have hc : range ((midpointSpokeLeft i j).symm.trans (midpointSpokeRight i j)) ⊆
       {x | x.val.weights k = 0} := by
@@ -99,7 +99,7 @@ def midpointSpokesHomotopy (i j : Fin (n + 3)) :
     exact union_subset hl hr
   exact facePathHomotopy _ _ k (fun t => hc (mem_range_self t)) (fun t => by
     change (simplexSegment (vertex i).val (vertex j).val t).weights k = 0
-    rw [simplexSegment_weights]
+    rw [simplexSegment_apply]
     simp [hvi, hvj])
 
 end Convexity.StdSimplex.Boundary

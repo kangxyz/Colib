@@ -21,7 +21,7 @@ homotopies theorem is asserted.
 Adapted from `Quillen/Topology/Realization/Homotopy.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The selected declarations retain the source
 constructions and mathematical universe parameters. The endpoint proofs use the
-pinned native `stdSimplex` coordinate API. Namespace and dependency ownership
+pinned native `Convexity.StdSimplex` coordinate API. Namespace and dependency ownership
 are changed to the underlying Mathlib objects.
 -/
 @[expose] public section

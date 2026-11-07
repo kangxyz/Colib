@@ -45,7 +45,7 @@ def boundaryTriangleHomotopy (i j k : Fin (n + 4)) :
       range (boundaryEdge a b) ⊆ {x | x.val.weights l = 0} := by
     rintro _ ⟨t, rfl⟩
     change (simplexSegment (vertex a).val (vertex b).val t).weights l = 0
-    rw [simplexSegment_weights]
+    rw [simplexSegment_apply]
     simp [vertex, StdSimplex.weights_single, Ne.symm ha, Ne.symm hb]
   have hp : range ((boundaryEdge i j).trans (boundaryEdge j k)) ⊆
       {x | x.val.weights l = 0} := by
@@ -56,7 +56,7 @@ def boundaryTriangleHomotopy (i j k : Fin (n + 4)) :
 
 /-- Every functor respects every actual filled triangular face, including repeated vertices. -/
 theorem boundaryEdge_triangle {C : Type u} [Category.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 3)) ⥤ C) (i j k : Fin (n + 4)) :
+    (F : FundamentalGroupoid (boundary (n + 3)) ⥤ C) (i j k : Fin (n + 4)) :
     F.map (Path.Homotopic.Quotient.mk (boundaryEdge i j)) ≫
       F.map (Path.Homotopic.Quotient.mk (boundaryEdge j k)) =
       F.map (Path.Homotopic.Quotient.mk (boundaryEdge i k)) := by

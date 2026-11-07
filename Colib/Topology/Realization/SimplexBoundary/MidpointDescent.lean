@@ -29,7 +29,7 @@ variable {n : ℕ}
 /-- All actual overlap components agree once the prescribed midpoint components
 agree: both restrictions are already natural on every actual overlap path. -/
 theorem star_isos_agree_of_midpoints {C : Type u} [Category.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 2)) ⥤ C) (b : C)
+    (F : FundamentalGroupoid (boundary (n + 2)) ⥤ C) (b : C)
     (η : ∀ i, FundamentalGroupoid.map ((ContinuousMap.subtypeVal (vertexStar i))) ⋙ F ≅
       (Functor.const (FundamentalGroupoid (vertexStar i))).obj b)
     (hmid : ∀ i j,
@@ -62,14 +62,14 @@ theorem star_isos_agree_of_midpoints {C : Type u} [Category.{v} C]
 /-- A constant boundary natural isomorphism constructed from the finite midpoint
 checks, actual open-star contractions and all actual overlap-path naturality. -/
 def boundaryConstantIsoOfMidpoints {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 2)) ⥤ C) (b : C)
+    (F : FundamentalGroupoid (boundary (n + 2)) ⥤ C) (b : C)
     (β : ∀ i, F.obj (FundamentalGroupoid.mk (vertex i)) ≅ b)
     (hmid : ∀ i j,
       (starPotentialIso F b β i).app
           (FundamentalGroupoid.mk ⟨edgeMidpoint i j, (edgeMidpoint_mem i j).1⟩) =
       (starPotentialIso F b β j).app
           (FundamentalGroupoid.mk ⟨edgeMidpoint i j, (edgeMidpoint_mem i j).2⟩)) :
-    F ≅ (Functor.const (FundamentalGroupoid (simplexBoundary (n + 2)))).obj b :=
+    F ≅ (Functor.const (FundamentalGroupoid (boundary (n + 2)))).obj b :=
   constantIsoOfChartTrivializations vertexStar starCover F b (starPotentialIso F b β)
     (star_isos_agree_of_midpoints F b (starPotentialIso F b β) hmid)
 
@@ -77,14 +77,14 @@ def boundaryConstantIsoOfMidpoints {C : Type u} [Groupoid.{v} C]
 is killed. The midpoint conditions for the nerve attaching functor remain a
 separate original-face computation; they are not hidden in this conclusion. -/
 theorem boundary_loop_eq_id_of_midpoints {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 2)) ⥤ C) (b : C)
+    (F : FundamentalGroupoid (boundary (n + 2)) ⥤ C) (b : C)
     (β : ∀ i, F.obj (FundamentalGroupoid.mk (vertex i)) ≅ b)
     (hmid : ∀ i j,
       (starPotentialIso F b β i).app
           (FundamentalGroupoid.mk ⟨edgeMidpoint i j, (edgeMidpoint_mem i j).1⟩) =
       (starPotentialIso F b β j).app
           (FundamentalGroupoid.mk ⟨edgeMidpoint i j, (edgeMidpoint_mem i j).2⟩))
-    (x : simplexBoundary (n + 2)) (p : Path x x) :
+    (x : boundary (n + 2)) (p : Path x x) :
     F.map (Path.Homotopic.Quotient.mk p) = 𝟙 (F.obj (FundamentalGroupoid.mk x)) := by
   let e := boundaryConstantIsoOfMidpoints F b β hmid
   have hn := e.hom.naturality (Path.Homotopic.Quotient.mk p)

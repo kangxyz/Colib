@@ -12,7 +12,7 @@ surjectivity of the original comparison, with independent universes. -/
 
 @[expose] public noncomputable section
 
-open CategoryTheory Convexity Convexity.StdSimplex TopCat SSet
+open CategoryTheory Convexity.StdSimplex TopCat SSet
 open scoped Simplicial Topology unitInterval
 
 universe u v
@@ -36,7 +36,7 @@ example (a : NerveGraphData.Index C) :
 
 example (a : NerveGraphData.Index C) (t : unitInterval) :
     NerveGraphData.inclusion C
-      (NerveGraphData.characteristic C (a, StdSimplex.homeomorphI.symm t)) =
+      (NerveGraphData.characteristic C (a, Convexity.StdSimplex.homeomorphI.symm t)) =
         classifyingSpacePath (a.simplex.map' 0 1) t :=
   NerveGraphData.characteristic_path C a t
 

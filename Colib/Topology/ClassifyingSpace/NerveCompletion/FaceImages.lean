@@ -11,7 +11,7 @@ public import Colib.Topology.ClassifyingSpace.NerveCompletion.FaceGeometry
 /-!
 # Face Images
 
-The original finite-simplex adapter sends the geometric interval parameter
+The original native realization homeomorphism sends the geometric interval parameter
 back to exactly the original realizationInterval, with its original ULift direction.
 -/
 
@@ -20,31 +20,31 @@ back to exactly the original realizationInterval, with its original ULift direct
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open CategoryTheory Convexity Convexity.StdSimplex SSet TopCat
+open CategoryTheory Convexity.StdSimplex SSet TopCat
 open scoped Simplicial Topology
 universe u v
 namespace CategoryTheory.NerveCompletion
 open FundamentalGroupoid.OpenCover TopCat.SimplexAttachment Convexity.StdSimplex.Boundary
 
-/-- The original finite-simplex adapter sends the geometric interval parameter
+/-- The original native realization homeomorphism sends the geometric interval parameter
 back to exactly the original realizationInterval, with its original ULift direction. -/
-theorem intervalPath_adapter (t : unitInterval) :
-    (FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌).symm (NerveGraphData.intervalPath t) =
+theorem intervalPath_realization (t : unitInterval) :
+    (SimplexCategory.toTopHomeo ⦋1⦌).symm (NerveGraphData.intervalPath t) =
       realizationInterval.{u} t := by
-  apply (FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌).injective
+  apply (SimplexCategory.toTopHomeo ⦋1⦌).injective
   rw [Homeomorph.apply_symm_apply, NerveGraphData.realizationInterval_geometric]
   rfl
 
 /-- Exact pointwise face formula for the original two-cell attachment after its
 unchanged graph-stage inclusion. No nondegeneracy assumption on the face is made. -/
 theorem nerveTwoCellBoundary_face_inclusion (C : Type u) [Category.{v} C]
-    (a : NerveTwoCellIndex C) (k : Fin 3) (t : unitInterval) (x : simplexBoundary 2)
-    (hx : x.val = StdSimplex.map (SimplexCategory.δ k) (NerveGraphData.intervalPath t)) :
+    (a : NerveTwoCellIndex C) (k : Fin 3) (t : unitInterval) (x : Convexity.StdSimplex.boundary 2)
+    (hx : x.val = Convexity.StdSimplex.map (SimplexCategory.δ k) (NerveGraphData.intervalPath t)) :
     NerveGraphData.inclusion C (nerveTwoCellBoundaryMap C a x) =
       SSet.toTop.map (SSet.yonedaEquiv.symm ((nerve C).δ k a.simplex))
         (realizationInterval.{max u v} t) := by
   rw [nerveTwoCellBoundary_inclusion, hx,
-    FiniteSimplexAdapter.toTopHomeomorph_symm_naturality_apply, intervalPath_adapter]
+    SimplexCategory.toTopHomeo_symm_naturality_apply, intervalPath_realization]
   change (SSet.toTop.map (SSet.stdSimplex.δ k) ≫
     SSet.toTop.map (SSet.yonedaEquiv.symm a.simplex)) (realizationInterval t) = _
   rw [← SSet.toTop.map_comp, SSet.stdSimplex.δ_comp_yonedaEquiv_symm]

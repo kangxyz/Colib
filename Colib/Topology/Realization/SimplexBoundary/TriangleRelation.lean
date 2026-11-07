@@ -28,7 +28,7 @@ namespace Convexity.StdSimplex.Boundary
 /-- A single original triangle relation implies all nine finite edge-potential
 equations, using only genuine reversal and constant-edge identities. -/
 theorem triangle_edge_coherence {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary 2) ⥤ C)
+    (F : FundamentalGroupoid (boundary 2) ⥤ C)
     (h : edgeMap F 0 1 ≫ edgeMap F 1 2 = edgeMap F 0 2) (i j : Fin 3) :
     edgeMap F 0 i ≫ edgeMap F i j = edgeMap F 0 j := by
   fin_cases i <;> fin_cases j
@@ -55,7 +55,7 @@ theorem triangle_edge_coherence {C : Type u} [Groupoid.{v} C]
 
 /-- The chosen potentials satisfy the exact original edge equations. -/
 theorem trianglePotential_edge {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary 2) ⥤ C)
+    (F : FundamentalGroupoid (boundary 2) ⥤ C)
     (h : edgeMap F 0 1 ≫ edgeMap F 1 2 = edgeMap F 0 2) (i j : Fin 3) :
     edgeMap F i j ≫ (vertexPotential F j).hom = (vertexPotential F i).hom := by
   change edgeMap F i j ≫ inv (edgeMap F 0 j) = inv (edgeMap F 0 i)
@@ -67,18 +67,18 @@ theorem trianglePotential_edge {C : Type u} [Groupoid.{v} C]
 the entire actual boundary. Every overlap-path check is proved in the preceding
 leaves, rather than assumed by a global decoder hypothesis. -/
 def boundaryConstantIsoOfTriangle {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary 2) ⥤ C)
+    (F : FundamentalGroupoid (boundary 2) ⥤ C)
     (h : edgeMap F 0 1 ≫ edgeMap F 1 2 = edgeMap F 0 2) :
-    F ≅ (Functor.const (FundamentalGroupoid (simplexBoundary 2))).obj
+    F ≅ (Functor.const (FundamentalGroupoid (boundary 2))).obj
       (F.obj (FundamentalGroupoid.mk (vertex 0))) :=
   boundaryConstantIsoOfEdges F _ (vertexPotential F) (trianglePotential_edge F h)
 
 /-- The single explicit original triangle relation kills every actual boundary
 loop. Instantiating the relation for the nerve attaching map remains separate. -/
 theorem boundary_loop_eq_id_of_triangle {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary 2) ⥤ C)
+    (F : FundamentalGroupoid (boundary 2) ⥤ C)
     (h : edgeMap F 0 1 ≫ edgeMap F 1 2 = edgeMap F 0 2)
-    (x : simplexBoundary 2) (p : Path x x) :
+    (x : boundary 2) (p : Path x x) :
     F.map (Path.Homotopic.Quotient.mk p) = 𝟙 (F.obj (FundamentalGroupoid.mk x)) :=
   boundary_loop_eq_id_of_edges F _ (vertexPotential F) (trianglePotential_edge F h) x p
 

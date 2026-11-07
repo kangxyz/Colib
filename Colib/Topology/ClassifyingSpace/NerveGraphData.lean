@@ -5,6 +5,7 @@ Authors: kangxyz
 -/
 module
 
+public import Colib.Analysis.Convex.StdSimplex.PathHomotopy
 public import Colib.Topology.ClassifyingSpace.CharacteristicPoints
 public import Colib.Topology.ClassifyingSpace.GroupoidCompletion
 public import Colib.Topology.Realization.GraphAttachmentAnchors
@@ -23,7 +24,7 @@ or presentation assumption.
 Adapted from `Quillen/Topology/ClassifyingSpace/NerveGraphData.lean` at commit
 `c561118b7795eb9780be9ed391c3251d6a4d0afd`. Actual maps, endpoint equalities,
 path classes and independent universe parameters are retained. Native namespace
-ownership and the established finite-simplex adapter replace source ownership.
+ownership and the pinned native standard simplex replace source ownership.
 -/
 @[expose] public section
 
@@ -126,14 +127,13 @@ def vertexIdentification (x : Old C) :
 
 /-- The geometric coordinate of the original realized interval parameter. -/
 lemma realizationInterval_geometric (t : unitInterval) :
-    FiniteSimplexAdapter.toTopHomeomorph ⦋1⦌ (realizationInterval.{w} t) =
-      StdSimplex.homeomorphI.symm t := by
-  apply StdSimplex.homeomorphI.injective
+    SimplexCategory.toTopHomeo ⦋1⦌ (realizationInterval.{w} t) =
+      Convexity.StdSimplex.homeomorphI.symm t := by
+  apply Convexity.StdSimplex.homeomorphI.injective
   rw [Homeomorph.apply_symm_apply]
-  have h := FiniteSimplexAdapter.realization_interval_compat (realizationInterval.{w} t)
   have hi : SSet.stdSimplex.toTopObjIsoI.hom (realizationInterval.{w} t) = ULift.up t :=
     ConcreteCategory.congr_hom SSet.stdSimplex.toTopObjIsoI.inv_hom_id _
-  exact congrArg ULift.down (h.trans hi)
+  exact congrArg ULift.down hi
 
 /-- Each full characteristic map is the original arrow path at every parameter. -/
 theorem characteristic_path (a : Index C) (t : unitInterval) :
@@ -195,14 +195,14 @@ def intervalPath : Path (StdSimplex.single (0 : Fin 2) : StdSimplex ℝ (Fin 2))
   target' := StdSimplex.homeomorphI_symm_one
 
 /-- The actual boundary point equality underlying the graph vertex isomorphism. -/
-theorem vertexPoint (a : Index C) (b : simplexBoundary 1) :
+theorem vertexPoint (a : Index C) (b : Convexity.StdSimplex.boundary 1) :
     classifyingSpacePoint (oldObject C (attaching C (a, b))) =
       inclusion C (characteristic C (a, b.1)) :=
   (oldObject_point C (attaching C (a, b))).trans
     (congrArg (inclusion C) (ConcreteCategory.congr_hom (pushout C).w (a, b))).symm
 
 /-- The graph vertex isomorphism is the equality of the actual original points. -/
-theorem vertexIso_hom (a : Index C) (b : simplexBoundary 1) :
+theorem vertexIso_hom (a : Index C) (b : Convexity.StdSimplex.boundary 1) :
     (GraphAttachment.vertexIso (Index C) (pushout C) (inclusion C)
       (classifyingGroupoidCompletionFunctor C) (vertex C) (vertexIdentification C) a b).hom =
         eqToHom (congrArg FundamentalGroupoid.mk (vertexPoint C a b)) := by

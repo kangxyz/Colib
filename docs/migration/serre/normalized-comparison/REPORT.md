@@ -87,7 +87,7 @@ the integrating parent. No git/index/catalog edits, cache copies, commits or pus
 
 ## Source correspondence
 
-Pinned implementation source: `/workspace/shared/quillen-migration-sources/quillen` at
+Pinned implementation source: the [Quillen K-theory repository](https://github.com/kangxyz/quillen-k-theory) at
 `c561118b7795eb9780be9ed391c3251d6a4d0afd` (verified).
 
 `source-correspondence.json` records all 34 declarations from source
@@ -101,5 +101,7 @@ Two explicit full-coordinate theorems are added for the comparison homotopy.
 `../serre-iso-coherence-draft/SOURCE_CORRESPONDENCE.md` describes all generic source splits,
 including `TheoremB/{Naturality,FunctorIso,StructuredFunctorIso,StructuredIsoHomotopy}` and
 `Topology/ClassifyingSpace/FunctorChain`. Original copyright, license and authors are retained.
-The native barycentric boundary uses `FiniteSimplexAdapter.toTopHomeomorph` and explicitly
-checks its interval orientation against `realizationInterval`.
+The original migration used a finite-coordinate comparison at the barycentric boundary.
+The later native-coordinate rewrite removes that layer and uses `Convexity.StdSimplex` and
+`SimplexCategory.toTopHomeo` directly, retaining the interval orientation against
+`realizationInterval`. This report records the original validation scope.

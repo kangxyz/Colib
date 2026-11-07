@@ -17,7 +17,7 @@ relative skeleta, inclusions and hypotheses are retained. Namespace/import
 ownership and the finite-simplex coordinate adapter are the only changes.
 -/
 @[expose] public noncomputable section
-open CategoryTheory Limits Topology Convexity Convexity.StdSimplex TopCat
+open CategoryTheory Limits Topology Convexity.StdSimplex TopCat
 open scoped Simplicial Topology
 universe u
 set_option backward.isDefEq.respectTransparency false

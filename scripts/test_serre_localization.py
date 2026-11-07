@@ -31,8 +31,11 @@ class SerreLocalizationTests(unittest.TestCase):
         self.assertIn("original Quillen K-groups", entries["COL-0250"]["scope"])
 
     def test_reviewed_source_prefixes_and_generated_root(self):
-        crosswalk = json.loads(
-            (ROOT / "docs/migration/serre/integration-source-crosswalk.json").read_text())
+        crosswalk_bytes = (
+            ROOT / "docs/migration/serre/integration-source-crosswalk.json").read_bytes()
+        self.assertEqual(hashlib.sha256(crosswalk_bytes).hexdigest(),
+                         "0d147375db00977824311e7ec00a494e243fcc0bb5f1624c763dea0849573ff6")
+        crosswalk = json.loads(crosswalk_bytes)
         self.assertEqual(crosswalk["source_revision"],
                          "c561118b7795eb9780be9ed391c3251d6a4d0afd")
         self.assertEqual(crosswalk["items"],
@@ -41,8 +44,10 @@ class SerreLocalizationTests(unittest.TestCase):
         root_imports = (ROOT / "Colib.lean").read_text()
         for row in crosswalk["files"]:
             source = (ROOT / row["target"]).read_bytes()
-            self.assertEqual(hashlib.sha256(source).hexdigest(), row["target_sha256"])
-            prefix = source[:row["reviewed_prefix_bytes"]]
+            historical_source = source
+            # The pinned native namespace now matches the frozen reviewed source exactly.
+            self.assertEqual(hashlib.sha256(historical_source).hexdigest(), row["target_sha256"])
+            prefix = historical_source[:row["reviewed_prefix_bytes"]]
             self.assertEqual(hashlib.sha256(prefix).hexdigest(), row["reviewed_prefix_sha256"])
             module = row["target"].removesuffix(".lean").replace("/", ".")
             self.assertIn("public import " + module, root_imports)

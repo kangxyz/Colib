@@ -20,7 +20,7 @@ The original realized two-skeleton, with the original relative-stage indexing.
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
-open Set CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex TopCat SSet
+open Set CategoryTheory CategoryTheory.Limits Convexity.StdSimplex TopCat SSet
 open FundamentalGroupoid.OpenCover
 open scoped Simplicial Topology
 universe u v

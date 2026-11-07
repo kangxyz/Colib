@@ -31,7 +31,7 @@ The source path, endpoint and dimension hypotheses are retained.
 
 noncomputable section
 universe u
-open CategoryTheory CategoryTheory.Limits Convexity Convexity.StdSimplex Topology Set
+open CategoryTheory CategoryTheory.Limits Convexity.StdSimplex Topology Set
 open scoped Topology unitInterval
 set_option backward.isDefEq.respectTransparency false
 set_option backward.defeqAttrib.useBackward true
@@ -39,13 +39,13 @@ namespace TopCat
 
 section SimplexAttachment
 variable (X : TopCat.{u}) [DiscreteTopology X] (n : ℕ) {C D : TopCat.{u}}
-    {f : TopCat.of (X × simplexBoundary n) ⟶ C}
-    {g : TopCat.of (X × StdSimplex ℝ (Fin (n + 1))) ⟶ D}
+    {f : TopCat.of (X × Convexity.StdSimplex.boundary n) ⟶ C}
+    {g : TopCat.of (X × Convexity.StdSimplex ℝ (Fin (n + 1))) ⟶ D}
     {j : C ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion X n) f g j)
 
 /-- The full geometric characteristic map of one attached simplex. -/
-def simplexAttachmentCellMap (a : X) : C(StdSimplex ℝ (Fin (n + 1)), D) where
+def simplexAttachmentCellMap (a : X) : C(Convexity.StdSimplex ℝ (Fin (n + 1)), D) where
   toFun x := g (a, x)
   continuous_toFun := g.hom.continuous.comp (continuous_const.prodMk continuous_id)
 
@@ -53,7 +53,7 @@ variable (S : Subgroupoid (FundamentalGroupoid D))
     (hold : ∀ {x y : C} (p : Path x y),
       (⟦p.map j.hom.continuous⟧ : FundamentalGroupoid.mk (j x) ⟶
         FundamentalGroupoid.mk (j y)) ∈ S.arrows _ _)
-    (hcell : ∀ (a : X) {x y : StdSimplex ℝ (Fin (n + 1))} (p : Path x y),
+    (hcell : ∀ (a : X) {x y : Convexity.StdSimplex ℝ (Fin (n + 1))} (p : Path x y),
       (⟦p.map (simplexAttachmentCellMap X n (g := g) a).continuous⟧ :
         FundamentalGroupoid.mk (g (a, x)) ⟶ FundamentalGroupoid.mk (g (a, y))) ∈ S.arrows _ _)
 

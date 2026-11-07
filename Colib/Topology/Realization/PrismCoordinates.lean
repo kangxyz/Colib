@@ -7,7 +7,7 @@ Authors: kangxyz
 module
 
 public import Colib.Util.References
-public import Mathlib.Geometry.Convex.ConvexSpace.CompactSpaceStdSimplex
+public import Colib.Analysis.Convex.StdSimplex.FaceCharts
 public import Mathlib.Topology.UnitInterval
 public import Mathlib.Data.Fin.SuccPred
 public import Mathlib.Algebra.BigOperators.Fin
@@ -19,13 +19,11 @@ public import Mathlib.Tactic.FunProp
 
 Adapted from `Quillen/Topology/Realization/PrismCoordinates.lean` at
 Quillen commit `c561118b7795eb9780be9ed391c3251d6a4d0afd`.
-All 42 declarations retain their actual coordinates, maps and hypotheses.
+The declarations retain their actual coordinates, maps and hypotheses.
 The declarations live with the native `Convexity.StdSimplex` object.
 The compactness instance is imported from Mathlib, not reproved here.
 
-The old/new realization boundary belongs to
-`Colib.Topology.Realization.FiniteSimplexAdapter`, not this coordinate module.
-Compilation evidence for this isolated draft is recorded alongside this file.
+These are the native finite-weight coordinates used by Mathlib geometric realization.
 -/
 @[expose] public section
 
@@ -430,10 +428,6 @@ theorem prismLift_adjacent_right_zero {n : ℕ}
   change z.1.weights i.succ + prismTail z.1 i.succ - (z.2 : ℝ) = 0
   rw [← prismTail_castSucc]
   exact sub_eq_zero.mpr (prism_adjacent_overlap_height i hi hj).symm
-
-/-- Finite barycentric simplices are Hausdorff, as subspaces of finite real products. -/
-instance finiteStdSimplex_t2Space {M : Type*} [Finite M] : T2Space (StdSimplex ℝ M) :=
-  (StdSimplex.isEmbedding_toFun_comp_weights ℝ M).t2Space
 
 end Convexity.StdSimplex
 

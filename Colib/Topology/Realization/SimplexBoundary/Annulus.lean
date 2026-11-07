@@ -28,7 +28,7 @@ variable {n : ℕ}
 /-- The constructed higher-boundary trivialization pulled back along the original
 radial boundary projection of the actual higher simplex annulus. -/
 def annulusConstantIso {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 3)) ⥤ C) :
+    (F : FundamentalGroupoid (boundary (n + 3)) ⥤ C) :
     FundamentalGroupoid.map (annulusBoundary (n + 3)) ⋙ F ≅
       (Functor.const (FundamentalGroupoid (simplexAnnulus (n + 3)))).obj
         (F.obj (FundamentalGroupoid.mk (vertex 0))) :=
@@ -38,7 +38,7 @@ def annulusConstantIso {C : Type u} [Groupoid.{v} C]
 /-- Every actual annulus loop is killed by every radial pullback of a
 higher-boundary groupoid functor, with no loop-killing premise. -/
 theorem annulus_loop_eq_id {C : Type u} [Groupoid.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 3)) ⥤ C)
+    (F : FundamentalGroupoid (boundary (n + 3)) ⥤ C)
     (x : simplexAnnulus (n + 3)) (p : Path x x) :
     (FundamentalGroupoid.map (annulusBoundary (n + 3)) ⋙ F).map
         (Path.Homotopic.Quotient.mk p) =

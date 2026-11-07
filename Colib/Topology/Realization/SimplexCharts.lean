@@ -8,11 +8,12 @@ module
 
 public import Colib.Util.References
 public import Colib.Topology.Realization.SimplexBoundaryCollar
+public import Mathlib.Geometry.Convex.ConvexSpace.Barycenter
 public import Mathlib.Geometry.Convex.ConvexSpace.PathConnectedSpaceStdSimplex
 public import Mathlib.Topology.Connected.PathConnected
 public import Mathlib.Data.Fin.Basic
 public import Mathlib.Tactic.NormNum
-public import Colib.Topology.Realization.SimplexHomotopy
+public import Colib.Analysis.Convex.StdSimplex.PathHomotopy
 public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
 /-!
@@ -29,7 +30,7 @@ overlap are treated separately in `SimplexAnnulus`.
 Adapted from `Quillen/Topology/Realization/EdgePathPresentation/SimplexCharts.lean`
 at commit `c561118b7795eb9780be9ed391c3251d6a4d0afd`. The actual barycentric
 paths, barycenter, positive-coordinate interior and dimension hypotheses are retained.
-Only namespace and import ownership change. Interior simple connectedness
+Coordinate proofs use native finitely supported weights. Interior simple connectedness
 retains its unrestricted dimension hypothesis.
 -/
 @[expose] public section
@@ -50,16 +51,24 @@ def simplexSegment {n : ℕ} (x y : StdSimplex ℝ (Fin (n + 1))) : Path x y whe
   source' := by simp
   target' := by simp
 
-@[simp] theorem simplexSegment_weights {n : ℕ}
+@[simp] theorem simplexSegment_apply {n : ℕ}
     (x y : StdSimplex ℝ (Fin (n + 1))) (t : unitInterval) (i : Fin (n + 1)) :
-    (simplexSegment x y t).weights i = (1 - (t : ℝ)) * x.weights i + t * y.weights i := by
+    (simplexSegment x y t).weights i =
+      (1 - (t : ℝ)) * x.weights i + t * y.weights i := by
   simp [simplexSegment, StdSimplex.weights_convexCombPair, unitInterval.coe_symm_eq]
+
+/-- The native pushforward commutes with the straight coordinate segment. -/
+theorem map_simplexSegment {m n : ℕ} (f : Fin (m + 1) → Fin (n + 1))
+    (x y : StdSimplex ℝ (Fin (m + 1))) (t : unitInterval) :
+    StdSimplex.map f (simplexSegment x y t) =
+      simplexSegment (StdSimplex.map f x) (StdSimplex.map f y) t := by
+  exact (StdSimplex.isAffineMap_map ℝ f).map_convexCombPair _ _ _ x y
 
 /-- Two points of one zero-coordinate face can be joined in that face. -/
 theorem simplexBoundary_joinedIn_face {n : ℕ}
     (x y : StdSimplex ℝ (Fin (n + 1))) (i : Fin (n + 1))
     (hx : x.weights i = 0) (hy : y.weights i = 0) :
-    JoinedIn (simplexBoundary n) x y := by
+    JoinedIn (boundary n) x y := by
   refine ⟨simplexSegment x y, fun t ↦ ⟨i, ?_⟩⟩
   simp [hx, hy]
 
@@ -67,24 +76,24 @@ theorem simplexBoundary_joinedIn_face {n : ℕ}
 in the boundary: a third vertex supplies a zero coordinate along the edge. -/
 theorem simplexBoundary_joinedIn_vertices {n : ℕ} (hn : 2 ≤ n)
     (i j : Fin (n + 1)) :
-    JoinedIn (simplexBoundary n) (StdSimplex.single i) (StdSimplex.single j) := by
+    JoinedIn (boundary n) (StdSimplex.single i) (StdSimplex.single j) := by
   obtain ⟨k, hki, hkj⟩ := Fin.exists_ne_and_ne_of_two_lt i j (by omega)
   exact simplexBoundary_joinedIn_face _ _ k
-    (by simp [StdSimplex.weights_single, hki])
-    (by simp [StdSimplex.weights_single, hkj])
+    (by simp [hki])
+    (by simp [hkj])
 
 /-- Every boundary point can be joined within the boundary to a vertex. -/
 theorem simplexBoundary_joinedIn_vertex {n : ℕ} (hn : 2 ≤ n)
-    (x : simplexBoundary n) :
-    ∃ j : Fin (n + 1), JoinedIn (simplexBoundary n) x.1 (StdSimplex.single j) := by
+    (x : boundary n) :
+    ∃ j : Fin (n + 1), JoinedIn (boundary n) x.1 (StdSimplex.single j) := by
   obtain ⟨i, hi⟩ := x.2
   obtain ⟨j, hji, _⟩ := Fin.exists_ne_and_ne_of_two_lt i i (by omega)
   exact ⟨j, simplexBoundary_joinedIn_face _ _ i hi
-    (by simp [StdSimplex.weights_single, Ne.symm hji])⟩
+    (by simp [Ne.symm hji])⟩
 
 /-- The boundary of a simplex of dimension at least two is path-connected. -/
 theorem isPathConnected_simplexBoundary {n : ℕ} (hn : 2 ≤ n) :
-    IsPathConnected (simplexBoundary n) := by
+    IsPathConnected (boundary n) := by
   have hzero := simplexBoundary_joinedIn_vertices hn (0 : Fin (n + 1)) 0
   refine ⟨StdSimplex.single 0, hzero.source_mem, ?_⟩
   intro x hx
@@ -96,19 +105,19 @@ def simplexInterior (n : ℕ) : Set (StdSimplex ℝ (Fin (n + 1))) :=
   {x | ∀ i, 0 < x.weights i}
 
 theorem simplexInterior_eq_compl_boundary (n : ℕ) :
-    simplexInterior n = (simplexBoundary n)ᶜ := by
+    simplexInterior n = (boundary n)ᶜ := by
   ext x
   constructor
   · intro hx ⟨i, hi⟩
     exact (ne_of_gt (hx i)) hi
   · intro hx i
-    apply lt_of_le_of_ne (x.weights_nonneg i)
+    apply lt_of_le_of_ne (StdSimplex.weights_nonneg (w := x) i)
     intro hi
     exact hx ⟨i, hi.symm⟩
 
 theorem isOpen_simplexInterior (n : ℕ) : IsOpen (simplexInterior n) := by
   rw [simplexInterior_eq_compl_boundary]
-  exact (isClosed_simplexBoundary n).isOpen_compl
+  exact (isClosed_boundary n).isOpen_compl
 
 /-- A convex combination of two positive real coordinates stays positive. -/
 private theorem interval_weighted_pos (t : unitInterval) {a b : ℝ}
@@ -126,33 +135,23 @@ theorem simplexSegment_mem_interior {n : ℕ} {x y : StdSimplex ℝ (Fin (n + 1)
     (hx : x ∈ simplexInterior n) (hy : y ∈ simplexInterior n) (t : unitInterval) :
     simplexSegment x y t ∈ simplexInterior n := by
   intro i
-  rw [simplexSegment_weights]
+  rw [simplexSegment_apply]
   exact interval_weighted_pos t (hx i) (hy i)
 
-/-- The barycenter, with all barycentric coordinates equal. -/
-def simplexInteriorCenter (n : ℕ) : StdSimplex ℝ (Fin (n + 1)) where
-  weights := Finsupp.equivFunOnFinite.symm (fun _ ↦ (1 : ℝ) / (n + 1))
-  nonneg _ := by change 0 ≤ (1 : ℝ) / (n + 1); positivity
-  total := by
-    rw [Finsupp.sum_fintype _ _ (by simp)]
-    change (∑ _i : Fin (n + 1), (1 : ℝ) / (n + 1)) = 1
-    simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
-    have hn : (n + 1 : ℝ) ≠ 0 := by positivity
-    push_cast
-    field_simp
-
-@[simp] theorem simplexInteriorCenter_weights (n : ℕ) (i : Fin (n + 1)) :
-    (simplexInteriorCenter n).weights i = (1 : ℝ) / (n + 1) := rfl
-
-theorem simplexInteriorCenter_mem (n : ℕ) : simplexInteriorCenter n ∈ simplexInterior n := by
+/-- The native barycenter has strictly positive coordinates. -/
+theorem barycenter_mem_simplexInterior (n : ℕ) :
+    (Convexity.StdSimplex.barycenter : StdSimplex ℝ (Fin (n + 1))) ∈ simplexInterior n := by
   intro i
-  rw [simplexInteriorCenter_weights]
+  change 0 < (StdSimplex.barycenter : StdSimplex ℝ (Fin (n + 1))).weights i
+  rw [StdSimplex.weights_barycenter_apply]
+  simp only [Fintype.card_fin, Nat.cast_add, Nat.cast_one]
   positivity
 
 /-- The open geometric simplex is path-connected. -/
 theorem isPathConnected_simplexInterior (n : ℕ) : IsPathConnected (simplexInterior n) :=
-  ⟨simplexInteriorCenter n, simplexInteriorCenter_mem n,
-    fun _ hy ↦ ⟨simplexSegment _ _, simplexSegment_mem_interior (simplexInteriorCenter_mem n) hy⟩⟩
+  ⟨Convexity.StdSimplex.barycenter, barycenter_mem_simplexInterior n,
+    fun _ hy ↦ ⟨simplexSegment _ _,
+      simplexSegment_mem_interior (barycenter_mem_simplexInterior n) hy⟩⟩
 
 /-- The open geometric simplex is simply connected: linear interpolation of
 paths stays in its strictly positive coordinate region. -/
@@ -164,10 +163,7 @@ theorem isSimplyConnected_simplexInterior (n : ℕ) : IsSimplyConnected (simplex
     (p.map continuous_subtype_val) (q.map continuous_subtype_val)
   have hH (z : unitInterval × unitInterval) : H z ∈ simplexInterior n := by
     intro i
-    change 0 < (convexCombPair (R := ℝ) (unitInterval.symm z.1) z.1 _ _ _
-      (p z.2).1 (q z.2).1).weights i
-    simp only [StdSimplex.weights_convexCombPair, Finsupp.coe_add, Finsupp.coe_smul,
-      Pi.add_apply, Pi.smul_apply, smul_eq_mul, unitInterval.coe_symm_eq]
+    rw [Convexity.StdSimplex.pathHomotopy_apply]
     exact interval_weighted_pos z.1 ((p z.2).2 i) ((q z.2).2 i)
   exact ⟨{
     toFun := fun z ↦ ⟨H z, hH z⟩

@@ -26,7 +26,7 @@ variable {n : ℕ}
 theorem segment_coordinate_pos {x y : StdSimplex ℝ (Fin (n + 3))} (k : Fin (n + 3))
     (hx : 0 < x.weights k) (hy : 0 < y.weights k) (t : I) :
     0 < (simplexSegment x y t).weights k := by
-  rw [simplexSegment_weights]
+  rw [simplexSegment_apply]
   have ht0 := t.property.1
   have ht1 := t.property.2
   by_cases ht : (t : ℝ) = 0
@@ -37,18 +37,18 @@ theorem segment_coordinate_pos {x y : StdSimplex ℝ (Fin (n + 3))} (k : Fin (n 
     linarith
 
 /-- The prescribed midpoint of the original geometric edge. -/
-def edgeMidpoint (i j : Fin (n + 3)) : simplexBoundary (n + 2) := by
+def edgeMidpoint (i j : Fin (n + 3)) : boundary (n + 2) := by
   refine ⟨simplexSegment (vertex i).val (vertex j).val ⟨1 / 2, by norm_num⟩, ?_⟩
   obtain ⟨k, hki, hkj⟩ := Fin.exists_ne_and_ne_of_two_lt i j (by omega)
   refine ⟨k, ?_⟩
-  rw [simplexSegment_weights]
+  rw [simplexSegment_apply]
   simp [vertex, StdSimplex.weights_single, Ne.symm hki, Ne.symm hkj]
 
 /-- Both original edge-endpoint coordinates are positive at its midpoint. -/
 theorem edgeMidpoint_mem (i j : Fin (n + 3)) : edgeMidpoint i j ∈ vertexStar i ∩ vertexStar j := by
   change 0 < (simplexSegment (vertex i).val (vertex j).val _).weights i ∧
     0 < (simplexSegment (vertex i).val (vertex j).val _).weights j
-  rw [simplexSegment_weights, simplexSegment_weights]
+  rw [simplexSegment_apply, simplexSegment_apply]
   by_cases h : i = j
   · subst j
     norm_num [vertex, StdSimplex.weights_single]
@@ -56,7 +56,7 @@ theorem edgeMidpoint_mem (i j : Fin (n + 3)) : edgeMidpoint i j ∈ vertexStar i
 
 /-- Actual overlap segments to the specified midpoint stay on the boundary. -/
 theorem overlap_segment_boundary (i j : Fin (n + 3)) (x : ↥(vertexStar i ∩ vertexStar j))
-    (t : I) : simplexSegment x.val.val (edgeMidpoint i j).val t ∈ simplexBoundary (n + 2) := by
+    (t : I) : simplexSegment x.val.val (edgeMidpoint i j).val t ∈ boundary (n + 2) := by
   obtain ⟨k, hk⟩ := x.val.property
   have hki : k ≠ i := by
     intro h
@@ -67,10 +67,10 @@ theorem overlap_segment_boundary (i j : Fin (n + 3)) (x : ↥(vertexStar i ∩ v
     subst k
     exact (ne_of_gt x.property.2) hk
   refine ⟨k, ?_⟩
-  rw [simplexSegment_weights]
+  rw [simplexSegment_apply]
   have hm : (edgeMidpoint i j).val.weights k = 0 := by
     change (simplexSegment (vertex i).val (vertex j).val _).weights k = 0
-    rw [simplexSegment_weights]
+    rw [simplexSegment_apply]
     simp [vertex, StdSimplex.weights_single, Ne.symm hki, Ne.symm hkj]
   simp [hk, hm]
 
@@ -89,7 +89,7 @@ def overlapContraction (i j : Fin (n + 3)) :
     rw [(StdSimplex.isEmbedding_toFun_comp_weights ℝ (Fin (n + 3))).continuous_iff]
     unfold Function.comp
     refine continuous_pi (fun k => ?_)
-    simp only [simplexSegment_weights]
+    simp only [simplexSegment_apply]
     fun_prop
   map_zero_left x := Subtype.ext (Subtype.ext (simplexSegment _ _).source)
   map_one_left x := Subtype.ext (Subtype.ext (simplexSegment _ _).target)

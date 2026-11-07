@@ -23,7 +23,7 @@ open Set CategoryTheory CategoryTheory.Limits TopCat Convexity.StdSimplex
 universe u
 namespace TopCat.SimplexAttachment
 variable (A : TopCat.{u}) [DiscreteTopology A] (n : ℕ) {O D : TopCat.{u}}
-    {f : TopCat.of (A × simplexBoundary n) ⟶ O}
+    {f : TopCat.of (A × Convexity.StdSimplex.boundary n) ⟶ O}
     {g : TopCat.of (A × Convexity.StdSimplex ℝ (Fin (n + 1))) ⟶ D} {j : O ⟶ D}
     (sq : IsPushout (parameterizedSimplexBoundaryInclusion A n) f g j)
 

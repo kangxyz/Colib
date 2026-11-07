@@ -33,11 +33,11 @@ theorem intervalPath_segment (t : unitInterval) :
   fin_cases k
   · change (NerveGraphData.intervalPath t).weights 0 =
       (simplexSegment (StdSimplex.single (0 : Fin 2)) (StdSimplex.single 1) t).weights 0
-    rw [CategoryTheory.NerveCompletion.intervalPath_weight_zero, simplexSegment_weights]
+    rw [CategoryTheory.NerveCompletion.intervalPath_weight_zero, simplexSegment_apply]
     simp [StdSimplex.weights_single]
   · change (NerveGraphData.intervalPath t).weights 1 =
       (simplexSegment (StdSimplex.single (0 : Fin 2)) (StdSimplex.single 1) t).weights 1
-    rw [CategoryTheory.NerveCompletion.intervalPath_weight_one, simplexSegment_weights]
+    rw [CategoryTheory.NerveCompletion.intervalPath_weight_one, simplexSegment_apply]
     simp [StdSimplex.weights_single]
 
 /-- A finite vertex map carries the actual interval to its exact straight edge. -/

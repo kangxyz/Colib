@@ -26,7 +26,7 @@ The native lower theorem already treats the empty zero-dimensional boundary.
 
 noncomputable section
 
-open SSet TopCat CategoryTheory Limits Opposite MonoidalCategory CartesianMonoidalCategory Convexity
+open SSet TopCat CategoryTheory Limits Opposite MonoidalCategory CartesianMonoidalCategory
 open scoped Simplicial Topology
 
 universe u

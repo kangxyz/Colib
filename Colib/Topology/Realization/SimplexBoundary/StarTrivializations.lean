@@ -47,7 +47,7 @@ theorem starSpoke_val (i : Fin (n + 3)) (x : vertexStar i) (t : I) :
 /-- A functor on the actual simplex boundary is trivialized on each actual
 open star using its specified straight spokes and proved contractibility. -/
 def starTrivialization {C : Type u} [Category.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 2)) ⥤ C) (i : Fin (n + 3)) :
+    (F : FundamentalGroupoid (boundary (n + 2)) ⥤ C) (i : Fin (n + 3)) :
     FundamentalGroupoid.map ((ContinuousMap.subtypeVal (vertexStar i))) ⋙ F ≅
       (Functor.const (FundamentalGroupoid (vertexStar i))).obj
         (F.obj (FundamentalGroupoid.mk (vertex i))) := by
@@ -60,7 +60,7 @@ def starTrivialization {C : Type u} [Category.{v} C]
 /-- Choose specified original vertex potentials to a common target object.
 This is still a local natural isomorphism, not assumed global loop killing. -/
 def starPotentialIso {C : Type u} [Category.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 2)) ⥤ C) (b : C)
+    (F : FundamentalGroupoid (boundary (n + 2)) ⥤ C) (b : C)
     (β : ∀ i, F.obj (FundamentalGroupoid.mk (vertex i)) ≅ b) (i : Fin (n + 3)) :
     FundamentalGroupoid.map ((ContinuousMap.subtypeVal (vertexStar i))) ⋙ F ≅
       (Functor.const (FundamentalGroupoid (vertexStar i))).obj b :=
@@ -69,7 +69,7 @@ def starPotentialIso {C : Type u} [Category.{v} C]
 /-- Exact component formula: the actual spoke class followed by the specified
 original vertex potential. -/
 theorem starPotentialIso_hom_app {C : Type u} [Category.{v} C]
-    (F : FundamentalGroupoid (simplexBoundary (n + 2)) ⥤ C) (b : C)
+    (F : FundamentalGroupoid (boundary (n + 2)) ⥤ C) (b : C)
     (β : ∀ i, F.obj (FundamentalGroupoid.mk (vertex i)) ≅ b)
     (i : Fin (n + 3)) (x : vertexStar i) :
     (starPotentialIso F b β i).hom.app (FundamentalGroupoid.mk x) =

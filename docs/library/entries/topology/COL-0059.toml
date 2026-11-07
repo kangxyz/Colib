@@ -1,9 +1,0 @@
-[entry]
-id = "COL-0059"
-title = "Finite barycentric simplex coordinate comparison"
-kind = "comparison"
-section = "geometric-realization"
-order = 10
-statement = "For finite vertex sets, the real function-subtype simplex is homeomorphic to the finitely supported convex simplex, naturally in maps of vertices and compatibly with vertices and the oriented unit interval. The realization coordinates use Mathlib's homeomorphism into the finitely supported simplex, with the same interval orientation."
-scope = "This is an explicit comparison of the actual finite real coordinate APIs in the pinned Mathlib version, including the ULift interval convention. The cited literature supplies standard-simplex and nerve-realization background, not this version-specific comparison theorem. The chosen realization is unchanged. No infinite-vertex, prism, product-realization, or gluing theorem is asserted. Source correspondence was checked against the cited background scope on 2026-11-05; this does not record independent mathematical review or compilation."
-review = "author_checked"
